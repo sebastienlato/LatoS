@@ -1,0 +1,7 @@
+{
+  "status": "ok",
+  "device": "cpu",
+  "parameter_count": 17308032,
+  "seed": 17,
+  "logits_bitwise_equal": true
+}

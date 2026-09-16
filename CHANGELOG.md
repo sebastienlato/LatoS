@@ -1,13 +1,23 @@
 # Changelog
 
-## 0.3.0 — Phase 2, local checkpoint (2026-09-16)
+## 0.4.0 — Phase 3, local checkpoint (2026-09-16)
+
+- Original dense decoder, RMSNorm, rotary attention, SwiGLU, and tied output projection.
+- Next-token loss, independent numerical references, finite gradients, and causality checks.
+- Bounded configurations, verified Safetensors snapshots, and deterministic basic sampling.
+- CPU/MPS validation, including a fix for nonfinite values from a combined MPS transfer/cast.
+
+Phase 3 publication is pending approval. Weights are untrained; no training engine exists yet.
+
+## 0.3.0 — Phase 2, published (2026-09-16)
 
 - Original train-only byte-level BPE integration using stable Tokenizers 0.23.2.
 - Explicit Unicode, literal-special-token, BOS/EOS, and verified-loading contract.
 - Learned 8,192-entry local vocabulary; reproducible artifacts and compression evidence.
 - Tokenizer CLI, bounded configurations, tests, and offline CI demonstration.
 
-Phase 2 publication is pending owner approval. No language model is included.
+Published after approval; branch/tag verified and Linux CI passed all 85 tests.
+This phase included no language model.
 
 ## 0.2.0 — Phase 1, published (2026-09-16)
 

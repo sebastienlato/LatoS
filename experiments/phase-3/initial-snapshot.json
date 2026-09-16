@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "kind": "latos-dense-v1-model-only",
+  "latos_version": "0.4.0",
+  "torch_version": "2.14.0",
+  "safetensors_version": "0.8.0",
+  "dtype": "float32",
+  "config_sha256": "c9057cd643303d5a2c5ebfd4c069f06771b72a0f7bb5329bf8fdd22c3c564372",
+  "weights_sha256": "99dce7bf0356bf7d641dff4b29d6616772dfbf9779877e0c085bdea9e368b5f2",
+  "weights_bytes": 69237768,
+  "parameter_count": 17308032,
+  "tokenizer_sha256": "7dce3d0888f6a37d3eadbd077a9ff73170a54a1f6e301e51b2ae6d998142b0ab",
+  "training_state": "not included; no optimizer, scheduler, or run history",
+  "initialization_seed": 17,
+  "weights": "random initialization"
+}

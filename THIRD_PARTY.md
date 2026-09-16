@@ -120,3 +120,27 @@ Primary API documentation consulted:
 
 LatoS's own integration enforces train-only fitting and its codec contract;
 examples in upstream documentation are not treated as data-splitting policy.
+
+## Phase 3 model methods and storage
+
+LatoS's transformer is original PyTorch code implementing established methods.
+The following primary papers supplied the mathematical definitions; their source
+implementations, pretrained weights, and other assets were not imported:
+
+- Vaswani et al., [Attention Is All You Need](https://arxiv.org/abs/1706.03762),
+  2017: scaled attention, causal masking, multi-head composition, and embedding sharing.
+- Zhang and Sennrich, [Root Mean Square Layer Normalization](https://arxiv.org/abs/1910.07467),
+  2019: RMS normalization.
+- Su et al., [RoFormer](https://arxiv.org/abs/2104.09864), 2021: rotary position equations.
+- Shazeer, [GLU Variants Improve Transformer](https://arxiv.org/abs/2002.05202),
+  2020: SwiGLU feed-forward transformation.
+- [PyTorch 2.14 SDPA documentation](https://docs.pytorch.org/docs/2.14/generated/torch.nn.functional.scaled_dot_product_attention.html):
+  library call semantics, causal flag, and explicit dropout handling.
+
+[Safetensors 0.8.0](https://github.com/safetensors/safetensors/releases/tag/v0.8.0),
+Apache-2.0, was selected from official release/PyPI metadata and installed/tested
+on the actual Python 3.14.7 environment. Its
+[PyTorch API](https://huggingface.co/docs/safetensors/en/api/torch) provides
+tensor-only storage. It adds no new transitive dependencies to the existing runtime.
+The resolved wheel identities are in `uv.lock`; upstream license notices apply.
+Sources checked on 2026-09-16.

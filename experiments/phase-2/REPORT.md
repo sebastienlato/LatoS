@@ -93,3 +93,10 @@ integrity, not an authenticated signature or cross-version reproducibility.
 After publication is approved and verified, Phase 3 will implement and numerically
 validate the original dense transformer, using this tokenizer identity and actual
 vocabulary size. Phase 3 publication requires its own approval.
+
+## Publication follow-up — 2026-09-16
+
+Phase 2 was approved and published at `1ed47127c05d8d6de0095f688fd3ad5f24c62b48`,
+with remote main and annotated v0.3.0 verified. Linux CI passed all 85 tests and
+the offline tokenizer workflow. The publication status above is the original
+pre-publication record; current state is in `PROJECT_STATE.md`.

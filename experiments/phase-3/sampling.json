@@ -1,0 +1,38 @@
+{
+  "prompt": "A quiet morning",
+  "seed": 7,
+  "temperature": 0.8,
+  "top_k": 20,
+  "max_new_tokens": 8,
+  "weights": "random initialization",
+  "results": {
+    "cpu": {
+      "generated_ids": [
+        874,
+        7161,
+        4873,
+        6375,
+        1368,
+        1368,
+        3224,
+        954
+      ],
+      "stop_reason": "max_new_tokens",
+      "generated_count": 8
+    },
+    "mps": {
+      "generated_ids": [
+        874,
+        7161,
+        4873,
+        6375,
+        1368,
+        1368,
+        3224,
+        954
+      ],
+      "stop_reason": "max_new_tokens",
+      "generated_count": 8
+    }
+  }
+}

@@ -82,3 +82,26 @@ files outside Git and publish compact evidence. Verify the full training corpus
 through encode/decode and compare every encoding after save/load. Report frozen
 validation compression without fitting on it; reserve test text. Do not infer
 language-model quality from codec coverage or compression.
+
+## 2026-09-16 — Dense transformer baseline
+
+Implement the dense decoder directly in PyTorch using pre-RMSNorm blocks,
+interleaved rotary Q/K positions, causal multi-head SDPA, SwiGLU, and tied
+input/output embeddings. Omit biases and dropout for this initial numerical
+baseline. Use normal initialization with smaller residual-output variance.
+Independent equations and gradients are the acceptance reference, not another
+implementation's output or a pretrained checkpoint.
+
+Use a 631,104-parameter debug model and a 17,308,032-parameter pilot, both with the
+accepted 8,192-entry tokenizer hash. Contexts are 128 and 512. These dimensions
+are validated construction choices; training feasibility and quality still require
+later measurements. Keep float32 as the supported compute baseline, with CPU
+float64 solely for reference checks. Model-only snapshots use Safetensors 0.8.0,
+explicit configuration, hashes, strict shapes, and no optimizer/resume state.
+
+Define unshifted labels with internal next-token shifting and explicit -100 target
+masking. Reject empty-target loss rather than returning NaN. Start with unpadded
+causal sequences; do not imply a padding mask or cross-document attention policy.
+Use a single-sequence sampler with explicit limits and no KV cache. Transfer logits
+to CPU before float64 probability calculations: the combined MPS transfer/cast
+failed on the actual host and is covered by a regression test.

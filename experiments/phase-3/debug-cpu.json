@@ -1,0 +1,17 @@
+{
+  "status": "ok",
+  "device": "cpu",
+  "dtype": "float32",
+  "parameter_count": 631104,
+  "logits_shape": [
+    2,
+    32,
+    8192
+  ],
+  "synthetic_loss": 9.03677749633789,
+  "gradient_norm": 1.6662269267255063,
+  "causal_prefix_max_abs_difference": 0.0,
+  "optimizer_steps": 0,
+  "weights": "random initialization",
+  "seed": 17
+}

@@ -4,9 +4,10 @@
 
 The recorded local environment is CPython 3.14.7 on Apple Silicon macOS. Linux
 x86-64 CPU dependencies are locked and Phase 0 passed its published CI job.
-Phase 1 data CI also passed. Phase 2 tokenization is locally validated; its Linux
-CI run awaits publication. Other operating systems, architectures, Python series,
-CUDA, and mixed precision are untested. See [ENVIRONMENT.md](ENVIRONMENT.md).
+Phase 1 data and Phase 2 tokenizer CI also passed. Phase 3 model checks pass on
+local CPU and MPS; its Linux CI run awaits publication. Other operating systems,
+architectures, Python series, CUDA, and mixed precision are untested.
+See [ENVIRONMENT.md](ENVIRONMENT.md) and the phase-specific reports.
 
 Install [uv](https://docs.astral.sh/uv/getting-started/installation/) version
 0.12.15. To keep the bootstrap entirely within the checkout when uv is absent:
@@ -72,4 +73,5 @@ before sharing; never archive the entire working directory. Package builds use
 explicit source inclusion rules to exclude local planning, environments, acquired
 corpora, and checkpoints. Source archives retain project docs, tests, the lockfile,
 data manifests, the original tiny fixture, configurations, and compact experiment
-reports. Learned tokenizer files remain in ignored `artifacts/`.
+reports. Learned tokenizer files remain in ignored `artifacts/`; model tensor
+snapshots remain in ignored `checkpoints/`.

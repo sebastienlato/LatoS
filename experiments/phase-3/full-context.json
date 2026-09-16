@@ -1,0 +1,24 @@
+[
+  {
+    "device": "cpu",
+    "shape": [
+      1,
+      512,
+      8192
+    ],
+    "loss": 9.0809907913208,
+    "finite_gradients": true,
+    "optimizer_steps": 0
+  },
+  {
+    "device": "mps",
+    "shape": [
+      1,
+      512,
+      8192
+    ],
+    "loss": 9.080989837646484,
+    "finite_gradients": true,
+    "optimizer_steps": 0
+  }
+]

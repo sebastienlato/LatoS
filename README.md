@@ -4,10 +4,11 @@ LatoS is an original, English-first small language model project. Its goal is to
 make the path from documented training data to an evaluated conversational model
 reproducible on modest hardware.
 
-**Current capability: Phase 2 tokenizer.** LatoS prepares a documented English
-corpus and trains a new byte-level BPE tokenizer on the training split only.
-The local baseline has 8,192 vocabulary entries and verified Unicode round trips.
-There is no language model, model-training engine, or chat capability yet.
+**Current capability: Phase 3 transformer.** LatoS prepares English data, trains
+its own tokenizer, and implements an original dense causal decoder with verified
+loss, gradients, snapshots, and bounded sampling. The pilot has 17,308,032 parameters
+and uses the 8,192-entry tokenizer. Its weights are random: no model-training engine
+or useful language/chat capability exists yet.
 The [roadmap](ROADMAP.md) defines those steps.
 
 ## Quickstart
@@ -25,8 +26,8 @@ uv run --locked pytest
 
 The environment uses Python 3.14.7 and PyTorch 2.14.0. The lock targets macOS
 Apple Silicon and Linux x86-64 CPU. Phase 0 checks passed locally on the Mac and
-in Linux CPU CI; Phase 1 data CI also passed. Phase 2 tokenization is locally
-validated, with its Linux CI run pending publication.
+in Linux CPU CI; Phase 1 data and Phase 2 tokenizer CI also passed. Phase 3 is
+validated on local CPU and MPS, with its Linux CI run pending publication.
 CUDA and other platforms are not validated. See [setup](docs/SETUP.md) and
 [recorded environment evidence](docs/ENVIRONMENT.md).
 
@@ -63,6 +64,20 @@ See [the tokenizer guide](docs/TOKENIZER.md) for the full-corpus command,
 Unicode and special-token behavior, artifact verification, and limitations.
 Learned tokenizer files stay under ignored `artifacts/`; the
 [Phase 2 report](experiments/phase-2/REPORT.md) records their identities and results.
+
+## Transformer checks
+
+```sh
+uv run --locked latos model inspect --config configs/model/pilot.json
+uv run --locked latos model check --config configs/model/debug.json --device cpu
+```
+
+On an available Apple GPU, the model check also accepts `--device mps`.
+These commands use random initialization and synthetic IDs; they perform no
+optimizer steps. [The model guide](docs/MODEL.md) covers the architecture,
+next-token loss, tokenizer binding, local snapshots, and sampling commands.
+[Phase 3 evidence](experiments/phase-3/REPORT.md) records numerical and backend
+checks. Weights stay in ignored `checkpoints/`.
 
 ## Development
 

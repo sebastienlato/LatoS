@@ -1,4 +1,4 @@
-"""The Phase 0 command line: help, version, and environment diagnostics."""
+"""LatoS commands for diagnostics, data, tokenizers, and model checks."""
 
 import argparse
 import json
@@ -45,6 +45,25 @@ def main(argv: list[str] | None = None) -> int:
             action.add_argument("--text", required=True)
             action.add_argument("--bos", action="store_true")
             action.add_argument("--eos", action="store_true")
+    model = commands.add_parser("model", help="Inspect, check, initialize, or sample a dense model")
+    model_actions = model.add_subparsers(dest="model_action", required=True)
+    for name in ("inspect", "check", "initialize", "sample"):
+        action = model_actions.add_parser(name)
+        if name != "sample":
+            action.add_argument("--config", type=Path, required=True)
+        if name in ("check", "sample"):
+            action.add_argument("--device", choices=("auto", "cpu", "mps", "cuda"), default="cpu")
+        if name in ("initialize", "sample"):
+            action.add_argument("--tokenizer-dir", type=Path, required=True)
+            action.add_argument("--seed", type=int, default=0)
+        if name == "initialize":
+            action.add_argument("--output-dir", type=Path, required=True)
+        if name == "sample":
+            action.add_argument("--model-dir", type=Path, required=True)
+            action.add_argument("--prompt", required=True)
+            action.add_argument("--max-new-tokens", type=int, default=16)
+            action.add_argument("--temperature", type=float, default=0.0)
+            action.add_argument("--top-k", type=int, default=0)
     args = parser.parse_args(argv)
     if args.command is None:
         parser.print_help()
@@ -84,6 +103,56 @@ def main(argv: list[str] | None = None) -> int:
                     ids = codec.encode(args.text, add_bos=args.bos, add_eos=args.eos)
                     report = {"ids": ids, "decoded": codec.decode(ids)}
         except (OSError, ValueError, KeyError, TypeError) as exc:
+            print(json.dumps({"status": "error", "error": str(exc)}, indent=2))
+            return 1
+        print(json.dumps(report, indent=2))
+        return 0
+
+    if args.command == "model":
+        from latos.doctor import available_backends, select_device
+        from latos.model import ModelConfig, create_model
+        from latos.model.diagnostics import check_model
+        from latos.model.sampling import generate
+        from latos.model.storage import bind_tokenizer, load_model, save_model
+
+        try:
+            if args.model_action == "sample":
+                model = load_model(args.model_dir)
+                codec = bind_tokenizer(model.config, args.tokenizer_dir)
+                model.to(select_device(args.device, available_backends()))
+                report = generate(
+                    model,
+                    codec.encode(args.prompt, add_bos=True),
+                    max_new_tokens=args.max_new_tokens,
+                    temperature=args.temperature,
+                    top_k=args.top_k,
+                    seed=args.seed,
+                )
+                report["text"] = codec.decode(report["ids"])
+                report["quality_note"] = (
+                    "Mechanism check; snapshot training history is not included"
+                )
+            else:
+                config = ModelConfig.load(args.config)
+                if args.model_action == "check":
+                    report = check_model(config, args.device)
+                elif args.model_action == "inspect":
+                    model = create_model(config)
+                    report = {
+                        "config": config.to_dict(),
+                        "parameter_count": model.parameter_count,
+                        "float32_parameter_bytes": model.parameter_count * 4,
+                        "weights": "random initialization",
+                    }
+                else:
+                    bind_tokenizer(config, args.tokenizer_dir)
+                    report = save_model(create_model(config, seed=args.seed), args.output_dir)
+                    report = {
+                        **report,
+                        "initialization_seed": args.seed,
+                        "weights": "random initialization",
+                    }
+        except (OSError, ValueError, KeyError, TypeError, RuntimeError) as exc:
             print(json.dumps({"status": "error", "error": str(exc)}, indent=2))
             return 1
         print(json.dumps(report, indent=2))

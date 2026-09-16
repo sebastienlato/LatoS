@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "latos"
-version = "0.3.0"
+version = "0.4.0"
 description = "An original English-first small language model project"
 readme = "README.md"
 requires-python = ">=3.14,<3.15"
@@ -15,6 +15,7 @@ dependencies = [
     "torch==2.14.0",
     "numpy==2.5.3",
     "tokenizers==0.23.2",
+    "safetensors==0.8.0",
 ]
 
 [project.scripts]
@@ -48,7 +49,7 @@ include = [
     "/AGENTS.md", "/PROJECT_STATE.md", "/ROADMAP.md", "/DECISIONS.md",
     "/THIRD_PARTY.md", "/CHANGELOG.md", "/.gitignore",
     "/data/manifests", "/data/fixtures", "/experiments/phase-1", "/experiments/phase-2",
-    "/configs",
+    "/configs", "/experiments/phase-3",
 ]
 
 [tool.pytest.ini_options]
