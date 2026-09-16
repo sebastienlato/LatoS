@@ -1,0 +1,46 @@
+# Local project briefs, research, and assistant session notes
+/.private/
+/AGENTS.local.md
+
+# Local environments and credentials
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Python build products and caches
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+/build/
+/dist/
+
+# Acquired/generated data and training artifacts
+/data/raw/
+/data/processed/
+/data/cache/
+/artifacts/
+/checkpoints/
+/outputs/
+/logs/
+/wandb/
+
+# Local UI dependencies and output
+node_modules/
+
+# Editor and OS files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Private starter archive, if copied into the project
+/LatoS_Starter.zip
