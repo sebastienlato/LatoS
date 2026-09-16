@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "tokenizer_sha256": "7dce3d0888f6a37d3eadbd077a9ff73170a54a1f6e301e51b2ae6d998142b0ab",
+  "corpus": {
+    "manifest_id": "english-books-v1",
+    "manifest_sha256": "c83a221eba52532de100a30eb0badec5eddf009d17369b5fac981ff89b2ca87c",
+    "corpus_report_sha256": "f6f698a9f1bacf924cbf122a2a5a9657504d5805deaa37899053b9f7c75994ff",
+    "split": "validation",
+    "split_sha256": "09647b26e4cee7ced1808ed29c72c8d98753e032b215e520a2b3dbd5a718af40",
+    "source_ids": [
+      "pg-11",
+      "pg-36"
+    ],
+    "document_ids": [
+      "alice-wonderland",
+      "war-worlds"
+    ],
+    "records": 1030,
+    "documents": 2,
+    "characters": 432293,
+    "words": 78341
+  },
+  "metrics": {
+    "records": 1030,
+    "characters": 432293,
+    "utf8_bytes": 438128,
+    "tokens": 110493,
+    "bytes_per_token": 3.965210465821364,
+    "characters_per_token": 3.9124016906048347,
+    "round_trip_failures": 0,
+    "unknown_tokens": 0,
+    "boundary_tokens_included": false
+  }
+}

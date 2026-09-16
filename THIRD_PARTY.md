@@ -80,3 +80,43 @@ Consulted on 2026-09-16. Phase 0 did not implement a model or research algorithm
 Checked on 2026-09-16. The tiny fixture is original AI-assisted writing under MIT;
 its provenance is in [the fixture README](data/fixtures/tiny/README.md). No new
 third-party Python dependency was added in Phase 1.
+
+## Phase 2 tokenizer dependency and references
+
+[Hugging Face Tokenizers 0.23.2](https://github.com/huggingface/tokenizers/releases/tag/v0.23.2)
+was checked against upstream release documentation and live PyPI metadata on
+2026-09-16. The stable macOS arm64 ABI3 wheel installed and executed on Python
+3.14.7. This library implements BPE; LatoS does not claim to have invented BPE or
+reimplemented its Rust trainer. No pretrained vocabulary or merges were imported.
+
+New installed distributions (including transitive dependencies) are listed below;
+all versions/hashes are in `uv.lock`. Their own license notices apply. Hub/HTTP
+packages are dependencies of Tokenizers; LatoS's tokenizer path makes no Hub or
+hosted-service requests.
+
+| Distribution | Version | Declared license |
+| --- | --- | --- |
+| [anyio](https://pypi.org/project/anyio/4.15.1/) | 4.15.1 | MIT |
+| [certifi](https://pypi.org/project/certifi/2026.7.22/) | 2026.7.22 | MPL-2.0 |
+| [click](https://pypi.org/project/click/8.5.0/) | 8.5.0 | BSD-3-Clause |
+| [h11](https://pypi.org/project/h11/0.16.0/) | 0.16.0 | MIT |
+| [hf-xet](https://pypi.org/project/hf-xet/1.6.0/) | 1.6.0 | Apache-2.0 |
+| [httpcore](https://pypi.org/project/httpcore/1.0.9/) | 1.0.9 | BSD-3-Clause |
+| [httpx](https://pypi.org/project/httpx/0.28.1/) | 0.28.1 | BSD-3-Clause |
+| [huggingface_hub](https://pypi.org/project/huggingface_hub/1.31.0/) | 1.31.0 | Apache-2.0 |
+| [idna](https://pypi.org/project/idna/3.19/) | 3.19 | BSD-3-Clause |
+| [PyYAML](https://pypi.org/project/PyYAML/6.0.3/) | 6.0.3 | MIT |
+| [tokenizers](https://pypi.org/project/tokenizers/0.23.2/) | 0.23.2 | Apache-2.0 (upstream classifier/license) |
+| [tqdm](https://pypi.org/project/tqdm/4.70.1/) | 4.70.1 | MPL-2.0 AND MIT |
+
+Primary API documentation consulted:
+
+- [Tokenization pipeline](https://huggingface.co/docs/tokenizers/en/pipeline).
+- [ByteLevel pre-tokenizers](https://huggingface.co/docs/tokenizers/en/api/pre-tokenizers).
+- [BPE trainers](https://huggingface.co/docs/tokenizers/en/api/trainers).
+- [Models](https://huggingface.co/docs/tokenizers/en/api/models).
+- [Added tokens](https://huggingface.co/docs/tokenizers/en/api/added-tokens) and
+  [Tokenizer API](https://huggingface.co/docs/tokenizers/en/api/tokenizer).
+
+LatoS's own integration enforces train-only fitting and its codec contract;
+examples in upstream documentation are not treated as data-splitting policy.

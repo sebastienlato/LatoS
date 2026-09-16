@@ -79,3 +79,10 @@ Raw and processed files remain local, with provenance and terms in
 After the Phase 1 publication is approved and verified, Phase 2 will train a new
 byte-level BPE tokenizer on the training split only, preserving validation and
 test separation. No Phase 2 publication approval is implied.
+
+## Publication follow-up — 2026-09-16
+
+Phase 1 was approved and published at `fe9818b983aac00d5bba8e2a7b7686637f9e4a7a`,
+with remote main and annotated tag v0.2.0 verified. Linux CI passed all 49 tests
+and the offline data fixture. The publication status above is the original
+pre-publication record. Current development state is in `PROJECT_STATE.md`.

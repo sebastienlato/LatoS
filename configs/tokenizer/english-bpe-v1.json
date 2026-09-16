@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "vocab_size": 8192,
+  "min_frequency": 2,
+  "max_token_length": 32
+}

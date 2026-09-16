@@ -32,3 +32,9 @@ jobs:
           uv run --locked latos data prepare --manifest data/fixtures/tiny/manifest.json --raw-dir data/raw/tiny --output-dir data/processed/tiny
           uv run --locked latos data audit --manifest data/fixtures/tiny/manifest.json --output-dir data/processed/tiny
       - run: uv build --no-build-isolation
+      - name: Offline tokenizer fixture
+        env:
+          RAYON_NUM_THREADS: "1"
+        run: |
+          uv run --locked latos tokenizer train --manifest data/fixtures/tiny/manifest.json --corpus-dir data/processed/tiny --config configs/tokenizer/debug.json --output-dir artifacts/tokenizers/tiny
+          uv run --locked latos tokenizer evaluate --manifest data/fixtures/tiny/manifest.json --corpus-dir data/processed/tiny --artifact-dir artifacts/tokenizers/tiny --split validation

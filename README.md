@@ -4,10 +4,11 @@ LatoS is an original, English-first small language model project. Its goal is to
 make the path from documented training data to an evaluated conversational model
 reproducible on modest hardware.
 
-**Current capability: Phase 1 English data preparation.** The package installs,
-checks the local PyTorch environment, and acquires, cleans, splits, deduplicates,
-and audits a small English corpus. There is no tokenizer, model, training engine,
-or chat capability yet. The [roadmap](ROADMAP.md) defines those steps.
+**Current capability: Phase 2 tokenizer.** LatoS prepares a documented English
+corpus and trains a new byte-level BPE tokenizer on the training split only.
+The local baseline has 8,192 vocabulary entries and verified Unicode round trips.
+There is no language model, model-training engine, or chat capability yet.
+The [roadmap](ROADMAP.md) defines those steps.
 
 ## Quickstart
 
@@ -24,7 +25,8 @@ uv run --locked pytest
 
 The environment uses Python 3.14.7 and PyTorch 2.14.0. The lock targets macOS
 Apple Silicon and Linux x86-64 CPU. Phase 0 checks passed locally on the Mac and
-in Linux CPU CI. Phase 1 data checks have run locally; its CI run awaits publication.
+in Linux CPU CI; Phase 1 data CI also passed. Phase 2 tokenization is locally
+validated, with its Linux CI run pending publication.
 CUDA and other platforms are not validated. See [setup](docs/SETUP.md) and
 [recorded environment evidence](docs/ENVIRONMENT.md).
 
@@ -47,6 +49,20 @@ Preparation preserves existing outputs; choose a new output directory for anothe
 run. [The data guide](docs/DATA.md) covers the pinned twelve-book corpus, rights,
 whole-book split policy, lexical duplicate metric, hashes, and limits. Acquired
 books and processed text stay outside Git. The tiny fixture is original test data.
+
+## Tokenizer
+
+After preparing the offline fixture above:
+
+```sh
+RAYON_NUM_THREADS=1 uv run --locked latos tokenizer train --manifest data/fixtures/tiny/manifest.json --corpus-dir data/processed/tiny --config configs/tokenizer/debug.json --output-dir artifacts/tokenizers/tiny
+uv run --locked latos tokenizer encode --artifact-dir artifacts/tokenizers/tiny --text 'Hello, LatoS!' --bos --eos
+```
+
+See [the tokenizer guide](docs/TOKENIZER.md) for the full-corpus command,
+Unicode and special-token behavior, artifact verification, and limitations.
+Learned tokenizer files stay under ignored `artifacts/`; the
+[Phase 2 report](experiments/phase-2/REPORT.md) records their identities and results.
 
 ## Development
 

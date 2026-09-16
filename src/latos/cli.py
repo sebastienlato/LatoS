@@ -27,6 +27,24 @@ def main(argv: list[str] | None = None) -> int:
             action.add_argument("--raw-dir", type=Path, required=True)
         if name != "acquire":
             action.add_argument("--output-dir", type=Path, required=True)
+    tokenizer = commands.add_parser("tokenizer", help="Train, inspect, evaluate, or use LatoS BPE")
+    token_actions = tokenizer.add_subparsers(dest="token_action", required=True)
+    for name in ("train", "evaluate", "inspect", "encode"):
+        action = token_actions.add_parser(name)
+        if name in ("train", "evaluate"):
+            action.add_argument("--manifest", type=Path, required=True)
+            action.add_argument("--corpus-dir", type=Path, required=True)
+        if name == "train":
+            action.add_argument("--config", type=Path, required=True)
+            action.add_argument("--output-dir", type=Path, required=True)
+        else:
+            action.add_argument("--artifact-dir", type=Path, required=True)
+        if name == "evaluate":
+            action.add_argument("--split", choices=("train", "validation", "test"), required=True)
+        if name == "encode":
+            action.add_argument("--text", required=True)
+            action.add_argument("--bos", action="store_true")
+            action.add_argument("--eos", action="store_true")
     args = parser.parse_args(argv)
     if args.command is None:
         parser.print_help()
@@ -43,6 +61,28 @@ def main(argv: list[str] | None = None) -> int:
                 report = prepare(args.manifest, args.raw_dir, args.output_dir)
             else:
                 report = audit(args.manifest, args.output_dir)
+        except (OSError, ValueError, KeyError, TypeError) as exc:
+            print(json.dumps({"status": "error", "error": str(exc)}, indent=2))
+            return 1
+        print(json.dumps(report, indent=2))
+        return 0
+
+    if args.command == "tokenizer":
+        from latos.tokenization import LatoTokenizer
+        from latos.tokenization.training import evaluate, train
+
+        try:
+            if args.token_action == "train":
+                report = train(args.manifest, args.corpus_dir, args.config, args.output_dir)
+            elif args.token_action == "evaluate":
+                report = evaluate(args.manifest, args.corpus_dir, args.artifact_dir, args.split)
+            else:
+                codec = LatoTokenizer.load(args.artifact_dir)
+                if args.token_action == "inspect":
+                    report = json.loads((args.artifact_dir / "metadata.json").read_text())
+                else:
+                    ids = codec.encode(args.text, add_bos=args.bos, add_eos=args.eos)
+                    report = {"ids": ids, "decoded": codec.decode(ids)}
         except (OSError, ValueError, KeyError, TypeError) as exc:
             print(json.dumps({"status": "error", "error": str(exc)}, indent=2))
             return 1

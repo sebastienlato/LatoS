@@ -61,3 +61,24 @@ held-out examples before training duplicates. Do not silently alter thresholds o
 splits based on future model performance. Record normalization/filter policy and
 the pipeline implementation hash with every output. Other language or larger
 corpus support needs its own measured implementation.
+
+## 2026-09-16 — Tokenizer contract
+
+Use stable Tokenizers 0.23.2 to train a new BPE vocabulary with all 256 byte
+symbols and four reserved IDs: pad 0, BOS 1, EOS 2, unknown 3. Use an 8,192-entry
+baseline, minimum frequency 2, and a 32-symbol token length limit; the offline
+fixture targets 512 entries. These are bounded starting choices, not optimized
+model-quality settings. Never fit on held-out splits.
+
+Choose identity normalization with no inserted leading space. Preserve arbitrary
+valid Unicode scalar text, including exact whitespace and composed/decomposed
+forms. Phase 1's prior cleaning is a separate transformation. Add BOS/EOS only
+through explicit API flags, and encode literal reserved spellings as ordinary
+text. Restore the upstream runtime flag after every load because JSON does not
+save it. Bare upstream JSON loading is not the complete LatoS codec contract.
+
+Record tokenizer, vocabulary, merge, corpus, and training-input hashes. Keep learned
+files outside Git and publish compact evidence. Verify the full training corpus
+through encode/decode and compare every encoding after save/load. Report frozen
+validation compression without fitting on it; reserve test text. Do not infer
+language-model quality from codec coverage or compression.
