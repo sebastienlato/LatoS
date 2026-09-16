@@ -40,3 +40,24 @@ of it. CPU CI uses read-only permissions, pinned action commits, a 15-minute job
 limit, and no full training. It has not run on GitHub before publication. Do not
 buy Actions capacity or enable paid resources; an unavailable included quota is
 a publication-time limitation to report.
+
+## 2026-09-16 — Bounded English data
+
+Begin with twelve hash-pinned historical English books and an independent tiny
+fixture. Reserve eight books for training, two for validation, and two for test;
+all author groups are disjoint. Fixed document assignments precede paragraph
+extraction. No source aliases may cross split boundaries. A small, transparent
+corpus lets us prove acquisition and integrity before considering larger data.
+It does not support a claim of broad modern English competence.
+
+Use Python's standard library for the pipeline, with a 20 MB raw manifest budget
+and at most 50,000 candidate paragraphs. Keep original bytes/notices outside Git.
+Pin exact bytes, fail on changed sources, and publish only compact metadata and
+reports. Source wrappers/front matter are excluded using checked boundaries.
+
+Compare complete word five-shingle sets at Jaccard >=0.80; index every shingle.
+This trades memory for a testable lexical guarantee at the current scale. Preserve
+held-out examples before training duplicates. Do not silently alter thresholds or
+splits based on future model performance. Record normalization/filter policy and
+the pipeline implementation hash with every output. Other language or larger
+corpus support needs its own measured implementation.

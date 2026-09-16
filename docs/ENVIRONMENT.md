@@ -84,3 +84,14 @@ Linux ARM, mixed precision, native extension compilation, and full model/trainin
 operations are untested. A simulated backend test proves selection/error handling,
 not hardware execution. No datasets, tokenizer, weights, training, paid compute,
 or remote publication were involved in Phase 0.
+
+## Publication follow-up — 2026-09-16
+
+After the owner's approval, Phase 0 commit
+`a33d84d0200a3e46879bc506a3f8c9a82db2ff7c` was published to private
+`sebastienlato/LatoS`, with `main` and annotated tag `v0.1.0` verified remotely.
+[Linux CPU CI](https://github.com/sebastienlato/LatoS/actions/runs/35145730007)
+passed: 22 tests, lint/format, CPU doctor, and package build. Its runtime reported
+Python 3.14.7 and PyTorch 2.14.0+cpu. The statements above about unexecuted Linux
+CI describe the original pre-publication checkpoint. Phase 1 validation is
+recorded separately in [its experiment report](../experiments/phase-1/REPORT.md).

@@ -4,48 +4,59 @@ Updated: 2026-09-16.
 
 ## Active phase
 
-Phase 0 — foundation complete locally; publication approval pending.
+Phase 1 — English data pipeline complete locally; publication approval pending.
 
-Implemented an installable `latos` package, help/version/doctor CLI, explicit backend
-selection with float32 execution checks, pinned environment and lockfile, tests,
-CPU CI definition, setup/evidence/provenance docs, MIT license, and phased roadmap.
-The starter instructions and ignore rules were preserved.
+Implemented checksum-pinned acquisition, English text cleaning, whole-book and
+whole-author split validation, exact/near duplicate removal, JSONL export, an
+integrity audit, a tiny original fixture, provenance, and reproducible reports.
+Package version: 0.2.0. No new Python dependency was added.
 
 ## Evidence and limits
 
-- 22 tests passed in both the development environment and a clean environment
-  using the built wheel outside the source directory.
-- CPU and MPS arithmetic/gradient checks passed on macOS arm64, Apple M4 Max,
-  64 GiB RAM; Python 3.14.7 and PyTorch 2.14.0.
-- Lint, format, dependency compatibility, build, and archive checks passed.
-- Separate review completed; float32 default-dependence and formatting findings
-  fixed. Publication content inspected for private material.
-- Linux CI has not executed remotely; CUDA and other platforms are untested.
-  No model, data pipeline, training, or language-quality result exists yet.
-- No implementation blocker. Detailed evidence: [environment report](docs/ENVIRONMENT.md).
+- 12 source books acquired through the implemented CLI: 7,718,091 raw bytes.
+- Final corpus: 9,171 training, 1,030 validation, 2,394 test paragraphs; 8/2/2 books.
+- One exact and one near duplicate removed; audit found none remaining under the
+  declared lexical metric. The fixture verifies cross-split held-out priority.
+- Two independent downloads/preparations with different hash seeds produced
+  identical files. Preparation plus audit: 3.46 seconds, 514,048,000 bytes maximum
+  resident set size on the Mac host; these are pipeline, not training measurements.
+- 49 tests passed in development and clean built-wheel environments. Lint, format,
+  dependency compatibility, package contents, and CLI fixture checks passed.
+- Separate review completed; checksum-before-parse, precise credit filtering,
+  and alphabetic-word filtering fixes validated by regression tests.
+- Historical corpus has narrow coverage and dated/bias-prone content. The script
+  filter is not language identification; duplicate checks are lexical, not semantic.
+  No tokenizer, model, training, or language-quality result exists yet.
+- Phase 1 Linux CI awaits publication. Details and hashes:
+  [Phase 1 report](experiments/phase-1/REPORT.md), [data guide](docs/DATA.md).
+
+## Publication history
+
+Phase 0 was explicitly approved and published on 2026-09-16. Remote `main` and
+annotated tag `v0.1.0` were verified at
+`a33d84d0200a3e46879bc506a3f8c9a82db2ff7c` in private `sebastienlato/LatoS`.
+[Linux CPU CI](https://github.com/sebastienlato/LatoS/actions/runs/35145730007)
+passed all Phase 0 checks, including 22 tests.
 
 ## Pending publication
 
-- Local branch: `main`; checkpoint commit message: `Complete Phase 0 foundation`.
-  The checkpoint is the commit containing this Phase 0 state; its exact object ID
-  is given in the approval request (inspect `git log -1 --format=%H` at this checkpoint).
-- No remote configured and no GitHub writes performed.
-- Read-only GitHub checks authenticated `sebastienlato`; repository lookup returned
-  404 and the account's repository listing had no matching name on 2026-09-16.
-- Proposal: create **private** `sebastienlato/LatoS`, add `origin` at
-  `https://github.com/sebastienlato/LatoS.git`, push the reviewed checkpoint to
-  `main`, and create/push annotated tag `v0.1.0` at that same commit.
-- No release, package publication, archive, or model upload proposed.
-- Approval: **not yet granted**. Do not interpret development authorization as
-  permission to write to GitHub. Recheck destination before creating it.
+- Local branch: `main`; checkpoint message: `Complete Phase 1 English data pipeline`.
+  The checkpoint is the commit containing this Phase 1 state; its full ID is in
+  the approval request and available from `git log -1 --format=%H` at this checkpoint.
+- Existing origin: `https://github.com/sebastienlato/LatoS.git` (private).
+- Proposal: push this reviewed commit to `main`, create/push annotated tag
+  `v0.2.0` at the same commit. No repository/access changes, release, or data upload.
+- Approval: **not yet granted for Phase 1**. Phase 0 approval does not cover it.
+- Raw and prepared corpora remain ignored at `data/raw/english-books-v1/` and
+  `data/processed/english-books-v1/`; retain them. A verified second copy/run is
+  available in sibling directories. The tracked report records artifact hashes.
 
 ## Next action
 
-Await the owner's explicit response to “Push Phase 0 to GitHub?” After approval,
-publish the exact checkpoint and verify remote branch and tag identities, inspect
-the first CI result without enabling paid resources, then begin Phase 1 English
-data development. Phase 1 needs its own publication approval.
+Await “Push Phase 1 to GitHub?” approval. After yes, publish the exact checkpoint,
+verify remote branch/tag identities and inspect CI, then begin Phase 2: train an
+original byte-level BPE tokenizer on `train.jsonl` only. Keep validation and test
+reserved. Phase 2 publication requires its own approval.
 
-The project-local bootstrap uv executable is `.private/tools/bin/uv`; the Python
-runtime is under `.private/python`. `uv run --locked` uses the existing `.venv`.
-Use the setup guide if these ignored environments are absent in another checkout.
+Local uv: `.private/tools/bin/uv`; existing `.venv` uses the project-local runtime
+under `.private/python`. See setup documentation for fresh environments.

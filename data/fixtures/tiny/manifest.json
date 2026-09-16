@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "id": "tiny-english-v1",
+  "sources": [
+    {
+      "id": "fixture-train",
+      "document_id": "fixture-train",
+      "group_id": "fixture-train",
+      "title": "LatoS train fixture",
+      "creator": "LatoS contributors, with AI assistance",
+      "language": "en",
+      "split": "train",
+      "format": "text",
+      "path": "train.txt",
+      "bytes": 1062,
+      "sha256": "ee486a093eddacd3fd8e5bd779eb26a6f505e4ac984d22b46ab6f3161b5dd49b",
+      "metadata_url": "README.md",
+      "license": "MIT",
+      "license_url": "../../../LICENSE",
+      "revision": "1",
+      "retrieved_at": "2026-09-16"
+    },
+    {
+      "id": "fixture-validation",
+      "document_id": "fixture-validation",
+      "group_id": "fixture-validation",
+      "title": "LatoS validation fixture",
+      "creator": "LatoS contributors, with AI assistance",
+      "language": "en",
+      "split": "validation",
+      "format": "text",
+      "path": "validation.txt",
+      "bytes": 613,
+      "sha256": "01b8c8c3853be027cc155079024796f22e013d5987077674a17e0e7f3b46eff6",
+      "metadata_url": "README.md",
+      "license": "MIT",
+      "license_url": "../../../LICENSE",
+      "revision": "1",
+      "retrieved_at": "2026-09-16"
+    },
+    {
+      "id": "fixture-test",
+      "document_id": "fixture-test",
+      "group_id": "fixture-test",
+      "title": "LatoS test fixture",
+      "creator": "LatoS contributors, with AI assistance",
+      "language": "en",
+      "split": "test",
+      "format": "text",
+      "path": "test.txt",
+      "bytes": 864,
+      "sha256": "9611ca0ef9dd776e4878f3875af640bbdf0496df9047eb8e629408f1f14e31e3",
+      "metadata_url": "README.md",
+      "license": "MIT",
+      "license_url": "../../../LICENSE",
+      "revision": "1",
+      "retrieved_at": "2026-09-16"
+    }
+  ]
+}

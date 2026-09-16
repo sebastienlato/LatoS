@@ -3,8 +3,8 @@
 ## Supported checkpoint environment
 
 The recorded local environment is CPython 3.14.7 on Apple Silicon macOS. Linux
-x86-64 CPU dependencies are locked and a CI job is configured, but that job has
-not yet executed. Other operating systems, architectures, Python series, CUDA,
+x86-64 CPU dependencies are locked and Phase 0 passed its published CI job.
+Phase 1 data CI awaits publication. Other operating systems, architectures, Python series, CUDA,
 and mixed precision are untested. See [ENVIRONMENT.md](ENVIRONMENT.md).
 
 Install [uv](https://docs.astral.sh/uv/getting-started/installation/) version
@@ -68,5 +68,6 @@ must remain recorded when later upgrades are introduced.
 
 Build products remain in ignored `dist/`. Inspect source and wheel member lists
 before sharing; never archive the entire working directory. Package builds use
-explicit source inclusion rules to exclude local planning, environments, data,
-and checkpoints. Source archives retain project docs, tests, and the lockfile.
+explicit source inclusion rules to exclude local planning, environments, acquired
+corpora, and checkpoints. Source archives retain project docs, tests, the lockfile,
+data manifests, the original tiny fixture, and compact experiment reports.

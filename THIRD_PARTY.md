@@ -57,5 +57,26 @@ with read-only GitHub API requests on 2026-09-16. No action implementation is ve
 - [PyTorch installation](https://pytorch.org/get-started/locally/) and [MPS backend](https://docs.pytorch.org/docs/2.14/notes/mps.html): runtime installation and backend detection.
 - [uv projects](https://docs.astral.sh/uv/concepts/projects/), [PyTorch integration](https://docs.astral.sh/uv/guides/integration/pytorch/), and [GitHub Actions integration](https://docs.astral.sh/uv/guides/integration/github/): locking, indexes, and CI.
 
-Consulted on 2026-09-16. No research algorithm has been implemented in Phase 0;
-later phases will add the primary papers and source-specific data terms they use.
+Consulted on 2026-09-16. Phase 0 did not implement a model or research algorithm.
+
+## Phase 1 data and duplicate detection
+
+- [Project Gutenberg](https://www.gutenberg.org/): twelve independently selected
+  English texts; catalog attribution, original credits, revision, terms, source
+  URLs, and SHA-256 identities are recorded in
+  [the source manifest](data/manifests/english-books-v1.json).
+- [Gutenberg license](https://www.gutenberg.org/policy/license.html),
+  [permission guidance](https://www.gutenberg.org/policy/permission.html),
+  [robot access guidance](https://www.gutenberg.org/policy/robot_access.html), and
+  [official mirror list](https://www.gutenberg.org/MIRRORS.ALL): acquisition and
+  original-file terms. The acquired books are not bundled in Git or packages.
+- [Canadian copyright guidance](https://ised-isde.canada.ca/site/canadian-intellectual-property-office/en/guide-copyright):
+  jurisdiction-specific selection context; see [DATA.md](docs/DATA.md).
+- Manning, Raghavan, and Schütze, *Introduction to Information Retrieval* (2008),
+  [near-duplicates and shingling](https://nlp.stanford.edu/IR-book/html/htmledition/near-duplicates-and-shingling-1.html):
+  established shingle-set/Jaccard method. LatoS's implementation is original and
+  compares exact sets using an inverted index, not the book's randomized sketch.
+
+Checked on 2026-09-16. The tiny fixture is original AI-assisted writing under MIT;
+its provenance is in [the fixture README](data/fixtures/tiny/README.md). No new
+third-party Python dependency was added in Phase 1.

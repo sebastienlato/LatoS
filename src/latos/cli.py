@@ -2,6 +2,7 @@
 
 import argparse
 import json
+from pathlib import Path
 
 from latos import __version__
 
@@ -15,9 +16,37 @@ def main(argv: list[str] | None = None) -> int:
     doctor = commands.add_parser("doctor", help="Inspect this host and test a PyTorch backend")
     doctor.add_argument("--device", choices=("auto", "cpu", "mps", "cuda"), default="auto")
     doctor.add_argument("--json", action="store_true", help="Print machine-readable diagnostics")
+    data = commands.add_parser(
+        "data", help="Acquire, prepare, or audit a documented English corpus"
+    )
+    actions = data.add_subparsers(dest="data_action", required=True)
+    for name in ("acquire", "prepare", "audit"):
+        action = actions.add_parser(name)
+        action.add_argument("--manifest", type=Path, required=True)
+        if name != "audit":
+            action.add_argument("--raw-dir", type=Path, required=True)
+        if name != "acquire":
+            action.add_argument("--output-dir", type=Path, required=True)
     args = parser.parse_args(argv)
     if args.command is None:
         parser.print_help()
+        return 0
+
+    if args.command == "data":
+        from latos.data.acquire import acquire
+        from latos.data.prepare import audit, prepare
+
+        try:
+            if args.data_action == "acquire":
+                report = acquire(args.manifest, args.raw_dir)
+            elif args.data_action == "prepare":
+                report = prepare(args.manifest, args.raw_dir, args.output_dir)
+            else:
+                report = audit(args.manifest, args.output_dir)
+        except (OSError, ValueError, KeyError, TypeError) as exc:
+            print(json.dumps({"status": "error", "error": str(exc)}, indent=2))
+            return 1
+        print(json.dumps(report, indent=2))
         return 0
 
     # Help and version remain usable when the tensor runtime cannot be imported.
