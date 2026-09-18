@@ -66,7 +66,12 @@ def test_missing_memory_api_is_unknown(monkeypatch):
     def unavailable(name):
         raise ValueError("Unsupported")
 
-    monkeypatch.setattr(doctor.os, "sysconf", unavailable)
+    monkeypatch.setattr(doctor.os, "sysconf", unavailable, raising=False)
+    assert doctor.physical_memory_bytes() is None
+
+
+def test_missing_memory_attribute_is_unknown(monkeypatch):
+    monkeypatch.delattr(doctor.os, "sysconf", raising=False)
     assert doctor.physical_memory_bytes() is None
 
 

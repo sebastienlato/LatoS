@@ -144,3 +144,18 @@ on the actual Python 3.14.7 environment. Its
 tensor-only storage. It adds no new transitive dependencies to the existing runtime.
 The resolved wheel identities are in `uv.lock`; upstream license notices apply.
 Sources checked on 2026-09-16.
+
+## Phase 3 Windows correction — 2026-09-18
+
+The Windows route uses the official
+[PyTorch CUDA 13.0 index](https://download.pytorch.org/whl/cu130/torch/), selecting
+2.14.0+cu130 for CPython 3.14 Windows x86-64. The same upstream PyTorch licensing
+and its bundled-component notices apply; no CUDA wheel is redistributed here.
+Windows resolution adds [Colorama 0.4.6](https://pypi.org/project/colorama/0.4.6/),
+BSD-3-Clause, as a Windows-only transitive dependency of pytest/tqdm. Existing
+non-Windows dependency versions and wheel hashes are retained.
+
+Primary guidance: [uv PyTorch sources](https://docs.astral.sh/uv/guides/integration/pytorch/),
+[uv environment constraints](https://docs.astral.sh/uv/reference/settings/#environments),
+and [NVIDIA driver/runtime compatibility](https://docs.nvidia.com/deploy/cuda-compatibility/minor-version-compatibility.html).
+Index resolution is verified; real Windows/CUDA execution is still pending.

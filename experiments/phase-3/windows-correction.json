@@ -1,0 +1,87 @@
+{
+  "date": "2026-09-18",
+  "phase": 3,
+  "base_commit": "deed6e9b0303967dd82f7a3205e03b9c4f05ffe7",
+  "original_tag": "v0.4.0",
+  "package_version": "0.4.1",
+  "reported_windows_machine": {
+    "os": "Windows 11 Home 25H2",
+    "gpu": "NVIDIA RTX 4070 SUPER",
+    "driver": "616.92",
+    "driver_reported_cuda": "13.4",
+    "uv": "0.12.15",
+    "python": "3.14.7",
+    "result": "uv sync --locked rejected unsupported lockfile environment; PyTorch not installed; no CUDA/model tests executed"
+  },
+  "windows_torch": {
+    "version": "2.14.0+cu130",
+    "index": "https://download.pytorch.org/whl/cu130",
+    "wheel": "torch-2.14.0+cu130-cp314-cp314-win_amd64.whl",
+    "wheel_sha256": "sha256:78ab64d12e478c8baedc4d90e662f6ffca2b6cb8a872a02b734a8aa3e00277eb"
+  },
+  "install_plans": {
+    "macos_arm64_minimum_14": "passed on Mac (cross-target dry run)",
+    "linux_x86_64_cpu": "passed on Mac (cross-target dry run)",
+    "windows_x86_64_cuda": "passed on Mac (cross-target dry run)"
+  },
+  "existing_contracts": [
+    {
+      "platform": "darwin/arm64",
+      "external_packages": 34,
+      "versions_and_sources_unchanged": true,
+      "all_original_wheels_and_hashes_preserved": true
+    },
+    {
+      "platform": "linux/x86_64",
+      "external_packages": 34,
+      "versions_and_sources_unchanged": true,
+      "all_original_wheels_and_hashes_preserved": true
+    }
+  ],
+  "mac_regressions": {
+    "pytest": {
+      "passed": 128
+    },
+    "pilot_cpu": {
+      "status": "ok",
+      "device": "cpu",
+      "dtype": "float32",
+      "parameter_count": 17308032,
+      "logits_shape": [
+        2,
+        32,
+        8192
+      ],
+      "synthetic_loss": 9.030350685119629,
+      "gradient_norm": 22.837358411831655,
+      "causal_prefix_max_abs_difference": 0.0,
+      "optimizer_steps": 0,
+      "weights": "random initialization",
+      "seed": 17
+    },
+    "pilot_mps": {
+      "status": "ok",
+      "device": "mps",
+      "dtype": "float32",
+      "parameter_count": 17308032,
+      "logits_shape": [
+        2,
+        32,
+        8192
+      ],
+      "synthetic_loss": 9.030350685119629,
+      "gradient_norm": 22.83735977494688,
+      "causal_prefix_max_abs_difference": 0.0,
+      "optimizer_steps": 0,
+      "weights": "random initialization",
+      "seed": 17
+    },
+    "clean_wheel_pytest": {
+      "passed": 128
+    }
+  },
+  "native_windows_installation": "not executed; awaiting owner retest",
+  "real_cuda_execution": "not executed; awaiting owner retest",
+  "external_native_linux": "awaiting owner validation",
+  "phase4_authorized": false
+}

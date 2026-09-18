@@ -1,66 +1,61 @@
 # Project state
 
-Updated: 2026-09-16.
+Updated: 2026-09-18.
 
 ## Active phase
 
-Phase 3 — original dense transformer complete locally; publication approval pending.
+Phase 3 — Windows environment correction complete locally; push approval pending.
+Phase 4 remains paused and is not authorized.
 
-Implemented bounded model configurations, pre-RMSNorm causal attention with rotary
-positions, SwiGLU, tied input/output embeddings, next-token loss, Safetensors model
-snapshots, and bounded sampling. Package 0.4.0; Safetensors 0.8.0 is locked.
+The published Phase 3 commit is `deed6e9b0303967dd82f7a3205e03b9c4f05ffe7`,
+fixed at v0.4.0. Owner validation on Windows 11 Home 25H2 / NVIDIA RTX 4070 SUPER
+reported an unsupported lock environment during `uv sync --locked`. PyTorch was
+not installed and no CUDA/model tests ran. This is a dependency configuration
+blocker, not evidence of a Transformer or CUDA failure.
 
-## Evidence and limits
+## Correction and evidence
 
-- Actual unique parameters: debug 631,104; pilot 17,308,032. Both use the pinned
-  8,192-entry tokenizer. Counts match an independent analytical formula.
-- 118 tests passed in development and fresh built-wheel environments: numerical
-  equations/gradients, causal prefixes and gradients, loss alignment/masking,
-  shapes, binding, snapshots, invalid inputs, and sampling. Lint/format/build,
-  dependency compatibility, archive contents, and workflow parsing also passed.
-- Debug and pilot forward/backward passed on CPU and MPS in float32. Pilot also
-  passed at its full 512-position context. No optimizer steps were run.
-- Debug CPU/MPS max differences: logits 2.3842e-7, loss 9.5367e-7, gradients 4.6194e-7.
-  Same-mode causal-prefix differences were zero on both provided configurations.
-- Pilot weights and CPU logits round-trip exactly. CPU and MPS bounded sampling
-  passed. Review fixed MPS combined-transfer/float64 corruption, tiny-temperature
-  probability handling, logit mutation, and causal diagnostic execution-mode mismatch.
-- Separate review complete. Detailed limits, timings, hashes, and evidence:
-  [Phase 3 report](experiments/phase-3/REPORT.md), [model guide](docs/MODEL.md).
-- Weights are random, without language-quality evidence. No optimizer/training
-  engine, padding-attention mask, KV cache, or chat. CUDA and mixed precision are
-  untested; Phase 3 Linux CI awaits publication.
+- Package 0.4.1 adds Windows x86-64 with explicit official PyTorch 2.14.0+cu130.
+  Both native AMD64 and cross-target x86_64 markers are covered; other Windows
+  architectures remain excluded. uv 0.12.15 and Python 3.14.7 remain pinned.
+- macOS retains PyPI PyTorch 2.14.0; Linux retains official 2.14.0+cpu. All 34
+  external packages on each existing platform keep their versions and sources,
+  and every original wheel URL/hash is preserved. Windows-only Colorama is locked.
+- No `src/` code, model settings, numerical thresholds, or CI jobs changed.
+  Associated tests now handle an absent Unix memory API and read UTF-8 explicitly.
+- 128 tests passed in the Mac environment and a fresh installed-wheel environment.
+  Lint/format, dependency checks, builds, CPU/MPS doctor and pilot checks passed.
+- All three targeted locked install dry runs pass; the complete dependency graphs
+  have hashed CPython 3.14 wheels. These checks ran on Mac, not Windows/Linux.
+- Windows installation and real CUDA remain unexecuted here; the owner must retest
+  the new exact commit on the RTX 4070 SUPER. External native Linux results are pending.
+- Evidence and retest procedure: [correction report](experiments/phase-3/WINDOWS_CORRECTION.md),
+  [setup](docs/SETUP.md). Original model evidence remains in the Phase 3 report.
 
-## Published checkpoints
+## Publication history and proposed correction
 
 Private origin: `https://github.com/sebastienlato/LatoS.git`.
+Phases 0–2 and Phase 3/v0.4.0 were explicitly approved and published. The original
+[Phase 3 Linux CPU CI](https://github.com/sebastienlato/LatoS/actions/runs/35368714640)
+passed. It does not replace external native Windows/CUDA or Linux validation.
 
-- Phase 0: `a33d84d0200a3e46879bc506a3f8c9a82db2ff7c`, v0.1.0, Linux CI 22 tests.
-- Phase 1: `fe9818b983aac00d5bba8e2a7b7686637f9e4a7a`, v0.2.0, Linux CI 49 tests.
-- Phase 2: `1ed47127c05d8d6de0095f688fd3ad5f24c62b48`, v0.3.0; main/tag verified
-  after explicit approval. [Linux CI](https://github.com/sebastienlato/LatoS/actions/runs/35149689542)
-  passed 85 tests and offline tokenizer checks.
+- Local branch: main; checkpoint message: `Fix Phase 3 Windows CUDA dependency lock`.
+  The correction is the commit containing this state; its full ID is given in the
+  approval request and by `git log -1 --format=%H` at that checkpoint.
+- Proposal: push this reviewed correction to private sebastienlato/LatoS main and
+  create/push annotated tag v0.4.1. Leave v0.4.0 fixed. No releases or artifact uploads.
+- Correction push approval: **pending**. No correction has been pushed.
+- Preserve ignored `checkpoints/phase-3-pilot-initial/`,
+  `artifacts/tokenizers/english-bpe-v1/`, and original raw/prepared corpora.
 
-## Pending publication
+## Next action and external gate
 
-- Local branch: `main`; message: `Complete Phase 3 dense transformer`.
-  Checkpoint is the commit containing this state; full ID is in the approval
-  request and available from `git log -1 --format=%H` at this checkpoint.
-- Proposal: push this reviewed commit to existing private `sebastienlato/LatoS`
-  main, with annotated tag `v0.4.0`. No releases, access changes, or weight uploads.
-- Approval: **not granted for Phase 3**; prior phase approvals do not cover it.
-- Preserve ignored `checkpoints/phase-3-pilot-initial/` (random seed 17): weights
-  SHA-256 `99dce7bf0356bf7d641dff4b29d6616772dfbf9779877e0c085bdea9e368b5f2`.
-- Preserve `artifacts/tokenizers/english-bpe-v1/`: tokenizer SHA-256
-  `7dce3d0888f6a37d3eadbd077a9ff73170a54a1f6e301e51b2ae6d998142b0ab`.
-- Retain ignored `data/raw/english-books-v1/` and `data/processed/english-books-v1/`.
-
-## Next action
-
-Await “Push Phase 3 to GitHub?” approval. On yes, publish the exact checkpoint,
-verify remote branch/tag and inspect CI, then begin Phase 4: batching, optimizer,
-schedule, validation, checkpoint/resume, tiny-fixture overfit, and uninterrupted
-versus resumed comparison on a defined backend. Model-only Phase 3 snapshots do
-not contain resumable training state. Phase 4 publication needs its own approval.
+Stop for owner approval before pushing. If approved, publish only the described
+correction, verify the exact remote commit/tag, then PAUSE for the owner's Windows
+RTX 4070 SUPER and native Linux retests. Those machines are validation-only and
+will not modify or push the repository. Address any supplied Phase 3 failure
+before progression. Start Phase 4 only when both environments pass AND the owner
+explicitly authorizes it; no earlier automatic-transition instruction overrides
+this gate. Do not infer authorization from a push approval or CI result.
 
 Local uv: `.private/tools/bin/uv`; `.venv` uses the runtime under `.private/python`.

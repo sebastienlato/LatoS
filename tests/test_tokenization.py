@@ -147,7 +147,7 @@ def test_train_rejects_held_out_record_even_with_updated_hash(prepared, tmp_path
 def test_vocabulary_and_merge_identity(prepared):
     root, metadata = prepared
     codec = LatoTokenizer.load(root / "artifact", expected_sha256=metadata["tokenizer_sha256"])
-    state = json.loads((root / "artifact/tokenizer.json").read_text())
+    state = json.loads((root / "artifact/tokenizer.json").read_text(encoding="utf-8"))
     assert codec.vocab_size <= 512
     assert codec.vocab_size == 260 + len(state["model"]["merges"])
     assert metadata["vocab_sha256"] == sha256(canonical_json(state["model"]["vocab"]))
@@ -167,7 +167,7 @@ def test_contract_change_is_rejected_even_with_updated_hash(prepared, tmp_path):
     root, _ = prepared
     target = tmp_path / "artifact"
     shutil.copytree(root / "artifact", target)
-    state = json.loads((target / "tokenizer.json").read_text())
+    state = json.loads((target / "tokenizer.json").read_text(encoding="utf-8"))
     state["normalizer"] = {"type": "Lowercase"}
     data = canonical_json(state)
     (target / "tokenizer.json").write_bytes(data)

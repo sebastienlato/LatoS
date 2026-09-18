@@ -25,10 +25,10 @@ uv run --locked pytest
 ```
 
 The environment uses Python 3.14.7 and PyTorch 2.14.0. The lock targets macOS
-Apple Silicon and Linux x86-64 CPU. Phase 0 checks passed locally on the Mac and
-in Linux CPU CI; Phase 1 data and Phase 2 tokenizer CI also passed. Phase 3 is
-validated on local CPU and MPS, with its Linux CI run pending publication.
-CUDA and other platforms are not validated. See [setup](docs/SETUP.md) and
+Apple Silicon, Linux x86-64 CPU, and Windows x86-64 with the pinned CUDA 13.0 build.
+Phase 3 passed local CPU/MPS checks and Linux CPU CI. Windows install planning is
+verified, but real Windows/CUDA and external native Linux validation remain pending.
+See [setup and Windows retest instructions](docs/SETUP.md) and
 [recorded environment evidence](docs/ENVIRONMENT.md).
 
 `doctor` reports detected backends and executes a tiny float32 matrix product and

@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.4.1 — Phase 3 Windows environment correction (local, 2026-09-18)
+
+- Add Windows x86-64 to the lock and select official PyTorch 2.14.0+cu130 there.
+- Preserve macOS/Linux dependency versions, sources, and existing wheel hashes.
+- Check platform selection and binary dependency coverage; remove two Windows-only
+  assumptions in the tests (Unix memory API availability and default file encoding).
+- Record the reported installation blocker and the external retest procedure.
+
+Publication awaits approval. Windows/CUDA execution remains unvalidated; no model
+code or Phase 4 work is included. The original v0.4.0 tag must not be moved.
+
 ## 0.4.0 — Phase 3, local checkpoint (2026-09-16)
 
 - Original dense decoder, RMSNorm, rotary attention, SwiGLU, and tied output projection.
