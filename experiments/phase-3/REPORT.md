@@ -1,5 +1,9 @@
 # Phase 3 transformer evidence
 
+Historical implementation evidence. See [CLOSURE.md](CLOSURE.md) for the final
+v0.4.2 Windows/CUDA PASS, separate Linux CI result, physical Linux deferral, and
+the current Phase 4 hold; those updates supersede this report's pending-status text.
+
 Recorded 2026-09-16 on the macOS 26.6.2 Apple M4 Max execution host (64 GiB RAM).
 LatoS 0.4.0, Python 3.14.7, PyTorch 2.14.0, Safetensors 0.8.0.
 The source checkpoint is the Phase 3 commit containing this report. Concatenated

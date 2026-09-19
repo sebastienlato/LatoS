@@ -1,6 +1,18 @@
 # Changelog
 
-## 0.4.2 — Phase 3 fixture checkout correction (local, 2026-09-19)
+## Phase 3 closure — documentation only (2026-09-19)
+
+- Record owner-reported Windows/CUDA PASS on exact v0.4.2: 131 tests passed and
+  one Apple-MPS-only test skipped, with actual RTX 4070 SUPER tensor/model execution.
+- Record GitHub Linux CPU CI separately: 131 passed, one MPS-only skip.
+- Record independent physical Linux validation as deferred by the owner due to
+  machine unavailability; do not substitute CI for that physical-machine test.
+- Close Phase 3 locally and prepare the fresh-chat Phase 4 handoff. Publication
+  approval is pending, and no Phase 4 development is authorized in this chat.
+
+Package/code version remains 0.4.2; the externally validated tag is unchanged.
+
+## 0.4.2 — Phase 3 fixture checkout correction (published, 2026-09-19)
 
 - Force LF checkout for fixture text and JSON manifests through `.gitattributes`.
 - Preserve all existing fixture payload bytes, manifest sizes/hashes, and strict
@@ -8,10 +20,11 @@
 - Exercise actual Git checkout conversion across four settings, then verify
   acquisition/preparation and rejection of deliberately converted CRLF input.
 
-Publication awaits approval. Native Windows/CUDA retesting and Phase 4 remain paused.
-The original v0.4.0 and v0.4.1 tags must remain fixed.
+Published after approval and verified at 1102b64714b58c1f2289f80863fa032cc192c47b.
+The independent Windows/CUDA retest passed. See the closure entry for limits and
+the Phase 4 hold. Existing tags remain fixed.
 
-## 0.4.1 — Phase 3 Windows environment correction (local, 2026-09-18)
+## 0.4.1 — Phase 3 Windows environment correction (published, 2026-09-18)
 
 - Add Windows x86-64 to the lock and select official PyTorch 2.14.0+cu130 there.
 - Preserve macOS/Linux dependency versions, sources, and existing wheel hashes.
@@ -19,17 +32,19 @@ The original v0.4.0 and v0.4.1 tags must remain fixed.
   assumptions in the tests (Unix memory API availability and default file encoding).
 - Record the reported installation blocker and the external retest procedure.
 
-Publication awaits approval. Windows/CUDA execution remains unvalidated; no model
-code or Phase 4 work is included. The original v0.4.0 tag must not be moved.
+Published after approval at 14c76284d1ec670e4022584638a5030a9da87140. Installation
+passed externally, but fixture checkout conversion blocked testing until 0.4.2.
+No model code or Phase 4 work was included. The original tag remains fixed.
 
-## 0.4.0 — Phase 3, local checkpoint (2026-09-16)
+## 0.4.0 — Phase 3, implemented 2026-09-16; published 2026-09-18
 
 - Original dense decoder, RMSNorm, rotary attention, SwiGLU, and tied output projection.
 - Next-token loss, independent numerical references, finite gradients, and causality checks.
 - Bounded configurations, verified Safetensors snapshots, and deterministic basic sampling.
 - CPU/MPS validation, including a fix for nonfinite values from a combined MPS transfer/cast.
 
-Phase 3 publication is pending approval. Weights are untrained; no training engine exists yet.
+Published after approval at deed6e9b0303967dd82f7a3205e03b9c4f05ffe7. The initial
+Windows lock exclusion was corrected in 0.4.1. Weights remain untrained.
 
 ## 0.3.0 — Phase 2, published (2026-09-16)
 

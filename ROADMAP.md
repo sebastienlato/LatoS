@@ -3,7 +3,16 @@
 These are planned capabilities, not claims about the current package. Each phase
 requires working deliverables, recorded checks, a separate review and fixes,
 updated state, and a local commit before its publication approval. After an
-approved push is verified, development proceeds to the next phase.
+approved push is verified, development proceeds to the next phase unless the owner
+has imposed a pause or transition gate, as recorded in PROJECT_STATE.md.
+
+Phase 3 is closed locally with owner-reported Windows/CUDA PASS at v0.4.2 and
+verified GitHub Linux CPU CI. Independent physical Linux validation is explicitly
+deferred by the owner because that machine is temporarily unavailable; it is not
+a recorded pass. Closure documentation awaits publication approval. Phase 4 has
+not started and must be authorized in a fresh Work chat. See
+[closure evidence](experiments/phase-3/CLOSURE.md) and
+[the continuity handoff](docs/PHASE4_HANDOFF.md).
 
 | Phase | Deliverable | Acceptance evidence |
 | --- | --- | --- |

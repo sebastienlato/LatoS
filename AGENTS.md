@@ -46,7 +46,9 @@ from somewhere else.
   destination branch, and proposed tag (if any), then ask: "Push Phase N to GitHub?"
   A yes authorizes only the described phase publication, not later phases' pushes.
 - After approval, publish that exact state, verify the remote commit, and continue
-  directly with the next phase. Do not ask a second permission to begin development.
+  directly with the next phase only when no owner-imposed transition gate or pause
+  is active. Honor the current gate in PROJECT_STATE.md; push approval alone never
+  overrides it. Do not add routine phase-start approvals where none are required.
   If approval is declined, preserve the local result and await direction.
 - If the reviewed source changes materially after approval, prepare a new summary
   and obtain approval for that changed publication. Never silently substitute it.

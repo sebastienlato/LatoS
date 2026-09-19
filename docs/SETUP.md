@@ -17,20 +17,23 @@ and 32-bit Python are not. The two custom indexes are explicit and used only for
 PyTorch. Other packages continue to resolve from PyPI. macOS/Linux versions,
 sources, and existing wheel hashes are unchanged.
 
-Local CPU/MPS regression checks pass. The original Phase 3 Linux CPU CI passed;
-native external Linux validation remains pending. Windows resolution was checked
-on Mac; the owner subsequently confirmed native installation and GPU detection.
-Real CUDA tensor/model execution still awaits the retest. These are different
-evidence levels. Other architectures, Python series, and mixed precision remain untested.
-See [the correction evidence](../experiments/phase-3/WINDOWS_CORRECTION.md).
+Phase 3 is closed locally at validated implementation v0.4.2,
+`1102b64714b58c1f2289f80863fa032cc192c47b`. Local Mac CPU/MPS checks passed.
+The owner reports a complete independent Windows/RTX 4070 SUPER CUDA PASS:
+131 tests passed, one MPS-only skip, and real CUDA tensor and debug/pilot model
+execution. GitHub-hosted Linux CPU CI passed separately at the same commit with
+131 passes and one MPS-only skip.
 
-The subsequent v0.4.1 Windows retest successfully installed PyTorch 2.14.0+cu130
-and detected the RTX 4070 SUPER, but stopped at a fixture setup error after nine
-test passes. Git's `core.autocrlf=true` had converted the byte-pinned LF fixtures
-to CRLF. Version 0.4.2 supplies fixture-specific checkout attributes; see
-[the checkout correction evidence](../experiments/phase-3/CHECKOUT_CORRECTION.md).
-CUDA tensor/model execution remains unvalidated because the external run stopped
-at that first test error.
+Independent physical Linux testing is explicitly deferred by the owner because
+the machine is temporarily unavailable. It was not performed; CI does not replace
+that evidence. Other architectures, Python series, and mixed precision remain
+untested. See [closure evidence](../experiments/phase-3/CLOSURE.md).
+
+Earlier Windows blockers are preserved in the
+[environment correction](../experiments/phase-3/WINDOWS_CORRECTION.md) and
+[checkout correction](../experiments/phase-3/CHECKOUT_CORRECTION.md) reports.
+The v0.4.2 PASS supersedes those failures for this exact implementation. Closure
+documentation publication awaits approval; Phase 4 must not start in this chat.
 
 Install [uv](https://docs.astral.sh/uv/getting-started/installation/) version
 0.12.15. To keep the bootstrap entirely within the checkout when uv is absent:
@@ -102,14 +105,13 @@ snapshots remain in ignored `checkpoints/`.
 
 ## Windows validation (PowerShell)
 
-Use the exact approved correction commit once it is published; record
+For reproduction, use the validated v0.4.2 implementation above and record
 `git rev-parse HEAD` before testing. No source or lock edits, unlocked upgrades,
 manual pip replacement of PyTorch, index overrides, or `--no-sources` are needed.
 The existing v0.4.0 tag continues to identify the original blocked checkpoint.
 
-For the 0.4.2 checkout correction, use a **fresh checkout of the exact approved
-commit** after publication. Existing working-tree files are not necessarily
-rewritten when a new `.gitattributes` is pulled. There is no need to change system
+Use a **fresh checkout of the exact validated commit**. Existing working-tree files
+are not necessarily rewritten when a new `.gitattributes` is pulled. There is no need to change system
 or global Git configuration or edit fixture files on the validation machine.
 Before syncing, these read-only commands should show `i/lf`, `w/lf`, and `eol: lf`
 for the three fixture payloads and their manifest:
@@ -156,6 +158,7 @@ CUDA 13.4 toolkit is not required to use this prebuilt wheel.
 For the existing offline tokenizer example in PowerShell, set
 `$env:RAYON_NUM_THREADS = "1"` before its `uv run` command; the README's inline
 environment assignment is POSIX shell syntax. Stop and report any failure rather
-than changing the validated environment on a validation-only machine. Both
-external platform results and explicit owner authorization are required before
-Phase 4 can begin.
+than changing the validated environment on a validation-only machine. Windows
+validation is complete; independent physical Linux testing is deferred at the
+owner's direction. Closure publication does not authorize Phase 4: the owner must
+start it explicitly in a fresh Work chat after publication is verified.

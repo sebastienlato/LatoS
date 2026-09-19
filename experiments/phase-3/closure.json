@@ -1,0 +1,83 @@
+{
+  "recorded_date": "2026-09-19",
+  "phase": 3,
+  "status": "closed locally; documentation publication pending approval",
+  "validated_implementation": {
+    "tag": "v0.4.2",
+    "commit": "1102b64714b58c1f2289f80863fa032cc192c47b",
+    "package_version": "0.4.2"
+  },
+  "windows_cuda": {
+    "result": "PASS",
+    "evidence_source": "Owner-reported independent validation summary in this conversation; raw logs not supplied",
+    "commit": "1102b64714b58c1f2289f80863fa032cc192c47b",
+    "tests_passed": 131,
+    "tests_skipped": 1,
+    "skip_reason": "Apple-MPS-only test",
+    "gpu": "NVIDIA RTX 4070 SUPER",
+    "environment_from_preceding_owner_machine_description": {
+      "os": "Windows 11 Home 25H2",
+      "python": "3.14.7",
+      "torch": "2.14.0+cu130",
+      "driver": "616.92",
+      "pytorch_cuda_runtime": "13.0"
+    },
+    "checks": [
+      "fresh checkout",
+      "locked installation",
+      "real CUDA matrix multiplication and backward",
+      "debug and pilot Transformer CUDA forward, loss, gradients, causality",
+      "CLI and CPU/automatic diagnostics",
+      "offline data and tokenizer workflows",
+      "builds and archive inspection"
+    ],
+    "tracked_files_unchanged": 74,
+    "commits_created": 0,
+    "pushes_performed": 0
+  },
+  "github_linux_cpu_ci": {
+    "result": "PASS",
+    "evidence_source": "GitHub run metadata, workflow definition, and logs directly inspected",
+    "commit": "1102b64714b58c1f2289f80863fa032cc192c47b",
+    "run_id": 35463376332,
+    "url": "https://github.com/sebastienlato/LatoS/actions/runs/35463376332",
+    "runner": "ubuntu-24.04",
+    "python": "3.14.7",
+    "torch": "2.14.0+cpu",
+    "tests_passed": 131,
+    "tests_skipped": 1,
+    "skip_reason": "MPS hardware unavailable",
+    "checks": [
+      "locked installation",
+      "Ruff lint and format",
+      "pytest",
+      "CPU doctor",
+      "debug model CPU diagnostic",
+      "offline data prepare/audit",
+      "source and wheel builds",
+      "offline tokenizer fit/validation"
+    ],
+    "independent_physical_linux_validation": false,
+    "cuda_validation": false
+  },
+  "independent_physical_linux": {
+    "result": "DEFERRED_NOT_PERFORMED",
+    "reason": "Owner says the physical machine is temporarily unavailable",
+    "owner_explicitly_deferred": true
+  },
+  "phase4": {
+    "started": false,
+    "authorized_in_this_chat": false,
+    "next_gate": "After approved closure publication is verified, wait for explicit owner authorization in a fresh Work chat. Physical Linux deferral must not be reported as a pass."
+  },
+  "publication": {
+    "approval": "pending",
+    "scope": "documentation only",
+    "new_tag": null,
+    "preserve_tags": [
+      "v0.4.0",
+      "v0.4.1",
+      "v0.4.2"
+    ]
+  }
+}

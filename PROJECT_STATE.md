@@ -2,63 +2,65 @@
 
 Updated: 2026-09-19.
 
-## Active phase
+## Phase status
 
-Phase 3 — fixture checkout correction complete locally; push approval pending.
-Phase 4 remains paused and is not authorized.
+Phase 3 is formally closed locally with Windows/CUDA PASS and an explicit owner
+deferral of independent physical Linux testing. Closure documentation is ready
+for publication approval. Phase 4 has not begun and must not begin in this chat.
 
-## External Windows result
+Validated implementation: **v0.4.2**, `1102b64714b58c1f2289f80863fa032cc192c47b`.
+This closure changes documentation only; runtime code and package version remain
+0.4.2. Existing tags must remain fixed.
 
-The owner tested v0.4.1 at `14c76284d1ec670e4022584638a5030a9da87140` on Windows 11
-Home 25H2, Python 3.14.7, PyTorch 2.14.0+cu130, RTX 4070 SUPER, driver 616.92,
-and PyTorch CUDA runtime 13.0. Locked install and GPU detection passed. Pytest
-stopped at its first setup error after nine passes: fixture-test size/hash mismatch.
-System core.autocrlf=true converted seven LF endings, changing test.txt from 864
-to 871 bytes. Committed blobs matched the manifest. The owner reports no edits,
-commits, or pushes. CUDA tensor/model execution is still NOT VALIDATED.
+## Evidence and limits
 
-## Correction and evidence
+- Local Mac CPU/MPS evidence: 132 tests passed in development and clean installation,
+  with numerical, snapshot, sampling, dependency, and checkout checks already recorded.
+- Independent Windows/RTX 4070 SUPER CUDA: **PASS**, reported by the owner for the
+  exact v0.4.2 commit. 131 tests passed, one MPS-only skip. Real CUDA matrix multiply/
+  backward and debug/pilot forward, loss, gradients, and causality passed, along with
+  CLI, diagnostics, offline data/tokenizer workflows, builds, and archive inspection.
+  All 74 tracked files remained unchanged; Windows made no commits or pushes.
+  This is external owner evidence; raw logs were not supplied here.
+- GitHub-hosted Linux CPU CI: **PASS**, independently inspected at the same commit:
+  [run 35463376332](https://github.com/sebastienlato/LatoS/actions/runs/35463376332).
+  Python 3.14.7 / PyTorch 2.14.0+cpu; 131 passed and one MPS-only skip, plus locked
+  setup, lint/format, CPU/debug-model checks, offline workflows, and package builds.
+- Independent physical Linux validation: **DEFERRED, NOT PERFORMED**, explicitly
+  directed by the owner because the machine is temporarily unavailable. Hosted CI
+  is separate evidence. The earlier both-physical-platforms gate is superseded for
+  Phase 3 closure; this is not a physical Linux pass or Phase 4 authorization.
+- Models remain randomly initialized. No training engine, optimizer steps, model
+  quality evidence, mixed precision, distributed execution, KV cache, or chat yet.
+- Consolidated evidence: [Phase 3 closure](experiments/phase-3/CLOSURE.md).
 
-- Package 0.4.2 adds root .gitattributes with text eol=lf only for fixture .txt and
-  .json paths. The attributes are also included in the source distribution.
-- All three fixture payloads and their manifest remain byte-identical to v0.4.1.
-  Original size/hash verification is unchanged. No src/, model settings, numeric
-  tolerances, dependency pins, index routes, or CI configuration changed.
-  uv.lock differs only in the LatoS package version.
-- Original 871-byte CRLF failure reproduced with real Git on Mac. Candidate rules
-  preserve 1,062 / 613 / 864 bytes under autocrlf true, input, and false. An unrelated
-  control still converts under true; intentionally damaged fixtures still fail checksums.
-- 132 tests passed on Mac and in a fresh installed-wheel environment running tests
-  from the source archive. Lint, format, package builds, fixture/archive hash checks,
-  and dependency compatibility pass. The originally failing test also passed from
-  an isolated full-tree checkout using autocrlf true and the candidate attributes.
-- Separate review complete; repository-wide renormalization, runtime normalization,
-  manifest changes, and changes to user Git settings were avoided.
-- Evidence: [checkout correction](experiments/phase-3/CHECKOUT_CORRECTION.md).
-  The native Windows correction retest and external Linux validation remain pending.
+## Pending closure publication
 
-## Publication history and proposed correction
+Private origin: `https://github.com/sebastienlato/LatoS.git`; destination: `main`.
+The published implementation remains at v0.4.2. Earlier Phase 3 checkpoints v0.4.0
+and v0.4.1 remain historical and unchanged.
 
-Private origin: https://github.com/sebastienlato/LatoS.git.
-Published Phase 3: deed6e9b0303967dd82f7a3205e03b9c4f05ffe7 at v0.4.0, then the
-Windows dependency correction 14c76284d1ec670e4022584638a5030a9da87140 at v0.4.1.
-Both were approved and verified remotely. Neither tag may be moved.
+- Local closure message: `Close Phase 3 with external validation evidence`.
+  This state belongs to the closure commit; its full ID is supplied in the approval
+  request and available via `git log -1 --format=%H` at this checkpoint.
+- Approval: **PENDING**. No closure documentation has been pushed.
+- Proposed write: push only this reviewed documentation commit to private main.
+  No new tag, tag movement, release, dataset, tokenizer, or weight upload.
+- After approval, verify main at the exact closure commit and v0.4.2 still at the
+  validated implementation, record the publication locally, and stop in this chat.
 
-- Local branch: main; message: Fix Phase 3 byte-pinned fixture checkout.
-  This state belongs to the correction commit; its exact ID is supplied in the
-  approval request and available from git log -1 --format=%H at this checkpoint.
-- Proposal: push only the reviewed correction to main and create/push annotated
-  tag v0.4.2. No release, dataset, tokenizer, or weight upload.
-- Correction approval: PENDING; nothing from this correction has been pushed.
-- Preserve ignored checkpoints/phase-3-pilot-initial/, the accepted tokenizer under
-  artifacts/tokenizers/english-bpe-v1/, and original raw/prepared corpora.
+## Continuity and next action
 
-## Next action and external gate
+Stop for closure publication approval. Phase 4 may start only in a **fresh Work
+chat**, with explicit owner authorization after closure publication is verified.
+A closure push approval does not authorize development in this chat.
+[PHASE4_HANDOFF.md](docs/PHASE4_HANDOFF.md) records the implementation, resources,
+next deliverables, acceptance evidence, and publication gate. Physical Linux
+validation remains deferred unless the owner later supplies a result.
 
-Stop for approval. If approved, publish this exact commit/tag, verify the remote
-references, then PAUSE for a fresh Windows/RTX 4070 SUPER retest and native Linux
-results. Validation machines must not fix, commit, or push files. Start Phase 4
-only when both platforms pass AND the owner explicitly authorizes it. A push
-approval, CUDA availability, or CI success does not authorize Phase 4.
+Retain ignored raw/prepared corpora, `artifacts/tokenizers/english-bpe-v1/`, and
+`checkpoints/phase-3-pilot-initial/`. Their recorded identities were checked locally
+when preparing this closure. External validation machines are not assumed available
+for development or compute. New paid-service budget remains zero.
 
-Local uv: .private/tools/bin/uv; .venv uses the runtime under .private/python.
+Local uv: `.private/tools/bin/uv`; `.venv` uses the runtime under `.private/python`.

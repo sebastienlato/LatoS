@@ -1,5 +1,9 @@
 # Phase 3 Windows environment correction
 
+Historical correction evidence. The final v0.4.2 Windows/CUDA PASS and the owner's
+physical Linux deferral are recorded in [CLOSURE.md](CLOSURE.md), which supersedes
+the pending validation and transition instructions below.
+
 Recorded 2026-09-18. Base checkpoint:
 `deed6e9b0303967dd82f7a3205e03b9c4f05ffe7`, tag `v0.4.0`.
 Local correction package version: 0.4.1. This remains Phase 3; Phase 4 is paused.

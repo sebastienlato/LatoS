@@ -1,5 +1,9 @@
 # Phase 3 fixture checkout correction
 
+Historical correction evidence. The owner subsequently reported v0.4.2 Windows/CUDA
+PASS and deferred physical Linux testing. See [CLOSURE.md](CLOSURE.md) for the current
+status and Phase 4 hold; this supersedes the pending validation instructions below.
+
 Recorded 2026-09-19. Base checkpoint:
 `14c76284d1ec670e4022584638a5030a9da87140`, tag `v0.4.1`.
 Local package version: 0.4.2. Phase 4 remains paused.
