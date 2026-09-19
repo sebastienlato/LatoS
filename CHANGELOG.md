@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.5.0 — Phase 4, local checkpoint (2026-09-19)
+
+- Isolated-record batching, token-weighted accumulation, AdamW, warmup/cosine scheduling, and clipping.
+- Validation without state changes; atomic tensor-only checkpoints with complete optimizer and shuffle state.
+- Training/resume CLI, full offline fixture overfit, exact CPU recovery, and local MPS smoke checks.
+- Dependencies unchanged; package version and lock entry advance to 0.5.0.
+
+Publication approval is pending. Phase 5 has not started. The Phase 3 closure below
+was subsequently verified published at 294d2e0af2712266b398151eb7e335fa7ccdc31e.
+
 ## Phase 3 closure — documentation only (2026-09-19)
 
 - Record owner-reported Windows/CUDA PASS on exact v0.4.2: 131 tests passed and

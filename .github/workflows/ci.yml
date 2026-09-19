@@ -39,3 +39,5 @@ jobs:
         run: |
           uv run --locked latos tokenizer train --manifest data/fixtures/tiny/manifest.json --corpus-dir data/processed/tiny --config configs/tokenizer/debug.json --output-dir artifacts/tokenizers/tiny
           uv run --locked latos tokenizer evaluate --manifest data/fixtures/tiny/manifest.json --corpus-dir data/processed/tiny --artifact-dir artifacts/tokenizers/tiny --split validation
+      - name: Offline training acceptance
+        run: uv run --locked python experiments/phase-4/validate.py --output-dir outputs/phase-4-ci

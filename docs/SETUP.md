@@ -33,7 +33,8 @@ Earlier Windows blockers are preserved in the
 [environment correction](../experiments/phase-3/WINDOWS_CORRECTION.md) and
 [checkout correction](../experiments/phase-3/CHECKOUT_CORRECTION.md) reports.
 The v0.4.2 PASS supersedes those failures for this exact implementation. Closure
-documentation publication awaits approval; Phase 4 must not start in this chat.
+documentation is published at `294d2e0af2712266b398151eb7e335fa7ccdc31e`. The owner
+authorized Phase 4 in a fresh chat; see [training and recovery](TRAINING.md).
 
 Install [uv](https://docs.astral.sh/uv/getting-started/installation/) version
 0.12.15. To keep the bootstrap entirely within the checkout when uv is absent:
@@ -160,5 +161,6 @@ For the existing offline tokenizer example in PowerShell, set
 environment assignment is POSIX shell syntax. Stop and report any failure rather
 than changing the validated environment on a validation-only machine. Windows
 validation is complete; independent physical Linux testing is deferred at the
-owner's direction. Closure publication does not authorize Phase 4: the owner must
-start it explicitly in a fresh Work chat after publication is verified.
+owner's direction. These commands describe the completed Phase 3 retest. Phase 4
+was subsequently authorized in a fresh Work chat after closure publication was
+verified; its distinct local evidence is in [the Phase 4 report](../experiments/phase-4/REPORT.md).

@@ -105,3 +105,22 @@ causal sequences; do not imply a padding mask or cross-document attention policy
 Use a single-sequence sampler with explicit limits and no KV cache. Transfer logits
 to CPU before float64 probability calculations: the combined MPS transfer/cast
 failed on the actual host and is covered by a regression test.
+
+## 2026-09-19 — Training and recovery baseline
+
+Use isolated paragraph windows with BOS/EOS, one-token overlap, and right padding.
+The model already shifts targets; only padding and the initial label are masked.
+Train with token-weighted accumulation so short windows and partial epoch batches
+have their correct contribution. Retain every epoch-tail window, and allow an
+update's accumulation to cross epochs. Validate every held-out target once.
+
+Use PyTorch AdamW with matrix-only weight decay, one global norm clip per update,
+and a pure update-indexed warmup/cosine schedule. Keep float32 and deterministic
+CPU shuffle state; the model has no stochastic layers. No new dependencies.
+
+Store complete model/optimizer/sampler state as Safetensors plus checked JSON.
+Require matching implementation/runtime/data/config identities to resume. Do not
+silently change the schedule to shorten a test; a separate stop boundary preserves
+its original horizon. Retain immutable checkpoints and write segments to new
+output directories. Establish bitwise recovery on the same local CPU runtime,
+with a weaker numerical smoke check on MPS; do not infer CUDA support from Phase 3.

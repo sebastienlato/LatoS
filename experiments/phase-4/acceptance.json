@@ -1,0 +1,165 @@
+{
+  "config": {
+    "accumulation_steps": 2,
+    "batch_size": 4,
+    "beta1": 0.9,
+    "beta2": 0.95,
+    "eps": 1e-08,
+    "learning_rate": 0.005,
+    "max_grad_norm": 1.0,
+    "max_steps": 400,
+    "min_lr_ratio": 0.1,
+    "schema_version": 1,
+    "seed": 17,
+    "sequence_length": 64,
+    "warmup_steps": 10,
+    "weight_decay": 0.01
+  },
+  "datasets": {
+    "train": {
+      "boundary_policy": "isolated-record-overlap-one-v1",
+      "schema_version": 1,
+      "sequence_length": 64,
+      "source_sha256": "15ecc677ac46ae5393922fbd824d66969d1a06d541e2a6372cc61951bf7c42dd",
+      "split": "train",
+      "targets": 329,
+      "tokenizer_sha256": "d757334c56464c52a65fc6155c0c60b63b35064ae4130a6ad36f436381af66a0",
+      "vocab_size": 328,
+      "windows": 6,
+      "windows_sha256": "64aad73d2d664abfa188956efef11030c84b7f0a247a550fccff801754743de1"
+    },
+    "validation": {
+      "boundary_policy": "isolated-record-overlap-one-v1",
+      "schema_version": 1,
+      "sequence_length": 64,
+      "source_sha256": "0a95d8ad69bf51475a7d4f94a97c6168d0e0f7947adb7ad6cb75f509c6a2ed1e",
+      "split": "validation",
+      "targets": 391,
+      "tokenizer_sha256": "d757334c56464c52a65fc6155c0c60b63b35064ae4130a6ad36f436381af66a0",
+      "vocab_size": 328,
+      "windows": 8,
+      "windows_sha256": "aa29df9e20eb5bedc178079d197c615668daf619007c4d1de0e31393f053664e"
+    }
+  },
+  "elapsed_seconds_including_resume": 3.4228716249999707,
+  "environment": {
+    "architecture": "arm64",
+    "available_backends": {
+      "cpu": true,
+      "cuda": false,
+      "mps": true
+    },
+    "cuda_build_version": null,
+    "disk_free_bytes": 674344013824,
+    "latos_version": "0.5.0",
+    "logical_cpus": 16,
+    "mps_built": true,
+    "mps_fallback_enabled": false,
+    "os_version": "26.6.2",
+    "physical_memory_bytes": 68719476736,
+    "precision": "float32",
+    "python_version": "3.14.7",
+    "requested_device": "cpu",
+    "schema_version": 1,
+    "status": "ok",
+    "system": "Darwin",
+    "tested_device": "cpu",
+    "torch_version": "2.14.0"
+  },
+  "final": {
+    "train": {
+      "loss": 0.010030446690153388,
+      "perplexity": 1.0100809202368082,
+      "split": "train",
+      "targets": 329,
+      "windows": 6
+    },
+    "validation": {
+      "loss": 11.245801525652562,
+      "perplexity": 76557.81803478324,
+      "split": "validation",
+      "targets": 391,
+      "windows": 8
+    }
+  },
+  "final_model_metadata_sha256": "8f32a319a644f3d8cf7b571372038c21dfcc171c3948c950eb6b69f767a66e21",
+  "final_model_tensor_sha256": "21c3b92efd50eeacd60ff046a84874d9b0a1edc032e9c7eca09ea63b91fa5c35",
+  "final_training_tensor_sha256": "4d63537beb90c76c3a205cffb765247960a0188777e733674a03866730e9a5a6",
+  "initial": {
+    "train": {
+      "loss": 5.8146379088195985,
+      "perplexity": 335.17001442022377,
+      "split": "train",
+      "targets": 329,
+      "windows": 6
+    },
+    "validation": {
+      "loss": 5.806987274638223,
+      "perplexity": 332.61553540349695,
+      "split": "validation",
+      "targets": 391,
+      "windows": 8
+    }
+  },
+  "model_config": {
+    "context_length": 64,
+    "d_model": 64,
+    "ffn_dim": 192,
+    "n_heads": 4,
+    "n_layers": 2,
+    "norm_eps": 1e-05,
+    "rope_theta": 10000.0,
+    "schema_version": 1,
+    "tokenizer_sha256": "d757334c56464c52a65fc6155c0c60b63b35064ae4130a6ad36f436381af66a0",
+    "vocab_size": 328
+  },
+  "overfit_criteria": "train loss < 0.25 and < 10% of initial after exactly 400 updates",
+  "parameter_count": 127808,
+  "peak_process_rss_bytes": 334512128,
+  "quality_limit": "Fixture memorization only; no language quality claim",
+  "resume": {
+    "compared_updates": 303,
+    "cut_step": 97,
+    "final_step": 400,
+    "non_timing_metrics_equal": true,
+    "optimizer_bitwise_equal": true,
+    "sampler_bitwise_equal": true,
+    "weights_bitwise_equal": true
+  },
+  "runtime": {
+    "cpu_threads": 1,
+    "cuda_device": null,
+    "cuda_matmul_tf32": false,
+    "cudnn_benchmark": false,
+    "cudnn_tf32": true,
+    "deterministic_algorithms": false,
+    "device": "cpu",
+    "implementation_sha256": "035b2551f93a5a2eb575d0c573449a8ebfdf260aadcc3ce7f7ef54436f9699e2",
+    "interop_threads": 16,
+    "latos": "0.5.0",
+    "matmul_precision": "highest",
+    "mps_fallback": "0",
+    "mps_fast_math": "0",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "python": "3.14.7",
+    "torch": "2.14.0"
+  },
+  "schema_version": 1,
+  "source": {
+    "commit": "294d2e0af2712266b398151eb7e335fa7ccdc31e",
+    "dirty": true
+  },
+  "status": "pass",
+  "test_split": "removed before training; never read by the engine",
+  "tokens_seen": 131600,
+  "training_seconds": 1.6827739530053805,
+  "training_targets_per_second": 78204.20548164927,
+  "validation": {
+    "gradients_unchanged": true,
+    "mode_restored": true,
+    "optimizer_unchanged": true,
+    "rng_unchanged": true,
+    "weights_unchanged": true
+  },
+  "windows_seen": 2400
+}

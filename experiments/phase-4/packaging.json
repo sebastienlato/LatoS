@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-19",
+  "package_version": "0.5.0",
+  "dependency_changes": "none; only the latos root version changed in uv.lock",
+  "locked_sync": "pass",
+  "lint": "pass",
+  "format": "pass",
+  "local_tests": {"passed": 161, "skipped": 0},
+  "clean_wheel_tests": {"passed": 161, "skipped": 0},
+  "clean_install": "offline locked dependencies in a fresh environment; wheel installed without editable source",
+  "wheel_build": "pass",
+  "source_build": "pass",
+  "archive_inspection": "no private context, generated datasets, learned artifacts, checkpoints, environments, or logs included",
+  "cli_fixture": {"first_segment_end": 100, "resumed_start": 100, "resumed_end": 400, "targets_seen": 131600},
+  "same_source_resume": "exact acceptance implementation fingerprint retained",
+  "github_phase4_ci": "not run; awaiting publication approval",
+  "phase4_windows_cuda": "not run",
+  "independent_physical_linux": "deferred, not performed"
+}

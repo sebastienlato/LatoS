@@ -34,7 +34,7 @@ def test_json_doctor():
 
 
 def test_invalid_command():
-    result = subprocess.run(["latos", "train"], capture_output=True, text=True)
+    result = subprocess.run(["latos", "unknown-command"], capture_output=True, text=True)
     assert result.returncode == 2
     assert "invalid choice" in result.stderr
 

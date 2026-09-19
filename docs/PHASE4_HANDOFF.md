@@ -1,9 +1,13 @@
 # Phase 4 continuity handoff
 
-This is a handoff, not authorization to start. Phase 4 has not begun. The owner
-requires this chat to stop after Phase 3 closure; publication approval must not
-start Phase 4 automatically. In a fresh Work chat, verify closure publication and
-the owner's explicit Phase 4 instruction before developing it.
+## Activation recorded 2026-09-19
+
+The owner explicitly started Phase 4 in a fresh Work chat. Before development,
+read-only remote inspection verified the closure commit
+`294d2e0af2712266b398151eb7e335fa7ccdc31e` on `origin/main` and the unchanged v0.4.2
+tag. This satisfied the original fresh-chat transition gate. The handoff below
+records the starting inputs and scope; [PROJECT_STATE.md](../PROJECT_STATE.md)
+now controls continuity. Phase 4 stops at its reviewed push-approval checkpoint.
 
 ## Read and preserve
 
@@ -40,7 +44,7 @@ CPU/MPS checks. Recheck availability in the fresh execution environment. Record 
 test any necessary dependency changes while preserving accepted experiment identities.
 The new paid-service budget remains zero; no artifact uploads are authorized by this handoff.
 
-## Authorized Phase 4 objective, once the owner starts it
+## Phase 4 objective
 
 Build batching, AdamW optimization, learning-rate warmup/decay, gradient accumulation,
 clipping, metrics, validation, and complete checkpoint/resume support. Define target

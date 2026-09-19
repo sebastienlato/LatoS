@@ -4,63 +4,59 @@ Updated: 2026-09-19.
 
 ## Phase status
 
-Phase 3 is formally closed locally with Windows/CUDA PASS and an explicit owner
-deferral of independent physical Linux testing. Closure documentation is ready
-for publication approval. Phase 4 has not begun and must not begin in this chat.
+**Phase 4 is complete locally, reviewed, and awaiting push approval.** The owner
+explicitly authorized it in a fresh Work chat. Before development, read-only remote
+inspection verified Phase 3 closure commit
+`294d2e0af2712266b398151eb7e335fa7ccdc31e` on `origin/main`; v0.4.2 still points to
+`1102b64714b58c1f2289f80863fa032cc192c47b`. No earlier tag moved.
 
-Validated implementation: **v0.4.2**, `1102b64714b58c1f2289f80863fa032cc192c47b`.
-This closure changes documentation only; runtime code and package version remain
-0.4.2. Existing tags must remain fixed.
+The 0.5.0 implementation adds isolated-record batching, AdamW, warmup/cosine
+scheduling, token-weighted accumulation, clipping, validation, metrics, and complete
+tensor-only optimizer/sampler recovery. Dependencies remain pinned and unchanged.
 
 ## Evidence and limits
 
-- Local Mac CPU/MPS evidence: 132 tests passed in development and clean installation,
-  with numerical, snapshot, sampling, dependency, and checkout checks already recorded.
-- Independent Windows/RTX 4070 SUPER CUDA: **PASS**, reported by the owner for the
-  exact v0.4.2 commit. 131 tests passed, one MPS-only skip. Real CUDA matrix multiply/
-  backward and debug/pilot forward, loss, gradients, and causality passed, along with
-  CLI, diagnostics, offline data/tokenizer workflows, builds, and archive inspection.
-  All 74 tracked files remained unchanged; Windows made no commits or pushes.
-  This is external owner evidence; raw logs were not supplied here.
-- GitHub-hosted Linux CPU CI: **PASS**, independently inspected at the same commit:
-  [run 35463376332](https://github.com/sebastienlato/LatoS/actions/runs/35463376332).
-  Python 3.14.7 / PyTorch 2.14.0+cpu; 131 passed and one MPS-only skip, plus locked
-  setup, lint/format, CPU/debug-model checks, offline workflows, and package builds.
-- Independent physical Linux validation: **DEFERRED, NOT PERFORMED**, explicitly
-  directed by the owner because the machine is temporarily unavailable. Hosted CI
-  is separate evidence. The earlier both-physical-platforms gate is superseded for
-  Phase 3 closure; this is not a physical Linux pass or Phase 4 authorization.
-- Models remain randomly initialized. No training engine, optimizer steps, model
-  quality evidence, mixed precision, distributed execution, KV cache, or chat yet.
-- Consolidated evidence: [Phase 3 closure](experiments/phase-3/CLOSURE.md).
+- Local macOS CPU/MPS: **161 tests passed** in development and in a fresh locked
+  environment using the built wheel. Lint, format, builds, and archive checks passed.
+- Full offline fixture: training loss **5.814638 → 0.010030** after 400 updates.
+  CPU resume from update 97 reproduces all 303 remaining updates, weights,
+  optimizer and sampler state exactly. Separate-process CLI recovery also passes.
+- Validation preserves weights, optimizer, gradients, RNG, and module modes.
+  Held-out loss worsened **5.806987 → 11.245802**: this is fixture memorization,
+  not evidence of improved general English. The English pilot remains untrained.
+- Local MPS update/validation/recovery smoke passes at atol=1e-6, rtol=1e-5;
+  no full MPS training or bitwise guarantee is claimed.
+- Phase 4 Windows/CUDA and GitHub Linux CPU CI: **NOT RUN**. Earlier Windows/CUDA
+  PASS and hosted Linux CPU CI PASS belong to Phase 3 only. Independent physical
+  Linux validation remains **DEFERRED, NOT PERFORMED**.
+- Separate local review completed; actionable findings fixed and checks rerun.
+  [Phase 4 report](experiments/phase-4/REPORT.md) records results and limits;
+  [training guide](docs/TRAINING.md) defines the resume and batching contracts.
 
-## Pending closure publication
+## Pending publication
 
-Private origin: `https://github.com/sebastienlato/LatoS.git`; destination: `main`.
-The published implementation remains at v0.4.2. Earlier Phase 3 checkpoints v0.4.0
-and v0.4.1 remain historical and unchanged.
+Remote: `https://github.com/sebastienlato/LatoS.git` (existing private origin).
+Destination: `main`. Proposed new annotated tag: **v0.5.0** at the reviewed Phase 4
+commit. Existing tags remain fixed; no release, dataset, tokenizer, or weight upload.
 
-- Local closure message: `Close Phase 3 with external validation evidence`.
-  This state belongs to the closure commit; its full ID is supplied in the approval
-  request and available via `git log -1 --format=%H` at this checkpoint.
-- Approval: **PENDING**. No closure documentation has been pushed.
-- Proposed write: push only this reviewed documentation commit to private main.
-  No new tag, tag movement, release, dataset, tokenizer, or weight upload.
-- After approval, verify main at the exact closure commit and v0.4.2 still at the
-  validated implementation, record the publication locally, and stop in this chat.
+- Local commit message: `Complete Phase 4 training engine and recovery`.
+  This state belongs to that checkpoint; its exact full ID is supplied in the
+  approval request and available from `git log -1 --format=%H`.
+- Approval: **PENDING**. No Phase 4 remote writes or tag creation have occurred.
+- Next action: stop at the reviewed Phase 4 push-approval checkpoint as requested.
+  A later approval authorizes only this described Phase 4 publication. Verify the
+  exact remote branch/tag after any approved push and honor the owner's current
+  external-validation/transition gate. Phase 5 has not begun.
 
-## Continuity and next action
+## Preserved local resources
 
-Stop for closure publication approval. Phase 4 may start only in a **fresh Work
-chat**, with explicit owner authorization after closure publication is verified.
-A closure push approval does not authorize development in this chat.
-[PHASE4_HANDOFF.md](docs/PHASE4_HANDOFF.md) records the implementation, resources,
-next deliverables, acceptance evidence, and publication gate. Physical Linux
-validation remains deferred unless the owner later supplies a result.
+Existing English corpus audit: 12,595 records, zero exact/near cross-split duplicates.
+The accepted English tokenizer and random Phase 3 pilot snapshot still match the
+hashes recorded in [the handoff](docs/PHASE4_HANDOFF.md); neither was modified.
+Ignored Phase 4 artifacts remain in `outputs/phase-4-acceptance-v2/`, including the
+fixture tokenizer, model config, metrics, and interrupted/final checkpoints.
+CLI segments remain in `outputs/phase-4-cli/` and `outputs/phase-4-cli-resumed/`.
+The earlier acceptance-v1 artifacts are retained as development history.
 
-Retain ignored raw/prepared corpora, `artifacts/tokenizers/english-bpe-v1/`, and
-`checkpoints/phase-3-pilot-initial/`. Their recorded identities were checked locally
-when preparing this closure. External validation machines are not assumed available
-for development or compute. New paid-service budget remains zero.
-
-Local uv: `.private/tools/bin/uv`; `.venv` uses the runtime under `.private/python`.
+Keep `.private/` untracked. No new paid services or uploads were used. Local uv is
+`.private/tools/bin/uv`; `.venv` uses the runtime under `.private/python`.

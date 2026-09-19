@@ -4,11 +4,12 @@ LatoS is an original, English-first small language model project. Its goal is to
 make the path from documented training data to an evaluated conversational model
 reproducible on modest hardware.
 
-**Current capability: Phase 3 transformer.** LatoS prepares English data, trains
-its own tokenizer, and implements an original dense causal decoder with verified
-loss, gradients, snapshots, and bounded sampling. The pilot has 17,308,032 parameters
-and uses the 8,192-entry tokenizer. Its weights are random: no model-training engine
-or useful language/chat capability exists yet.
+**Current capability: Phase 4 training engine.** LatoS prepares English data, trains
+its own tokenizer, and implements an original dense causal decoder plus batching,
+AdamW optimization, scheduling, validation, and resumable checkpoints. A tiny
+fixture overfits successfully and resumes exactly on the tested CPU runtime.
+The 17,308,032-parameter English pilot remains randomly initialized; useful
+language/chat capability has not been established.
 The [roadmap](ROADMAP.md) defines those steps.
 
 ## Quickstart
@@ -30,7 +31,8 @@ Phase 3 passed local CPU/MPS checks and GitHub Linux CPU CI. The owner reports a
 complete independent Windows/CUDA PASS on v0.4.2, including real RTX 4070 SUPER
 tensor and model execution. Independent physical Linux testing is deferred because
 that machine is temporarily unavailable; CI is recorded separately.
-See [the Phase 3 closure](experiments/phase-3/CLOSURE.md). Phase 4 has not started.
+See [the Phase 3 closure](experiments/phase-3/CLOSURE.md). Phase 4 has local CPU
+and MPS evidence only; its Linux CI and Windows/CUDA runs are not yet performed.
 See [setup and Windows retest instructions](docs/SETUP.md) and
 [recorded environment evidence](docs/ENVIRONMENT.md).
 
@@ -81,6 +83,19 @@ optimizer steps. [The model guide](docs/MODEL.md) covers the architecture,
 next-token loss, tokenizer binding, local snapshots, and sampling commands.
 [Phase 3 evidence](experiments/phase-3/REPORT.md) records numerical and backend
 checks. Weights stay in ignored `checkpoints/`.
+
+## Training engine
+
+A fully offline acceptance run creates its own fixture tokenizer and tiny model:
+
+```sh
+uv run --locked python experiments/phase-4/validate.py --output-dir outputs/phase-4-demo
+```
+
+Choose a fresh destination. The [training guide](docs/TRAINING.md) explains CLI
+training/resume, document boundaries, loss weighting, checkpoint contents, and the
+same-runtime CPU equivalence guarantee. [Phase 4 results](experiments/phase-4/REPORT.md)
+record overfit and recovery evidence. Weights and detailed logs stay ignored.
 
 ## Development
 

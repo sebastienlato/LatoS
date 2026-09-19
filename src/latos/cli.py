@@ -64,9 +64,36 @@ def main(argv: list[str] | None = None) -> int:
             action.add_argument("--max-new-tokens", type=int, default=16)
             action.add_argument("--temperature", type=float, default=0.0)
             action.add_argument("--top-k", type=int, default=0)
+    training = commands.add_parser("train", help="Train or resume a float32 dense model")
+    training.add_argument("--manifest", type=Path, required=True)
+    training.add_argument("--corpus-dir", type=Path, required=True)
+    training.add_argument("--tokenizer-dir", type=Path, required=True)
+    training.add_argument("--config", type=Path, required=True)
+    origin = training.add_mutually_exclusive_group(required=True)
+    origin.add_argument("--model-config", type=Path)
+    origin.add_argument("--resume", type=Path)
+    training.add_argument("--output-dir", type=Path, required=True)
+    training.add_argument("--device", choices=("cpu", "mps", "cuda"), default="cpu")
+    training.add_argument("--threads", type=int, default=1)
+    training.add_argument("--validate-every", type=int, default=10)
+    training.add_argument("--checkpoint-every", type=int, default=25)
+    training.add_argument(
+        "--stop-after", type=int, help="Stop at this update without changing the schedule"
+    )
     args = parser.parse_args(argv)
     if args.command is None:
         parser.print_help()
+        return 0
+
+    if args.command == "train":
+        from latos.training.run import run_training
+
+        try:
+            report = run_training(args)
+        except (OSError, ValueError, KeyError, TypeError, RuntimeError) as exc:
+            print(json.dumps({"status": "error", "error": str(exc)}, indent=2))
+            return 1
+        print(json.dumps(report, indent=2))
         return 0
 
     if args.command == "data":

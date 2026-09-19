@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "latos_version": "0.5.0",
+  "python_version": "3.14.7",
+  "torch_version": "2.14.0",
+  "system": "Darwin",
+  "os_version": "26.6.2",
+  "architecture": "arm64",
+  "logical_cpus": 16,
+  "physical_memory_bytes": 68719476736,
+  "disk_free_bytes": 674344001536,
+  "available_backends": {
+    "cpu": true,
+    "mps": true,
+    "cuda": false
+  },
+  "mps_built": true,
+  "cuda_build_version": null,
+  "mps_fallback_enabled": false,
+  "requested_device": "mps",
+  "tested_device": "mps",
+  "precision": "float32",
+  "status": "ok"
+}

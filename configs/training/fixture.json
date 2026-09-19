@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "sequence_length": 64,
+  "batch_size": 4,
+  "accumulation_steps": 2,
+  "max_steps": 400,
+  "warmup_steps": 10,
+  "learning_rate": 0.005,
+  "min_lr_ratio": 0.1,
+  "weight_decay": 0.01,
+  "beta1": 0.9,
+  "beta2": 0.95,
+  "eps": 1e-8,
+  "max_grad_norm": 1.0,
+  "seed": 17
+}

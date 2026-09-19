@@ -159,3 +159,22 @@ Primary guidance: [uv PyTorch sources](https://docs.astral.sh/uv/guides/integrat
 [uv environment constraints](https://docs.astral.sh/uv/reference/settings/#environments),
 and [NVIDIA driver/runtime compatibility](https://docs.nvidia.com/deploy/cuda-compatibility/minor-version-compatibility.html).
 Index resolution is verified; real Windows/CUDA execution is still pending.
+
+## Phase 4 optimization and reproducibility
+
+No new dependency or external code was added. LatoS's batching, schedule, training
+loop, validation, and checkpoint orchestration are original implementations using
+these established algorithms and library primitives:
+
+- Loshchilov and Hutter, [Decoupled Weight Decay Regularization](https://arxiv.org/abs/1711.05101),
+  ICLR 2019: AdamW's decoupled weight decay.
+- [PyTorch 2.14 AdamW](https://docs.pytorch.org/docs/2.14/generated/torch.optim.AdamW.html):
+  optimizer semantics, state, betas/epsilon, and explicit foreach/fused choices.
+- [PyTorch gradient norm clipping](https://docs.pytorch.org/docs/2.14/generated/torch.nn.utils.clip_grad_norm_.html):
+  global norm clipping and nonfinite-gradient rejection.
+- [PyTorch reproducibility notes](https://docs.pytorch.org/docs/2.14/notes/randomness.html):
+  version/platform limits and explicit generator control.
+
+Consulted on 2026-09-19. Tensor storage continues to use the existing Safetensors
+dependency. The offline fixture and its learned tokenizer remain LatoS-generated
+artifacts with the fixture's existing provenance; no pretrained model is used.
