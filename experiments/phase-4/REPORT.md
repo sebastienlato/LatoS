@@ -1,6 +1,9 @@
 # Phase 4 — Training engine
 
-Implemented locally on 2026-09-19. Publication approval is pending. The owner
+Implemented and published as v0.5.0 on 2026-09-19 at
+`cb585c321c92f5d774fb59234f76c1d3783a635a`. This report records the original local
+implementation checks; [closure evidence](CLOSURE.md) adds owner-reported Windows/CUDA
+PASS and directly verified GitHub Linux CPU CI. Closure publication is pending. The owner
 started Phase 4 in a fresh Work chat after read-only verification that closure
 commit `294d2e0af2712266b398151eb7e335fa7ccdc31e` was on `origin/main`; v0.4.2
 still resolved to `1102b64714b58c1f2289f80863fa032cc192c47b`.
@@ -23,8 +26,8 @@ dependencies are unchanged; only the package's root version advances to 0.5.0.
 on macOS 26.6.2 arm64, Python 3.14.7, PyTorch 2.14.0, float32 CPU, one compute
 thread. The host reports 16 logical CPUs and 64 GiB physical memory. CUDA is
 unavailable. Source was the recorded closure checkout plus local Phase 4 changes;
-the package implementation SHA-256 identifies the exact code tested. The final
-reviewed commit is supplied at the publication checkpoint.
+the package implementation SHA-256 identifies the exact code tested. The published
+implementation commit is recorded above.
 
 The experiment fits its own fixture-only tokenizer (328 actual entries), then
 initializes a 127,808-parameter, two-layer model with width 64 and context 64.
@@ -87,7 +90,9 @@ CLI resume and made optional Git provenance tolerate unavailable Git while keepi
 implementation hashes. Added regression coverage verifies actual clipping, decay,
 failed-save preservation, optimizer-shape rejection, and split/config rejection.
 The relevant checks were rerun after these fixes; no actionable review finding
-remains open. No independent reviewer or external hardware run is claimed.
+remains open. No independent reviewer or external hardware run was claimed by
+that local review.
+Subsequent external validation is attributed separately in the closure report.
 
 One draft test initially failed collection because of invalid comprehension syntax;
 it was corrected before the first passing training suite. A draft report script
@@ -102,13 +107,16 @@ cross-split duplicates. The accepted tokenizer still has SHA-256
 `7dce3d0888f6a37d3eadbd077a9ff73170a54a1f6e301e51b2ae6d998142b0ab`.
 The Phase 3 random pilot still loads and has weight SHA-256
 `99dce7bf0356bf7d641dff4b29d6616772dfbf9779877e0c085bdea9e368b5f2`.
-No existing corpus, tokenizer, or pilot checkpoint was overwritten. No new paid
-service, remote write, dataset upload, or weight upload occurred.
+No existing corpus, tokenizer, or pilot checkpoint was overwritten. During the
+local implementation checks, no new paid service, remote write, dataset upload,
+or weight upload occurred; implementation publication followed owner approval.
 
-Windows/CUDA PASS and GitHub Linux CPU CI PASS remain Phase 3 evidence only.
-Phase 4 Windows/CUDA and hosted Linux CI have **not run**. Independent physical
-Linux validation remains **deferred, not performed**. The CI workflow includes
-training tests and this small offline acceptance exercise for future publication.
+Subsequent Phase 4 Windows/CUDA PASS is owner-reported at exact v0.5.0. Completed
+GitHub Linux CPU CI has now been directly verified at the same commit. Both are
+recorded separately in [closure evidence](CLOSURE.md); the original acceptance and
+packaging JSON remain historical records of the pre-publication checks. Independent
+physical Linux remains deferred, not performed. Observed exact CUDA equality in the
+external validation is not a general CUDA determinism guarantee.
 
 The exact-resume guarantee is limited to the tested same-host CPU execution.
 There is no mixed precision, distributed training, streaming corpus loader,

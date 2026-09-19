@@ -139,10 +139,13 @@ or CPU/accelerator bitwise guarantee is made. A fingerprint match alone does not
 prove hardware equivalence.
 
 Local MPS update/validation/recovery has a short smoke test with comparison tolerance
-atol=1e-6, rtol=1e-5. CUDA is selectable but Phase 4 CUDA execution is untested on
-this host. Earlier Phase 3 Windows/CUDA evidence is not Phase 4 training evidence.
-GitHub Phase 4 Linux CI has not run before publication, and independent physical
-Linux remains deferred. Mixed precision, distributed training, arbitrary model
+atol=1e-6, rtol=1e-5. The owner reports independent Windows/RTX 4070 SUPER
+Phase 4 training and separate-process recovery PASS at exact v0.5.0. Exact CUDA
+equality was observed in that run, not established as a general determinism
+guarantee. GitHub Linux CPU CI completed and its logs were verified separately;
+independent physical Linux remains deferred, not performed. See
+[closure evidence](../experiments/phase-4/CLOSURE.md) for attribution and scope.
+Mixed precision, distributed training, arbitrary model
 modifications, mid-microbatch recovery, and changing schedules on resume are outside
 this checkpoint contract.
 

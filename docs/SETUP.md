@@ -36,6 +36,13 @@ The v0.4.2 PASS supersedes those failures for this exact implementation. Closure
 documentation is published at `294d2e0af2712266b398151eb7e335fa7ccdc31e`. The owner
 authorized Phase 4 in a fresh chat; see [training and recovery](TRAINING.md).
 
+Phase 4 v0.5.0 has since passed independent Windows/RTX 4070 SUPER validation,
+reported by the owner: 159 tests passed, two MPS-only skips, actual CUDA training
+and separate-process recovery. Completed GitHub Linux CPU CI was verified
+separately with 159 passes/two skips and offline training acceptance. Exact CUDA
+equality in that validation is not a general determinism guarantee. Physical
+Linux remains deferred. See [Phase 4 closure](../experiments/phase-4/CLOSURE.md).
+
 Install [uv](https://docs.astral.sh/uv/getting-started/installation/) version
 0.12.15. To keep the bootstrap entirely within the checkout when uv is absent:
 

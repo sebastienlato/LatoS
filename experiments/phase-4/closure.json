@@ -1,0 +1,138 @@
+{
+  "recorded_date": "2026-09-19",
+  "phase": 4,
+  "status": "closed locally; documentation publication pending approval",
+  "validated_implementation": {
+    "tag": "v0.5.0",
+    "commit": "cb585c321c92f5d774fb59234f76c1d3783a635a",
+    "package_version": "0.5.0",
+    "publication_verified": true
+  },
+  "windows_cuda": {
+    "result": "PASS",
+    "evidence_source": "Owner-reported independent Windows validation summary; raw logs not supplied",
+    "commit": "cb585c321c92f5d774fb59234f76c1d3783a635a",
+    "gpu": "NVIDIA RTX 4070 SUPER",
+    "tests_passed": 159,
+    "tests_skipped": 2,
+    "tests_failed": 0,
+    "skip_reason": "MPS-only tests",
+    "checks": [
+      "fresh checkout and locked installation",
+      "actual CUDA training forward/backward and AdamW updates",
+      "scheduling, gradient accumulation, clipping, finite gradients",
+      "validation state preservation",
+      "CPU exact-resume requirements",
+      "CUDA checkpoint save/load and separate-process resume",
+      "CLI workflows and CPU/automatic diagnostics",
+      "offline data/tokenizer workflows",
+      "lint, formatting, dependency integrity",
+      "builds and archive inspection"
+    ],
+    "fixture": {
+      "updates": 400,
+      "initial_training_loss": 5.814638,
+      "final_training_loss": 0.01003,
+      "held_out_quality": "worsened; fixture memorization, not language-quality improvement"
+    },
+    "cuda_exact_equality_observed": true,
+    "general_cuda_determinism_guarantee": false,
+    "tracked_files_unchanged": 91,
+    "working_tree": "clean",
+    "commits_created": 0,
+    "pushes_performed": 0
+  },
+  "github_linux_cpu_ci": {
+    "result": "PASS",
+    "evidence_source": "Completed GitHub run metadata, workflow definition, and logs directly inspected",
+    "commit": "cb585c321c92f5d774fb59234f76c1d3783a635a",
+    "run_id": 35471367201,
+    "url": "https://github.com/sebastienlato/LatoS/actions/runs/35471367201",
+    "runner": "ubuntu-24.04",
+    "python": "3.14.7",
+    "torch": "2.14.0+cpu",
+    "tests_passed": 159,
+    "tests_skipped": 2,
+    "skip_reason": "MPS hardware unavailable",
+    "checks": [
+      "locked setup",
+      "Ruff lint/format",
+      "pytest including separate-process CLI recovery",
+      "CPU doctor and debug model check",
+      "offline data acquisition/preparation/audit",
+      "source and wheel builds",
+      "offline tokenizer fitting/validation",
+      "offline CPU fixture overfit and exact-resume acceptance"
+    ],
+    "fixture": {
+      "initial": {
+        "train": {
+          "loss": 5.814637595759336,
+          "perplexity": 335.16990949182764,
+          "targets": 329,
+          "windows": 6,
+          "split": "train"
+        },
+        "validation": {
+          "loss": 5.806987274638223,
+          "perplexity": 332.61553540349695,
+          "targets": 391,
+          "windows": 8,
+          "split": "validation"
+        }
+      },
+      "final": {
+        "train": {
+          "loss": 0.01003046516940496,
+          "perplexity": 1.0100809389023477,
+          "targets": 329,
+          "windows": 6,
+          "split": "train"
+        },
+        "validation": {
+          "loss": 11.245178298267257,
+          "perplexity": 76510.11997093848,
+          "targets": 391,
+          "windows": 8,
+          "split": "validation"
+        }
+      },
+      "resume": {
+        "cut_step": 97,
+        "final_step": 400,
+        "compared_updates": 303,
+        "weights_bitwise_equal": true,
+        "optimizer_bitwise_equal": true,
+        "sampler_bitwise_equal": true,
+        "non_timing_metrics_equal": true
+      },
+      "validation": {
+        "weights_unchanged": true,
+        "optimizer_unchanged": true,
+        "rng_unchanged": true,
+        "gradients_unchanged": true,
+        "mode_restored": true
+      }
+    },
+    "independent_physical_linux_validation": false,
+    "cuda_validation": false,
+    "cpu_job_completed_at": "2026-09-19T21:46:32Z"
+  },
+  "independent_physical_linux": {
+    "result": "DEFERRED_NOT_PERFORMED",
+    "owner_explicitly_deferred": true
+  },
+  "phase5": {
+    "started": false,
+    "authorized_in_this_chat": false,
+    "next_gate": "After approved closure publication is verified, wait for explicit owner start instruction in a fresh Work chat."
+  },
+  "publication": {
+    "approval": "pending",
+    "scope": "documentation and evidence only",
+    "destination_branch": "main",
+    "new_tag": null,
+    "preserve_tag": "v0.5.0",
+    "after_verified_push": "stop; do not begin Phase 5 in this chat"
+  }
+}
