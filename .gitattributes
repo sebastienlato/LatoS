@@ -1,0 +1,4 @@
+# Fixture payloads and provenance manifests use byte-exact, committed LF text.
+# Keep checkout bytes stable even when a user's core.autocrlf is true.
+/data/fixtures/**/*.txt text eol=lf
+/data/fixtures/**/*.json text eol=lf

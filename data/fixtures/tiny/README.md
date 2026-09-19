@@ -11,3 +11,9 @@ paragraphs should remain. Each document and group belongs to one split only.
 
 The fixture is included in the source distribution for offline checks. It is
 separate from `english-books-v1` and must not be mixed into held-out experiments.
+
+The text payloads and JSON manifest are committed with LF line endings. Repository
+attributes force LF checkout for fixture `.txt` and `.json` files, including when
+`core.autocrlf=true`. Their original byte counts and SHA-256 hashes remain binding;
+acquisition verifies raw bytes before any text cleaning. Do not regenerate the
+manifest or normalize data at verification time to accommodate checkout changes.

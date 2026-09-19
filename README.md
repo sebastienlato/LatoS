@@ -26,8 +26,10 @@ uv run --locked pytest
 
 The environment uses Python 3.14.7 and PyTorch 2.14.0. The lock targets macOS
 Apple Silicon, Linux x86-64 CPU, and Windows x86-64 with the pinned CUDA 13.0 build.
-Phase 3 passed local CPU/MPS checks and Linux CPU CI. Windows install planning is
-verified, but real Windows/CUDA and external native Linux validation remain pending.
+Phase 3 passed local CPU/MPS checks and Linux CPU CI. The owner confirmed Windows
+installation and GPU detection, then hit a Git line-ending conversion error in a
+byte-pinned fixture. Version 0.4.2 fixes fixture checkout rules; CUDA tensor/model
+execution and external native Linux validation still await the fresh retest.
 See [setup and Windows retest instructions](docs/SETUP.md) and
 [recorded environment evidence](docs/ENVIRONMENT.md).
 

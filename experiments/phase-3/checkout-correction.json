@@ -1,0 +1,56 @@
+{
+  "date": "2026-09-19",
+  "phase": 3,
+  "base_commit": "14c76284d1ec670e4022584638a5030a9da87140",
+  "package_version": "0.4.2",
+  "git_version": "git version 2.54.0",
+  "reproduction_host": "macOS arm64",
+  "core_autocrlf_true": [
+    {
+      "path": "data/fixtures/tiny/train.txt",
+      "manifest_bytes": 1062,
+      "original_autocrlf_true_checkout_bytes": 1071,
+      "corrected_autocrlf_true_checkout_bytes": 1062,
+      "sha256": "ee486a093eddacd3fd8e5bd779eb26a6f505e4ac984d22b46ab6f3161b5dd49b",
+      "exact_blob_match": true
+    },
+    {
+      "path": "data/fixtures/tiny/validation.txt",
+      "manifest_bytes": 613,
+      "original_autocrlf_true_checkout_bytes": 618,
+      "corrected_autocrlf_true_checkout_bytes": 613,
+      "sha256": "01b8c8c3853be027cc155079024796f22e013d5987077674a17e0e7f3b46eff6",
+      "exact_blob_match": true
+    },
+    {
+      "path": "data/fixtures/tiny/test.txt",
+      "manifest_bytes": 864,
+      "original_autocrlf_true_checkout_bytes": 871,
+      "corrected_autocrlf_true_checkout_bytes": 864,
+      "sha256": "9611ca0ef9dd776e4878f3875af640bbdf0496df9047eb8e629408f1f14e31e3",
+      "exact_blob_match": true
+    }
+  ],
+  "fixture_manifest_bytes_unchanged": true,
+  "dependency_lock_unchanged_except_project_version": true,
+  "regression_tests": {
+    "mac_passed": 132,
+    "clean_wheel_from_sdist_tests_passed": 132
+  },
+  "external_windows_report": {
+    "commit": "14c76284d1ec670e4022584638a5030a9da87140",
+    "os": "Windows 11 Home 25H2",
+    "python": "3.14.7",
+    "torch": "2.14.0+cu130",
+    "cuda_runtime": "13.0",
+    "gpu": "RTX 4070 SUPER",
+    "driver": "616.92",
+    "locked_install": "passed",
+    "cuda_available": true,
+    "pytest_passed_before_stop": 9,
+    "pytest_setup_errors": 1,
+    "cuda_tensor_model_execution": "not validated"
+  },
+  "native_windows_correction_retest": "pending",
+  "phase4_authorized": false
+}

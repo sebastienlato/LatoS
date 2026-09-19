@@ -18,11 +18,19 @@ PyTorch. Other packages continue to resolve from PyPI. macOS/Linux versions,
 sources, and existing wheel hashes are unchanged.
 
 Local CPU/MPS regression checks pass. The original Phase 3 Linux CPU CI passed;
-native external Linux validation remains pending. Windows wheel resolution and
-install planning have been checked on Mac, but Windows installation and real CUDA
-execution await the owner's retest. These are different evidence levels. Other
-architectures, Python series, and mixed precision remain untested.
+native external Linux validation remains pending. Windows resolution was checked
+on Mac; the owner subsequently confirmed native installation and GPU detection.
+Real CUDA tensor/model execution still awaits the retest. These are different
+evidence levels. Other architectures, Python series, and mixed precision remain untested.
 See [the correction evidence](../experiments/phase-3/WINDOWS_CORRECTION.md).
+
+The subsequent v0.4.1 Windows retest successfully installed PyTorch 2.14.0+cu130
+and detected the RTX 4070 SUPER, but stopped at a fixture setup error after nine
+test passes. Git's `core.autocrlf=true` had converted the byte-pinned LF fixtures
+to CRLF. Version 0.4.2 supplies fixture-specific checkout attributes; see
+[the checkout correction evidence](../experiments/phase-3/CHECKOUT_CORRECTION.md).
+CUDA tensor/model execution remains unvalidated because the external run stopped
+at that first test error.
 
 Install [uv](https://docs.astral.sh/uv/getting-started/installation/) version
 0.12.15. To keep the bootstrap entirely within the checkout when uv is absent:
@@ -98,6 +106,24 @@ Use the exact approved correction commit once it is published; record
 `git rev-parse HEAD` before testing. No source or lock edits, unlocked upgrades,
 manual pip replacement of PyTorch, index overrides, or `--no-sources` are needed.
 The existing v0.4.0 tag continues to identify the original blocked checkpoint.
+
+For the 0.4.2 checkout correction, use a **fresh checkout of the exact approved
+commit** after publication. Existing working-tree files are not necessarily
+rewritten when a new `.gitattributes` is pulled. There is no need to change system
+or global Git configuration or edit fixture files on the validation machine.
+Before syncing, these read-only commands should show `i/lf`, `w/lf`, and `eol: lf`
+for the three fixture payloads and their manifest:
+
+```powershell
+git rev-parse HEAD
+git ls-files --eol -- data/fixtures/tiny/*.txt data/fixtures/tiny/manifest.json
+git check-attr text eol -- data/fixtures/tiny/train.txt data/fixtures/tiny/validation.txt data/fixtures/tiny/test.txt data/fixtures/tiny/manifest.json
+```
+
+The repository rules apply only to fixture text/JSON files. They preserve the
+existing committed bytes under `core.autocrlf=true`, `input`, or `false`, without
+altering checksum verification. The regression suite requires Git on PATH and
+uses isolated temporary repositories; it does not modify user Git settings.
 
 ```powershell
 uv --version

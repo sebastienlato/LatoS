@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.4.2 — Phase 3 fixture checkout correction (local, 2026-09-19)
+
+- Force LF checkout for fixture text and JSON manifests through `.gitattributes`.
+- Preserve all existing fixture payload bytes, manifest sizes/hashes, and strict
+  runtime verification; include the attributes in the source distribution.
+- Exercise actual Git checkout conversion across four settings, then verify
+  acquisition/preparation and rejection of deliberately converted CRLF input.
+
+Publication awaits approval. Native Windows/CUDA retesting and Phase 4 remain paused.
+The original v0.4.0 and v0.4.1 tags must remain fixed.
+
 ## 0.4.1 — Phase 3 Windows environment correction (local, 2026-09-18)
 
 - Add Windows x86-64 to the lock and select official PyTorch 2.14.0+cu130 there.
