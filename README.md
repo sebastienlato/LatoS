@@ -4,12 +4,14 @@ LatoS is an original, English-first small language model project. Its goal is to
 make the path from documented training data to an evaluated conversational model
 reproducible on modest hardware.
 
-**Current capability: Phase 4 training engine.** LatoS prepares English data, trains
-its own tokenizer, and implements an original dense causal decoder plus batching,
-AdamW optimization, scheduling, validation, and resumable checkpoints. A tiny
-fixture overfits successfully and resumes exactly on the tested CPU runtime.
-The 17,308,032-parameter English pilot remains randomly initialized; useful
-language/chat capability has not been established.
+**Current capability: Phase 5 measured English pilot.** LatoS prepares English data,
+trains its own tokenizer, and implements an original dense causal decoder with
+AdamW optimization, scheduling, validation, and resumable checkpoints. The
+17,308,032-parameter pilot has trained from random initialization on the retained
+English corpus. Its [experiment report](experiments/phase-5/REPORT.md) compares
+held-out loss with random and train-only frequency baselines and records fixed
+samples, exposure, timing, memory, checkpoints, and limitations. Useful chat or
+instruction-following capability has not been established.
 The [roadmap](ROADMAP.md) defines those steps.
 
 ## Quickstart
@@ -32,8 +34,9 @@ PASS on exact v0.5.0, including real RTX 4070 SUPER training and recovery: 159 t
 passed, two MPS-only skips. GitHub Linux CPU CI passed separately with the same
 test counts and offline training acceptance. Physical Linux validation remains
 deferred, not performed. Observed CUDA equality is not a general determinism
-guarantee. See [Phase 4 closure](experiments/phase-4/CLOSURE.md). Closure documentation
-awaits publication approval; Phase 5 has not begun.
+guarantee. See [Phase 4 closure](experiments/phase-4/CLOSURE.md). Closure publication
+was verified. The Phase 5 pilot ran locally on MPS; its reviewed publication
+requires separate owner approval.
 See [setup and Windows retest instructions](docs/SETUP.md) and
 [recorded environment evidence](docs/ENVIRONMENT.md).
 
@@ -98,6 +101,13 @@ training/resume, document boundaries, loss weighting, checkpoint contents, and t
 same-runtime CPU equivalence guarantee. [Phase 4 results](experiments/phase-4/REPORT.md)
 record overfit and recovery evidence. Weights and detailed logs stay ignored.
 
+## English pilot
+
+The [pretraining guide](docs/PRETRAINING.md) explains the fixed run protocol,
+reproduction, baselines, local artifact inventory, and recovery. The test split
+remains reserved. Full datasets, logs, learned tokenizers, and weights stay outside
+Git; reproducing the pilot requires the documented prepared inputs.
+
 ## Development
 
 ```sh
@@ -113,5 +123,5 @@ explicit approval. [PROJECT_STATE.md](PROJECT_STATE.md) records the current hand
 
 Original source is MIT licensed. Dependencies keep their own licenses, recorded
 in [THIRD_PARTY.md](THIRD_PARTY.md). Future data and model artifacts will have
-separate provenance and distribution terms. No model quality or runtime target
-has been established yet.
+separate provenance and distribution terms. Pilot measurements apply only to the
+recorded run, data, and hardware.

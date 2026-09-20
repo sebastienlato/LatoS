@@ -1,6 +1,12 @@
-# Phase 5 fresh-chat handoff
+# Phase 5 fresh-chat handoff (historical)
 
-This is preparation only. **Do not start Phase 5 in the closure chat.** Publish
+**Consumed on 2026-09-20:** the owner explicitly started Phase 5 in a fresh Work
+session after remote verification of closure commit
+`52b72c9394e022d4cebc85808343bcaee73857c8` and unchanged v0.5.0. The instructions
+below preserve the original transition context; current status is in
+[PROJECT_STATE.md](../PROJECT_STATE.md).
+
+This was preparation only. **Do not start Phase 5 in the closure chat.** Publish
 and verify the approved Phase 4 closure first, then use the prompt below in a
 fresh Work chat. The owner has not authorized Phase 5 execution yet.
 

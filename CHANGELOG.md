@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.6.0 — Phase 5, local publication checkpoint (2026-09-20)
+
+- Run the 17.3M-parameter English pilot from verified random initialization on MPS.
+- Preserve held-out random/unigram comparisons, fixed samples, token exposure,
+  synchronized timing, memory observations, and full recovery checkpoints.
+- Add a reproducible pilot runner, separate artifact/recovery verifier, focused
+  evidence/failure tests, and reproduction/results documentation.
+- Keep test text reserved and all learned artifacts outside Git. Dependencies and
+  core training implementation remain unchanged; package/lock version is 0.6.0.
+
+See [Phase 5 results](experiments/phase-5/REPORT.md) for actual metrics and limits.
+Publication approval is pending; no Phase 6 work has begun.
+
 ## Phase 4 closure — documentation only (2026-09-19)
 
 - Record owner-reported Windows/RTX 4070 SUPER CUDA PASS at exact v0.5.0: 159
@@ -10,8 +23,9 @@
   guarantee, and physical Linux validation as deferred, not performed.
 - Prepare the fresh-chat Phase 5 handoff without starting Phase 5.
 
-Closure publication approval is pending. Package version stays 0.5.0; the validated
-v0.5.0 tag remains fixed. After an approved closure push, verify it and stop.
+Closure was published at `52b72c9394e022d4cebc85808343bcaee73857c8` and verified
+before the owner-authorized fresh Phase 5 session. That closure retained package
+version 0.5.0 and the validated v0.5.0 tag, which remains fixed.
 
 ## 0.5.0 — Phase 4, published (2026-09-19)
 

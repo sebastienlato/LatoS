@@ -124,3 +124,15 @@ silently change the schedule to shorten a test; a separate stop boundary preserv
 its original horizon. Retain immutable checkpoints and write segments to new
 output directories. Establish bitwise recovery on the same local CPU runtime,
 with a weaker numerical smoke check on MPS; do not infer CUDA support from Phase 3.
+
+## Phase 5: one measured MPS pilot before scaling
+
+Retain the accepted 17.3M architecture, float32 engine, tokenizer, and source split.
+The measured MPS probe supports this size on the available 64 GiB Mac. Train one
+fixed 3,000-update run with 256-token paragraph windows; use the predetermined
+final checkpoint and reserve test text. Score full validation against both the
+seeded random model and an add-one train-only unigram model. Preserve every fixed
+sample and all periodic checkpoints. No hyperparameter sweep or larger-model run
+is justified by this small, narrow corpus in Phase 5. Accelerator memory readings
+are boundary snapshots, not continuous peak measurements. See the
+[protocol](experiments/phase-5/PLAN.md) and [report](experiments/phase-5/REPORT.md).

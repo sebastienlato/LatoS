@@ -1,0 +1,1 @@
+{"accumulation_steps":1,"batch_size":8,"beta1":0.9,"beta2":0.95,"eps":1e-08,"learning_rate":0.0006,"max_grad_norm":1.0,"max_steps":10,"min_lr_ratio":0.1,"schema_version":1,"seed":17,"sequence_length":256,"warmup_steps":2,"weight_decay":0.1}

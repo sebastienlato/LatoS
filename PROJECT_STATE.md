@@ -1,63 +1,59 @@
 # Project state
 
-Updated: 2026-09-19.
+Updated: 2026-09-20.
 
 ## Phase status
 
-**Phase 4 is formally closed locally; documentation publication awaits approval.**
-The implementation was published and verified on main and annotated tag v0.5.0 at
-`cb585c321c92f5d774fb59234f76c1d3783a635a`. Package/runtime version remains 0.5.0;
-this closure changes only documentation and evidence. Keep the validated tag fixed.
+**Phase 5 is complete locally and reviewed; push approval is PENDING.**
+The owner started it in a fresh Work session after remote main was verified at
+closure `52b72c9394e022d4cebc85808343bcaee73857c8`. Annotated v0.5.0 remains at
+`cb585c321c92f5d774fb59234f76c1d3783a635a`. No Phase 5 remote writes have occurred.
 
-**Phase 5 has not begun and must not begin in this chat.** Closure push approval
-alone does not override the owner's fresh-chat transition gate.
+## Outcome and validation
 
-## Evidence and limits
+- Original 17,308,032-parameter pilot, verified seed-17 random initialization,
+  MPS float32: **3,000 updates**, **5,761,229 target exposures**, **4.511389**
+  corpus-equivalent passes. Timed run span **417.224 s**; synchronized optimization
+  throughput **14,628.5 targets/s**. No training failure or new paid service.
+- Full validation: loss **9.089003 → 4.731898**, perplexity **8857.350 → 113.511**;
+  train-only unigram baseline loss **6.883256**. Test text remains reserved.
+- Final checkpoint is the predeclared update 3,000, despite slightly better
+  validation at 2,500. Samples show English surface structure but remain repetitive
+  and incoherent; useful chat/instruction-following is not established.
+- **164 tests passed** in the locked development environment and separately in a
+  fresh non-editable wheel installation. Lint/format, MPS doctor, source/wheel builds,
+  archive/privacy inspection, and separate review passed. Setup-invocation failures
+  were corrected and recorded; no dependency or core engine changes were needed.
+- Independent artifact check verified **25 files**, all update/exposure totals,
+  random initial tensors, initial/final validation, and a replayed trained update.
+  Same-host scalar equality is not a general determinism guarantee.
+- [Report](experiments/phase-5/REPORT.md), [review](experiments/phase-5/REVIEW.md),
+  [reproduction guide](docs/PRETRAINING.md), and compact JSON evidence give scope.
 
-- Local Mac CPU/MPS: previously recorded **161 tests passed** in development and
-  clean wheel installation; fixture overfit, exact CPU recovery, validation state
-  preservation, and MPS smoke checks passed.
-- Independent Windows / RTX 4070 SUPER: **PASS**, reported by the owner for exact
-  v0.5.0. **159 passed, two MPS-only skips, zero failures**; actual CUDA training,
-  AdamW, scheduling, accumulation/clipping, validation preservation, checkpointing,
-  and separate-process resume passed. All 91 tracked files stayed unchanged and
-  Windows made no commits/pushes. Raw Windows logs were not supplied here.
-- Windows CUDA fixture loss **5.814638 → 0.010030** over 400 updates. Observed
-  exact CUDA equality is a result of that run, **not a general determinism guarantee**.
-- GitHub-hosted Linux CPU CI: **PASS**, completed run metadata/workflow/logs directly
-  verified at the same implementation commit: [run 35471367201](https://github.com/sebastienlato/LatoS/actions/runs/35471367201).
-  **159 passed, two MPS-only skips**, plus locked setup, lint/format, diagnostics,
-  offline data/tokenizer workflows, builds, and CPU overfit/exact-resume acceptance.
-- Independent physical Linux: **DEFERRED, NOT PERFORMED**. Hosted CI is distinct evidence.
-- Held-out loss worsening remains fixture memorization, not general language
-  improvement. The English pilot remains untrained. No Phase 5 execution occurred.
-- Consolidated evidence and limits: [Phase 4 closure](experiments/phase-4/CLOSURE.md).
+Phase 5 execution is MPS-only. Earlier Windows/CUDA PASS is owner-reported Phase 4
+validation; hosted Linux CPU CI PASS was verified separately for Phase 4. Physical
+Linux remains deferred, not performed. No Phase 5 external-platform/CI pass is claimed.
 
-## Pending closure publication
+## Preserved local artifacts
 
-Remote: `https://github.com/sebastienlato/LatoS.git` (existing private origin).
-Destination: `main`. **No new tag, tag movement, release, dataset, or weight upload.**
+`outputs/phase-5-english-pilot/` retains initial and 1,000/2,000/3,000 optimizer
+checkpoints, exact runner, plan, raw metrics, samples, and hashed inventory. Selected
+model: `step-00003000/model/`; weight SHA-256
+`f82ed3b21aeacad6d8b3a88c9100cbc83b8f15af1ba9c17a4fa4dccc59b2befa`.
+`outputs/phase-5-benchmark/` and validation logs are retained separately.
+Prior corpus, tokenizer, random snapshot, and Phase 4 outputs remain untouched.
+Artifacts are ignored local files, not uploaded backups or part of a fresh clone.
 
-- Local closure message: `Close Phase 4 with external validation evidence`.
-  This state belongs to the closure commit; its full ID is supplied in the approval
-  request and available via `git log -1 --format=%H` at this checkpoint.
-- Approval: **PENDING**. The earlier implementation push approval does not authorize
-  this new closure commit. No closure documentation has been pushed.
-- After explicit approval, publish the exact reviewed closure, verify main at that
-  commit and v0.5.0 still at the validated implementation, record locally, and stop.
-- Start Phase 5 only in a **fresh Work chat**, with explicit owner instruction after
-  closure publication is verified. [PHASE5_HANDOFF.md](docs/PHASE5_HANDOFF.md)
-  contains the preserved inputs, objective, constraints, and reusable start prompt.
+## Publication checkpoint and next action
 
-## Preserved resources and closure checks
+- Exact reviewed commit: the commit containing this state, supplied in the owner
+  approval request and available with `git log -1 --format=%H` at this checkpoint.
+- Commit message: `Complete Phase 5 measured English pilot`.
+- Remote: existing private `https://github.com/sebastienlato/LatoS.git`.
+- Destination: `main`; proposed new annotated tag **v0.6.0** at that same commit.
+  Keep v0.5.0 fixed. No release, dataset, learned tokenizer, weight, or log upload.
+- Approval: **PENDING**. Stop here for the owner's Phase 5 push decision. No Phase 6
+  work has begun. After approval, publish only the described reviewed state and
+  verify remote branch/tag before any subsequent roadmap work.
 
-Preserve the ignored English corpus, accepted 8,192-entry BPE tokenizer, random
-Phase 3 pilot snapshot, and `outputs/phase-4-*` acceptance/CLI artifacts. Tokenizer
-and pilot identities were checked again when preparing closure; their hashes are
-in the handoff. External validation does not grant access to Windows GPU compute.
-No new paid services or artifact uploads are authorized.
-
-Closure review checks evidence attribution, links, commit/test-count consistency,
-unchanged runtime/dependencies/configuration, privacy, and the transition gate.
-No new runtime tests or training are claimed for this documentation-only closure.
-Local uv: `.private/tools/bin/uv`; `.venv` uses the runtime under `.private/python`.
+Local uv: `.private/tools/bin/uv`; accepted runtime remains in `.venv`.

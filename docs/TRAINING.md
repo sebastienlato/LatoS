@@ -3,6 +3,8 @@
 Phase 4 implements a single-process, single-device float32 training engine. Its
 acceptance exercise memorizes an original offline fixture. This is not pretraining
 of the English pilot and does not establish useful language quality.
+The subsequent [Phase 5 pilot](PRETRAINING.md) uses this unchanged engine on the
+English corpus and records its own held-out quality/resource measurements.
 
 ## Reproduce the acceptance exercise
 

@@ -6,14 +6,14 @@ updated state, and a local commit before its publication approval. After an
 approved push is verified, development proceeds to the next phase unless the owner
 has imposed a pause or transition gate, as recorded in PROJECT_STATE.md.
 
-Phase 4 implementation is published as v0.5.0 at
-`cb585c321c92f5d774fb59234f76c1d3783a635a`. The owner reports Windows/RTX 4070 SUPER
-CUDA PASS, and GitHub Linux CPU CI passed separately after direct verification.
-Independent physical Linux remains deferred, not performed. Phase 4 closure is
-ready locally and awaits publication approval. **Do not start Phase 5 in this
-chat.** After closure publication is verified, Phase 5 requires an explicit owner
-start in a fresh Work chat. See [closure evidence](experiments/phase-4/CLOSURE.md),
-[the handoff](docs/PHASE5_HANDOFF.md), and [current state](PROJECT_STATE.md).
+Phase 4 closure was verified published at
+`52b72c9394e022d4cebc85808343bcaee73857c8`, with v0.5.0 unchanged at
+`cb585c321c92f5d774fb59234f76c1d3783a635a`. Phase 5 began in a fresh session on
+explicit owner instruction. Its measured pilot protocol is in
+[PLAN.md](experiments/phase-5/PLAN.md); see [current state](PROJECT_STATE.md) for
+validation and the pending publication checkpoint. Physical Linux remains deferred;
+hosted Linux CPU CI is separate earlier evidence. The current task stops at the
+reviewed Phase 5 push-approval checkpoint; Phase 6 has not begun.
 
 | Phase | Deliverable | Acceptance evidence |
 | --- | --- | --- |
