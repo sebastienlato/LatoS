@@ -72,6 +72,8 @@ class Trainer:
     ):
         check_dataset(model, train)
         check_dataset(model, validation)
+        if (train.target_masks is None) != (validation.target_masks is None):
+            raise ValueError("Train and validation objectives must match")
         if train.split != "train" or validation.split != "validation":
             raise ValueError("Trainer requires separate train and validation splits")
         if (
@@ -120,7 +122,7 @@ class Trainer:
         batches = [
             self.stream.take(self.config.batch_size) for _ in range(self.config.accumulation_steps)
         ]
-        total = sum(len(self.train_data.windows[i]) - 1 for batch in batches for i in batch)
+        total = sum(self.train_data.target_count(i) for batch in batches for i in batch)
         loss_sum = 0.0
         for indices in batches:
             ids, labels, count = collate(self.train_data, indices, self.device)

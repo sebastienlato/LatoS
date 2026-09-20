@@ -18,6 +18,7 @@ class TokenDataset:
     tokenizer_sha256: str
     split: str
     source_sha256: str
+    target_masks: tuple[tuple[bool, ...], ...] | None = None
 
     def __post_init__(self):
         if self.split not in ("train", "validation"):
@@ -41,9 +42,31 @@ class TokenDataset:
             if any(type(t) is not int or not 1 <= t < self.vocab_size or t == 3 for t in window):
                 raise ValueError("Invalid training token or reserved padding/unknown ID")
 
+        if self.target_masks is not None:
+            if not isinstance(self.target_masks, tuple) or len(self.target_masks) != len(
+                self.windows
+            ):
+                raise ValueError("Target masks must match windows")
+            for row, mask in zip(self.windows, self.target_masks, strict=True):
+                if (
+                    not isinstance(mask, tuple)
+                    or len(mask) != len(row)
+                    or any(type(value) is not bool for value in mask)
+                    or mask[0]
+                    or not any(mask[1:])
+                ):
+                    raise ValueError("Invalid target mask or no usable next-token targets")
+
+    def target_count(self, index: int) -> int:
+        return (
+            sum(self.target_masks[index])
+            if self.target_masks is not None
+            else len(self.windows[index]) - 1
+        )
+
     @property
     def identity(self) -> dict:
-        return {
+        identity = {
             "schema_version": 1,
             "boundary_policy": "isolated-record-overlap-one-v1",
             "sequence_length": self.sequence_length,
@@ -53,8 +76,13 @@ class TokenDataset:
             "source_sha256": self.source_sha256,
             "windows_sha256": sha256(canonical_json(self.windows)),
             "windows": len(self.windows),
-            "targets": sum(len(w) - 1 for w in self.windows),
+            "targets": sum(self.target_count(i) for i in range(len(self.windows))),
         }
+        if self.target_masks is not None:
+            identity["boundary_policy"] = "isolated-explicit-target-windows-v1"
+            identity["objective"] = "explicit-assistant-targets-v1"
+            identity["target_masks_sha256"] = sha256(canonical_json(self.target_masks))
+        return identity
 
 
 def prepare_dataset(
@@ -96,8 +124,12 @@ def collate(
     labels = torch.full_like(inputs, -100)
     for i, row in enumerate(rows):
         inputs[i, : len(row)] = torch.tensor(row, dtype=torch.long)
-        labels[i, 1 : len(row)] = inputs[i, 1 : len(row)]
-    return inputs.to(device), labels.to(device), sum(len(row) - 1 for row in rows)
+        if dataset.target_masks is None:
+            labels[i, 1 : len(row)] = inputs[i, 1 : len(row)]
+        else:
+            mask = torch.tensor(dataset.target_masks[indices[i]], dtype=torch.bool)
+            labels[i, : len(row)][mask] = inputs[i, : len(row)][mask]
+    return inputs.to(device), labels.to(device), sum(dataset.target_count(i) for i in indices)
 
 
 class ShuffleStream:

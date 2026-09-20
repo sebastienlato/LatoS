@@ -4,15 +4,15 @@ LatoS is an original, English-first small language model project. Its goal is to
 make the path from documented training data to an evaluated conversational model
 reproducible on modest hardware.
 
-**Current capability: Phase 5 measured English pilot.** LatoS prepares English data,
-trains its own tokenizer, and implements an original dense causal decoder with
-AdamW optimization, scheduling, validation, and resumable checkpoints. The
-17,308,032-parameter pilot has trained from random initialization on the retained
-English corpus. Its [experiment report](experiments/phase-5/REPORT.md) compares
-held-out loss with random and train-only frequency baselines and records fixed
-samples, exposure, timing, memory, checkpoints, and limitations. Useful chat or
-instruction-following capability has not been established.
-The [roadmap](ROADMAP.md) defines those steps.
+**Current capability: Phase 6 measured instruction-tuning experiment.** LatoS
+prepares English data, trains its own tokenizer, and implements an original dense
+causal decoder with optimization, validation and resumable checkpoints. A bounded
+assistant-only experiment starts from the preserved 17,308,032-parameter Phase 5
+base using original synthetic conversations and a shared chat format.
+[Phase 6 results](experiments/phase-6/REPORT.md) show lower assistant validation loss
+but **0/32 held-out exact answers and worse English validation loss**. Useful chat
+or instruction following is not established. The base remains preserved.
+See [instruction tuning](docs/INSTRUCTION_TUNING.md) and the [roadmap](ROADMAP.md).
 
 ## Quickstart
 
@@ -39,7 +39,10 @@ workflow's tiny CPU checks. Physical Linux remains deferred, not performed.
 Neither backend check establishes general CUDA determinism, cross-device equality,
 sustained-pilot performance or language quality. See
 [Phase 5 closure and evidence scope](experiments/phase-5/CLOSURE.md).
-Closure publication awaits approval; Phase 6 must not begin in this chat.
+Closure commit `3878a0167a78f6ad149e8523b4feb97cda77ef5e` was published and verified
+before the owner started Phase 6 in a fresh chat. Phase 6 publication awaits its
+own approval. Phase 6 local CPU/MPS results do not extend the earlier Windows or
+hosted Linux evidence to this changed implementation.
 See [setup and Windows retest instructions](docs/SETUP.md) and
 [recorded environment evidence](docs/ENVIRONMENT.md).
 

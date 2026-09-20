@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.7.0 — Phase 6, local publication checkpoint (2026-09-20)
+
+- Add original synthetic English conversation generation and verified split loading.
+- Share chat serialization across tuning and evaluation; hash assistant target masks
+  into dataset identities, weight accumulation/exposure by eligible next-token targets.
+- Run the fixed 200-update MPS experiment from the selected Phase 5 base, preserve
+  all samples and checkpoints, replay recovery, and measure English regressions.
+- Record the negative quality result: held-out exact completion remains 0/32 and
+  English validation loss worsens. No useful assistant claim.
+- Keep dependencies and prior artifacts fixed; version/lock root becomes 0.7.0.
+
+Publication approval is pending for this phase only. See the
+[report](experiments/phase-6/REPORT.md). No Phase 7 work is included.
+
 ## Phase 5 closure — documentation only (2026-09-20)
 
 - Record owner-reported Windows/RTX 4070 SUPER PASS at exact v0.6.0: 162 tests
@@ -11,9 +25,9 @@
   that run. Physical Linux remains deferred; no broader CUDA/quality claim follows.
 - Prepare the fresh-chat Phase 6 handoff without beginning Phase 6.
 
-Closure publication approval is pending. Package remains 0.6.0; v0.6.0 and v0.5.0
-stay fixed. After approved closure publication is verified, stop; Phase 6 requires
-explicit owner start in a fresh Work chat.
+Closure was published at `3878a0167a78f6ad149e8523b4feb97cda77ef5e` and verified
+before the explicit fresh-chat Phase 6 start. That closure kept package 0.6.0;
+v0.6.0 and v0.5.0 remain fixed.
 
 ## 0.6.0 — Phase 5, published (2026-09-20)
 
@@ -28,7 +42,7 @@ explicit owner start in a fresh Work chat.
 See [Phase 5 results](experiments/phase-5/REPORT.md) for actual metrics and limits.
 Published after explicit owner approval at
 `fa0c3ac3b7f3890ffdcad411968a656da2f74b3b`; main and annotated v0.6.0 were verified.
-No Phase 6 work has begun. The closure above has its own pending approval.
+The subsequent closure and Phase 6 experiment are recorded above.
 
 ## Phase 4 closure — documentation only (2026-09-19)
 

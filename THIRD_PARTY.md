@@ -178,3 +178,22 @@ these established algorithms and library primitives:
 Consulted on 2026-09-19. Tensor storage continues to use the existing Safetensors
 dependency. The offline fixture and its learned tokenizer remain LatoS-generated
 artifacts with the fixture's existing provenance; no pretrained model is used.
+
+## Phase 6 conversation formatting and loss
+
+No new external dataset, code, model API, pretrained weight or dependency is used.
+The templates, source-group lists and deterministic conversation generator were
+independently authored by Codex as original MIT project material, 2026-09-20.
+Generated records are synthetic educational examples, not human demonstrations.
+The accepted LatoS base, tokenizer and English validation corpus retain their
+existing provenance and terms.
+
+Primary guidance consulted on 2026-09-20:
+
+- [PyTorch cross entropy](https://docs.pytorch.org/docs/2.14/generated/torch.nn.CrossEntropyLoss.html):
+  class-index loss and ignored targets. LatoS independently tests its explicit
+  next-token shift and target-weighted reduction.
+- [Hugging Face chat-format guidance](https://huggingface.co/docs/transformers/main/en/chat_templating):
+  consistent message serialization and generation prefixes. LatoS uses its own
+  segmented format and unchanged tokenizer; no upstream template/code is copied
+  and Transformers is not added as a dependency.

@@ -136,3 +136,20 @@ sample and all periodic checkpoints. No hyperparameter sweep or larger-model run
 is justified by this small, narrow corpus in Phase 5. Accelerator memory readings
 are boundary snapshots, not continuous peak measurements. See the
 [protocol](experiments/phase-5/PLAN.md) and [report](experiments/phase-5/REPORT.md).
+
+## Phase 6: bounded original SFT with a retained base
+
+Use 192 deterministic synthetic training conversations and 32 held-out validation
+conversations, with an independent test reservation. Split related word groups
+before rendering; shared templates deliberately test within-template new-word
+generalization. Keep the existing vocabulary, separately encode role headers and
+content, and reject overlong conversations. Supervise assistant content/EOS only,
+using the existing model's single next-token shift. Train a fresh optimizer from
+the fixed Phase 5 update 3,000 weights, preserving every prior artifact.
+
+Select final update 200 in advance. Report exact completion and language-modeling
+regression alongside assistant loss. The observed failure to generalize (0/32) and
+English regression mean the tuned checkpoint is an experiment artifact, not a
+replacement base or useful assistant. Do not expand the run or pick a better
+validation checkpoint after seeing this outcome. Record the reviewed repetition
+and retain the original run, including its different evidence metadata.

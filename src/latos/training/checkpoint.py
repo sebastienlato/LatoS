@@ -180,8 +180,8 @@ def load_checkpoint(
         raise ValueError("Invalid checkpoint shuffle permutation")
     if rng.dtype != torch.uint8 or rng.shape != trainer.stream.generator.get_state().shape:
         raise ValueError("Invalid checkpoint shuffle RNG")
-    expected_tokens = epoch * sum(len(w) - 1 for w in train.windows) + sum(
-        len(train.windows[i]) - 1 for i in order[:cursor].tolist()
+    expected_tokens = epoch * sum(train.target_count(i) for i in range(len(train.windows))) + sum(
+        train.target_count(i) for i in order[:cursor].tolist()
     )
     if metadata["tokens_seen"] != expected_tokens:
         raise ValueError("Checkpoint token exposure counter is inconsistent")
