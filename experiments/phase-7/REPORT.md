@@ -1,6 +1,9 @@
 # Phase 7 — local streaming inference
 
-Completed locally on 2026-09-20; publication awaits explicit owner approval.
+Originally completed locally on 2026-09-20; subsequently published as v0.8.0 at
+`04031e5ea98da8db495242165a78c216ab1d4cf4`. The measurements below retain their
+original Mac scope. Later Windows/CUDA and Linux CPU CI evidence is recorded
+separately in [CLOSURE.md](CLOSURE.md); closure publication awaits approval.
 CLI chat, streaming text and inference-only KV caching are implemented and checked
 against both preserved learned artifacts. This is an engineering result, not an
 instruction-following improvement. [Machine-readable results](results.json),
@@ -152,11 +155,15 @@ the Phase 6 closure plus recorded dirty source hashes; the final Phase 7 commit 
 provided separately in the push checkpoint. No unmeasured commit is passed off as
 the execution source.
 
-No Phase 7 Windows/CUDA, hosted Linux CI or physical Linux run occurred. Prior
+At the original Mac checkpoint, no Phase 7 Windows/CUDA, hosted Linux CI or physical
+Linux run had occurred. The subsequent [closure](CLOSURE.md) supersedes that execution
+status within its stated scopes; physical Linux remains deferred. Prior
 Windows/CUDA PASS covered four SFT updates / 175 assistant-target exposures, not
 full Mac SFT reproduction; prior hosted Linux CPU CI passed separately within its
 documented tiny workflow scope. Physical Linux remains deferred. No useful
 instruction following, general CUDA determinism, cross-device equality, mixed
 precision or distributed behavior is established. Prior experiments used at most
 256-token windows; 512-position numerical agreement does not establish 512-token
-language quality. No remote publication or artifact backup has occurred.
+language quality. At that original checkpoint no remote publication or artifact
+backup had occurred; implementation publication is now verified, while ignored
+artifacts remain local and are not remote backups.

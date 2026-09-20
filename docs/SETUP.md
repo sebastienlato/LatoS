@@ -43,6 +43,20 @@ separately with 159 passes/two skips and offline training acceptance. Exact CUDA
 equality in that validation is not a general determinism guarantee. Physical
 Linux remains deferred. See [Phase 4 closure](../experiments/phase-4/CLOSURE.md).
 
+Phase 7 v0.8.0 (`04031e5ea98da8db495242165a78c216ab1d4cf4`) has also passed
+owner-reported Windows/RTX 4070 SUPER validation: 202 passed, eight expected skips,
+fresh non-editable wheel suite and actual CUDA cache/inference/CLI checks. These
+used tiny 256-position base/SFT artifacts plus a separate synthetic 512-position
+model; the full Mac learned artifacts were unavailable and not validated on Windows.
+Windows OS-level Ctrl-C/console-event delivery remains unvalidated; callback
+cancellation passed. The POSIX process-SIGINT test is intentionally skipped there.
+
+GitHub Linux CPU CI passed separately at v0.8.0: 203 passed, seven MPS-only skips,
+tiny CPU inference/CLI/POSIX SIGINT tests and existing offline workflows/builds.
+Building a wheel in CI is not evidence of a fresh-wheel-installed test suite.
+Physical Linux remains deferred. See [Phase 7 closure](../experiments/phase-7/CLOSURE.md)
+and [inference usage](INFERENCE.md) for exact scope and limitations.
+
 Install [uv](https://docs.astral.sh/uv/getting-started/installation/) version
 0.12.15. To keep the bootstrap entirely within the checkout when uv is absent:
 

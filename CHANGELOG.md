@@ -1,6 +1,22 @@
 # Changelog
 
-## 0.8.0 — Phase 7, local checkpoint (2026-09-20)
+## Phase 7 closure — documentation only (2026-09-20)
+
+- Record owner-reported Windows/RTX 4070 SUPER PASS at exact v0.8.0: 202 passed,
+  eight expected skips, fresh wheel suite and actual cached/uncached CUDA inference.
+- Keep the tiny 256-position Windows artifacts and separate synthetic 512-position
+  model distinct from the full Mac learned artifacts, which were unavailable there.
+  Windows OS-level Ctrl-C/console-event delivery remains unvalidated.
+- Record separately inspected hosted Linux CPU CI: 203 passed, seven MPS-only skips,
+  tiny inference/CLI/POSIX SIGINT tests, existing offline fixtures and builds.
+- Preserve negative quality results and all evidence limits. Physical Linux remains
+  deferred. Prepare the Phase 8 handoff without beginning Phase 8.
+
+Closure publication awaits explicit approval. Package remains 0.8.0; no new tag,
+tag movement, release or artifact upload. After approved closure publication is
+verified, stop; Phase 8 requires an explicit fresh-chat start.
+
+## 0.8.0 — Phase 7, published (2026-09-20)
 
 - Add explicit-artifact terminal chat with streaming Unicode text, JSON events,
   EOS stopping, reply budgets, cancellation and transactional multi-turn history.
@@ -10,8 +26,10 @@
   fixed CPU/MPS latency without retraining or consuming either reserved test set.
 - Keep the Phase 6 negative instruction result and all platform limitations visible.
 
-Publication is pending explicit owner approval. Proposed annotated tag: v0.8.0.
-See [Phase 7 report](experiments/phase-7/REPORT.md) for actual validation and review.
+Published after owner approval at `04031e5ea98da8db495242165a78c216ab1d4cf4`;
+remote main and annotated v0.8.0 were verified. See the
+[Phase 7 report](experiments/phase-7/REPORT.md). Closure above has its own pending
+publication approval. No Phase 8 implementation is included.
 
 ## Phase 6 closure — documentation only (2026-09-20)
 

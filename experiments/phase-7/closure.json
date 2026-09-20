@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "recorded_date": "2026-09-20",
+  "phase": 7,
+  "implementation_commit": "04031e5ea98da8db495242165a78c216ab1d4cf4",
+  "implementation_tag": "v0.8.0",
+  "tag_object": "485aaf36b7ed81a95c948434e1c14634b220be07",
+  "closure_status": "reviewed locally; publication requires separate explicit approval",
+  "package_version": "0.8.0",
+  "windows_cuda": {
+    "status": "pass within reported scope",
+    "attribution": "Owner-supplied independent validation summary; not executed by this Mac session",
+    "hardware": "NVIDIA RTX 4070 SUPER",
+    "tests": {
+      "passed": 202,
+      "skipped": 8,
+      "failed": 0,
+      "fresh_checkout_locked_install": "pass",
+      "fresh_non_editable_wheel_suite": "pass"
+    },
+    "artifacts": {
+      "retained": "tiny base/SFT, capacity 256",
+      "separate_synthetic": "512 positions and batch two",
+      "full_mac_learned_base_sft_validated": false
+    },
+    "logit_comparison": {
+      "scope": "same-CUDA full vocabulary, cached versus uncached",
+      "atol": 1e-05,
+      "rtol": 1e-05
+    },
+    "passed_checks": [
+      "Actual cached and uncached CUDA inference",
+      "KV construction, growth, reuse, reset, invalidation, capacity, error handling",
+      "Fixed greedy token IDs across cached, uncached and non-streaming paths",
+      "Streaming output, stopping, callback cancellation, history rollback, Unicode buffering/flush, context boundaries",
+      "Real installed CUDA CLI chat in development and fresh-wheel environments",
+      "Scoped latency measurements, without speedup requirement or direct Mac comparison",
+      "Artifact, packaging, privacy and reserved-data preservation"
+    ],
+    "preservation": {
+      "tracked_files_unchanged": 143,
+      "prior_phase5_phase6_evidence_files_unchanged": 694,
+      "commits_or_pushes_from_windows": false
+    },
+    "windows_console_event_delivery_validated": false,
+    "posix_sigint_test": "Intentionally skipped on Windows",
+    "raw_logs_supplied": false,
+    "tiny_artifact_hashes_supplied": false,
+    "latency_values_supplied": false
+  },
+  "github_linux_cpu": {
+    "status": "pass",
+    "attribution": "Run/job metadata, exact-commit workflow/tests and logs directly inspected",
+    "run_id": 35529617332,
+    "url": "https://github.com/sebastienlato/LatoS/actions/runs/35529617332",
+    "job_id": 106127787033,
+    "job_url": "https://github.com/sebastienlato/LatoS/actions/runs/35529617332/job/106127787033",
+    "event": "push",
+    "head_sha": "04031e5ea98da8db495242165a78c216ab1d4cf4",
+    "job_completed_at": "2026-09-20T18:37:55Z",
+    "run_updated_at": "2026-09-20T18:37:56Z",
+    "runner": "ubuntu-24.04, Linux x86-64",
+    "python": "3.14.7",
+    "torch": "2.14.0+cpu",
+    "tests": {
+      "collected": 210,
+      "passed": 203,
+      "skipped": 7,
+      "failed": 0,
+      "seconds": 38.58,
+      "skip_scope": "MPS only",
+      "inference_cpu_passed": 19,
+      "inference_mps_skipped": 4,
+      "posix_sigint": "passed on Linux CPU"
+    },
+    "scope": [
+      "Locked install, lint/format, pytest, CPU doctor/debug model checks",
+      "Tiny synthetic CPU cache/inference checks through 512 positions and batch two",
+      "Development-install CLI subprocess checks, Unicode/stopping/history/context/callback cancellation and POSIX SIGINT",
+      "Existing tiny two-update CPU SFT runner/in-process verifier tests; separate-process training recovery tests",
+      "Offline data/tokenizer fixtures, source/wheel build and 400-update CPU training acceptance"
+    ],
+    "not_demonstrated": [
+      "CUDA or MPS execution",
+      "Full Mac learned base/SFT validation or reproduction",
+      "Phase 7 retained-artifact latency matrix",
+      "Fresh non-editable wheel test suite",
+      "Windows console-event delivery",
+      "Physical Linux validation",
+      "Standalone archive/privacy or Mac-artifact preservation audit"
+    ],
+    "raw_log_sha256": "f43ed9837723220a5151ea46aebd89c3a4286845e073e7446ad5ae3ecc2a1bf7",
+    "metadata_sha256": "3add025d87de7255a0c92c5255ad9b267c0d111acbd19cbd3b99eb0639cee8e3"
+  },
+  "physical_linux": "deferred, not performed",
+  "local_closure_checks": {
+    "prior_artifact_data_files_unchanged": 357,
+    "phase7_evidence_inventory_entries_unchanged": 83,
+    "sft_inventory_entries_unchanged": 49,
+    "counts_are_separate_inventories": true,
+    "reserved_payloads": "Integrity hashes only; not parsed or evaluated",
+    "runtime_source_tests_configs_lock_workflow_unchanged": true,
+    "new_runtime_tests_training_benchmarks_builds": false
+  },
+  "unestablished": [
+    "Useful instruction following",
+    "General CUDA determinism",
+    "Cross-device equality",
+    "Production latency",
+    "Mixed precision",
+    "Distributed serving"
+  ],
+  "owner_gate": "Do not begin Phase 8 in this chat. Review closure locally, obtain explicit publication approval, publish exact closure and verify unchanged tags, then stop. Phase 8 requires explicit fresh-chat start."
+}

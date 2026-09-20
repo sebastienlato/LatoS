@@ -116,7 +116,17 @@ The runner verifies fixed artifact hashes, compares incremental and chunked pref
 through capacity, checks changed-future causality and reset, compares greedy outputs,
 and measures warmed fixed chat and forced-token workloads. See the
 [predeclared plan](../experiments/phase-7/PLAN.md) for tolerances and measurement scope.
-Phase 7 CPU/MPS results apply to the measured Mac only. Phase 6 Windows/CUDA PASS
-was four updates/175 assistant targets, not full Mac SFT reproduction. Its Linux CPU
-CI passed separately within its recorded scope. Neither validates Phase 7; physical
-Linux remains deferred and useful instruction following remains unestablished.
+Phase 7 CPU/MPS results apply to the measured Mac and its full learned artifacts.
+Subsequent owner-reported Windows/RTX 4070 SUPER PASS covered retained tiny base/SFT
+artifacts through capacity 256 and a separate synthetic 512-position model. It did
+not validate the full Mac learned artifacts or Windows OS-level Ctrl-C/console-event
+delivery. Same-CUDA logits met atol=1e-5, rtol=1e-5; fixed greedy IDs and callback
+cancellation checks passed. Scoped latency was collected, with no speedup requirement
+or direct Mac comparison. The CPU-default pytest suite alone is not CUDA evidence.
+
+Separately inspected hosted Linux CPU CI passed 203 tests with seven MPS-only skips,
+including tiny inference/CLI and POSIX SIGINT checks. It did not run the retained-
+artifact benchmark matrix or a fresh non-editable wheel suite. Physical Linux remains
+deferred. No useful instruction following, general CUDA determinism, cross-device
+equality, production latency, mixed precision or distributed serving is established.
+See [closure evidence](../experiments/phase-7/CLOSURE.md) for attribution and exact scope.

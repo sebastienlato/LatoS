@@ -4,7 +4,7 @@ LatoS is an original, English-first small language model project. Its goal is to
 make the path from documented training data to an evaluated conversational model
 reproducible on modest hardware.
 
-**Current capability: Phase 7 local streaming inference (publication pending).** LatoS
+**Current capability: Phase 7 local streaming inference (v0.8.0).** LatoS
 prepares English data, trains its own tokenizer, and implements an original dense
 causal decoder with optimization, validation and resumable checkpoints. A bounded
 assistant-only experiment starts from the preserved 17,308,032-parameter Phase 5
@@ -32,21 +32,26 @@ uv run --locked pytest
 
 The environment uses Python 3.14.7 and PyTorch 2.14.0. The lock targets macOS
 Apple Silicon, Linux x86-64 CPU, and Windows x86-64 with the pinned CUDA 13.0 build.
-Phase 6 implementation is published as v0.7.0 at
-`f6636af34933b9678824cc8dd50f6ab6559a2de5`. The full Mac MPS experiment ran 200
-updates / 6,188 assistant-target exposures; 187 local tests passed in development
-and a fresh wheel installation. The owner reports independent Windows/RTX 4070
-SUPER PASS: 184 passed, three MPS-only skips, fresh wheel suite, and a bounded
-four-update / 175-assistant-target CUDA exercise with 49 artifact checks and 64
-response replays. It did not reproduce the full Mac run or learned artifact; both
-tiny Windows models scored 0/32 exact replies. GitHub Linux CPU CI passed separately
-with 184 passes/three MPS skips, tiny SFT runner/verifier tests, fixture acceptance
-and workflow checks. Physical Linux remains deferred. No useful instruction
-following, general CUDA determinism, cross-device equality or mixed-precision/
-distributed capability is established. See [Phase 6 closure](experiments/phase-6/CLOSURE.md).
-Closure was published at `c4ed8c9564c41f26be2c10ee178f5a10ac80d3a8` and verified
-before the explicit fresh-chat Phase 7 start. Phase 7 publication awaits approval;
-see [current state](PROJECT_STATE.md).
+Phase 7 implementation is published as v0.8.0 at
+`04031e5ea98da8db495242165a78c216ab1d4cf4`. Mac CPU/MPS validation passed 210 tests
+in development and a fresh wheel. Separate inference checks used the full preserved
+Mac base/SFT models.
+The owner reports independent Windows/RTX 4070 SUPER PASS: 202 passed, eight expected
+skips, fresh wheel suite and actual CUDA inference/CLI. Windows used tiny 256-position
+base/SFT artifacts plus a separate synthetic 512-position model; the full Mac learned
+artifacts were unavailable and were not validated there. Windows console Ctrl-C
+remains unvalidated; callback cancellation passed. GitHub-hosted Linux CPU CI was
+separately verified: 203 passed, seven MPS-only skips, tiny inference/CLI/POSIX SIGINT
+checks and existing offline workflows. It did not run a fresh-wheel test suite or
+validate the full Mac learned artifacts. Physical Linux remains deferred.
+
+See [Phase 7 closure and exact limits](experiments/phase-7/CLOSURE.md). Useful
+instruction following, general CUDA determinism, cross-device equality, production
+latency, mixed precision and distributed serving remain unestablished. The
+[Phase 6 negative SFT result](experiments/phase-6/CLOSURE.md) is unchanged.
+Closure publication awaits approval. **Do not begin Phase 8 in this chat.** After
+verified closure publication, use the prepared [fresh-chat handoff](docs/PHASE8_HANDOFF.md)
+and [current state](PROJECT_STATE.md).
 See [setup and Windows retest instructions](docs/SETUP.md) and
 [recorded environment evidence](docs/ENVIRONMENT.md).
 
