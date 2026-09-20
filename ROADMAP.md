@@ -6,14 +6,15 @@ updated state, and a local commit before its publication approval. After an
 approved push is verified, development proceeds to the next phase unless the owner
 has imposed a pause or transition gate, as recorded in PROJECT_STATE.md.
 
-Phase 5 closure `3878a0167a78f6ad149e8523b4feb97cda77ef5e` is published and verified;
-v0.6.0 remains fixed at `fa0c3ac3b7f3890ffdcad411968a656da2f74b3b`. The owner explicitly
-started Phase 6 in a fresh chat. Its measured instruction-tuning experiment is
-complete locally and awaits reviewed publication approval; see
-[results](experiments/phase-6/REPORT.md) and [current state](PROJECT_STATE.md).
-The negative capability/regression result is preserved. Physical Linux remains
-deferred. Prior Windows and hosted Linux results retain their documented Phase 5
-scope and do not validate the changed Phase 6 implementation.
+Phase 6 implementation is published as v0.7.0 at
+`f6636af34933b9678824cc8dd50f6ab6559a2de5`. The owner reports bounded independent
+Windows/RTX 4070 SUPER PASS: four updates / 175 assistant targets, not the full Mac
+experiment. Hosted Linux CPU CI passed separately within its tiny CPU/workflow
+scope. Physical Linux remains deferred. The negative instruction/regression result
+is unchanged. [Phase 6 closure](experiments/phase-6/CLOSURE.md) is ready locally and
+awaits its own publication approval. **Do not begin Phase 7 in this chat.** After
+closure publication is verified, Phase 7 requires explicit owner start in a fresh
+Work chat. See [the handoff](docs/PHASE7_HANDOFF.md) and [state](PROJECT_STATE.md).
 
 | Phase | Deliverable | Acceptance evidence |
 | --- | --- | --- |

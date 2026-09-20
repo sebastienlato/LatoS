@@ -1,0 +1,201 @@
+{
+  "recorded_date": "2026-09-20",
+  "phase": 6,
+  "status": "closed locally; documentation publication pending approval",
+  "validated_implementation": {
+    "tag": "v0.7.0",
+    "commit": "f6636af34933b9678824cc8dd50f6ab6559a2de5",
+    "package_version": "0.7.0",
+    "publication_verified": true,
+    "annotated_tag_object": "bdbaa5499847ae7080e2b32bc96c5400ed14df80"
+  },
+  "mac_sft_experiment": {
+    "evidence_source": "Previously recorded local run and verification; unchanged",
+    "updates": 200,
+    "assistant_target_exposures": 6188,
+    "assistant_loss_before": 8.354878555644643,
+    "assistant_loss_after": 5.8152327301088445,
+    "exact_replies_before": 0,
+    "exact_replies_after": 0,
+    "cases": 32,
+    "english_loss_before": 4.731898463298386,
+    "english_loss_after": 5.653422288805805,
+    "quality": "negative instruction/generalization and English-regression result; not a useful assistant or replacement base"
+  },
+  "windows_cuda": {
+    "result": "PASS",
+    "evidence_source": "Owner-reported independent Windows validation summary; raw logs not supplied in this session",
+    "commit": "f6636af34933b9678824cc8dd50f6ab6559a2de5",
+    "gpu": "NVIDIA RTX 4070 SUPER",
+    "tests_passed": 184,
+    "tests_skipped": 3,
+    "tests_failed": 0,
+    "skip_reason": "MPS-only tests",
+    "fresh_non_editable_wheel_suite": "PASS (owner-reported complete suite)",
+    "bounded_exercise": {
+      "optimizer_updates": 4,
+      "assistant_target_exposures": 175,
+      "artifact_files_verified": 49,
+      "base_sft_responses_replayed": 64,
+      "base_exact_replies": 0,
+      "sft_exact_replies": 0,
+      "cases_per_model": 32,
+      "full_mac_experiment_reproduced": false,
+      "mac_learned_artifact_reproduced": false
+    },
+    "checks": [
+      "fresh checkout and locked installation",
+      "shared chat serialization, assistant-only masking and next-token alignment",
+      "zero direct loss gradient at ignored prediction positions; assistant targets correctly trainable",
+      "actual CUDA SFT, accumulation, scheduling, active clipping, finite gradients and optimizer state",
+      "validation-state preservation",
+      "checkpoint creation/loading, independent verification and recovery",
+      "base-versus-SFT assistant evaluation and English-regression measurement mechanisms",
+      "both reserved test payloads excluded from training/evaluation and unchanged",
+      "CLI, lint, formatting, dependency integrity, diagnostics, offline data/tokenizer workflows",
+      "builds, packaging and privacy checks"
+    ],
+    "prior_phase5_evidence_files_preserved": 326,
+    "tracked_files_unchanged": 128,
+    "working_tree": "clean",
+    "commits_created": 0,
+    "pushes_performed": 0,
+    "limits": [
+      "not reproduction of full Mac 200-update / 6188-assistant-target experiment or learned artifact",
+      "no useful instruction following",
+      "no general CUDA determinism or cross-device numerical equality",
+      "no mixed-precision/distributed behavior or capability beyond reported evidence",
+      "Windows artifact/configuration identities and numerical recovery tolerances not supplied; no inference made"
+    ]
+  },
+  "github_linux_cpu_ci": {
+    "result": "PASS",
+    "evidence_source": "Run/job metadata, exact-commit workflow and tests, and completed logs directly inspected read-only",
+    "commit": "f6636af34933b9678824cc8dd50f6ab6559a2de5",
+    "run_id": 35522033012,
+    "job_id": 106107655953,
+    "event": "push",
+    "url": "https://github.com/sebastienlato/LatoS/actions/runs/35522033012",
+    "runner": "ubuntu-24.04",
+    "python": "3.14.7",
+    "torch": "2.14.0+cpu",
+    "tests_collected": 187,
+    "tests_passed": 184,
+    "tests_skipped": 3,
+    "tests_failed": 0,
+    "pytest_seconds": 22.93,
+    "skip_reason": "MPS hardware unavailable",
+    "job_completed_at": "2026-09-20T16:14:24Z",
+    "run_updated_at": "2026-09-20T16:14:25Z",
+    "checks": [
+      "locked installation",
+      "Ruff lint/format",
+      "pytest including 19 CPU instruction checks and all three Phase 6 integration cases",
+      "CPU doctor and debug model diagnostics",
+      "offline data acquisition/preparation/audit",
+      "source and wheel builds",
+      "offline tokenizer fitting/validation",
+      "Phase 4 offline CPU fixture overfit/exact-resume acceptance at the Phase 6 commit"
+    ],
+    "phase6_test_scope": [
+      "two-update tiny randomly initialized CPU base, not the retained Mac model",
+      "both test payloads absent from runner inputs",
+      "base/SFT evaluations and samples, artifact/checkpoint inventory, verifier function replay inside pytest",
+      "overwrite refusal, injected failure retention and wrong-base rejection"
+    ],
+    "fixture": {
+      "parameter_count": 127808,
+      "initial": {
+        "train": {
+          "loss": 5.814637595759336,
+          "perplexity": 335.16990949182764,
+          "targets": 329,
+          "windows": 6,
+          "split": "train"
+        },
+        "validation": {
+          "loss": 5.806987274638223,
+          "perplexity": 332.61553540349695,
+          "targets": 391,
+          "windows": 8,
+          "split": "validation"
+        }
+      },
+      "final": {
+        "train": {
+          "loss": 0.01003046516940496,
+          "perplexity": 1.0100809389023477,
+          "targets": 329,
+          "windows": 6,
+          "split": "train"
+        },
+        "validation": {
+          "loss": 11.245178298267257,
+          "perplexity": 76510.11997093848,
+          "targets": 391,
+          "windows": 8,
+          "split": "validation"
+        }
+      },
+      "tokens_seen": 131600,
+      "resume": {
+        "cut_step": 97,
+        "final_step": 400,
+        "compared_updates": 303,
+        "weights_bitwise_equal": true,
+        "optimizer_bitwise_equal": true,
+        "sampler_bitwise_equal": true,
+        "non_timing_metrics_equal": true
+      },
+      "validation": {
+        "weights_unchanged": true,
+        "optimizer_unchanged": true,
+        "rng_unchanged": true,
+        "gradients_unchanged": true,
+        "mode_restored": true
+      },
+      "quality_limit": "Fixture memorization only; no language quality claim"
+    },
+    "not_demonstrated": [
+      "full Mac SFT reproduction or learned artifact",
+      "fresh non-editable wheel test suite",
+      "standalone independent-process Phase 6 verifier CLI",
+      "separate archive/privacy audit",
+      "CUDA or MPS execution",
+      "independent physical Linux validation",
+      "general determinism, cross-device equality or useful instruction capability"
+    ]
+  },
+  "independent_physical_linux": {
+    "result": "DEFERRED_NOT_PERFORMED",
+    "owner_explicitly_deferred": true
+  },
+  "phase7": {
+    "started": false,
+    "authorized_in_this_chat": false,
+    "next_gate": "After approved closure publication is verified, require explicit owner start in a fresh Work chat."
+  },
+  "publication": {
+    "approval": "pending",
+    "scope": "documentation/evidence only",
+    "remote": "https://github.com/sebastienlato/LatoS.git",
+    "destination_branch": "main",
+    "new_tag": null,
+    "preserve_tags": "all existing tags, including v0.7.0/v0.6.0/v0.5.0",
+    "after_verified_push": "stop; do not begin Phase 7 in this chat"
+  },
+  "closure_checks": {
+    "documentation_only": true,
+    "sft_inventory_files_rehashed": 49,
+    "base_tokenizer_random_baseline_hashes": "unchanged",
+    "implementation_fingerprint": "unchanged",
+    "runtime_tests_rerun": false,
+    "training_rerun": false,
+    "builds_rerun": false,
+    "separate_review": "pass: attribution, counts, exact refs, workflow/test scope, unchanged outcomes, artifact identities, privacy and transition gate",
+    "relative_links": "pass",
+    "json_parse": "pass",
+    "privacy_and_history_scan": "pass",
+    "existing_tags_unchanged": true
+  }
+}

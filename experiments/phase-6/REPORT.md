@@ -107,11 +107,16 @@ memory usage on this unified-memory host.
   inventory and selected base/tokenizer identities verified. Existing English
   corpus data was not modified; English test text was not opened by tuning.
 
-This phase's Windows/CUDA and hosted Linux execution have **not run**. Prior
-Windows validation was four CUDA updates and 416 targets, not full Mac pilot
-reproduction. Prior hosted Linux CPU CI passed separately within its Phase 5
-scope. Physical Linux remains deferred. No general CUDA determinism or cross-device
-numerical equivalence is established.
+Subsequent independent Windows/CUDA engineering validation is **PASS**, owner-reported
+at exact v0.7.0: 184 tests passed, three MPS-only skips, fresh wheel suite, four CUDA
+updates / 175 assistant-target exposures, 49 artifact checks and 64 response replays.
+Both tiny Windows models scored 0/32. This did not reproduce the full Mac experiment
+or learned artifact. Hosted Linux CPU CI was separately verified with 184 passed /
+three skips, within its tiny CPU SFT/workflow scope. Physical Linux remains deferred.
+No useful instruction following, general CUDA determinism, cross-device equality,
+mixed-precision/distributed behavior or broader capability follows from these checks.
+[Closure evidence](CLOSURE.md) records attribution and scope; original result JSON,
+samples, inventory and the pre-publication validation snapshot remain unchanged.
 
 ## Retained artifacts and failures
 
@@ -144,6 +149,7 @@ roundoff difference in one parameter. It now uses the actual SFT LR (0.0003),
 retaining the original tolerance; explicit cross-entropy/gradient alignment checks
 pass independently. All earlier diagnostics remain local, not hidden as success.
 
-The local publication proposal covers reviewed source and compact evidence on main
-with proposed annotated v0.7.0. No release, learned artifact upload or prior tag
-movement is included. Explicit Phase 6 push approval is still required.
+The implementation was published after approval as main and annotated v0.7.0 at
+`f6636af34933b9678824cc8dd50f6ab6559a2de5`. The documentation-only closure now awaits
+its own approval, with no new tag, tag movement, release or artifact upload.
+Phase 7 must not begin in this chat, including after closure publication.

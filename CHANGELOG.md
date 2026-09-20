@@ -1,6 +1,22 @@
 # Changelog
 
-## 0.7.0 — Phase 6, local publication checkpoint (2026-09-20)
+## Phase 6 closure — documentation only (2026-09-20)
+
+- Record owner-reported Windows/RTX 4070 SUPER PASS at exact v0.7.0: 184 passed,
+  three MPS-only skips, fresh wheel suite, four CUDA updates / 175 assistant-target
+  exposures, 49 verified artifact files and 64 independently replayed responses.
+- Record directly verified hosted Linux CPU CI separately: 184 passed, three skips,
+  tiny SFT runner/verifier tests, CPU fixture acceptance, offline workflows/builds.
+- Preserve the full Mac experiment, its negative quality/regression result and all
+  scope limits. The bounded Windows exercise did not reproduce that run or artifact;
+  physical Linux remains deferred. No broader CUDA or assistant claim follows.
+- Prepare the fresh-chat Phase 7 handoff without beginning Phase 7.
+
+Closure publication approval is pending. Package stays 0.7.0 and existing tags stay
+fixed. After approved closure publication is verified, stop; Phase 7 requires an
+explicit owner start in a fresh Work chat.
+
+## 0.7.0 — Phase 6, published (2026-09-20)
 
 - Add original synthetic English conversation generation and verified split loading.
 - Share chat serialization across tuning and evaluation; hash assistant target masks
@@ -11,8 +27,10 @@
   English validation loss worsens. No useful assistant claim.
 - Keep dependencies and prior artifacts fixed; version/lock root becomes 0.7.0.
 
-Publication approval is pending for this phase only. See the
-[report](experiments/phase-6/REPORT.md). No Phase 7 work is included.
+Published after owner approval at `f6636af34933b9678824cc8dd50f6ab6559a2de5`;
+remote main and annotated v0.7.0 were verified. See the
+[report](experiments/phase-6/REPORT.md). The closure above has its own pending
+publication approval. No Phase 7 work is included.
 
 ## Phase 5 closure — documentation only (2026-09-20)
 

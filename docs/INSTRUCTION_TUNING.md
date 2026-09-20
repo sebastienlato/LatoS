@@ -22,8 +22,11 @@ uv run --locked python experiments/phase-6/verify.py --run-dir outputs/phase-6-r
 
 Skip data materialization when the verified directory already exists; it refuses
 to overwrite it. Use `--conversations` to select a different newly generated copy.
-The runner also accepts CPU/CUDA explicitly; only local CPU tests and the full
-local MPS experiment were exercised in Phase 6. Default 200 updates are fixed in
+The runner also accepts CPU/CUDA explicitly. The full experiment ran on local MPS.
+The owner later reported Windows/RTX 4070 SUPER PASS for four updates / 175 assistant
+targets; hosted Linux CPU CI passed tiny SFT tests separately. Neither reproduced
+the full Mac experiment or artifact. See [closure evidence](../experiments/phase-6/CLOSURE.md)
+for attribution and exact scope. Default 200 updates are fixed in
 `configs/training/instruction-pilot.json`; calibration uses ten updates in a fresh
 run and discards those weights. The actual calibration and repeated reviewed run
 are both retained. The small authored dataset and old base limit interpretation.

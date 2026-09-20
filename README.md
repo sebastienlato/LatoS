@@ -29,20 +29,20 @@ uv run --locked pytest
 
 The environment uses Python 3.14.7 and PyTorch 2.14.0. The lock targets macOS
 Apple Silicon, Linux x86-64 CPU, and Windows x86-64 with the pinned CUDA 13.0 build.
-Phase 5 implementation is published as v0.6.0. The full English pilot ran on Mac
-MPS; 164 local tests passed in development and a fresh wheel installation. The
-owner reports independent Windows/RTX 4070 SUPER PASS: 162 passed, two MPS-only
-skips, a fresh wheel suite, and a bounded four-update CUDA exercise with 416 target
-exposures. That exercise did not reproduce the full Mac pilot or its scores.
-GitHub Linux CPU CI passed separately with 162 passes/two MPS skips and the
-workflow's tiny CPU checks. Physical Linux remains deferred, not performed.
-Neither backend check establishes general CUDA determinism, cross-device equality,
-sustained-pilot performance or language quality. See
-[Phase 5 closure and evidence scope](experiments/phase-5/CLOSURE.md).
-Closure commit `3878a0167a78f6ad149e8523b4feb97cda77ef5e` was published and verified
-before the owner started Phase 6 in a fresh chat. Phase 6 publication awaits its
-own approval. Phase 6 local CPU/MPS results do not extend the earlier Windows or
-hosted Linux evidence to this changed implementation.
+Phase 6 implementation is published as v0.7.0 at
+`f6636af34933b9678824cc8dd50f6ab6559a2de5`. The full Mac MPS experiment ran 200
+updates / 6,188 assistant-target exposures; 187 local tests passed in development
+and a fresh wheel installation. The owner reports independent Windows/RTX 4070
+SUPER PASS: 184 passed, three MPS-only skips, fresh wheel suite, and a bounded
+four-update / 175-assistant-target CUDA exercise with 49 artifact checks and 64
+response replays. It did not reproduce the full Mac run or learned artifact; both
+tiny Windows models scored 0/32 exact replies. GitHub Linux CPU CI passed separately
+with 184 passes/three MPS skips, tiny SFT runner/verifier tests, fixture acceptance
+and workflow checks. Physical Linux remains deferred. No useful instruction
+following, general CUDA determinism, cross-device equality or mixed-precision/
+distributed capability is established. See [Phase 6 closure](experiments/phase-6/CLOSURE.md).
+Closure publication awaits approval. **Do not begin Phase 7 in this chat.** After
+verified closure publication, use the [fresh-chat handoff](docs/PHASE7_HANDOFF.md).
 See [setup and Windows retest instructions](docs/SETUP.md) and
 [recorded environment evidence](docs/ENVIRONMENT.md).
 
