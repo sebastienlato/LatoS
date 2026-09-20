@@ -2,6 +2,7 @@
 
 import argparse
 import json
+import sys
 from pathlib import Path
 
 from latos import __version__
@@ -64,6 +65,20 @@ def main(argv: list[str] | None = None) -> int:
             action.add_argument("--max-new-tokens", type=int, default=16)
             action.add_argument("--temperature", type=float, default=0.0)
             action.add_argument("--top-k", type=int, default=0)
+    chat = commands.add_parser("chat", help="Stream a local checkpoint in the terminal")
+    chat.add_argument("--model-dir", type=Path, required=True)
+    chat.add_argument("--tokenizer-dir", type=Path, required=True)
+    chat.add_argument("--device", choices=("cpu", "mps", "cuda", "auto"), default="cpu")
+    chat.add_argument("--threads", type=int, default=1)
+    chat.add_argument("--prompt", help="One reply, then exit; omit for interactive chat")
+    chat.add_argument("--system")
+    chat.add_argument("--context-limit", type=int)
+    chat.add_argument("--max-new-tokens", type=int, default=32)
+    chat.add_argument("--temperature", type=float, default=0.0)
+    chat.add_argument("--top-k", type=int, default=0)
+    chat.add_argument("--seed", type=int, default=0)
+    chat.add_argument("--no-cache", action="store_true")
+    chat.add_argument("--json", action="store_true", help="JSON line events with --prompt")
     training = commands.add_parser("train", help="Train or resume a float32 dense model")
     training.add_argument("--manifest", type=Path, required=True)
     training.add_argument("--corpus-dir", type=Path, required=True)
@@ -84,6 +99,17 @@ def main(argv: list[str] | None = None) -> int:
     if args.command is None:
         parser.print_help()
         return 0
+
+    if args.command == "chat":
+        from latos.inference.terminal import run_chat
+
+        try:
+            return run_chat(args)
+        except (OSError, ValueError, KeyError, TypeError, RuntimeError) as exc:
+            print(json.dumps({"event": "error", "error": str(exc)}), file=sys.stderr)
+            return 1
+        except KeyboardInterrupt:
+            return 130
 
     if args.command == "train":
         from latos.training.run import run_training

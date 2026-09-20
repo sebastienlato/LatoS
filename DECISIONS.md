@@ -153,3 +153,14 @@ English regression mean the tuned checkpoint is an experiment artifact, not a
 replacement base or useful assistant. Do not expand the run or pick a better
 validation checkpoint after seeing this outcome. Record the reviewed repetition
 and retain the original run, including its different evidence metadata.
+
+## Phase 7 — bounded local terminal inference (2026-09-20)
+
+Use a streaming terminal as the local interface, with explicit artifact selection
+and no server/dependency addition. Keep the exact Phase 6 formatter and reject a
+whole new turn if history plus reply budget will not fit. Save only nonempty
+EOS-completed responses; reset or cancellation cannot silently alter prior turns.
+Prefill a new session-owned cache for every reply, keeping cache state out of model
+snapshots and training. Validate explicit offset masks and rotary positions against
+the existing full-prefix forward. Measure same-backend differences and latency;
+do not infer model quality or CUDA behavior from infrastructure checks.

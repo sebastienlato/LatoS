@@ -6,15 +6,14 @@ updated state, and a local commit before its publication approval. After an
 approved push is verified, development proceeds to the next phase unless the owner
 has imposed a pause or transition gate, as recorded in PROJECT_STATE.md.
 
-Phase 6 implementation is published as v0.7.0 at
-`f6636af34933b9678824cc8dd50f6ab6559a2de5`. The owner reports bounded independent
-Windows/RTX 4070 SUPER PASS: four updates / 175 assistant targets, not the full Mac
-experiment. Hosted Linux CPU CI passed separately within its tiny CPU/workflow
-scope. Physical Linux remains deferred. The negative instruction/regression result
-is unchanged. [Phase 6 closure](experiments/phase-6/CLOSURE.md) is ready locally and
-awaits its own publication approval. **Do not begin Phase 7 in this chat.** After
-closure publication is verified, Phase 7 requires explicit owner start in a fresh
-Work chat. See [the handoff](docs/PHASE7_HANDOFF.md) and [state](PROJECT_STATE.md).
+Phase 6 closure was published and verified at
+`c4ed8c9564c41f26be2c10ee178f5a10ac80d3a8`; v0.7.0 remains at
+`f6636af34933b9678824cc8dd50f6ab6559a2de5`. The owner explicitly started Phase 7
+in a fresh Work chat on 2026-09-20. Its local inference work is described in
+[INFERENCE.md](docs/INFERENCE.md); see [state](PROJECT_STATE.md) for validation and
+the pending publication checkpoint. Prior Windows/CUDA and hosted Linux CPU results
+remain scoped to Phase 6; physical Linux is deferred and useful instruction following
+is not established. The negative SFT result is unchanged.
 
 | Phase | Deliverable | Acceptance evidence |
 | --- | --- | --- |

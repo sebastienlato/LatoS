@@ -4,7 +4,7 @@ LatoS is an original, English-first small language model project. Its goal is to
 make the path from documented training data to an evaluated conversational model
 reproducible on modest hardware.
 
-**Current capability: Phase 6 measured instruction-tuning experiment.** LatoS
+**Current capability: Phase 7 local streaming inference (publication pending).** LatoS
 prepares English data, trains its own tokenizer, and implements an original dense
 causal decoder with optimization, validation and resumable checkpoints. A bounded
 assistant-only experiment starts from the preserved 17,308,032-parameter Phase 5
@@ -12,7 +12,10 @@ base using original synthetic conversations and a shared chat format.
 [Phase 6 results](experiments/phase-6/REPORT.md) show lower assistant validation loss
 but **0/32 held-out exact answers and worse English validation loss**. Useful chat
 or instruction following is not established. The base remains preserved.
-See [instruction tuning](docs/INSTRUCTION_TUNING.md) and the [roadmap](ROADMAP.md).
+A terminal chat interface now streams local replies with optional KV caching,
+explicit context limits and cancellation. Select the model artifact explicitly;
+see [local inference](docs/INFERENCE.md), [Phase 7 evidence](experiments/phase-7/REPORT.md),
+[instruction tuning](docs/INSTRUCTION_TUNING.md) and the [roadmap](ROADMAP.md).
 
 ## Quickstart
 
@@ -41,8 +44,9 @@ with 184 passes/three MPS skips, tiny SFT runner/verifier tests, fixture accepta
 and workflow checks. Physical Linux remains deferred. No useful instruction
 following, general CUDA determinism, cross-device equality or mixed-precision/
 distributed capability is established. See [Phase 6 closure](experiments/phase-6/CLOSURE.md).
-Closure publication awaits approval. **Do not begin Phase 7 in this chat.** After
-verified closure publication, use the [fresh-chat handoff](docs/PHASE7_HANDOFF.md).
+Closure was published at `c4ed8c9564c41f26be2c10ee178f5a10ac80d3a8` and verified
+before the explicit fresh-chat Phase 7 start. Phase 7 publication awaits approval;
+see [current state](PROJECT_STATE.md).
 See [setup and Windows retest instructions](docs/SETUP.md) and
 [recorded environment evidence](docs/ENVIRONMENT.md).
 

@@ -22,14 +22,18 @@ class RMSNorm(nn.Module):
         return normalized.to(x.dtype) * self.weight
 
 
-def rotary(q: torch.Tensor, k: torch.Tensor, theta: float) -> tuple[torch.Tensor, torch.Tensor]:
-    """Rotate adjacent feature pairs at zero-based positions; no cache or offset."""
+def rotary(
+    q: torch.Tensor, k: torch.Tensor, theta: float, offset: int = 0
+) -> tuple[torch.Tensor, torch.Tensor]:
+    """Rotate adjacent feature pairs at absolute positions starting at offset."""
+    if type(offset) is not int or offset < 0:
+        raise ValueError("Rotary offset must be a nonnegative integer")
     if q.shape != k.shape or q.ndim != 4 or q.shape[-1] % 2:
         raise ValueError("Rotary inputs need matching [batch, heads, time, even head_dim] shapes")
     width = q.shape[-1]
     dtype = torch.float64 if q.dtype == torch.float64 else torch.float32
     frequencies = theta ** (-torch.arange(0, width, 2, device=q.device, dtype=dtype) / width)
-    positions = torch.arange(q.shape[-2], device=q.device, dtype=dtype)
+    positions = torch.arange(offset, offset + q.shape[-2], device=q.device, dtype=dtype)
     angles = positions[:, None] * frequencies[None, :]
     cosine, sine = angles.cos().to(q.dtype), angles.sin().to(q.dtype)
 

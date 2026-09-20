@@ -197,3 +197,17 @@ Primary guidance consulted on 2026-09-20:
   consistent message serialization and generation prefixes. LatoS uses its own
   segmented format and unchanged tokenizer; no upstream template/code is copied
   and Transformers is not added as a dependency.
+
+## Phase 7 inference primitives
+
+Original cache/session/terminal code uses the existing PyTorch and Hugging Face
+Tokenizers dependencies; no additional runtime package was added. The implementation
+follows the documented [SDPA mask semantics](https://docs.pytorch.org/docs/stable/generated/torch.nn.functional.scaled_dot_product_attention.html)
+and absolute rotary positions from the already cited RoPE paper. Boolean masks
+express permitted keys for offset queries; non-square default causal alignment
+cannot replace that mask. Incremental text uses the installed Tokenizers 0.23.2
+`DecodeStream` API, documented in the project's
+[decoder reference](https://huggingface.co/docs/tokenizers/main/api/decoders).
+Its residual bytes are flushed against completed decoding at termination. These
+library APIs and primary documentation informed the implementation; no external
+model or serving implementation was imported. Consulted 2026-09-20.

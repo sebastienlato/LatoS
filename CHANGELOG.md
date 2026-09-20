@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.8.0 — Phase 7, local checkpoint (2026-09-20)
+
+- Add explicit-artifact terminal chat with streaming Unicode text, JSON events,
+  EOS stopping, reply budgets, cancellation and transactional multi-turn history.
+- Add an inference-only KV cache with absolute positions, causal offset masks,
+  reset and validation; preserve training forward and model-only snapshot format.
+- Verify same-backend cached/uncached agreement through 512 positions and measure
+  fixed CPU/MPS latency without retraining or consuming either reserved test set.
+- Keep the Phase 6 negative instruction result and all platform limitations visible.
+
+Publication is pending explicit owner approval. Proposed annotated tag: v0.8.0.
+See [Phase 7 report](experiments/phase-7/REPORT.md) for actual validation and review.
+
 ## Phase 6 closure — documentation only (2026-09-20)
 
 - Record owner-reported Windows/RTX 4070 SUPER PASS at exact v0.7.0: 184 passed,
@@ -12,9 +25,9 @@
   physical Linux remains deferred. No broader CUDA or assistant claim follows.
 - Prepare the fresh-chat Phase 7 handoff without beginning Phase 7.
 
-Closure publication approval is pending. Package stays 0.7.0 and existing tags stay
-fixed. After approved closure publication is verified, stop; Phase 7 requires an
-explicit owner start in a fresh Work chat.
+Closure was published and verified at `c4ed8c9564c41f26be2c10ee178f5a10ac80d3a8`.
+It kept package 0.7.0 and all tags unchanged. The owner subsequently started
+Phase 7 explicitly in a fresh Work chat.
 
 ## 0.7.0 — Phase 6, published (2026-09-20)
 
@@ -29,8 +42,8 @@ explicit owner start in a fresh Work chat.
 
 Published after owner approval at `f6636af34933b9678824cc8dd50f6ab6559a2de5`;
 remote main and annotated v0.7.0 were verified. See the
-[report](experiments/phase-6/REPORT.md). The closure above has its own pending
-publication approval. No Phase 7 work is included.
+[report](experiments/phase-6/REPORT.md). The subsequent closure and Phase 7
+inference work are recorded above.
 
 ## Phase 5 closure — documentation only (2026-09-20)
 

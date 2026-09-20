@@ -1,0 +1,974 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-09-20T18:23:05.597813+00:00",
+  "status": "pass",
+  "scope": "Same-host float32 CPU/MPS engineering inference; no test-set scoring or retained-model training.",
+  "validation": {
+    "development": "210 passed in 14.84s",
+    "non_editable_wheel": "210 passed in 14.52s",
+    "lint": "pass",
+    "format": "88 Python files checked",
+    "build": "sdist and wheel pass",
+    "real_cli": "Fresh wheel base/SFT prompt commands on CPU/MPS passed; subprocess JSON, reset, EOF, error and SIGINT tests passed."
+  },
+  "preservation": {
+    "status": "pass",
+    "files_rehashed": 357,
+    "sft_inventory_files": 49,
+    "shared_chat_format_unchanged": true,
+    "test_payloads": {
+      "data/processed/english-books-v1/test.jsonl": "a01a55c31d0401ab5dba64cf0f14bd96e8ed9900012a7099f972b3377d58a954",
+      "data/processed/english-instructions-v1/test.jsonl": "5e0fe6050dcd1df7e85ce46ebcd830ee6cec8b4841b9c1f8f270b110889395a7"
+    },
+    "scope": "Prior artifacts and data; excludes disposable wheel environments and bytecode caches. Payloads hashed, not parsed or evaluated."
+  },
+  "prompts": [
+    [
+      {
+        "role": "user",
+        "content": "What can a small model explain about rain?"
+      }
+    ],
+    [
+      {
+        "role": "user",
+        "content": "A visitor walks through a quiet garden after the rain. The path is wet, the leaves are green, and a wooden bench stands beneath an old tree. Describe the scene in one short sentence, using only details from this description."
+      }
+    ],
+    [
+      {
+        "role": "user",
+        "content": "Remember that the box is blue."
+      },
+      {
+        "role": "assistant",
+        "content": "The box is blue."
+      },
+      {
+        "role": "user",
+        "content": "What color is the box?"
+      }
+    ]
+  ],
+  "measurements": [
+    {
+      "artifact": "base",
+      "weights_sha256": "f82ed3b21aeacad6d8b3a88c9100cbc83b8f15af1ba9c17a4fa4dccc59b2befa",
+      "tokenizer_sha256": "7dce3d0888f6a37d3eadbd077a9ff73170a54a1f6e301e51b2ae6d998142b0ab",
+      "device": "cpu",
+      "threads": 1,
+      "package_version": "0.8.0",
+      "torch": "2.14.0",
+      "python": "3.14.7",
+      "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+      "source_base_commit": "c4ed8c9564c41f26be2c10ee178f5a10ac80d3a8",
+      "source_dirty": true,
+      "agreement": [
+        {
+          "case": "incremental",
+          "tokens": 32,
+          "atol": 1e-05,
+          "rtol": 1e-05,
+          "max_absolute_error": 1.430511474609375e-05,
+          "cache_bytes": 786432
+        },
+        {
+          "case": "chunked_capacity",
+          "tokens": 512,
+          "atol": 1e-05,
+          "rtol": 1e-05,
+          "max_absolute_error": 1.621246337890625e-05,
+          "cache_bytes": 12582912
+        }
+      ],
+      "forced_summary": {
+        "False": {
+          "median_prefill_ms": 7.759665997582488,
+          "median_decode_tokens_per_second": 111.3339298094529
+        },
+        "True": {
+          "median_prefill_ms": 7.879542001319351,
+          "median_decode_tokens_per_second": 712.773353832531
+        }
+      },
+      "raw_report": {
+        "path": "outputs/phase-7-validation/base-cpu-accepted.json",
+        "sha256": "129c2a267c8e03e6f0eff5769dfae6a06e9358198bb5adf59e9480a96f28c881"
+      },
+      "chat_summary": [
+        {
+          "cached": false,
+          "median_prefill_ms": 4.185292000329355,
+          "median_first_token_ms": 4.242708000674611,
+          "median_subsequent_token_ms": 5.1853330005542375,
+          "aggregate_decode_tokens_per_second": 207.5557691631525,
+          "repeats_per_prompt": 3,
+          "cases": [
+            {
+              "prompt_tokens": 25,
+              "generated_ids": [
+                15,
+                287,
+                265,
+                583,
+                1146,
+                15,
+                352,
+                265,
+                583,
+                343,
+                265,
+                583,
+                1522,
+                514,
+                280,
+                265,
+                740,
+                17,
+                415,
+                740,
+                15,
+                265,
+                673,
+                1736,
+                280,
+                265,
+                740,
+                15,
+                352,
+                265,
+                673,
+                1736
+              ],
+              "text": ", in the same manner, is the same with the same generality of the whale. The whale, the most important of the whale, is the most important",
+              "stop_reason": "max_new_tokens"
+            },
+            {
+              "prompt_tokens": 65,
+              "generated_ids": [
+                15,
+                287,
+                265,
+                583,
+                1146,
+                15,
+                352,
+                262,
+                541,
+                1736,
+                446,
+                15,
+                282,
+                262,
+                541,
+                1133,
+                446,
+                17,
+                415,
+                648,
+                16,
+                86,
+                1055,
+                15,
+                265,
+                648,
+                16,
+                86,
+                1055,
+                15,
+                282,
+                265
+              ],
+              "text": ", in the same manner, is a very important one, and a very large one. The two-six, the two-six, and the",
+              "stop_reason": "max_new_tokens"
+            },
+            {
+              "prompt_tokens": 51,
+              "generated_ids": [
+                15,
+                287,
+                265,
+                1282,
+                15,
+                352,
+                265,
+                583,
+                343,
+                265,
+                1401,
+                280,
+                265,
+                740,
+                17,
+                415,
+                806,
+                352,
+                265,
+                806,
+                280,
+                265,
+                806,
+                15,
+                282,
+                265,
+                806,
+                352,
+                287,
+                265,
+                806,
+                15
+              ],
+              "text": ", in the air, is the same with the body of the whale. The head is the head of the head, and the head is in the head,",
+              "stop_reason": "max_new_tokens"
+            }
+          ]
+        },
+        {
+          "cached": true,
+          "median_prefill_ms": 4.251458001817809,
+          "median_first_token_ms": 4.298292002204107,
+          "median_subsequent_token_ms": 1.3273329968797043,
+          "aggregate_decode_tokens_per_second": 750.2287309930149,
+          "repeats_per_prompt": 3,
+          "cases": [
+            {
+              "prompt_tokens": 25,
+              "generated_ids": [
+                15,
+                287,
+                265,
+                583,
+                1146,
+                15,
+                352,
+                265,
+                583,
+                343,
+                265,
+                583,
+                1522,
+                514,
+                280,
+                265,
+                740,
+                17,
+                415,
+                740,
+                15,
+                265,
+                673,
+                1736,
+                280,
+                265,
+                740,
+                15,
+                352,
+                265,
+                673,
+                1736
+              ],
+              "text": ", in the same manner, is the same with the same generality of the whale. The whale, the most important of the whale, is the most important",
+              "stop_reason": "max_new_tokens"
+            },
+            {
+              "prompt_tokens": 65,
+              "generated_ids": [
+                15,
+                287,
+                265,
+                583,
+                1146,
+                15,
+                352,
+                262,
+                541,
+                1736,
+                446,
+                15,
+                282,
+                262,
+                541,
+                1133,
+                446,
+                17,
+                415,
+                648,
+                16,
+                86,
+                1055,
+                15,
+                265,
+                648,
+                16,
+                86,
+                1055,
+                15,
+                282,
+                265
+              ],
+              "text": ", in the same manner, is a very important one, and a very large one. The two-six, the two-six, and the",
+              "stop_reason": "max_new_tokens"
+            },
+            {
+              "prompt_tokens": 51,
+              "generated_ids": [
+                15,
+                287,
+                265,
+                1282,
+                15,
+                352,
+                265,
+                583,
+                343,
+                265,
+                1401,
+                280,
+                265,
+                740,
+                17,
+                415,
+                806,
+                352,
+                265,
+                806,
+                280,
+                265,
+                806,
+                15,
+                282,
+                265,
+                806,
+                352,
+                287,
+                265,
+                806,
+                15
+              ],
+              "text": ", in the air, is the same with the body of the whale. The head is the head of the head, and the head is in the head,",
+              "stop_reason": "max_new_tokens"
+            }
+          ]
+        }
+      ],
+      "memory_max_boundary": {
+        "process_lifetime_peak_rss_bytes": 559251456
+      }
+    },
+    {
+      "artifact": "base",
+      "weights_sha256": "f82ed3b21aeacad6d8b3a88c9100cbc83b8f15af1ba9c17a4fa4dccc59b2befa",
+      "tokenizer_sha256": "7dce3d0888f6a37d3eadbd077a9ff73170a54a1f6e301e51b2ae6d998142b0ab",
+      "device": "mps",
+      "threads": 1,
+      "package_version": "0.8.0",
+      "torch": "2.14.0",
+      "python": "3.14.7",
+      "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+      "source_base_commit": "c4ed8c9564c41f26be2c10ee178f5a10ac80d3a8",
+      "source_dirty": true,
+      "agreement": [
+        {
+          "case": "incremental",
+          "tokens": 32,
+          "atol": 0.0001,
+          "rtol": 0.0001,
+          "max_absolute_error": 1.71661376953125e-05,
+          "cache_bytes": 786432
+        },
+        {
+          "case": "chunked_capacity",
+          "tokens": 512,
+          "atol": 0.0001,
+          "rtol": 0.0001,
+          "max_absolute_error": 1.52587890625e-05,
+          "cache_bytes": 12582912
+        }
+      ],
+      "forced_summary": {
+        "False": {
+          "median_prefill_ms": 3.5622920004243497,
+          "median_decode_tokens_per_second": 279.71701624260265
+        },
+        "True": {
+          "median_prefill_ms": 3.620957999373786,
+          "median_decode_tokens_per_second": 353.6990871859673
+        }
+      },
+      "raw_report": {
+        "path": "outputs/phase-7-validation/base-mps-accepted.json",
+        "sha256": "c4d9623198700329932f07501edd5df51cdc2d792fe0b88e7a852e94b54925cc"
+      },
+      "chat_summary": [
+        {
+          "cached": false,
+          "median_prefill_ms": 3.0953329987823963,
+          "median_first_token_ms": 3.2784159993752837,
+          "median_subsequent_token_ms": 3.374459000042407,
+          "aggregate_decode_tokens_per_second": 295.9252361274766,
+          "repeats_per_prompt": 3,
+          "cases": [
+            {
+              "prompt_tokens": 25,
+              "generated_ids": [
+                15,
+                287,
+                265,
+                583,
+                1146,
+                15,
+                352,
+                265,
+                583,
+                343,
+                265,
+                583,
+                1522,
+                514,
+                280,
+                265,
+                740,
+                17,
+                415,
+                740,
+                15,
+                265,
+                673,
+                1736,
+                280,
+                265,
+                740,
+                15,
+                352,
+                265,
+                673,
+                1736
+              ],
+              "text": ", in the same manner, is the same with the same generality of the whale. The whale, the most important of the whale, is the most important",
+              "stop_reason": "max_new_tokens"
+            },
+            {
+              "prompt_tokens": 65,
+              "generated_ids": [
+                15,
+                287,
+                265,
+                583,
+                1146,
+                15,
+                352,
+                262,
+                541,
+                1736,
+                446,
+                15,
+                282,
+                262,
+                541,
+                1133,
+                446,
+                17,
+                415,
+                648,
+                16,
+                86,
+                1055,
+                15,
+                265,
+                648,
+                16,
+                86,
+                1055,
+                15,
+                282,
+                265
+              ],
+              "text": ", in the same manner, is a very important one, and a very large one. The two-six, the two-six, and the",
+              "stop_reason": "max_new_tokens"
+            },
+            {
+              "prompt_tokens": 51,
+              "generated_ids": [
+                15,
+                287,
+                265,
+                1282,
+                15,
+                352,
+                265,
+                583,
+                343,
+                265,
+                1401,
+                280,
+                265,
+                740,
+                17,
+                415,
+                806,
+                352,
+                265,
+                806,
+                280,
+                265,
+                806,
+                15,
+                282,
+                265,
+                806,
+                352,
+                287,
+                265,
+                806,
+                15
+              ],
+              "text": ", in the air, is the same with the body of the whale. The head is the head of the head, and the head is in the head,",
+              "stop_reason": "max_new_tokens"
+            }
+          ]
+        },
+        {
+          "cached": true,
+          "median_prefill_ms": 3.460667001490947,
+          "median_first_token_ms": 3.6478330002864823,
+          "median_subsequent_token_ms": 2.936875000159489,
+          "aggregate_decode_tokens_per_second": 332.9226598891851,
+          "repeats_per_prompt": 3,
+          "cases": [
+            {
+              "prompt_tokens": 25,
+              "generated_ids": [
+                15,
+                287,
+                265,
+                583,
+                1146,
+                15,
+                352,
+                265,
+                583,
+                343,
+                265,
+                583,
+                1522,
+                514,
+                280,
+                265,
+                740,
+                17,
+                415,
+                740,
+                15,
+                265,
+                673,
+                1736,
+                280,
+                265,
+                740,
+                15,
+                352,
+                265,
+                673,
+                1736
+              ],
+              "text": ", in the same manner, is the same with the same generality of the whale. The whale, the most important of the whale, is the most important",
+              "stop_reason": "max_new_tokens"
+            },
+            {
+              "prompt_tokens": 65,
+              "generated_ids": [
+                15,
+                287,
+                265,
+                583,
+                1146,
+                15,
+                352,
+                262,
+                541,
+                1736,
+                446,
+                15,
+                282,
+                262,
+                541,
+                1133,
+                446,
+                17,
+                415,
+                648,
+                16,
+                86,
+                1055,
+                15,
+                265,
+                648,
+                16,
+                86,
+                1055,
+                15,
+                282,
+                265
+              ],
+              "text": ", in the same manner, is a very important one, and a very large one. The two-six, the two-six, and the",
+              "stop_reason": "max_new_tokens"
+            },
+            {
+              "prompt_tokens": 51,
+              "generated_ids": [
+                15,
+                287,
+                265,
+                1282,
+                15,
+                352,
+                265,
+                583,
+                343,
+                265,
+                1401,
+                280,
+                265,
+                740,
+                17,
+                415,
+                806,
+                352,
+                265,
+                806,
+                280,
+                265,
+                806,
+                15,
+                282,
+                265,
+                806,
+                352,
+                287,
+                265,
+                806,
+                15
+              ],
+              "text": ", in the air, is the same with the body of the whale. The head is the head of the head, and the head is in the head,",
+              "stop_reason": "max_new_tokens"
+            }
+          ]
+        }
+      ],
+      "memory_max_boundary": {
+        "process_lifetime_peak_rss_bytes": 732790784,
+        "mps_allocated_bytes": 76573184,
+        "mps_driver_bytes": 1116422144
+      }
+    },
+    {
+      "artifact": "sft",
+      "weights_sha256": "62b890214e5544292cc54b725a4e505730fca0d501b3337cdd3f051a622d09ae",
+      "tokenizer_sha256": "7dce3d0888f6a37d3eadbd077a9ff73170a54a1f6e301e51b2ae6d998142b0ab",
+      "device": "cpu",
+      "threads": 1,
+      "package_version": "0.8.0",
+      "torch": "2.14.0",
+      "python": "3.14.7",
+      "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+      "source_base_commit": "c4ed8c9564c41f26be2c10ee178f5a10ac80d3a8",
+      "source_dirty": true,
+      "agreement": [
+        {
+          "case": "incremental",
+          "tokens": 32,
+          "atol": 1e-05,
+          "rtol": 1e-05,
+          "max_absolute_error": 1.71661376953125e-05,
+          "cache_bytes": 786432
+        },
+        {
+          "case": "chunked_capacity",
+          "tokens": 512,
+          "atol": 1e-05,
+          "rtol": 1e-05,
+          "max_absolute_error": 1.6689300537109375e-05,
+          "cache_bytes": 12582912
+        }
+      ],
+      "forced_summary": {
+        "False": {
+          "median_prefill_ms": 7.740125001873821,
+          "median_decode_tokens_per_second": 110.81652702384312
+        },
+        "True": {
+          "median_prefill_ms": 7.82716699904995,
+          "median_decode_tokens_per_second": 727.4882686312344
+        }
+      },
+      "raw_report": {
+        "path": "outputs/phase-7-validation/sft-cpu-accepted.json",
+        "sha256": "2d114b24b6eda717874b3685e3812b23f8d8159db5f0981ecf2eda13a11db80c"
+      },
+      "chat_summary": [
+        {
+          "cached": false,
+          "median_prefill_ms": 4.092125000170199,
+          "median_first_token_ms": 4.134582999540726,
+          "median_subsequent_token_ms": 3.6718954997922992,
+          "aggregate_decode_tokens_per_second": 248.52809578152218,
+          "repeats_per_prompt": 3,
+          "cases": [
+            {
+              "prompt_tokens": 25,
+              "generated_ids": [
+                386,
+                2545,
+                279,
+                2
+              ],
+              "text": "rabbit",
+              "stop_reason": "eos"
+            },
+            {
+              "prompt_tokens": 65,
+              "generated_ids": [
+                89,
+                4428,
+                2
+              ],
+              "text": "valley",
+              "stop_reason": "eos"
+            },
+            {
+              "prompt_tokens": 51,
+              "generated_ids": [
+                5759,
+                2
+              ],
+              "text": "stone",
+              "stop_reason": "eos"
+            }
+          ]
+        },
+        {
+          "cached": true,
+          "median_prefill_ms": 4.166250000707805,
+          "median_first_token_ms": 4.21029099743464,
+          "median_subsequent_token_ms": 1.3515834998543141,
+          "aggregate_decode_tokens_per_second": 738.0704444842444,
+          "repeats_per_prompt": 3,
+          "cases": [
+            {
+              "prompt_tokens": 25,
+              "generated_ids": [
+                386,
+                2545,
+                279,
+                2
+              ],
+              "text": "rabbit",
+              "stop_reason": "eos"
+            },
+            {
+              "prompt_tokens": 65,
+              "generated_ids": [
+                89,
+                4428,
+                2
+              ],
+              "text": "valley",
+              "stop_reason": "eos"
+            },
+            {
+              "prompt_tokens": 51,
+              "generated_ids": [
+                5759,
+                2
+              ],
+              "text": "stone",
+              "stop_reason": "eos"
+            }
+          ]
+        }
+      ],
+      "memory_max_boundary": {
+        "process_lifetime_peak_rss_bytes": 564477952
+      }
+    },
+    {
+      "artifact": "sft",
+      "weights_sha256": "62b890214e5544292cc54b725a4e505730fca0d501b3337cdd3f051a622d09ae",
+      "tokenizer_sha256": "7dce3d0888f6a37d3eadbd077a9ff73170a54a1f6e301e51b2ae6d998142b0ab",
+      "device": "mps",
+      "threads": 1,
+      "package_version": "0.8.0",
+      "torch": "2.14.0",
+      "python": "3.14.7",
+      "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+      "source_base_commit": "c4ed8c9564c41f26be2c10ee178f5a10ac80d3a8",
+      "source_dirty": true,
+      "agreement": [
+        {
+          "case": "incremental",
+          "tokens": 32,
+          "atol": 0.0001,
+          "rtol": 0.0001,
+          "max_absolute_error": 1.52587890625e-05,
+          "cache_bytes": 786432
+        },
+        {
+          "case": "chunked_capacity",
+          "tokens": 512,
+          "atol": 0.0001,
+          "rtol": 0.0001,
+          "max_absolute_error": 1.811981201171875e-05,
+          "cache_bytes": 12582912
+        }
+      ],
+      "forced_summary": {
+        "False": {
+          "median_prefill_ms": 3.597332997742342,
+          "median_decode_tokens_per_second": 280.6171633236436
+        },
+        "True": {
+          "median_prefill_ms": 3.739125000720378,
+          "median_decode_tokens_per_second": 361.6833414342697
+        }
+      },
+      "raw_report": {
+        "path": "outputs/phase-7-validation/sft-mps-accepted.json",
+        "sha256": "49c055e6410bdbd25325ac90b1973d616b95de4382590094aa0bc5d375ad32ea"
+      },
+      "chat_summary": [
+        {
+          "cached": false,
+          "median_prefill_ms": 3.1653750011173543,
+          "median_first_token_ms": 3.382958002475789,
+          "median_subsequent_token_ms": 3.3457709996582707,
+          "aggregate_decode_tokens_per_second": 298.7221364294222,
+          "repeats_per_prompt": 3,
+          "cases": [
+            {
+              "prompt_tokens": 25,
+              "generated_ids": [
+                386,
+                2545,
+                279,
+                2
+              ],
+              "text": "rabbit",
+              "stop_reason": "eos"
+            },
+            {
+              "prompt_tokens": 65,
+              "generated_ids": [
+                89,
+                4428,
+                2
+              ],
+              "text": "valley",
+              "stop_reason": "eos"
+            },
+            {
+              "prompt_tokens": 51,
+              "generated_ids": [
+                5759,
+                2
+              ],
+              "text": "stone",
+              "stop_reason": "eos"
+            }
+          ]
+        },
+        {
+          "cached": true,
+          "median_prefill_ms": 3.2245830007013865,
+          "median_first_token_ms": 3.43595800222829,
+          "median_subsequent_token_ms": 2.817000000504777,
+          "aggregate_decode_tokens_per_second": 348.844253805946,
+          "repeats_per_prompt": 3,
+          "cases": [
+            {
+              "prompt_tokens": 25,
+              "generated_ids": [
+                386,
+                2545,
+                279,
+                2
+              ],
+              "text": "rabbit",
+              "stop_reason": "eos"
+            },
+            {
+              "prompt_tokens": 65,
+              "generated_ids": [
+                89,
+                4428,
+                2
+              ],
+              "text": "valley",
+              "stop_reason": "eos"
+            },
+            {
+              "prompt_tokens": 51,
+              "generated_ids": [
+                5759,
+                2
+              ],
+              "text": "stone",
+              "stop_reason": "eos"
+            }
+          ]
+        }
+      ],
+      "memory_max_boundary": {
+        "process_lifetime_peak_rss_bytes": 685260800,
+        "mps_allocated_bytes": 76573184,
+        "mps_driver_bytes": 1116438528
+      }
+    }
+  ],
+  "source_hashes": {
+    "src/latos/__init__.py": "7a2b7caa8696e1caa5b7f86e11031174b62d787d0192b44002704a1b8e596ad0",
+    "src/latos/__main__.py": "9741cca21a1b0cb6ebc2f1d6a18612503edcc54ca53f01798ee99fe0c01b38da",
+    "src/latos/chat.py": "df697198c87a33c33f516313d5eec8a7a0c305c27101d377a864ef98e3cd0a4b",
+    "src/latos/cli.py": "fcd74b132447ed3f3e4f9d587e7489d7802768713bdcfbab844d1e866f8b4b62",
+    "src/latos/data/__init__.py": "0ca21ca0b94863167b9bb1292697735555b8be0778ee11fbe17f7e9cd9c1d71b",
+    "src/latos/data/acquire.py": "bf1ebf2ba9d59a9fde5eb566a3d9e806f5e7451f94721949fd6cac399d8fe645",
+    "src/latos/data/dedup.py": "3bea48d78a9e44110329a7efa8d7cce1ff698d86ff1dd4b914c604a57e88e2f9",
+    "src/latos/data/manifest.py": "a5459533ea2d37be996326b143eed3379e2778016e8d7a231d27fbe9b12485e0",
+    "src/latos/data/prepare.py": "f1249af7511f6d326b7462a73ff337abed4df004adf62c17147e5adf8fbffdb6",
+    "src/latos/doctor.py": "d76f292a2fcdce525d948390c4b8c70fc65989e6940c5ec352c4de5e067deff3",
+    "src/latos/inference/__init__.py": "cc1277e1490dedad96f9eea84e14ab3903a6eb4549d3d8aa07ac49739dccd79b",
+    "src/latos/inference/cache.py": "b806d3a2b2fe7f53fcca7a51dc9887d5daab411a2d247f704a67dac5f0570044",
+    "src/latos/inference/stream.py": "2e503eb4cb11ea85b8002ab65be1c33bfa10236117eb3189d75b09798029f6b3",
+    "src/latos/inference/terminal.py": "5a91701de88eda10fad0e13ffb03239b1057ee3317d649c879b8935d09dddeee",
+    "src/latos/instruction.py": "ee206bda4ab6f8dc294605216a2f03bb62e82c0a7c200f88600d13b4111e6a33",
+    "src/latos/model/__init__.py": "21a184c61ad0d82a1a4adffa28dec85c689873a6ae62c6ecd0d9e328c0fbfc2f",
+    "src/latos/model/config.py": "bac6509830a79bca939cfaba7918907fb432589f0455f485be4572b25f93535a",
+    "src/latos/model/diagnostics.py": "5e480452379861862325a5131d5fce28210bd1adb6ad64ef8716e2a926480bb5",
+    "src/latos/model/network.py": "aa5384c5077e7ea0120c327d11258ad093a623f8c8f57d1d1ab717ba9405de38",
+    "src/latos/model/sampling.py": "5669f138809db585346596f635994d8f85010ea83b3a04b057deb8b3d95a9b96",
+    "src/latos/model/storage.py": "fd220dac86076863163102905496f56a19b84846c4ecf9354f4c4e4a79747aab",
+    "src/latos/tokenization/__init__.py": "612a35e0468ec9ac641e78165c477d765fb4c359988d2b2928a9a208860b5643",
+    "src/latos/tokenization/core.py": "3b624cd51c8e4baecb718eb6c4f3e96cd893a917740f308d6d91a065be08ab34",
+    "src/latos/tokenization/corpus.py": "f0c93b0477ee7fcf1b54f8f88d89d6e88e5de3a85c2fc6eff64c3dac69f3338e",
+    "src/latos/tokenization/training.py": "ac4921eb3fe7ed1fbaf71a991b52ab668da02bc27255b1d7073fc4a2205e73a0",
+    "src/latos/training/__init__.py": "4e75c325a5bc182cf8c6787cedd85ad2ce506c47f20dfa6c9e447858b93fa142",
+    "src/latos/training/checkpoint.py": "f514ef9c107af65b4550cfe5d8c5631011e34b8739ecaa192365be9b4eb39de1",
+    "src/latos/training/config.py": "1c5493fcd8ab923214142d268b3fe60fea98db47d57455cb0fd65a9d09e5d585",
+    "src/latos/training/data.py": "50c04ccc3fc2fd166428606b973737c1eb0590f0083408561eb795603a47bca0",
+    "src/latos/training/engine.py": "9932b13acaba6462b3b1d61f9e49222ce1106a89af880ac28a89104ec8b41363",
+    "src/latos/training/run.py": "237fa52a1fc1ceec7f2df1c9fb6dac1b5ef1c64767ae21b9d4a0f383670bfe5b",
+    "experiments/phase-7/validate.py": "df67105b16e470164bd6685fbf291a9a8fc9bac070119485d344ac7879951a98",
+    "uv.lock": "6ab02b46620d86a76410206ba1364dd0e7f50cd3843dbb28dae8c655a3930659"
+  },
+  "limitations": [
+    "No Phase 7 CUDA or Linux execution",
+    "Physical Linux deferred",
+    "No general CUDA determinism or cross-device equality",
+    "No useful instruction-following quality claim",
+    "512-position numerical checks do not establish longer-context language quality"
+  ],
+  "retained_initial_issues": [
+    "First full-suite invocation lacked the installed CLI on PATH: 7 failed / 202 passed; corrected locked invocation passed.",
+    "Offline wheel dependency installation lacked cached packages; unchanged locked packages installed from public registries.",
+    "Review fixed SIGINT cancellation at final token and final Unicode flush; final full suites and measurements rerun."
+  ]
+}
