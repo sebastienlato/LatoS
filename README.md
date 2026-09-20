@@ -29,14 +29,17 @@ uv run --locked pytest
 
 The environment uses Python 3.14.7 and PyTorch 2.14.0. The lock targets macOS
 Apple Silicon, Linux x86-64 CPU, and Windows x86-64 with the pinned CUDA 13.0 build.
-Phase 4 passed local CPU/MPS checks. The owner reports independent Windows/CUDA
-PASS on exact v0.5.0, including real RTX 4070 SUPER training and recovery: 159 tests
-passed, two MPS-only skips. GitHub Linux CPU CI passed separately with the same
-test counts and offline training acceptance. Physical Linux validation remains
-deferred, not performed. Observed CUDA equality is not a general determinism
-guarantee. See [Phase 4 closure](experiments/phase-4/CLOSURE.md). Closure publication
-was verified. The Phase 5 pilot ran locally on MPS; its reviewed publication
-requires separate owner approval.
+Phase 5 implementation is published as v0.6.0. The full English pilot ran on Mac
+MPS; 164 local tests passed in development and a fresh wheel installation. The
+owner reports independent Windows/RTX 4070 SUPER PASS: 162 passed, two MPS-only
+skips, a fresh wheel suite, and a bounded four-update CUDA exercise with 416 target
+exposures. That exercise did not reproduce the full Mac pilot or its scores.
+GitHub Linux CPU CI passed separately with 162 passes/two MPS skips and the
+workflow's tiny CPU checks. Physical Linux remains deferred, not performed.
+Neither backend check establishes general CUDA determinism, cross-device equality,
+sustained-pilot performance or language quality. See
+[Phase 5 closure and evidence scope](experiments/phase-5/CLOSURE.md).
+Closure publication awaits approval; Phase 6 must not begin in this chat.
 See [setup and Windows retest instructions](docs/SETUP.md) and
 [recorded environment evidence](docs/ENVIRONMENT.md).
 

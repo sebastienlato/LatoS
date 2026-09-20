@@ -83,9 +83,15 @@ itself starts a fresh run; it does not merge evidence from resumed segments.
 
 The current run's fixed samples can be generated from the selected `model/` with
 the existing model sampling API. Cross-host numerical equality is not promised.
-The observed CUDA equality in the earlier Windows fixture was run-specific; hosted
-Linux CPU CI and deferred physical Linux remain distinct evidence. Phase 5 makes
-no new claim about either environment.
+The owner reports Phase 5 Windows/RTX 4070 SUPER PASS for a bounded four-update,
+416-target CUDA exercise using the unchanged runner, generation, recovery and
+measurement mechanisms. This did not reproduce the full Mac pilot or its scores.
+Hosted Linux CPU CI passed tiny runner tests and CPU fixture acceptance separately;
+it did not run the full pilot. Physical Linux remains deferred. These results do
+not establish general CUDA determinism, cross-device numerical equivalence,
+sustained-pilot performance, language quality or instruction following. The earlier
+observed CUDA fixture equality was run-specific. See the
+[closure evidence](../experiments/phase-5/CLOSURE.md) for exact scope and attribution.
 
 For the retained English input locations, independently verify a completed run:
 

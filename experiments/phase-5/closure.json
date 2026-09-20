@@ -1,0 +1,184 @@
+{
+  "recorded_date": "2026-09-20",
+  "phase": 5,
+  "status": "closed locally; documentation publication pending approval",
+  "validated_implementation": {
+    "tag": "v0.6.0",
+    "commit": "fa0c3ac3b7f3890ffdcad411968a656da2f74b3b",
+    "package_version": "0.6.0",
+    "publication_verified": true,
+    "annotated_tag_object": "28f0468fff6e103a71f15078069ce7c17ea42b16"
+  },
+  "mac_english_pilot": {
+    "evidence_source": "Previously recorded local run and verification; unchanged",
+    "updates": 3000,
+    "target_exposures": 5761229,
+    "initial_validation_loss": 9.089002853668156,
+    "final_validation_loss": 4.731898494250065,
+    "quality": "repetitive and incoherent samples; useful assistant capability not established"
+  },
+  "windows_cuda": {
+    "result": "PASS",
+    "evidence_source": "Owner-reported independent Windows validation summary; raw logs not supplied in this session",
+    "commit": "fa0c3ac3b7f3890ffdcad411968a656da2f74b3b",
+    "gpu": "NVIDIA RTX 4070 SUPER",
+    "tests_passed": 162,
+    "tests_skipped": 2,
+    "tests_failed": 0,
+    "skip_reason": "MPS-only tests",
+    "fresh_non_editable_wheel_suite": "PASS (owner-reported complete suite)",
+    "bounded_exercise": {
+      "runner": "unchanged Phase 5 runner",
+      "updates": 4,
+      "target_exposures": 416,
+      "artifact_inventory_hashes_passed": 20,
+      "full_mac_english_pilot_reproduced": false
+    },
+    "checks": [
+      "fresh checkout and locked installation",
+      "full suite in development and fresh non-editable wheel installation",
+      "actual CUDA training forward/backward, AdamW, accumulation, scheduling, finite numerical state",
+      "validation state preservation",
+      "fixed samples and CUDA generation",
+      "checkpoint creation/loading, independent verification, separate-process CUDA recovery",
+      "synchronized optimization timing and CUDA memory measurement mechanisms",
+      "reserved test data preserved; not used for training or model selection",
+      "CLI, lint, formatting, dependency integrity, offline data/tokenizer workflows",
+      "builds, packaging and privacy checks"
+    ],
+    "tracked_files_unchanged": 108,
+    "working_tree": "clean",
+    "commits_created": 0,
+    "pushes_performed": 0,
+    "limits": [
+      "not reproduction of the full 5.76-million-target Mac pilot or its exact scores",
+      "no general CUDA determinism or cross-device numerical equivalence",
+      "no sustained-pilot performance, language-quality, instruction-following or Phase 6 capability claim"
+    ]
+  },
+  "github_linux_cpu_ci": {
+    "result": "PASS",
+    "evidence_source": "Completed run/job metadata, exact-commit workflow and logs directly inspected read-only",
+    "commit": "fa0c3ac3b7f3890ffdcad411968a656da2f74b3b",
+    "run_id": 35515094307,
+    "url": "https://github.com/sebastienlato/LatoS/actions/runs/35515094307",
+    "runner": "ubuntu-24.04",
+    "python": "3.14.7",
+    "torch": "2.14.0+cpu",
+    "tests_passed": 162,
+    "tests_skipped": 2,
+    "tests_failed": 0,
+    "skip_reason": "MPS hardware unavailable",
+    "job_completed_at": "2026-09-20T14:00:13Z",
+    "checks": [
+      "locked installation",
+      "Ruff lint and format",
+      "pytest including all three Phase 5 tests",
+      "CPU doctor and debug model check",
+      "offline data acquisition/preparation/audit",
+      "source and wheel builds",
+      "offline tokenizer fitting/validation",
+      "Phase 4 offline CPU fixture overfit/exact-resume acceptance at the Phase 5 commit"
+    ],
+    "phase5_test_scope": [
+      "train-only unigram scoring",
+      "two-update tiny CPU pilot with test text absent, baseline/final samples, inventory and overwrite checks",
+      "injected update failure preserves initial checkpoint"
+    ],
+    "fixture": {
+      "parameter_count": 127808,
+      "initial": {
+        "train": {
+          "loss": 5.814637595759336,
+          "perplexity": 335.16990949182764,
+          "targets": 329,
+          "windows": 6,
+          "split": "train"
+        },
+        "validation": {
+          "loss": 5.806987274638223,
+          "perplexity": 332.61553540349695,
+          "targets": 391,
+          "windows": 8,
+          "split": "validation"
+        }
+      },
+      "final": {
+        "train": {
+          "loss": 0.010030425414103324,
+          "perplexity": 1.0100808987462762,
+          "targets": 329,
+          "windows": 6,
+          "split": "train"
+        },
+        "validation": {
+          "loss": 11.248331577271756,
+          "perplexity": 76751.75850250766,
+          "targets": 391,
+          "windows": 8,
+          "split": "validation"
+        }
+      },
+      "tokens_seen": 131600,
+      "resume": {
+        "cut_step": 97,
+        "final_step": 400,
+        "compared_updates": 303,
+        "weights_bitwise_equal": true,
+        "optimizer_bitwise_equal": true,
+        "sampler_bitwise_equal": true,
+        "non_timing_metrics_equal": true
+      },
+      "validation": {
+        "weights_unchanged": true,
+        "optimizer_unchanged": true,
+        "rng_unchanged": true,
+        "gradients_unchanged": true,
+        "mode_restored": true
+      },
+      "quality_limit": "Fixture memorization only; no language quality claim"
+    },
+    "not_demonstrated": [
+      "full English pilot reproduction or its scores",
+      "fresh non-editable wheel test suite",
+      "standalone Phase 5 verify.py execution",
+      "separate archive/privacy inspection",
+      "CUDA or MPS execution",
+      "independent physical Linux validation",
+      "sustained-pilot performance or broad language quality"
+    ]
+  },
+  "independent_physical_linux": {
+    "result": "DEFERRED_NOT_PERFORMED",
+    "owner_explicitly_deferred": true
+  },
+  "phase6": {
+    "started": false,
+    "authorized_in_this_chat": false,
+    "next_gate": "After approved closure publication is verified, require explicit owner start in a fresh Work chat."
+  },
+  "publication": {
+    "approval": "pending",
+    "scope": "documentation and evidence only",
+    "destination_branch": "main",
+    "new_tag": null,
+    "preserve_tags": [
+      "v0.6.0",
+      "v0.5.0"
+    ],
+    "after_verified_push": "stop; do not begin Phase 6 in this chat"
+  },
+  "closure_checks": {
+    "scope": "documentation/evidence only; no runtime test or training rerun claimed",
+    "separate_review": "evidence attribution, exact refs/counts, workflow scope, links, artifact hashes, privacy and transition gate",
+    "documentation_only": true,
+    "pilot_inventory_files_rehashed": 25,
+    "initial_and_tokenizer_hashes_unchanged": true,
+    "relative_links": "pass",
+    "json_parse": "pass",
+    "privacy_and_history_scan": "pass",
+    "runtime_tests_rerun": false,
+    "training_rerun": false,
+    "builds_rerun": false
+  }
+}

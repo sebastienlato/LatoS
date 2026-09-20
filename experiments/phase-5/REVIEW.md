@@ -1,6 +1,8 @@
 # Phase 5 separate review
 
-Completed 2026-09-20 after implementation and the main run. This was a separate
+Historical implementation review, completed 2026-09-20 after the main run.
+Subsequent external validation and the separate documentation-closure review are
+in [CLOSURE.md](CLOSURE.md). This was a separate
 review pass within the same Work session; no external reviewer is claimed.
 
 ## Scope and findings

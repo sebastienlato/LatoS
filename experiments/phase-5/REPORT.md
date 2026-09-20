@@ -1,6 +1,10 @@
 # Phase 5: measured English pilot
 
-Completed locally on 2026-09-20; publication approval is pending.
+Implementation published as v0.6.0 at
+`fa0c3ac3b7f3890ffdcad411968a656da2f74b3b` on 2026-09-20. Measurements below preserve
+the original local experiment. Subsequent bounded Windows/CUDA and hosted Linux
+CPU evidence is recorded separately in [CLOSURE.md](CLOSURE.md); this report does
+not imply reproduction of the full pilot on those environments.
 
 ## Outcome
 
@@ -146,7 +150,9 @@ The [review record](REVIEW.md) lists completed checks, corrections, and packagin
 validation. Earlier Windows/CUDA PASS is owner-reported Phase 4 evidence only;
 hosted Linux CPU CI passed separately at that earlier implementation. Independent
 physical Linux remains deferred, not performed. No Phase 5 Windows/Linux execution
-or post-publication CI result is claimed.
+or post-publication CI result was claimed at the implementation checkpoint;
+[CLOSURE.md](CLOSURE.md) records the later external validation separately.
 
 See [PRETRAINING.md](../../docs/PRETRAINING.md) for reproduction and recovery.
-Stop at the reviewed Phase 5 publication checkpoint; no Phase 6 work has begun.
+The documentation-only closure awaits its own publication approval. No Phase 6
+work has begun; the owner requires a fresh-chat start after verified closure publication.

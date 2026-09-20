@@ -1,6 +1,21 @@
 # Changelog
 
-## 0.6.0 — Phase 5, local publication checkpoint (2026-09-20)
+## Phase 5 closure — documentation only (2026-09-20)
+
+- Record owner-reported Windows/RTX 4070 SUPER PASS at exact v0.6.0: 162 tests
+  passed, two MPS-only skips, fresh wheel suite, and a bounded four-update CUDA
+  exercise with 416 target exposures and 20 verified artifact hashes.
+- Record directly verified hosted Linux CPU CI separately: 162 passed, two MPS-only
+  skips, tiny CPU Phase 5 tests, fixture acceptance, offline workflows and builds.
+- Preserve the full Mac pilot results and limits; neither external check reproduced
+  that run. Physical Linux remains deferred; no broader CUDA/quality claim follows.
+- Prepare the fresh-chat Phase 6 handoff without beginning Phase 6.
+
+Closure publication approval is pending. Package remains 0.6.0; v0.6.0 and v0.5.0
+stay fixed. After approved closure publication is verified, stop; Phase 6 requires
+explicit owner start in a fresh Work chat.
+
+## 0.6.0 — Phase 5, published (2026-09-20)
 
 - Run the 17.3M-parameter English pilot from verified random initialization on MPS.
 - Preserve held-out random/unigram comparisons, fixed samples, token exposure,
@@ -11,7 +26,9 @@
   core training implementation remain unchanged; package/lock version is 0.6.0.
 
 See [Phase 5 results](experiments/phase-5/REPORT.md) for actual metrics and limits.
-Publication approval is pending; no Phase 6 work has begun.
+Published after explicit owner approval at
+`fa0c3ac3b7f3890ffdcad411968a656da2f74b3b`; main and annotated v0.6.0 were verified.
+No Phase 6 work has begun. The closure above has its own pending approval.
 
 ## Phase 4 closure — documentation only (2026-09-19)
 
