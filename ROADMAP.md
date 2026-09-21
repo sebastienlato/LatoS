@@ -6,13 +6,13 @@ updated state, and a local commit before its publication approval. After an
 approved push is verified, development proceeds to the next phase unless the owner
 has imposed a pause or transition gate, as recorded in PROJECT_STATE.md.
 
-Phase 7 closure is published and verified at
-`e4fd79ba7ab1fe5bcc19e733c2f6639a2214ba94`. Annotated v0.8.0 remains at
-`04031e5ea98da8db495242165a78c216ab1d4cf4`. The owner explicitly started Phase 8
-in a fresh Work chat. Phase 8 prepares a reproducible educational release and stops
-for its own publication approval. The [release report](experiments/phase-8/REPORT.md)
-and [model card](docs/MODEL_CARD.md) retain the exact platform/quality limits.
-Phase 9 has not begun. See [current state](PROJECT_STATE.md).
+Phase 8 publication is verified: remote main and annotated v1.0.0 resolve to
+`10d9ef7bf0618b364f887ff9d279408e3cbc33c9`. The verified publication record
+supersedes the tracked pre-publication snapshot. All earlier tags remain fixed.
+The owner explicitly started Phase 9 after this verification. It implements bounded
+LoRA training and merge, with [protocol](experiments/phase-9/PLAN.md) and
+[results](experiments/phase-9/REPORT.md). Phase 9 stops for explicit publication
+approval; this request does not begin Phase 10. See [current state](PROJECT_STATE.md).
 
 | Phase | Deliverable | Acceptance evidence |
 | --- | --- | --- |

@@ -95,9 +95,45 @@ def main(argv: list[str] | None = None) -> int:
     training.add_argument(
         "--stop-after", type=int, help="Stop at this update without changing the schedule"
     )
+    adapt = commands.add_parser("adapt", help="Train attention LoRA or merge a saved adapter")
+    adapt_actions = adapt.add_subparsers(dest="adapt_action", required=True)
+    adapt_train = adapt_actions.add_parser("train")
+    adapt_merge = adapt_actions.add_parser("merge")
+    for action in (adapt_train, adapt_merge):
+        action.add_argument("--base", type=Path, required=True)
+        action.add_argument("--output-dir", type=Path, required=True)
+    adapt_merge.add_argument("--adapter", type=Path, required=True)
+    for flag in ("manifest", "corpus-dir", "tokenizer-dir", "conversations", "config"):
+        adapt_train.add_argument(f"--{flag}", type=Path, required=True)
+    adapt_train.add_argument("--base-sha256", required=True)
+    adapt_train.add_argument("--method", choices=("lora", "full"), default="lora")
+    adapt_train.add_argument("--rank", type=int, default=8)
+    adapt_train.add_argument("--alpha", type=float, default=16.0)
+    adapt_train.add_argument("--adapter-seed", type=int, default=91)
+    adapt_train.add_argument("--device", choices=("cpu", "mps", "cuda"), default="cpu")
+    adapt_train.add_argument("--threads", type=int, default=1)
     args = parser.parse_args(argv)
     if args.command is None:
         parser.print_help()
+        return 0
+
+    if args.command == "adapt":
+        from latos.adaptation import run_adaptation
+        from latos.lora import load_adapter, merge_adapter
+        from latos.model.storage import load_model, save_model
+
+        try:
+            if args.adapt_action == "train":
+                report = run_adaptation(args)
+            else:
+                model = load_adapter(load_model(args.base), args.adapter)
+                report = save_model(merge_adapter(model), args.output_dir)
+        except (OSError, ValueError, KeyError, TypeError, RuntimeError, AssertionError) as exc:
+            print(json.dumps({"status": "error", "error": str(exc)}, indent=2))
+            return 1
+        except KeyboardInterrupt:
+            return 130
+        print(json.dumps(report, indent=2))
         return 0
 
     if args.command == "chat":

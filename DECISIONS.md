@@ -175,3 +175,19 @@ local; document their provenance and reproduction requirements without declaring
 worldwide redistribution clearance. Do not replace the fixed negative SFT result
 with the fixture model. Old optimizer recovery keeps its original version/source
 requirements. Publication is a separate owner-approved GitHub checkpoint.
+
+## Phase 9 — independent attention LoRA and controlled full-tuning comparison
+
+Use fixed fused QKV/output targets, Gaussian A/zero B and alpha/rank scaling. Freeze
+all existing weights and optimize only A/B using the same token-weighted trainer.
+Bind adapters to the full canonical base tensor/config identity, including tokenizer;
+merge into a new dense CPU snapshot, leaving source artifacts unchanged. Reuse the
+shared chat format and existing train/validation inputs, never the reserved tests.
+
+The first bounded experiment fixes rank 8, alpha 16 and 200 updates before training.
+Both methods receive the same base, target exposures, AdamW schedule and seed in
+separate processes. This controls exposure, not hyperparameter optimality or wall
+time. No search is justified by this mechanics milestone. Adapter optimizer resume
+is deferred explicitly; snapshots are for fresh-optimizer loading or inference.
+No new dependency or service is needed. Phase 9 proposes a source-only main update,
+with no tag, release or learned artifact upload, and stops at owner approval.

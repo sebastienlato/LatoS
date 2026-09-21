@@ -222,3 +222,15 @@ tokenizer and full Mac base/SFT are excluded from the release assets. The
 [Project Gutenberg license](https://www.gutenberg.org/policy/license.html) and
 [permission guidance](https://www.gutenberg.org/policy/permission.html) were rechecked
 for the [data card](docs/DATA_CARD.md); no worldwide rights clearance is inferred.
+
+## Phase 9 low-rank adaptation — 2026-09-21
+
+Original LoRA implementation derives the additive low-rank equation, frozen-base
+training, zero initial delta and merge from Hu et al.,
+[LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685v2).
+The [PyTorch Module documentation](https://docs.pytorch.org/docs/2.14/generated/torch.nn.Module.html)
+informed parameter registration and freezing. No upstream LoRA code, library or
+weights were copied or added. LatoS chooses fused QKV and attention-output targets;
+this is not a claim to reproduce the paper's experiments. Existing base/tokenizer,
+original synthetic conversations and English regression data retain their earlier
+provenance and terms. No dependency versions changed.

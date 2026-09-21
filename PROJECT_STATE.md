@@ -4,68 +4,55 @@ Updated: 2026-09-21.
 
 ## Active checkpoint
 
-**Phase 8 is complete and reviewed locally; publication approval is PENDING.**
-The owner explicitly started this phase in a fresh Work chat. Remote Phase 7 closure
-was verified at `e4fd79ba7ab1fe5bcc19e733c2f6639a2214ba94`; annotated v0.8.0 remains
-at `04031e5ea98da8db495242165a78c216ab1d4cf4`, object
-`485aaf36b7ed81a95c948434e1c14634b220be07`. No Phase 8 remote write has occurred.
+**Phase 9 is complete, validated and reviewed locally. Publication approval is PENDING.**
+The owner explicitly started
+Phase 9 after remote main and annotated v1.0.0 were verified at
+`10d9ef7bf0618b364f887ff9d279408e3cbc33c9`; tag object
+`1acb6b94f0adfbca85014ad6601dbfc716e3c651`. The verified Phase 8 publication record
+supersedes its tracked pending-publication snapshot. No Phase 9 remote write.
 
-Delivered: [reproduction/release guide](docs/RELEASE.md), [data card](docs/DATA_CARD.md),
-[model card](docs/MODEL_CARD.md), [report](experiments/phase-8/REPORT.md),
-[validation](experiments/phase-8/validation.json), [separate review](experiments/phase-8/REVIEW.md)
-and a hash-pinned tiny fixture packager. Version is 1.0.0; runtime implementation,
-shared chat contract and dependency versions remain unchanged.
+Delivered: float32 attention LoRA, frozen base/adapter-only optimization, bound
+adapter snapshots, non-mutating dense merge, CLI training/merge and an equal-budget
+full-tuning comparison. See [guide](docs/ADAPTATION.md),
+[report](experiments/phase-9/REPORT.md), [review](experiments/phase-9/REVIEW.md) and
+[validation](experiments/phase-9/validation.json). Package 1.1.0; dependencies unchanged.
 
-## Validation and preserved limits
+## Evidence and limits
 
-- Mac M4 Max, 64 GiB, CPU/MPS, Python 3.14.7 / PyTorch 2.14.0: **213 tests passed**
-  in development, an isolated tracked checkout and its non-editable wheel.
-- Documented tiny 400-update CPU acceptance and exact 303-update recovery passed;
-  five tiny artifact files reproduced byte-for-byte. Actual vocabulary 328,
-  127,808 parameters, capacity 64. Fixture train loss 5.814638 → 0.010030 but
-  validation worsened 5.806987 → 11.245802: memorization only.
-- Both retained full Mac models loaded/chatted from the wheel on CPU/MPS. Lint,
-  build, archive inspection, documentation and privacy checks passed. Final commit
-  clone/asset verification is recorded locally before the approval request.
-- **441 distinct prior files** rehashed unchanged, including overlapping 25/49/83
-  Phase 5/6/7 inventories and both reserved test payloads. Tests were integrity-
-  hashed only, never parsed/evaluated. No full retraining or old optimizer replay.
-- Full Mac base/SFT/tokenizer identities remain exactly as in the model card and
-  Phase 8 handoff. Preserve all prior attempts/failures, random baseline and logs.
-  Ignored inputs are not remote backups; original optimizer recovery requires its
-  recorded source/runtime. Full learned artifacts and acquired corpora stay local.
-- Negative SFT remains: 200 updates / 6,188 assistant-target exposures; assistant
-  loss 8.354879 → 5.815233; exact replies 0/32 → 0/32; English loss 4.731898 →
-  5.653422. Keep final update 200; do not promote it as an improved base.
-- Historical Windows/CUDA Phase 7 owner-reported PASS used tiny 256-position
-  artifacts plus a synthetic 512-position/batch-two model, **not the full Mac
-  learned artifacts**. Windows console Ctrl-C remains unvalidated. Hosted Linux
-  CPU CI passed separately within documented tiny CPU/workflow scope. Physical
-  Linux is deferred. No new Phase 8 Windows/Linux execution is claimed.
-- Useful instruction following, general CUDA determinism, cross-device equality,
-  production latency, mixed precision, distributed serving and language quality
-  beyond prior 256-token windows remain unestablished.
+- Mac CPU/MPS: **236 tests passed** in development and an isolated non-editable wheel.
+  Full saved artifacts pass read-back, frozen-base, exact adapter reload and merge/cache checks.
+- Both methods: same base/tokenizer/data/schedule/shuffle, 200 updates, 6,188 assistant
+  targets, fixed final selection. LoRA trains 147,456 / 17,308,032 parameters (0.852%).
+  Assistant losses: base 8.354879, LoRA 3.762932, full 5.814905; exact replies **0/32
+  for all three**. English losses: 4.731898 / 4.773844 / 5.653425. No useful assistant.
+- Full float32 merge requires atol=rtol=1e-4 on CPU/MPS. Initial CPU 1e-5 failure is
+  retained with an explicit protocol amendment; float64 diagnostic agrees to
+  3.73e-14. Historical CPU cache 1e-5 and MPS cache 1e-4 remain unchanged.
+- Original Phase 6 SFT remains negative and unchanged: 200 updates / 6,188 targets,
+  assistant loss 8.354879 → 5.815233; exact 0/32 → 0/32; English 4.731898 → 5.653422.
+  Retain final update 200; do not promote it or either new adaptation as an improved base.
+- **507 preserved files rehashed unchanged**, including the prior 441-file set.
+  Full base/SFT/tokenizer, shared chat contract, all prior evidence/attempts and both
+  reserved test sets remain local and preserved. Tests are integrity-hashed only.
+  New adapters/merged/control weights stay under ignored outputs. No remote backups.
+- Windows historical evidence: tiny 256-position artifacts plus synthetic 512,
+  not full Mac learned artifacts; console Ctrl-C unvalidated. Hosted Linux evidence
+  is separately scoped to historical tiny CPU/workflows. Physical Linux deferred.
+  No Phase 9 Windows/Linux/CUDA execution. Useful quality, general determinism,
+  cross-device equality, production latency, mixed precision and distributed serving
+  remain unestablished. Adapter optimizer resume is unsupported.
 
-## Concrete pending publication
+## Pending publication and next action
 
-- Local commit message: `Prepare Phase 8 reproducible educational release`.
-  This state is included in that commit; its exact ID is in the approval request
-  and `git log -1 --format=%H` once prepared.
-- Existing remote: `https://github.com/sebastienlato/LatoS.git`; branch **main**.
-  Current read-only GitHub lookup reports **public**, superseding earlier private
-  descriptions. No visibility change is proposed.
-- Proposed annotated tag **v1.0.0** and GitHub release
-  **LatoS v1.0.0 — reproducible educational release** using the reviewed
-  [notes](experiments/phase-8/RELEASE_NOTES.md).
-- Four assets in ignored `dist/phase-8-release/`: `latos-1.0.0.tar.gz`,
-  `latos-1.0.0-py3-none-any.whl`, `latos-1.0.0-tiny-fixture.zip`, `SHA256SUMS`.
-  Source/wheel plus MIT tiny fixture model/tokenizer only; no acquired data,
-  full Mac learned artifacts, optimizers, logs, environments or private context.
-- Preserve all ten existing tags. No PyPI upload, new paid service or remote backup.
-- **Next action: stop for explicit Phase 8 publication approval.** Publish only
-  the exact reviewed commit/assets if approved and verify remote identities.
-  Phase 9 has not begun. This request ends at the Phase 8 approval checkpoint;
-  no later phase publication is authorized.
+- Reviewed local commit message: `Add Phase 9 bounded LoRA adaptation and merge`.
+- Existing remote: `https://github.com/sebastienlato/LatoS.git`, branch **main**.
+- Proposed source commit only; **no tag, release or uploaded artifacts**. Preserve
+  every prior tag, release and repository visibility; no new paid services.
+- Lint/format, locked setup, source/wheel build, archive inspection, installed-wheel
+  full merge and CPU/MPS chat, preservation and privacy checks passed.
+- **Next action: stop for “Push Phase 9 to GitHub?”** Approval is pending.
+  Exact commit is in the approval request and local publication record.
+  Phase 10 has not begun; this request does not authorize a Phase 10 transition.
 
-Local uv: `.private/tools/bin/uv`; locked runtime: `.venv`. Final exact commit,
-asset hashes and publication status are retained in `.private/phase8-publication.json`.
+Local uv: `.private/tools/bin/uv`; runtime `.venv`. Exact publication identity and
+approval status are in the local `.private/phase9-publication.json` record.

@@ -1,0 +1,62 @@
+{
+  "cpu": {
+    "artifact_files_verified": 84,
+    "device": "cpu",
+    "frozen_base_and_caller_base_unchanged": true,
+    "independent_target_exposures": 6188,
+    "repeated_merge_weights_exact": true,
+    "synthetic_capacity": {
+      "adapter_cache_max_absolute_difference": 1.71661376953125e-05,
+      "atol": 0.0001,
+      "batch": 2,
+      "cache_atol": 1e-05,
+      "cache_rtol": 1e-05,
+      "merge_max_absolute_difference": 3.24249267578125e-05,
+      "merged_cache_max_absolute_difference": 1.9073486328125e-05,
+      "positions": 512,
+      "rtol": 0.0001
+    },
+    "test_payloads_opened": false,
+    "validation_merge": {
+      "atol": 0.0001,
+      "max_absolute_difference": 2.6226043701171875e-05,
+      "rtol": 0.0001,
+      "windows": 32
+    }
+  },
+  "mps": {
+    "artifact_files_verified": 84,
+    "device": "mps",
+    "frozen_base_and_caller_base_unchanged": true,
+    "independent_target_exposures": 6188,
+    "repeated_merge_weights_exact": true,
+    "synthetic_capacity": {
+      "adapter_cache_max_absolute_difference": 0.0,
+      "atol": 0.0001,
+      "batch": 2,
+      "cache_atol": 0.0001,
+      "cache_rtol": 0.0001,
+      "merge_max_absolute_difference": 4.291534423828125e-05,
+      "merged_cache_max_absolute_difference": 0.0,
+      "positions": 512,
+      "rtol": 0.0001
+    },
+    "test_payloads_opened": false,
+    "validation_merge": {
+      "atol": 0.0001,
+      "max_absolute_difference": 2.956390380859375e-05,
+      "rtol": 0.0001,
+      "windows": 32
+    }
+  },
+  "float64_reference": {
+    "adapter_float32_reference_max_absolute_difference": 1.835767216284978e-05,
+    "float64_atol": 1e-10,
+    "float64_merge_max_absolute_difference": 3.730349362740526e-14,
+    "float64_rtol": 1e-10,
+    "interpretation": "float64 equation agrees; float32 operation ordering introduces rounding",
+    "logits": 376832,
+    "merged_float32_reference_max_absolute_difference": 1.5398933836507922e-05,
+    "scope": "first fixed instruction validation window; CPU diagnostic only"
+  }
+}

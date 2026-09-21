@@ -4,7 +4,10 @@ LatoS is an original, English-first small language model project. Its goal is to
 make the path from documented training data to an evaluated conversational model
 reproducible on modest hardware.
 
-**Current milestone: Phase 8 reproducible release candidate (v1.0.0), local and awaiting approval.** LatoS
+**Current milestone: Phase 9 bounded LoRA adaptation (package 1.1.0), local and awaiting approval.**
+Phase 8 is published as v1.0.0. [LoRA training and merge](docs/ADAPTATION.md) add
+a fixed-budget full-tuning comparison; [results and limits](experiments/phase-9/REPORT.md)
+are retained without promoting either adaptation as a useful assistant. LatoS
 prepares English data, trains its own tokenizer, and implements an original dense
 causal decoder with optimization, validation and resumable checkpoints. A bounded
 assistant-only experiment starts from the preserved 17,308,032-parameter Phase 5
@@ -54,9 +57,9 @@ Phase 7 closure publication was verified at
 The [release guide](docs/RELEASE.md) provides the tested fresh-checkout path,
 [data card](docs/DATA_CARD.md), [model card](docs/MODEL_CARD.md), and
 [consolidated experiment report](experiments/phase-8/REPORT.md).
-Proposed release assets include source, wheel, a clearly separate tiny fixture
+Published v1.0.0 release assets include source, wheel, a clearly separate tiny fixture
 model/tokenizer and checksums. Full Mac learned artifacts and acquired corpora stay
-local. Publication requires explicit approval; see [current state](PROJECT_STATE.md).
+local. Phase 9 source publication requires its own approval; see [current state](PROJECT_STATE.md).
 See [setup and Windows retest instructions](docs/SETUP.md) and
 [recorded environment evidence](docs/ENVIRONMENT.md).
 

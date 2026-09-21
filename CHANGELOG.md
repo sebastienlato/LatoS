@@ -1,6 +1,17 @@
 # Changelog
 
-## 1.0.0 — Phase 8 candidate, 2026-09-21 (not yet published)
+## 1.1.0 — Phase 9, local publication candidate
+
+- Add bounded float32 attention LoRA training, identity-bound adapter-only snapshots
+  and merge into independent dense model snapshots for existing chat/cache paths.
+- Compare fixed-budget LoRA and full tuning with unchanged data, tokenizer and chat
+  formatting; preserve all samples and prior negative SFT evidence.
+- Validate freezing, gradients, reloads, merge/cache agreement, corruption rejection
+  and reserved-test exclusion. See [Phase 9 report](experiments/phase-9/REPORT.md).
+- Dependency versions remain unchanged. No new platform, useful-assistant,
+  general determinism or production-performance claim is introduced.
+
+## 1.0.0 — Phase 8, published 2026-09-21
 
 - Add fresh-checkout reproduction and release guides, data/model cards, and a
   consolidated report preserving the negative SFT result and platform boundaries.

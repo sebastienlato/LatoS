@@ -1,0 +1,377 @@
+{
+  "artifact_bytes": {
+    "full/model/model.safetensors": 69237768,
+    "lora/adapter/adapter.safetensors": 592752,
+    "lora/adapter/metadata.json": 611,
+    "lora/merged/model.safetensors": 69237768
+  },
+  "baseline": {
+    "assistant_validation": {
+      "loss": 8.354878555644643,
+      "perplexity": 4250.868337031149,
+      "split": "validation",
+      "targets": 121,
+      "windows": 32
+    },
+    "english_validation": {
+      "loss": 4.731898463298386,
+      "perplexity": 113.51085411274282,
+      "split": "validation",
+      "targets": 111523,
+      "windows": 1067
+    },
+    "instructions": {
+      "cases": 32,
+      "correct": 0,
+      "eos_stops": 0
+    }
+  },
+  "equal_inputs_baselines_and_update_exposures": true,
+  "protocol_sha256": "dd76778d4ef2177e94a7f0fcf83cec3ecee33b617b196630ff9d82c542c9d0fc",
+  "runs": {
+    "full": {
+      "plan": {
+        "base_parameters": 17308032,
+        "base_weights_sha256": "f82ed3b21aeacad6d8b3a88c9100cbc83b8f15af1ba9c17a4fa4dccc59b2befa",
+        "chat_contract": {
+          "body": "encode content as a separate segment, then explicit EOS (ID 2) per turn",
+          "header": "encode newline + title-cased role + colon + newline as a separate segment",
+          "overflow": "reject entire conversation or prompt; never truncate or split",
+          "prompt": "same segments through last user EOS, then assistant header; no final EOS",
+          "roles": "optional initial system, then alternating user and assistant",
+          "special_tokens": "unchanged vocabulary; literal control spellings encode as ordinary text",
+          "start": "BOS (ID 1), once per conversation",
+          "targets": "assistant content and its EOS only; headers and all other turns masked",
+          "version": 1
+        },
+        "config": {
+          "accumulation_steps": 2,
+          "batch_size": 4,
+          "beta1": 0.9,
+          "beta2": 0.95,
+          "eps": 1e-08,
+          "learning_rate": 0.0003,
+          "max_grad_norm": 1.0,
+          "max_steps": 200,
+          "min_lr_ratio": 0.1,
+          "schema_version": 1,
+          "seed": 61,
+          "sequence_length": 256,
+          "warmup_steps": 10,
+          "weight_decay": 0.01
+        },
+        "datasets": {
+          "train": {
+            "boundary_policy": "isolated-explicit-target-windows-v1",
+            "objective": "explicit-assistant-targets-v1",
+            "schema_version": 1,
+            "sequence_length": 256,
+            "source_sha256": "3507d47546868bd04c00e27f6d6964a716b40c02caf219bf2f7f121a858603e5",
+            "split": "train",
+            "target_masks_sha256": "600a52de0bc2b43173320760574f11b387fd31d49fdbc7834041b9d7b2ceaf53",
+            "targets": 744,
+            "tokenizer_sha256": "7dce3d0888f6a37d3eadbd077a9ff73170a54a1f6e301e51b2ae6d998142b0ab",
+            "vocab_size": 8192,
+            "windows": 192,
+            "windows_sha256": "6b133fde65ede5db28f1a2dcbf17c6cdb6bcd9505ce7fd8b5faf70fa5d7218bf"
+          },
+          "validation": {
+            "boundary_policy": "isolated-explicit-target-windows-v1",
+            "objective": "explicit-assistant-targets-v1",
+            "schema_version": 1,
+            "sequence_length": 256,
+            "source_sha256": "e511f8c3d1f8147604f8bf9c042af2cef9cd5679b60aab65ad762edfbb14002d",
+            "split": "validation",
+            "target_masks_sha256": "746c18b8096e81e2f7c8271caaf96836a2145a88ade8b63ae2c7b27536dc1fa2",
+            "targets": 121,
+            "tokenizer_sha256": "7dce3d0888f6a37d3eadbd077a9ff73170a54a1f6e301e51b2ae6d998142b0ab",
+            "vocab_size": 8192,
+            "windows": 32,
+            "windows_sha256": "6adcf06e10e8373af94951446b4e9916913c20df49a6f224250b168ccc0cc464"
+          }
+        },
+        "lock_sha256": "1ba7c70e6590e2074455dd9fae9cb35ecbca8ecb9ace3d2dc40d0d98d98c55e2",
+        "lora": {
+          "alpha": 16.0,
+          "rank": 8,
+          "seed": 91
+        },
+        "memory_method": "process lifetime RSS; MPS boundary snapshots, not continuous peaks",
+        "method": "full",
+        "model_config": {
+          "context_length": 512,
+          "d_model": 384,
+          "ffn_dim": 1024,
+          "n_heads": 6,
+          "n_layers": 8,
+          "norm_eps": 1e-05,
+          "rope_theta": 10000.0,
+          "schema_version": 1,
+          "tokenizer_sha256": "7dce3d0888f6a37d3eadbd077a9ff73170a54a1f6e301e51b2ae6d998142b0ab",
+          "vocab_size": 8192
+        },
+        "optimizer": "fresh AdamW; no optimizer resume or historical replay",
+        "regression": {
+          "boundary_policy": "isolated-record-overlap-one-v1",
+          "schema_version": 1,
+          "sequence_length": 256,
+          "source_sha256": "89add97695eb24f1203e0385588c3bef09060002ded6bbbcfdd28d64c87dd3ef",
+          "split": "validation",
+          "targets": 111523,
+          "tokenizer_sha256": "7dce3d0888f6a37d3eadbd077a9ff73170a54a1f6e301e51b2ae6d998142b0ab",
+          "vocab_size": 8192,
+          "windows": 1067,
+          "windows_sha256": "21b73fea9711c13f03a89647e30ea4ac54df49eff50ca6d5132789f8770bc669"
+        },
+        "runtime": {
+          "cpu_threads": 1,
+          "cuda_device": null,
+          "cuda_matmul_tf32": false,
+          "cudnn_benchmark": false,
+          "cudnn_tf32": true,
+          "deterministic_algorithms": false,
+          "device": "mps",
+          "implementation_sha256": "fdcf1740998db12560f8ed60e9fbb923955dfa4afb70c6e2f3188fa49893eb78",
+          "interop_threads": 16,
+          "latos": "1.1.0",
+          "matmul_precision": "highest",
+          "mps_fallback": "0",
+          "mps_fast_math": "0",
+          "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+          "python": "3.14.7",
+          "torch": "2.14.0"
+        },
+        "sampling": {
+          "max_new_tokens": 32,
+          "seed": 71,
+          "temperature": 0.0,
+          "top_k": 0
+        },
+        "schema_version": 1,
+        "selection": "fixed final update; no validation selection or hyperparameter search",
+        "source": {
+          "commit": "10d9ef7bf0618b364f887ff9d279408e3cbc33c9",
+          "dirty": true
+        },
+        "started_utc": "2026-09-21T14:56:32.985893+00:00",
+        "test_policy": "neither reserved test payload is opened",
+        "tokenizer_sha256": "7dce3d0888f6a37d3eadbd077a9ff73170a54a1f6e301e51b2ae6d998142b0ab",
+        "trainable_parameters": 17308032
+      },
+      "result": {
+        "assistant_validation": {
+          "loss": 5.814905075987508,
+          "perplexity": 335.25957280674226,
+          "split": "validation",
+          "targets": 121,
+          "windows": 32
+        },
+        "english_validation": {
+          "loss": 5.6534246225556215,
+          "perplexity": 285.26672578562625,
+          "split": "validation",
+          "targets": 111523,
+          "windows": 1067
+        },
+        "instructions": {
+          "cases": 32,
+          "correct": 0,
+          "eos_stops": 32
+        },
+        "optimizer_tensor_bytes": 138464488,
+        "steps": 200,
+        "tokens_seen": 6188,
+        "total_seconds_before_inventory": 23.503400083000088,
+        "trainable_parameters": 17308032,
+        "training_memory_max_observed": {
+          "mps_allocated_bytes": 217526784,
+          "mps_driver_bytes": 1216249856,
+          "process_peak_rss_bytes": 963952640
+        },
+        "update_seconds": 13.975351744002637,
+        "update_targets_per_second": 442.77955312684776,
+        "windows_seen": 1600
+      }
+    },
+    "lora": {
+      "plan": {
+        "base_parameters": 17308032,
+        "base_weights_sha256": "f82ed3b21aeacad6d8b3a88c9100cbc83b8f15af1ba9c17a4fa4dccc59b2befa",
+        "chat_contract": {
+          "body": "encode content as a separate segment, then explicit EOS (ID 2) per turn",
+          "header": "encode newline + title-cased role + colon + newline as a separate segment",
+          "overflow": "reject entire conversation or prompt; never truncate or split",
+          "prompt": "same segments through last user EOS, then assistant header; no final EOS",
+          "roles": "optional initial system, then alternating user and assistant",
+          "special_tokens": "unchanged vocabulary; literal control spellings encode as ordinary text",
+          "start": "BOS (ID 1), once per conversation",
+          "targets": "assistant content and its EOS only; headers and all other turns masked",
+          "version": 1
+        },
+        "config": {
+          "accumulation_steps": 2,
+          "batch_size": 4,
+          "beta1": 0.9,
+          "beta2": 0.95,
+          "eps": 1e-08,
+          "learning_rate": 0.0003,
+          "max_grad_norm": 1.0,
+          "max_steps": 200,
+          "min_lr_ratio": 0.1,
+          "schema_version": 1,
+          "seed": 61,
+          "sequence_length": 256,
+          "warmup_steps": 10,
+          "weight_decay": 0.01
+        },
+        "datasets": {
+          "train": {
+            "boundary_policy": "isolated-explicit-target-windows-v1",
+            "objective": "explicit-assistant-targets-v1",
+            "schema_version": 1,
+            "sequence_length": 256,
+            "source_sha256": "3507d47546868bd04c00e27f6d6964a716b40c02caf219bf2f7f121a858603e5",
+            "split": "train",
+            "target_masks_sha256": "600a52de0bc2b43173320760574f11b387fd31d49fdbc7834041b9d7b2ceaf53",
+            "targets": 744,
+            "tokenizer_sha256": "7dce3d0888f6a37d3eadbd077a9ff73170a54a1f6e301e51b2ae6d998142b0ab",
+            "vocab_size": 8192,
+            "windows": 192,
+            "windows_sha256": "6b133fde65ede5db28f1a2dcbf17c6cdb6bcd9505ce7fd8b5faf70fa5d7218bf"
+          },
+          "validation": {
+            "boundary_policy": "isolated-explicit-target-windows-v1",
+            "objective": "explicit-assistant-targets-v1",
+            "schema_version": 1,
+            "sequence_length": 256,
+            "source_sha256": "e511f8c3d1f8147604f8bf9c042af2cef9cd5679b60aab65ad762edfbb14002d",
+            "split": "validation",
+            "target_masks_sha256": "746c18b8096e81e2f7c8271caaf96836a2145a88ade8b63ae2c7b27536dc1fa2",
+            "targets": 121,
+            "tokenizer_sha256": "7dce3d0888f6a37d3eadbd077a9ff73170a54a1f6e301e51b2ae6d998142b0ab",
+            "vocab_size": 8192,
+            "windows": 32,
+            "windows_sha256": "6adcf06e10e8373af94951446b4e9916913c20df49a6f224250b168ccc0cc464"
+          }
+        },
+        "lock_sha256": "1ba7c70e6590e2074455dd9fae9cb35ecbca8ecb9ace3d2dc40d0d98d98c55e2",
+        "lora": {
+          "alpha": 16.0,
+          "rank": 8,
+          "seed": 91
+        },
+        "memory_method": "process lifetime RSS; MPS boundary snapshots, not continuous peaks",
+        "method": "lora",
+        "model_config": {
+          "context_length": 512,
+          "d_model": 384,
+          "ffn_dim": 1024,
+          "n_heads": 6,
+          "n_layers": 8,
+          "norm_eps": 1e-05,
+          "rope_theta": 10000.0,
+          "schema_version": 1,
+          "tokenizer_sha256": "7dce3d0888f6a37d3eadbd077a9ff73170a54a1f6e301e51b2ae6d998142b0ab",
+          "vocab_size": 8192
+        },
+        "optimizer": "fresh AdamW; no optimizer resume or historical replay",
+        "regression": {
+          "boundary_policy": "isolated-record-overlap-one-v1",
+          "schema_version": 1,
+          "sequence_length": 256,
+          "source_sha256": "89add97695eb24f1203e0385588c3bef09060002ded6bbbcfdd28d64c87dd3ef",
+          "split": "validation",
+          "targets": 111523,
+          "tokenizer_sha256": "7dce3d0888f6a37d3eadbd077a9ff73170a54a1f6e301e51b2ae6d998142b0ab",
+          "vocab_size": 8192,
+          "windows": 1067,
+          "windows_sha256": "21b73fea9711c13f03a89647e30ea4ac54df49eff50ca6d5132789f8770bc669"
+        },
+        "runtime": {
+          "cpu_threads": 1,
+          "cuda_device": null,
+          "cuda_matmul_tf32": false,
+          "cudnn_benchmark": false,
+          "cudnn_tf32": true,
+          "deterministic_algorithms": false,
+          "device": "mps",
+          "implementation_sha256": "fdcf1740998db12560f8ed60e9fbb923955dfa4afb70c6e2f3188fa49893eb78",
+          "interop_threads": 16,
+          "latos": "1.1.0",
+          "matmul_precision": "highest",
+          "mps_fallback": "0",
+          "mps_fast_math": "0",
+          "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+          "python": "3.14.7",
+          "torch": "2.14.0"
+        },
+        "sampling": {
+          "max_new_tokens": 32,
+          "seed": 71,
+          "temperature": 0.0,
+          "top_k": 0
+        },
+        "schema_version": 1,
+        "selection": "fixed final update; no validation selection or hyperparameter search",
+        "source": {
+          "commit": "10d9ef7bf0618b364f887ff9d279408e3cbc33c9",
+          "dirty": true
+        },
+        "started_utc": "2026-09-21T14:56:11.895697+00:00",
+        "test_policy": "neither reserved test payload is opened",
+        "tokenizer_sha256": "7dce3d0888f6a37d3eadbd077a9ff73170a54a1f6e301e51b2ae6d998142b0ab",
+        "trainable_parameters": 147456
+      },
+      "result": {
+        "assistant_validation": {
+          "loss": 3.76293209170507,
+          "perplexity": 43.074539500174666,
+          "split": "validation",
+          "targets": 121,
+          "windows": 32
+        },
+        "english_validation": {
+          "loss": 4.773844367997752,
+          "perplexity": 118.37343941246947,
+          "split": "validation",
+          "targets": 111523,
+          "windows": 1067
+        },
+        "frozen_base_unchanged": true,
+        "instructions": {
+          "cases": 32,
+          "correct": 0,
+          "eos_stops": 32
+        },
+        "merge": {
+          "atol": 0.0001,
+          "max_absolute_difference": 2.956390380859375e-05,
+          "rtol": 0.0001,
+          "windows": 32
+        },
+        "optimizer_tensor_bytes": 1179776,
+        "round_trip": {
+          "atol": 0.0,
+          "max_absolute_difference": 0.0,
+          "rtol": 0.0,
+          "windows": 32
+        },
+        "steps": 200,
+        "tokens_seen": 6188,
+        "total_seconds_before_inventory": 20.458824625000034,
+        "trainable_parameters": 147456,
+        "training_memory_max_observed": {
+          "mps_allocated_bytes": 71001600,
+          "mps_driver_bytes": 1207861248,
+          "process_peak_rss_bytes": 1042284544
+        },
+        "update_seconds": 8.539877328003513,
+        "update_targets_per_second": 724.6005723886266,
+        "windows_seen": 1600
+      }
+    }
+  },
+  "numerical_acceptance_amendment": "CPU full merge 1e-5 failed; amended CPU/MPS merge to atol=rtol=1e-4; see PLAN.md and verification.",
+  "accepted_run_directory": "outputs/phase-9-comparison-accepted",
+  "preliminary_run_directory": "outputs/phase-9-comparison"
+}

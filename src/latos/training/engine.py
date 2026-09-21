@@ -6,6 +6,7 @@ import time
 import torch
 
 from latos.doctor import available_backends, select_device
+from latos.lora import LoRAModel
 from latos.model.network import LatoModel
 from latos.training.config import TrainingConfig
 from latos.training.data import ShuffleStream, TokenDataset, collate
@@ -81,7 +82,9 @@ class Trainer:
             or validation.sequence_length != config.sequence_length
         ):
             raise ValueError("Dataset sequence length differs from training configuration")
-        if any(p.dtype != torch.float32 or not p.requires_grad for p in model.parameters()):
+        if isinstance(model, LoRAModel):
+            model.validate_adapter()
+        elif any(p.dtype != torch.float32 or not p.requires_grad for p in model.parameters()):
             raise ValueError("Training requires float32, trainable model parameters")
         self.device = select_device(device, available_backends())
         self.model = model.to(self.device)
@@ -91,6 +94,8 @@ class Trainer:
         self.data_identities = {"train": train.identity, "validation": validation.identity}
         decay, no_decay = [], []
         for parameter in model.parameters():
+            if not parameter.requires_grad:
+                continue
             (decay if parameter.ndim >= 2 else no_decay).append(parameter)
         self.optimizer = torch.optim.AdamW(
             [

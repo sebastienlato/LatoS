@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "phase": 9,
+  "date": "2026-09-21",
+  "status": "pass_with_documented_numerical_amendment",
+  "tested_package": "1.1.0",
+  "parent_commit": "10d9ef7bf0618b364f887ff9d279408e3cbc33c9",
+  "environment_at_start": {
+    "schema_version": 1,
+    "latos_version": "1.0.0",
+    "python_version": "3.14.7",
+    "torch_version": "2.14.0",
+    "system": "Darwin",
+    "os_version": "26.6.2",
+    "architecture": "arm64",
+    "logical_cpus": 16,
+    "physical_memory_bytes": 68719476736,
+    "disk_free_bytes": 673416232960,
+    "available_backends": {
+      "cpu": true,
+      "mps": true,
+      "cuda": false
+    },
+    "mps_built": true,
+    "cuda_build_version": null,
+    "mps_fallback_enabled": false,
+    "requested_device": "mps",
+    "tested_device": "mps",
+    "precision": "float32",
+    "status": "ok"
+  },
+  "dependency_versions_unchanged": true,
+  "tests": {
+    "development": {
+      "passed": 236,
+      "seconds": 16.47,
+      "log": "final-reviewed-tests.log"
+    },
+    "isolated_non_editable_wheel": {
+      "passed": 236,
+      "seconds": 15.74,
+      "log": "wheel-tests-reviewed.log"
+    },
+    "new_focused_tests": 23
+  },
+  "installed_wheel_checks": {
+    "site_packages_import": true,
+    "full_adapter_merge": true,
+    "full_merged_chat_cpu": true,
+    "full_merged_chat_mps": true,
+    "quality_claim": false
+  },
+  "preservation": {
+    "distinct_files": 507,
+    "all_unchanged": true,
+    "includes_prior_441": true,
+    "shared_chat_unchanged": true,
+    "reserved_tests": {
+      "data/processed/english-books-v1/test.jsonl": {
+        "sha256": "a01a55c31d0401ab5dba64cf0f14bd96e8ed9900012a7099f972b3377d58a954",
+        "bytes": 1527944
+      },
+      "data/processed/english-instructions-v1/test.jsonl": {
+        "sha256": "5e0fe6050dcd1df7e85ce46ebcd830ee6cec8b4841b9c1f8f270b110889395a7",
+        "bytes": 9790
+      }
+    },
+    "test_policy": "opaque integrity hashing only; not parsed or evaluated"
+  },
+  "numerical_evidence": "verification.json",
+  "source_snapshot": "isolated staged tracked checkout before final report/validation text; installed wheel runtime matches final reviewed package source",
+  "review_checks": {
+    "full_staged_diff_scanned": true,
+    "changed_files": 26,
+    "history_revisions_scanned": 16,
+    "private_identifiers_absent": true,
+    "private_files_never_tracked": true,
+    "markdown_links": "pass",
+    "source_archive_members": 173,
+    "wheel_members": 38,
+    "source_matches_isolated_snapshot": true,
+    "wheel_runtime_matches_final_source": true,
+    "compact_results_and_all_96_samples_match_raw": true
+  },
+  "retained_attempts": [
+    {
+      "path": "outputs/phase-9-comparison",
+      "status": "complete; exclude timings because validation jobs overlapped"
+    },
+    {
+      "path": "outputs/phase-9-comparison-accepted",
+      "status": "accepted fixed-budget comparison; validation jobs idle"
+    },
+    {
+      "path": "outputs/phase-9-validation/development-tests.log",
+      "status": "7 CLI launch failures from missing environment PATH; 229 passed; corrected locked invocation passes 236"
+    },
+    {
+      "path": "outputs/phase-9-validation/verify-cpu.log",
+      "status": "initial 1e-5 CPU merge bound failed; explicit amended 1e-4 bound passes; float64 reference added"
+    },
+    {
+      "path": "outputs/phase-9-validation/verify-mps.log",
+      "status": "verifier inference-mode construction prevented cache version tracking; fixed construction scope and verified again"
+    }
+  ],
+  "limits": [
+    "0/32 exact replies for base, LoRA and full tuning",
+    "Equal exposure, single rank/seed/schedule; no method-optimality claim",
+    "CPU full merge tolerance amended after observation; original failure retained",
+    "No adapter optimizer resume",
+    "No Phase 9 Windows/CUDA/Linux execution; physical Linux deferred",
+    "Historical Windows scope tiny 256 plus synthetic 512; full Mac learned artifacts unavailable there; console Ctrl-C unvalidated",
+    "Hosted Linux CPU historical evidence separately scoped",
+    "No general accelerator determinism, cross-device equality, production latency, mixed precision or distributed-serving evidence"
+  ],
+  "publication": {
+    "approval": "pending",
+    "remote": "https://github.com/sebastienlato/LatoS.git",
+    "branch": "main",
+    "tag": null,
+    "release": null,
+    "asset_uploads": []
+  }
+}
