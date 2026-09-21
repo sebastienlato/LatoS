@@ -6,13 +6,16 @@ updated state, and a local commit before its publication approval. After an
 approved push is verified, development proceeds to the next phase unless the owner
 has imposed a pause or transition gate, as recorded in PROJECT_STATE.md.
 
-Phase 8 publication is verified: remote main and annotated v1.0.0 resolve to
-`10d9ef7bf0618b364f887ff9d279408e3cbc33c9`. The verified publication record
-supersedes the tracked pre-publication snapshot. All earlier tags remain fixed.
-The owner explicitly started Phase 9 after this verification. It implements bounded
-LoRA training and merge, with [protocol](experiments/phase-9/PLAN.md) and
-[results](experiments/phase-9/REPORT.md). Phase 9 stops for explicit publication
-approval; this request does not begin Phase 10. See [current state](PROJECT_STATE.md).
+Phase 9 implementation is published at
+`0fbedd31f746d30bb5f071fbda30defa9036a451`, package 1.1.0, without a Phase 9 tag.
+[Scoped closure](experiments/phase-9/CLOSURE.md) records owner-reported bounded tiny
+Windows/CUDA PASS and separately verified hosted Linux CPU CI. Physical Linux is
+deferred. Documentation-only closure is reviewed locally and awaits its own explicit
+publication approval. **Do not begin Phase 10 in this chat.** After approved closure
+publication, verify exact main and unchanged tags, then stop; Phase 10 requires an
+explicit fresh-chat start using the [handoff](docs/PHASE10_HANDOFF.md).
+Annotated v1.0.0 remains at `10d9ef7bf0618b364f887ff9d279408e3cbc33c9`.
+See [current state](PROJECT_STATE.md).
 
 | Phase | Deliverable | Acceptance evidence |
 | --- | --- | --- |

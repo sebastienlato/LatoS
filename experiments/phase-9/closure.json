@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "phase": 9,
+  "recorded_date": "2026-09-21",
+  "implementation_commit": "0fbedd31f746d30bb5f071fbda30defa9036a451",
+  "implementation_tag": null,
+  "package_version": "1.1.0",
+  "closure_status": "formally closed locally within documented scope; reviewed publication awaits explicit approval",
+  "windows_cuda": {
+    "status": "PASS within bounded tiny-fixture scope",
+    "attribution": "Owner-supplied independent Windows validation summary; not executed by this Mac session",
+    "validated_commit": "0fbedd31f746d30bb5f071fbda30defa9036a451",
+    "hardware": "NVIDIA RTX 4070 SUPER",
+    "tests": {
+      "passed": 226,
+      "skipped": 10,
+      "failed": 0,
+      "skip_scope": "expected platform/hardware skips; individual breakdown not supplied",
+      "fresh_exact_checkout_locked_install": "pass",
+      "fresh_non_editable_wheel_suite": "pass"
+    },
+    "training": {
+      "actual_cuda_execution": true,
+      "methods": [
+        "lora",
+        "full"
+      ],
+      "updates_each": 4,
+      "assistant_target_exposures_each": 175,
+      "frozen_tiny_base_parameters_unchanged": 7856,
+      "tiny_adapter_parameters_trainable_and_updated": 192,
+      "tiny_fraction_percent_approx": 2.44399,
+      "full_pilot_architecture_fraction_percent": 0.851951279,
+      "full_pilot_fraction_is_architecture_check_not_full_training": true,
+      "matching_conditions": [
+        "data",
+        "update/exposure budget",
+        "schedule",
+        "evaluation"
+      ]
+    },
+    "passed_checks": [
+      "Adapter initialization and zero delta",
+      "Frozen base and optimizer membership",
+      "Exact adapter save/load round trip",
+      "CPU/CUDA merge at amended 1e-4 contract",
+      "Separate cached/uncached non-MPS agreement at 1e-5",
+      "Independent CPU float64 merge-reference diagnostics",
+      "Unsupported adapter optimizer checkpoint/resume rejection",
+      "Fair LoRA/full-tuning comparison machinery",
+      "CLI, diagnostics, lint, formatting, dependency integrity, offline workflows, packaging and privacy"
+    ],
+    "merge_contract": {
+      "atol": 0.0001,
+      "rtol": 0.0001,
+      "original_cpu_1e_5_failure_preserved_not_reclassified": true
+    },
+    "non_mps_cache_contract": {
+      "atol": 1e-05,
+      "rtol": 1e-05
+    },
+    "exact_heldout_replies": {
+      "base": {
+        "correct": 0,
+        "cases": 32
+      },
+      "lora": {
+        "correct": 0,
+        "cases": 32
+      },
+      "full": {
+        "correct": 0,
+        "cases": 32
+      }
+    },
+    "preservation": {
+      "prior_evidence_report_files": 1513,
+      "tracked_files_unchanged": 173,
+      "working_tree_clean": true,
+      "reserved_test_payloads_unused": true,
+      "commits_or_pushes_from_windows": false,
+      "counts_belong_to_windows_installation": true
+    },
+    "not_demonstrated": [
+      "Full Mac learned-base/adapter experiment reproduction",
+      "Full learned 512-position merge on Windows",
+      "Adapter optimizer resume",
+      "Windows console Ctrl-C",
+      "Useful instruction following",
+      "LoRA superiority",
+      "General CUDA determinism",
+      "Cross-device equality",
+      "Mixed-precision/distributed behavior",
+      "Production performance"
+    ],
+    "raw_logs_supplied": false,
+    "artifact_hashes_supplied": false,
+    "numerical_error_maxima_supplied": false,
+    "driver_runtime_details_supplied": false
+  },
+  "github_linux_cpu": {
+    "status": "PASS",
+    "attribution": "Run/job metadata, logs and exact-commit workflow/test bodies directly inspected",
+    "run_id": 35617504810,
+    "url": "https://github.com/sebastienlato/LatoS/actions/runs/35617504810",
+    "head_sha": "0fbedd31f746d30bb5f071fbda30defa9036a451",
+    "event": "push",
+    "job_id": 106391902352,
+    "job_url": "https://github.com/sebastienlato/LatoS/actions/runs/35617504810/job/106391902352",
+    "job_completed_at": "2026-09-21T15:14:56Z",
+    "run_updated_at": "2026-09-21T15:14:56Z",
+    "runner": "ubuntu-24.04; log reports Ubuntu 24.04.5 Linux x86-64",
+    "python": "3.14.7",
+    "torch": "2.14.0+cpu",
+    "tests": {
+      "collected": 236,
+      "passed": 228,
+      "skipped": 8,
+      "failed": 0,
+      "seconds": 32.95,
+      "skip_scope": "MPS only",
+      "lora_cpu_cases_passed": 19,
+      "lora_mps_cases_skipped": 1,
+      "phase9_cpu_integration_cases_passed": 3
+    },
+    "scope": [
+      "Tiny CPU LoRA equation/gradients, initialization, freeze and optimizer membership, validation invariance, round trips, merge/cache, corrupt/identity rejection, CPU repetition and rejected adapter checkpointing",
+      "Two-update tiny random-base LoRA/full comparison, matching conditions, merge CLI, incomplete-run rejection, failure retention and wrong-base/overwrite rejection; both fixture test payloads removed",
+      "Existing CPU inference/CLI/POSIX SIGINT, SFT and dense training recovery tests",
+      "Locked install, lint/format, CPU doctor/debug model checks, offline data/tokenizer fixtures, source/wheel build, Phase 4 offline training acceptance"
+    ],
+    "tiny_merge_scope": "Tiny unit CPU case passes 1e-5; integration asserts amended 1e-4. Neither reclassifies full learned CPU 1e-5 failure.",
+    "dense_fixture_acceptance": {
+      "updates": 400,
+      "targets": 131600,
+      "parameter_count": 127808,
+      "initial_train_loss": 5.814637595759336,
+      "final_train_loss": 0.010031219311398214,
+      "initial_validation_loss": 5.806987274638223,
+      "final_validation_loss": 11.252521580747326,
+      "resume_cut_step": 97,
+      "replayed_updates": 303,
+      "weights_optimizer_sampler_and_non_timing_metrics_exact": true,
+      "quality": "memorization only; not LoRA optimizer resume"
+    },
+    "not_demonstrated": [
+      "CUDA/MPS execution",
+      "Full Mac learned experiment reproduction",
+      "Full learned 512-position merge verification",
+      "Standalone Phase 9 full-artifact or float64 reference scripts",
+      "Learned-model performance comparison",
+      "Fresh non-editable wheel test suite",
+      "Physical Linux",
+      "Windows console Ctrl-C",
+      "Standalone archive/privacy audit or prior-Mac-artifact preservation audit"
+    ],
+    "raw_log_sha256": "204b3f38521d53136c8b248e0e2e6d6b7ec571925b672daa38ec262d7cd9a135",
+    "metadata_sha256": "d244ad09d46d5ac9d9268ab15b5d8c1026921f28003c6a7d2578f8d7493b79d4",
+    "workflow_sha256": "5d69c6aa6556da54b0611806d94721603425acea1d3587ebfb6ee73fe9017102"
+  },
+  "physical_linux": "deferred, not performed",
+  "local_closure_checks": {
+    "distinct_preserved_files_unchanged": 743,
+    "prior_inventory_files": 507,
+    "phase9_inventory_entries": 225,
+    "original_phase9_evidence_scripts": 11,
+    "windows_counts_separately_attributed": true,
+    "reserved_tests": "opaque integrity hashes only; not parsed or evaluated",
+    "runtime_tests_configs_lock_workflow_and_original_evidence_unchanged": true,
+    "new_runtime_tests_training_benchmarks_builds": false
+  },
+  "owner_gate": "Do not begin Phase 10 in this chat. Stop for explicit closure publication approval; after approved publication verify exact main and unchanged tags, then stop. Phase 10 requires explicit fresh-chat start after verified closure.",
+  "publication": {
+    "approval": "pending",
+    "remote": "https://github.com/sebastienlato/LatoS.git",
+    "branch": "main",
+    "visibility": "public; unchanged",
+    "proposed_tag": null,
+    "release": null,
+    "asset_uploads": [],
+    "existing_tags_preserved": 11
+  }
+}

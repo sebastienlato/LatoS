@@ -30,8 +30,10 @@ uv run --locked python experiments/phase-9/run.py \
   --output-dir outputs/my-phase-9-comparison --device mps
 ```
 
-Use CPU for the portable correctness path; CUDA is selectable but Phase 9 CUDA
-has not been validated. Every output directory must be new. Both methods use
+Use CPU for the portable correctness path. Subsequent owner-reported Windows/CUDA
+validation passed only a bounded tiny fixture; see
+[closure scope](../experiments/phase-9/CLOSURE.md). Every output directory must be new.
+Both methods use
 assistant-only next-token labels from shared chat contract 1, the same 200-update
 configuration, fresh AdamW and the same shuffle seed. No reserved test payload is
 opened by either method. The 32 instruction validation cases and full English
@@ -86,5 +88,10 @@ not establish useful instruction following. Keep the negative Phase 6 SFT result
 and all [quality/platform limits](MODEL_CARD.md): Windows historical evidence used
 tiny 256-position artifacts plus synthetic 512, not full Mac models; Windows console
 Ctrl-C is unvalidated, hosted Linux evidence has its own scope, and physical Linux
-is deferred. No new Windows/Linux/CUDA, general accelerator determinism, cross-device
-equality, production latency, mixed precision or distributed-serving claim is made.
+is deferred. Phase 9 Windows/CUDA and hosted Linux CPU evidence are recorded
+separately in the closure; neither reproduces the full Mac learned experiment.
+No full learned 512-position merge on Windows, general accelerator determinism,
+cross-device equality, production latency, mixed precision or distributed-serving
+claim is made. The tiny trained fraction (~2.44399%) differs from the full pilot
+architecture's independently checked 0.851951279%. The 1e-4 merge amendment and
+original CPU 1e-5 failure remain preserved.

@@ -1,6 +1,19 @@
 # Changelog
 
-## 1.1.0 — Phase 9, local publication candidate
+## Phase 9 closure — documentation only (2026-09-21)
+
+- Record owner-reported Windows/RTX 4070 SUPER PASS at the exact Phase 9 commit:
+  226 passed / 10 skips, fresh wheel suite, tiny CUDA LoRA/full tuning at 4 updates
+  and 175 targets. Keep tiny 2.44399% and full-architecture 0.851951279% distinct.
+- Separately verify exact-commit Linux CPU CI: 228 passed / 8 MPS-only skips;
+  tiny CPU mechanisms and offline workflows, not full learned artifacts or a fresh
+  installed-wheel suite. Physical Linux remains deferred.
+- Preserve amended 1e-4 merge contract and original failure, negative quality,
+  unsupported adapter optimizer resume and all scoped platform limits.
+- Prepare closure evidence and a fresh-chat Phase 10 handoff. Closure publication
+  requires explicit approval; Phase 10 has not begun. No runtime/version change.
+
+## 1.1.0 — Phase 9 implementation published, no Phase 9 tag
 
 - Add bounded float32 attention LoRA training, identity-bound adapter-only snapshots
   and merge into independent dense model snapshots for existing chat/cache paths.

@@ -4,7 +4,12 @@ LatoS is an original, English-first small language model project. Its goal is to
 make the path from documented training data to an evaluated conversational model
 reproducible on modest hardware.
 
-**Current milestone: Phase 9 bounded LoRA adaptation (package 1.1.0), local and awaiting approval.**
+**Current milestone: Phase 9 implementation published (package 1.1.0, no Phase 9 tag);
+reviewed documentation-only closure awaits publication approval.**
+[Scoped closure evidence](experiments/phase-9/CLOSURE.md) records owner-reported
+Windows/CUDA tiny-fixture PASS (226 passed / 10 skips) and separately inspected
+Linux CPU CI (228 passed / 8 MPS-only skips). Physical Linux is deferred.
+Phase 10 has not begun and requires a fresh-chat start after verified closure publication.
 Phase 8 is published as v1.0.0. [LoRA training and merge](docs/ADAPTATION.md) add
 a fixed-budget full-tuning comparison; [results and limits](experiments/phase-9/REPORT.md)
 are retained without promoting either adaptation as a useful assistant. LatoS
@@ -39,8 +44,8 @@ Phase 7 implementation is published as v0.8.0 at
 `04031e5ea98da8db495242165a78c216ab1d4cf4`. Mac CPU/MPS validation passed 210 tests
 in development and a fresh wheel. Separate inference checks used the full preserved
 Mac base/SFT models.
-The owner reports independent Windows/RTX 4070 SUPER PASS: 202 passed, eight expected
-skips, fresh wheel suite and actual CUDA inference/CLI. Windows used tiny 256-position
+Historical Phase 7 evidence: the owner reports independent Windows/RTX 4070 SUPER
+PASS: 202 passed, eight expected skips, fresh wheel suite and actual CUDA inference/CLI. Windows used tiny 256-position
 base/SFT artifacts plus a separate synthetic 512-position model; the full Mac learned
 artifacts were unavailable and were not validated there. Windows console Ctrl-C
 remains unvalidated; callback cancellation passed. GitHub-hosted Linux CPU CI was
@@ -59,7 +64,8 @@ The [release guide](docs/RELEASE.md) provides the tested fresh-checkout path,
 [consolidated experiment report](experiments/phase-8/REPORT.md).
 Published v1.0.0 release assets include source, wheel, a clearly separate tiny fixture
 model/tokenizer and checksums. Full Mac learned artifacts and acquired corpora stay
-local. Phase 9 source publication requires its own approval; see [current state](PROJECT_STATE.md).
+local. Phase 9 implementation is published; closure publication requires its own
+approval. See [current state](PROJECT_STATE.md).
 See [setup and Windows retest instructions](docs/SETUP.md) and
 [recorded environment evidence](docs/ENVIRONMENT.md).
 
