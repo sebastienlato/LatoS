@@ -164,3 +164,14 @@ Prefill a new session-owned cache for every reply, keeping cache state out of mo
 snapshots and training. Validate explicit offset masks and rotary positions against
 the existing full-prefix forward. Measure same-backend differences and latency;
 do not infer model quality or CUDA behavior from infrastructure checks.
+
+## Phase 8 — release scope, 2026-09-21
+
+Package 1.0.0 marks the reproducible educational workflow, not useful assistant
+quality or universal platform support. Retain dependency versions and runtime
+implementation. Provide source, wheel and a separate tiny fixture artifact under
+MIT with pinned file identities. Keep acquired books and full Mac learned artifacts
+local; document their provenance and reproduction requirements without declaring
+worldwide redistribution clearance. Do not replace the fixed negative SFT result
+with the fixture model. Old optimizer recovery keeps its original version/source
+requirements. Publication is a separate owner-approved GitHub checkpoint.

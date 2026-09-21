@@ -1,0 +1,208 @@
+{
+  "schema_version": 1,
+  "phase": 8,
+  "date": "2026-09-21",
+  "status": "pass",
+  "source": {
+    "parent_commit": "e4fd79ba7ab1fe5bcc19e733c2f6639a2214ba94",
+    "working_tree": "Phase 8 candidate; isolated staged checkout before final documentation",
+    "runtime_unchanged_from_parent": true,
+    "dependency_versions_unchanged": true,
+    "package_version": "1.0.0"
+  },
+  "environment": {
+    "schema_version": 1,
+    "latos_version": "1.0.0",
+    "python_version": "3.14.7",
+    "torch_version": "2.14.0",
+    "system": "Darwin",
+    "os_version": "26.6.2",
+    "architecture": "arm64",
+    "logical_cpus": 16,
+    "physical_memory_bytes": 68719476736,
+    "disk_free_bytes": 673617797120,
+    "available_backends": {
+      "cpu": true,
+      "mps": true,
+      "cuda": false
+    },
+    "mps_built": true,
+    "cuda_build_version": null,
+    "mps_fallback_enabled": false,
+    "requested_device": "mps",
+    "tested_device": "mps",
+    "precision": "float32",
+    "status": "ok"
+  },
+  "tests": {
+    "development": {
+      "passed": 213,
+      "seconds": 14.32
+    },
+    "isolated_checkout": {
+      "passed": 213,
+      "seconds": 23.13
+    },
+    "non_editable_wheel": {
+      "passed": 213,
+      "seconds": 14.41
+    }
+  },
+  "tiny": {
+    "parameter_count": 127808,
+    "initial": {
+      "train": {
+        "loss": 5.8146379088195985,
+        "perplexity": 335.17001442022377,
+        "split": "train",
+        "targets": 329,
+        "windows": 6
+      },
+      "validation": {
+        "loss": 5.806987274638223,
+        "perplexity": 332.61553540349695,
+        "split": "validation",
+        "targets": 391,
+        "windows": 8
+      }
+    },
+    "final": {
+      "train": {
+        "loss": 0.010030446690153388,
+        "perplexity": 1.0100809202368082,
+        "split": "train",
+        "targets": 329,
+        "windows": 6
+      },
+      "validation": {
+        "loss": 11.245801525652562,
+        "perplexity": 76557.81803478324,
+        "split": "validation",
+        "targets": 391,
+        "windows": 8
+      }
+    },
+    "tokens_seen": 131600,
+    "resume": {
+      "compared_updates": 303,
+      "cut_step": 97,
+      "final_step": 400,
+      "non_timing_metrics_equal": true,
+      "optimizer_bitwise_equal": true,
+      "sampler_bitwise_equal": true,
+      "weights_bitwise_equal": true
+    },
+    "final_model_tensor_sha256": "21c3b92efd50eeacd60ff046a84874d9b0a1edc032e9c7eca09ea63b91fa5c35"
+  },
+  "tiny_artifact_files_reproduced_exactly": 5,
+  "tiny_vocab_size": 328,
+  "tiny_context_capacity": 64,
+  "retained_model_wheel_chat_smokes": [
+    "base/cpu",
+    "base/mps",
+    "sft/cpu",
+    "sft/mps"
+  ],
+  "preservation": {
+    "distinct_files": 441,
+    "prior_set": 357,
+    "inventories": {
+      "phase5": 25,
+      "phase6": 49,
+      "phase7": 83
+    },
+    "inventory_counts_overlap": true,
+    "shared_chat_unchanged": true,
+    "real_test_payloads": "Hashed as opaque bytes only; not parsed or evaluated"
+  },
+  "packaging": {
+    "isolated_sdist_members": 156,
+    "wheel_members": 36,
+    "source_bytes_match_tracked_snapshot": true,
+    "tiny_inventory": "tiny-artifacts.json",
+    "final_asset_hashes": "Recorded in local publication manifest after final commit; not self-embedded in source archive"
+  },
+  "checks": [
+    "locked sync",
+    "ruff check",
+    "ruff format",
+    "source and wheel build",
+    "Markdown links",
+    "separate review and fixes",
+    "publication privacy/history scan"
+  ],
+  "limits": [
+    "No full English retraining or historical optimizer recovery in Phase 8",
+    "No new CUDA/Windows/Linux execution",
+    "Physical Linux deferred",
+    "Windows console Ctrl-C unvalidated",
+    "Historical Windows artifacts were tiny 256 plus synthetic 512, not full Mac learned models",
+    "No quality improvement, general CUDA determinism, cross-device equality or production performance claim"
+  ],
+  "logs": {
+    "development-tests.log": {
+      "bytes": 1387,
+      "sha256": "443ff45d110c839ce113e0147a0c836a1e3c532868a5b4f2e638f3a54db7afca"
+    },
+    "doctor-mps.json": {
+      "bytes": 551,
+      "sha256": "7259228a749cc835db7964a0cef5cf14740d5c4592a7e2deff1f2f919a0ef8d0"
+    },
+    "fresh-build.log": {
+      "bytes": 171,
+      "sha256": "d01615b84cc868d1fe79f010e0b58ddf907d056cbfe679a2b919300fef3b2303"
+    },
+    "fresh-chat.jsonl": {
+      "bytes": 1419,
+      "sha256": "1652a65b44878c0e3b853789fe6e6527285e19339bc5b9a97192b643cf4ec5c8"
+    },
+    "fresh-checkout-tests.log": {
+      "bytes": 1412,
+      "sha256": "2a709b9766ae259ad9b6f7d049f9d07bd9c1091b9d1157d31eb70815b6dd6ace"
+    },
+    "fresh-setup.log": {
+      "bytes": 1070,
+      "sha256": "58e94f1c7219ca56ac2e3cfc6ea58456907f5d636785c35d8c54611b8dd41cbd"
+    },
+    "fresh-tiny.log": {
+      "bytes": 4872,
+      "sha256": "69d55952e013f7a7ab00e807b490989e4976d878de97e1043507a5ea9c08a743"
+    },
+    "tiny-chat.jsonl": {
+      "bytes": 1405,
+      "sha256": "aa9fe4520b2eeb165b75a96919808148b3f7c16f2dd9218ecf5ad380f33ba6ba"
+    },
+    "tiny.log": {
+      "bytes": 4910,
+      "sha256": "b77bda39fb4f4b2babde065c81b9902311cc2a70ca50caa1200b8e0b64443b4c"
+    },
+    "wheel-base-cpu.jsonl": {
+      "bytes": 1440,
+      "sha256": "f53fcbae52bc287e46c9488e9683af6c0d732640db801a28ea98e10e72862a35"
+    },
+    "wheel-base-mps.jsonl": {
+      "bytes": 1437,
+      "sha256": "2770b58c77f183de19617a1bfbf2bc2ffc6078c32834be4692078274e44ccb85"
+    },
+    "wheel-import.txt": {
+      "bytes": 105,
+      "sha256": "708c8fce7bd564b444bd656bcf051518f8015733a2686f9dafc28ba63409c698"
+    },
+    "wheel-install.log": {
+      "bytes": 309,
+      "sha256": "9862132db0fb2637b5c6c13690cd281a2c1ef8259b11ebe159ebc5f109712cdf"
+    },
+    "wheel-sft-cpu.jsonl": {
+      "bytes": 1000,
+      "sha256": "9325e8fe0b080f495a472f6d5459cfd1ec9f9161263d391fc3e3543fba4e4b0f"
+    },
+    "wheel-sft-mps.jsonl": {
+      "bytes": 998,
+      "sha256": "5c175cd0df84b6bfd374b3786f16f470fddc62691c3ffe4c3431fee6ea27927f"
+    },
+    "wheel-tests.log": {
+      "bytes": 1412,
+      "sha256": "a8889278ebc566654510d911f6d893f84b968c1496937c6036589a1dba726efe"
+    }
+  }
+}

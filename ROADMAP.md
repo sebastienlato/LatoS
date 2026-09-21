@@ -6,16 +6,13 @@ updated state, and a local commit before its publication approval. After an
 approved push is verified, development proceeds to the next phase unless the owner
 has imposed a pause or transition gate, as recorded in PROJECT_STATE.md.
 
-Phase 7 implementation is published as v0.8.0 at
-`04031e5ea98da8db495242165a78c216ab1d4cf4`. The owner reports Windows/RTX 4070 SUPER
-PASS using tiny 256-position base/SFT artifacts and a separate synthetic 512-position
-model, not the unavailable full Mac learned artifacts. Windows console Ctrl-C is
-unvalidated. Hosted Linux CPU CI passed separately within its tiny CPU/workflow
-scope; physical Linux remains deferred. All negative quality and broader capability
-limits remain. [Phase 7 closure](experiments/phase-7/CLOSURE.md) is ready locally and
-requires its own publication approval. **Do not begin Phase 8 in this chat.** After
-closure publication is verified, Phase 8 requires explicit owner start in a fresh
-Work chat. See [the handoff](docs/PHASE8_HANDOFF.md) and [state](PROJECT_STATE.md).
+Phase 7 closure is published and verified at
+`e4fd79ba7ab1fe5bcc19e733c2f6639a2214ba94`. Annotated v0.8.0 remains at
+`04031e5ea98da8db495242165a78c216ab1d4cf4`. The owner explicitly started Phase 8
+in a fresh Work chat. Phase 8 prepares a reproducible educational release and stops
+for its own publication approval. The [release report](experiments/phase-8/REPORT.md)
+and [model card](docs/MODEL_CARD.md) retain the exact platform/quality limits.
+Phase 9 has not begun. See [current state](PROJECT_STATE.md).
 
 | Phase | Deliverable | Acceptance evidence |
 | --- | --- | --- |

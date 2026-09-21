@@ -4,7 +4,7 @@ LatoS is an original, English-first small language model project. Its goal is to
 make the path from documented training data to an evaluated conversational model
 reproducible on modest hardware.
 
-**Current capability: Phase 7 local streaming inference (v0.8.0).** LatoS
+**Current milestone: Phase 8 reproducible release candidate (v1.0.0), local and awaiting approval.** LatoS
 prepares English data, trains its own tokenizer, and implements an original dense
 causal decoder with optimization, validation and resumable checkpoints. A bounded
 assistant-only experiment starts from the preserved 17,308,032-parameter Phase 5
@@ -49,9 +49,14 @@ See [Phase 7 closure and exact limits](experiments/phase-7/CLOSURE.md). Useful
 instruction following, general CUDA determinism, cross-device equality, production
 latency, mixed precision and distributed serving remain unestablished. The
 [Phase 6 negative SFT result](experiments/phase-6/CLOSURE.md) is unchanged.
-Closure publication awaits approval. **Do not begin Phase 8 in this chat.** After
-verified closure publication, use the prepared [fresh-chat handoff](docs/PHASE8_HANDOFF.md)
-and [current state](PROJECT_STATE.md).
+Phase 7 closure publication was verified at
+`e4fd79ba7ab1fe5bcc19e733c2f6639a2214ba94`; v0.8.0 remains unchanged.
+The [release guide](docs/RELEASE.md) provides the tested fresh-checkout path,
+[data card](docs/DATA_CARD.md), [model card](docs/MODEL_CARD.md), and
+[consolidated experiment report](experiments/phase-8/REPORT.md).
+Proposed release assets include source, wheel, a clearly separate tiny fixture
+model/tokenizer and checksums. Full Mac learned artifacts and acquired corpora stay
+local. Publication requires explicit approval; see [current state](PROJECT_STATE.md).
 See [setup and Windows retest instructions](docs/SETUP.md) and
 [recorded environment evidence](docs/ENVIRONMENT.md).
 
@@ -137,6 +142,6 @@ tests, a separate review, and a local commit; publishing requires the owner's
 explicit approval. [PROJECT_STATE.md](PROJECT_STATE.md) records the current handoff.
 
 Original source is MIT licensed. Dependencies keep their own licenses, recorded
-in [THIRD_PARTY.md](THIRD_PARTY.md). Future data and model artifacts will have
-separate provenance and distribution terms. Pilot measurements apply only to the
+in [THIRD_PARTY.md](THIRD_PARTY.md). The release cards distinguish fixture artifact terms from acquired-data provenance
+and the retained full models. Pilot measurements apply only to the
 recorded run, data, and hardware.

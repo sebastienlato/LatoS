@@ -211,3 +211,14 @@ cannot replace that mask. Incremental text uses the installed Tokenizers 0.23.2
 Its residual bytes are flushed against completed decoding at termination. These
 library APIs and primary documentation informed the implementation; no external
 model or serving implementation was imported. Consulted 2026-09-20.
+
+## Phase 8 distribution review — 2026-09-21
+
+No dependency, external code or external training data was added. Source/wheel
+assets distribute LatoS's original MIT code and notices, without vendored runtime
+packages. The separate tiny model/tokenizer derive only from the original MIT
+fixture and carry its provenance and license. Acquired books, the English learned
+tokenizer and full Mac base/SFT are excluded from the release assets. The
+[Project Gutenberg license](https://www.gutenberg.org/policy/license.html) and
+[permission guidance](https://www.gutenberg.org/policy/permission.html) were rechecked
+for the [data card](docs/DATA_CARD.md); no worldwide rights clearance is inferred.

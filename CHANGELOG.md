@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.0.0 — Phase 8 candidate, 2026-09-21 (not yet published)
+
+- Add fresh-checkout reproduction and release guides, data/model cards, and a
+  consolidated report preserving the negative SFT result and platform boundaries.
+- Prepare source/wheel and a separately labeled MIT tiny fixture model/tokenizer
+  package, with explicit file allowlists, hashes, no-overwrite behavior and tests.
+- Preserve full base/SFT, English tokenizer, prior evidence, shared chat contract
+  and both reserved test payloads. No runtime model/training/inference change.
+- Full Mac learned artifacts and acquired corpora remain local. Phase 7 tags stay
+  fixed; Phase 8 publication, annotated v1.0.0 and assets require explicit approval.
+
 ## Phase 7 closure — documentation only (2026-09-20)
 
 - Record owner-reported Windows/RTX 4070 SUPER PASS at exact v0.8.0: 202 passed,
