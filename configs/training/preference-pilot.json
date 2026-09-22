@@ -1,0 +1,1 @@
+{"steps":100,"batch_size":4,"sequence_length":256,"seed":101,"beta":0.1,"learning_rate":0.00001,"weight_decay":0.0,"clip_norm":1.0}

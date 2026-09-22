@@ -4,12 +4,15 @@ LatoS is an original, English-first small language model project. Its goal is to
 make the path from documented training data to an evaluated conversational model
 reproducible on modest hardware.
 
-**Current milestone: Phase 9 implementation published (package 1.1.0, no Phase 9 tag);
-reviewed documentation-only closure awaits publication approval.**
-[Scoped closure evidence](experiments/phase-9/CLOSURE.md) records owner-reported
-Windows/CUDA tiny-fixture PASS (226 passed / 10 skips) and separately inspected
-Linux CPU CI (228 passed / 8 MPS-only skips). Physical Linux is deferred.
-Phase 10 has not begun and requires a fresh-chat start after verified closure publication.
+**Current milestone: Phase 10 DPO experiment complete locally (package 1.2.0),
+awaiting explicit publication approval.** [Preference learning](docs/PREFERENCES.md)
+adds a fixed-SFT-reference experiment with documented synthetic pairs and
+[negative held-out preference results](experiments/phase-10/REPORT.md).
+Exact replies remain 0/32; no useful assistant is established.
+Phase 9 closure is published at `7d19649cabcc0698bd77042779772bc2196c4bc2`.
+[Scoped closure evidence](experiments/phase-9/CLOSURE.md) retains owner-reported
+Windows/CUDA tiny-fixture PASS and separately inspected hosted Linux CPU CI;
+physical Linux remains deferred. No Phase 10 Windows/CUDA or Linux run is claimed.
 Phase 8 is published as v1.0.0. [LoRA training and merge](docs/ADAPTATION.md) add
 a fixed-budget full-tuning comparison; [results and limits](experiments/phase-9/REPORT.md)
 are retained without promoting either adaptation as a useful assistant. LatoS
@@ -64,8 +67,8 @@ The [release guide](docs/RELEASE.md) provides the tested fresh-checkout path,
 [consolidated experiment report](experiments/phase-8/REPORT.md).
 Published v1.0.0 release assets include source, wheel, a clearly separate tiny fixture
 model/tokenizer and checksums. Full Mac learned artifacts and acquired corpora stay
-local. Phase 9 implementation is published; closure publication requires its own
-approval. See [current state](PROJECT_STATE.md).
+local. Phase 9 implementation and closure are published; Phase 10 publication
+requires explicit approval. See [current state](PROJECT_STATE.md).
 See [setup and Windows retest instructions](docs/SETUP.md) and
 [recorded environment evidence](docs/ENVIRONMENT.md).
 

@@ -82,3 +82,10 @@ The acceptance exercise removes its prepared test file before training.
 Phase 8 hashes these existing payloads as opaque bytes only. It does not parse,
 evaluate, tune on or select artifacts using them. They remain reserved. Hashes
 provide integrity against recorded identities, not authenticity or a backup.
+
+## Phase 10 — Synthetic preference data
+
+See the [bounded preference experiment](../experiments/phase-10/REPORT.md) and
+[preference provenance](../experiments/phase-10/DATA.md). The original base, SFT,
+tokenizer and their identities above remain unchanged. DPO is a separate local
+experimental model, not a promoted replacement. Both reserved tests remain unused.

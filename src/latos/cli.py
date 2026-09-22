@@ -112,9 +112,34 @@ def main(argv: list[str] | None = None) -> int:
     adapt_train.add_argument("--adapter-seed", type=int, default=91)
     adapt_train.add_argument("--device", choices=("cpu", "mps", "cuda"), default="cpu")
     adapt_train.add_argument("--threads", type=int, default=1)
+    preferences = commands.add_parser("preferences", help="Run bounded DPO from a fixed SFT model")
+    for flag in (
+        "base",
+        "tokenizer-dir",
+        "manifest",
+        "corpus-dir",
+        "conversations",
+        "config",
+        "output-dir",
+    ):
+        preferences.add_argument(f"--{flag}", type=Path, required=True)
+    preferences.add_argument("--base-sha256", required=True)
+    preferences.add_argument("--device", choices=("cpu", "mps", "cuda"), default="cpu")
+    preferences.add_argument("--threads", type=int, default=1)
     args = parser.parse_args(argv)
     if args.command is None:
         parser.print_help()
+        return 0
+
+    if args.command == "preferences":
+        from latos.preference_run import run_preferences
+
+        try:
+            report = run_preferences(args)
+        except (OSError, ValueError, KeyError, TypeError, RuntimeError) as exc:
+            print(json.dumps({"status": "error", "error": str(exc)}, indent=2))
+            return 1
+        print(json.dumps(report, indent=2))
         return 0
 
     if args.command == "adapt":

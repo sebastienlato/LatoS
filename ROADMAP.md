@@ -6,15 +6,17 @@ updated state, and a local commit before its publication approval. After an
 approved push is verified, development proceeds to the next phase unless the owner
 has imposed a pause or transition gate, as recorded in PROJECT_STATE.md.
 
-Phase 9 implementation is published at
-`0fbedd31f746d30bb5f071fbda30defa9036a451`, package 1.1.0, without a Phase 9 tag.
-[Scoped closure](experiments/phase-9/CLOSURE.md) records owner-reported bounded tiny
-Windows/CUDA PASS and separately verified hosted Linux CPU CI. Physical Linux is
-deferred. Documentation-only closure is reviewed locally and awaits its own explicit
-publication approval. **Do not begin Phase 10 in this chat.** After approved closure
-publication, verify exact main and unchanged tags, then stop; Phase 10 requires an
-explicit fresh-chat start using the [handoff](docs/PHASE10_HANDOFF.md).
-Annotated v1.0.0 remains at `10d9ef7bf0618b364f887ff9d279408e3cbc33c9`.
+Phase 9 implementation and scoped closure are published. Closure commit
+`7d19649cabcc0698bd77042779772bc2196c4bc2` and all eleven unchanged remote tags were
+verified before the owner's explicit fresh-chat Phase 10 start. Verified publication
+records supersede the historical tracked pending snapshots. See
+[Phase 9 closure](experiments/phase-9/CLOSURE.md) for bounded Windows/CUDA, separately
+scoped hosted Linux evidence and deferred physical Linux.
+
+Phase 10 is complete locally with a fixed-reference DPO experiment and documented
+negative held-out preference result; [report](experiments/phase-10/REPORT.md).
+Stop for explicit publication approval. Phase 11 has not begun. No new tag is
+proposed; v1.0.0 remains at `10d9ef7bf0618b364f887ff9d279408e3cbc33c9`.
 See [current state](PROJECT_STATE.md).
 
 | Phase | Deliverable | Acceptance evidence |

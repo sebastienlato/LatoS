@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.0 — Phase 10 local checkpoint, publication pending
+
+- Add bounded DPO with an immutable SFT reference, response-only sequence scoring,
+  documented synthetic preference pairs, and a non-overwriting CLI runner.
+- Record held-out SFT and English comparisons, negative preference results, all
+  samples, objective verification, preservation and separate review/fixes.
+- Preserve all previous artifacts and limitations; no new dependencies or tag.
+
 ## Phase 9 closure — documentation only (2026-09-21)
 
 - Record owner-reported Windows/RTX 4070 SUPER PASS at the exact Phase 9 commit:

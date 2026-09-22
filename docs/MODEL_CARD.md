@@ -83,3 +83,10 @@ instruction following, factual reliability, safety alignment, broad English qual
 serving remain unestablished. There is no tool-use or hosted serving layer. All
 inference is local. Model-only loading is distinct from optimizer recovery, which
 requires the original recorded implementation/runtime. See [release guide](RELEASE.md).
+
+## Phase 10 — Model comparison
+
+See the [bounded preference experiment](../experiments/phase-10/REPORT.md) and
+[preference provenance](../experiments/phase-10/DATA.md). The original base, SFT,
+tokenizer and their identities above remain unchanged. DPO is a separate local
+experimental model, not a promoted replacement. Both reserved tests remain unused.

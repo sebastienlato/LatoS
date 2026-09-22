@@ -1,71 +1,81 @@
 # Project state
 
-Updated: 2026-09-21.
+Updated: 2026-09-22.
 
 ## Active checkpoint
 
-**Phase 9 is formally closed locally within its documented scope; the reviewed
-closure commit awaits explicit publication approval. Phase 10 has not begun and
-must not begin in this chat.** The independent Windows/CUDA wait is satisfied.
-After an approved closure push, verify exact remote main and unchanged tags, then
-stop. Phase 10 requires an explicit fresh-chat start after verified closure.
+**Phase 10 is complete locally, separately reviewed, and awaits explicit publication
+approval. Stop here. Phase 11 has not begun.** Package 1.2.0 adds a bounded DPO
+experiment with a fixed SFT reference and documented synthetic preferences.
 
-Phase 9 implementation is published at `0fbedd31f746d30bb5f071fbda30defa9036a451`,
-package 1.1.0, **without a Phase 9 tag**. Its verified publication supersedes the
-old tracked pending snapshot. All eleven existing tags remain fixed, including
-annotated v1.0.0 at `10d9ef7bf0618b364f887ff9d279408e3cbc33c9`, tag object
+Before starting, verified remote main at Phase 9 closure
+`7d19649cabcc0698bd77042779772bc2196c4bc2` and all eleven unchanged tag objects/targets.
+The owner explicitly authorized this fresh-chat start. Verified publication records
+supersede historical tracked pending snapshots. Annotated v1.0.0 remains at
+`10d9ef7bf0618b364f887ff9d279408e3cbc33c9`, object
 `1acb6b94f0adfbca85014ad6601dbfc716e3c651`.
 
-Delivered closure: [attributed report](experiments/phase-9/CLOSURE.md),
-[structured evidence](experiments/phase-9/closure.json),
-[separate review](experiments/phase-9/CLOSURE_REVIEW.md), and
-[Phase 10 handoff](docs/PHASE10_HANDOFF.md). Original Phase 9 report, results,
-samples, verification, failure evidence, inventories and implementation are unchanged.
+Delivered: [report](experiments/phase-10/REPORT.md), [fixed protocol](experiments/phase-10/PLAN.md),
+[data provenance](experiments/phase-10/DATA.md), [results](experiments/phase-10/results.json),
+[verification](experiments/phase-10/verification.json), [review](experiments/phase-10/REVIEW.md),
+[validation](experiments/phase-10/validation.json) and [usage](docs/PREFERENCES.md).
 
-## Evidence and preserved limits
+## Phase 10 evidence
 
-- Mac CPU/MPS implementation evidence: **236 passed** in development and installed
-  wheel; full learned base/adapter/control comparison and merge/cache checks through
-  512. Both methods: 200 updates / 6,188 targets. Base/LoRA/full exact replies remain
-  **0/32**; English loss 4.731898 / 4.773844 / 5.653425. No useful assistant.
-- Owner-reported Windows RTX 4070 SUPER PASS at exact implementation: **226 passed,
-  10 expected skips**, zero failures; fresh exact checkout/locked install and fresh
-  non-editable wheel suite. Tiny CUDA LoRA/full: **4 updates / 175 targets each**,
-  **7,856 frozen base / 192 trainable updated adapter parameters**, all 0/32 exact.
-  Tiny fraction ~**2.44399%**; independently checked **0.851951279%** applies to the
-  full pilot architecture only. Not full Mac learned-experiment reproduction;
-  full learned 512-position merge on Windows was not validated. Raw logs/artifact
-  hashes were not supplied here. Windows console Ctrl-C remains unvalidated.
-- Separately inspected hosted Linux CPU [run 35617504810](https://github.com/sebastienlato/LatoS/actions/runs/35617504810):
-  **228 passed, 8 MPS-only skips** at exact implementation. Tiny CPU LoRA/comparison,
-  CLI and offline workflows/builds; no fresh installed-wheel suite, full learned
-  verification or CUDA/MPS. **Physical Linux remains deferred.**
-- Merge **atol=rtol=1e-4** remains the amended contract; original CPU 1e-5 failure
-  is retained, not reclassified. CPU/CUDA cache is separately 1e-5; MPS cache 1e-4.
-  Adapter optimizer resume is unsupported. Float64 diagnostics are not mixed precision.
-- Original Phase 6 SFT remains negative: final update 200 / 6,188 targets, assistant
-  loss 8.354879 → 5.815233, exact 0/32 → 0/32, English 4.731898 → 5.653422.
-  Preserve that checkpoint separately; do not promote SFT or the new adaptations.
-- **743 distinct local files rehashed unchanged**; reserved tests integrity-hashed
-  only, never parsed/evaluated. Windows preservation is separately owner-reported:
-  1,513 prior evidence/report files, 173 tracked files, clean tree, no Windows push.
-  Keep all base/SFT/LoRA/control models, tokenizer, chat contract and prior attempts.
-- Useful quality, LoRA superiority, general accelerator determinism, cross-device
-  equality, production performance, mixed precision/distributed serving and language
-  quality beyond 256-token windows remain unestablished. No new paid service.
+- Original Phase 6 fixed-update-200 SFT initializes both policy and separate frozen
+  reference; no substitution of LoRA/full control. Original tokenizer/chat contract.
+  100 MPS updates / 400 pair exposures / 2,498 final-response targets; 192 train and
+  32 validation pairs, fixed final selection, no sweep, new service or paid compute.
+- **Negative held-out preference result:** loss 0.693147 → 0.718657; raw chosen
+  ranking 16/32 → 15/32; exact replies 0/32 → 0/32. Assistant loss 5.815233 →
+  5.791526; English loss 5.653422 → 5.603780, still worse than base 4.731898.
+  No promoted model, useful assistant, human preference or safety claim.
+- **254 passed** in development and isolated non-editable wheel. Tiny CPU/MPS DPO,
+  scalar objective/gradients, masking/EOS, frozen reference, CPU repetition,
+  failures, CLI and inventory rejection; reserved fixture test files absent.
+  Full learned MPS round trip exact over SFT validation; independent token-score
+  error <=3.864105e-6 at 1e-4 bound. All update exposures replayed.
+- Separate review fixed protocol/runner inventory capture and an unsupported MPS
+  float64 conversion in the checker. First learned attempt and original failure
+  log retained. Reviewed repeat uses unchanged training settings, not quality selection.
+- All 743 closure-preserved files and the broader 54,236-file pre-phase artifact/
+  evidence snapshot rehashed unchanged. Both reserved tests integrity-hashed only,
+  never parsed/evaluated. Full models, tokenizer and previous attempts remain local.
 
-## Pending publication and next action
+## Retained limits
 
-- Reviewed commit message: `Close Phase 9 with scoped external validation`.
-- Existing remote: `https://github.com/sebastienlato/LatoS.git`, **main**, public.
-- Documentation/evidence only; package/runtime/tests/configs/lock/workflow and
-  original experiment evidence unchanged. No new runtime tests/training/builds
-  for closure; JSON, links, preservation, diff and privacy checks passed.
-- **Stop for explicit Phase 9 closure publication approval.** Exact commit is in
-  the approval request and `.private/phase9-closure-publication.json` once prepared.
-- No tag, release, asset upload, visibility change or Phase 10 development. Preserve
-  all eleven tags. After approved publication and verification, stop and provide
-  the prepared fresh-chat prompt; closure approval does not lift the current gate.
+Original SFT remains negative (200 updates / 6,188 targets, exact 0/32, English
+4.731898 → 5.653422). Phase 9 base/LoRA/full exact replies remain 0/32; English
+4.731898 / 4.773844 / 5.653425. No useful assistant or LoRA superiority established.
 
-Local uv: `.private/tools/bin/uv`; runtime `.venv`. Ignored learned artifacts are
-local inputs, not remote backups. See the handoff for preservation and future scope.
+Phase 9 Windows RTX 4070 SUPER is owner-reported bounded tiny evidence: 226 passed /
+10 skips, fresh wheel, 4 updates / 175 targets per method, 7,856 base / 192 adapter
+parameters (~2.44399%, distinct from full-architecture 0.851951279%). Full Mac learned
+experiment and 512-position learned merge not reproduced there; raw logs/hashes
+not supplied. Windows console Ctrl-C remains unvalidated. Separately inspected
+hosted Linux CPU run 35617504810: 228 passed / 8 MPS skips, tiny CPU/workflow scope,
+no fresh installed-wheel suite or full learned verification. Physical Linux deferred.
+No Phase 10 Windows/CUDA or Linux execution is claimed.
+
+Merge atol=rtol=1e-4 stays the amended contract; original CPU 1e-5 failure retained.
+Cache bounds remain CPU/CUDA 1e-5 and MPS 1e-4. Adapter optimizer resume is unsupported;
+DPO outputs are also model-only, without optimizer resume. Scalar CPU diagnostics
+are not mixed-precision training. Familiar synthetic validation templates, shared
+preference/SFT validation prompts, weak SFT baseline and length-sensitive sequence
+scores limit interpretation. Useful quality, language quality beyond 256, general
+accelerator determinism, cross-device equality, production performance, mixed
+precision and distributed serving remain unestablished.
+
+## Pending publication
+
+- Commit message: `Add bounded DPO experiment with fixed SFT reference`.
+- Exact reviewed commit: supplied in approval request and local publication record
+  `.private/phase10-publication.json` after committing; no self-referential hash here.
+- Remote: `https://github.com/sebastienlato/LatoS.git`, branch **main**, public unchanged.
+- **Approval pending. No Phase 10 remote write.** Propose source commit only, no tag,
+  release, asset upload, visibility change or remote backup. Preserve all eleven tags.
+- Next action: ask “Push Phase 10 to GitHub?” and stop for explicit approval.
+  No Phase 11 implementation is included or started.
+
+Local uv: `.private/tools/bin/uv`; runtime `.venv`. Learned artifacts under
+`outputs/phase-10-dpo-reviewed` are local inputs/outputs, not remote backups.

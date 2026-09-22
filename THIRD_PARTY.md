@@ -234,3 +234,11 @@ weights were copied or added. LatoS chooses fused QKV and attention-output targe
 this is not a claim to reproduce the paper's experiments. Existing base/tokenizer,
 original synthetic conversations and English regression data retain their earlier
 provenance and terms. No dependency versions changed.
+
+## Phase 10 preference objective
+
+Rafailov, Sharma, Mitchell, Ermon, Manning and Finn,
+[Direct Preference Optimization](https://arxiv.org/html/2305.18290v3), equation 7
+(arXiv v3, 2024; consulted 2026-09-22), informs the mathematical objective.
+Implementation, synthetic pairing rule and tests are original LatoS code; no paper
+code or external preference dataset was imported. Dependency pins are unchanged.
