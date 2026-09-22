@@ -41,7 +41,10 @@ The generic `latos preferences --help` exposes explicit input paths and required
 weight hash for separately scoped tiny experiments. Its conversation input must
 follow the existing verified Phase 6 manifest and exact-answer task convention;
 changing domains requires a separate label-design review. `--device cpu` is
-available; Windows/CUDA and Linux DPO have not been executed in this phase.
+available. Subsequent [scoped closure](../experiments/phase-10/CLOSURE.md) records
+owner-reported tiny Windows/CUDA validation and separately inspected tiny hosted
+Linux CPU CI. Neither reproduces the full learned Mac experiment; physical Linux
+remains deferred.
 
 For an offline engineering exercise that builds its own tiny inputs:
 

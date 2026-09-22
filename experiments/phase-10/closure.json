@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "phase": 10,
+  "recorded_date": "2026-09-22",
+  "implementation_commit": "abed1adffba562373348477e3958bcd1d5886b11",
+  "implementation_tag": null,
+  "package_version": "1.2.0",
+  "closure_status": "formally closed locally within documented scope; reviewed publication awaits explicit approval",
+  "windows_cuda": {
+    "status": "PASS within documented bounded tiny-model scope",
+    "attribution": "Owner-supplied independent Windows validation summary; not executed by this Mac session",
+    "validated_commit": "abed1adffba562373348477e3958bcd1d5886b11",
+    "hardware": "NVIDIA RTX 4070 SUPER",
+    "tests": {
+      "passed": 243,
+      "skipped": 11,
+      "failed": 0,
+      "skip_scope": "expected platform/hardware skips; individual breakdown not supplied",
+      "fresh_exact_checkout_locked_install": "pass",
+      "fresh_non_editable_wheel_suite": "pass"
+    },
+    "training": {
+      "actual_cuda_execution": true,
+      "updates": 4,
+      "preference_pair_exposures": 16,
+      "final_response_target_exposures": 169,
+      "scope": "bounded tiny model; full learned Mac SFT/reference and English corpus not reproduced",
+      "initial_policy_reference_tensor_identical_independent_storage": true,
+      "reference_executed_on_cuda": true,
+      "reference_frozen_unchanged_gradient_free_outside_optimizer_state": true,
+      "policy_forward_backward_finite_gradients_optimizer_state_and_weights_updated": true,
+      "validation_state_preserved": true,
+      "exact_same_cuda_reload": true,
+      "dpo_optimizer_resume": "unsupported; not claimed"
+    },
+    "heldout_raw_chosen_ranking": {
+      "before": 16,
+      "after": 16,
+      "cases": 32
+    },
+    "exact_replies": {
+      "before": 0,
+      "after": 0,
+      "cases": 32
+    },
+    "passed_checks": [
+      "Deterministic preferences, chosen/rejected integrity and train/validation isolation",
+      "Shared chat format, final-response-only DPO masking and alignment",
+      "Independent sequence log probabilities and scalar objective",
+      "Objective gradient and sign checks",
+      "English/SFT/base regression-comparison mechanisms within tiny local scope",
+      "CLI, diagnostics, lint, format, dependency integrity, offline workflows, builds, packaging and privacy"
+    ],
+    "preservation": {
+      "reserved_tests": "unused and unchanged",
+      "prior_evidence_report_files": 2017,
+      "tracked_files_unchanged": 194,
+      "working_tree": "clean",
+      "committed_or_pushed": false,
+      "attribution": "owner reported; not independently rehashed on this Mac"
+    },
+    "not_demonstrated": [
+      "Full Mac 100-update DPO reproduction",
+      "Full learned Mac SFT/reference or English corpus",
+      "Mac held-out ranking regression 16/32 to 15/32",
+      "Useful preference or instruction following",
+      "DPO superiority",
+      "General CUDA determinism or cross-device equality",
+      "Safety alignment",
+      "Mixed precision or distributed behavior",
+      "DPO optimizer recovery",
+      "Windows console Ctrl-C"
+    ],
+    "not_supplied": [
+      "Raw Windows logs",
+      "Artifact hashes",
+      "Individual skip breakdown",
+      "New driver/runtime details",
+      "Numerical error maxima"
+    ]
+  },
+  "github_linux_cpu": {
+    "status": "PASS",
+    "attribution": "Run/job metadata, complete logs, exact-commit workflow and test/fixture bodies directly inspected",
+    "run_id": 35742827336,
+    "url": "https://github.com/sebastienlato/LatoS/actions/runs/35742827336",
+    "head_sha": "abed1adffba562373348477e3958bcd1d5886b11",
+    "event": "push",
+    "job_id": 106796704207,
+    "job_url": "https://github.com/sebastienlato/LatoS/actions/runs/35742827336/job/106796704207",
+    "job_completed_at": "2026-09-22T14:49:19Z",
+    "run_updated_at": "2026-09-22T14:49:20Z",
+    "runner": "ubuntu-24.04; logs identify Ubuntu 24.04.5 Linux x86-64",
+    "python": "3.14.7",
+    "torch": "2.14.0+cpu",
+    "tests": {
+      "collected": 254,
+      "passed": 245,
+      "skipped": 9,
+      "failed": 0,
+      "seconds": 51.23,
+      "skip_scope": "MPS only",
+      "preference_cpu_cases_passed": 17,
+      "preference_mps_cases_skipped": 1
+    },
+    "scope": [
+      "Tiny CPU scalar DPO loss/gradient, sequence log-probability, masking/padding/EOS, splits and invalid/nonfinite inputs",
+      "Two-update/eight-pair tiny random-policy/reference CPU integration, frozen reference, policy update, round trip, CPU repetition, CLI, wrong base, overwrite and injected failure retention; both fixture test payloads absent",
+      "Independent tiny CPU scalar oracle and exposure replay plus inventory corruption rejection",
+      "Existing CPU inference/POSIX SIGINT, LoRA, SFT and dense training tests",
+      "Locked installation, lint/format, CPU doctor/debug model, offline data/tokenizer fixtures and source/wheel builds"
+    ],
+    "dense_fixture_acceptance": {
+      "updates": 400,
+      "targets": 131600,
+      "resume": {
+        "cut_step": 97,
+        "final_step": 400,
+        "compared_updates": 303,
+        "weights_bitwise_equal": true,
+        "optimizer_bitwise_equal": true,
+        "sampler_bitwise_equal": true,
+        "non_timing_metrics_equal": true
+      },
+      "validation": {
+        "weights_unchanged": true,
+        "optimizer_unchanged": true,
+        "rng_unchanged": true,
+        "gradients_unchanged": true,
+        "mode_restored": true
+      },
+      "quality": "fixture memorization only; not DPO or adapter optimizer resume"
+    },
+    "not_demonstrated": [
+      "Fresh non-editable wheel suite",
+      "CUDA or MPS execution",
+      "Full Mac learned 100-update DPO experiment",
+      "Full learned SFT/reference or English corpus comparison",
+      "Standalone full learned DPO verifier",
+      "Independent Windows validation",
+      "Physical Linux",
+      "Full Mac artifact preservation audit",
+      "Standalone archive/privacy audit",
+      "DPO or adapter optimizer resume"
+    ],
+    "raw_log_sha256": "e39ae6d53b1629ed38608de15b659d578ed72e6569f898920d7068eab3063f14",
+    "metadata_sha256": "cd47097fc5c18160bf045c072ecc6062da27940b48b036c18da73dd2de182f85",
+    "workflow_sha256": "5d69c6aa6556da54b0611806d94721603425acea1d3587ebfb6ee73fe9017102"
+  },
+  "full_mac_result_unchanged": {
+    "updates": 100,
+    "pair_exposures": 400,
+    "final_response_targets": 2498,
+    "heldout_preference_loss": [
+      0.693147,
+      0.718657
+    ],
+    "heldout_raw_chosen_ranking": [
+      16,
+      15
+    ],
+    "exact_replies": [
+      0,
+      0
+    ],
+    "cases": 32,
+    "english_loss_sft": 5.653422,
+    "english_loss_dpo": 5.60378,
+    "english_loss_original_base": 4.731898,
+    "interpretation": "Negative DPO result; no preference-learning or instruction-following improvement"
+  },
+  "preserved_contracts": {
+    "chat_contract": 1,
+    "merge_atol": 0.0001,
+    "merge_rtol": 0.0001,
+    "original_cpu_merge_1e_5_failure_retained": true,
+    "cache_cpu_cuda_atol_rtol": 1e-05,
+    "cache_mps_atol_rtol": 0.0001,
+    "adapter_optimizer_resume": "unsupported",
+    "dpo_optimizer_resume": "unsupported",
+    "physical_linux": "deferred, not performed",
+    "prior_negative_sft_lora_results": "unchanged"
+  },
+  "local_closure_checks": {
+    "distinct_preserved_files_unchanged": 54356,
+    "prior_snapshot_files": 54236,
+    "phase10_inventory_entries": 109,
+    "original_phase10_evidence_scripts": 11,
+    "windows_counts_separately_attributed": true,
+    "reserved_tests": "opaque integrity hashes only; not parsed/evaluated",
+    "runtime_tests_configs_lock_workflow_original_evidence_unchanged": true,
+    "new_runtime_tests_training_benchmarks_builds": false
+  },
+  "owner_gate": "Do not begin Phase 11 in this chat. Stop for explicit closure publication approval; after approved publication verify exact main and unchanged tags, then stop. Phase 11 requires explicit fresh-chat start after verified closure.",
+  "publication": {
+    "approval": "pending",
+    "remote": "https://github.com/sebastienlato/LatoS.git",
+    "branch": "main",
+    "visibility": "public; unchanged",
+    "proposed_tag": null,
+    "release": null,
+    "asset_uploads": [],
+    "existing_tags_preserved": 11
+  }
+}

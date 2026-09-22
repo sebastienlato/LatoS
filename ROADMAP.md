@@ -13,11 +13,16 @@ records supersede the historical tracked pending snapshots. See
 [Phase 9 closure](experiments/phase-9/CLOSURE.md) for bounded Windows/CUDA, separately
 scoped hosted Linux evidence and deferred physical Linux.
 
-Phase 10 is complete locally with a fixed-reference DPO experiment and documented
-negative held-out preference result; [report](experiments/phase-10/REPORT.md).
-Stop for explicit publication approval. Phase 11 has not begun. No new tag is
-proposed; v1.0.0 remains at `10d9ef7bf0618b364f887ff9d279408e3cbc33c9`.
-See [current state](PROJECT_STATE.md).
+Phase 10 implementation is published at
+`abed1adffba562373348477e3958bcd1d5886b11`, package 1.2.0, without a Phase 10 tag.
+[Scoped closure](experiments/phase-10/CLOSURE.md) records owner-reported bounded
+Windows/CUDA PASS and separately inspected hosted Linux CPU CI. The negative full
+Mac DPO result is unchanged. Physical Linux remains deferred. Documentation-only
+closure is reviewed locally and awaits its own explicit publication approval.
+**Do not begin Phase 11 in this chat.** After approved closure publication, verify
+exact main and unchanged tags, then stop; Phase 11 requires explicit fresh-chat
+start using the [handoff](docs/PHASE11_HANDOFF.md). Annotated v1.0.0 remains at
+`10d9ef7bf0618b364f887ff9d279408e3cbc33c9`. See [current state](PROJECT_STATE.md).
 
 | Phase | Deliverable | Acceptance evidence |
 | --- | --- | --- |

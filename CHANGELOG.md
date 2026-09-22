@@ -1,6 +1,17 @@
 # Changelog
 
-## 1.2.0 — Phase 10 local checkpoint, publication pending
+## Phase 10 closure — documentation only (2026-09-22)
+
+- Record owner-reported Windows RTX 4070 SUPER scoped PASS: 243 passed / 11 skips,
+  fresh wheel suite, four CUDA updates / 16 pairs / 169 response targets.
+- Record separately inspected exact-implementation hosted Linux CPU CI: 245 passed /
+  9 MPS-only skips, tiny CPU DPO and offline workflows/builds. Physical Linux deferred.
+- Preserve Mac ranking regression 16/32 → 15/32 and exact 0/32, distinct from tiny
+  Windows ranking 16/32 → 16/32. English remains worse than the original base.
+- Prepare reviewed closure and fresh-chat Phase 11 handoff; approval required.
+  No Phase 11 work or runtime/version change.
+
+## 1.2.0 — Phase 10 implementation published, no Phase 10 tag
 
 - Add bounded DPO with an immutable SFT reference, response-only sequence scoring,
   documented synthetic preference pairs, and a non-overwriting CLI runner.

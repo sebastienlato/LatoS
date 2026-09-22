@@ -4,15 +4,17 @@ LatoS is an original, English-first small language model project. Its goal is to
 make the path from documented training data to an evaluated conversational model
 reproducible on modest hardware.
 
-**Current milestone: Phase 10 DPO experiment complete locally (package 1.2.0),
-awaiting explicit publication approval.** [Preference learning](docs/PREFERENCES.md)
-adds a fixed-SFT-reference experiment with documented synthetic pairs and
-[negative held-out preference results](experiments/phase-10/REPORT.md).
-Exact replies remain 0/32; no useful assistant is established.
-Phase 9 closure is published at `7d19649cabcc0698bd77042779772bc2196c4bc2`.
-[Scoped closure evidence](experiments/phase-9/CLOSURE.md) retains owner-reported
-Windows/CUDA tiny-fixture PASS and separately inspected hosted Linux CPU CI;
-physical Linux remains deferred. No Phase 10 Windows/CUDA or Linux run is claimed.
+**Current milestone: Phase 10 implementation published (package 1.2.0, no Phase 10 tag);
+reviewed documentation-only closure awaits publication approval.**
+[Scoped closure](experiments/phase-10/CLOSURE.md) records owner-reported Windows/CUDA
+PASS (243 passed / 11 skips; four-update tiny exercise) and separately inspected
+hosted Linux CPU CI (245 passed / 9 MPS-only skips). Physical Linux remains deferred.
+Phase 11 has not begun and requires a fresh-chat start after verified closure publication.
+[Preference learning](docs/PREFERENCES.md) retains the full Mac experiment's
+[negative results](experiments/phase-10/REPORT.md): ranking 16/32 → 15/32, exact replies
+0/32, and English loss improved versus SFT but still worse than the original base.
+Windows tiny ranking stayed 16/32 → 16/32; it did not reproduce that full experiment.
+No preference-learning or instruction-following improvement is established.
 Phase 8 is published as v1.0.0. [LoRA training and merge](docs/ADAPTATION.md) add
 a fixed-budget full-tuning comparison; [results and limits](experiments/phase-9/REPORT.md)
 are retained without promoting either adaptation as a useful assistant. LatoS
@@ -67,7 +69,7 @@ The [release guide](docs/RELEASE.md) provides the tested fresh-checkout path,
 [consolidated experiment report](experiments/phase-8/REPORT.md).
 Published v1.0.0 release assets include source, wheel, a clearly separate tiny fixture
 model/tokenizer and checksums. Full Mac learned artifacts and acquired corpora stay
-local. Phase 9 implementation and closure are published; Phase 10 publication
+local. Phase 10 implementation is published; its separate closure publication
 requires explicit approval. See [current state](PROJECT_STATE.md).
 See [setup and Windows retest instructions](docs/SETUP.md) and
 [recorded environment evidence](docs/ENVIRONMENT.md).
