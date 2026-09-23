@@ -1,93 +1,242 @@
-# Roadmap
+# Roadmap 2.0
 
-These are planned capabilities, not claims about the current package. Each phase
-requires working deliverables, recorded checks, a separate review and fixes,
-updated state, and a local commit before its publication approval. After an
-approved push is verified, development proceeds to the next phase unless the owner
-has imposed a pause or transition gate, as recorded in PROJECT_STATE.md.
+## Destination
 
-Phase 9 implementation and scoped closure are published. Closure commit
-`7d19649cabcc0698bd77042779772bc2196c4bc2` and all eleven unchanged remote tags were
-verified before the owner's explicit fresh-chat Phase 10 start. Verified publication
-records supersede the historical tracked pending snapshots. See
-[Phase 9 closure](experiments/phase-9/CLOSURE.md) for bounded Windows/CUDA, separately
-scoped hosted Linux evidence and deferred physical Linux.
+**LatoS 2.0 will be an independently implemented small language model trained
+through the LatoS pipeline that demonstrates measurable learned language and
+instruction-following capability on fixed held-out and external evaluations,
+runs practically on the available local hardware, provides useful mainstream
+interoperability, and ships with reproducible documentation and explicit limits.**
 
-Phase 10 closure is published at `87d744fb8cfd4228c78f35bbd220d2833462e037`.
-Exact remote main and all eleven unchanged tags were verified before the explicit
-fresh-chat Phase 11 start. Verified publication supersedes historical pending snapshots.
-[Scoped closure](experiments/phase-10/CLOSURE.md) retains the negative full Mac DPO
-result, distinct tiny Windows/CUDA PASS, separately inspected hosted Linux CPU scope
-and deferred physical Linux. Annotated v1.0.0 remains unchanged.
+This is a finite plan, not a current capability claim. Phases 0–12 completed the
+original engineering roadmap and bounded experiments. Their negative outcomes
+motivate a change in emphasis: evaluation → better data → measured CUDA scaling
+and training → stronger base quality → useful instruction following → interoperability
+→ justified advanced post-training → release. The former open-ended Phase 12+
+research extension is retired. Phase 13 is documentation and planning only.
 
-Phase 11 implementation is published at `41fc3cffe42a1ae7a42446c5785abfffc1f559db`,
-package 1.3.0, without a Phase 11 tag. [Scoped closure](experiments/phase-11/CLOSURE.md)
-records owner-reported bounded Windows/CUDA PASS with a fixed compact prompt and
-separately inspected hosted Linux CPU evidence. This Windows exercise is not the
-full Mac prompting experiment; both retain 0/16 JSON per model and no learned tool
-use. Scripted successes are mechanics only. Physical Linux remains deferred.
-Phase 11 closure is published at `e2d61100a7c0c74d759bdc4ded5ddcda89cb112b`.
-Exact main and all eleven tags were verified before the explicit fresh-chat Phase 12 start.
-Verified publication supersedes the historical pending snapshot.
+## Acceptance and execution rules
 
-Phase 12's [fixed inference context-budget experiment](experiments/phase-12/REPORT.md)
-is published at `5b72872a2032f8999aae9c28ff0ab5c704e3d893`. Increasing only the session
-budget from 256 to 512 allowed all 44 previously context-limited sessions to retry,
-but no model produced valid JSON or a successful tool task. Original weights,
-prompt, tokenizer, chat contract, cases and defaults are unchanged. This tests
-available history space within existing capacity, not general learned long-context
-quality. The path-portability correction is published at
-`b222c1fa844289247531b922d5cb18134e99c7b1`; no Phase 12 tag. Corrected Windows/CUDA
-PASS is owner-reported within a distinct random synthetic fixture scope: 16 initial
-blocks removed, not the Mac's 44 learned retry transitions. Scripted controls remain
-separate. [Closure](experiments/phase-12/CLOSURE.md) also records inspected hosted
-Linux CPU scope; physical Linux remains deferred. Original failure/evidence preserved.
+Each phase produces bounded deliverables, actual validation, a separate review
+and fixes, an updated [project state](PROJECT_STATE.md), and a reviewed local
+commit before explicit phase publication approval. No quality gate can be passed
+solely by successful execution, a lower training loss or a feature's existence.
 
-Phase 12 is formally closed locally within that scope; the reviewed closure commit
-awaits explicit publication approval. **No next experiment in this chat.** After
-approved closure publication verify exact main and all unchanged tags, then stop.
-The [Phase 13 fresh-chat handoff](docs/PHASE13_HANDOFF.md) is preparation only, with
-no extension selected. Verified publication records supersede historical pending
-snapshots. See [current state](PROJECT_STATE.md).
+Phase 14 must freeze evaluation versions, scoring, baseline identities and numeric
+quality/regression gates **before** model-improvement work. Later phases may refine
+resource budgets and experiment details before their runs, but may not lower a
+quality threshold after seeing results. A failed gate preserves the run and blocks
+the dependent phase. Record a bounded corrective proposal; do not create an endless
+retry sequence or claim completion. Changes to the destination, required quality
+gates or explicit non-goals require an owner-approved roadmap amendment.
 
-| Phase | Deliverable | Acceptance evidence |
+**Phase 14 may start only after Phase 13 is approved, published and remotely
+verified, and the owner/master-planning process explicitly authorizes that start.**
+Push approval alone does not satisfy this transition gate. Subsequent phases follow
+the standing phase workflow unless the owner records another transition gate.
+
+## Phase sequence and gates
+
+| Phase | Deliverable | Exit gate |
 | --- | --- | --- |
-| 0: Foundation | Installable package, CLI doctor, environment report, CPU CI | Clean install, imports, CLI behavior, backend smoke checks, locked versions, reviewed packaging |
-| 1: English data | Source manifest, acquisition, cleaning, deduplication, document splits, tiny fixture | Terms and provenance, reproducible counts/hashes, exact and near-duplicate checks across splits |
-| 2: Tokenizer | Independently trained byte-level BPE with explicit special tokens | Train-only fitting, Unicode round trips under declared normalization, save/load, compression and vocabulary/hash report |
-| 3: Transformer | Original dense PyTorch decoder with configuration and sampling | Causality, shapes, finite gradients, next-token loss, parameter count, save/load, attention reference comparison |
-| 4: Training | Optimization, scheduling, accumulation, validation, resumable checkpoints | Tiny-fixture overfit, resumed vs. uninterrupted comparison on a declared backend, validation leaves weights unchanged |
-| 5: Pretraining | Measured English pilot from random initialization; larger run only if feasible | Held-out baseline comparison, token exposure, fixed samples, runtime, throughput, memory, failures |
-| 6: Instruction tuning | Documented English conversations, shared chat format, SFT | Assistant-only masking and next-token alignment, held-out instruction checks, comparison with base, regressions |
-| 7: Inference | CLI chat, streaming local interface, KV cache | Cached/uncached agreement within stated tolerance, stopping, multi-turn context limits, latency |
-| 8: Release | Reproduction guide, data/model cards, experiment report, permitted artifacts | Fresh-checkout reproduction, artifact hashes, explicit platform support and measured capability limits |
-| 9: Adaptation | LoRA training and merge | Frozen-base checks, adapter round trips, merge agreement, full-tuning comparison |
-| 10: Preferences | DPO experiment with a fixed baseline | Objective checks, documented data, held-out SFT comparison and regressions |
-| 11: Tools | Structured calls to bounded tools | Parsing, argument correctness, task success and failure behavior measured separately |
-| 12+: Experiments | One justified research extension at a time | Fixed baseline, hypothesis, available compute budget, reproducible positive or negative result |
+| 13 — Repository Repositioning & Roadmap 2.0 | Clear public identity, navigable documentation and this finite plan | Honest landing page, evidence preserved, checks/review pass, no learned behavior change |
+| 14 — Evaluation Foundation | Fixed evaluation framework and historical baseline | Reproducible scores, contamination policy and prespecified quality/regression gates |
+| 15 — Data 2.0 | Materially larger, higher-quality pretraining and instruction corpora | Provenance, terms review, split/dedup audits, composition/token accounting and tokenizer analysis |
+| 16 — Model & CUDA Training 2.0 | Measured candidate comparison and selected dense configuration | Correct mixed precision, feasible memory/throughput and bounded training plan on the available GPU |
+| 17 — LatoS Base Model 2.0 | Serious pretraining from random initialization | Material learned-quality improvement over the historical base on the fixed evaluation framework |
+| 18 — Assistant 2.0 | Improved instruction-tuned model | Measurable held-out instruction following with acceptable language-model regressions |
+| 19 — Ecosystem Interoperability | Native-compatible mainstream loading/export | Tested Transformers path and evidence-based local deployment/export decision |
+| 20 — Alignment & Tool Learning | Bounded, justified post-training assessment | Controlled comparisons against a competent assistant; honest positive or negative conclusions |
+| 21 — LatoS 2.0 Release | Reproducible final model and software package | Quality gates met, supported paths reproduced, cards/results/artifacts/checksums and limits published after approval |
 
-Phases 0–7 propose tags v0.1.0–v0.8.0; Phase 8 proposes v1.0.0. Tags are created
-only when included in that phase's explicit publication approval.
+### Phase 13 — Repository Repositioning & Roadmap 2.0
 
-## Engineering and evidence
+Make the README a project landing page. Remove obsolete identity language from
+active branding while retaining materially historical records. Place chronology,
+platform scope, experiment evidence and governance in their appropriate documents.
+Preserve old reports, metrics, artifacts and releases; explain historical pending
+publication snapshots without rewriting their original evidence.
 
-Start with CPU correctness and float32. Validate accelerator operations on actual
-hardware before relying on them. A tiny debug configuration comes first; select
-pilot and release sizes from measured memory and throughput, not an assumed budget.
-No new paid services are authorized.
+Acceptance: relevant checks and the existing test suite pass; links and package
+contents are reviewed; existing tags/releases and historical evidence are unchanged.
+No architecture, training behavior, model weights, data or learned-model experiment
+changes. No Data 2.0, mixed precision, interoperability, MoE, RL, serving or export
+implementation occurs in this phase.
 
-The initial model direction is a dense causal decoder with RMSNorm, rotary
-positions, multi-head attention, and SwiGLU. Final details belong to Phase 3 and
-must be derived from primary research with attribution. Mixed precision, CUDA,
-multi-GPU operation, export adapters, and longer context each need separate evidence.
+### Phase 14 — Evaluation Foundation
 
-Select data independently. Record source revisions, terms, language, acquisition,
-and hashes. Split by document identity before chunking; fit the tokenizer only on
-training data. Reserve the test set from routine tuning. Track run configuration,
-seed, source commit, environment, artifact identities, token exposure, selection
-rules, samples, resource measurements, and failures. Perplexities are comparable
-only with compatible evaluation data and tokenization.
+Build evaluation before attempting quality improvement. Freeze a versioned suite
+covering held-out language modeling, fixed-prompt generation, instruction following,
+regressions and selected external English benchmarks appropriate for very small
+models. Select benchmarks independently for task relevance, licensing, difficulty,
+scoring reliability and feasible cost; document primary sources and exclusions.
+Include simple controls (such as random/chance or trivial task baselines) so scores
+are interpretable. Separate deterministic scoring from any qualitative review.
 
-Evaluation begins as soon as a model is trainable. A working pipeline does not
-establish useful language quality. Keep failed experiments and revise plans openly.
-Large datasets, weights, and logs stay outside Git with durable artifact references.
+Record exact dataset revisions/splits/hashes, prompt and chat formats, decoding,
+seeds, context limits, scoring code, aggregation, uncertainty and resource use.
+Retain every fixed sample and failure. Identify contamination risks and keep model
+selection validation separate from final held-out acceptance. The two historical
+reserved tests stay reserved; any eventual final use needs an explicit protocol,
+not routine tuning. Historical development cases remain labeled as already observed.
+
+Exit: reproduce the preserved ~17.3M Phase 5 baseline and relevant SFT/adaptation
+baselines on the new suite where inputs are available; report missing artifacts as
+blockers. Demonstrate score repeatability within declared tolerances and regression
+detection with controlled failures. Freeze numeric minimum scores, meaningful
+improvement margins and maximum regressions for Phases 17/18, with rationale and a
+final-test access policy, before Phase 15. No invented benchmark scores or quality
+thresholds are asserted by this planning phase. Across different tokenizers, use
+matched text and a comparable normalized metric (for example bits per byte);
+raw token perplexity is comparable only under compatible tokenization/objectives.
+
+### Phase 15 — Data 2.0
+
+Independently select a materially larger and higher-quality corpus for pretraining
+and instruction tuning. Retain the Phase 1 corpus, manifests, split assignments,
+tokenizer and all evidence unchanged. Use separately versioned new inputs.
+
+Exit: each source has provenance, revision, licensing/terms review, intended use,
+acquisition and integrity records; acquired payloads stay outside normal Git history.
+Audit exact/near duplicates within and across splits, split documents/source groups
+before chunking, and screen for evaluation contamination. Report exclusions and
+residual contamination uncertainty, domains/languages/composition, raw and retained
+counts, unique and total token counts, and measured quality samples. Fit tokenizer
+candidates only on training data; compare compression, coverage and compute/context
+tradeoffs. Select or retain the tokenizer with explicit evidence. Dataset acceptance
+is a construction/quality audit, not a claim that future training will succeed.
+
+### Phase 16 — Model & CUDA Training 2.0
+
+Measure the available **NVIDIA RTX 4070 SUPER, approximately 12 GB VRAM**, before
+choosing a substantially more capable dense model. Investigate a rough 50–80M
+parameter region only if measurements support it; this is not a predetermined
+architecture. Account for vocabulary/context, optimizer state, activations, batch
+size, accumulation, checkpointing and evaluation overhead.
+
+Implement and validate justified mixed-precision CUDA training against float32
+references, including finite losses/gradients, stable updates, validation and
+save/load/recovery behavior under documented tolerances. Compare a bounded set of
+candidate scales on a common short-run protocol; these are feasibility probes,
+not the accepted Phase 17 base. Measure synchronized throughput, peak allocated
+and reserved VRAM, host memory and checkpoint/storage cost on the actual GPU.
+
+Exit: select a native dense configuration using measured memory headroom, throughput
+and early quality evidence; document token exposure, runtime/storage estimates,
+precision, seeds, selection rule, maximum attempts and stop/recovery conditions
+for Phase 17. Define practical local inference latency/memory acceptance targets
+before selecting the release candidate. If available hardware cannot support a
+credible quality run, record the resource blocker and propose a bounded revision;
+do not substitute a tiny execution demo for the planned training.
+
+### Phase 17 — LatoS Base Model 2.0
+
+Run the planned serious pretraining from random initialization through LatoS.
+Use the accepted Phase 15 data/tokenizer and Phase 16 configuration; retain immutable
+checkpoints, source/environment identities, logs and failed/interrupted attempts.
+
+Exit: meet Phase 14's prespecified held-out language-quality improvement and
+regression gates against the preserved 17,308,032-parameter Phase 5 base. Report
+fixed generation samples, external evaluation, comparable tokenization-aware
+metrics, total/unique token exposure, resource use and selection rule. Run final
+held-out acceptance only under its frozen access policy. Successful execution or
+training loss alone cannot pass. If quality fails, Phase 18 stays blocked.
+
+### Phase 18 — Assistant 2.0
+
+Begin only after the new base passes its quality gate. Use substantially improved,
+independently constructed/selected instruction data with the established chat
+contract 1 or a deliberately versioned successor shared by training and inference.
+Document masking, split/template separation, multi-turn behavior and decoding.
+
+Exit: exceed Phase 14's fixed held-out instruction-following thresholds and baseline
+margins, including external evaluation and tasks beyond familiar training templates;
+meet its language-model regression limits and Phase 16's practical local inference
+targets. Retain all samples, failures and checkpoint-selection evidence. Lower SFT
+loss or improved stopping alone does not establish a useful assistant.
+
+### Phase 19 — Ecosystem Interoperability
+
+Preserve the independent native implementation as the source of truth. Prioritize
+a clean Hugging Face/Transformers-compatible export/load path, standardized
+model/tokenizer configuration and documented chat/special-token behavior.
+
+Exit: round-trip parameter/configuration identity where lossless, verified token
+IDs and serialization, logits/generation agreement within declared tolerances,
+clean-environment loading and regression scores on fixed evaluations. Document
+version support and any custom-code requirements. Evaluate GGUF/llama.cpp and/or
+Ollama against actual architectural/tokenizer feasibility, maintenance cost and local
+value. Implement a justified path if viable; otherwise record a bounded feasibility
+rejection and supported alternative. Quantized paths need explicit size, memory,
+latency and quality tradeoffs; format creation alone is insufficient. No third-party
+model implementation replaces native LatoS.
+
+### Phase 20 — Alignment & Tool Learning
+
+Begin only with a competent Assistant 2.0 baseline. Reuse the historical LoRA,
+full-tuning, DPO and tool results as negative baselines, distinguishing their older
+model/data scale. Select a bounded method or justified no-additional-method outcome
+from observed deficits, data/reward validity and available compute.
+
+Improved LoRA/DPO, GRPO/RLAIF or another method are possibilities, not requirements.
+PPO, GRPO, MoE and agentic RL are never additions for feature parity. Any selected
+experiment fixes its hypothesis, controls, data, budgets, scoring, regression
+limits and stopping rule before execution. Revisit learned tools only after ordinary
+instruction following is established: measure parsing, correct arguments/calls,
+end-to-end tasks and failure handling independently of scripted controls.
+
+Exit: a reproducible decision backed by controlled comparisons, retaining negative
+results and explicit unsupported claims. Promote a post-trained candidate only if
+it improves the targeted held-out measure without violating prior quality gates;
+otherwise retain Assistant 2.0. A negative or no-go research result can close this
+phase but cannot waive the base/assistant release requirements.
+
+### Phase 21 — LatoS 2.0 Release
+
+Package the accepted base/assistant and justified interoperability artifacts with
+model/data cards, evaluation versions/results, reproducibility instructions,
+supported platforms, checksums, provenance/terms and explicit limits. Verify an
+independent clean installation and the supported native/export paths on available
+hardware. Establish a permitted, durable artifact destination before publication;
+source Git history is not a weights/log backup.
+
+Exit: Phases 17/18 quality gates and practical local execution targets remain met
+by the exact release artifacts. Separate engineering correctness, platform validation,
+learned capability and unsupported claims. Preserve negative historical and new
+results. Publish only the exact reviewed release after its explicit approval;
+version/tag/assets belong in that concrete proposal. If core quality gates remain
+unmet, report an incomplete Roadmap 2.0, not a successful LatoS 2.0 capability release.
+
+## Hardware and evidence model
+
+Mac Work remains authoritative for development and repository publication.
+Windows/RTX 4070 SUPER can provide independent CUDA validation and substantive
+training where explicitly planned above; this does not retroactively upgrade old
+synthetic validations into full learned-run reproductions. Hosted Linux CPU CI
+is separate evidence. Physical Linux stays deferred unless the owner changes that
+constraint. Record unavailable execution paths as untested. Use existing resources;
+the default new paid-service budget is zero. Do not rent compute or change access.
+
+## Explicit non-goals
+
+MoE, multimodal/vision/audio, diffusion language modeling, linear-attention variants,
+elaborate web UI, distributed/multi-node training and feature-for-feature replication
+of another project are not LatoS 2.0 requirements. Additions need compelling evidence
+and an explicit owner-approved roadmap amendment. PPO/GRPO/RLAIF/agentic RL remain
+possible Phase 20 research choices only, subject to its quality and budget gates.
+
+## Historical roadmap and evidence
+
+Phases 0–8 built the foundation, data pipeline, tokenizer, dense decoder, training,
+pretraining, SFT, inference and v1.0.0 release. Phases 9–12 added LoRA/merge, DPO,
+bounded tools and the fixed context-budget experiment. All are complete within
+their recorded scopes; completion did not establish useful instruction following,
+preference improvement or learned tools. Phase 12 closure was published at
+`c74290ee1208dc6b0e4077ce3c7b2aad262f3c42`.
+
+The [historical roadmap](docs/history/ROADMAP_1.md) is retained as a superseded
+planning record. [Evidence index](docs/INDEX.md), [changelog](CHANGELOG.md),
+[model card](docs/MODEL_CARD.md) and [data card](docs/DATA_CARD.md) preserve the
+results and provenance. Existing reports' pending-publication statements describe
+their original snapshots; use [PROJECT_STATE.md](PROJECT_STATE.md) for active state.
+No existing tag or release is reassigned by Roadmap 2.0.

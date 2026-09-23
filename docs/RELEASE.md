@@ -1,10 +1,11 @@
-# Reproduce the LatoS v1.0.0 candidate
+# Reproduce LatoS v1.0.0
 
 This guide distinguishes offline mechanism reproduction from the original full
-English experiments. The release is prepared locally and awaits publication
-approval; `v1.0.0` and its assets do not exist remotely yet. Until publication, use
-the exact local candidate commit supplied in the approval checkpoint. After
-publication, clone the existing repository and check out the approved tag:
+English experiments. The stable
+[v1.0.0 release](https://github.com/sebastienlato/LatoS/releases/tag/v1.0.0) was
+published on 2026-09-21 at `10d9ef7bf0618b364f887ff9d279408e3cbc33c9`. Its tag and
+four assets remain fixed. Current main includes later work (package 1.3.0); use
+the release checkout for all commands in this guide:
 
 ```sh
 git clone https://github.com/sebastienlato/LatoS.git
@@ -51,7 +52,7 @@ that backend explicitly. No bitwise equality across hosts or backends is promise
 
 ## Install and inspect the downloadable package
 
-Proposed assets: `latos-1.0.0.tar.gz` (source),
+Published assets: `latos-1.0.0.tar.gz` (source),
 `latos-1.0.0-py3-none-any.whl` (LatoS code only),
 `latos-1.0.0-tiny-fixture.zip`, and `SHA256SUMS`.
 The source archive includes tests, configs, manifests, original fixture inputs,
@@ -94,12 +95,13 @@ uv run --locked python experiments/phase-8/package.py --tiny-dir outputs/release
 
 The packager accepts only the five explicitly pinned tiny artifact files and
 three tracked notice/card files. It refuses symlinks, changed identities and an
-existing destination. A new training run may differ across systems; the candidate
+existing destination. A new training run may differ across systems; the published
 zip pins this release's exact CPU fixture artifacts. A differing run remains a
 mechanism reproduction and must not silently replace the approved asset. Preserve
 the release inventory and report the difference. The source/wheel member lists
 must be reviewed against tracked content before any upload. The final assets and
-SHA256SUMS are stored locally under ignored `dist/phase-8-release/` for approval.
+SHA256SUMS were retained locally under ignored `dist/phase-8-release/`. Do not
+overwrite them or substitute a current-main build for the published release.
 
 ## Full English experiments: additional inputs and original environments
 
@@ -137,12 +139,12 @@ substitution into the recorded comparison. No full retraining or historical
 optimizer replay was performed in Phase 8. The prior measured outcomes are retained,
 not claimed as new fresh-checkout results.
 
-## Publication boundary
+## Publication record
 
-Proposed destination: the existing GitHub repository, branch `main`, annotated
-`v1.0.0`, and a release titled `LatoS v1.0.0 — reproducible educational release`
-with the four named assets. No PyPI upload, dependency vendoring, corpus/full-Mac-
-artifact upload, visibility change or paid service is proposed. All prior tags,
-especially v0.8.0, remain fixed. [Release notes](../experiments/phase-8/RELEASE_NOTES.md)
-and the exact commit/assets are reviewable locally. Nothing is published until
-the owner explicitly approves the completed Phase 8 proposal.
+The approved release was published to the existing repository with annotated
+`v1.0.0` and the four named assets. No PyPI upload, acquired corpus/full-Mac-artifact
+upload or visibility change was part of that publication. The
+[original release notes](../experiments/phase-8/RELEASE_NOTES.md) and
+[Phase 8 report](../experiments/phase-8/REPORT.md) retain their historical wording.
+Newer package versions on main have not replaced the stable release or its artifacts.
+See [current state](../PROJECT_STATE.md) for the active development checkpoint.

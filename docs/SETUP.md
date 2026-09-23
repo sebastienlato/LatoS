@@ -1,5 +1,17 @@
 # Setup and validation
 
+## Current scope
+
+The pinned environment below remains in use on current main (package 1.3.0).
+For the published stable release, follow [v1.0.0 reproduction](RELEASE.md).
+Platform counts and the PowerShell retest below describe their named historical
+checkpoints; they are not a current-main certification. See the
+[evidence index](INDEX.md) for later results and [project state](../PROJECT_STATE.md)
+for the active phase. Mac Work remains authoritative for development. Roadmap 2.0
+explicitly permits substantive training on Windows/RTX 4070 SUPER (~12 GB VRAM)
+in its CUDA training phases. Historical validation-only restrictions below apply
+to those old retests. Physical Linux remains deferred.
+
 ## Supported checkpoint environment
 
 Use CPython 3.14.7 and uv 0.12.15. The lock has these platform-specific PyTorch builds:
@@ -115,7 +127,10 @@ only a tiny matrix multiplication and backward pass, not all future model kernel
 Use `--locked` to reject stale project metadata rather than silently changing the
 lock. Keep `uv.lock` committed. `.python-version` selects the patch version, and
 `pyproject.toml` pins the required uv version. Accepted experiment environments
-must remain recorded when later upgrades are introduced.
+must remain recorded when later upgrades are introduced. Even documentation-only
+package source edits change implementation fingerprints: use the original checkout
+and runtime for historical optimizer recovery, and never rewrite old inventories
+to make a current checkout appear to have produced an earlier run.
 
 Build products remain in ignored `dist/`. Inspect source and wheel member lists
 before sharing; never archive the entire working directory. Package builds use
@@ -178,8 +193,8 @@ the selection; it is not a substitute for real execution. A separately installed
 CUDA 13.4 toolkit is not required to use this prebuilt wheel.
 
 For the existing offline tokenizer example in PowerShell, set
-`$env:RAYON_NUM_THREADS = "1"` before its `uv run` command; the README's inline
-environment assignment is POSIX shell syntax. Stop and report any failure rather
+`$env:RAYON_NUM_THREADS = "1"` before its `uv run` command. Inline environment
+assignments shown in historical guides use POSIX shell syntax. Stop and report any failure rather
 than changing the validated environment on a validation-only machine. Windows
 validation is complete; independent physical Linux testing is deferred at the
 owner's direction. These commands describe the completed Phase 3 retest. Phase 4

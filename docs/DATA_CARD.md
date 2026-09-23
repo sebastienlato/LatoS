@@ -1,6 +1,9 @@
-# Data card — LatoS v1.0.0 candidate
+# Data card — LatoS v1.0.0
 
-Recorded 2026-09-21. These datasets serve different purposes and must not be mixed.
+Historical release record, recorded 2026-09-21. v1.0.0 is now published; its
+asset bytes and the measurements below remain unchanged. See the
+[release guide](RELEASE.md) and [later evidence](INDEX.md). These datasets serve
+different purposes and must not be mixed.
 The release distributes original fixture inputs and generator source only. Acquired
 books, prepared corpora and both real reserved test payloads remain local.
 

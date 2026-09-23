@@ -1,6 +1,6 @@
 # LatoS — Working instructions
 
-Build an original English-first small language model project in reviewable phases.
+Build an original small language model project in reviewable phases.
 
 ## Session context
 
@@ -61,7 +61,8 @@ from somewhere else.
 
 ## Execution and continuity
 
-Begin with Phase 0, then manage the full roadmap using the per-phase push checkpoint.
+Continue from the active phase in PROJECT_STATE.md using the per-phase push checkpoint.
+Honor explicit owner transition gates; publication approval alone does not lift them.
 Use available execution tools and existing resources. The default new paid-service
 budget is zero; do not rent compute, incur new charges, or change access controls.
 Prefer a smaller runnable configuration over handing execution tasks to the owner.
@@ -78,4 +79,7 @@ and the next action in PROJECT_STATE.md. Never store reference-project identifie
 in that public file. Preserve local work across supported session handoffs; do not
 promise continued execution when the Work session is stopped or unavailable.
 
-This starter contains instructions and ignore rules, not an implemented model.
+Phases 0–12 established the implemented foundation and retained experiments.
+Roadmap 2.0 defines the next bounded sequence; mechanisms do not establish learned
+capability. Preserve negative results and distinguish learned-model experiments,
+synthetic/scripted checks and platform validation.

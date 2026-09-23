@@ -206,3 +206,27 @@ are mechanics controls, never model performance. Fixed base/SFT/DPO development
 validation remains negative; all responses and context-limit failures are retained.
 A future training experiment would require its own fixed data/compute hypothesis.
 Phase 11 proposes main only, no tag/release/assets, and stops for explicit approval.
+
+## 2026-09-23 — Repository positioning and bounded Roadmap 2.0
+
+Present LatoS as an original small language model project built from first principles.
+English remains the primary language of current data/evaluations, not a public
+identity qualifier. Preserve historical release wording and every experimental
+result. The README serves new visitors; detailed evidence, platform scope and
+publication governance belong in linked guides, reports and project state.
+
+Retire open-ended research extensions after the completed Phase 12. Phase 13 is
+repositioning/planning only. Phases 14–21 progress through evaluation, Data 2.0,
+measured dense CUDA scaling, serious base pretraining, instruction quality,
+interoperability, justified advanced post-training and a finite LatoS 2.0 release.
+Freeze numeric quality gates before improvement runs; failed quality gates block
+dependent phases. No architecture, training behavior, weights or learned experiment
+changes in Phase 13. CLI/package description edits affect wording only; historical
+source fingerprints remain tied to their original checkouts.
+
+Mac remains authoritative for development; the existing Windows RTX 4070 SUPER
+(~12 GB VRAM) may perform planned substantive training as well as validation.
+Candidate scale follows measurements, not a borrowed architecture or fixed parameter
+count. No new paid services. Keep old synthetic CUDA checks distinct from full
+learned-model experiments. Phase 14 requires approved, verified Phase 13 publication
+and explicit owner/master-planning start authorization. See [Roadmap 2.0](ROADMAP.md).

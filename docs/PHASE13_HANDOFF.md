@@ -1,3 +1,10 @@
+> **Superseded historical handoff — do not execute this research kickoff.**
+> The owner redefined Phase 13 as Repository Repositioning & Roadmap 2.0 on
+> 2026-09-23. The old open-ended extension below is retained only as history.
+> Follow [Roadmap 2.0](../ROADMAP.md) and [current state](../PROJECT_STATE.md).
+> Phase 14 requires verified Phase 13 publication and explicit owner/master-planning
+> authorization; Phase 13 push approval alone does not authorize it.
+
 # Next research extension — fresh-chat handoff (Phase 13)
 
 Preparation only. **Do not begin another Phase 12+ experiment in the closure chat.**

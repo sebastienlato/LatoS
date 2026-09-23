@@ -1,5 +1,27 @@
 # Changelog
 
+## Phase 13 — Repository Repositioning & Roadmap 2.0 (local, approval pending)
+
+- Rebuild the README as a landing page, remove obsolete identity wording from active
+  branding and package/CLI descriptions, and add a documentation/evidence index.
+- Define finite Phases 13–21 with evaluation-first quality gates, measured CUDA
+  scaling, explicit non-goals and a bounded LatoS 2.0 release destination.
+- Correct stale release/publication guidance; retain prior roadmap/checkpoint
+  snapshots, original experiment evidence and historical release wording.
+- Preserve model/training behavior, weights, data, dependencies, lock and package
+  version 1.3.0. No new learned experiment or Phase 14 work. No tag/release proposed.
+
+## Publication reconciliation — 2026-09-23
+
+Phase 12 closure is published at `c74290ee1208dc6b0e4077ce3c7b2aad262f3c42`;
+correction `b222c1fa844289247531b922d5cb18134e99c7b1` and original implementation
+`5b72872a2032f8999aae9c28ff0ab5c704e3d893` are also published. Phase 11 closure
+`e2d61100a7c0c74d759bdc4ded5ddcda89cb112b` and earlier phases are published.
+All eleven tags remain fixed, including v1.0.0 at
+`10d9ef7bf0618b364f887ff9d279408e3cbc33c9`; the stable release has four assets.
+Historical entries below retain the pending state when written. This reconciliation
+supersedes their publication status only, not any result or platform limitation.
+
 ## Phase 12 closure — documentation only (local, approval pending)
 
 - Record owner-reported corrected Windows/CUDA PASS: 301 passed / 13 skips in fresh

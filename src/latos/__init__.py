@@ -1,4 +1,4 @@
-"""LatoS: an original English-first small language model project."""
+"""LatoS: an original small language model project."""
 
 from importlib.metadata import version
 

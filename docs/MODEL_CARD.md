@@ -1,11 +1,13 @@
-# Model card — LatoS v1.0.0 candidate
+# Model card — LatoS v1.0.0
 
-Recorded 2026-09-21. This is an educational software release, not a claim of useful
-assistant quality. Original code is MIT; dependencies retain their own terms.
+Historical release record, recorded 2026-09-21. v1.0.0 is now published; its
+asset bytes and the measurements below remain unchanged. See the
+[release guide](RELEASE.md) and [later evidence](INDEX.md). This is an educational
+software release, not a claim of useful assistant quality. Original code is MIT; dependencies retain their own terms.
 The tiny fixture model/tokenizer are distributed under MIT with provenance. Full
 English base/SFT weights and the English tokenizer remain preserved locally and
-are not proposed release assets. Their distribution is deferred; this is a release
-scope choice, not a determination that redistribution is prohibited.
+are not included in the published release assets. Their distribution is deferred;
+this is a release scope choice, not a determination that redistribution is prohibited.
 
 ## Full English artifacts
 
@@ -80,9 +82,9 @@ arm64, Linux x86-64 CPU and Windows x86-64 CUDA wheels only.
 Appropriate use: learning and bounded reproducibility experiments. Useful
 instruction following, factual reliability, safety alignment, broad English quality,
 512-token language quality, production latency, mixed precision and distributed
-serving remain unestablished. There is no tool-use or hosted serving layer. All
-inference is local. Model-only loading is distinct from optimizer recovery, which
-requires the original recorded implementation/runtime. See [release guide](RELEASE.md).
+serving remain unestablished. At v1.0.0 there was no tool protocol or hosted serving
+layer. All inference is local. Later main adds a bounded tool protocol; see the
+addendum below. Model-only loading is distinct from optimizer recovery, which requires the original recorded implementation/runtime. See [release guide](RELEASE.md).
 
 ## Phase 10 — Model comparison
 
@@ -90,3 +92,22 @@ See the [bounded preference experiment](../experiments/phase-10/REPORT.md) and
 [preference provenance](../experiments/phase-10/DATA.md). The original base, SFT,
 tokenizer and their identities above remain unchanged. DPO is a separate local
 experimental model, not a promoted replacement. Both reserved tests remain unused.
+
+## Post-release capability evidence through Phase 12
+
+The [LoRA/full-tuning comparison](../experiments/phase-9/REPORT.md) produced 0/32
+exact replies for both methods. [DPO](../experiments/phase-10/REPORT.md) worsened
+full Mac held-out ranking from 16/32 to 15/32 and retained 0/32 exact replies;
+English loss improved versus SFT but remained worse than the original base.
+No useful assistant or preference improvement was established.
+
+The [tool protocol](TOOLS.md) provides bounded local mechanics, not learned tool
+competence. [Phase 11](../experiments/phase-11/REPORT.md) retained 0/16 valid JSON
+for each original Mac model. [Phase 12](../experiments/phase-12/REPORT.md) removed
+44 blocked retries by raising the inference-session budget from 256 to 512 within
+existing capacity; valid JSON remained 0/41, 0/64, 0/64 emitted replies for
+base/SFT/DPO, with no calls and each 0/12 tasks and 0/4 learned failure handling.
+The [closure](../experiments/phase-12/CLOSURE.md) separately records Windows synthetic
+initial-block relief and hosted Linux CPU checks. None establishes learned tools,
+general long-context language quality or an improvement to the retained base.
+[Roadmap 2.0](../ROADMAP.md) is future work; this card does not describe a 2.0 model.

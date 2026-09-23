@@ -10,7 +10,7 @@ from latos import __version__
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
-        prog="latos", description="LatoS — English-first small language model development."
+        prog="latos", description="LatoS — small language model development."
     )
     parser.add_argument("--version", action="version", version=f"LatoS {__version__}")
     commands = parser.add_subparsers(dest="command")
