@@ -20,10 +20,16 @@ fresh-chat Phase 11 start. Verified publication supersedes historical pending sn
 result, distinct tiny Windows/CUDA PASS, separately inspected hosted Linux CPU scope
 and deferred physical Linux. Annotated v1.0.0 remains unchanged.
 
-Phase 11 is implemented and reviewed locally, package 1.3.0, awaiting explicit
-publication approval. [Tool evidence](experiments/phase-11/REPORT.md) separates passing
-scripted mechanics from negative unchanged-model performance. No learned tool quality
-is established. Stop at the Phase 11 push checkpoint; Phase 12 has not begun.
+Phase 11 implementation is published at `41fc3cffe42a1ae7a42446c5785abfffc1f559db`,
+package 1.3.0, without a Phase 11 tag. [Scoped closure](experiments/phase-11/CLOSURE.md)
+records owner-reported bounded Windows/CUDA PASS with a fixed compact prompt and
+separately inspected hosted Linux CPU evidence. This Windows exercise is not the
+full Mac prompting experiment; both retain 0/16 JSON per model and no learned tool
+use. Scripted successes are mechanics only. Physical Linux remains deferred.
+Documentation-only closure is reviewed locally and awaits explicit publication approval.
+**Do not begin Phase 12 in this chat.** After approved closure publication, verify
+exact main and all unchanged tags, then stop. Phase 12 requires an explicit fresh-chat
+start using the [handoff](docs/PHASE12_HANDOFF.md). No extension has been selected.
 See [current state](PROJECT_STATE.md).
 
 | Phase | Deliverable | Acceptance evidence |

@@ -96,7 +96,23 @@ cases. Failure handling separately requires the correct missing lookup and match
 final error on four cases. A rejected request alone does not count as model failure
 handling. Scripted gold control is clearly labeled and excluded from model metrics.
 
-No Phase 11 Windows/CUDA, hosted Linux or physical Linux validation is claimed.
-Earlier platform evidence, negative DPO/SFT/LoRA findings, merge/cache tolerances
-and unsupported adapter/DPO optimizer resume remain as recorded in the
+## Phase 11 external validation and closure
+
+The [scoped closure](../experiments/phase-11/CLOSURE.md) records owner-reported
+Windows RTX 4070 SUPER PASS (293 passed / 12 skips, fresh wheel; Phase 11 50 passes /
+one MPS skip). Tiny 256-capacity models rejected the original prompt before generation;
+one fixed compact prompt enabled a separate CUDA exercise, 1,024 tokens/model across
+16 cases. Base/SFT/DPO still each produced 0/16 JSON and no calls/tasks/learned failure
+handling. Full Mac artifacts/tokenizer were unavailable, and the tiny base was random.
+This is not a reproduction of the original Mac prompting experiment. Scripted
+controls and the scoped side-effect audit establish engineering checks, not learned
+capability, a general sandbox or model safety.
+
+Separately inspected hosted Linux CPU CI passed 295 tests / ten MPS-only skips,
+including 50 Phase 11 CPU passes / one skip. It covers protocol/scripted controls,
+tiny CPU inference and existing workflows/builds, not the standalone three-model
+experiment, CUDA/MPS or a fresh installed-wheel suite. Physical Linux is deferred.
+Windows OS-level Ctrl-C and all earlier capability limits remain unvalidated or
+unestablished as documented. Earlier negative DPO/SFT/LoRA findings, merge/cache
+bounds and unsupported adapter/DPO optimizer resume remain in the
 [Phase 10 closure](../experiments/phase-10/CLOSURE.md).

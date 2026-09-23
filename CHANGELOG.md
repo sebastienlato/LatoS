@@ -1,6 +1,18 @@
 # Changelog
 
-## 1.3.0 — Phase 11 reviewed locally, publication pending
+## Phase 11 closure — documentation only (2026-09-23)
+
+- Record owner-reported Windows RTX 4070 SUPER PASS: 293 passed / 12 skips, fresh
+  wheel; Phase 11 50 passes / one MPS skip. Tiny models use a fixed compact prompt
+  after original-prompt context rejection; not the full Mac prompting experiment.
+- Record separate exact-commit hosted Linux CPU CI: 295 passed / ten MPS skips,
+  scoped protocol/scripted/tiny CPU mechanics and workflows/builds. Physical Linux deferred.
+- Preserve original Mac results and tiny Windows 0/16 JSON per model, zero calls
+  and no learned tool use. Scripted successes remain mechanics only.
+- Prepare reviewed closure and fresh-chat Phase 12 handoff; publication approval
+  required. No Phase 12 selection/development or runtime/version change.
+
+## 1.3.0 — Phase 11 implementation published, no Phase 11 tag
 
 - Add strict local JSON tool calls, bounded addition/lookup, capped multi-turn runner
   and CLI; keep tokenizer, chat contract and all models unchanged.

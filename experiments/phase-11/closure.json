@@ -1,0 +1,256 @@
+{
+  "schema_version": 1,
+  "phase": 11,
+  "recorded_date": "2026-09-23",
+  "implementation_commit": "41fc3cffe42a1ae7a42446c5785abfffc1f559db",
+  "implementation_tag": null,
+  "package_version": "1.3.0",
+  "closure_status": "formally closed locally within documented bounded scope; reviewed publication awaits explicit approval",
+  "windows_cuda": {
+    "status": "PASS within documented bounded scope",
+    "attribution": "Owner-supplied independent Windows validation summary; not executed by this Mac session",
+    "validated_commit": "41fc3cffe42a1ae7a42446c5785abfffc1f559db",
+    "gpu": "NVIDIA RTX 4070 SUPER",
+    "tests": {
+      "passed": 293,
+      "skipped": 12,
+      "failed": 0,
+      "skip_scope": "expected platform/hardware skips; full individual breakdown not supplied",
+      "fresh_exact_checkout_locked_install": "pass",
+      "fresh_non_editable_wheel_suite": "pass",
+      "phase11_passed_in_each_environment": 50,
+      "phase11_mps_skipped_in_each_environment": 1
+    },
+    "protocol_checks": [
+      "Structured JSON parsing",
+      "Envelope validation",
+      "Argument-schema validation",
+      "Bounded execution and rejection",
+      "Failure behavior",
+      "Separate metric accounting",
+      "Packaging/dependencies/CLI/privacy"
+    ],
+    "scripted_controls": {
+      "normal_task_successes": 12,
+      "normal_cases": 12,
+      "expected_missing_key_failures_handled": 4,
+      "failure_cases": 4,
+      "scope": "engineering mechanics only"
+    },
+    "side_effect_audit": {
+      "status": "pass",
+      "observed_unintended_file_process_network_environment_write_events": 0,
+      "scope": "owner-reported scoped execution/rejection audit; not a general sandbox or safety guarantee"
+    },
+    "model_exercise": {
+      "actual_cuda_generation": true,
+      "artifacts": "retained tiny base/SFT/DPO",
+      "base_kind": "random fixture base, not learned English base",
+      "context_capacity": 256,
+      "prompt_protocol": {
+        "original": "Original system prompt plus development cases exceeded tiny-model capacity; correct context_limit rejection before generation",
+        "compact": "One fixed compact prompt used for bounded CUDA generation",
+        "exact_compact_text_or_hash_supplied": false,
+        "unchanged_per_owner": [
+          "tool registry",
+          "cases",
+          "expected calls/answers/errors",
+          "scoring",
+          "chat history",
+          "turn/call limits",
+          "decoding settings",
+          "output budget",
+          "model/tokenizer identities within exercise"
+        ],
+        "full_mac_prompting_reproduction": false
+      },
+      "per_model": {
+        "base": {
+          "generated_tokens": 1024,
+          "cases": 16,
+          "valid_json": 0,
+          "proposed_calls": 0,
+          "executed_calls": 0,
+          "normal_task_successes": 0,
+          "normal_cases": 12,
+          "learned_failure_handling_successes": 0,
+          "failure_cases": 4
+        },
+        "sft": {
+          "generated_tokens": 1024,
+          "cases": 16,
+          "valid_json": 0,
+          "proposed_calls": 0,
+          "executed_calls": 0,
+          "normal_task_successes": 0,
+          "normal_cases": 12,
+          "learned_failure_handling_successes": 0,
+          "failure_cases": 4
+        },
+        "dpo": {
+          "generated_tokens": 1024,
+          "cases": 16,
+          "valid_json": 0,
+          "proposed_calls": 0,
+          "executed_calls": 0,
+          "normal_task_successes": 0,
+          "normal_cases": 12,
+          "learned_failure_handling_successes": 0,
+          "failure_cases": 4
+        }
+      },
+      "full_mac_learned_artifacts_tokenizer": "unavailable and not tested",
+      "learned_tool_use": "unestablished"
+    },
+    "cuda_cache_inference_and_synthetic_512_mechanics": "pass under existing criteria; not 512-token learned language quality",
+    "preservation": {
+      "attribution": "owner reported, not independently rehashed on this Mac",
+      "tracked_files_unchanged": 213,
+      "prior_regular_report_evidence_files_preserved": 2543,
+      "reserved_payloads": "unchanged; only opaque integrity hashes",
+      "working_tree": "clean",
+      "committed_or_pushed": false
+    },
+    "not_supplied": [
+      "Exact compact-prompt text/hash",
+      "Raw Windows logs",
+      "Artifact hashes",
+      "Full individual skip breakdown",
+      "New driver/runtime details",
+      "Numerical error maxima"
+    ],
+    "not_demonstrated": [
+      "Full Mac prompting experiment reproduction",
+      "Full Mac learned artifacts/tokenizer",
+      "Windows OS-level Ctrl-C",
+      "General CUDA determinism",
+      "Cross-device equality",
+      "Useful instruction/tool following",
+      "Safety alignment",
+      "Production performance"
+    ]
+  },
+  "github_linux_cpu": {
+    "status": "PASS",
+    "attribution": "Direct inspection of run/job metadata and logs, exact-commit workflow and relevant test/fixture bodies",
+    "run_id": 35862021715,
+    "url": "https://github.com/sebastienlato/LatoS/actions/runs/35862021715",
+    "job_id": 107184285661,
+    "job_url": "https://github.com/sebastienlato/LatoS/actions/runs/35862021715/job/107184285661",
+    "head_sha": "41fc3cffe42a1ae7a42446c5785abfffc1f559db",
+    "event": "push",
+    "job_completed_at": "2026-09-23T12:42:16Z",
+    "runner": "Ubuntu 24.04.5 hosted x86-64",
+    "python": "3.14.7",
+    "torch": "2.14.0+cpu",
+    "tests": {
+      "collected": 305,
+      "passed": 295,
+      "skipped": 10,
+      "failed": 0,
+      "seconds": 36.79,
+      "skip_scope": "MPS only",
+      "phase11_cpu_passed": 50,
+      "phase11_mps_skipped": 1
+    },
+    "scope": [
+      "Strict JSON and schemas, bounded pure execution, rejection and failure controls",
+      "Scripted multi-turn feedback, retry/turn/call bounds, cancellation callbacks and incomplete-generation rejection",
+      "CLI schema/execute exit codes; separate metric false-positive checks",
+      "Synthetic saved-evidence recount and corruption rejection; base/SFT/DPO labels contain scripted data",
+      "Tiny random CPU responder eight-token generation compared with shared formatter/generator; weights/RNG/gradients preserved",
+      "Existing synthetic CPU cache checks through 512 positions; no learned language-quality inference",
+      "Existing CPU runtime tests, locked install, lint/format, diagnostics/debug model, offline tiny data/tokenizer workflows and source/wheel builds"
+    ],
+    "dense_fixture_acceptance": {
+      "updates": 400,
+      "target_exposures": 131600,
+      "resume_cut_step": 97,
+      "compared_resume_updates": 303,
+      "weights_optimizer_sampler_non_timing_metrics_exact": true,
+      "validation_state_unchanged": true,
+      "scope": "dense fixture recovery/memorization, not tool learning or adapter/DPO optimizer resume"
+    },
+    "not_demonstrated": [
+      "Standalone full Mac three-model tool experiment or its learned-evidence verifier",
+      "Windows compact-prompt model exercise",
+      "CUDA/MPS execution",
+      "Fresh installed-wheel suite",
+      "Windows-style scoped side-effect audit",
+      "Full learned-artifact preservation audit",
+      "Physical Linux",
+      "Learned tool use or language quality"
+    ],
+    "raw_log_sha256": "5a312abcb4223a3729039e5564260d5c6ceb1114e98021eba47010c7eac90dfa",
+    "metadata_sha256": "4ef1285987a0096912ab3c2bd1e57d0102a7263468e3c9af08b7501d9abf480c",
+    "workflow_sha256": "5d69c6aa6556da54b0611806d94721603425acea1d3587ebfb6ee73fe9017102"
+  },
+  "original_mac_evidence_unchanged": {
+    "scope": "full original English models/tokenizer and original prompt on MPS, separate from tiny compact-prompt Windows exercise",
+    "per_model_valid_json": [
+      0,
+      0,
+      0
+    ],
+    "cases_per_model": 16,
+    "proposed_executed_calls": 0,
+    "normal_task_successes_per_model": 0,
+    "normal_cases": 12,
+    "failure_handling_successes_per_model": 0,
+    "failure_cases": 4,
+    "generated_tokens": {
+      "base": 595,
+      "sft": 48,
+      "dpo": 51
+    },
+    "stop_reasons": {
+      "base": {
+        "context_limit": 12,
+        "incomplete_generation": 4
+      },
+      "sft": {
+        "context_limit": 16
+      },
+      "dpo": {
+        "context_limit": 16
+      }
+    },
+    "scripted_normal_successes": 12,
+    "scripted_failures_handled": 4,
+    "development_tests_passed": 305,
+    "isolated_wheel_tests_passed": 305,
+    "learned_tool_use": "unestablished"
+  },
+  "preserved_contracts": {
+    "chat_contract": 1,
+    "merge_atol_rtol": 0.0001,
+    "original_cpu_merge_1e_5_failure_retained": true,
+    "cache_cpu_cuda_atol_rtol": 1e-05,
+    "cache_mps_atol_rtol": 0.0001,
+    "adapter_optimizer_resume": "unsupported",
+    "dpo_optimizer_resume": "unsupported",
+    "dense_recovery": "version-bound",
+    "physical_linux": "deferred, not performed",
+    "prior_negative_sft_lora_dpo_results": "unchanged; see Phase 10 closure",
+    "useful_quality_general_determinism_cross_device_equality_safety_production_mixed_precision_distributed_or_learned_quality_beyond_256": "unestablished"
+  },
+  "local_closure_checks": {
+    "distinct_preserved_files_unchanged": 59999,
+    "prior_snapshot_files": 59873,
+    "additional_phase11_run_inventory_log_original_evidence_files": 126,
+    "reserved_tests": "opaque integrity hashes only; not parsed/evaluated",
+    "runtime_version_tests_configs_lock_workflow_original_experiments_unchanged": true,
+    "new_runtime_tests_training_benchmarks_builds": false
+  },
+  "owner_gate": "Do not begin Phase 12 in this chat. Stop for explicit closure publication approval; after approved publication verify exact main and all unchanged tags, then stop. Phase 12 requires explicit fresh-chat start after verified closure.",
+  "publication": {
+    "approval": "pending",
+    "remote": "https://github.com/sebastienlato/LatoS.git",
+    "branch": "main",
+    "visibility": "public; unchanged",
+    "proposed_tag": null,
+    "release": null,
+    "asset_uploads": [],
+    "existing_tags_preserved": 11
+  }
+}

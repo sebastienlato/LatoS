@@ -4,16 +4,18 @@ LatoS is an original, English-first small language model project. Its goal is to
 make the path from documented training data to an evaluated conversational model
 reproducible on modest hardware.
 
-**Current milestone: Phase 11 bounded structured tools, reviewed locally (package 1.3.0);
-publication awaits explicit approval.** [Tool interface](docs/TOOLS.md) and
-[measured results](experiments/phase-11/REPORT.md) separate protocol correctness from
-model behavior: scripted control succeeds, but unchanged base/SFT/DPO models produce
-no valid structured call in the fixed development evaluation. No learned tool use
-or useful assistant quality is established. Phase 10 closure is published at
-`87d744fb8cfd4228c78f35bbd220d2833462e037`; all eleven tags remain unchanged.
-[Scoped closure](experiments/phase-10/CLOSURE.md) preserves distinct owner-reported
-Windows/CUDA and separately inspected hosted Linux evidence. Physical Linux remains
-deferred; no Phase 11 Windows/CUDA or Linux validation is claimed.
+**Current milestone: Phase 11 implementation published (package 1.3.0, no Phase 11 tag);
+reviewed documentation-only closure awaits publication approval.**
+[Scoped closure](experiments/phase-11/CLOSURE.md) records owner-reported Windows/CUDA
+PASS (293 passed / 12 skips, fresh wheel) and separately inspected hosted Linux CPU
+CI (295 passed / ten MPS skips). Windows used retained tiny models and one fixed
+compact prompt after the original prompt exceeded capacity; it does not reproduce
+the full Mac prompting experiment. Physical Linux remains deferred.
+[Bounded tools](docs/TOOLS.md) separate passing scripted mechanics from model behavior:
+base/SFT/DPO each produced **0/16 valid JSON** in both distinctly scoped exercises.
+Learned tool use remains unestablished. Preserve the original [Mac results](experiments/phase-11/REPORT.md).
+Phase 12 has not begun; it requires an explicit fresh-chat start after closure
+publication and unchanged-tag verification. See [current state](PROJECT_STATE.md).
 [Preference learning](docs/PREFERENCES.md) retains the full Mac experiment's
 [negative results](experiments/phase-10/REPORT.md): ranking 16/32 → 15/32, exact replies
 0/32, and English loss improved versus SFT but still worse than the original base.
