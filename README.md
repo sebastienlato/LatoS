@@ -4,17 +4,23 @@ LatoS is an original, English-first small language model project. Its goal is to
 make the path from documented training data to an evaluated conversational model
 reproducible on modest hardware.
 
-**Current milestone: Phase 12 published; Windows evidence-path correction reviewed locally,
-awaiting publication approval.** External Windows validation stopped at an inventory separator defect
-after 299 passing tests and 13 expected skips; Phase 12 CUDA execution was not reached.
-The [correction](experiments/phase-12/PORTABILITY_CORRECTION.md) standardizes saved
-paths and adds a nested writer/verifier regression. Publication approval and a fresh
-Windows/CUDA retest are required before closure or another experiment.
+**Current milestone: Phase 12 formally closed locally within its bounded scope;
+reviewed closure awaits publication approval.** Correction
+`b222c1fa844289247531b922d5cb18134e99c7b1` is published, package 1.3.0, no Phase 12 tag.
+[Closure evidence](experiments/phase-12/CLOSURE.md) records owner-reported Windows/CUDA
+PASS (301 passed / 13 skips in checkout and fresh wheel) and separately inspected
+hosted Linux CPU CI (303 passed / 11 MPS skips). Physical Linux remains deferred.
 
-The unchanged [experiment](experiments/phase-12/REPORT.md) compares 256 and 512 tokens.
-All 44 previously blocked sessions gained retries, but there was no successful learned
-tool use. Removing the capacity blocker is not learned capability improvement.
-Runtime/defaults/version remain 1.3.0. See [current state](PROJECT_STATE.md).
+The original Mac learned models gained **44 retry transitions** at 512 with no
+successful learned tool use. Windows used an original random synthetic fixture,
+removing **16 initial context blocks** (zero replies → one), not reproducing those
+Mac retries. Its 1,024 CUDA tokens yielded 0/16 JSON and no successful tasks.
+Scripted controls remain mechanics. Capacity relief is not learned capability gain.
+The earlier failed Windows run and all research evidence remain preserved.
+
+No next experiment begins in this chat. After approved closure publication and
+verification, an explicit fresh-chat start is required; [handoff](docs/PHASE13_HANDOFF.md).
+See [current state](PROJECT_STATE.md).
 
 Phase 11 closure is published at `e2d61100a7c0c74d759bdc4ded5ddcda89cb112b`.
 Its [scoped evidence](experiments/phase-11/CLOSURE.md) preserves original full Mac

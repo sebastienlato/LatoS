@@ -1,5 +1,16 @@
 # Changelog
 
+## Phase 12 closure — documentation only (local, approval pending)
+
+- Record owner-reported corrected Windows/CUDA PASS: 301 passed / 13 skips in fresh
+  checkout and wheel; native inventory correction, bounded 512-position CUDA checks.
+- Separate Windows 16 synthetic initial blocks removed from Mac 44 learned retry
+  transitions and scripted controls; no successful learned tool capability.
+- Record inspected correction-commit Linux CPU CI: 303 passed / 11 MPS skips within
+  synthetic tests/workflows. Physical Linux deferred; original failed run preserved.
+- Preserve all research/correction evidence and prepare a fresh-chat Phase 13 handoff.
+  Closure publication approval required; no next experiment selected or started.
+
 ## Phase 12 portability correction — local, approval pending
 
 - Standardize experiment inventory, source and input paths as POSIX-relative keys;

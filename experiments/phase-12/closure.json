@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "phase": 12,
+  "date": "2026-09-23",
+  "status": "formally closed locally within documented bounded scope; closure publication approval pending",
+  "validated_commit": "b222c1fa844289247531b922d5cb18134e99c7b1",
+  "original_experiment_commit": "5b72872a2032f8999aae9c28ff0ab5c704e3d893",
+  "package_version": "1.3.0",
+  "phase12_tag": null,
+  "windows_cuda": {
+    "source": "Owner-reported independent corrected-commit PASS; raw Windows logs/artifact hashes not supplied locally",
+    "status": "PASS within authorized bounded engineering scope",
+    "device": "NVIDIA RTX 4070 SUPER",
+    "fresh_checkout_environments_report_directory_integrity_snapshots": true,
+    "checkout_suite": {
+      "passed": 301,
+      "expected_skips": 13,
+      "failed": 0
+    },
+    "fresh_non_editable_wheel_suite": {
+      "passed": 301,
+      "expected_skips": 13,
+      "failed": 0
+    },
+    "inventory": {
+      "native_windows_nested_roundtrip": "pass",
+      "missing_entries_extra_files_changed_nested_contents": "rejected"
+    },
+    "cuda": {
+      "actual_inference": true,
+      "cache_model_positions_reached": 512,
+      "cache_atol": 1e-05,
+      "cache_rtol": 1e-05,
+      "max_abs_difference_approx": 1.78814e-07,
+      "position_513_and_over_budget": "rejected without silent truncation",
+      "exact_256_512_output_reservation_boundaries": "pass"
+    },
+    "synthetic_exercise": {
+      "model": "repository original random synthetic 512-capacity fixture; same fixed model/config in both conditions",
+      "changed_factor": "session budget 256 to 512 only",
+      "mac_learned_artifacts_and_english_tokenizer": "unavailable; not substituted or evaluated",
+      "sessions": 16,
+      "initially_blocked_at_256": 16,
+      "replies_per_session_256": 0,
+      "replies_per_session_512": 1,
+      "able_to_generate_at_512": 16,
+      "actual_cuda_generated_tokens": 1024,
+      "valid_json": 0,
+      "tool_calls": 0,
+      "normal_task_successes": 0,
+      "normal_tasks": 12,
+      "learned_failure_handling_successes": 0,
+      "failure_cases": 4,
+      "mac_style_learned_retry_transitions_demonstrated": false
+    },
+    "scripted_control": {
+      "normal_task_successes": 12,
+      "normal_tasks": 12,
+      "expected_failures_handled": 4,
+      "failure_cases": 4,
+      "scope": "mechanics only; scripted retry control is not learned evidence"
+    },
+    "unchanged_tracked_files": 232,
+    "preserved_prior_regular_evidence_report_files": 3129,
+    "original_failed_run_preserved": true,
+    "reserved_payloads": {
+      "unchanged": true,
+      "access": "opaque hashes only",
+      "cuda_access_guard_attempts": 0
+    },
+    "other_checks": [
+      "packaging",
+      "lint",
+      "format",
+      "dependencies",
+      "CLI",
+      "builds",
+      "privacy",
+      "general regression"
+    ],
+    "windows_modified_committed_pushed_tagged_uploaded": false,
+    "not_supplied": [
+      "raw logs",
+      "artifact hashes",
+      "full individual skip breakdown",
+      "new driver/runtime versions",
+      "exact external harness/prompt/tokenizer hashes"
+    ]
+  },
+  "previous_windows_failure": {
+    "commit": "5b72872a2032f8999aae9c28ff0ab5c704e3d893",
+    "classification": "inventory path representation, not dependency/CUDA/model quality/missing artifacts",
+    "checkout_suite_passed": 299,
+    "expected_skips": 13,
+    "phase12_cuda_execution": "not reached",
+    "evidence_preserved": true,
+    "details": "portability-correction.json"
+  },
+  "hosted_linux_cpu": {
+    "source": "Direct inspection of exact-commit run/job metadata, full logs, workflow and relevant test bodies",
+    "run_id": 35880051473,
+    "run_url": "https://github.com/sebastienlato/LatoS/actions/runs/35880051473",
+    "job_id": 107245869446,
+    "job_url": "https://github.com/sebastienlato/LatoS/actions/runs/35880051473/job/107245869446",
+    "head_sha": "b222c1fa844289247531b922d5cb18134e99c7b1",
+    "event": "push",
+    "completed_at": "2026-09-23T15:15:37Z",
+    "runner": "hosted Ubuntu 24.04.5 x86-64",
+    "python": "3.14.7",
+    "torch": "2.14.0+cpu",
+    "tests": {
+      "collected": 314,
+      "passed": 303,
+      "skipped": 11,
+      "failed": 0,
+      "seconds": 50.2,
+      "skip_scope": "MPS only",
+      "phase12_cpu_passed": 8,
+      "phase12_mps_skipped": 1
+    },
+    "phase12_scope": [
+      "scripted token-length overflow/replay",
+      "budget-exhaustion propagation",
+      "tiny model capacity rejection",
+      "flat inventory corruption/missing entry rejection",
+      "forged generation-error evidence rejection",
+      "tiny CPU generation beyond 256 compared to direct generator",
+      "native POSIX and simulated Windows two-condition final inventory roundtrip, repeat writing and nested-content corruption rejection"
+    ],
+    "other_scope": [
+      "existing synthetic CPU cache agreement through 512 positions",
+      "existing protocol/scripted controls and tiny CPU regressions",
+      "locked install and lint/format",
+      "CPU diagnostics and debug model",
+      "offline tiny data/tokenizer workflows",
+      "source/wheel builds"
+    ],
+    "dense_fixture_recovery": {
+      "updates": 400,
+      "target_exposures": 131600,
+      "resume_cut_step": 97,
+      "compared_resume_updates": 303,
+      "weights_optimizer_sampler_non_timing_metrics_equal": true,
+      "validation_state_unchanged": true,
+      "scope": "dense fixture recovery, not tool learning or adapter/DPO resume"
+    },
+    "not_demonstrated": [
+      "native Windows or CUDA/MPS",
+      "Windows 16-session synthetic CUDA exercise",
+      "full pinned learned Mac experiment and its 44 transitions",
+      "standalone full Phase 12 experiment/replay",
+      "fresh installed-wheel test suite",
+      "full learned-artifact/reserved-payload preservation audit or CUDA access guard",
+      "physical Linux",
+      "learned language/tool capability"
+    ],
+    "raw_log_sha256": "2834eae725c9bcd7c30efac97e2f84615b7b62575decad05aaea17434cd4ebbd",
+    "metadata_sha256": "29c4c63ba2f008fa561560e3fb0bafdfe090733f9792f473a5ec9a0c1c8b68f9",
+    "workflow_sha256": "5d69c6aa6556da54b0611806d94721603425acea1d3587ebfb6ee73fe9017102"
+  },
+  "original_mac_unchanged": {
+    "models": "pinned learned base/SFT/DPO and English tokenizer",
+    "formerly_context_limited_now_multiple_replies": {
+      "base": 12,
+      "sft": 16,
+      "dpo": 16
+    },
+    "total_learned_retry_transitions": 44,
+    "valid_json_512": {
+      "base": {
+        "numerator": 0,
+        "denominator": 41
+      },
+      "sft": {
+        "numerator": 0,
+        "denominator": 64
+      },
+      "dpo": {
+        "numerator": 0,
+        "denominator": 64
+      }
+    },
+    "per_model_calls": 0,
+    "per_model_normal_successes": 0,
+    "per_model_normal_cases": 12,
+    "per_model_failure_handling_successes": 0,
+    "per_model_failure_cases": 4,
+    "generated_tokens_256": {
+      "base": 595,
+      "sft": 48,
+      "dpo": 51
+    },
+    "generated_tokens_512": {
+      "base": 1834,
+      "sft": 192,
+      "dpo": 195
+    },
+    "research_runs": 2,
+    "tokens_per_run": 2915,
+    "research_rerun_for_correction_or_closure": false,
+    "original_mac_tests_each": 312,
+    "portability_correction_mac_tests_each": 314,
+    "hypotheses": {
+      "H1_more_retry_room": true,
+      "H2_at_least_one_normal_success": false
+    }
+  },
+  "preserved_limits": {
+    "learned_tool_use_useful_instruction_following_learned_long_context_quality_general_cuda_determinism_cross_device_equality_safety_alignment_production_performance": "unestablished",
+    "chat_contract": 1,
+    "merge_atol_rtol": 0.0001,
+    "original_cpu_merge_1e_5_failure_retained": true,
+    "cache_cpu_cuda_atol_rtol": 1e-05,
+    "cache_mps_atol_rtol": 0.0001,
+    "adapter_dpo_optimizer_resume": "unsupported",
+    "dense_recovery": "version-bound",
+    "physical_linux": "deferred",
+    "windows_os_ctrl_c": "unvalidated",
+    "prior_negative_sft_lora_dpo_and_phase11_distinct_scopes": "unchanged"
+  },
+  "local_closure_checks": {
+    "preserved_files": 78433,
+    "reserved_tests": "opaque integrity hashes only; not parsed/evaluated",
+    "runtime_tests_config_lock_workflow_original_evidence_unchanged": true,
+    "new_runtime_suite_training_benchmark_build": false
+  },
+  "owner_gate": "No further experiment in this chat. Stop for closure publication approval, then after approved publication verify exact main/all eleven tags and stop. Next research extension requires explicit fresh-chat start after verified closure publication.",
+  "publication": {
+    "approval": "pending",
+    "remote": "https://github.com/sebastienlato/LatoS.git",
+    "branch": "main",
+    "visibility": "public; unchanged",
+    "tag": null,
+    "release": null,
+    "assets": [],
+    "unchanged_existing_tags": 11
+  }
+}

@@ -36,11 +36,19 @@ budget from 256 to 512 allowed all 44 previously context-limited sessions to ret
 but no model produced valid JSON or a successful tool task. Original weights,
 prompt, tokenizer, chat contract, cases and defaults are unchanged. This tests
 available history space within existing capacity, not general learned long-context
-quality. External Windows validation stopped at an inventory path-portability defect
-before actual Phase 12 CUDA execution. A [local correction](experiments/phase-12/PORTABILITY_CORRECTION.md)
-requires its own publication approval and fresh Windows/CUDA retest. Phase 12 closure
-and further research remain paused; physical Linux remains deferred.
-See [current state](PROJECT_STATE.md).
+quality. The path-portability correction is published at
+`b222c1fa844289247531b922d5cb18134e99c7b1`; no Phase 12 tag. Corrected Windows/CUDA
+PASS is owner-reported within a distinct random synthetic fixture scope: 16 initial
+blocks removed, not the Mac's 44 learned retry transitions. Scripted controls remain
+separate. [Closure](experiments/phase-12/CLOSURE.md) also records inspected hosted
+Linux CPU scope; physical Linux remains deferred. Original failure/evidence preserved.
+
+Phase 12 is formally closed locally within that scope; the reviewed closure commit
+awaits explicit publication approval. **No next experiment in this chat.** After
+approved closure publication verify exact main and all unchanged tags, then stop.
+The [Phase 13 fresh-chat handoff](docs/PHASE13_HANDOFF.md) is preparation only, with
+no extension selected. Verified publication records supersede historical pending
+snapshots. See [current state](PROJECT_STATE.md).
 
 | Phase | Deliverable | Acceptance evidence |
 | --- | --- | --- |
