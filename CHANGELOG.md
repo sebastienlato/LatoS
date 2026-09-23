@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.3.0 — Phase 11 reviewed locally, publication pending
+
+- Add strict local JSON tool calls, bounded addition/lookup, capped multi-turn runner
+  and CLI; keep tokenizer, chat contract and all models unchanged.
+- Measure parsing, arguments, task success and failure handling separately. Scripted
+  controls pass; unchanged base/SFT/DPO show no learned tool use on fixed cases.
+- Retain all responses, context limits, prior evidence, failures and reserved tests.
+  No new dependency, paid service, tag, release or asset upload.
+
 ## Phase 10 closure — documentation only (2026-09-22)
 
 - Record owner-reported Windows RTX 4070 SUPER scoped PASS: 243 passed / 11 skips,

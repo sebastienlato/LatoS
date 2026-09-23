@@ -13,16 +13,18 @@ records supersede the historical tracked pending snapshots. See
 [Phase 9 closure](experiments/phase-9/CLOSURE.md) for bounded Windows/CUDA, separately
 scoped hosted Linux evidence and deferred physical Linux.
 
-Phase 10 implementation is published at
-`abed1adffba562373348477e3958bcd1d5886b11`, package 1.2.0, without a Phase 10 tag.
-[Scoped closure](experiments/phase-10/CLOSURE.md) records owner-reported bounded
-Windows/CUDA PASS and separately inspected hosted Linux CPU CI. The negative full
-Mac DPO result is unchanged. Physical Linux remains deferred. Documentation-only
-closure is reviewed locally and awaits its own explicit publication approval.
-**Do not begin Phase 11 in this chat.** After approved closure publication, verify
-exact main and unchanged tags, then stop; Phase 11 requires explicit fresh-chat
-start using the [handoff](docs/PHASE11_HANDOFF.md). Annotated v1.0.0 remains at
-`10d9ef7bf0618b364f887ff9d279408e3cbc33c9`. See [current state](PROJECT_STATE.md).
+Phase 10 closure is published at `87d744fb8cfd4228c78f35bbd220d2833462e037`.
+Exact remote main and all eleven unchanged tags were verified before the explicit
+fresh-chat Phase 11 start. Verified publication supersedes historical pending snapshots.
+[Scoped closure](experiments/phase-10/CLOSURE.md) retains the negative full Mac DPO
+result, distinct tiny Windows/CUDA PASS, separately inspected hosted Linux CPU scope
+and deferred physical Linux. Annotated v1.0.0 remains unchanged.
+
+Phase 11 is implemented and reviewed locally, package 1.3.0, awaiting explicit
+publication approval. [Tool evidence](experiments/phase-11/REPORT.md) separates passing
+scripted mechanics from negative unchanged-model performance. No learned tool quality
+is established. Stop at the Phase 11 push checkpoint; Phase 12 has not begun.
+See [current state](PROJECT_STATE.md).
 
 | Phase | Deliverable | Acceptance evidence |
 | --- | --- | --- |

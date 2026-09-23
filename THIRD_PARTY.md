@@ -242,3 +242,13 @@ Rafailov, Sharma, Mitchell, Ermon, Manning and Finn,
 (arXiv v3, 2024; consulted 2026-09-22), informs the mathematical objective.
 Implementation, synthetic pairing rule and tests are original LatoS code; no paper
 code or external preference dataset was imported. Dependency pins are unchanged.
+
+## Phase 11 bounded JSON tools
+
+Original LatoS protocol, dispatcher, catalog, prompts and development cases; no
+external tool dataset, model labels, implementation or learned artifact was imported.
+The catalog and synthetic cases are covered by this project's MIT license.
+Python's [3.14 JSON documentation](https://docs.python.org/3.14/library/json.html)
+and [RFC 8259](https://www.rfc-editor.org/info/rfc8259/) were consulted on 2026-09-23
+for parsing behavior, duplicate keys and bounded input. Existing dependency pins
+are unchanged. This custom protocol makes no third-party API compatibility claim.

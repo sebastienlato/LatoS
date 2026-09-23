@@ -191,3 +191,18 @@ time. No search is justified by this mechanics milestone. Adapter optimizer resu
 is deferred explicitly; snapshots are for fresh-optimizer loading or inference.
 No new dependency or service is needed. Phase 9 proposes a source-only main update,
 with no tag, release or learned artifact upload, and stops at owner approval.
+
+## Phase 11 — bound execution and distinguish mechanics from learned behavior
+
+Use two pure local tools and a strict JSON protocol with four assistant turns and
+two executions maximum. Keep all weights/tokenizer/chat serialization unchanged;
+use ordinary user messages for host-supplied tool results under chat contract 1.
+No arbitrary code, external calls, model training, dependency upgrades or new paid
+services. Reject overflow and incomplete generation without executing a pending call.
+
+Measure parsing, envelope and argument schemas, correct call sequences, successful
+execution, final answers and expected failure handling separately. Gold scripts
+are mechanics controls, never model performance. Fixed base/SFT/DPO development
+validation remains negative; all responses and context-limit failures are retained.
+A future training experiment would require its own fixed data/compute hypothesis.
+Phase 11 proposes main only, no tag/release/assets, and stops for explicit approval.

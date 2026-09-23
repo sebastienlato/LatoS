@@ -79,6 +79,16 @@ def main(argv: list[str] | None = None) -> int:
     chat.add_argument("--seed", type=int, default=0)
     chat.add_argument("--no-cache", action="store_true")
     chat.add_argument("--json", action="store_true", help="JSON line events with --prompt")
+    tools = commands.add_parser("tools", help="Bounded local structured tools (experimental)")
+    tool_actions = tools.add_subparsers(dest="tool_action", required=True)
+    tool_actions.add_parser("schema", help="Print the fixed protocol and tool schema")
+    execute_tool = tool_actions.add_parser("execute", help="Validate and run one pure JSON call")
+    execute_tool.add_argument("--call", required=True)
+    tool_chat = tool_actions.add_parser("run", help="Run at most four local assistant turns")
+    tool_chat.add_argument("--model-dir", type=Path, required=True)
+    tool_chat.add_argument("--tokenizer-dir", type=Path, required=True)
+    tool_chat.add_argument("--prompt", required=True)
+    tool_chat.add_argument("--device", choices=("cpu", "mps", "cuda"), default="cpu")
     training = commands.add_parser("train", help="Train or resume a float32 dense model")
     training.add_argument("--manifest", type=Path, required=True)
     training.add_argument("--corpus-dir", type=Path, required=True)
@@ -130,6 +140,33 @@ def main(argv: list[str] | None = None) -> int:
     if args.command is None:
         parser.print_help()
         return 0
+
+    if args.command == "tools":
+        from latos.tools import PROTOCOL, ModelResponder, execute, parse_json, run_session
+
+        try:
+            if args.tool_action == "schema":
+                report = PROTOCOL
+            elif args.tool_action == "execute":
+                report = execute(parse_json(args.call))
+            else:
+                import torch
+
+                from latos.model.storage import bind_tokenizer, load_model
+
+                torch.set_num_threads(1)
+                model = load_model(args.model_dir).to(args.device)
+                codec = bind_tokenizer(model.config, args.tokenizer_dir)
+                report = run_session(args.prompt, ModelResponder(model, codec))
+            print(json.dumps(report, indent=2))
+            if args.tool_action == "run":
+                return 0 if report["stop_reason"] == "final" else 1
+            return 1 if report.get("ok") is False else 0
+        except (OSError, ValueError, TypeError, KeyError, RuntimeError) as exc:
+            print(json.dumps({"ok": False, "error": str(exc)}))
+            return 1
+        except KeyboardInterrupt:
+            return 130
 
     if args.command == "preferences":
         from latos.preference_run import run_preferences

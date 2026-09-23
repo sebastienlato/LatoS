@@ -4,12 +4,16 @@ LatoS is an original, English-first small language model project. Its goal is to
 make the path from documented training data to an evaluated conversational model
 reproducible on modest hardware.
 
-**Current milestone: Phase 10 implementation published (package 1.2.0, no Phase 10 tag);
-reviewed documentation-only closure awaits publication approval.**
-[Scoped closure](experiments/phase-10/CLOSURE.md) records owner-reported Windows/CUDA
-PASS (243 passed / 11 skips; four-update tiny exercise) and separately inspected
-hosted Linux CPU CI (245 passed / 9 MPS-only skips). Physical Linux remains deferred.
-Phase 11 has not begun and requires a fresh-chat start after verified closure publication.
+**Current milestone: Phase 11 bounded structured tools, reviewed locally (package 1.3.0);
+publication awaits explicit approval.** [Tool interface](docs/TOOLS.md) and
+[measured results](experiments/phase-11/REPORT.md) separate protocol correctness from
+model behavior: scripted control succeeds, but unchanged base/SFT/DPO models produce
+no valid structured call in the fixed development evaluation. No learned tool use
+or useful assistant quality is established. Phase 10 closure is published at
+`87d744fb8cfd4228c78f35bbd220d2833462e037`; all eleven tags remain unchanged.
+[Scoped closure](experiments/phase-10/CLOSURE.md) preserves distinct owner-reported
+Windows/CUDA and separately inspected hosted Linux evidence. Physical Linux remains
+deferred; no Phase 11 Windows/CUDA or Linux validation is claimed.
 [Preference learning](docs/PREFERENCES.md) retains the full Mac experiment's
 [negative results](experiments/phase-10/REPORT.md): ranking 16/32 → 15/32, exact replies
 0/32, and English loss improved versus SFT but still worse than the original base.

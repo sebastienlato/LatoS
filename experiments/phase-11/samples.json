@@ -1,0 +1,1694 @@
+{
+  "base": [
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 25,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": ", the _Czarina Catherine_ is the same, and the _Czarina Catherine_ is the same.",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "add-0",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 21,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": ", the _Czarina Catherine_ is the same, and the _Czarina_.",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "add-1",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 35,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": ", the _Czarina Catherine_; and the _Czarina Catherine_; the _Czarina Catherine_;_\u2014I am afraid of it.",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "add-2",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 21,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": ", the _Czarina Catherine_ is the same, and the _Czarina_.",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "add-3",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 25,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": ", the _Czarina Catherine_ is the same, and the _Czarina Catherine_ is the same.",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "lookup-4",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 25,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": ", the _Czarina Catherine_ is the same, and the _Czarina Catherine_ is the same.",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "lookup-5",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 25,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": ", the _Czarina Catherine_ is the same, and the _Czarina Catherine_ is the same.",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "lookup-6",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 64,
+          "generation_stop": "max_new_tokens",
+          "json_valid": false,
+          "raw": ", the Calas, and the Calas, and the Calok, and the Calo Hope, and the Molas, and the Calas, and the Calas, and the Calas, and the Calas, and the Calas, and",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "lookup-7",
+      "stop_reason": "incomplete_generation"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 26,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": ", the Calas, and the Calas, and the Calok, and the Calo.",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "chain-8",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 64,
+          "generation_stop": "max_new_tokens",
+          "json_valid": false,
+          "raw": ", the Calok, and the Calok, and the Calo Hope, and the Calok, and the Calovian, and the Calovian, and the Calas, and the Calas, and the Calovian",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "chain-9",
+      "stop_reason": "incomplete_generation"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 64,
+          "generation_stop": "max_new_tokens",
+          "json_valid": false,
+          "raw": ", the Calok, and the Calok, and the Calok, and the Calovian, and the Calovian, and the Calovian, and the Calovian, and the Calas, and the Calo",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "chain-10",
+      "stop_reason": "incomplete_generation"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 64,
+          "generation_stop": "max_new_tokens",
+          "json_valid": false,
+          "raw": ", the _Czarina_ is the same with the Calo_ of the Calis, and the Calok, and the Calovian, and the Calas, and the Calas, and the Calas, and the Calas, and the C",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "chain-11",
+      "stop_reason": "incomplete_generation"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 44,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": ", the Calok, and the Calas, and the Proters, and the Castle, and the Calas, and the Calas, and the Calo.",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "missing-pine",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 43,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": ", the Calas, and the Calas, and the Calok, and the Castle, and the Calas, and the Calas, and the Calo.",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "missing-birch",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 25,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": ", the _Czarina Catherine_ is the same, and the _Czarina Catherine_ is the same.",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "missing-cedar",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 24,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": ", the _Czarina Catherine_ is the same, and the _Czarina_ is the same.",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "missing-maple",
+      "stop_reason": "context_limit"
+    }
+  ],
+  "sft": [
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 3,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "valley",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "add-0",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 3,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "valley",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "add-1",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 3,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "valley",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "add-2",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 3,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "valley",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "add-3",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 3,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "valley",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "lookup-4",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 3,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "valley",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "lookup-5",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 3,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "valley",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "lookup-6",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 3,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "valley",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "lookup-7",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 3,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "valley",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "chain-8",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 3,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "valley",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "chain-9",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 3,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "valley",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "chain-10",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 3,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "valley",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "chain-11",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 3,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "valley",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "missing-pine",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 3,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "valley",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "missing-birch",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 3,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "valley",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "missing-cedar",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 3,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "valley",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "missing-maple",
+      "stop_reason": "context_limit"
+    }
+  ],
+  "dpo": [
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 4,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "silver",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "add-0",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 3,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "valley",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "add-1",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 3,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "valley",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "add-2",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 4,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "silver",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "add-3",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 3,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "valley",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "lookup-4",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 3,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "valley",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "lookup-5",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 3,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "valley",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "lookup-6",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 3,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "valley",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "lookup-7",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 3,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "valley",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "chain-8",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 3,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "valley",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "chain-9",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 3,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "valley",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "chain-10",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 3,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "valley",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "chain-11",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 4,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "silver",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "missing-pine",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 3,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "valley",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "missing-birch",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 3,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "valley",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "missing-cedar",
+      "stop_reason": "context_limit"
+    },
+    {
+      "calls": 0,
+      "events": [
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": false,
+          "generated_tokens": 3,
+          "generation_stop": "eos",
+          "json_valid": false,
+          "raw": "valley",
+          "raw_truncated": false,
+          "rejection": "invalid_json",
+          "result": null
+        }
+      ],
+      "final": null,
+      "id": "missing-maple",
+      "stop_reason": "context_limit"
+    }
+  ],
+  "scripted": [
+    {
+      "calls": 1,
+      "events": [
+        {
+          "arguments_valid": true,
+          "call": {
+            "args": {
+              "a": 2,
+              "b": 3
+            },
+            "tool": "add"
+          },
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"tool\":\"add\",\"args\":{\"a\":2,\"b\":3}}",
+          "raw_truncated": false,
+          "result": {
+            "ok": true,
+            "value": 5
+          }
+        },
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"final\":\"5\"}",
+          "raw_truncated": false,
+          "result": null
+        }
+      ],
+      "final": {
+        "final": "5"
+      },
+      "id": "add-0",
+      "stop_reason": "final"
+    },
+    {
+      "calls": 1,
+      "events": [
+        {
+          "arguments_valid": true,
+          "call": {
+            "args": {
+              "a": -8,
+              "b": 5
+            },
+            "tool": "add"
+          },
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"tool\":\"add\",\"args\":{\"a\":-8,\"b\":5}}",
+          "raw_truncated": false,
+          "result": {
+            "ok": true,
+            "value": -3
+          }
+        },
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"final\":\"-3\"}",
+          "raw_truncated": false,
+          "result": null
+        }
+      ],
+      "final": {
+        "final": "-3"
+      },
+      "id": "add-1",
+      "stop_reason": "final"
+    },
+    {
+      "calls": 1,
+      "events": [
+        {
+          "arguments_valid": true,
+          "call": {
+            "args": {
+              "a": 0,
+              "b": 0
+            },
+            "tool": "add"
+          },
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"tool\":\"add\",\"args\":{\"a\":0,\"b\":0}}",
+          "raw_truncated": false,
+          "result": {
+            "ok": true,
+            "value": 0
+          }
+        },
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"final\":\"0\"}",
+          "raw_truncated": false,
+          "result": null
+        }
+      ],
+      "final": {
+        "final": "0"
+      },
+      "id": "add-2",
+      "stop_reason": "final"
+    },
+    {
+      "calls": 1,
+      "events": [
+        {
+          "arguments_valid": true,
+          "call": {
+            "args": {
+              "a": 1000,
+              "b": -1000
+            },
+            "tool": "add"
+          },
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"tool\":\"add\",\"args\":{\"a\":1000,\"b\":-1000}}",
+          "raw_truncated": false,
+          "result": {
+            "ok": true,
+            "value": 0
+          }
+        },
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"final\":\"0\"}",
+          "raw_truncated": false,
+          "result": null
+        }
+      ],
+      "final": {
+        "final": "0"
+      },
+      "id": "add-3",
+      "stop_reason": "final"
+    },
+    {
+      "calls": 1,
+      "events": [
+        {
+          "arguments_valid": true,
+          "call": {
+            "args": {
+              "key": "oak"
+            },
+            "tool": "lookup"
+          },
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"tool\":\"lookup\",\"args\":{\"key\":\"oak\"}}",
+          "raw_truncated": false,
+          "result": {
+            "ok": true,
+            "value": 7
+          }
+        },
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"final\":\"7\"}",
+          "raw_truncated": false,
+          "result": null
+        }
+      ],
+      "final": {
+        "final": "7"
+      },
+      "id": "lookup-4",
+      "stop_reason": "final"
+    },
+    {
+      "calls": 1,
+      "events": [
+        {
+          "arguments_valid": true,
+          "call": {
+            "args": {
+              "key": "elm"
+            },
+            "tool": "lookup"
+          },
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"tool\":\"lookup\",\"args\":{\"key\":\"elm\"}}",
+          "raw_truncated": false,
+          "result": {
+            "ok": true,
+            "value": 11
+          }
+        },
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"final\":\"11\"}",
+          "raw_truncated": false,
+          "result": null
+        }
+      ],
+      "final": {
+        "final": "11"
+      },
+      "id": "lookup-5",
+      "stop_reason": "final"
+    },
+    {
+      "calls": 1,
+      "events": [
+        {
+          "arguments_valid": true,
+          "call": {
+            "args": {
+              "key": "ash"
+            },
+            "tool": "lookup"
+          },
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"tool\":\"lookup\",\"args\":{\"key\":\"ash\"}}",
+          "raw_truncated": false,
+          "result": {
+            "ok": true,
+            "value": 13
+          }
+        },
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"final\":\"13\"}",
+          "raw_truncated": false,
+          "result": null
+        }
+      ],
+      "final": {
+        "final": "13"
+      },
+      "id": "lookup-6",
+      "stop_reason": "final"
+    },
+    {
+      "calls": 1,
+      "events": [
+        {
+          "arguments_valid": true,
+          "call": {
+            "args": {
+              "key": "oak"
+            },
+            "tool": "lookup"
+          },
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"tool\":\"lookup\",\"args\":{\"key\":\"oak\"}}",
+          "raw_truncated": false,
+          "result": {
+            "ok": true,
+            "value": 7
+          }
+        },
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"final\":\"7\"}",
+          "raw_truncated": false,
+          "result": null
+        }
+      ],
+      "final": {
+        "final": "7"
+      },
+      "id": "lookup-7",
+      "stop_reason": "final"
+    },
+    {
+      "calls": 2,
+      "events": [
+        {
+          "arguments_valid": true,
+          "call": {
+            "args": {
+              "key": "oak"
+            },
+            "tool": "lookup"
+          },
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"tool\":\"lookup\",\"args\":{\"key\":\"oak\"}}",
+          "raw_truncated": false,
+          "result": {
+            "ok": true,
+            "value": 7
+          }
+        },
+        {
+          "arguments_valid": true,
+          "call": {
+            "args": {
+              "a": 7,
+              "b": 5
+            },
+            "tool": "add"
+          },
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"tool\":\"add\",\"args\":{\"a\":7,\"b\":5}}",
+          "raw_truncated": false,
+          "result": {
+            "ok": true,
+            "value": 12
+          }
+        },
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"final\":\"12\"}",
+          "raw_truncated": false,
+          "result": null
+        }
+      ],
+      "final": {
+        "final": "12"
+      },
+      "id": "chain-8",
+      "stop_reason": "final"
+    },
+    {
+      "calls": 2,
+      "events": [
+        {
+          "arguments_valid": true,
+          "call": {
+            "args": {
+              "key": "elm"
+            },
+            "tool": "lookup"
+          },
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"tool\":\"lookup\",\"args\":{\"key\":\"elm\"}}",
+          "raw_truncated": false,
+          "result": {
+            "ok": true,
+            "value": 11
+          }
+        },
+        {
+          "arguments_valid": true,
+          "call": {
+            "args": {
+              "a": 11,
+              "b": -4
+            },
+            "tool": "add"
+          },
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"tool\":\"add\",\"args\":{\"a\":11,\"b\":-4}}",
+          "raw_truncated": false,
+          "result": {
+            "ok": true,
+            "value": 7
+          }
+        },
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"final\":\"7\"}",
+          "raw_truncated": false,
+          "result": null
+        }
+      ],
+      "final": {
+        "final": "7"
+      },
+      "id": "chain-9",
+      "stop_reason": "final"
+    },
+    {
+      "calls": 2,
+      "events": [
+        {
+          "arguments_valid": true,
+          "call": {
+            "args": {
+              "key": "ash"
+            },
+            "tool": "lookup"
+          },
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"tool\":\"lookup\",\"args\":{\"key\":\"ash\"}}",
+          "raw_truncated": false,
+          "result": {
+            "ok": true,
+            "value": 13
+          }
+        },
+        {
+          "arguments_valid": true,
+          "call": {
+            "args": {
+              "a": 13,
+              "b": 9
+            },
+            "tool": "add"
+          },
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"tool\":\"add\",\"args\":{\"a\":13,\"b\":9}}",
+          "raw_truncated": false,
+          "result": {
+            "ok": true,
+            "value": 22
+          }
+        },
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"final\":\"22\"}",
+          "raw_truncated": false,
+          "result": null
+        }
+      ],
+      "final": {
+        "final": "22"
+      },
+      "id": "chain-10",
+      "stop_reason": "final"
+    },
+    {
+      "calls": 2,
+      "events": [
+        {
+          "arguments_valid": true,
+          "call": {
+            "args": {
+              "key": "oak"
+            },
+            "tool": "lookup"
+          },
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"tool\":\"lookup\",\"args\":{\"key\":\"oak\"}}",
+          "raw_truncated": false,
+          "result": {
+            "ok": true,
+            "value": 7
+          }
+        },
+        {
+          "arguments_valid": true,
+          "call": {
+            "args": {
+              "a": 7,
+              "b": -10
+            },
+            "tool": "add"
+          },
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"tool\":\"add\",\"args\":{\"a\":7,\"b\":-10}}",
+          "raw_truncated": false,
+          "result": {
+            "ok": true,
+            "value": -3
+          }
+        },
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"final\":\"-3\"}",
+          "raw_truncated": false,
+          "result": null
+        }
+      ],
+      "final": {
+        "final": "-3"
+      },
+      "id": "chain-11",
+      "stop_reason": "final"
+    },
+    {
+      "calls": 1,
+      "events": [
+        {
+          "arguments_valid": true,
+          "call": {
+            "args": {
+              "key": "pine"
+            },
+            "tool": "lookup"
+          },
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"tool\":\"lookup\",\"args\":{\"key\":\"pine\"}}",
+          "raw_truncated": false,
+          "result": {
+            "error": "not_found",
+            "ok": false
+          }
+        },
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"error\":\"not_found\"}",
+          "raw_truncated": false,
+          "result": null
+        }
+      ],
+      "final": {
+        "error": "not_found"
+      },
+      "id": "missing-pine",
+      "stop_reason": "reported_error"
+    },
+    {
+      "calls": 1,
+      "events": [
+        {
+          "arguments_valid": true,
+          "call": {
+            "args": {
+              "key": "birch"
+            },
+            "tool": "lookup"
+          },
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"tool\":\"lookup\",\"args\":{\"key\":\"birch\"}}",
+          "raw_truncated": false,
+          "result": {
+            "error": "not_found",
+            "ok": false
+          }
+        },
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"error\":\"not_found\"}",
+          "raw_truncated": false,
+          "result": null
+        }
+      ],
+      "final": {
+        "error": "not_found"
+      },
+      "id": "missing-birch",
+      "stop_reason": "reported_error"
+    },
+    {
+      "calls": 1,
+      "events": [
+        {
+          "arguments_valid": true,
+          "call": {
+            "args": {
+              "key": "cedar"
+            },
+            "tool": "lookup"
+          },
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"tool\":\"lookup\",\"args\":{\"key\":\"cedar\"}}",
+          "raw_truncated": false,
+          "result": {
+            "error": "not_found",
+            "ok": false
+          }
+        },
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"error\":\"not_found\"}",
+          "raw_truncated": false,
+          "result": null
+        }
+      ],
+      "final": {
+        "error": "not_found"
+      },
+      "id": "missing-cedar",
+      "stop_reason": "reported_error"
+    },
+    {
+      "calls": 1,
+      "events": [
+        {
+          "arguments_valid": true,
+          "call": {
+            "args": {
+              "key": "maple"
+            },
+            "tool": "lookup"
+          },
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"tool\":\"lookup\",\"args\":{\"key\":\"maple\"}}",
+          "raw_truncated": false,
+          "result": {
+            "error": "not_found",
+            "ok": false
+          }
+        },
+        {
+          "arguments_valid": false,
+          "call": null,
+          "envelope_valid": true,
+          "generated_tokens": 0,
+          "generation_stop": "eos",
+          "json_valid": true,
+          "raw": "{\"error\":\"not_found\"}",
+          "raw_truncated": false,
+          "result": null
+        }
+      ],
+      "final": {
+        "error": "not_found"
+      },
+      "id": "missing-maple",
+      "stop_reason": "reported_error"
+    }
+  ]
+}

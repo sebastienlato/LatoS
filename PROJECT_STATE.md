@@ -1,28 +1,37 @@
 # Project state
 
-Updated: 2026-09-22.
+Updated: 2026-09-23.
 
 ## Active checkpoint
 
-**Phase 10 is formally closed locally within its documented scope; the reviewed
-closure commit awaits explicit publication approval. Do not begin Phase 11 in this
-chat.** The owner-supplied independent Windows/CUDA PASS satisfies the external
-validation wait. After approved closure publication, verify exact remote main and
-unchanged tags, then stop. Phase 11 needs an explicit fresh-chat start after verification.
+**Phase 11 is implemented, validated and separately reviewed locally; stop for
+explicit publication approval. Phase 12 has not begun.** Package 1.3.0, no new tag.
+The owner explicitly started this fresh chat after remote main was verified at
+Phase 10 closure `87d744fb8cfd4228c78f35bbd220d2833462e037`. All eleven local/remote
+tag objects and peeled targets match the verified closure publication record.
+v1.0.0 remains at `10d9ef7bf0618b364f887ff9d279408e3cbc33c9`, object
+`1acb6b94f0adfbca85014ad6601dbfc716e3c651`. Verified publication supersedes old
+tracked pending snapshots. No Phase 11 remote write has occurred.
 
-Phase 10 implementation is published at `abed1adffba562373348477e3958bcd1d5886b11`,
-package 1.2.0, **without a Phase 10 tag**. Verified publication supersedes the original
-tracked pending snapshot. All eleven existing tags remain fixed; annotated v1.0.0
-at `10d9ef7bf0618b364f887ff9d279408e3cbc33c9`, object
-`1acb6b94f0adfbca85014ad6601dbfc716e3c651`.
+Delivered [bounded tools](docs/TOOLS.md): strict JSON, pure addition/lookup, four
+assistant turns and two executions maximum, explicit errors/cancellation/overflow,
+unchanged shared chat contract 1. [Report](experiments/phase-11/REPORT.md),
+[results](experiments/phase-11/results.json), [validation](experiments/phase-11/validation.json)
+and [separate review](experiments/phase-11/REVIEW.md) retain all evidence.
 
-Delivered closure: [report](experiments/phase-10/CLOSURE.md),
-[structured evidence](experiments/phase-10/closure.json),
-[separate review](experiments/phase-10/CLOSURE_REVIEW.md), and
-[Phase 11 handoff](docs/PHASE11_HANDOFF.md). Original Phase 10 report, results,
-samples, verification, inventories, first attempt and checker failure are unchanged.
+Fixed Mac MPS evaluation of unchanged base/SFT/DPO: each **0/16 valid JSON, 0/20
+correct required calls, 0/12 normal tasks, 0/4 expected failures handled**. No calls
+were proposed/executed; conditional argument/execution rates are undefined, not
+perfect. Scripted control passes 12/12 tasks and 4/4 failures; that is mechanics only.
+All learned sessions emitted one invalid reply; retry context exhaustion occurred
+in 12 base and all 16 SFT/DPO sessions, with four incomplete base generations.
+No learned multi-turn tool execution or useful tool quality is established.
+Development and isolated fresh non-editable wheel suites each passed **305 tests**;
+independent evidence recount verified 64 sessions and 49 inventory files.
+No training, dependency upgrade, corpus evaluation or paid service. Full local
+preservation includes 59,873 files; reserved tests opaque-hashed only.
 
-## Evidence and preserved limits
+## Prior Phase 10 evidence and preserved limits
 
 - Full Mac DPO remains **negative**: 100 updates / 400 pairs / 2,498 final-response
   targets. Preference loss 0.693147 → 0.718657; ranking **16/32 → 15/32**; exact replies
@@ -62,16 +71,15 @@ samples, verification, inventories, first attempt and checker failure are unchan
 
 ## Pending publication and next action
 
-- Commit message: `Close Phase 10 with scoped external validation`.
-- Existing remote: `https://github.com/sebastienlato/LatoS.git`, **main**, public unchanged.
-- Documentation/evidence only; package/runtime/tests/configs/lock/workflow/original
-  evidence unchanged. No new runtime tests, training, benchmarks or builds for closure.
-  JSON, links, preservation, source identity, complete diff and privacy checks passed.
-- **Stop for explicit Phase 10 closure publication approval.** Exact commit is in the
-  approval request and `.private/phase10-closure-publication.json` once prepared.
-- No tag, release, asset upload, visibility change or Phase 11 development. After
-  approved publication and verification, stop and provide the prepared fresh-chat
-  prompt; closure approval does not override the current gate.
+- Commit message: `Add bounded structured tools and separate capability evaluation`.
+- Existing remote: `https://github.com/sebastienlato/LatoS.git`, destination **main**;
+  public visibility unchanged. No tag, release, asset upload or remote backup.
+- Exact reviewed commit is supplied in the approval request and ignored local
+  `.private/phase11-publication.json`; approval is pending, no push performed.
+- Full development and isolated fresh non-editable wheel suites, independent saved
+  evidence recount, packaging, preservation and privacy checks are in validation.json.
+- **Stop and ask: Push Phase 11 to GitHub?** Publication approval covers this exact
+  phase state only. Retain the reviewed checkpoint while awaiting that approval.
 
-Local uv: `.private/tools/bin/uv`; runtime `.venv`. Ignored learned artifacts are
-local inputs/outputs, not remote backups. See the handoff for preserved inputs.
+Local uv: `.private/tools/bin/uv`; runtime `.venv`. Learned artifacts and raw runs
+stay ignored and local; a repository clone is not their backup.
