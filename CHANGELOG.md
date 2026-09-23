@@ -1,5 +1,16 @@
 # Changelog
 
+## Phase 14 — Evaluation Foundation (local, approval pending)
+
+- Add versioned native evaluation, fixed generation/instruction cases, pinned ARC
+  likelihood scoring, matched-text BPB, durable raw records and regression gates.
+- Retrospectively measure five unchanged historical models; all score 0/96 on new
+  instructions. Preserve negative historical evidence and both reserved tests.
+- Add optional PyArrow 25.0.1 and evaluation-only dataset manifests; no training,
+  architecture/tokenizer changes or new release. Package remains 1.3.0.
+- Phase 13 was published and verified at
+  `565bf08fbd8aaa360056fc670b08b8879be9312c`; its pending snapshot below is historical.
+
 ## Phase 13 — Repository Repositioning & Roadmap 2.0 (local, approval pending)
 
 - Rebuild the README as a landing page, remove obsolete identity wording from active

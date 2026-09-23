@@ -1,0 +1,1805 @@
+{
+  "comparisons": {
+    "dpo": {
+      "candidate_weights": "5ec902472e6e04ca5c97475d44a30818729a2fc5e8592544642767af83ae9ca1",
+      "checks": {
+        "document_bpb_ratio:alice-wonderland": {
+          "pass": false,
+          "relation": "<=",
+          "threshold": 1.15,
+          "value": 1.1665612242305567
+        },
+        "document_bpb_ratio:war-worlds": {
+          "pass": false,
+          "relation": "<=",
+          "threshold": 1.15,
+          "value": 1.1600639008418447
+        },
+        "external_byte_drop:ARC-Challenge": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.03,
+          "value": -0.05685618729096989
+        },
+        "external_byte_drop:ARC-Easy": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.03,
+          "value": -0.0035087719298245723
+        },
+        "external_raw_drop:ARC-Challenge": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.03,
+          "value": 0.0
+        },
+        "external_raw_drop:ARC-Easy": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.03,
+          "value": -0.003508771929824517
+        },
+        "generation_empty": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.05,
+          "value": 0.0
+        },
+        "generation_repeated_trigram_fraction": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.25,
+          "value": 0.1332532610599742
+        },
+        "generation_repetition_increase": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.1,
+          "value": -0.2549335869168521
+        },
+        "instruction_category:constrained": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.4,
+          "value": 0.0
+        },
+        "instruction_category:extraction": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.4,
+          "value": 0.0
+        },
+        "instruction_category:multistep": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.4,
+          "value": 0.0
+        },
+        "instruction_category:qa": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.4,
+          "value": 0.0
+        },
+        "instruction_category:structured": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.4,
+          "value": 0.0
+        },
+        "instruction_category:transformation": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.4,
+          "value": 0.0
+        },
+        "instruction_gain": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.3,
+          "value": 0.0
+        },
+        "instruction_min": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.6,
+          "value": 0.0
+        },
+        "matched_bpb_ratio": {
+          "pass": false,
+          "relation": "<=",
+          "threshold": 1.1,
+          "value": 1.1617460627630476
+        }
+      },
+      "paired": {
+        "ARC-Challenge": {
+          "bootstrap95": [
+            -0.04013377926421405,
+            0.043478260869565216
+          ],
+          "clusters": 299,
+          "delta": 0.0,
+          "samples": 2000,
+          "seed": 140
+        },
+        "ARC-Easy": {
+          "bootstrap95": [
+            -0.02456140350877193,
+            0.03508771929824561
+          ],
+          "clusters": 570,
+          "delta": 0.0035087719298245615,
+          "samples": 2000,
+          "seed": 140
+        },
+        "instructions": {
+          "bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "clusters": 24,
+          "delta": 0.0,
+          "samples": 2000,
+          "seed": 140
+        }
+      },
+      "passed": false,
+      "protocol_sha256": "a83477dba5fb9ff26661384621e0bf07748dd36cb83069aa9fe9093865121b38",
+      "reference_weights": "f82ed3b21aeacad6d8b3a88c9100cbc83b8f15af1ba9c17a4fa4dccc59b2befa",
+      "scope": "numeric gates only; contamination, selection and final-access audit also required",
+      "stage": "assistant",
+      "token_perplexity_comparable": true
+    },
+    "full-control": {
+      "candidate_weights": "84f70f8bd08829ecc336017b1e39041eca67cfd390755e9e55d9cba1ffb79f94",
+      "checks": {
+        "document_bpb_ratio:alice-wonderland": {
+          "pass": false,
+          "relation": "<=",
+          "threshold": 1.15,
+          "value": 1.1734449914671903
+        },
+        "document_bpb_ratio:war-worlds": {
+          "pass": false,
+          "relation": "<=",
+          "threshold": 1.15,
+          "value": 1.1654021211130636
+        },
+        "external_byte_drop:ARC-Challenge": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.03,
+          "value": -0.0668896321070234
+        },
+        "external_byte_drop:ARC-Easy": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.03,
+          "value": -0.007017543859649145
+        },
+        "external_raw_drop:ARC-Challenge": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.03,
+          "value": -0.006688963210702337
+        },
+        "external_raw_drop:ARC-Easy": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.03,
+          "value": 0.0035087719298245723
+        },
+        "generation_empty": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.05,
+          "value": 0.041666666666666664
+        },
+        "generation_repeated_trigram_fraction": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.25,
+          "value": 0.05401391866398133
+        },
+        "generation_repetition_increase": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.1,
+          "value": -0.334172929312845
+        },
+        "instruction_category:constrained": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.4,
+          "value": 0.0
+        },
+        "instruction_category:extraction": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.4,
+          "value": 0.0
+        },
+        "instruction_category:multistep": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.4,
+          "value": 0.0
+        },
+        "instruction_category:qa": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.4,
+          "value": 0.0
+        },
+        "instruction_category:structured": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.4,
+          "value": 0.0
+        },
+        "instruction_category:transformation": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.4,
+          "value": 0.0
+        },
+        "instruction_gain": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.3,
+          "value": 0.0
+        },
+        "instruction_min": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.6,
+          "value": 0.0
+        },
+        "matched_bpb_ratio": {
+          "pass": false,
+          "relation": "<=",
+          "threshold": 1.1,
+          "value": 1.1674844263082134
+        }
+      },
+      "paired": {
+        "ARC-Challenge": {
+          "bootstrap95": [
+            -0.03678929765886288,
+            0.05016722408026756
+          ],
+          "clusters": 299,
+          "delta": 0.006688963210702341,
+          "samples": 2000,
+          "seed": 140
+        },
+        "ARC-Easy": {
+          "bootstrap95": [
+            -0.031578947368421054,
+            0.02631578947368421
+          ],
+          "clusters": 570,
+          "delta": -0.0035087719298245615,
+          "samples": 2000,
+          "seed": 140
+        },
+        "instructions": {
+          "bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "clusters": 24,
+          "delta": 0.0,
+          "samples": 2000,
+          "seed": 140
+        }
+      },
+      "passed": false,
+      "protocol_sha256": "a83477dba5fb9ff26661384621e0bf07748dd36cb83069aa9fe9093865121b38",
+      "reference_weights": "f82ed3b21aeacad6d8b3a88c9100cbc83b8f15af1ba9c17a4fa4dccc59b2befa",
+      "scope": "numeric gates only; contamination, selection and final-access audit also required",
+      "stage": "assistant",
+      "token_perplexity_comparable": true
+    },
+    "lora-merged": {
+      "candidate_weights": "faaf9ec7cd3de329ecc49d82fe08a38e6e72ec4bc8965b29a349bb751526ff18",
+      "checks": {
+        "document_bpb_ratio:alice-wonderland": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 1.15,
+          "value": 1.0098129545212746
+        },
+        "document_bpb_ratio:war-worlds": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 1.15,
+          "value": 1.0092749795487028
+        },
+        "external_byte_drop:ARC-Challenge": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.03,
+          "value": -0.01672240802675587
+        },
+        "external_byte_drop:ARC-Easy": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.03,
+          "value": -0.012280701754385975
+        },
+        "external_raw_drop:ARC-Challenge": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.03,
+          "value": 0.010033444816053505
+        },
+        "external_raw_drop:ARC-Easy": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.03,
+          "value": 0.007017543859649145
+        },
+        "generation_empty": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.05,
+          "value": 0.0
+        },
+        "generation_repeated_trigram_fraction": {
+          "pass": false,
+          "relation": "<=",
+          "threshold": 0.25,
+          "value": 0.45324078773740184
+        },
+        "generation_repetition_increase": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.1,
+          "value": 0.06505393976057555
+        },
+        "instruction_category:constrained": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.4,
+          "value": 0.0
+        },
+        "instruction_category:extraction": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.4,
+          "value": 0.0
+        },
+        "instruction_category:multistep": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.4,
+          "value": 0.0
+        },
+        "instruction_category:qa": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.4,
+          "value": 0.0
+        },
+        "instruction_category:structured": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.4,
+          "value": 0.0
+        },
+        "instruction_category:transformation": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.4,
+          "value": 0.0
+        },
+        "instruction_gain": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.3,
+          "value": 0.0
+        },
+        "instruction_min": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.6,
+          "value": 0.0
+        },
+        "matched_bpb_ratio": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 1.1,
+          "value": 1.0094142616744766
+        }
+      },
+      "paired": {
+        "ARC-Challenge": {
+          "bootstrap95": [
+            -0.04013377926421405,
+            0.016722408026755852
+          ],
+          "clusters": 299,
+          "delta": -0.010033444816053512,
+          "samples": 2000,
+          "seed": 140
+        },
+        "ARC-Easy": {
+          "bootstrap95": [
+            -0.02982456140350877,
+            0.014035087719298246
+          ],
+          "clusters": 570,
+          "delta": -0.007017543859649123,
+          "samples": 2000,
+          "seed": 140
+        },
+        "instructions": {
+          "bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "clusters": 24,
+          "delta": 0.0,
+          "samples": 2000,
+          "seed": 140
+        }
+      },
+      "passed": false,
+      "protocol_sha256": "a83477dba5fb9ff26661384621e0bf07748dd36cb83069aa9fe9093865121b38",
+      "reference_weights": "f82ed3b21aeacad6d8b3a88c9100cbc83b8f15af1ba9c17a4fa4dccc59b2befa",
+      "scope": "numeric gates only; contamination, selection and final-access audit also required",
+      "stage": "assistant",
+      "token_perplexity_comparable": true
+    },
+    "sft": {
+      "candidate_weights": "62b890214e5544292cc54b725a4e505730fca0d501b3337cdd3f051a622d09ae",
+      "checks": {
+        "document_bpb_ratio:alice-wonderland": {
+          "pass": false,
+          "relation": "<=",
+          "threshold": 1.15,
+          "value": 1.1734501459763698
+        },
+        "document_bpb_ratio:war-worlds": {
+          "pass": false,
+          "relation": "<=",
+          "threshold": 1.15,
+          "value": 1.1654055821507316
+        },
+        "external_byte_drop:ARC-Challenge": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.03,
+          "value": -0.0668896321070234
+        },
+        "external_byte_drop:ARC-Easy": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.03,
+          "value": -0.007017543859649145
+        },
+        "external_raw_drop:ARC-Challenge": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.03,
+          "value": -0.006688963210702337
+        },
+        "external_raw_drop:ARC-Easy": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.03,
+          "value": 0.0035087719298245723
+        },
+        "generation_empty": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.05,
+          "value": 0.041666666666666664
+        },
+        "generation_repeated_trigram_fraction": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.25,
+          "value": 0.05401391866398133
+        },
+        "generation_repetition_increase": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.1,
+          "value": -0.334172929312845
+        },
+        "instruction_category:constrained": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.4,
+          "value": 0.0
+        },
+        "instruction_category:extraction": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.4,
+          "value": 0.0
+        },
+        "instruction_category:multistep": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.4,
+          "value": 0.0
+        },
+        "instruction_category:qa": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.4,
+          "value": 0.0
+        },
+        "instruction_category:structured": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.4,
+          "value": 0.0
+        },
+        "instruction_category:transformation": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.4,
+          "value": 0.0
+        },
+        "instruction_gain": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.3,
+          "value": 0.0
+        },
+        "instruction_min": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.6,
+          "value": 0.0
+        },
+        "matched_bpb_ratio": {
+          "pass": false,
+          "relation": "<=",
+          "threshold": 1.1,
+          "value": 1.167488325786932
+        }
+      },
+      "paired": {
+        "ARC-Challenge": {
+          "bootstrap95": [
+            -0.03678929765886288,
+            0.05016722408026756
+          ],
+          "clusters": 299,
+          "delta": 0.006688963210702341,
+          "samples": 2000,
+          "seed": 140
+        },
+        "ARC-Easy": {
+          "bootstrap95": [
+            -0.031578947368421054,
+            0.02631578947368421
+          ],
+          "clusters": 570,
+          "delta": -0.0035087719298245615,
+          "samples": 2000,
+          "seed": 140
+        },
+        "instructions": {
+          "bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "clusters": 24,
+          "delta": 0.0,
+          "samples": 2000,
+          "seed": 140
+        }
+      },
+      "passed": false,
+      "protocol_sha256": "a83477dba5fb9ff26661384621e0bf07748dd36cb83069aa9fe9093865121b38",
+      "reference_weights": "f82ed3b21aeacad6d8b3a88c9100cbc83b8f15af1ba9c17a4fa4dccc59b2befa",
+      "scope": "numeric gates only; contamination, selection and final-access audit also required",
+      "stage": "assistant",
+      "token_perplexity_comparable": true
+    }
+  },
+  "kind": "Phase 14 retrospective measurements, not original experiment scores",
+  "repeatability": {
+    "generated_ids_and_predictions": "exact",
+    "nll_atol": 1e-05,
+    "nll_rtol": 1e-06,
+    "passed": true,
+    "scope": "base, same host/backend, two separate processes; raw rows and summaries excluding timings"
+  },
+  "reserved_model_evaluations": 0,
+  "runs": {
+    "base": {
+      "device": "mps",
+      "inventory_sha256": "a2d7d1ae14ffb019412ce96cefe265179d1fcd8b18a08f58119564cecbaa5aac",
+      "source_sha256": "9215c67a49cd0e333f86d00a81669bbcf8a693be2f97b868538f6b409b0d114e",
+      "weights_sha256": "f82ed3b21aeacad6d8b3a88c9100cbc83b8f15af1ba9c17a4fa4dccc59b2befa"
+    },
+    "base-repeat": {
+      "device": "mps",
+      "inventory_sha256": "2bc9f5ad2c6d8d9bbbf17935ad6f5407ff604afc6eaa862a238d721b350578a8",
+      "source_sha256": "9215c67a49cd0e333f86d00a81669bbcf8a693be2f97b868538f6b409b0d114e",
+      "weights_sha256": "f82ed3b21aeacad6d8b3a88c9100cbc83b8f15af1ba9c17a4fa4dccc59b2befa"
+    },
+    "dpo": {
+      "device": "mps",
+      "inventory_sha256": "ad8ef481c98c6dacee9600d283a39534acdc14c8914de9c87cacfbbb7a3706a6",
+      "source_sha256": "9215c67a49cd0e333f86d00a81669bbcf8a693be2f97b868538f6b409b0d114e",
+      "weights_sha256": "5ec902472e6e04ca5c97475d44a30818729a2fc5e8592544642767af83ae9ca1"
+    },
+    "full-control": {
+      "device": "mps",
+      "inventory_sha256": "a80f8def46e5ec2ed1ba9e8310354c292d05ec56ac36e1a122ec8071f7b52da4",
+      "source_sha256": "9215c67a49cd0e333f86d00a81669bbcf8a693be2f97b868538f6b409b0d114e",
+      "weights_sha256": "84f70f8bd08829ecc336017b1e39041eca67cfd390755e9e55d9cba1ffb79f94"
+    },
+    "lora-merged": {
+      "device": "mps",
+      "inventory_sha256": "136739cde17d01233a7be08e67435e655d4252b0a047b27de111df100284cae3",
+      "source_sha256": "9215c67a49cd0e333f86d00a81669bbcf8a693be2f97b868538f6b409b0d114e",
+      "weights_sha256": "faaf9ec7cd3de329ecc49d82fe08a38e6e72ec4bc8965b29a349bb751526ff18"
+    },
+    "sft": {
+      "device": "mps",
+      "inventory_sha256": "cf8e3df9da4659ab25daef0beaa07fc0520cafad045319afd9701fdd36891ed3",
+      "source_sha256": "9215c67a49cd0e333f86d00a81669bbcf8a693be2f97b868538f6b409b0d114e",
+      "weights_sha256": "62b890214e5544292cc54b725a4e505730fca0d501b3337cdd3f051a622d09ae"
+    }
+  },
+  "schema_version": 1,
+  "summaries": {
+    "base": {
+      "external": {
+        "ARC-Challenge": {
+          "byte_normalized": {
+            "accuracy": 0.21739130434782608,
+            "correct": 65,
+            "total": 299,
+            "wilson95": [
+              0.1743828589986342,
+              0.2675693735057626
+            ]
+          },
+          "failures": 0,
+          "first_choice": 0.2140468227424749,
+          "raw": {
+            "accuracy": 0.22073578595317725,
+            "correct": 66,
+            "total": 299,
+            "wilson95": [
+              0.17743304572269955,
+              0.27112330237336113
+            ]
+          },
+          "uniform_chance": 0.25066889632107026
+        },
+        "ARC-Easy": {
+          "byte_normalized": {
+            "accuracy": 0.23684210526315788,
+            "correct": 135,
+            "total": 570,
+            "wilson95": [
+              0.20377443697630832,
+              0.2734330819496817
+            ]
+          },
+          "failures": 0,
+          "first_choice": 0.2771929824561403,
+          "raw": {
+            "accuracy": 0.2754385964912281,
+            "correct": 157,
+            "total": 570,
+            "wilson95": [
+              0.2403597334493017,
+              0.31352401603420976
+            ]
+          },
+          "uniform_chance": 0.2499707602339181
+        }
+      },
+      "generation": {
+        "cases": 24,
+        "empty": 0.0,
+        "eos": 0.20833333333333334,
+        "failures": 0,
+        "repeated_trigram_fraction": 0.3881868479768263,
+        "replacement_character": 0.0,
+        "word_count": 48.166666666666664
+      },
+      "instructions": {
+        "categories": {
+          "constrained": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          },
+          "extraction": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          },
+          "multistep": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          },
+          "qa": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          },
+          "structured": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          },
+          "transformation": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          }
+        },
+        "failures": 0,
+        "overall": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "total": 96,
+          "wilson95": [
+            3.469446951953614e-18,
+            0.038475587857675686
+          ]
+        },
+        "trivial_control_correct": {
+          "constant_yes": 3,
+          "empty": 0,
+          "prompt_echo": 0
+        }
+      },
+      "legacy": {
+        "documents": {
+          "alice-wonderland": {
+            "nats_per_token": 4.497952285429344,
+            "nll": 137970.1884032597,
+            "perplexity": 89.83299050738557,
+            "targets": 30674
+          },
+          "war-worlds": {
+            "nats_per_token": 4.820657413672886,
+            "nll": 389745.3312380392,
+            "perplexity": 124.04661391974038,
+            "targets": 80849
+          }
+        },
+        "nats_per_token": 4.731898528924964,
+        "nll": 527715.5196412988,
+        "perplexity": 113.51086156207208,
+        "targets": 111523
+      },
+      "matched": {
+        "bits_per_byte": 1.8729437822095947,
+        "bytes": 438128,
+        "documents": {
+          "alice-wonderland": {
+            "bits_per_byte": 1.8250561799270517,
+            "bytes": 116408,
+            "nats_per_token": 4.796271001342829,
+            "nll": 147259.90855422887,
+            "perplexity": 121.05814911319582,
+            "targets": 30703
+          },
+          "war-worlds": {
+            "bits_per_byte": 1.8902709611431585,
+            "bytes": 321720,
+            "nats_per_token": 5.157833759212886,
+            "nll": 421529.1218054323,
+            "perplexity": 173.7875818047888,
+            "targets": 81726
+          }
+        },
+        "nats_per_token": 5.059095343369248,
+        "nll": 568789.0303596612,
+        "perplexity": 157.44801548471423,
+        "targets": 112429
+      },
+      "resources": {
+        "generated_tokens": 5764,
+        "model_parameters": 17308032,
+        "mps_end_boundary_allocated_bytes": 69232128,
+        "mps_end_boundary_driver_bytes": 1099644928,
+        "process_lifetime_peak_rss_bytes": 1365245952,
+        "seconds_including_load_and_capture": 34.99325837500146
+      },
+      "uniform_token_control": {
+        "interpretation": "Analytical uniform token predictor; not learned model output",
+        "legacy_nats_per_token": 9.010913347279288,
+        "matched_bits_per_byte": 3.3359588978563344
+      }
+    },
+    "base-repeat": {
+      "external": {
+        "ARC-Challenge": {
+          "byte_normalized": {
+            "accuracy": 0.21739130434782608,
+            "correct": 65,
+            "total": 299,
+            "wilson95": [
+              0.1743828589986342,
+              0.2675693735057626
+            ]
+          },
+          "failures": 0,
+          "first_choice": 0.2140468227424749,
+          "raw": {
+            "accuracy": 0.22073578595317725,
+            "correct": 66,
+            "total": 299,
+            "wilson95": [
+              0.17743304572269955,
+              0.27112330237336113
+            ]
+          },
+          "uniform_chance": 0.25066889632107026
+        },
+        "ARC-Easy": {
+          "byte_normalized": {
+            "accuracy": 0.23684210526315788,
+            "correct": 135,
+            "total": 570,
+            "wilson95": [
+              0.20377443697630832,
+              0.2734330819496817
+            ]
+          },
+          "failures": 0,
+          "first_choice": 0.2771929824561403,
+          "raw": {
+            "accuracy": 0.2754385964912281,
+            "correct": 157,
+            "total": 570,
+            "wilson95": [
+              0.2403597334493017,
+              0.31352401603420976
+            ]
+          },
+          "uniform_chance": 0.2499707602339181
+        }
+      },
+      "generation": {
+        "cases": 24,
+        "empty": 0.0,
+        "eos": 0.20833333333333334,
+        "failures": 0,
+        "repeated_trigram_fraction": 0.3881868479768263,
+        "replacement_character": 0.0,
+        "word_count": 48.166666666666664
+      },
+      "instructions": {
+        "categories": {
+          "constrained": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          },
+          "extraction": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          },
+          "multistep": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          },
+          "qa": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          },
+          "structured": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          },
+          "transformation": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          }
+        },
+        "failures": 0,
+        "overall": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "total": 96,
+          "wilson95": [
+            3.469446951953614e-18,
+            0.038475587857675686
+          ]
+        },
+        "trivial_control_correct": {
+          "constant_yes": 3,
+          "empty": 0,
+          "prompt_echo": 0
+        }
+      },
+      "legacy": {
+        "documents": {
+          "alice-wonderland": {
+            "nats_per_token": 4.497952285429344,
+            "nll": 137970.1884032597,
+            "perplexity": 89.83299050738557,
+            "targets": 30674
+          },
+          "war-worlds": {
+            "nats_per_token": 4.820657413672886,
+            "nll": 389745.3312380392,
+            "perplexity": 124.04661391974038,
+            "targets": 80849
+          }
+        },
+        "nats_per_token": 4.731898528924964,
+        "nll": 527715.5196412988,
+        "perplexity": 113.51086156207208,
+        "targets": 111523
+      },
+      "matched": {
+        "bits_per_byte": 1.8729437822095947,
+        "bytes": 438128,
+        "documents": {
+          "alice-wonderland": {
+            "bits_per_byte": 1.8250561799270517,
+            "bytes": 116408,
+            "nats_per_token": 4.796271001342829,
+            "nll": 147259.90855422887,
+            "perplexity": 121.05814911319582,
+            "targets": 30703
+          },
+          "war-worlds": {
+            "bits_per_byte": 1.8902709611431585,
+            "bytes": 321720,
+            "nats_per_token": 5.157833759212886,
+            "nll": 421529.1218054323,
+            "perplexity": 173.7875818047888,
+            "targets": 81726
+          }
+        },
+        "nats_per_token": 5.059095343369248,
+        "nll": 568789.0303596612,
+        "perplexity": 157.44801548471423,
+        "targets": 112429
+      },
+      "resources": {
+        "generated_tokens": 5764,
+        "model_parameters": 17308032,
+        "mps_end_boundary_allocated_bytes": 69232128,
+        "mps_end_boundary_driver_bytes": 1099644928,
+        "process_lifetime_peak_rss_bytes": 1359560704,
+        "seconds_including_load_and_capture": 37.625263417001406
+      },
+      "uniform_token_control": {
+        "interpretation": "Analytical uniform token predictor; not learned model output",
+        "legacy_nats_per_token": 9.010913347279288,
+        "matched_bits_per_byte": 3.3359588978563344
+      }
+    },
+    "dpo": {
+      "external": {
+        "ARC-Challenge": {
+          "byte_normalized": {
+            "accuracy": 0.27424749163879597,
+            "correct": 82,
+            "total": 299,
+            "wilson95": [
+              0.22678303988735943,
+              0.32743915767532433
+            ]
+          },
+          "failures": 0,
+          "first_choice": 0.2140468227424749,
+          "raw": {
+            "accuracy": 0.22073578595317725,
+            "correct": 66,
+            "total": 299,
+            "wilson95": [
+              0.17743304572269955,
+              0.27112330237336113
+            ]
+          },
+          "uniform_chance": 0.25066889632107026
+        },
+        "ARC-Easy": {
+          "byte_normalized": {
+            "accuracy": 0.24035087719298245,
+            "correct": 137,
+            "total": 570,
+            "wilson95": [
+              0.2070850490747096,
+              0.27709303626560056
+            ]
+          },
+          "failures": 0,
+          "first_choice": 0.2771929824561403,
+          "raw": {
+            "accuracy": 0.2789473684210526,
+            "correct": 159,
+            "total": 570,
+            "wilson95": [
+              0.24370318896985638,
+              0.31715112692797515
+            ]
+          },
+          "uniform_chance": 0.2499707602339181
+        }
+      },
+      "generation": {
+        "cases": 24,
+        "empty": 0.0,
+        "eos": 0.7083333333333334,
+        "failures": 0,
+        "repeated_trigram_fraction": 0.1332532610599742,
+        "replacement_character": 0.0,
+        "word_count": 33.458333333333336
+      },
+      "instructions": {
+        "categories": {
+          "constrained": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          },
+          "extraction": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          },
+          "multistep": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          },
+          "qa": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          },
+          "structured": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          },
+          "transformation": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          }
+        },
+        "failures": 0,
+        "overall": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "total": 96,
+          "wilson95": [
+            3.469446951953614e-18,
+            0.038475587857675686
+          ]
+        },
+        "trivial_control_correct": {
+          "constant_yes": 3,
+          "empty": 0,
+          "prompt_echo": 0
+        }
+      },
+      "legacy": {
+        "documents": {
+          "alice-wonderland": {
+            "nats_per_token": 5.32121748912332,
+            "nll": 163223.02526136872,
+            "perplexity": 204.63286868481538,
+            "targets": 30674
+          },
+          "war-worlds": {
+            "nats_per_token": 5.710984543510584,
+            "nll": 461727.3893582872,
+            "perplexity": 302.16841983785383,
+            "targets": 80849
+          }
+        },
+        "nats_per_token": 5.603780517199644,
+        "nll": 624950.4146196559,
+        "perplexity": 271.4506940573269,
+        "targets": 111523
+      },
+      "matched": {
+        "bits_per_byte": 2.1758850647585275,
+        "bytes": 438128,
+        "documents": {
+          "alice-wonderland": {
+            "bits_per_byte": 2.1290397715452447,
+            "bytes": 116408,
+            "nats_per_token": 5.595143771068009,
+            "nll": 171787.69920310107,
+            "perplexity": 269.1163384544645,
+            "targets": 30703
+          },
+          "war-worlds": {
+            "bits_per_byte": 2.192835104831796,
+            "bytes": 321720,
+            "nats_per_token": 5.983416750606257,
+            "nll": 489000.717360047,
+            "perplexity": 396.7938001260261,
+            "targets": 81726
+          }
+        },
+        "nats_per_token": 5.877384096302093,
+        "nll": 660788.416563148,
+        "perplexity": 356.87447035928557,
+        "targets": 112429
+      },
+      "resources": {
+        "generated_tokens": 1290,
+        "model_parameters": 17308032,
+        "mps_end_boundary_allocated_bytes": 69232128,
+        "mps_end_boundary_driver_bytes": 1099644928,
+        "process_lifetime_peak_rss_bytes": 1344339968,
+        "seconds_including_load_and_capture": 22.57210333400144
+      },
+      "uniform_token_control": {
+        "interpretation": "Analytical uniform token predictor; not learned model output",
+        "legacy_nats_per_token": 9.010913347279288,
+        "matched_bits_per_byte": 3.3359588978563344
+      }
+    },
+    "full-control": {
+      "external": {
+        "ARC-Challenge": {
+          "byte_normalized": {
+            "accuracy": 0.2842809364548495,
+            "correct": 85,
+            "total": 299,
+            "wilson95": [
+              0.2361410742278255,
+              0.33789347010985005
+            ]
+          },
+          "failures": 0,
+          "first_choice": 0.2140468227424749,
+          "raw": {
+            "accuracy": 0.22742474916387959,
+            "correct": 68,
+            "total": 299,
+            "wilson95": [
+              0.18354631616041756,
+              0.278218263118971
+            ]
+          },
+          "uniform_chance": 0.25066889632107026
+        },
+        "ARC-Easy": {
+          "byte_normalized": {
+            "accuracy": 0.24385964912280703,
+            "correct": 139,
+            "total": 570,
+            "wilson95": [
+              0.21039885572157965,
+              0.2807497960330506
+            ]
+          },
+          "failures": 0,
+          "first_choice": 0.2771929824561403,
+          "raw": {
+            "accuracy": 0.2719298245614035,
+            "correct": 155,
+            "total": 570,
+            "wilson95": [
+              0.23701907658357432,
+              0.30989410648561705
+            ]
+          },
+          "uniform_chance": 0.2499707602339181
+        }
+      },
+      "generation": {
+        "cases": 24,
+        "empty": 0.041666666666666664,
+        "eos": 0.9166666666666666,
+        "failures": 0,
+        "repeated_trigram_fraction": 0.05401391866398133,
+        "replacement_character": 0.0,
+        "word_count": 21.166666666666668
+      },
+      "instructions": {
+        "categories": {
+          "constrained": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          },
+          "extraction": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          },
+          "multistep": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          },
+          "qa": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          },
+          "structured": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          },
+          "transformation": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          }
+        },
+        "failures": 0,
+        "overall": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "total": 96,
+          "wilson95": [
+            3.469446951953614e-18,
+            0.038475587857675686
+          ]
+        },
+        "trivial_control_correct": {
+          "constant_yes": 3,
+          "empty": 0,
+          "prompt_echo": 0
+        }
+      },
+      "legacy": {
+        "documents": {
+          "alice-wonderland": {
+            "nats_per_token": 5.35842965170205,
+            "nll": 164364.47113630868,
+            "perplexity": 212.39115634391396,
+            "targets": 30674
+          },
+          "war-worlds": {
+            "nats_per_token": 5.765345369050755,
+            "nll": 466122.40774238453,
+            "perplexity": 319.0492147348146,
+            "targets": 80849
+          }
+        },
+        "nats_per_token": 5.653424664676284,
+        "nll": 630486.8788786932,
+        "perplexity": 285.26673780125,
+        "targets": 111523
+      },
+      "matched": {
+        "bits_per_byte": 2.186632697080504,
+        "bytes": 438128,
+        "documents": {
+          "alice-wonderland": {
+            "bits_per_byte": 2.1416030334816423,
+            "bytes": 116408,
+            "nats_per_token": 5.628160184245068,
+            "nll": 172801.40213687634,
+            "perplexity": 278.1499020143828,
+            "targets": 30703
+          },
+          "war-worlds": {
+            "bits_per_byte": 2.2029257875946664,
+            "bytes": 321720,
+            "nats_per_token": 6.010950403335264,
+            "nll": 491250.9326629778,
+            "perplexity": 407.87077787188616,
+            "targets": 81726
+          }
+        },
+        "nats_per_token": 5.906415024592001,
+        "nll": 664052.3347998541,
+        "perplexity": 367.3867193953889,
+        "targets": 112429
+      },
+      "resources": {
+        "generated_tokens": 960,
+        "model_parameters": 17308032,
+        "mps_end_boundary_allocated_bytes": 69232128,
+        "mps_end_boundary_driver_bytes": 1099644928,
+        "process_lifetime_peak_rss_bytes": 1346322432,
+        "seconds_including_load_and_capture": 21.519632042000012
+      },
+      "uniform_token_control": {
+        "interpretation": "Analytical uniform token predictor; not learned model output",
+        "legacy_nats_per_token": 9.010913347279288,
+        "matched_bits_per_byte": 3.3359588978563344
+      }
+    },
+    "lora-merged": {
+      "external": {
+        "ARC-Challenge": {
+          "byte_normalized": {
+            "accuracy": 0.23411371237458195,
+            "correct": 70,
+            "total": 299,
+            "wilson95": [
+              0.18967634315571089,
+              0.28529646730700564
+            ]
+          },
+          "failures": 0,
+          "first_choice": 0.2140468227424749,
+          "raw": {
+            "accuracy": 0.21070234113712374,
+            "correct": 63,
+            "total": 299,
+            "wilson95": [
+              0.16829573503894452,
+              0.2604482662821244
+            ]
+          },
+          "uniform_chance": 0.25066889632107026
+        },
+        "ARC-Easy": {
+          "byte_normalized": {
+            "accuracy": 0.24912280701754386,
+            "correct": 142,
+            "total": 570,
+            "wilson95": [
+              0.21537545423314503,
+              0.28622904714296543
+            ]
+          },
+          "failures": 0,
+          "first_choice": 0.2771929824561403,
+          "raw": {
+            "accuracy": 0.26842105263157895,
+            "correct": 153,
+            "total": 570,
+            "wilson95": [
+              0.23368125183299876,
+              0.30626136482187244
+            ]
+          },
+          "uniform_chance": 0.2499707602339181
+        }
+      },
+      "generation": {
+        "cases": 24,
+        "empty": 0.0,
+        "eos": 0.20833333333333334,
+        "failures": 0,
+        "repeated_trigram_fraction": 0.45324078773740184,
+        "replacement_character": 0.0,
+        "word_count": 50.541666666666664
+      },
+      "instructions": {
+        "categories": {
+          "constrained": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          },
+          "extraction": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          },
+          "multistep": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          },
+          "qa": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          },
+          "structured": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          },
+          "transformation": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          }
+        },
+        "failures": 0,
+        "overall": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "total": 96,
+          "wilson95": [
+            3.469446951953614e-18,
+            0.038475587857675686
+          ]
+        },
+        "trivial_control_correct": {
+          "constant_yes": 3,
+          "empty": 0,
+          "prompt_echo": 0
+        }
+      },
+      "legacy": {
+        "documents": {
+          "alice-wonderland": {
+            "nats_per_token": 4.535328136884178,
+            "nll": 139116.65527078527,
+            "perplexity": 93.2541103976827,
+            "targets": 30674
+          },
+          "war-worlds": {
+            "nats_per_token": 4.864337174395179,
+            "nll": 393276.7962126758,
+            "perplexity": 129.58501787187484,
+            "targets": 80849
+          }
+        },
+        "nats_per_token": 4.773844422078505,
+        "nll": 532393.4514834611,
+        "perplexity": 118.3734458141944,
+        "targets": 111523
+      },
+      "matched": {
+        "bits_per_byte": 1.8905761650768997,
+        "bytes": 438128,
+        "documents": {
+          "alice-wonderland": {
+            "bits_per_byte": 1.8429653732194469,
+            "bytes": 116408,
+            "nats_per_token": 4.843336590550714,
+            "nll": 148704.96333967856,
+            "perplexity": 126.89203293897948,
+            "targets": 30703
+          },
+          "war-worlds": {
+            "bits_per_byte": 1.907803185649268,
+            "bytes": 321720,
+            "nats_per_token": 5.205672561845193,
+            "nll": 425438.7957893603,
+            "perplexity": 182.30344188576458,
+            "targets": 81726
+          }
+        },
+        "nats_per_token": 5.106722990767852,
+        "nll": 574143.7591290389,
+        "perplexity": 165.12834016995777,
+        "targets": 112429
+      },
+      "resources": {
+        "generated_tokens": 1676,
+        "model_parameters": 17308032,
+        "mps_end_boundary_allocated_bytes": 69232128,
+        "mps_end_boundary_driver_bytes": 1099644928,
+        "process_lifetime_peak_rss_bytes": 1363853312,
+        "seconds_including_load_and_capture": 23.607073791001312
+      },
+      "uniform_token_control": {
+        "interpretation": "Analytical uniform token predictor; not learned model output",
+        "legacy_nats_per_token": 9.010913347279288,
+        "matched_bits_per_byte": 3.3359588978563344
+      }
+    },
+    "sft": {
+      "external": {
+        "ARC-Challenge": {
+          "byte_normalized": {
+            "accuracy": 0.2842809364548495,
+            "correct": 85,
+            "total": 299,
+            "wilson95": [
+              0.2361410742278255,
+              0.33789347010985005
+            ]
+          },
+          "failures": 0,
+          "first_choice": 0.2140468227424749,
+          "raw": {
+            "accuracy": 0.22742474916387959,
+            "correct": 68,
+            "total": 299,
+            "wilson95": [
+              0.18354631616041756,
+              0.278218263118971
+            ]
+          },
+          "uniform_chance": 0.25066889632107026
+        },
+        "ARC-Easy": {
+          "byte_normalized": {
+            "accuracy": 0.24385964912280703,
+            "correct": 139,
+            "total": 570,
+            "wilson95": [
+              0.21039885572157965,
+              0.2807497960330506
+            ]
+          },
+          "failures": 0,
+          "first_choice": 0.2771929824561403,
+          "raw": {
+            "accuracy": 0.2719298245614035,
+            "correct": 155,
+            "total": 570,
+            "wilson95": [
+              0.23701907658357432,
+              0.30989410648561705
+            ]
+          },
+          "uniform_chance": 0.2499707602339181
+        }
+      },
+      "generation": {
+        "cases": 24,
+        "empty": 0.041666666666666664,
+        "eos": 0.9166666666666666,
+        "failures": 0,
+        "repeated_trigram_fraction": 0.05401391866398133,
+        "replacement_character": 0.0,
+        "word_count": 21.166666666666668
+      },
+      "instructions": {
+        "categories": {
+          "constrained": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          },
+          "extraction": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          },
+          "multistep": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          },
+          "qa": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          },
+          "structured": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          },
+          "transformation": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 16,
+            "wilson95": [
+              0.0,
+              0.1936076805344365
+            ]
+          }
+        },
+        "failures": 0,
+        "overall": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "total": 96,
+          "wilson95": [
+            3.469446951953614e-18,
+            0.038475587857675686
+          ]
+        },
+        "trivial_control_correct": {
+          "constant_yes": 3,
+          "empty": 0,
+          "prompt_echo": 0
+        }
+      },
+      "legacy": {
+        "documents": {
+          "alice-wonderland": {
+            "nats_per_token": 5.3584401308150875,
+            "nll": 164364.79257262198,
+            "perplexity": 212.3933820265111,
+            "targets": 30674
+          },
+          "war-worlds": {
+            "nats_per_token": 5.765338210031438,
+            "nll": 466121.8289428318,
+            "perplexity": 319.0469306634991,
+            "targets": 80849
+          }
+        },
+        "nats_per_token": 5.653422356961826,
+        "nll": 630486.6215154538,
+        "perplexity": 285.2660794878345,
+        "targets": 111523
+      },
+      "matched": {
+        "bits_per_byte": 2.186640000584924,
+        "bytes": 438128,
+        "documents": {
+          "alice-wonderland": {
+            "bits_per_byte": 2.1416124407504746,
+            "bytes": 116408,
+            "nats_per_token": 5.628184906667971,
+            "nll": 172802.16118942673,
+            "perplexity": 278.1567786388938,
+            "targets": 30703
+          },
+          "war-worlds": {
+            "bits_per_byte": 2.202932329893666,
+            "bytes": 321720,
+            "nats_per_token": 6.01096825479219,
+            "nll": 491252.39159114653,
+            "perplexity": 407.8780590244981,
+            "targets": 81726
+          }
+        },
+        "nats_per_token": 5.906434752426627,
+        "nll": 664054.5527805733,
+        "perplexity": 367.39396721132437,
+        "targets": 112429
+      },
+      "resources": {
+        "generated_tokens": 960,
+        "model_parameters": 17308032,
+        "mps_end_boundary_allocated_bytes": 69232128,
+        "mps_end_boundary_driver_bytes": 1099644928,
+        "process_lifetime_peak_rss_bytes": 1355137024,
+        "seconds_including_load_and_capture": 21.036026958998264
+      },
+      "uniform_token_control": {
+        "interpretation": "Analytical uniform token predictor; not learned model output",
+        "legacy_nats_per_token": 9.010913347279288,
+        "matched_bits_per_byte": 3.3359588978563344
+      }
+    }
+  },
+  "training_updates": 0
+}

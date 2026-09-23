@@ -1,0 +1,923 @@
+{
+  "schema_version": 1,
+  "version": "latos-eval-1",
+  "license": "MIT",
+  "provenance": "Original AI-assisted project fixtures authored 2026-09-23; not human labels or training data.",
+  "split": "development; fixed before historical evaluation; exclude from all training",
+  "instructions": [
+    {
+      "id": "structured-000",
+      "category": "structured",
+      "family": "json-object",
+      "prompt": "Return only a JSON object with \"name\" set to \"Mira\" and \"count\" set to the integer 3.",
+      "expected": {
+        "name": "Mira",
+        "count": 3
+      },
+      "scorer": "json"
+    },
+    {
+      "id": "structured-001",
+      "category": "structured",
+      "family": "json-array",
+      "prompt": "Return only a JSON array containing \"Mira\" followed by the integer 3.",
+      "expected": [
+        "Mira",
+        3
+      ],
+      "scorer": "json"
+    },
+    {
+      "id": "structured-002",
+      "category": "structured",
+      "family": "csv",
+      "prompt": "Write one CSV row, without a header: name Mira, count 3.",
+      "expected": "Mira,3",
+      "scorer": "exact"
+    },
+    {
+      "id": "structured-003",
+      "category": "structured",
+      "family": "key-value",
+      "prompt": "Format the name Mira and count 3 as name=VALUE;count=VALUE. Output only that line.",
+      "expected": "name=Mira;count=3",
+      "scorer": "exact"
+    },
+    {
+      "id": "structured-004",
+      "category": "structured",
+      "family": "json-object",
+      "prompt": "Return only a JSON object with \"name\" set to \"Jules\" and \"count\" set to the integer 8.",
+      "expected": {
+        "name": "Jules",
+        "count": 8
+      },
+      "scorer": "json"
+    },
+    {
+      "id": "structured-005",
+      "category": "structured",
+      "family": "json-array",
+      "prompt": "Return only a JSON array containing \"Jules\" followed by the integer 8.",
+      "expected": [
+        "Jules",
+        8
+      ],
+      "scorer": "json"
+    },
+    {
+      "id": "structured-006",
+      "category": "structured",
+      "family": "csv",
+      "prompt": "Write one CSV row, without a header: name Jules, count 8.",
+      "expected": "Jules,8",
+      "scorer": "exact"
+    },
+    {
+      "id": "structured-007",
+      "category": "structured",
+      "family": "key-value",
+      "prompt": "Format the name Jules and count 8 as name=VALUE;count=VALUE. Output only that line.",
+      "expected": "name=Jules;count=8",
+      "scorer": "exact"
+    },
+    {
+      "id": "structured-008",
+      "category": "structured",
+      "family": "json-object",
+      "prompt": "Return only a JSON object with \"name\" set to \"Oren\" and \"count\" set to the integer 2.",
+      "expected": {
+        "name": "Oren",
+        "count": 2
+      },
+      "scorer": "json"
+    },
+    {
+      "id": "structured-009",
+      "category": "structured",
+      "family": "json-array",
+      "prompt": "Return only a JSON array containing \"Oren\" followed by the integer 2.",
+      "expected": [
+        "Oren",
+        2
+      ],
+      "scorer": "json"
+    },
+    {
+      "id": "structured-010",
+      "category": "structured",
+      "family": "csv",
+      "prompt": "Write one CSV row, without a header: name Oren, count 2.",
+      "expected": "Oren,2",
+      "scorer": "exact"
+    },
+    {
+      "id": "structured-011",
+      "category": "structured",
+      "family": "key-value",
+      "prompt": "Format the name Oren and count 2 as name=VALUE;count=VALUE. Output only that line.",
+      "expected": "name=Oren;count=2",
+      "scorer": "exact"
+    },
+    {
+      "id": "structured-012",
+      "category": "structured",
+      "family": "json-object",
+      "prompt": "Return only a JSON object with \"name\" set to \"Tess\" and \"count\" set to the integer 5.",
+      "expected": {
+        "name": "Tess",
+        "count": 5
+      },
+      "scorer": "json"
+    },
+    {
+      "id": "structured-013",
+      "category": "structured",
+      "family": "json-array",
+      "prompt": "Return only a JSON array containing \"Tess\" followed by the integer 5.",
+      "expected": [
+        "Tess",
+        5
+      ],
+      "scorer": "json"
+    },
+    {
+      "id": "structured-014",
+      "category": "structured",
+      "family": "csv",
+      "prompt": "Write one CSV row, without a header: name Tess, count 5.",
+      "expected": "Tess,5",
+      "scorer": "exact"
+    },
+    {
+      "id": "structured-015",
+      "category": "structured",
+      "family": "key-value",
+      "prompt": "Format the name Tess and count 5 as name=VALUE;count=VALUE. Output only that line.",
+      "expected": "name=Tess;count=5",
+      "scorer": "exact"
+    },
+    {
+      "id": "transformation-016",
+      "category": "transformation",
+      "family": "upper",
+      "prompt": "Convert fern to uppercase. Return only the converted word.",
+      "expected": "FERN",
+      "scorer": "exact"
+    },
+    {
+      "id": "transformation-017",
+      "category": "transformation",
+      "family": "lower",
+      "prompt": "Convert FERN to lowercase. Return only the converted word.",
+      "expected": "fern",
+      "scorer": "exact"
+    },
+    {
+      "id": "transformation-018",
+      "category": "transformation",
+      "family": "reverse",
+      "prompt": "Reverse the order of the letters in fern. Return only the result.",
+      "expected": "nref",
+      "scorer": "exact"
+    },
+    {
+      "id": "transformation-019",
+      "category": "transformation",
+      "family": "join",
+      "prompt": "Separate the letters of fern with hyphens. Return only the result.",
+      "expected": "f-e-r-n",
+      "scorer": "exact"
+    },
+    {
+      "id": "transformation-020",
+      "category": "transformation",
+      "family": "upper",
+      "prompt": "Convert kite to uppercase. Return only the converted word.",
+      "expected": "KITE",
+      "scorer": "exact"
+    },
+    {
+      "id": "transformation-021",
+      "category": "transformation",
+      "family": "lower",
+      "prompt": "Convert KITE to lowercase. Return only the converted word.",
+      "expected": "kite",
+      "scorer": "exact"
+    },
+    {
+      "id": "transformation-022",
+      "category": "transformation",
+      "family": "reverse",
+      "prompt": "Reverse the order of the letters in kite. Return only the result.",
+      "expected": "etik",
+      "scorer": "exact"
+    },
+    {
+      "id": "transformation-023",
+      "category": "transformation",
+      "family": "join",
+      "prompt": "Separate the letters of kite with hyphens. Return only the result.",
+      "expected": "k-i-t-e",
+      "scorer": "exact"
+    },
+    {
+      "id": "transformation-024",
+      "category": "transformation",
+      "family": "upper",
+      "prompt": "Convert plum to uppercase. Return only the converted word.",
+      "expected": "PLUM",
+      "scorer": "exact"
+    },
+    {
+      "id": "transformation-025",
+      "category": "transformation",
+      "family": "lower",
+      "prompt": "Convert PLUM to lowercase. Return only the converted word.",
+      "expected": "plum",
+      "scorer": "exact"
+    },
+    {
+      "id": "transformation-026",
+      "category": "transformation",
+      "family": "reverse",
+      "prompt": "Reverse the order of the letters in plum. Return only the result.",
+      "expected": "mulp",
+      "scorer": "exact"
+    },
+    {
+      "id": "transformation-027",
+      "category": "transformation",
+      "family": "join",
+      "prompt": "Separate the letters of plum with hyphens. Return only the result.",
+      "expected": "p-l-u-m",
+      "scorer": "exact"
+    },
+    {
+      "id": "transformation-028",
+      "category": "transformation",
+      "family": "upper",
+      "prompt": "Convert dusk to uppercase. Return only the converted word.",
+      "expected": "DUSK",
+      "scorer": "exact"
+    },
+    {
+      "id": "transformation-029",
+      "category": "transformation",
+      "family": "lower",
+      "prompt": "Convert DUSK to lowercase. Return only the converted word.",
+      "expected": "dusk",
+      "scorer": "exact"
+    },
+    {
+      "id": "transformation-030",
+      "category": "transformation",
+      "family": "reverse",
+      "prompt": "Reverse the order of the letters in dusk. Return only the result.",
+      "expected": "ksud",
+      "scorer": "exact"
+    },
+    {
+      "id": "transformation-031",
+      "category": "transformation",
+      "family": "join",
+      "prompt": "Separate the letters of dusk with hyphens. Return only the result.",
+      "expected": "d-u-s-k",
+      "scorer": "exact"
+    },
+    {
+      "id": "extraction-032",
+      "category": "extraction",
+      "family": "field",
+      "prompt": "Record: animal=otter; place=pond; count=14. Return only the place.",
+      "expected": "pond",
+      "scorer": "exact"
+    },
+    {
+      "id": "extraction-033",
+      "category": "extraction",
+      "family": "brackets",
+      "prompt": "Return only the text inside square brackets: blue [otter] pond.",
+      "expected": "otter",
+      "scorer": "exact"
+    },
+    {
+      "id": "extraction-034",
+      "category": "extraction",
+      "family": "sentence",
+      "prompt": "The otter saw 14 boats near the pond. How many boats? Reply with digits only.",
+      "expected": "14",
+      "scorer": "exact"
+    },
+    {
+      "id": "extraction-035",
+      "category": "extraction",
+      "family": "list-position",
+      "prompt": "List: otter, pond, blue. Return only the third item.",
+      "expected": "blue",
+      "scorer": "exact"
+    },
+    {
+      "id": "extraction-036",
+      "category": "extraction",
+      "family": "field",
+      "prompt": "Record: animal=finch; place=barn; count=23. Return only the place.",
+      "expected": "barn",
+      "scorer": "exact"
+    },
+    {
+      "id": "extraction-037",
+      "category": "extraction",
+      "family": "brackets",
+      "prompt": "Return only the text inside square brackets: red [finch] barn.",
+      "expected": "finch",
+      "scorer": "exact"
+    },
+    {
+      "id": "extraction-038",
+      "category": "extraction",
+      "family": "sentence",
+      "prompt": "The finch saw 23 boats near the barn. How many boats? Reply with digits only.",
+      "expected": "23",
+      "scorer": "exact"
+    },
+    {
+      "id": "extraction-039",
+      "category": "extraction",
+      "family": "list-position",
+      "prompt": "List: finch, barn, red. Return only the third item.",
+      "expected": "red",
+      "scorer": "exact"
+    },
+    {
+      "id": "extraction-040",
+      "category": "extraction",
+      "family": "field",
+      "prompt": "Record: animal=badger; place=hill; count=31. Return only the place.",
+      "expected": "hill",
+      "scorer": "exact"
+    },
+    {
+      "id": "extraction-041",
+      "category": "extraction",
+      "family": "brackets",
+      "prompt": "Return only the text inside square brackets: green [badger] hill.",
+      "expected": "badger",
+      "scorer": "exact"
+    },
+    {
+      "id": "extraction-042",
+      "category": "extraction",
+      "family": "sentence",
+      "prompt": "The badger saw 31 boats near the hill. How many boats? Reply with digits only.",
+      "expected": "31",
+      "scorer": "exact"
+    },
+    {
+      "id": "extraction-043",
+      "category": "extraction",
+      "family": "list-position",
+      "prompt": "List: badger, hill, green. Return only the third item.",
+      "expected": "green",
+      "scorer": "exact"
+    },
+    {
+      "id": "extraction-044",
+      "category": "extraction",
+      "family": "field",
+      "prompt": "Record: animal=seal; place=bay; count=42. Return only the place.",
+      "expected": "bay",
+      "scorer": "exact"
+    },
+    {
+      "id": "extraction-045",
+      "category": "extraction",
+      "family": "brackets",
+      "prompt": "Return only the text inside square brackets: gold [seal] bay.",
+      "expected": "seal",
+      "scorer": "exact"
+    },
+    {
+      "id": "extraction-046",
+      "category": "extraction",
+      "family": "sentence",
+      "prompt": "The seal saw 42 boats near the bay. How many boats? Reply with digits only.",
+      "expected": "42",
+      "scorer": "exact"
+    },
+    {
+      "id": "extraction-047",
+      "category": "extraction",
+      "family": "list-position",
+      "prompt": "List: seal, bay, gold. Return only the third item.",
+      "expected": "gold",
+      "scorer": "exact"
+    },
+    {
+      "id": "constrained-048",
+      "category": "constrained",
+      "family": "literal",
+      "prompt": "Reply with exactly this word and nothing else: moss",
+      "expected": "moss",
+      "scorer": "exact"
+    },
+    {
+      "id": "constrained-049",
+      "category": "constrained",
+      "family": "two-lines",
+      "prompt": "Write moss on the first line and DONE on the second line. Write no other text.",
+      "expected": "moss\nDONE",
+      "scorer": "exact"
+    },
+    {
+      "id": "constrained-050",
+      "category": "constrained",
+      "family": "count",
+      "prompt": "Count the letters in moss. Reply using one digit and nothing else.",
+      "expected": "4",
+      "scorer": "exact"
+    },
+    {
+      "id": "constrained-051",
+      "category": "constrained",
+      "family": "choice",
+      "prompt": "Choose the shorter word: moss or extraordinary. Output only your choice.",
+      "expected": "moss",
+      "scorer": "exact"
+    },
+    {
+      "id": "constrained-052",
+      "category": "constrained",
+      "family": "literal",
+      "prompt": "Reply with exactly this word and nothing else: pebble",
+      "expected": "pebble",
+      "scorer": "exact"
+    },
+    {
+      "id": "constrained-053",
+      "category": "constrained",
+      "family": "two-lines",
+      "prompt": "Write pebble on the first line and DONE on the second line. Write no other text.",
+      "expected": "pebble\nDONE",
+      "scorer": "exact"
+    },
+    {
+      "id": "constrained-054",
+      "category": "constrained",
+      "family": "count",
+      "prompt": "Count the letters in pebble. Reply using one digit and nothing else.",
+      "expected": "6",
+      "scorer": "exact"
+    },
+    {
+      "id": "constrained-055",
+      "category": "constrained",
+      "family": "choice",
+      "prompt": "Choose the shorter word: pebble or extraordinary. Output only your choice.",
+      "expected": "pebble",
+      "scorer": "exact"
+    },
+    {
+      "id": "constrained-056",
+      "category": "constrained",
+      "family": "literal",
+      "prompt": "Reply with exactly this word and nothing else: reed",
+      "expected": "reed",
+      "scorer": "exact"
+    },
+    {
+      "id": "constrained-057",
+      "category": "constrained",
+      "family": "two-lines",
+      "prompt": "Write reed on the first line and DONE on the second line. Write no other text.",
+      "expected": "reed\nDONE",
+      "scorer": "exact"
+    },
+    {
+      "id": "constrained-058",
+      "category": "constrained",
+      "family": "count",
+      "prompt": "Count the letters in reed. Reply using one digit and nothing else.",
+      "expected": "4",
+      "scorer": "exact"
+    },
+    {
+      "id": "constrained-059",
+      "category": "constrained",
+      "family": "choice",
+      "prompt": "Choose the shorter word: reed or extraordinary. Output only your choice.",
+      "expected": "reed",
+      "scorer": "exact"
+    },
+    {
+      "id": "constrained-060",
+      "category": "constrained",
+      "family": "literal",
+      "prompt": "Reply with exactly this word and nothing else: lagoon",
+      "expected": "lagoon",
+      "scorer": "exact"
+    },
+    {
+      "id": "constrained-061",
+      "category": "constrained",
+      "family": "two-lines",
+      "prompt": "Write lagoon on the first line and DONE on the second line. Write no other text.",
+      "expected": "lagoon\nDONE",
+      "scorer": "exact"
+    },
+    {
+      "id": "constrained-062",
+      "category": "constrained",
+      "family": "count",
+      "prompt": "Count the letters in lagoon. Reply using one digit and nothing else.",
+      "expected": "6",
+      "scorer": "exact"
+    },
+    {
+      "id": "constrained-063",
+      "category": "constrained",
+      "family": "choice",
+      "prompt": "Choose the shorter word: lagoon or extraordinary. Output only your choice.",
+      "expected": "lagoon",
+      "scorer": "exact"
+    },
+    {
+      "id": "qa-064",
+      "category": "qa",
+      "family": "factual",
+      "prompt": "How many days are in a week? Reply with one digit.",
+      "expected": "7",
+      "scorer": "exact"
+    },
+    {
+      "id": "qa-065",
+      "category": "qa",
+      "family": "factual",
+      "prompt": "How many months are in a year? Reply with digits only.",
+      "expected": "12",
+      "scorer": "exact"
+    },
+    {
+      "id": "qa-066",
+      "category": "qa",
+      "family": "factual",
+      "prompt": "What number comes immediately after nine? Reply with digits only.",
+      "expected": "10",
+      "scorer": "exact"
+    },
+    {
+      "id": "qa-067",
+      "category": "qa",
+      "family": "factual",
+      "prompt": "How many sides does a triangle have? Reply with one digit.",
+      "expected": "3",
+      "scorer": "exact"
+    },
+    {
+      "id": "qa-068",
+      "category": "qa",
+      "family": "yes-no",
+      "prompt": "Does ice normally melt when heated? Reply yes or no.",
+      "expected": "yes",
+      "scorer": "exact"
+    },
+    {
+      "id": "qa-069",
+      "category": "qa",
+      "family": "yes-no",
+      "prompt": "Can a stone breathe? Reply yes or no.",
+      "expected": "no",
+      "scorer": "exact"
+    },
+    {
+      "id": "qa-070",
+      "category": "qa",
+      "family": "yes-no",
+      "prompt": "Is a whale a mammal? Reply yes or no.",
+      "expected": "yes",
+      "scorer": "exact"
+    },
+    {
+      "id": "qa-071",
+      "category": "qa",
+      "family": "yes-no",
+      "prompt": "Is the Sun a planet? Reply yes or no.",
+      "expected": "no",
+      "scorer": "exact"
+    },
+    {
+      "id": "qa-072",
+      "category": "qa",
+      "family": "arithmetic",
+      "prompt": "What is 2 plus 3? Reply with digits only.",
+      "expected": "5",
+      "scorer": "exact"
+    },
+    {
+      "id": "qa-073",
+      "category": "qa",
+      "family": "arithmetic",
+      "prompt": "What is 9 minus 4? Reply with digits only.",
+      "expected": "5",
+      "scorer": "exact"
+    },
+    {
+      "id": "qa-074",
+      "category": "qa",
+      "family": "arithmetic",
+      "prompt": "What is 3 times 2? Reply with digits only.",
+      "expected": "6",
+      "scorer": "exact"
+    },
+    {
+      "id": "qa-075",
+      "category": "qa",
+      "family": "arithmetic",
+      "prompt": "What is 8 divided by 2? Reply with digits only.",
+      "expected": "4",
+      "scorer": "exact"
+    },
+    {
+      "id": "qa-076",
+      "category": "qa",
+      "family": "given-facts",
+      "prompt": "Nia is taller than Sol. Who is shorter? Reply with the name only.",
+      "expected": "Sol",
+      "scorer": "exact"
+    },
+    {
+      "id": "qa-077",
+      "category": "qa",
+      "family": "given-facts",
+      "prompt": "A cup is inside a box. The box is in a room. Is the cup in the room? Reply yes or no.",
+      "expected": "yes",
+      "scorer": "exact"
+    },
+    {
+      "id": "qa-078",
+      "category": "qa",
+      "family": "given-facts",
+      "prompt": "All daxes are blue. Pip is a dax. What color is Pip? Reply with the color only.",
+      "expected": "blue",
+      "scorer": "exact"
+    },
+    {
+      "id": "qa-079",
+      "category": "qa",
+      "family": "given-facts",
+      "prompt": "The red bag weighs 2 kilograms and the green bag weighs 5 kilograms. Which bag is heavier? Reply red or green.",
+      "expected": "green",
+      "scorer": "exact"
+    },
+    {
+      "id": "multistep-080",
+      "category": "multistep",
+      "family": "sort-join",
+      "prompt": "Sort these words alphabetically: pear, apple. Join them with a comma and no spaces. Output only the result.",
+      "expected": "apple,pear",
+      "scorer": "exact"
+    },
+    {
+      "id": "multistep-081",
+      "category": "multistep",
+      "family": "sort-upper-join",
+      "prompt": "Sort pear and apple alphabetically, convert both to uppercase, and join with a hyphen. Output only the result.",
+      "expected": "APPLE-PEAR",
+      "scorer": "exact"
+    },
+    {
+      "id": "multistep-082",
+      "category": "multistep",
+      "family": "select-transform",
+      "prompt": "From this record select the second word, then uppercase it: pear;apple. Output only the result.",
+      "expected": "APPLE",
+      "scorer": "exact"
+    },
+    {
+      "id": "multistep-083",
+      "category": "multistep",
+      "family": "filter-format",
+      "prompt": "Remove the word pear from this list: pear, apple, pear. Put the remaining word in parentheses. Output nothing else.",
+      "expected": "(apple)",
+      "scorer": "exact"
+    },
+    {
+      "id": "multistep-084",
+      "category": "multistep",
+      "family": "sort-join",
+      "prompt": "Sort these words alphabetically: wolf, bear. Join them with a comma and no spaces. Output only the result.",
+      "expected": "bear,wolf",
+      "scorer": "exact"
+    },
+    {
+      "id": "multistep-085",
+      "category": "multistep",
+      "family": "sort-upper-join",
+      "prompt": "Sort wolf and bear alphabetically, convert both to uppercase, and join with a hyphen. Output only the result.",
+      "expected": "BEAR-WOLF",
+      "scorer": "exact"
+    },
+    {
+      "id": "multistep-086",
+      "category": "multistep",
+      "family": "select-transform",
+      "prompt": "From this record select the second word, then uppercase it: wolf;bear. Output only the result.",
+      "expected": "BEAR",
+      "scorer": "exact"
+    },
+    {
+      "id": "multistep-087",
+      "category": "multistep",
+      "family": "filter-format",
+      "prompt": "Remove the word wolf from this list: wolf, bear, wolf. Put the remaining word in parentheses. Output nothing else.",
+      "expected": "(bear)",
+      "scorer": "exact"
+    },
+    {
+      "id": "multistep-088",
+      "category": "multistep",
+      "family": "sort-join",
+      "prompt": "Sort these words alphabetically: red, blue. Join them with a comma and no spaces. Output only the result.",
+      "expected": "blue,red",
+      "scorer": "exact"
+    },
+    {
+      "id": "multistep-089",
+      "category": "multistep",
+      "family": "sort-upper-join",
+      "prompt": "Sort red and blue alphabetically, convert both to uppercase, and join with a hyphen. Output only the result.",
+      "expected": "BLUE-RED",
+      "scorer": "exact"
+    },
+    {
+      "id": "multistep-090",
+      "category": "multistep",
+      "family": "select-transform",
+      "prompt": "From this record select the second word, then uppercase it: red;blue. Output only the result.",
+      "expected": "BLUE",
+      "scorer": "exact"
+    },
+    {
+      "id": "multistep-091",
+      "category": "multistep",
+      "family": "filter-format",
+      "prompt": "Remove the word red from this list: red, blue, red. Put the remaining word in parentheses. Output nothing else.",
+      "expected": "(blue)",
+      "scorer": "exact"
+    },
+    {
+      "id": "multistep-092",
+      "category": "multistep",
+      "family": "sort-join",
+      "prompt": "Sort these words alphabetically: sun, moon. Join them with a comma and no spaces. Output only the result.",
+      "expected": "moon,sun",
+      "scorer": "exact"
+    },
+    {
+      "id": "multistep-093",
+      "category": "multistep",
+      "family": "sort-upper-join",
+      "prompt": "Sort sun and moon alphabetically, convert both to uppercase, and join with a hyphen. Output only the result.",
+      "expected": "MOON-SUN",
+      "scorer": "exact"
+    },
+    {
+      "id": "multistep-094",
+      "category": "multistep",
+      "family": "select-transform",
+      "prompt": "From this record select the second word, then uppercase it: sun;moon. Output only the result.",
+      "expected": "MOON",
+      "scorer": "exact"
+    },
+    {
+      "id": "multistep-095",
+      "category": "multistep",
+      "family": "filter-format",
+      "prompt": "Remove the word sun from this list: sun, moon, sun. Put the remaining word in parentheses. Output nothing else.",
+      "expected": "(moon)",
+      "scorer": "exact"
+    }
+  ],
+  "generation": [
+    {
+      "id": "generation-00",
+      "category": "narrative",
+      "prompt": "The gate opened just before dawn, and"
+    },
+    {
+      "id": "generation-01",
+      "category": "narrative",
+      "prompt": "Mara found a folded note beneath the empty cup. It said"
+    },
+    {
+      "id": "generation-02",
+      "category": "description",
+      "prompt": "The small garden after the rain"
+    },
+    {
+      "id": "generation-03",
+      "category": "description",
+      "prompt": "Inside the quiet railway station,"
+    },
+    {
+      "id": "generation-04",
+      "category": "explanation",
+      "prompt": "A seed needs water because"
+    },
+    {
+      "id": "generation-05",
+      "category": "explanation",
+      "prompt": "To keep a room warm in winter,"
+    },
+    {
+      "id": "generation-06",
+      "category": "dialogue",
+      "prompt": "\"Where did you leave the key?\" asked Mina.\n"
+    },
+    {
+      "id": "generation-07",
+      "category": "dialogue",
+      "prompt": "\"I am sorry I arrived late,\" said Tomas.\n"
+    },
+    {
+      "id": "generation-08",
+      "category": "procedure",
+      "prompt": "To make a cup of tea, first"
+    },
+    {
+      "id": "generation-09",
+      "category": "procedure",
+      "prompt": "Before crossing a busy road,"
+    },
+    {
+      "id": "generation-10",
+      "category": "factual",
+      "prompt": "Water changes from liquid to ice when"
+    },
+    {
+      "id": "generation-11",
+      "category": "factual",
+      "prompt": "The Earth travels around"
+    },
+    {
+      "id": "generation-12",
+      "category": "modern",
+      "prompt": "The laptop could not connect to the network, so"
+    },
+    {
+      "id": "generation-13",
+      "category": "modern",
+      "prompt": "The bus timetable showed that"
+    },
+    {
+      "id": "generation-14",
+      "category": "reasoning",
+      "prompt": "There were three apples. One was eaten, leaving"
+    },
+    {
+      "id": "generation-15",
+      "category": "reasoning",
+      "prompt": "If the blue box is larger than the red box, the red box is"
+    },
+    {
+      "id": "generation-16",
+      "category": "uncertainty",
+      "prompt": "I do not know the answer, but"
+    },
+    {
+      "id": "generation-17",
+      "category": "uncertainty",
+      "prompt": "The evidence is incomplete, so we should"
+    },
+    {
+      "id": "generation-18",
+      "category": "unicode",
+      "prompt": "The café sign read “Welcome”, and"
+    },
+    {
+      "id": "generation-19",
+      "category": "unicode",
+      "prompt": "The temperature fell to −2°C overnight. In the morning,"
+    },
+    {
+      "id": "generation-20",
+      "category": "consistency",
+      "prompt": "Lena put the letter in a drawer and closed it. The letter was now"
+    },
+    {
+      "id": "generation-21",
+      "category": "consistency",
+      "prompt": "The boat was painted green yesterday. Its new color was"
+    },
+    {
+      "id": "generation-22",
+      "category": "list",
+      "prompt": "Items to bring for a rainy walk:\n1."
+    },
+    {
+      "id": "generation-23",
+      "category": "list",
+      "prompt": "A short shopping list:\n-"
+    }
+  ]
+}

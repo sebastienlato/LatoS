@@ -1,0 +1,42 @@
+{
+  "algorithm": "casefold word tokens; exact full text and any contiguous 13-word overlap",
+  "findings": [],
+  "instruction_train_sha256": "2b6191876bcdb302aa80312e52683d91aff25667e6951d576b7a4ce7b1f3c34f",
+  "limitations": "No semantic absence claim; short common answers not evidence of contamination. Public benchmark exposure in future corpora needs a fresh source/near-duplicate audit. Final suites not parsed here.",
+  "queries": 989,
+  "reserved_payload_access": false,
+  "schema_version": 1,
+  "scope": "historical book train and instruction train vs fixed development prompts/questions/choices",
+  "short_queries_without_13gram": 102,
+  "training_identity": {
+    "characters": 5286727,
+    "corpus_report_sha256": "f6f698a9f1bacf924cbf122a2a5a9657504d5805deaa37899053b9f7c75994ff",
+    "document_ids": [
+      "dracula",
+      "frankenstein",
+      "moby-dick",
+      "origin-species",
+      "pride-prejudice",
+      "sherlock-adventures",
+      "tom-sawyer",
+      "treasure-island"
+    ],
+    "documents": 8,
+    "manifest_id": "english-books-v1",
+    "manifest_sha256": "c83a221eba52532de100a30eb0badec5eddf009d17369b5fac981ff89b2ca87c",
+    "records": 9171,
+    "source_ids": [
+      "pg-120",
+      "pg-1342",
+      "pg-1661",
+      "pg-2009",
+      "pg-2701",
+      "pg-345",
+      "pg-74",
+      "pg-84"
+    ],
+    "split": "train",
+    "split_sha256": "0e0cec6846d133971af2f4919a1a057cec114ed7df42f0ee03f46019df808261",
+    "words": 948942
+  }
+}

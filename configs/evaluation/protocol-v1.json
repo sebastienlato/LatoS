@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "suite_version": "latos-eval-1",
+  "suite_sha256": "49fd0564f5b4e29639c08b958aa055075ab210aba9cf6422d0d6c8bd6abb51e0",
+  "final_suite_sha256": "11c169cfcce6a83fd914cd732783e6faa2f523ed401f858c97ec6852da4a8f8b",
+  "external_sha256": "80eb616a159b379125a0f3831125aa56df599b1c2f9ffa12473437b53f18a3ab",
+  "lm_validation_sha256": "09647b26e4cee7ced1808ed29c72c8d98753e032b215e520a2b3dbd5a718af40",
+  "lm_test_sha256": "a01a55c31d0401ab5dba64cf0f14bd96e8ed9900012a7099f972b3377d58a954",
+  "context": 256,
+  "matched_span_bytes": 192,
+  "instruction_tokens": 64,
+  "generation_tokens": 64,
+  "temperature": 0,
+  "top_k": 0,
+  "seed": 0,
+  "chat_contract": 1,
+  "lm_legacy": "isolated paragraphs; BOS/EOS; overlap-one 256; all transitions once",
+  "lm_matched": "lossless 192-byte scalar-safe spans; BOS; no EOS; text-byte denominator",
+  "external_primary": "answer-only summed log likelihood, zero shot, lowest-index tie",
+  "external_secondary": "log likelihood per UTF-8 answer byte including leading space",
+  "repeatability": {
+    "nll_atol": 1e-05,
+    "nll_rtol": 1e-06,
+    "generated_ids": "exact same backend/runtime/batch"
+  },
+  "gates": {
+    "base": {
+      "max_bpb_ratio": 0.9,
+      "max_document_bpb_ratio": 1.02,
+      "arc_easy_min": 0.35,
+      "arc_easy_min_gain": 0.05,
+      "external_max_drop": 0.03,
+      "generation_max_empty": 0.05,
+      "generation_max_repetition": 0.25,
+      "generation_max_repetition_increase": 0.1
+    },
+    "assistant": {
+      "instruction_min": 0.6,
+      "category_min": 0.4,
+      "instruction_min_gain": 0.3,
+      "max_bpb_ratio": 1.1,
+      "max_document_bpb_ratio": 1.15,
+      "external_max_drop": 0.03,
+      "generation_max_empty": 0.05,
+      "generation_max_repetition": 0.25,
+      "generation_max_repetition_increase": 0.1
+    }
+  },
+  "final_policy": "One locked candidate plus paired references per phase after development gates pass; signed-off local selection manifest; no final feedback tuning; failed gate blocks next phase. See docs/EVALUATION.md."
+}

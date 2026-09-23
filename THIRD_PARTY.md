@@ -252,3 +252,23 @@ Python's [3.14 JSON documentation](https://docs.python.org/3.14/library/json.htm
 and [RFC 8259](https://www.rfc-editor.org/info/rfc8259/) were consulted on 2026-09-23
 for parsing behavior, duplicate keys and bounded input. Existing dependency pins
 are unchanged. This custom protocol makes no third-party API compatibility claim.
+
+## Phase 14 evaluation
+
+- Apache Arrow / PyArrow 25.0.1, Apache-2.0: optional evaluation-only Parquet reader,
+  [official project](https://arrow.apache.org/docs/python/),
+  [release metadata](https://pypi.org/project/pyarrow/25.0.1/). The committed lock
+  pins compatible CPython 3.14 wheels for the three configured platforms. Existing
+  training dependencies are unchanged; foreign-platform availability is not execution.
+- Peter Clark, Isaac Cowhey, Oren Etzioni, Tushar Khot, Ashish Sabharwal, Carissa
+  Schoenick and Oyvind Tafjord (2018),
+  [Think you have Solved Question Answering? Try ARC, the AI2 Reasoning Challenge](https://arxiv.org/abs/1803.05457).
+  [Author-hosted dataset](https://huggingface.co/datasets/allenai/ai2_arc),
+  CC BY-SA 4.0 per dataset metadata; original order and text retained locally.
+  Only Easy/Challenge validation files acquired for evaluation. No acquired questions
+  are copied into source Git; transformations, revision and hashes are in the
+  [manifest](configs/evaluation/external-v1.json) and [methodology](docs/EVALUATION.md).
+- NLL, canonical-sequence bits per byte, likelihood-based option ranking, Wilson
+  binomial intervals and paired bootstrap are established mathematical methods,
+  independently implemented here. No external evaluation harness source is imported.
+  Original development/acceptance fixtures are AI-assisted project material under MIT.

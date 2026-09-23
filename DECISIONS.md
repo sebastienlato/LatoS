@@ -230,3 +230,24 @@ Candidate scale follows measurements, not a borrowed architecture or fixed param
 count. No new paid services. Keep old synthetic CUDA checks distinct from full
 learned-model experiments. Phase 14 requires approved, verified Phase 13 publication
 and explicit owner/master-planning start authorization. See [Roadmap 2.0](ROADMAP.md).
+
+## 2026-09-23 — Fixed Roadmap 2.0 evaluation before improvement
+
+Keep language modeling, generation, instructions, external tasks and resources
+separate. Preserve the legacy validation objective and add lossless 192-byte text
+spans with fixed boundaries for cross-tokenizer BPB. Freeze 96 development instruction
+cases, 24 generation prompts and 48 reserved acceptance cases. Use ARC-Easy and
+ARC-Challenge validation with pinned inputs and answer-only likelihood, plus a
+byte-normalized length-bias diagnostic; no free-generation MC approximation.
+
+Freeze numeric improvement and regression gates before retrospective scoring.
+Both historical reserved tests remain unused in Phase 14. Final access needs a
+locked passing candidate, contamination review and a retained selection declaration;
+failed final quality blocks dependent phases. No tuning follows final feedback
+without an approved fresh acceptance design. See [evaluation](docs/EVALUATION.md).
+
+PyArrow is an optional evaluation extra only. No architecture, production tokenizer,
+training behavior, paid API or historical evidence changes. Five preserved dense
+artifacts are retrospectively measured without promotion; merged LoRA remains
+distinct from live-adapter arithmetic. Phase 15 needs verified Phase 14 publication
+and separate explicit owner/master-planning authorization.

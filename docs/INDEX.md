@@ -75,3 +75,9 @@ that is future work, not a reinterpretation of historical evidence.
   its kickoff is superseded by the owner's repository-repositioning direction.
 - [Phase 13 validation and review](PHASE13_VALIDATION.md): documentation-only scope,
   checks and preservation evidence for this checkpoint.
+
+## Roadmap 2.0 evaluation
+
+[Evaluation methodology and reproduction](EVALUATION.md) ·
+[Phase 14 retrospective results](../experiments/phase-14/REPORT.md) ·
+[Fixed evaluation and quality gates](../configs/evaluation/protocol-v1.json)

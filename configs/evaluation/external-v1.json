@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "license": "CC-BY-SA-4.0",
+  "provenance": "AI2 ARC, Clark et al. 2018; author-hosted allenai/ai2_arc dataset. Evaluation-only validation splits; no training or test acquisition.",
+  "homepage": "https://allenai.org/data/arc",
+  "paper": "https://arxiv.org/abs/1803.05457",
+  "terms": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "datasets": [
+    {
+      "name": "ARC-Easy",
+      "records": 570,
+      "split": "validation",
+      "revision": "210d026faf9955653af8916fad021475a3f00453",
+      "file": "arc-easy-validation.parquet",
+      "url": "https://huggingface.co/datasets/allenai/ai2_arc/resolve/210d026faf9955653af8916fad021475a3f00453/ARC-Easy/validation-00000-of-00001.parquet",
+      "bytes": 86080,
+      "sha256": "ed890ff1e4cef7a7140d3a30dcea3ed2c9d467c6458f447ad9ef0176d8dcbb74"
+    },
+    {
+      "name": "ARC-Challenge",
+      "records": 299,
+      "split": "validation",
+      "revision": "210d026faf9955653af8916fad021475a3f00453",
+      "file": "arc-challenge-validation.parquet",
+      "url": "https://huggingface.co/datasets/allenai/ai2_arc/resolve/210d026faf9955653af8916fad021475a3f00453/ARC-Challenge/validation-00000-of-00001.parquet",
+      "bytes": 55743,
+      "sha256": "395a5c88d1580d69855fbaee9450270578df1ad5af6259771cd0a42c20e99f05"
+    }
+  ]
+}

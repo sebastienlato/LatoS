@@ -21,6 +21,9 @@ dependencies = [
 [project.scripts]
 latos = "latos.cli:main"
 
+[project.optional-dependencies]
+evaluation = ["pyarrow==25.0.1"]
+
 [dependency-groups]
 dev = ["pytest==9.1.1", "ruff==0.16.8", "hatchling==1.32.0"]
 
@@ -58,7 +61,7 @@ include = [
     "/AGENTS.md", "/PROJECT_STATE.md", "/ROADMAP.md", "/DECISIONS.md",
     "/THIRD_PARTY.md", "/CHANGELOG.md", "/.gitignore", "/.gitattributes",
     "/data/manifests", "/data/fixtures", "/experiments/phase-1", "/experiments/phase-2",
-    "/experiments/phase-12", "/experiments/phase-11", "/experiments/phase-10", "/experiments/phase-9", "/experiments/phase-8", "/experiments/phase-7", "/experiments/phase-6", "/configs", "/experiments/phase-3", "/experiments/phase-4", "/experiments/phase-5",
+    "/experiments/phase-14", "/experiments/phase-12", "/experiments/phase-11", "/experiments/phase-10", "/experiments/phase-9", "/experiments/phase-8", "/experiments/phase-7", "/experiments/phase-6", "/configs", "/experiments/phase-3", "/experiments/phase-4", "/experiments/phase-5",
 ]
 
 [tool.pytest.ini_options]

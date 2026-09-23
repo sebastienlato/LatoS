@@ -109,6 +109,7 @@ Linux CPU CI are separate evidence; physical Linux validation remains deferred.
 
 ## Explore and contribute
 
+[Evaluation methodology](docs/EVALUATION.md) ·
 [Documentation and experiments](docs/INDEX.md) · [Roadmap 2.0](ROADMAP.md) ·
 [Current project state](PROJECT_STATE.md) · [Changelog](CHANGELOG.md) ·
 [Engineering decisions](DECISIONS.md)

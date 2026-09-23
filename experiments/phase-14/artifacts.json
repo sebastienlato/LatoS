@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "local_run": "outputs/phase-14-evaluation-reviewed",
+  "first_run": "outputs/phase-14-evaluation",
+  "source_parent": "565bf08fbd8aaa360056fc670b08b8879be9312c",
+  "source_dirty": true,
+  "scoring_source_snapshot_sha256": "9215c67a49cd0e333f86d00a81669bbcf8a693be2f97b868538f6b409b0d114e",
+  "protocol_sha256": "a83477dba5fb9ff26661384621e0bf07748dd36cb83069aa9fe9093865121b38",
+  "suite_sha256": "49fd0564f5b4e29639c08b958aa055075ab210aba9cf6422d0d6c8bd6abb51e0",
+  "external_manifest_sha256": "80eb616a159b379125a0f3831125aa56df599b1c2f9ffa12473437b53f18a3ab",
+  "run_inventories": {
+    "base": "a2d7d1ae14ffb019412ce96cefe265179d1fcd8b18a08f58119564cecbaa5aac",
+    "base-repeat": "2bc9f5ad2c6d8d9bbbf17935ad6f5407ff604afc6eaa862a238d721b350578a8",
+    "dpo": "ad8ef481c98c6dacee9600d283a39534acdc14c8914de9c87cacfbbb7a3706a6",
+    "full-control": "a80f8def46e5ec2ed1ba9e8310354c292d05ec56ac36e1a122ec8071f7b52da4",
+    "lora-merged": "136739cde17d01233a7be08e67435e655d4252b0a047b27de111df100284cae3",
+    "sft": "cf8e3df9da4659ab25daef0beaa07fc0520cafad045319afd9701fdd36891ed3"
+  },
+  "final_verifier_sha256": "9e6413f3883d56a9d7dbde06e9e289640c60e38400f876fc0d06e61d9b370265",
+  "final_comparison_sha256": "e0a1610c9f541b6afa1acc233acf19225f944aa5dc2be90b91629640267569b0",
+  "post_panel_package_delta": [
+    "latos/evaluation/compare.py: reference identity/backend checks only; forward scorer unchanged"
+  ],
+  "note": "Hashes identify ignored local evidence, not downloads or backups."
+}

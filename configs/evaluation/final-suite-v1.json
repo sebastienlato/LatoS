@@ -1,0 +1,535 @@
+{
+  "schema_version": 1,
+  "version": "latos-eval-final-1",
+  "license": "MIT",
+  "provenance": "Original AI-assisted project fixtures authored 2026-09-23; not human labels or training data.",
+  "split": "reserved acceptance; no model evaluation before locked Phase 18 selection",
+  "instructions": [
+    {
+      "id": "final-000",
+      "category": "structured",
+      "family": "named-json",
+      "prompt": "Output JSON with exactly one key \"pair\" whose value is the array [\"copper\",\"silver\"].",
+      "expected": {
+        "pair": [
+          "copper",
+          "silver"
+        ]
+      },
+      "scorer": "json"
+    },
+    {
+      "id": "final-001",
+      "category": "structured",
+      "family": "tag",
+      "prompt": "Enclose copper between <item> and </item>. Return only the tagged word.",
+      "expected": "<item>copper</item>",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-002",
+      "category": "transformation",
+      "family": "replace",
+      "prompt": "In \"copper/silver\", replace the slash with a space. Return only the changed text.",
+      "expected": "copper silver",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-003",
+      "category": "transformation",
+      "family": "repeat",
+      "prompt": "Repeat silver twice, separated by one space. Return only those two words.",
+      "expected": "silver silver",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-004",
+      "category": "extraction",
+      "family": "quoted",
+      "prompt": "Extract the quoted word from this text: copper \"silver\". Return just that word.",
+      "expected": "silver",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-005",
+      "category": "extraction",
+      "family": "mapping",
+      "prompt": "Mapping: A means copper; B means silver. What does B mean? Output only its value.",
+      "expected": "silver",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-006",
+      "category": "constrained",
+      "family": "label",
+      "prompt": "Answer with the label POSITIVE if 3 is greater than 1, otherwise NEGATIVE. Include no explanation. The topic is copper.",
+      "expected": "POSITIVE",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-007",
+      "category": "constrained",
+      "family": "prefix",
+      "prompt": "Write the literal string result:silver and nothing else.",
+      "expected": "result:silver",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-008",
+      "category": "structured",
+      "family": "named-json",
+      "prompt": "Output JSON with exactly one key \"pair\" whose value is the array [\"morning\",\"evening\"].",
+      "expected": {
+        "pair": [
+          "morning",
+          "evening"
+        ]
+      },
+      "scorer": "json"
+    },
+    {
+      "id": "final-009",
+      "category": "structured",
+      "family": "tag",
+      "prompt": "Enclose morning between <item> and </item>. Return only the tagged word.",
+      "expected": "<item>morning</item>",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-010",
+      "category": "transformation",
+      "family": "replace",
+      "prompt": "In \"morning/evening\", replace the slash with a space. Return only the changed text.",
+      "expected": "morning evening",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-011",
+      "category": "transformation",
+      "family": "repeat",
+      "prompt": "Repeat evening twice, separated by one space. Return only those two words.",
+      "expected": "evening evening",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-012",
+      "category": "extraction",
+      "family": "quoted",
+      "prompt": "Extract the quoted word from this text: morning \"evening\". Return just that word.",
+      "expected": "evening",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-013",
+      "category": "extraction",
+      "family": "mapping",
+      "prompt": "Mapping: A means morning; B means evening. What does B mean? Output only its value.",
+      "expected": "evening",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-014",
+      "category": "constrained",
+      "family": "label",
+      "prompt": "Answer with the label POSITIVE if 3 is greater than 1, otherwise NEGATIVE. Include no explanation. The topic is morning.",
+      "expected": "POSITIVE",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-015",
+      "category": "constrained",
+      "family": "prefix",
+      "prompt": "Write the literal string result:evening and nothing else.",
+      "expected": "result:evening",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-016",
+      "category": "structured",
+      "family": "named-json",
+      "prompt": "Output JSON with exactly one key \"pair\" whose value is the array [\"river\",\"forest\"].",
+      "expected": {
+        "pair": [
+          "river",
+          "forest"
+        ]
+      },
+      "scorer": "json"
+    },
+    {
+      "id": "final-017",
+      "category": "structured",
+      "family": "tag",
+      "prompt": "Enclose river between <item> and </item>. Return only the tagged word.",
+      "expected": "<item>river</item>",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-018",
+      "category": "transformation",
+      "family": "replace",
+      "prompt": "In \"river/forest\", replace the slash with a space. Return only the changed text.",
+      "expected": "river forest",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-019",
+      "category": "transformation",
+      "family": "repeat",
+      "prompt": "Repeat forest twice, separated by one space. Return only those two words.",
+      "expected": "forest forest",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-020",
+      "category": "extraction",
+      "family": "quoted",
+      "prompt": "Extract the quoted word from this text: river \"forest\". Return just that word.",
+      "expected": "forest",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-021",
+      "category": "extraction",
+      "family": "mapping",
+      "prompt": "Mapping: A means river; B means forest. What does B mean? Output only its value.",
+      "expected": "forest",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-022",
+      "category": "constrained",
+      "family": "label",
+      "prompt": "Answer with the label POSITIVE if 3 is greater than 1, otherwise NEGATIVE. Include no explanation. The topic is river.",
+      "expected": "POSITIVE",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-023",
+      "category": "constrained",
+      "family": "prefix",
+      "prompt": "Write the literal string result:forest and nothing else.",
+      "expected": "result:forest",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-024",
+      "category": "structured",
+      "family": "named-json",
+      "prompt": "Output JSON with exactly one key \"pair\" whose value is the array [\"north\",\"south\"].",
+      "expected": {
+        "pair": [
+          "north",
+          "south"
+        ]
+      },
+      "scorer": "json"
+    },
+    {
+      "id": "final-025",
+      "category": "structured",
+      "family": "tag",
+      "prompt": "Enclose north between <item> and </item>. Return only the tagged word.",
+      "expected": "<item>north</item>",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-026",
+      "category": "transformation",
+      "family": "replace",
+      "prompt": "In \"north/south\", replace the slash with a space. Return only the changed text.",
+      "expected": "north south",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-027",
+      "category": "transformation",
+      "family": "repeat",
+      "prompt": "Repeat south twice, separated by one space. Return only those two words.",
+      "expected": "south south",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-028",
+      "category": "extraction",
+      "family": "quoted",
+      "prompt": "Extract the quoted word from this text: north \"south\". Return just that word.",
+      "expected": "south",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-029",
+      "category": "extraction",
+      "family": "mapping",
+      "prompt": "Mapping: A means north; B means south. What does B mean? Output only its value.",
+      "expected": "south",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-030",
+      "category": "constrained",
+      "family": "label",
+      "prompt": "Answer with the label POSITIVE if 3 is greater than 1, otherwise NEGATIVE. Include no explanation. The topic is north.",
+      "expected": "POSITIVE",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-031",
+      "category": "constrained",
+      "family": "prefix",
+      "prompt": "Write the literal string result:south and nothing else.",
+      "expected": "result:south",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-032",
+      "category": "qa",
+      "family": "everyday",
+      "prompt": "Which is used for cutting paper: scissors or pillow? Answer with one word.",
+      "expected": "scissors",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-033",
+      "category": "qa",
+      "family": "everyday",
+      "prompt": "Which is used to tell time: clock or spoon? Answer with one word.",
+      "expected": "clock",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-034",
+      "category": "qa",
+      "family": "everyday",
+      "prompt": "Which animal usually barks: dog or duck? Answer with one word.",
+      "expected": "dog",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-035",
+      "category": "qa",
+      "family": "everyday",
+      "prompt": "Which is normally colder: snow or fire? Answer with one word.",
+      "expected": "snow",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-036",
+      "category": "qa",
+      "family": "word-problem",
+      "prompt": "Sam has 4 coins and gets 3 more. How many coins now? Output digits only.",
+      "expected": "7",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-037",
+      "category": "qa",
+      "family": "word-problem",
+      "prompt": "There are 6 lamps. Two are removed. How many remain? Output digits only.",
+      "expected": "4",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-038",
+      "category": "qa",
+      "family": "word-problem",
+      "prompt": "Three boxes each hold 3 pens. How many pens total? Output digits only.",
+      "expected": "9",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-039",
+      "category": "qa",
+      "family": "word-problem",
+      "prompt": "Ten beads are shared equally by two people. How many per person? Output digits only.",
+      "expected": "5",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-040",
+      "category": "multistep",
+      "family": "short-first",
+      "prompt": "Select the shorter word from ivy and pine; return its first letter in uppercase. Output only one letter.",
+      "expected": "I",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-041",
+      "category": "multistep",
+      "family": "select-replace",
+      "prompt": "Given left=ivy, right=pine, select right, then put a plus sign before and after it. Output only the result.",
+      "expected": "+pine+",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-042",
+      "category": "multistep",
+      "family": "short-first",
+      "prompt": "Select the shorter word from ash and cedar; return its first letter in uppercase. Output only one letter.",
+      "expected": "A",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-043",
+      "category": "multistep",
+      "family": "select-replace",
+      "prompt": "Given left=ash, right=cedar, select right, then put a plus sign before and after it. Output only the result.",
+      "expected": "+cedar+",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-044",
+      "category": "multistep",
+      "family": "short-first",
+      "prompt": "Select the shorter word from oak and maple; return its first letter in uppercase. Output only one letter.",
+      "expected": "O",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-045",
+      "category": "multistep",
+      "family": "select-replace",
+      "prompt": "Given left=oak, right=maple, select right, then put a plus sign before and after it. Output only the result.",
+      "expected": "+maple+",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-046",
+      "category": "multistep",
+      "family": "short-first",
+      "prompt": "Select the shorter word from elm and birch; return its first letter in uppercase. Output only one letter.",
+      "expected": "E",
+      "scorer": "exact"
+    },
+    {
+      "id": "final-047",
+      "category": "multistep",
+      "family": "select-replace",
+      "prompt": "Given left=elm, right=birch, select right, then put a plus sign before and after it. Output only the result.",
+      "expected": "+birch+",
+      "scorer": "exact"
+    }
+  ],
+  "generation": [
+    {
+      "id": "generation-00",
+      "category": "narrative",
+      "prompt": "The gate opened just before dawn, and"
+    },
+    {
+      "id": "generation-01",
+      "category": "narrative",
+      "prompt": "Mara found a folded note beneath the empty cup. It said"
+    },
+    {
+      "id": "generation-02",
+      "category": "description",
+      "prompt": "The small garden after the rain"
+    },
+    {
+      "id": "generation-03",
+      "category": "description",
+      "prompt": "Inside the quiet railway station,"
+    },
+    {
+      "id": "generation-04",
+      "category": "explanation",
+      "prompt": "A seed needs water because"
+    },
+    {
+      "id": "generation-05",
+      "category": "explanation",
+      "prompt": "To keep a room warm in winter,"
+    },
+    {
+      "id": "generation-06",
+      "category": "dialogue",
+      "prompt": "\"Where did you leave the key?\" asked Mina.\n"
+    },
+    {
+      "id": "generation-07",
+      "category": "dialogue",
+      "prompt": "\"I am sorry I arrived late,\" said Tomas.\n"
+    },
+    {
+      "id": "generation-08",
+      "category": "procedure",
+      "prompt": "To make a cup of tea, first"
+    },
+    {
+      "id": "generation-09",
+      "category": "procedure",
+      "prompt": "Before crossing a busy road,"
+    },
+    {
+      "id": "generation-10",
+      "category": "factual",
+      "prompt": "Water changes from liquid to ice when"
+    },
+    {
+      "id": "generation-11",
+      "category": "factual",
+      "prompt": "The Earth travels around"
+    },
+    {
+      "id": "generation-12",
+      "category": "modern",
+      "prompt": "The laptop could not connect to the network, so"
+    },
+    {
+      "id": "generation-13",
+      "category": "modern",
+      "prompt": "The bus timetable showed that"
+    },
+    {
+      "id": "generation-14",
+      "category": "reasoning",
+      "prompt": "There were three apples. One was eaten, leaving"
+    },
+    {
+      "id": "generation-15",
+      "category": "reasoning",
+      "prompt": "If the blue box is larger than the red box, the red box is"
+    },
+    {
+      "id": "generation-16",
+      "category": "uncertainty",
+      "prompt": "I do not know the answer, but"
+    },
+    {
+      "id": "generation-17",
+      "category": "uncertainty",
+      "prompt": "The evidence is incomplete, so we should"
+    },
+    {
+      "id": "generation-18",
+      "category": "unicode",
+      "prompt": "The café sign read “Welcome”, and"
+    },
+    {
+      "id": "generation-19",
+      "category": "unicode",
+      "prompt": "The temperature fell to −2°C overnight. In the morning,"
+    },
+    {
+      "id": "generation-20",
+      "category": "consistency",
+      "prompt": "Lena put the letter in a drawer and closed it. The letter was now"
+    },
+    {
+      "id": "generation-21",
+      "category": "consistency",
+      "prompt": "The boat was painted green yesterday. Its new color was"
+    },
+    {
+      "id": "generation-22",
+      "category": "list",
+      "prompt": "Items to bring for a rainy walk:\n1."
+    },
+    {
+      "id": "generation-23",
+      "category": "list",
+      "prompt": "A short shopping list:\n-"
+    }
+  ]
+}

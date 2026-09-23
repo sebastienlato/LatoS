@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "recorded_date": "2026-09-23",
+  "host": "Mac M4 Max, macOS 26.6.2, ARM64, 64 GiB",
+  "development_tests": {
+    "passed": 353,
+    "failed": 0,
+    "skipped": 0,
+    "seconds": 24.48
+  },
+  "noneditable_wheel_tests": {
+    "passed": 353,
+    "failed": 0,
+    "skipped": 0,
+    "seconds": 37.23,
+    "wheel_sha256": "21bbc8ab86d463bfe5cd8e32137dd4131464596d81009e938e88e28abc5a28bc",
+    "site_packages_import_verified": true
+  },
+  "focused_evaluation_tests": 39,
+  "lint": "passed",
+  "format": "passed",
+  "locked_environment": "passed; existing versions unchanged, optional pyarrow 25.0.1 added",
+  "dependency_compatibility": "36 distributions compatible in development and isolated wheel",
+  "cpu_cli_doctor": "passed in installed wheel",
+  "evaluation_cli_help": "passed in installed wheel",
+  "external_acquisition": "Both hash-pinned evaluation files downloaded through the framework into a fresh ignored directory; cache and corruption tests pass",
+  "historical_panel": "five full models plus separate-process base repeat; all runs complete, no skipped/overflow cases",
+  "repeatability": "raw rows/summaries within atol=1e-5 rtol=1e-6; exact generated IDs and predictions; timing excluded",
+  "preservation": {
+    "pre_existing_files": 72947,
+    "changed": 0,
+    "scope": "artifacts, checkpoints, raw/processed data, outputs, dist, historical experiments; excludes bytecode and local environments",
+    "reserved_payloads": "opaque-hashed only, never parsed/evaluated"
+  },
+  "reserved_acceptance_instruction_model_runs": 0,
+  "new_training_updates": 0,
+  "platforms": {
+    "Mac_CPU": "tested",
+    "Mac_MPS": "tested; full historical panel",
+    "Windows_CUDA": "not executed",
+    "hosted_Linux_CPU": "not executed; CI extra configured",
+    "physical_Linux": "deferred"
+  },
+  "review": "Separate local review completed; fixes in REVIEW.md. No delegated or external review claimed.",
+  "package_version": "1.3.0",
+  "publication": "pending explicit approval; main only; no tag/release/assets",
+  "attempts": [
+    "First full suite: 347 passed before review expansion",
+    "Reviewed full suite: 352 passed before final reference guard",
+    "Final full suite: 353 passed",
+    "First and reviewed historical panels preserved; quality scores unchanged",
+    "Lint initially flagged long prompt/docstring lines; formatting fixed with unchanged literal inputs"
+  ],
+  "scope_note": "Automated suite includes disposable synthetic training fixtures. No new serious/pretraining/SFT/DPO/LoRA run. Source snapshots retain the actual scoring implementation; final comparison-only guard change tested separately."
+}

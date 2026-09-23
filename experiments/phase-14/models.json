@@ -1,0 +1,22 @@
+{
+  "base": {
+    "path": "outputs/phase-5-english-pilot/step-00003000/model",
+    "weights_sha256": "f82ed3b21aeacad6d8b3a88c9100cbc83b8f15af1ba9c17a4fa4dccc59b2befa"
+  },
+  "sft": {
+    "path": "outputs/phase-6-instruction-reviewed/step-00000200/model",
+    "weights_sha256": "62b890214e5544292cc54b725a4e505730fca0d501b3337cdd3f051a622d09ae"
+  },
+  "lora-merged": {
+    "path": "outputs/phase-9-comparison-accepted/lora/merged",
+    "weights_sha256": "faaf9ec7cd3de329ecc49d82fe08a38e6e72ec4bc8965b29a349bb751526ff18"
+  },
+  "full-control": {
+    "path": "outputs/phase-9-comparison-accepted/full/model",
+    "weights_sha256": "84f70f8bd08829ecc336017b1e39041eca67cfd390755e9e55d9cba1ffb79f94"
+  },
+  "dpo": {
+    "path": "outputs/phase-10-dpo-reviewed/model",
+    "weights_sha256": "5ec902472e6e04ca5c97475d44a30818729a2fc5e8592544642767af83ae9ca1"
+  }
+}
