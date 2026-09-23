@@ -1,0 +1,74 @@
+{
+  "files": {
+    "artifacts/tokenizers/data2-v1/new16384/fitting-records.json": {
+      "bytes": 7289307,
+      "sha256": "4653da54c2310fe61b7a03e32bfcad59e4237f0f6377044b66262fbbc0425749"
+    },
+    "artifacts/tokenizers/data2-v1/new16384/metadata.json": {
+      "bytes": 1274,
+      "sha256": "49eb0303502dddfc2c8ca15d14c0956b50193e72c7c11d660ffd33935acff225"
+    },
+    "artifacts/tokenizers/data2-v1/new16384/tokenizer.json": {
+      "bytes": 484436,
+      "sha256": "23b9182d5943e7f8b32c6f415f108b7d06f229c80f5cd8f236258db40a6b94c4"
+    },
+    "artifacts/tokenizers/data2-v1/new8192/fitting-records.json": {
+      "bytes": 7289307,
+      "sha256": "4653da54c2310fe61b7a03e32bfcad59e4237f0f6377044b66262fbbc0425749"
+    },
+    "artifacts/tokenizers/data2-v1/new8192/metadata.json": {
+      "bytes": 1273,
+      "sha256": "31ff5d9b54d26b2ccf09a9d3e0388b4d0063573e59282e60b5d94190a58cecb6"
+    },
+    "artifacts/tokenizers/data2-v1/new8192/tokenizer.json": {
+      "bytes": 227748,
+      "sha256": "f3b5e0f78f632927b5bccbaeccef16ad73fa3977335d3d290c6d4bc69ab8f15c"
+    },
+    "artifacts/tokenizers/data2-v1/selection.json": {
+      "bytes": 14548,
+      "sha256": "b6f9bb8465dc913929ae2e841cb68e80a2d9146b1e50327b32542134a9f5640f"
+    },
+    "artifacts/tokenizers/data2-v1/training-accounting.json": {
+      "bytes": 4315,
+      "sha256": "c590d8830fa3f39d01b7f7f4903822dea40e60a492956ab5a59eedded8034ace"
+    },
+    "data/processed/data2-v1-ready/report.json": {
+      "bytes": 12138,
+      "sha256": "af7882b5fdcbab25bd1412ced2d0af0e2c1fd352a9e1457d708bd62c5c24a84b"
+    },
+    "outputs/phase15-construction-acceptance.json": {
+      "bytes": 900,
+      "sha256": "75e1902a7321578d34f6c95cdb51226d23be5e811f261fe7d24fcf674ac59b35"
+    },
+    "outputs/phase15-data-audit-ready.json": {
+      "bytes": 6561,
+      "sha256": "ff4f4dc8e891009e78794d9296168892ac12fe6b99214e1ba4bd3fa4b63ba719"
+    },
+    "outputs/phase15-input-package/bundle.json": {
+      "bytes": 2709,
+      "sha256": "5f4fa7a7bc221d06f6b321c4af712456d3188984d759f8a4a898651d5a6d9073"
+    }
+  },
+  "final_source_sha256": {
+    "experiments/phase-15/accept.py": "c08bf2ca7b4600e31c01e48a494019f3e705aec91ce53ca9331c63a23f7fcfc3",
+    "experiments/phase-15/compare_tokenizers.py": "3703cab5e203a317db9d122c9d2eadc6877c9e51e65bc8adbaed3f2be0565217",
+    "experiments/phase-15/finalize.py": "32efc20aeec0096b7dbf01c54d0da08197b4814e0e49df389753fdcfcbacaae4",
+    "experiments/phase-15/package_inputs.py": "d714b999e36355129d36d3a561c5f2ef6aa38d52ac23a1349c42b90cf42a23e9",
+    "experiments/phase-15/repeat.py": "3962c85f8711b99bcd259d3cbcd9df3eb17daf4cbfc7367c1481fe93935d9151",
+    "experiments/phase-15/run.py": "ffda9ff45c8b8dd540acef1c76b1f683cfae96c370e143e5d89b17d2df8143ab",
+    "src/latos/data2/__init__.py": "c838334c6d75ffb386cf455de3975602ef5374109ce1489fef5ba3717eb6234e",
+    "src/latos/data2/__main__.py": "cda41edc91861d76233ed0801a89f4e092ea84aae3fd0427c972b49e744ea553",
+    "src/latos/data2/acquire.py": "a718878b7b77d41d09be00717c4e98b4762ca0e78219734198707c472f109247",
+    "src/latos/data2/audit.py": "61f039dc91309a43073e5047b135b71eeeab9ba48a6f0fae88451518d8238efb",
+    "src/latos/data2/curation.py": "086e963aa8e0b9d62143b2c27c1d416b3d36d47d730867899426ac402cd7f1c7",
+    "src/latos/data2/filtering.py": "22e4b73f4fdf883d7e0d463b5c316ecfc57d2501140413bffe0dba939a6cc9b3",
+    "src/latos/data2/lexical.py": "65ad7afc04a67c656b99b7b80b3976cd54d27e3a4162b934e902cdfdcbfb2e6a",
+    "src/latos/data2/prepare.py": "6751403d16f693d046a46f781ad6fa4d6704e99b8105ff4f62ba6d254f3c66f5",
+    "src/latos/data2/protected.py": "74357052b48c12490649e71d97ec3ac5410c360b0156fa40460ecf23075cce33",
+    "src/latos/data2/resources.py": "b3ab57179ec700f819ad256b8713f94553d80ea1bf518e13528aaf1b148c9d3e",
+    "src/latos/data2/sources.py": "01444e21f8815c83c17b6f92c55aa5973038385ad86bb0aa87786ea172ed367e",
+    "src/latos/data2/tokenizer.py": "e1111a9aac3b2144e34122f9f1e2a2e7abb9d4321686a0f97970ab7808151703"
+  },
+  "note": "Ignored local artifact identities, not remote backups. No learned language-model weights are created.",
+  "schema_version": 1
+}

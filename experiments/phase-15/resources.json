@@ -1,0 +1,61 @@
+{
+  "acquisition": {
+    "acquired_utc": "2026-09-23T18:12:16.766702+00:00",
+    "files": {
+      "dolly-README.md": "db06c60090a11b20e79d1933b2f316f781605f07761ff2ae2795d6523e3e960b",
+      "dolly-databricks-dolly-15k.jsonl": "2df9083338b4abd6bceb5635764dab5d833b393b55759dffb0959b6fcbf794ec",
+      "oasst-2023-04-12_oasst_ready.trees.jsonl.gz": "2a9a8fd343e9b28e04a895a669d3253f82d93e9c174d440199ae19d5fafbdff7",
+      "oasst-LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "oasst-README.md": "68483ac2fcc2f3f7779f453352363827678070ef35b6d746ccb2ca6958540fff",
+      "wiki-README.md": "a0f2055ac612f924721e9981fa2a49a18adec1c67cc8026f6c97d12f17211b21",
+      "wiki-train-00003-of-00041.parquet": "0b8a6f452f5ef59d0986a067f70110feb16d7c1d281ba2db0b3df32933618fcc",
+      "wiki-train-00004-of-00041.parquet": "1424300f113c13ee022b7929185fa4f7e20c6195ba563d728e8a3dc47c8e9aba"
+    },
+    "manifest_sha256": "5c40e45bdbf44c7d8db21767364d00ffabe034bb8b90717122e2574a41ec8740",
+    "seconds": 32.34798537499955
+  },
+  "final_manifest_acquisition_verification": {
+    "files": {
+      "dolly-README.md": "db06c60090a11b20e79d1933b2f316f781605f07761ff2ae2795d6523e3e960b",
+      "dolly-databricks-dolly-15k.jsonl": "2df9083338b4abd6bceb5635764dab5d833b393b55759dffb0959b6fcbf794ec",
+      "oasst-2023-04-12_oasst_ready.trees.jsonl.gz": "2a9a8fd343e9b28e04a895a669d3253f82d93e9c174d440199ae19d5fafbdff7",
+      "oasst-LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "oasst-README.md": "68483ac2fcc2f3f7779f453352363827678070ef35b6d746ccb2ca6958540fff",
+      "wiki-README.md": "a0f2055ac612f924721e9981fa2a49a18adec1c67cc8026f6c97d12f17211b21",
+      "wiki-train-00003-of-00041.parquet": "0b8a6f452f5ef59d0986a067f70110feb16d7c1d281ba2db0b3df32933618fcc",
+      "wiki-train-00004-of-00041.parquet": "1424300f113c13ee022b7929185fa4f7e20c6195ba563d728e8a3dc47c8e9aba"
+    },
+    "manifest_sha256": "d921909b91fcfa383f307d073675dbe7d3e23b14ba11b93d6098f5661838edb8",
+    "note": "First completed acquisition/cache verification for this manifest; timestamp is not part of deterministic corpus identity.",
+    "verified_utc": "2026-09-23T18:32:33.561407+00:00"
+  },
+  "finalization": {
+    "peak_rss_bytes": 4262346752,
+    "seconds": 35.65444133299752
+  },
+  "local_input_package_bytes": 341882086,
+  "preparation": {
+    "host": "Mac M4 Max 64 GiB; RSS reported in macOS bytes",
+    "peak_rss_bytes": 8728330240,
+    "seconds": 1273.2946243749975,
+    "source": {
+      "data2/__init__.py": "c838334c6d75ffb386cf455de3975602ef5374109ce1489fef5ba3717eb6234e",
+      "data2/__main__.py": "cda41edc91861d76233ed0801a89f4e092ea84aae3fd0427c972b49e744ea553",
+      "data2/acquire.py": "a718878b7b77d41d09be00717c4e98b4762ca0e78219734198707c472f109247",
+      "data2/audit.py": "61f039dc91309a43073e5047b135b71eeeab9ba48a6f0fae88451518d8238efb",
+      "data2/filtering.py": "22e4b73f4fdf883d7e0d463b5c316ecfc57d2501140413bffe0dba939a6cc9b3",
+      "data2/lexical.py": "4368ed4042de704d4b5bfe48da88c2a464047184c48289d63cd4706f1f74d551",
+      "data2/prepare.py": "6751403d16f693d046a46f781ad6fa4d6704e99b8105ff4f62ba6d254f3c66f5",
+      "data2/protected.py": "74357052b48c12490649e71d97ec3ac5410c360b0156fa40460ecf23075cce33",
+      "data2/sources.py": "01444e21f8815c83c17b6f92c55aa5973038385ad86bb0aa87786ea172ed367e",
+      "data2/tokenizer.py": "1922bbb1dc7d4931dbac2a7717691c05c61b4a6d25f45c6459ad2083aa7e7a46"
+    }
+  },
+  "prepared_corpus_bytes": 388797969,
+  "retained_phase_file_bytes": 4295662311,
+  "storage_scope": "Logical file lengths under new phase data/output/tokenizer/private evidence/build/environment roots; includes retained attempts and repeated corpus copies; not APFS incremental allocation or peak temporary disk.",
+  "tokenizers": {
+    "peak_rss_bytes": 1261813760,
+    "seconds": 102.63664333300039
+  }
+}

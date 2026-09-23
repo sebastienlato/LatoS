@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "arc-protected",
+      "revision": "210d026faf9955653af8916fad021475a3f00453",
+      "license": "CC-BY-SA-4.0",
+      "origin": "https://huggingface.co/datasets/allenai/ai2_arc",
+      "rights": "Author-hosted CC-BY-SA-4.0; controlled local contamination comparison only, never training or scoring; retain author attribution Clark et al. 2018. No payload redistribution.",
+      "files": [
+        {
+          "file": "arc-easy-test-00000-of-00001.parquet",
+          "url": "https://huggingface.co/datasets/allenai/ai2_arc/resolve/210d026faf9955653af8916fad021475a3f00453/ARC-Easy/test-00000-of-00001.parquet",
+          "sha256": "4160597d618ae851c7eb04e281574f3f654776216ac6b6641588d64527b47177",
+          "bytes": 346257,
+          "purpose": "audit-only; never model input or scoring"
+        },
+        {
+          "file": "arc-easy-train-00000-of-00001.parquet",
+          "url": "https://huggingface.co/datasets/allenai/ai2_arc/resolve/210d026faf9955653af8916fad021475a3f00453/ARC-Easy/train-00000-of-00001.parquet",
+          "sha256": "b315db8a4be597dc7daa50a4e70d48dd7c990c32085629e6ccd8c926beaa80b5",
+          "bytes": 330598,
+          "purpose": "audit-only; never model input or scoring"
+        },
+        {
+          "file": "arc-easy-validation-00000-of-00001.parquet",
+          "url": "https://huggingface.co/datasets/allenai/ai2_arc/resolve/210d026faf9955653af8916fad021475a3f00453/ARC-Easy/validation-00000-of-00001.parquet",
+          "sha256": "ed890ff1e4cef7a7140d3a30dcea3ed2c9d467c6458f447ad9ef0176d8dcbb74",
+          "bytes": 86080,
+          "purpose": "audit-only; never model input or scoring"
+        },
+        {
+          "file": "arc-challenge-test-00000-of-00001.parquet",
+          "url": "https://huggingface.co/datasets/allenai/ai2_arc/resolve/210d026faf9955653af8916fad021475a3f00453/ARC-Challenge/test-00000-of-00001.parquet",
+          "sha256": "62f03257e737aed263f55c6abf87c7bb0028a44a6bdd2a26eb1279eb42c1d1e9",
+          "bytes": 203808,
+          "purpose": "audit-only; never model input or scoring"
+        },
+        {
+          "file": "arc-challenge-train-00000-of-00001.parquet",
+          "url": "https://huggingface.co/datasets/allenai/ai2_arc/resolve/210d026faf9955653af8916fad021475a3f00453/ARC-Challenge/train-00000-of-00001.parquet",
+          "sha256": "e488c1587ffdcfc8443f916c53488a95cd471c5790e0746c6bfe4cecf20962cb",
+          "bytes": 189909,
+          "purpose": "audit-only; never model input or scoring"
+        },
+        {
+          "file": "arc-challenge-validation-00000-of-00001.parquet",
+          "url": "https://huggingface.co/datasets/allenai/ai2_arc/resolve/210d026faf9955653af8916fad021475a3f00453/ARC-Challenge/validation-00000-of-00001.parquet",
+          "sha256": "395a5c88d1580d69855fbaee9450270578df1ad5af6259771cd0a42c20e99f05",
+          "bytes": 55743,
+          "purpose": "audit-only; never model input or scoring"
+        }
+      ]
+    }
+  ]
+}

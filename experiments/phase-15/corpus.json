@@ -1,0 +1,255 @@
+{
+  "dedup_coverage": "all selected quality-passing documents and >=40-word paragraphs/context; exhaustive prefix candidate join, no sampled estimate",
+  "document_jaccard_comparisons": 1239075,
+  "duplicates": {
+    "document_exact_or_jaccard80": 260,
+    "final_chunk_exact_or_jaccard80": 3,
+    "paragraph_jaccard80": 3128
+  },
+  "files": {
+    "documents.jsonl": {
+      "bytes": 33475615,
+      "sha256": "c759a50dade0fe43106bfef13fa4d911d60e21d5681d46ddd98a2e053ff8c1cf"
+    },
+    "duplicates.jsonl": {
+      "bytes": 319666,
+      "sha256": "288ab57abb1a0074d5499c1024d7b71afb014d31d339dbd95ca8e27e30366e21"
+    },
+    "instruction-development.jsonl": {
+      "bytes": 358046,
+      "sha256": "cf50d14195ee985c414a5df374e603c4035b9c4bea75942cecc80b45db0f35f3"
+    },
+    "instruction-reserved.jsonl": {
+      "bytes": 337161,
+      "sha256": "2d278a5ad1f454ed3bdd00027b9f57e81cca437cc48953c06031a7f7d0f5f90d"
+    },
+    "instruction-train.jsonl": {
+      "bytes": 18416043,
+      "sha256": "b74f9aba6768d80cccaaf08cdfc2e2209a9948bffb3af007cf5530b43333ff8e"
+    },
+    "pretrain-development.jsonl": {
+      "bytes": 6765410,
+      "sha256": "2b1662ffedc36e6f48022264db4e161cf3b2407db76d709bf34c09cc50ccf9da"
+    },
+    "pretrain-reserved.jsonl": {
+      "bytes": 6456145,
+      "sha256": "45a16b755f15a827deb930f9197d08d8987796d33722dec802851e58aa45bbad"
+    },
+    "pretrain-train.jsonl": {
+      "bytes": 315646847,
+      "sha256": "9d211d572ce1d7c52c682b4e8c59f3b68f85f4f0ed2f5f0f9baefdb14281063e"
+    },
+    "quality-after.json": {
+      "bytes": 90285,
+      "sha256": "ab11e37802e4a1df700c636548e3371e5bc5887c049a7046b05e13d053751b58"
+    },
+    "quality-before.json": {
+      "bytes": 110573,
+      "sha256": "629e272b59c7aef61fb31436a055fa20dcb9a7419c1e1ea7a8f95d88055e10d8"
+    },
+    "rejections.jsonl": {
+      "bytes": 6809973,
+      "sha256": "4cdc9baf9c07c57328a21e7f6bdbcff0078d87c7314e363a4bf20caa55147833"
+    }
+  },
+  "finalization": {
+    "implementation_sha256": "086e963aa8e0b9d62143b2c27c1d416b3d36d47d730867899426ac402cd7f1c7",
+    "parent_report_sha256": "5ec6ff28a41bac9fd9c00b61896c91a9d097a906124d8abb696ff32fdc087790",
+    "policy": "Removal only; all retained text/IDs and component split assignments unchanged",
+    "quarantine_sha256": "a15e45a3116a85fb27fd88ce6cf2e7f1ec6a16e417cdef2a29ef0452b0e2a580",
+    "quarantined_documents": 4,
+    "removed_records": 3
+  },
+  "groups": 99246,
+  "guard": {
+    "controlled_audit_only": true,
+    "input_sha256": {
+      "configs/data2/protected-arc-v1.json": "c405ecf92febb7043dd93d8f9e9bb998e80a895bb8797ff1e6b039f2edc7abf9",
+      "configs/evaluation/final-suite-v1.json": "11c169cfcce6a83fd914cd732783e6faa2f523ed401f858c97ec6852da4a8f8b",
+      "configs/evaluation/protocol-v1.json": "a83477dba5fb9ff26661384621e0bf07748dd36cb83069aa9fe9093865121b38",
+      "configs/evaluation/suite-v1.json": "49fd0564f5b4e29639c08b958aa055075ab210aba9cf6422d0d6c8bd6abb51e0",
+      "data/cache/data2-protected-arc-v1/arc-challenge-test-00000-of-00001.parquet": "62f03257e737aed263f55c6abf87c7bb0028a44a6bdd2a26eb1279eb42c1d1e9",
+      "data/cache/data2-protected-arc-v1/arc-challenge-train-00000-of-00001.parquet": "e488c1587ffdcfc8443f916c53488a95cd471c5790e0746c6bfe4cecf20962cb",
+      "data/cache/data2-protected-arc-v1/arc-challenge-validation-00000-of-00001.parquet": "395a5c88d1580d69855fbaee9450270578df1ad5af6259771cd0a42c20e99f05",
+      "data/cache/data2-protected-arc-v1/arc-easy-test-00000-of-00001.parquet": "4160597d618ae851c7eb04e281574f3f654776216ac6b6641588d64527b47177",
+      "data/cache/data2-protected-arc-v1/arc-easy-train-00000-of-00001.parquet": "b315db8a4be597dc7daa50a4e70d48dd7c990c32085629e6ccd8c926beaa80b5",
+      "data/cache/data2-protected-arc-v1/arc-easy-validation-00000-of-00001.parquet": "ed890ff1e4cef7a7140d3a30dcea3ed2c9d467c6458f447ad9ef0176d8dcbb74",
+      "data/processed/english-books-v1/test.jsonl": "a01a55c31d0401ab5dba64cf0f14bd96e8ed9900012a7099f972b3377d58a954",
+      "data/processed/english-books-v1/validation.jsonl": "09647b26e4cee7ced1808ed29c72c8d98753e032b215e520a2b3dbd5a718af40",
+      "data/processed/english-instructions-v1/test.jsonl": "5e0fe6050dcd1df7e85ce46ebcd830ee6cec8b4841b9c1f8f270b110889395a7",
+      "data/processed/english-instructions-v1/train.jsonl": "2b6191876bcdb302aa80312e52683d91aff25667e6951d576b7a4ce7b1f3c34f",
+      "data/processed/english-instructions-v1/validation.jsonl": "ab6cf8b09d628c7f2bbc5ba1ec6453edc27ce5fec9edca08f6cbd8837ace5b72",
+      "outputs/phase-14-evaluation-reviewed/base-repeat/generation.json": "2c55e371f50840d5d8a412442d006925ea1e0b0cb7339b91a875a3c10d066eb1",
+      "outputs/phase-14-evaluation-reviewed/base-repeat/instructions.json": "990f633f375eadef9bdc46b2e279217c1aaef768a9467f1027ccba48879d33c9",
+      "outputs/phase-14-evaluation-reviewed/base/generation.json": "c746d72a38242965d2f3d3daf178ac7e6c33a68633fa85e1c0dd372319931a23",
+      "outputs/phase-14-evaluation-reviewed/base/instructions.json": "a402ee63ba785e7139b01ca2cf356f9608f5b0a66403482a36214118ef85e0fb",
+      "outputs/phase-14-evaluation-reviewed/dpo/generation.json": "fcf4daa1891c5e6dd440b8fd6c4af56b09203d28a7559ce52d23ea636c017fff",
+      "outputs/phase-14-evaluation-reviewed/dpo/instructions.json": "04bcd4f1c3029fddd90337740506f9cff043a5ad8444c2ae00c3801d6edfd40a",
+      "outputs/phase-14-evaluation-reviewed/full-control/generation.json": "732eabde3162fed11f427ec6eb7442b34f0eef8b52948ab58b8290cfa9d5af0a",
+      "outputs/phase-14-evaluation-reviewed/full-control/instructions.json": "62ad3cc5cfd895e471fb71886287ceaa502ec8cf6499fd6510da85a09f5ff91e",
+      "outputs/phase-14-evaluation-reviewed/lora-merged/generation.json": "b83ecded89d8d8c9644a470cf25d218e1ad763f1faf5e46d7b6a5f569d8cd2e4",
+      "outputs/phase-14-evaluation-reviewed/lora-merged/instructions.json": "678a514aaa12b8814b01a757309bccb90627959c223be589c2c40d1d84905fa0",
+      "outputs/phase-14-evaluation-reviewed/sft/generation.json": "c26927f1c7e794501f4854f3944db73f80f1f903c09940e11010668b5903b5d8",
+      "outputs/phase-14-evaluation-reviewed/sft/instructions.json": "4296268704cc6769c8d39eff8d76cae1a075d87b7a02e97dc481f1ed74083047",
+      "outputs/phase-14-evaluation/base-repeat/generation.json": "2539c00ac4ec71cbf905ed54839448c27b9b11706fc768e07837ec39be116da9",
+      "outputs/phase-14-evaluation/base-repeat/instructions.json": "4360da50eaa11bb0adf0e0733c42118c7f4fbd7da1a885ff2f864344a56101a1",
+      "outputs/phase-14-evaluation/base/generation.json": "2baa5275877159f2afe5a2ae9e46e6a9dcc5cb8f38fba4f41f3029775d4770d4",
+      "outputs/phase-14-evaluation/base/instructions.json": "1a7e5c89776f74bcc22ce725a9418d8af8dd3cfec0264511687d489e7c260afd",
+      "outputs/phase-14-evaluation/dpo/generation.json": "45b9692dc0eddcbcfffb8fdd8c37d42974ff4ac4cf303efdb90aa46ca2427505",
+      "outputs/phase-14-evaluation/dpo/instructions.json": "b5d6f9f84456eb54f98c8f5cca67464a9002d495fa0834f0c14f4bf255b6fd77",
+      "outputs/phase-14-evaluation/full-control/generation.json": "2cf424b70c1b80dd091fcc99a74759aec54f599347d36798eddb5ed06f253463",
+      "outputs/phase-14-evaluation/full-control/instructions.json": "2390de3d8d59c99f328d2fc16fc734a1bff09151c32986d267dc21b38bf52bc7",
+      "outputs/phase-14-evaluation/lora-merged/generation.json": "25ab4df1288e592b1a19fac4bccd6b96812ef59d48a70cccf26a4acf6e31f946",
+      "outputs/phase-14-evaluation/lora-merged/instructions.json": "76f08804f7906c4ffbe834bbe029b98bb5944455edbcf4f2deac1ce65c520fba",
+      "outputs/phase-14-evaluation/sft/generation.json": "f155d08160b74bcb9735691d6b4854612cd309020ae5b53ce3c5f6351163352e",
+      "outputs/phase-14-evaluation/sft/instructions.json": "54ff3f16d6b74093c780dd3824a6ef3b87c4afa17c1d66f8849672c5f709ee3a"
+    },
+    "model_scoring_or_final_override": false,
+    "policy": "docs/EVALUATION.md contamination policy; fingerprint comparison only; no example export",
+    "texts_by_kind": {
+      "ARC_all_splits_answer_choice": 31141,
+      "ARC_all_splits_question": 7787,
+      "final-suite-v1.json": 120,
+      "historical_generated_output": 1434,
+      "historical_instructions_test": 112,
+      "historical_instructions_train": 672,
+      "historical_instructions_validation": 112,
+      "historical_lm_development": 1030,
+      "historical_lm_reserved": 2394,
+      "suite-v1.json": 216
+    },
+    "unique_13word_fingerprints": 271557,
+    "unique_exact_fingerprints": 34528
+  },
+  "largest_groups": [
+    240,
+    238,
+    224,
+    180,
+    148,
+    118,
+    113,
+    83,
+    82,
+    74
+  ],
+  "manifest_sha256": "d921909b91fcfa383f307d073675dbe7d3e23b14ba11b93d6098f5661838edb8",
+  "paragraph_jaccard_comparisons": 1234274,
+  "quality_exclusions_sha256": "797e3b7fc93b09eb35cf8c9cc6cc8690118687eab61167bb2120d6dcd87d043f",
+  "rejections": {
+    "corrupt_or_control": 17,
+    "dominant_word": 384,
+    "empty": 6,
+    "excessive_repetition": 453,
+    "excluded_source_family": 429,
+    "language_not_confident_english": 22490,
+    "low_prose_fraction": 319,
+    "missing_template_value": 3841,
+    "no_retained_paragraph": 9435,
+    "oversized_before_selection": 87,
+    "post_filter_quality_quarantine": 4,
+    "potential_contact_or_secret": 596,
+    "protected_13word": 1,
+    "protected_exact": 63,
+    "quality_sample_quarantine": 4,
+    "quotation_or_rights_uncertainty": 27880,
+    "selected_text_byte_budget": 1146,
+    "too_short": 31484,
+    "unframed_personal_claim": 14,
+    "unreviewed_nonenglish_synthetic_or_low_quality_tree": 7781,
+    "unsuitable_lexical": 42
+  },
+  "retained_groups": 91148,
+  "schema_version": 1,
+  "source_stats": {
+    "dolly_raw_documents": 15011,
+    "oasst_raw_trees": 10364,
+    "wiki_not_selected": 133724,
+    "wiki_raw_documents": 312578,
+    "wiki_selected_documents": 178854,
+    "wiki_selected_raw_bytes": 599999907
+  },
+  "splits": {
+    "instruction/development": {
+      "category/brainstorming": 25,
+      "category/classification": 76,
+      "category/closed_qa": 15,
+      "category/creative_writing": 12,
+      "category/general_qa": 31,
+      "category/information_extraction": 20,
+      "category/multi_turn": 20,
+      "category/open_qa": 56,
+      "category/single_turn": 25,
+      "category/summarization": 12,
+      "documents": 292,
+      "multi_turn": 20,
+      "records": 292,
+      "source/dolly": 247,
+      "source/oasst": 45,
+      "utf8_bytes": 219326,
+      "words": 37149
+    },
+    "instruction/reserved": {
+      "category/brainstorming": 25,
+      "category/classification": 11,
+      "category/closed_qa": 15,
+      "category/creative_writing": 11,
+      "category/general_qa": 39,
+      "category/information_extraction": 24,
+      "category/multi_turn": 15,
+      "category/open_qa": 56,
+      "category/single_turn": 30,
+      "category/summarization": 17,
+      "documents": 243,
+      "multi_turn": 15,
+      "records": 243,
+      "source/dolly": 198,
+      "source/oasst": 45,
+      "utf8_bytes": 221173,
+      "words": 36977
+    },
+    "instruction/train": {
+      "category/brainstorming": 1568,
+      "category/classification": 1626,
+      "category/closed_qa": 1299,
+      "category/creative_writing": 624,
+      "category/general_qa": 2005,
+      "category/information_extraction": 1070,
+      "category/multi_turn": 734,
+      "category/open_qa": 3178,
+      "category/single_turn": 1369,
+      "category/summarization": 786,
+      "documents": 14259,
+      "multi_turn": 734,
+      "records": 14259,
+      "source/dolly": 12156,
+      "source/oasst": 2103,
+      "utf8_bytes": 11788806,
+      "words": 1973490
+    },
+    "pretrain/development": {
+      "category/encyclopedia": 1730,
+      "documents": 1730,
+      "records": 7144,
+      "source/wiki": 1730,
+      "utf8_bytes": 3362351,
+      "words": 565776
+    },
+    "pretrain/reserved": {
+      "category/encyclopedia": 1724,
+      "documents": 1724,
+      "records": 6795,
+      "source/wiki": 1724,
+      "utf8_bytes": 3229568,
+      "words": 540085
+    },
+    "pretrain/train": {
+      "category/encyclopedia": 80478,
+      "documents": 80478,
+      "records": 332782,
+      "source/wiki": 80478,
+      "utf8_bytes": 158795397,
+      "words": 26676649
+    }
+  }
+}

@@ -272,3 +272,24 @@ are unchanged. This custom protocol makes no third-party API compatibility claim
   binomial intervals and paired bootstrap are established mathematical methods,
   independently implemented here. No external evaluation harness source is imported.
   Original development/acceptance fixtures are AI-assisted project material under MIT.
+
+## Phase 15 — Data 2.0
+
+Source identities, credits, licenses and terms are in
+[the pinned manifest](configs/data2/sources-v1.json) and [data methodology](docs/DATA_2.md).
+Wikipedia editors and contributors / Wikimedia Foundation; Copyright 2023
+Databricks, Inc. and the separately identified Wikipedia contexts; OpenAssistant
+contributors / LAION, Köpf et al. (2023), [paper](https://arxiv.org/abs/2304.07327).
+Acquired data and learned tokenizer files are not repository MIT content.
+
+[Lingua](https://github.com/pemistahl/lingua-py), Peter M. Stahl, Apache-2.0,
+version 2.2.0, supplies language detection and its bundled statistical models as
+optional preprocessing dependencies. PyPI CPython 3.14 wheels were checked for the
+three supported platform families; execution evidence remains scoped to the Mac.
+No external language-model weights or tokenizer initialize LatoS. The existing
+Apache Arrow and Hugging Face Tokenizers dependencies retain their prior notices.
+
+The exact prefix-filtered Jaccard join is original implementation of standard
+set-similarity filtering; see [Bayardo, Ma, Srikant (2007)](https://research.google/pubs/scaling-up-all-pairs-similarity-search/)
+and the earlier shingling reference above. Full sets verify candidates; no external
+deduplication implementation or sketch model is imported.

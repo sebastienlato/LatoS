@@ -1,0 +1,180 @@
+{
+  "after": {
+    "file_sha256": "ab11e37802e4a1df700c636548e3371e5bc5887c049a7046b05e13d053751b58",
+    "strata": {
+      "dolly": [
+        "dolly:12620",
+        "dolly:10434",
+        "dolly:14752",
+        "dolly:11088",
+        "dolly:02629",
+        "dolly:10787",
+        "dolly:05934",
+        "dolly:03916",
+        "dolly:00294",
+        "dolly:04536"
+      ],
+      "dolly/brainstorming": [
+        "dolly:10787",
+        "dolly:05934",
+        "dolly:03916"
+      ],
+      "dolly/classification": [
+        "dolly:14273",
+        "dolly:10109",
+        "dolly:08131"
+      ],
+      "dolly/closed_qa": [
+        "dolly:00342",
+        "dolly:03314",
+        "dolly:07814"
+      ],
+      "dolly/creative_writing": [
+        "dolly:12620",
+        "dolly:14752",
+        "dolly:02650"
+      ],
+      "dolly/general_qa": [
+        "dolly:10434",
+        "dolly:00294",
+        "dolly:05722"
+      ],
+      "dolly/information_extraction": [
+        "dolly:12346",
+        "dolly:09000",
+        "dolly:14433"
+      ],
+      "dolly/open_qa": [
+        "dolly:11088",
+        "dolly:02629",
+        "dolly:04536"
+      ],
+      "dolly/summarization": [
+        "dolly:09299",
+        "dolly:09130",
+        "dolly:02118"
+      ],
+      "oasst": [
+        "oasst:89609d4b-6b7e-4b83-8113-426018b1f803",
+        "oasst:fbe26894-0a38-4e4b-9445-e25a8f6f461f",
+        "oasst:c9c2a22e-f95c-4b9c-b780-65427cf26551",
+        "oasst:ad936819-ecb6-4b07-84f7-b3497587e0aa",
+        "oasst:be292f38-55fb-4bbd-85ab-aca8481c4836",
+        "oasst:1454b814-692c-4a47-aa87-a16a44984a99",
+        "oasst:9e6e81ee-b75a-4f72-a67e-8603b48c5557",
+        "oasst:107afd8f-190b-4d32-aba6-b16a2a55059e",
+        "oasst:f2177a8b-5cf6-4307-b0fa-4902d7194e37",
+        "oasst:f03cce07-09bb-4d31-8d6a-c58d9f9755b1"
+      ],
+      "wiki": [
+        "wiki:9560826",
+        "wiki:10983370",
+        "wiki:11668509",
+        "wiki:9732470",
+        "wiki:9333613",
+        "wiki:8892792",
+        "wiki:10571761",
+        "wiki:8199254",
+        "wiki:8252369",
+        "wiki:8748115"
+      ]
+    },
+    "unique_records": 44
+  },
+  "before": {
+    "file_sha256": "629e272b59c7aef61fb31436a055fa20dcb9a7419c1e1ea7a8f95d88055e10d8",
+    "strata": {
+      "dolly": [
+        "dolly:12620",
+        "dolly:10434",
+        "dolly:14752",
+        "dolly:11088",
+        "dolly:07144",
+        "dolly:02629",
+        "dolly:10787",
+        "dolly:05934",
+        "dolly:03916",
+        "dolly:07123"
+      ],
+      "dolly/brainstorming": [
+        "dolly:10787",
+        "dolly:05934",
+        "dolly:03916"
+      ],
+      "dolly/classification": [
+        "dolly:11796",
+        "dolly:14273",
+        "dolly:04463"
+      ],
+      "dolly/closed_qa": [
+        "dolly:00342",
+        "dolly:03314",
+        "dolly:07814"
+      ],
+      "dolly/creative_writing": [
+        "dolly:12620",
+        "dolly:14752",
+        "dolly:02650"
+      ],
+      "dolly/general_qa": [
+        "dolly:10434",
+        "dolly:07123",
+        "dolly:00294"
+      ],
+      "dolly/information_extraction": [
+        "dolly:12346",
+        "dolly:09000",
+        "dolly:14433"
+      ],
+      "dolly/open_qa": [
+        "dolly:11088",
+        "dolly:02629",
+        "dolly:04536"
+      ],
+      "dolly/summarization": [
+        "dolly:07144",
+        "dolly:09299",
+        "dolly:05636"
+      ],
+      "oasst": [
+        "oasst:9158e850-b95e-4c8d-9da9-c815a5370b90",
+        "oasst:1147e505-2fbc-473e-b3ab-cdd988ff57ee",
+        "oasst:a762b85e-db71-41f7-adca-7b72b6aaaff9",
+        "oasst:89609d4b-6b7e-4b83-8113-426018b1f803",
+        "oasst:fbe26894-0a38-4e4b-9445-e25a8f6f461f",
+        "oasst:c9c2a22e-f95c-4b9c-b780-65427cf26551",
+        "oasst:ad936819-ecb6-4b07-84f7-b3497587e0aa",
+        "oasst:be292f38-55fb-4bbd-85ab-aca8481c4836",
+        "oasst:1454b814-692c-4a47-aa87-a16a44984a99",
+        "oasst:9e6e81ee-b75a-4f72-a67e-8603b48c5557"
+      ],
+      "wiki": [
+        "wiki:8558651",
+        "wiki:9560826",
+        "wiki:10056719",
+        "wiki:10983370",
+        "wiki:11668509",
+        "wiki:8291266",
+        "wiki:9732470",
+        "wiki:11466807",
+        "wiki:9333613",
+        "wiki:8892792"
+      ]
+    },
+    "unique_records": 44
+  },
+  "findings": [
+    "Raw Wikipedia contains lists, references, missing template values and extraction residue; footer/short-unit filters and defect filters remove many, at a cost to lead/context retention.",
+    "Human instructions include varied classification, explanation, writing, summarization, extraction, practical advice and programming. They also contain grammar errors, unsupported assumptions and unreliable facts/code.",
+    "Four versioned input-level quarantines and four output-level quarantines retain the reasons and source IDs. No answer was rewritten.",
+    "The full-size post-filter sample identified unsupported C# platform claims, overbroad security claims/missing requested bullet format, an unsupported no-car assumption, and an extraction artifact; all four removed before tokenizer fitting.",
+    "Multi-turn examples were inspected for actual alternating roles and follow-up coherence. Incorrect sampled code/biographical continuations were removed. Remaining turns are not certified factually consistent.",
+    "Final samples retain typos, uneven concision, dated facts and confident simplifications; no factual-error rate, safety score or representative domain balance is claimed.",
+    "The pretraining source is entirely encyclopedic, with sampled geography, transport, biographies, arts/media, history/law, zoology and taxonomy. It is not a balanced modern web, textbook or code corpus."
+  ],
+  "inspection_scope": "Wikipedia first 600-700 characters and final 200-250; instruction prompts/responses excerpts up to 650 characters, plus complete selected multi-turn/code examples and all replacement sample excerpts. Not a full-document or factual census. No protected evaluation examples inspected.",
+  "method": "smallest SHA-256(data2-quality-v1:<id>), ten/source plus three/Dolly category; fixed excerpts, no favorable selection",
+  "protected_example_export": false,
+  "reviewer": "Local agent inspection, not independent human expert validation",
+  "sample_selection_changed_after_bad_results": false
+}

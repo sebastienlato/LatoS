@@ -1,0 +1,89 @@
+{
+  "GPU": "Existing RTX 4070 SUPER ~12 GB VRAM; no Phase 15 CUDA measurement or feasibility claim.",
+  "corpus_report_sha256": "af7882b5fdcbab25bd1412ced2d0af0e2c1fd352a9e1457d708bd62c5c24a84b",
+  "embedding_costs": [
+    {
+      "extra_float32_weights_bytes": 12582912,
+      "extra_float32_weights_grad_Adam_bytes": 50331648,
+      "extra_parameters_vs_8192": 3145728,
+      "parameters_at_16384": 6291456,
+      "width_example_only": 384
+    },
+    {
+      "extra_float32_weights_bytes": 16777216,
+      "extra_float32_weights_grad_Adam_bytes": 67108864,
+      "extra_parameters_vs_8192": 4194304,
+      "parameters_at_16384": 8388608,
+      "width_example_only": 512
+    },
+    {
+      "extra_float32_weights_bytes": 25165824,
+      "extra_float32_weights_grad_Adam_bytes": 100663296,
+      "extra_parameters_vs_8192": 6291456,
+      "parameters_at_16384": 12582912,
+      "width_example_only": 768
+    }
+  ],
+  "instruction_context_options": {
+    "1024": {
+      "fits": 14101,
+      "overflow": 158,
+      "targets_at": 1655190
+    },
+    "2048": {
+      "fits": 14242,
+      "overflow": 17,
+      "targets_at": 1771611
+    },
+    "256": {
+      "fits": 10516,
+      "overflow": 3743,
+      "targets_at": 692504
+    },
+    "4096": {
+      "fits": 14257,
+      "overflow": 2,
+      "targets_at": 1787020
+    },
+    "512": {
+      "fits": 13111,
+      "overflow": 1148,
+      "targets_at": 1214346
+    }
+  },
+  "schema_version": 1,
+  "time_assumptions": "Hypothetical sustained useful target tokens/s, not measured CUDA throughput. Excludes validation, checkpoint I/O, imports and padding/packing differences. Architecture/mixed precision/memory/throughput belong to Phase 16.",
+  "tokenizer_sha256": "23b9182d5943e7f8b32c6f415f108b7d06f229c80f5cd8f236258db40a6b94c4",
+  "training_budget_options": [
+    {
+      "hypothetical_hours": {
+        "1000": 10.433087777777779,
+        "10000": 1.0433087777777779,
+        "5000": 2.0866175555555557
+      },
+      "passes": 1,
+      "target_exposures_including_EOS": 37559116,
+      "unique_pretrain_content_tokens": 37226334
+    },
+    {
+      "hypothetical_hours": {
+        "1000": 20.866175555555557,
+        "10000": 2.0866175555555557,
+        "5000": 4.1732351111111115
+      },
+      "passes": 2,
+      "target_exposures_including_EOS": 75118232,
+      "unique_pretrain_content_tokens": 37226334
+    },
+    {
+      "hypothetical_hours": {
+        "1000": 31.299263333333332,
+        "10000": 3.1299263333333336,
+        "5000": 6.259852666666667
+      },
+      "passes": 3,
+      "target_exposures_including_EOS": 112677348,
+      "unique_pretrain_content_tokens": 37226334
+    }
+  ]
+}

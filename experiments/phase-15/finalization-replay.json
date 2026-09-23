@@ -1,0 +1,18 @@
+{
+  "files": {
+    "documents.jsonl": true,
+    "duplicates.jsonl": true,
+    "instruction-development.jsonl": true,
+    "instruction-reserved.jsonl": true,
+    "instruction-train.jsonl": true,
+    "pretrain-development.jsonl": true,
+    "pretrain-reserved.jsonl": true,
+    "pretrain-train.jsonl": true,
+    "quality-after.json": true,
+    "quality-before.json": true,
+    "rejections.jsonl": true,
+    "report.json": true
+  },
+  "identical": true,
+  "scope": "Full-scale finalization repeated with the final code; all data, ledgers and report byte-identical; timing excluded"
+}

@@ -15,6 +15,7 @@ at the center of the next stage.
 
 - Reproducible acquisition, cleaning, deduplication and document-level data splits.
 - Independently fitted byte-level BPE tokenization with verified artifacts.
+- [Data 2.0](docs/DATA_2.md): audited new corpora and a 16,384-entry codec for future models.
 - Dense causal language modeling, pretraining, validation and checkpoint recovery.
 - Assistant-only supervised fine-tuning, LoRA adaptation/merge and DPO experiments.
 - Local terminal chat, streaming, KV caching and explicit context limits.

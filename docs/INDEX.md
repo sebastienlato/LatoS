@@ -81,3 +81,9 @@ that is future work, not a reinterpretation of historical evidence.
 [Evaluation methodology and reproduction](EVALUATION.md) ·
 [Phase 14 retrospective results](../experiments/phase-14/REPORT.md) ·
 [Fixed evaluation and quality gates](../configs/evaluation/protocol-v1.json)
+
+## Data 2.0
+
+[Method and source rights](DATA_2.md) · [Phase 15 results](../experiments/phase-15/REPORT.md) ·
+[Phase 16 local inputs](PHASE16_INPUTS.md). These are data/codec artifacts; historical
+learned models and fixed evaluations remain unchanged.

@@ -1,0 +1,46 @@
+{
+  "additional_findings": "See REVIEW.md for cross-kind finalization, short exact chunks and tokenizer script shadowing fixes.",
+  "bounded_replay": "4000 real-source candidates, two complete preparations, identical report and every output file; 54.37 seconds.",
+  "classification": "Separate local review after implementation and first complete corpus; no delegated/external review",
+  "findings": [
+    {
+      "fix": "Conservative quotation/rights and persona filters; versioned record quarantines; no answer rewriting",
+      "issue": "Raw quality sample contained source quotations, unframed personal stories, suspect factual and executable answers"
+    },
+    {
+      "fix": "After samples now contain actual retained text and omit reserved output",
+      "issue": "After samples initially represented input paragraphs before final paragraph removal"
+    },
+    {
+      "fix": "Require deterministic group split in train/development reader; reserved substitution regression test",
+      "issue": "Tokenizer input record checks initially trusted declared split without checking its group hash"
+    },
+    {
+      "fix": "Reject both explicitly; latest checkout and rebuilt installed wheel tests pass",
+      "issue": "Acquisition filename validation initially admitted dot and dot-dot; initial wheel retained that older code"
+    },
+    {
+      "fix": "Preserve card and document 2023 terms transition; separate Dolly 3.0 and Wikipedia 4.0 conditions",
+      "issue": "Copied Wikipedia card license wording differed from controlling source terms"
+    },
+    {
+      "fix": "Preserve failed acceptance measurement, refine selection budget using actual retention/RSS; no lowered gate",
+      "issue": "Initial 60k-page output below construction data floor"
+    },
+    {
+      "fix": "Expand defect detector and quarantine inspected extraction; stop incomplete expanded attempt before accepting it",
+      "issue": "Final output sample exposed additional missing numeric-template values and a truncated source sentence"
+    },
+    {
+      "fix": "Report actual platform and portable optional RSS; Windows without resource yields unavailable, not zero",
+      "issue": "Resource runners hard-coded the execution-host label and imported Unix resource on all systems"
+    },
+    {
+      "fix": "Hash retained pre-run source snapshot; later postprocessing/acquisition-only differences recorded separately",
+      "issue": "Source snapshot reporting could identify later edits rather than executed preparation code"
+    }
+  ],
+  "next": "Complete local commit/publication checkpoint; no remaining implementation findings.",
+  "preservation": "73679 existing artifact/data/evidence files rehashed unchanged; final publication check pending.",
+  "validation_so_far": "390 passed in development and isolated noneditable wheel; final full corpus/codec gates pass."
+}

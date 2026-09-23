@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "basis": "Deterministic pre-filter quality sample; conservative quarantine, no edited or invented responses.",
+  "records": {
+    "dolly:05636": "Response introduces unsupported plot events absent from the supplied context; unreliable answer.",
+    "oasst:9158e850-b95e-4c8d-9da9-c815a5370b90": "Unverified biographical and descendant claims; possible unattributed encyclopedic copying.",
+    "oasst:1147e505-2fbc-473e-b3ab-cdd988ff57ee": "Example automation includes an undefined role and malformed firewall module arguments; not a reliable executable answer.",
+    "wiki:9534655": "Retained prose includes an abruptly incomplete sentence in the source extraction; quarantine inspected defect."
+  }
+}

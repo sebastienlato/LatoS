@@ -1,0 +1,164 @@
+{
+  "contract_checks": {
+    "chat_contract": 1,
+    "fixed_192_byte_BPB_compatible": true,
+    "passed": true,
+    "round_trip_examples": 5
+  },
+  "lengths": {
+    "instruction": {
+      "count": 14259,
+      "max": 5075,
+      "min": 19,
+      "p50": 135.0,
+      "p95": 633.0,
+      "p99": 1062.1000000000004
+    },
+    "pretrain": {
+      "count": 332782,
+      "max": 2582,
+      "min": 44,
+      "p50": 98.0,
+      "p95": 222.0,
+      "p99": 320.0
+    }
+  },
+  "reserved_text_access": false,
+  "split": "train",
+  "stats": {
+    "dolly": {
+      "bytes_per_token": 4.18099566712486,
+      "content_tokens": 1979517,
+      "records": 12156,
+      "utf8_bytes": 8276352
+    },
+    "dolly/brainstorming": {
+      "bytes_per_token": 3.9485790615311087,
+      "content_tokens": 163202,
+      "records": 1568,
+      "utf8_bytes": 644416
+    },
+    "dolly/classification": {
+      "bytes_per_token": 3.5969564815515054,
+      "content_tokens": 119007,
+      "records": 1626,
+      "utf8_bytes": 428063
+    },
+    "dolly/closed_qa": {
+      "bytes_per_token": 4.207409779501072,
+      "content_tokens": 346623,
+      "records": 1299,
+      "utf8_bytes": 1458385
+    },
+    "dolly/creative_writing": {
+      "bytes_per_token": 4.246497297072233,
+      "content_tokens": 144103,
+      "records": 624,
+      "utf8_bytes": 611933
+    },
+    "dolly/general_qa": {
+      "bytes_per_token": 4.388022210933805,
+      "content_tokens": 285445,
+      "records": 2005,
+      "utf8_bytes": 1252539
+    },
+    "dolly/information_extraction": {
+      "bytes_per_token": 4.1085867815402475,
+      "content_tokens": 358423,
+      "records": 1070,
+      "utf8_bytes": 1472612
+    },
+    "dolly/open_qa": {
+      "bytes_per_token": 4.286524978347004,
+      "content_tokens": 255161,
+      "records": 3178,
+      "utf8_bytes": 1093754
+    },
+    "dolly/summarization": {
+      "bytes_per_token": 4.274547801517137,
+      "content_tokens": 307553,
+      "records": 786,
+      "utf8_bytes": 1314650
+    },
+    "instruction": {
+      "assistant_targets": 1787217,
+      "bytes_per_token": 4.158178519344994,
+      "content_tokens": 2831301,
+      "fits_1024": 14101,
+      "fits_2048": 14242,
+      "fits_256": 10516,
+      "fits_4096": 14257,
+      "fits_512": 13111,
+      "overflow_1024": 158,
+      "overflow_2048": 17,
+      "overflow_256": 3743,
+      "overflow_4096": 2,
+      "overflow_512": 1148,
+      "padding_at_1024": 11673141,
+      "padding_at_2048": 26222132,
+      "padding_at_256": 1529677,
+      "padding_at_4096": 55411204,
+      "padding_at_512": 4625911,
+      "records": 14259,
+      "serialized_tokens": 2995610,
+      "targets_at_1024": 1655190,
+      "targets_at_2048": 1771611,
+      "targets_at_256": 692504,
+      "targets_at_4096": 1787020,
+      "targets_at_512": 1214346,
+      "utf8_bytes": 11773055
+    },
+    "oasst": {
+      "bytes_per_token": 4.105152245170137,
+      "content_tokens": 851784,
+      "records": 2103,
+      "utf8_bytes": 3496703
+    },
+    "oasst/multi_turn": {
+      "bytes_per_token": 4.128578342919439,
+      "content_tokens": 425616,
+      "records": 734,
+      "utf8_bytes": 1757189
+    },
+    "oasst/single_turn": {
+      "bytes_per_token": 4.081756490398153,
+      "content_tokens": 426168,
+      "records": 1369,
+      "utf8_bytes": 1739514
+    },
+    "pretrain": {
+      "bytes_per_token": 4.26567378351035,
+      "content_tokens": 37226334,
+      "padding_at_1024": 302885054,
+      "padding_at_2048": 643647685,
+      "padding_at_256": 49721774,
+      "padding_at_512": 132648852,
+      "records": 332782,
+      "utf8_bytes": 158795397,
+      "windows_at_1024": 332790,
+      "windows_at_2048": 332783,
+      "windows_at_256": 342278,
+      "windows_at_512": 333088
+    },
+    "unique_exact_text_segments": {
+      "bytes": 170559161,
+      "tokens": 40055334
+    },
+    "wiki": {
+      "bytes_per_token": 4.26567378351035,
+      "content_tokens": 37226334,
+      "records": 332782,
+      "utf8_bytes": 158795397
+    },
+    "wiki/encyclopedia": {
+      "bytes_per_token": 4.26567378351035,
+      "content_tokens": 37226334,
+      "records": 332782,
+      "utf8_bytes": 158795397
+    }
+  },
+  "tokenizer_sha256": "23b9182d5943e7f8b32c6f415f108b7d06f229c80f5cd8f236258db40a6b94c4",
+  "unused_content_vocabulary": 83,
+  "used_content_vocabulary": 16297,
+  "vocab_size": 16384
+}

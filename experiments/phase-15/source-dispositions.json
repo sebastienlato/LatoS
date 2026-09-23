@@ -1,0 +1,52 @@
+{
+  "dolly": {
+    "corrupt_or_control": 4,
+    "dominant_word": 202,
+    "excessive_repetition": 218,
+    "excluded_source_family": 14,
+    "language_not_confident_english": 1130,
+    "post_filter_quality_quarantine": 1,
+    "potential_contact_or_secret": 12,
+    "protected_exact": 57,
+    "quality_sample_quarantine": 1,
+    "quotation_or_rights_uncertainty": 597,
+    "too_short": 3,
+    "unframed_personal_claim": 12
+  },
+  "oasst": {
+    "corrupt_or_control": 1,
+    "dominant_word": 6,
+    "excessive_repetition": 27,
+    "language_not_confident_english": 195,
+    "low_prose_fraction": 9,
+    "missing_template_value": 1,
+    "post_filter_quality_quarantine": 2,
+    "potential_contact_or_secret": 13,
+    "protected_13word": 1,
+    "protected_exact": 4,
+    "quality_sample_quarantine": 2,
+    "quotation_or_rights_uncertainty": 126,
+    "unframed_personal_claim": 2,
+    "unreviewed_nonenglish_synthetic_or_low_quality_tree": 7781
+  },
+  "wiki": {
+    "corrupt_or_control": 12,
+    "dominant_word": 176,
+    "empty": 6,
+    "excessive_repetition": 208,
+    "excluded_source_family": 415,
+    "language_not_confident_english": 21165,
+    "low_prose_fraction": 310,
+    "missing_template_value": 3840,
+    "no_retained_paragraph": 9435,
+    "oversized_before_selection": 87,
+    "post_filter_quality_quarantine": 1,
+    "potential_contact_or_secret": 571,
+    "protected_exact": 2,
+    "quality_sample_quarantine": 1,
+    "quotation_or_rights_uncertainty": 27157,
+    "selected_text_byte_budget": 1146,
+    "too_short": 31481,
+    "unsuitable_lexical": 42
+  }
+}

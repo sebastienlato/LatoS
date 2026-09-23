@@ -332,3 +332,14 @@ This phase included no tokenizer or model.
 
 Published after owner approval; remote branch/tag verified and Linux CPU CI passed.
 This phase included no model, tokenizer, data pipeline, trained weights, or chat.
+
+## Phase 15 — Data 2.0 (local checkpoint, 2026-09-23)
+
+- Add separately versioned pretraining/instruction construction with pinned source
+  terms, deterministic selection, quality filtering, exact/near joins, group splits
+  and controlled contamination protection. Original corpora/evaluations remain intact.
+- Prepare 37,226,334 pretraining content tokens and 14,259 training conversations;
+  select an original 16,384-entry BPE through training-only fitting and new-development
+  analysis. No learned model improvement is claimed.
+- Add local Phase 16 inputs, token/length/resource accounting, reproducibility checks
+  and explicit limitations. Package remains 1.3.0; no tag/release proposed.

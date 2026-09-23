@@ -1,0 +1,20 @@
+{
+  "audit_sha256": "ff4f4dc8e891009e78794d9296168892ac12fe6b99214e1ba4bd3fa4b63ba719",
+  "corpus_report_sha256": "af7882b5fdcbab25bd1412ced2d0af0e2c1fd352a9e1457d708bd62c5c24a84b",
+  "gates": {
+    "actual_multi_turn": true,
+    "all_eight_observed_Dolly_categories_in_training": true,
+    "complete_output_audit": true,
+    "no_remaining_output_duplicate_pairs": true,
+    "no_reserved_tokenizer_analysis": true,
+    "positive_training_token_accounting": true,
+    "pretraining_at_least_100MB": true,
+    "tokenizer_contracts": true,
+    "training_conversations_at_least_10000": true,
+    "two_instruction_origins": true
+  },
+  "passed": true,
+  "schema_version": 1,
+  "scope": "Construction minima only; quality inspection, rights/review and fixed future learned-quality gates remain separate.",
+  "tokenizer_selection_sha256": "b6f9bb8465dc913929ae2e841cb68e80a2d9146b1e50327b32542134a9f5640f"
+}

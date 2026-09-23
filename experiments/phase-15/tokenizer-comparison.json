@@ -1,0 +1,493 @@
+{
+  "development": {
+    "historical8192": {
+      "contract_checks": {
+        "chat_contract": 1,
+        "fixed_192_byte_BPB_compatible": true,
+        "passed": true,
+        "round_trip_examples": 5
+      },
+      "lengths": {
+        "instruction": {
+          "count": 292,
+          "max": 1519,
+          "min": 30,
+          "p50": 147.0,
+          "p95": 797.1499999999996,
+          "p99": 1277.469999999998
+        },
+        "pretrain": {
+          "count": 7144,
+          "max": 1622,
+          "min": 54,
+          "p50": 132.0,
+          "p95": 283.0,
+          "p99": 412.0
+        }
+      },
+      "reserved_text_access": false,
+      "split": "development",
+      "stats": {
+        "dolly": {
+          "bytes_per_token": 3.22967534872238,
+          "content_tokens": 40505,
+          "records": 247,
+          "utf8_bytes": 130818
+        },
+        "dolly/brainstorming": {
+          "bytes_per_token": 2.9276846679081316,
+          "content_tokens": 3222,
+          "records": 25,
+          "utf8_bytes": 9433
+        },
+        "dolly/classification": {
+          "bytes_per_token": 2.9151785714285716,
+          "content_tokens": 5600,
+          "records": 76,
+          "utf8_bytes": 16325
+        },
+        "dolly/closed_qa": {
+          "bytes_per_token": 3.342474489795918,
+          "content_tokens": 4704,
+          "records": 15,
+          "utf8_bytes": 15723
+        },
+        "dolly/creative_writing": {
+          "bytes_per_token": 3.6420157068062826,
+          "content_tokens": 3056,
+          "records": 12,
+          "utf8_bytes": 11130
+        },
+        "dolly/general_qa": {
+          "bytes_per_token": 3.639793022867635,
+          "content_tokens": 5991,
+          "records": 31,
+          "utf8_bytes": 21806
+        },
+        "dolly/information_extraction": {
+          "bytes_per_token": 3.0046324515421188,
+          "content_tokens": 8203,
+          "records": 20,
+          "utf8_bytes": 24647
+        },
+        "dolly/open_qa": {
+          "bytes_per_token": 3.3637230593171847,
+          "content_tokens": 5243,
+          "records": 56,
+          "utf8_bytes": 17636
+        },
+        "dolly/summarization": {
+          "bytes_per_token": 3.1471243869817207,
+          "content_tokens": 4486,
+          "records": 12,
+          "utf8_bytes": 14118
+        },
+        "instruction": {
+          "assistant_targets": 46277,
+          "bytes_per_token": 3.287063026282215,
+          "content_tokens": 66623,
+          "fits_1024": 284,
+          "fits_2048": 292,
+          "fits_256": 200,
+          "fits_4096": 292,
+          "fits_512": 258,
+          "overflow_1024": 8,
+          "overflow_256": 92,
+          "overflow_512": 34,
+          "padding_at_1024": 229338,
+          "padding_at_2048": 526421,
+          "padding_at_256": 29136,
+          "padding_at_4096": 1124437,
+          "padding_at_512": 88977,
+          "records": 292,
+          "serialized_tokens": 71595,
+          "targets_at_1024": 37306,
+          "targets_at_2048": 46277,
+          "targets_at_256": 12517,
+          "targets_at_4096": 46277,
+          "targets_at_512": 24858,
+          "utf8_bytes": 218994
+        },
+        "oasst": {
+          "bytes_per_token": 3.3760624856420858,
+          "content_tokens": 26118,
+          "records": 45,
+          "utf8_bytes": 88176
+        },
+        "oasst/multi_turn": {
+          "bytes_per_token": 3.4613836140374423,
+          "content_tokens": 14903,
+          "records": 20,
+          "utf8_bytes": 51585
+        },
+        "oasst/single_turn": {
+          "bytes_per_token": 3.262683905483727,
+          "content_tokens": 11215,
+          "records": 25,
+          "utf8_bytes": 36591
+        },
+        "pretrain": {
+          "bytes_per_token": 3.1570036946795677,
+          "content_tokens": 1065045,
+          "padding_at_1024": 6237146,
+          "padding_at_2048": 13551579,
+          "padding_at_256": 895901,
+          "padding_at_512": 2589637,
+          "records": 7144,
+          "utf8_bytes": 3362351,
+          "windows_at_1024": 7145,
+          "windows_at_2048": 7144,
+          "windows_at_256": 7718,
+          "windows_at_512": 7166
+        },
+        "unique_exact_text_segments": {
+          "bytes": 3581286,
+          "tokens": 1131650
+        },
+        "wiki": {
+          "bytes_per_token": 3.1570036946795677,
+          "content_tokens": 1065045,
+          "records": 7144,
+          "utf8_bytes": 3362351
+        },
+        "wiki/encyclopedia": {
+          "bytes_per_token": 3.1570036946795677,
+          "content_tokens": 1065045,
+          "records": 7144,
+          "utf8_bytes": 3362351
+        }
+      },
+      "tokenizer_sha256": "7dce3d0888f6a37d3eadbd077a9ff73170a54a1f6e301e51b2ae6d998142b0ab",
+      "unused_content_vocabulary": 932,
+      "used_content_vocabulary": 7256,
+      "vocab_size": 8192
+    },
+    "new16384": {
+      "contract_checks": {
+        "chat_contract": 1,
+        "fixed_192_byte_BPB_compatible": true,
+        "passed": true,
+        "round_trip_examples": 5
+      },
+      "lengths": {
+        "instruction": {
+          "count": 292,
+          "max": 1182,
+          "min": 23,
+          "p50": 112.5,
+          "p95": 613.3499999999999,
+          "p99": 970.1399999999963
+        },
+        "pretrain": {
+          "count": 7144,
+          "max": 1304,
+          "min": 45,
+          "p50": 98.0,
+          "p95": 213.84999999999945,
+          "p99": 299.0
+        }
+      },
+      "reserved_text_access": false,
+      "split": "development",
+      "stats": {
+        "dolly": {
+          "bytes_per_token": 4.145582456585118,
+          "content_tokens": 31556,
+          "records": 247,
+          "utf8_bytes": 130818
+        },
+        "dolly/brainstorming": {
+          "bytes_per_token": 3.6266820453671667,
+          "content_tokens": 2601,
+          "records": 25,
+          "utf8_bytes": 9433
+        },
+        "dolly/classification": {
+          "bytes_per_token": 3.7442660550458715,
+          "content_tokens": 4360,
+          "records": 76,
+          "utf8_bytes": 16325
+        },
+        "dolly/closed_qa": {
+          "bytes_per_token": 4.3373793103448275,
+          "content_tokens": 3625,
+          "records": 15,
+          "utf8_bytes": 15723
+        },
+        "dolly/creative_writing": {
+          "bytes_per_token": 4.2594718714121695,
+          "content_tokens": 2613,
+          "records": 12,
+          "utf8_bytes": 11130
+        },
+        "dolly/general_qa": {
+          "bytes_per_token": 4.398144413069786,
+          "content_tokens": 4958,
+          "records": 31,
+          "utf8_bytes": 21806
+        },
+        "dolly/information_extraction": {
+          "bytes_per_token": 4.075231481481482,
+          "content_tokens": 6048,
+          "records": 20,
+          "utf8_bytes": 24647
+        },
+        "dolly/open_qa": {
+          "bytes_per_token": 4.266086115142719,
+          "content_tokens": 4134,
+          "records": 56,
+          "utf8_bytes": 17636
+        },
+        "dolly/summarization": {
+          "bytes_per_token": 4.3885607709045695,
+          "content_tokens": 3217,
+          "records": 12,
+          "utf8_bytes": 14118
+        },
+        "instruction": {
+          "assistant_targets": 37046,
+          "bytes_per_token": 4.164730045832303,
+          "content_tokens": 52583,
+          "fits_1024": 289,
+          "fits_2048": 292,
+          "fits_256": 228,
+          "fits_4096": 292,
+          "fits_512": 267,
+          "overflow_1024": 3,
+          "overflow_256": 64,
+          "overflow_512": 25,
+          "padding_at_1024": 243371,
+          "padding_at_2048": 542021,
+          "padding_at_256": 34932,
+          "padding_at_4096": 1140037,
+          "padding_at_512": 99105,
+          "records": 292,
+          "serialized_tokens": 55995,
+          "targets_at_1024": 33934,
+          "targets_at_2048": 37046,
+          "targets_at_256": 12770,
+          "targets_at_4096": 37046,
+          "targets_at_512": 22376,
+          "utf8_bytes": 218994
+        },
+        "oasst": {
+          "bytes_per_token": 4.193465544300185,
+          "content_tokens": 21027,
+          "records": 45,
+          "utf8_bytes": 88176
+        },
+        "oasst/multi_turn": {
+          "bytes_per_token": 4.233483791546984,
+          "content_tokens": 12185,
+          "records": 20,
+          "utf8_bytes": 51585
+        },
+        "oasst/single_turn": {
+          "bytes_per_token": 4.13831712282289,
+          "content_tokens": 8842,
+          "records": 25,
+          "utf8_bytes": 36591
+        },
+        "pretrain": {
+          "bytes_per_token": 4.24657764350911,
+          "content_tokens": 791779,
+          "padding_at_1024": 6510412,
+          "padding_at_2048": 13824845,
+          "padding_at_256": 1066912,
+          "padding_at_512": 2856771,
+          "records": 7144,
+          "utf8_bytes": 3362351,
+          "windows_at_1024": 7145,
+          "windows_at_2048": 7144,
+          "windows_at_256": 7317,
+          "windows_at_512": 7154
+        },
+        "unique_exact_text_segments": {
+          "bytes": 3581286,
+          "tokens": 844347
+        },
+        "wiki": {
+          "bytes_per_token": 4.24657764350911,
+          "content_tokens": 791779,
+          "records": 7144,
+          "utf8_bytes": 3362351
+        },
+        "wiki/encyclopedia": {
+          "bytes_per_token": 4.24657764350911,
+          "content_tokens": 791779,
+          "records": 7144,
+          "utf8_bytes": 3362351
+        }
+      },
+      "tokenizer_sha256": "23b9182d5943e7f8b32c6f415f108b7d06f229c80f5cd8f236258db40a6b94c4",
+      "unused_content_vocabulary": 560,
+      "used_content_vocabulary": 15820,
+      "vocab_size": 16384
+    },
+    "new8192": {
+      "contract_checks": {
+        "chat_contract": 1,
+        "fixed_192_byte_BPB_compatible": true,
+        "passed": true,
+        "round_trip_examples": 5
+      },
+      "lengths": {
+        "instruction": {
+          "count": 292,
+          "max": 1350,
+          "min": 27,
+          "p50": 125.0,
+          "p95": 699.9,
+          "p99": 1081.1499999999967
+        },
+        "pretrain": {
+          "count": 7144,
+          "max": 1476,
+          "min": 46,
+          "p50": 108.0,
+          "p95": 236.0,
+          "p99": 337.1399999999994
+        }
+      },
+      "reserved_text_access": false,
+      "split": "development",
+      "stats": {
+        "dolly": {
+          "bytes_per_token": 3.743861255795318,
+          "content_tokens": 34942,
+          "records": 247,
+          "utf8_bytes": 130818
+        },
+        "dolly/brainstorming": {
+          "bytes_per_token": 3.26401384083045,
+          "content_tokens": 2890,
+          "records": 25,
+          "utf8_bytes": 9433
+        },
+        "dolly/classification": {
+          "bytes_per_token": 3.2953169156237383,
+          "content_tokens": 4954,
+          "records": 76,
+          "utf8_bytes": 16325
+        },
+        "dolly/closed_qa": {
+          "bytes_per_token": 3.909249129786176,
+          "content_tokens": 4022,
+          "records": 15,
+          "utf8_bytes": 15723
+        },
+        "dolly/creative_writing": {
+          "bytes_per_token": 3.895694784739237,
+          "content_tokens": 2857,
+          "records": 12,
+          "utf8_bytes": 11130
+        },
+        "dolly/general_qa": {
+          "bytes_per_token": 3.9647272727272727,
+          "content_tokens": 5500,
+          "records": 31,
+          "utf8_bytes": 21806
+        },
+        "dolly/information_extraction": {
+          "bytes_per_token": 3.689118395449783,
+          "content_tokens": 6681,
+          "records": 20,
+          "utf8_bytes": 24647
+        },
+        "dolly/open_qa": {
+          "bytes_per_token": 3.8922975060693004,
+          "content_tokens": 4531,
+          "records": 56,
+          "utf8_bytes": 17636
+        },
+        "dolly/summarization": {
+          "bytes_per_token": 4.025662959794697,
+          "content_tokens": 3507,
+          "records": 12,
+          "utf8_bytes": 14118
+        },
+        "instruction": {
+          "assistant_targets": 40983,
+          "bytes_per_token": 3.7647240845796803,
+          "content_tokens": 58170,
+          "fits_1024": 287,
+          "fits_2048": 292,
+          "fits_256": 220,
+          "fits_4096": 292,
+          "fits_512": 264,
+          "overflow_1024": 5,
+          "overflow_256": 72,
+          "overflow_512": 28,
+          "padding_at_1024": 238270,
+          "padding_at_2048": 536434,
+          "padding_at_256": 32670,
+          "padding_at_4096": 1134450,
+          "padding_at_512": 95458,
+          "records": 292,
+          "serialized_tokens": 61582,
+          "targets_at_1024": 35592,
+          "targets_at_2048": 40983,
+          "targets_at_256": 12939,
+          "targets_at_4096": 40983,
+          "targets_at_512": 23402,
+          "utf8_bytes": 218994
+        },
+        "oasst": {
+          "bytes_per_token": 3.7961081453418286,
+          "content_tokens": 23228,
+          "records": 45,
+          "utf8_bytes": 88176
+        },
+        "oasst/multi_turn": {
+          "bytes_per_token": 3.826780415430267,
+          "content_tokens": 13480,
+          "records": 20,
+          "utf8_bytes": 51585
+        },
+        "oasst/single_turn": {
+          "bytes_per_token": 3.7536930652441525,
+          "content_tokens": 9748,
+          "records": 25,
+          "utf8_bytes": 36591
+        },
+        "pretrain": {
+          "bytes_per_token": 3.835738690486376,
+          "content_tokens": 876585,
+          "padding_at_1024": 6425606,
+          "padding_at_2048": 13740039,
+          "padding_at_256": 1007861,
+          "padding_at_512": 2775542,
+          "records": 7144,
+          "utf8_bytes": 3362351,
+          "windows_at_1024": 7145,
+          "windows_at_2048": 7144,
+          "windows_at_256": 7418,
+          "windows_at_512": 7161
+        },
+        "unique_exact_text_segments": {
+          "bytes": 3581286,
+          "tokens": 934739
+        },
+        "wiki": {
+          "bytes_per_token": 3.835738690486376,
+          "content_tokens": 876585,
+          "records": 7144,
+          "utf8_bytes": 3362351
+        },
+        "wiki/encyclopedia": {
+          "bytes_per_token": 3.835738690486376,
+          "content_tokens": 876585,
+          "records": 7144,
+          "utf8_bytes": 3362351
+        }
+      },
+      "tokenizer_sha256": "f3b5e0f78f632927b5bccbaeccef16ad73fa3977335d3d290c6d4bc69ab8f15c",
+      "unused_content_vocabulary": 164,
+      "used_content_vocabulary": 8024,
+      "vocab_size": 8192
+    }
+  },
+  "gain_16384_vs_8192": 0.09670234446459236,
+  "no_source_regression": true,
+  "selected": "new16384"
+}

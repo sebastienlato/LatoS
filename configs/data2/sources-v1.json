@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "id": "latos-data2-v1",
+  "sources": [
+    {
+      "id": "wiki",
+      "origin": "https://huggingface.co/datasets/wikimedia/wikipedia",
+      "revision": "b04c8d1ceb2f5cd4588862100d08de323dccfbaa",
+      "language": "en (selected; OASST upstream multilingual)",
+      "domain": "English encyclopedia; page ID/title/URL retained",
+      "intended_use": "pretraining",
+      "license": "CC-BY-SA-4.0",
+      "terms": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+      "reviewed_date": "2026-09-23",
+      "rights": {
+        "local_use": "Author-published license permits obtaining, transforming and using contributions for local research/training. Separate upstream Wikipedia terms reviewed for Dolly contexts.",
+        "redistribution": "No payload redistribution in Phase 15. Retain license, credit and modification notices. CC sources require attribution and share-alike for adapted text; Apache requires license/notices and changed-file identification. Article-level attribution of Dolly contexts is incomplete upstream: resolve before any derived-data release.",
+        "resulting_artifacts": "No assumption that repository MIT relicenses data, tokenizer or future weights; artifact-release review remains separate.",
+        "attribution": "Wikipedia editors and contributors; Wikimedia Foundation dump; article URLs identify attribution/history",
+        "snapshot_notice": "Pinned dataset card says CC-BY-SA-3.0; controlling Wikimedia terms updated in June 2023 and current dump legal page specify 4.0. Preserve the upstream card unchanged; apply 4.0 to November 2023 text, with page attribution. Images excluded. Third-party quotations may have separate rights and are conservatively filtered."
+      },
+      "files": [
+        {
+          "file": "wiki-train-00004-of-00041.parquet",
+          "url": "https://huggingface.co/datasets/wikimedia/wikipedia/resolve/b04c8d1ceb2f5cd4588862100d08de323dccfbaa/20231101.en/train-00004-of-00041.parquet",
+          "bytes": 306945391,
+          "sha256": "1424300f113c13ee022b7929185fa4f7e20c6195ba563d728e8a3dc47c8e9aba",
+          "purpose": "payload"
+        },
+        {
+          "file": "wiki-train-00003-of-00041.parquet",
+          "url": "https://huggingface.co/datasets/wikimedia/wikipedia/resolve/b04c8d1ceb2f5cd4588862100d08de323dccfbaa/20231101.en/train-00003-of-00041.parquet",
+          "bytes": 330779424,
+          "sha256": "0b8a6f452f5ef59d0986a067f70110feb16d7c1d281ba2db0b3df32933618fcc",
+          "purpose": "payload"
+        },
+        {
+          "file": "wiki-README.md",
+          "url": "https://huggingface.co/datasets/wikimedia/wikipedia/raw/b04c8d1ceb2f5cd4588862100d08de323dccfbaa/README.md",
+          "bytes": 130835,
+          "sha256": "a0f2055ac612f924721e9981fa2a49a18adec1c67cc8026f6c97d12f17211b21",
+          "purpose": "notice"
+        }
+      ]
+    },
+    {
+      "id": "dolly",
+      "origin": "https://huggingface.co/datasets/databricks/databricks-dolly-15k",
+      "revision": "bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a",
+      "language": "en (selected; OASST upstream multilingual)",
+      "domain": "Human employee contributions; context passages from Wikipedia under CC-BY-SA-3.0; individual article URLs not supplied",
+      "intended_use": "instruction",
+      "license": "CC-BY-SA-3.0",
+      "terms": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "reviewed_date": "2026-09-23",
+      "rights": {
+        "local_use": "Author-published license permits obtaining, transforming and using contributions for local research/training. Separate upstream Wikipedia terms reviewed for Dolly contexts.",
+        "redistribution": "No payload redistribution in Phase 15. Retain license, credit and modification notices. CC sources require attribution and share-alike for adapted text; Apache requires license/notices and changed-file identification. Article-level attribution of Dolly contexts is incomplete upstream: resolve before any derived-data release.",
+        "resulting_artifacts": "No assumption that repository MIT relicenses data, tokenizer or future weights; artifact-release review remains separate.",
+        "attribution": "Copyright 2023 Databricks, Inc.; Wikipedia editors and contributors"
+      },
+      "files": [
+        {
+          "file": "dolly-databricks-dolly-15k.jsonl",
+          "url": "https://huggingface.co/datasets/databricks/databricks-dolly-15k/resolve/bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a/databricks-dolly-15k.jsonl",
+          "bytes": 13085339,
+          "sha256": "2df9083338b4abd6bceb5635764dab5d833b393b55759dffb0959b6fcbf794ec",
+          "purpose": "payload"
+        },
+        {
+          "file": "dolly-README.md",
+          "url": "https://huggingface.co/datasets/databricks/databricks-dolly-15k/raw/bdd27f4d94b9c1f951818a7da7fd7aeea5dbff1a/README.md",
+          "bytes": 8199,
+          "sha256": "db06c60090a11b20e79d1933b2f316f781605f07761ff2ae2795d6523e3e960b",
+          "purpose": "notice"
+        }
+      ]
+    },
+    {
+      "id": "oasst",
+      "origin": "https://huggingface.co/datasets/OpenAssistant/oasst1",
+      "revision": "fdf72ae0827c1cda404aff25b6603abec9e3399b",
+      "language": "en (selected; OASST upstream multilingual)",
+      "domain": "Volunteer conversation trees; retain tree/message IDs, ranks and labels; exclude synthetic/model-attributed messages",
+      "intended_use": "instruction",
+      "license": "Apache-2.0",
+      "terms": "https://www.apache.org/licenses/LICENSE-2.0",
+      "reviewed_date": "2026-09-23",
+      "rights": {
+        "local_use": "Author-published license permits obtaining, transforming and using contributions for local research/training. Separate upstream Wikipedia terms reviewed for Dolly contexts.",
+        "redistribution": "No payload redistribution in Phase 15. Retain license, credit and modification notices. CC sources require attribution and share-alike for adapted text; Apache requires license/notices and changed-file identification. Article-level attribution of Dolly contexts is incomplete upstream: resolve before any derived-data release.",
+        "resulting_artifacts": "No assumption that repository MIT relicenses data, tokenizer or future weights; artifact-release review remains separate.",
+        "attribution": "OpenAssistant contributors / LAION, K\u00f6pf et al. 2023"
+      },
+      "files": [
+        {
+          "file": "oasst-2023-04-12_oasst_ready.trees.jsonl.gz",
+          "url": "https://huggingface.co/datasets/OpenAssistant/oasst1/resolve/fdf72ae0827c1cda404aff25b6603abec9e3399b/2023-04-12_oasst_ready.trees.jsonl.gz",
+          "bytes": 34145252,
+          "sha256": "2a9a8fd343e9b28e04a895a669d3253f82d93e9c174d440199ae19d5fafbdff7",
+          "purpose": "payload"
+        },
+        {
+          "file": "oasst-README.md",
+          "url": "https://huggingface.co/datasets/OpenAssistant/oasst1/raw/fdf72ae0827c1cda404aff25b6603abec9e3399b/README.md",
+          "bytes": 10168,
+          "sha256": "68483ac2fcc2f3f7779f453352363827678070ef35b6d746ccb2ca6958540fff",
+          "purpose": "notice"
+        },
+        {
+          "file": "oasst-LICENSE",
+          "url": "https://huggingface.co/datasets/OpenAssistant/oasst1/raw/fdf72ae0827c1cda404aff25b6603abec9e3399b/LICENSE",
+          "bytes": 11357,
+          "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+          "purpose": "notice"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "candidates": 4000,
+  "identical": true,
+  "peak_rss_bytes": 2361114624,
+  "report_sha256": "e1fc3bb439e59161fa55637b43ad0d6e286290003c38ccff10e648e432db8dcb",
+  "sample_ids_sha256": "bb8d35011693fe49bfb5f75be78104db81254cf24ad379a547045684b112bfd9",
+  "scope": "4000 deterministic real-source candidates; not a full-corpus repeat",
+  "seconds": 54.36863000000085
+}

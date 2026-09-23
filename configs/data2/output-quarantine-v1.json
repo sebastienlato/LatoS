@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "basis": "Fixed post-filter sample review; remove complete documents/conversations without rewriting answers or changing split assignments.",
+  "records": {
+    "oasst:9740cbef-8bcb-4f78-a123-b2beeda143a6": "Incorrect platform restriction in a programming-language comparison; .NET/C# is cross-platform. https://learn.microsoft.com/en-us/dotnet/core/introduction",
+    "oasst:235dd9ea-2538-49bf-bd66-0fe6175eebaa": "Overbroad automatic permissions/financial authorization claims and missing requested bullet markers; conservatively quarantine unreliable security guidance.",
+    "wiki:8291266": "Visible leftover extraction artifact attached to the instrument name in the retained paragraph.",
+    "dolly:11796": "Response assumes the person has no car from a prompt that only says the property has no garage; unsupported inference."
+  }
+}

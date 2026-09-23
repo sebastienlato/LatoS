@@ -1,0 +1,18 @@
+{
+  "cpu": "Apple M4 Max; 16 cores",
+  "foreign_execution": "None for Phase 15; wheel availability checks only",
+  "host_memory_bytes": 68719476736,
+  "packages": {
+    "lingua-language-detector": "2.2.0",
+    "numpy": "2.5.3",
+    "pyarrow": "25.0.1",
+    "pytest": "9.1.1",
+    "ruff": "0.16.8",
+    "tokenizers": "0.23.2",
+    "torch": "2.14.0"
+  },
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "python": "3.14.7 (main, Sep  1 2026, 14:05:28) [Clang 22.1.3 ]",
+  "unicode": "16.0.0",
+  "uv_lock_sha256": "fae860484b7f64e1025cf1061129403cada6444623350a772470cae66e6a5eaa"
+}

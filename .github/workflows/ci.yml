@@ -24,7 +24,7 @@ jobs:
       - run: uv sync --locked
       - run: uv run --locked ruff check .
       - run: uv run --locked ruff format --check .
-      - run: uv run --locked --extra evaluation pytest
+      - run: uv run --locked --extra evaluation --extra data2 pytest
       - run: uv run --locked latos doctor --device cpu --json
       - run: uv run --locked latos model check --config configs/model/debug.json --device cpu
       - name: Offline data fixture

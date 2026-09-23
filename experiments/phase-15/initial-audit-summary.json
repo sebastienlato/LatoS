@@ -1,0 +1,12 @@
+{
+  "affected": [],
+  "documents": 43490,
+  "group_cross_split": 0,
+  "groups": 38834,
+  "limits": "Lexical and source exclusions cannot certify semantic or unknown-origin absence; short common answers match only whole segments. No exposure to reserved examples is printed.",
+  "output_near_pairs": {},
+  "passed": true,
+  "records": 134894,
+  "report_sha256": "6ec44239655c5ac270e27459761fc72a2da8ad32eee85ede31a5be0b1b721cd9",
+  "scope": "full output, all splits, no model scoring; exact and Jaccard80 full records; protected exact/13word/near"
+}

@@ -251,3 +251,26 @@ training behavior, paid API or historical evidence changes. Five preserved dense
 artifacts are retrospectively measured without promotion; merged LoRA remains
 distinct from live-adapter arithmetic. Phase 15 needs verified Phase 14 publication
 and separate explicit owner/master-planning authorization.
+
+## 2026-09-23 — Audited Data 2.0 before model scaling
+
+Use independently reviewed Wikimedia encyclopedia text, human Dolly instructions
+and reviewed nonsynthetic OpenAssistant paths in separate versioned local outputs.
+Measure retention before refining selection budgets; preserve unsuccessful passes
+and keep the construction floor fixed. Exact/prefix-filtered lexical joins and
+source/prompt/context grouping precede splits and chunks. Protect all ARC splits,
+historical reservations, fixed suites and generated outputs through controlled
+fingerprint-only comparison. No reserved scoring or final-access override.
+
+Retain every old artifact and choose a new 16,384 BPE only after training-only
+fitting and new-development compression tests. The 9.67% token reduction versus
+new 8,192 passes the predeclared 8% rule on all sources, with codec/chat contract 1
+preserved. More efficient encoding is not learned quality; old weights retain their
+original tokenizer. Data and codecs remain local under their source terms.
+
+A final removal-only curation addresses reviewed response/extraction defects and
+three pretraining/instruction overlaps without changing surviving text or splits.
+A hash-pinned local input package and length/padding/exposure measurements support
+Phase 16; GPU feasibility, architecture, precision and all substantive training
+remain later work. See [report](experiments/phase-15/REPORT.md) and
+[Phase 16 inputs](docs/PHASE16_INPUTS.md).
