@@ -4,12 +4,17 @@ LatoS is an original, English-first small language model project. Its goal is to
 make the path from documented training data to an evaluated conversational model
 reproducible on modest hardware.
 
-**Current milestone: Phase 12 context-budget experiment reviewed locally; publication
-approval pending.** The [experiment](experiments/phase-12/REPORT.md) compares 256 and
-512 tokens using unchanged models, original prompt and scoring. More room allowed
-44 previously blocked sessions to retry, but none produced valid JSON or successful
-tool use. Public runtime/defaults remain 1.3.0. This is not evidence of general
-long-context language quality. See [current state](PROJECT_STATE.md).
+**Current milestone: Phase 12 published; Windows evidence-path correction reviewed locally,
+awaiting publication approval.** External Windows validation stopped at an inventory separator defect
+after 299 passing tests and 13 expected skips; Phase 12 CUDA execution was not reached.
+The [correction](experiments/phase-12/PORTABILITY_CORRECTION.md) standardizes saved
+paths and adds a nested writer/verifier regression. Publication approval and a fresh
+Windows/CUDA retest are required before closure or another experiment.
+
+The unchanged [experiment](experiments/phase-12/REPORT.md) compares 256 and 512 tokens.
+All 44 previously blocked sessions gained retries, but there was no successful learned
+tool use. Removing the capacity blocker is not learned capability improvement.
+Runtime/defaults/version remain 1.3.0. See [current state](PROJECT_STATE.md).
 
 Phase 11 closure is published at `e2d61100a7c0c74d759bdc4ded5ddcda89cb112b`.
 Its [scoped evidence](experiments/phase-11/CLOSURE.md) preserves original full Mac

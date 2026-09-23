@@ -85,11 +85,17 @@ def source_files():
 
 
 def inventory(root):
+    """POSIX-relative keys on every host; exclude only this inventory itself."""
     return {
-        str(p.relative_to(root)): {"sha256": file_hash(p), "bytes": p.stat().st_size}
+        p.relative_to(root).as_posix(): {"sha256": file_hash(p), "bytes": p.stat().st_size}
         for p in sorted(root.rglob("*"))
-        if p.is_file() and p.name != "artifacts.json"
+        if p.is_file() and p != root / "artifacts.json"
     }
+
+
+def write_final_inventory(output):
+    """Write the final inventory, including each condition inventory."""
+    write(output / "artifacts.json", inventory(output))
 
 
 def run(output, device):
@@ -103,7 +109,7 @@ def run(output, device):
     plan = {
         **original,
         "source_parent": subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip(),
-        "source_sha256": {str(p): file_hash(p) for p in source},
+        "source_sha256": {p.as_posix(): file_hash(p) for p in source},
         "contexts": list(CONTEXTS),
         "max_seconds": MAX_SECONDS,
         "max_rss_bytes": MAX_RSS,
@@ -123,11 +129,11 @@ def run(output, device):
             raise ValueError("Preserved model identity mismatch")
         for p in path.iterdir():
             if p.is_file():
-                plan["input_files"][str(p)] = file_hash(p)
+                plan["input_files"][p.as_posix()] = file_hash(p)
     tokenizer = Path("artifacts/tokenizers/english-bpe-v1")
     for p in tokenizer.iterdir():
         if p.is_file():
-            plan["input_files"][str(p)] = file_hash(p)
+            plan["input_files"][p.as_posix()] = file_hash(p)
     for context in CONTEXTS:
         root = output / str(context)
         root.mkdir()
@@ -216,19 +222,7 @@ def run(output, device):
         write(output / "budget_failure.json", result)
         raise BudgetExceeded("Final evaluation resource budget exceeded")
     write(output / "results.json", result)
-    write(
-        output / "artifacts.json",
-        {
-            **inventory(output),
-            **{
-                f"{c}/artifacts.json": {
-                    "sha256": file_hash(output / str(c) / "artifacts.json"),
-                    "bytes": (output / str(c) / "artifacts.json").stat().st_size,
-                }
-                for c in CONTEXTS
-            },
-        },
-    )
+    write_final_inventory(output)
     return result
 
 

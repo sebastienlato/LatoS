@@ -31,12 +31,16 @@ Exact main and all eleven tags were verified before the explicit fresh-chat Phas
 Verified publication supersedes the historical pending snapshot.
 
 Phase 12's [fixed inference context-budget experiment](experiments/phase-12/REPORT.md)
-is complete locally and awaits publication approval. Increasing only the session
+is published at `5b72872a2032f8999aae9c28ff0ab5c704e3d893`. Increasing only the session
 budget from 256 to 512 allowed all 44 previously context-limited sessions to retry,
 but no model produced valid JSON or a successful tool task. Original weights,
 prompt, tokenizer, chat contract, cases and defaults are unchanged. This tests
 available history space within existing capacity, not general learned long-context
-quality. No further extension is selected. See [current state](PROJECT_STATE.md).
+quality. External Windows validation stopped at an inventory path-portability defect
+before actual Phase 12 CUDA execution. A [local correction](experiments/phase-12/PORTABILITY_CORRECTION.md)
+requires its own publication approval and fresh Windows/CUDA retest. Phase 12 closure
+and further research remain paused; physical Linux remains deferred.
+See [current state](PROJECT_STATE.md).
 
 | Phase | Deliverable | Acceptance evidence |
 | --- | --- | --- |

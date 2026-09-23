@@ -2,7 +2,7 @@
 
 import importlib.util
 import time
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
 
 import pytest
 from test_inference import BACKENDS, codec, model, threads
@@ -104,3 +104,47 @@ def test_replay_validation_error_cannot_be_swallowed_as_generation_error():
     }
     with pytest.raises(verifier.EvidenceError, match="token budget"):
         verifier.replay(forged, [{"id": "x", "prompt": "lookup"}], TinyCodec(), 512)
+
+
+@pytest.mark.parametrize("path_style", ["native", "windows"])
+def test_final_nested_inventory_roundtrip(tmp_path, monkeypatch, path_style):
+    runner, verifier = module("run"), module("verify")
+    for context in ("256", "512"):
+        condition = tmp_path / context
+        (condition / "source" / "nested").mkdir(parents=True)
+        (condition / "source" / "nested" / "fixture.py").write_text("# fixture\n")
+        runner.write(condition / "results.json", {"fixture": context})
+
+    # Keep real filesystem I/O, but exercise Windows relative-path serialization
+    # on every host. The Windows CI/retest also runs the native variant.
+    path_type = type(tmp_path)
+    relative_to = path_type.relative_to
+    if path_style == "windows":
+
+        def windows_relative(path, *others, **kwargs):
+            return PureWindowsPath(*relative_to(path, *others, **kwargs).parts)
+
+        monkeypatch.setattr(path_type, "relative_to", windows_relative)
+
+    for context in ("256", "512"):
+        condition = tmp_path / context
+        runner.write(condition / "artifacts.json", runner.inventory(condition))
+    # Call the same final writer as the research runner, without model evaluation.
+    runner.write_final_inventory(tmp_path)
+    expected = {
+        f"{context}/{name}"
+        for context in ("256", "512")
+        for name in ("artifacts.json", "results.json", "source/nested/fixture.py")
+    }
+    recorded = runner.read(tmp_path / "artifacts.json")
+    verifier.check_inventory(tmp_path)
+    assert set(recorded) == expected
+    for context in ("256", "512"):
+        verifier.check_inventory(tmp_path / context)
+    # Rewriting must not inventory itself or drop either nested inventory.
+    runner.write_final_inventory(tmp_path)
+    assert runner.read(tmp_path / "artifacts.json") == recorded
+    verifier.check_inventory(tmp_path)
+    (tmp_path / "512" / "source" / "nested" / "fixture.py").write_text("# changed\n")
+    with pytest.raises(verifier.EvidenceError, match="Artifact mismatch"):
+        verifier.check_inventory(tmp_path)

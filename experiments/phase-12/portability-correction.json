@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "phase": 12,
+  "kind": "Windows path-portability correction",
+  "base_commit": "5b72872a2032f8999aae9c28ff0ab5c704e3d893",
+  "package_version": "1.3.0; unchanged",
+  "external_windows": {
+    "source": "Owner-provided detailed handoff message; separate raw logs unavailable locally",
+    "status": "FAILED at first project failure after prescribed checkout suite",
+    "classification": "Evidence inventory path representation; not dependency, CUDA, model-quality or missing-artifact failure",
+    "fresh_exact_checkout": true,
+    "locked_install": true,
+    "prescribed_suite": {
+      "passed": 299,
+      "expected_skips": 13,
+      "failures": 0,
+      "errors": 0
+    },
+    "cuda_device_detection": true,
+    "phase12_cuda_execution": "not reached",
+    "unchanged_tracked_files": 229,
+    "unchanged_prior_evidence_report_files": 3045,
+    "reserved_payloads": "untouched",
+    "windows_fixes_commits_pushes": false,
+    "error": "EvidenceError: Inventory is incomplete",
+    "file_existence_bytes_sha256": "Owner reports all referenced files match"
+  },
+  "change": {
+    "serialized_relative_paths": "POSIX forward slash in inventory/source/input keys",
+    "expected_inventory_paths": "POSIX forward slash",
+    "final_inventory": "Shared construction includes nested inventories; excludes only own root inventory",
+    "runtime_models_scoring_context_tolerances_lock_version_changed": false
+  },
+  "validation": {
+    "tests.log": {
+      "passed": 314,
+      "seconds": 23.33
+    },
+    "wheel-tests.log": {
+      "passed": 314,
+      "seconds": 23.79
+    },
+    "focused-reviewed.log": {
+      "passed": 9,
+      "seconds": 1.18
+    }
+  },
+  "regression": {
+    "native_and_simulated_windows": true,
+    "real_nested_256_512_files": true,
+    "uses_production_final_writer": true,
+    "exact_membership_sizes_hashes_repeat_write_corruption": true,
+    "published_logic_result": "1 passed / 1 failed; simulated Windows reproduces exact Inventory is incomplete after mechanical final-writer extraction",
+    "corrected_focused": "9 passed",
+    "simulation_is_not_native_windows_cuda_validation": true
+  },
+  "preservation": {
+    "baseline_files": 78406,
+    "unchanged_files": 78404,
+    "intentional_working_source_changes": [
+      "experiments/phase-12/run.py",
+      "experiments/phase-12/verify.py"
+    ],
+    "prior_artifacts_and_evidence_unchanged": true,
+    "reserved_tests": {
+      "data/processed/english-books-v1/test.jsonl": {
+        "bytes": 1527944,
+        "sha256": "a01a55c31d0401ab5dba64cf0f14bd96e8ed9900012a7099f972b3377d58a954"
+      },
+      "data/processed/english-instructions-v1/test.jsonl": {
+        "bytes": 9790,
+        "sha256": "5e0fe6050dcd1df7e85ce46ebcd830ee6cec8b4841b9c1f8f270b110889395a7"
+      }
+    },
+    "reserved_policy": "Opaque integrity hashes only; no parsing/evaluation"
+  },
+  "saved_evidence_checks": {
+    "six_original_inventories_pass_corrected_checker": true,
+    "in_memory_rebuilt_inventories_equal_originals": true,
+    "two_original_captured_source_verifiers_match_original_verification": true,
+    "current_source_identity_guard_retained": true
+  },
+  "research": {
+    "new_experiments": 0,
+    "research_reruns": 0,
+    "new_research_model_generations": 0,
+    "training_updates": 0,
+    "result_unchanged": "256 to 512 enables retries for all 44 previously blocked sessions, with no successful learned tool use; no learned capability improvement",
+    "original_plan_results_samples_verification_validation_reports": "unchanged"
+  },
+  "checks": {
+    "lint": true,
+    "format": true,
+    "fresh_non_editable_wheel": true,
+    "exact_locked_dependencies": true,
+    "source_wheel_build": true,
+    "runtime_bytes_unchanged": true,
+    "separate_review": "PORTABILITY_REVIEW.md"
+  },
+  "platforms": {
+    "local": "Mac CPU/MPS regression; simulated Windows path serialization only",
+    "corrected_windows_cuda": "Fresh independent owner retest pending after approved publication",
+    "new_hosted_linux": "not inspected or claimed",
+    "physical_linux": "deferred"
+  },
+  "logs": {
+    "outputs/phase-12-portability-validation/build.log": {
+      "bytes": 231,
+      "sha256": "1c7a9e6fa6437b3c54c99f3dd02c09e50a9afa46a9b64592e386025454842ff1"
+    },
+    "outputs/phase-12-portability-validation/dependencies.log": {
+      "bytes": 143,
+      "sha256": "7d0517297a8dcdb2c54c710695d8c891d027e8e0f30b4475545f218d9ee0cbc2"
+    },
+    "outputs/phase-12-portability-validation/focused-reviewed.log": {
+      "bytes": 98,
+      "sha256": "f67b03b4d762a8b94d1ee188c92f2cff78d091a4af9de4968644973373ac5834"
+    },
+    "outputs/phase-12-portability-validation/focused.log": {
+      "bytes": 98,
+      "sha256": "264b6e1ab67eaad01d79116c4685e0aad6f39f690e1cc20fc0ea759499fd712b"
+    },
+    "outputs/phase-12-portability-validation/format.log": {
+      "bytes": 28,
+      "sha256": "80e3689d562bbda67627034f54468d4cf3dfc637953d57d33acae620be3028c9"
+    },
+    "outputs/phase-12-portability-validation/lint.log": {
+      "bytes": 19,
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    "outputs/phase-12-portability-validation/nested-before-fix.log": {
+      "bytes": 3083,
+      "sha256": "10df47be1ea8fe1e0158305872a501920e3bf47aa9ecf478718d0c8b45598e57"
+    },
+    "outputs/phase-12-portability-validation/nested-published-reproduction.log": {
+      "bytes": 2912,
+      "sha256": "dc976ac2ff160b8795c38228c965303e5b114b22ae8b668d977147c56acb97e0"
+    },
+    "outputs/phase-12-portability-validation/preservation.json": {
+      "bytes": 665,
+      "sha256": "e5059f5727e28ce35ce47ce223d9aef769d05d07989ede8ec60006b31bb9308f"
+    },
+    "outputs/phase-12-portability-validation/preserved-evidence-checks.json": {
+      "bytes": 3028,
+      "sha256": "4a7026c0014c6cfb9f95278b8c4c264e740b73811f990eeaabb272ddf9680623"
+    },
+    "outputs/phase-12-portability-validation/sync.log": {
+      "bytes": 58,
+      "sha256": "2d5ee75d16a93f02a3e5b6f11009e3fac5fdc6d9181744650c47f7b0f9d6db86"
+    },
+    "outputs/phase-12-portability-validation/tests.log": {
+      "bytes": 421,
+      "sha256": "ac63003a536c8e7a6b80be68ca49d323324f578554b4260ad9779f6899e74530"
+    },
+    "outputs/phase-12-portability-validation/wheel-export.log": {
+      "bytes": 19801,
+      "sha256": "983aaa71fbe62574349694a502538aa60798e7206103727eee7ba7beb429a391"
+    },
+    "outputs/phase-12-portability-validation/wheel-identity.json": {
+      "bytes": 1042,
+      "sha256": "2e1fd4f1881ee8bab059361cb32ad16e6a00d651f59036945ffca45d4313c855"
+    },
+    "outputs/phase-12-portability-validation/wheel-setup.log": {
+      "bytes": 1269,
+      "sha256": "0e25ec2001dce76b983d69b93aa51a57953fa0a6fc64169dcd5945edffa142b9"
+    },
+    "outputs/phase-12-portability-validation/wheel-tests-initial.log": {
+      "bytes": 421,
+      "sha256": "9d7b75b3dd4b5426535b7e5b8d13c0c0517c071d3de8fb6d39878ad76a99ad3f"
+    },
+    "outputs/phase-12-portability-validation/wheel-tests.log": {
+      "bytes": 421,
+      "sha256": "f255d02708df2da38468eaf272b787b40748ab560eaa617114c8736daffd1df1"
+    }
+  },
+  "publication": {
+    "approval": "pending",
+    "remote": "https://github.com/sebastienlato/LatoS.git",
+    "branch": "main",
+    "tag": null,
+    "release": null,
+    "assets": [],
+    "no_remote_write": true,
+    "next_action": "Stop for correction publication approval; after approved publication wait for fresh owner Windows/CUDA result before closure or subsequent research."
+  }
+}

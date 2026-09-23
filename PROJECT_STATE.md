@@ -4,13 +4,38 @@ Updated: 2026-09-23.
 
 ## Active checkpoint
 
-**Phase 12 is implemented, validated and separately reviewed locally; stop for
-explicit publication approval.** The owner explicitly started this fresh task after
-verification of remote main at Phase 11 closure
-`e2d61100a7c0c74d759bdc4ded5ddcda89cb112b` and all eleven unchanged tag objects and
-targets. Verified publication supersedes historical pending snapshots.
-v1.0.0 remains at `10d9ef7bf0618b364f887ff9d279408e3cbc33c9`, object
+**Phase 12 Windows path-portability correction is validated and separately reviewed locally; publication
+approval is required. Do not close Phase 12 or start another extension until the
+owner supplies a fresh independent Windows/CUDA result on the RTX 4070 SUPER.**
+
+Original Phase 12 is published at
+`5b72872a2032f8999aae9c28ff0ab5c704e3d893`; exact remote main and all eleven unchanged
+tag objects/targets were verified before correction. Verified publication supersedes
+historical pending snapshots. v1.0.0 stays at
+`10d9ef7bf0618b364f887ff9d279408e3cbc33c9`, object
 `1acb6b94f0adfbca85014ad6601dbfc716e3c651`.
+
+Owner-reported Windows validation **failed at the first project failure**: a mixed
+native/POSIX inventory-path representation. Fresh exact checkout and locked install
+passed; prescribed suite **299 passed / 13 expected skips / zero failures/errors**.
+CUDA detection succeeded, but actual Phase 12 CUDA execution was not reached.
+Owner reports 229 tracked and 3,045 prior evidence/report files unchanged; reserved
+payloads untouched; no Windows fixes, commits or pushes. This is not a dependency,
+CUDA, model-quality or missing-artifact failure. Raw handoff logs were not supplied
+locally; the detailed owner message is the evidence source.
+
+Correction uses portable POSIX-relative evidence keys and a shared final inventory
+writer. A nested two-condition regression reproduces the original failure with
+simulated Windows separators and passes after the fix. No research rerun is needed;
+original hypothesis, results, prompts, models, scoring, context limits, tolerances
+and evidence remain unchanged. See [correction](experiments/phase-12/PORTABILITY_CORRECTION.md).
+Mac development and fresh isolated non-editable wheel suites each pass **314 tests**;
+nine focused checks pass, including both nested inventory variants. All **78,404**
+prior artifact/evidence files match; only the two authorized working experiment
+source files differ in the 78,406-file snapshot. Original Phase 12 evidence unchanged.
+See [validation](experiments/phase-12/portability-correction.json) and
+[separate review](experiments/phase-12/PORTABILITY_REVIEW.md).
+Physical Linux remains deferred; no new hosted Linux result is claimed.
 
 One research extension: a fixed **256-versus-512 inference session budget** within
 the preserved models' existing capacity. See [plan](experiments/phase-12/PLAN.md),
@@ -27,7 +52,7 @@ the preserved models' existing capacity. See [plan](experiments/phase-12/PLAN.md
   5,830 total; zero training/new services. Original prompt and chat contract stay fixed.
 - Experiment code/tests/evidence only, plus source-package inclusion. Public runtime,
   defaults, version 1.3.0, dependencies and lock remain unchanged. Mac CPU/MPS tests;
-  full learned evaluation MPS only. No Phase 12 Windows/CUDA or Linux validation.
+  full learned evaluation MPS only. Original full evaluation is Mac-only; the external Windows stop is recorded above.
 - Validation: 312 tests in development and fresh non-editable wheel; evidence replay
   covers 96 learned sessions and independent recount covers 128 including controls.
   Full details and retained initial test failure: [validation](experiments/phase-12/validation.json).
@@ -78,13 +103,16 @@ the preserved models' existing capacity. See [plan](experiments/phase-12/PLAN.md
 
 ## Pending publication and next action
 
-- Commit message: `Evaluate fixed inference context budgets for Phase 12`.
-- Exact reviewed commit is recorded in the approval request and
-  `.private/phase12-publication.json` after preparation.
+- Commit message: `Fix Phase 12 evidence path portability`.
+- Exact reviewed correction commit will be recorded in the approval request and
+  `.private/phase12-portability-publication.json` after preparation.
 - Existing remote: `https://github.com/sebastienlato/LatoS.git`, destination **main**,
   public visibility unchanged. No tag, release, asset upload or remote backup.
-- Approval pending; no Phase 12 remote write. Stop and ask **Push Phase 12 to GitHub?**
-  Publish only the described exact state after explicit approval; preserve all tags.
+- Correction approval pending; no correction remote write. Stop and ask
+  **Push Phase 12 to GitHub?** Approval applies only to the exact correction.
+- After approved publication, verify main/tags and wait for the owner's fresh
+  Windows/CUDA retest. No Phase 12 closure or subsequent experiment before that result.
 
-Local uv: `.private/tools/bin/uv`; runtime `.venv`. Both experiment attempts and
-raw logs remain ignored under `outputs/phase-12-*`; they are not remote backups.
+Local uv: `.private/tools/bin/uv`; runtime `.venv`. Original experiment attempts and
+raw logs remain ignored and unchanged. Correction logs are separate under
+`outputs/phase-12-portability-validation`; neither is a remote backup.

@@ -1,5 +1,15 @@
 # Changelog
 
+## Phase 12 portability correction — local, approval pending
+
+- Standardize experiment inventory, source and input paths as POSIX-relative keys;
+  include nested condition inventories through the same final inventory writer.
+- Add a two-condition regression using real file I/O and simulated Windows path
+  serialization; retain completeness, hash and self-exclusion checks.
+- Record the owner-reported Windows stop before Phase 12 CUDA execution. Preserve
+  original results and evidence without rerunning the research. Fresh retest required.
+
+
 ## Phase 12 — inference context-budget experiment (local, approval pending)
 
 - Compare fixed 256/512 session budgets with identical models, prompt and cases.

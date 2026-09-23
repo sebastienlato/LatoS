@@ -27,7 +27,7 @@ def require(condition, message):
 
 def check_inventory(root):
     inventory = read(root / "artifacts.json")
-    actual = {str(p.relative_to(root)) for p in root.rglob("*") if p.is_file()}
+    actual = {p.relative_to(root).as_posix() for p in root.rglob("*") if p.is_file()}
     require(set(inventory) == actual - {"artifacts.json"}, "Inventory is incomplete")
     for name, identity in inventory.items():
         path = root / name
