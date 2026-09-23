@@ -4,25 +4,37 @@ Updated: 2026-09-23.
 
 ## Active checkpoint
 
-**Phase 11 is formally closed locally within its documented bounded scope; the
-reviewed closure commit awaits explicit publication approval. Do not begin Phase 12
-in this chat.** The owner-supplied independent Windows/CUDA PASS satisfies the
-external-validation wait. After approved closure publication, verify exact remote
-main and all unchanged tags, then stop. Phase 12 needs an explicit fresh-chat start
-only after that verification; the [handoff](docs/PHASE12_HANDOFF.md) is preparation.
-
-Phase 11 implementation is published at `41fc3cffe42a1ae7a42446c5785abfffc1f559db`,
-package 1.3.0, **without a Phase 11 tag**. Verified publication supersedes historical
-pending snapshots. All eleven tags remain fixed, including v1.0.0 at
-`10d9ef7bf0618b364f887ff9d279408e3cbc33c9`, object
+**Phase 12 is implemented, validated and separately reviewed locally; stop for
+explicit publication approval.** The owner explicitly started this fresh task after
+verification of remote main at Phase 11 closure
+`e2d61100a7c0c74d759bdc4ded5ddcda89cb112b` and all eleven unchanged tag objects and
+targets. Verified publication supersedes historical pending snapshots.
+v1.0.0 remains at `10d9ef7bf0618b364f887ff9d279408e3cbc33c9`, object
 `1acb6b94f0adfbca85014ad6601dbfc716e3c651`.
 
-Delivered closure: [report](experiments/phase-11/CLOSURE.md),
-[structured evidence](experiments/phase-11/closure.json),
-[separate review](experiments/phase-11/CLOSURE_REVIEW.md). Original Phase 11
-report/results/samples/plan/inventories/scripts and both attempts remain unchanged.
+One research extension: a fixed **256-versus-512 inference session budget** within
+the preserved models' existing capacity. See [plan](experiments/phase-12/PLAN.md),
+[report](experiments/phase-12/REPORT.md), [results](experiments/phase-12/results.json),
+[verification](experiments/phase-12/verification.json), and
+[separate review](experiments/phase-12/REVIEW.md).
 
-## Scoped evidence and preserved limits
+- Baseline sessions/scores/metrics reproduce Phase 11 exactly; all 44 previously
+  context-limited sessions emit additional replies at 512. H1 passes.
+- H2 fails: base/SFT/DPO still have zero valid JSON, zero calls, 0/12 tasks and 0/4
+  learned failure handling each. At 512, parsing is 0/41, 0/64, 0/64 emitted replies.
+  More room for retries is not learned tool use or general long-context quality.
+- Two bounded runs agree on raw responses/attempts/scores/metrics: 2,915 tokens each,
+  5,830 total; zero training/new services. Original prompt and chat contract stay fixed.
+- Experiment code/tests/evidence only, plus source-package inclusion. Public runtime,
+  defaults, version 1.3.0, dependencies and lock remain unchanged. Mac CPU/MPS tests;
+  full learned evaluation MPS only. No Phase 12 Windows/CUDA or Linux validation.
+- Validation: 312 tests in development and fresh non-editable wheel; evidence replay
+  covers 96 learned sessions and independent recount covers 128 including controls.
+  Full details and retained initial test failure: [validation](experiments/phase-12/validation.json).
+- All 78,036 pre-existing inventory files preserved, including older models/evidence
+  and both opaque-hashed reserved tests. No reserved payload parsed or evaluated.
+
+## Prior scoped evidence and preserved limits
 
 - **Owner-reported Windows RTX 4070 SUPER PASS:** 293 passed / 12 expected skips /
   zero failures, fresh exact checkout/locked install and fresh non-editable wheel.
@@ -66,15 +78,13 @@ report/results/samples/plan/inventories/scripts and both attempts remain unchang
 
 ## Pending publication and next action
 
-- Commit message: `Close Phase 11 with scoped external validation`.
-- Existing remote: `https://github.com/sebastienlato/LatoS.git`, **main**, public unchanged.
-- Documentation/evidence only; runtime/version/tests/configs/lock/workflow/original
-  evidence unchanged. No new runtime suite, training, benchmark or build for closure.
-  JSON, links, preservation, source identity, complete diff and privacy checks passed.
-- **Stop for explicit Phase 11 closure publication approval.** Exact commit appears
-  in the approval request and `.private/phase11-closure-publication.json` once prepared.
-- No tag, release, assets or Phase 12 work. After approved publication verify exact
-  main and all unchanged tags, then stop. Closure approval does not override this gate.
+- Commit message: `Evaluate fixed inference context budgets for Phase 12`.
+- Exact reviewed commit is recorded in the approval request and
+  `.private/phase12-publication.json` after preparation.
+- Existing remote: `https://github.com/sebastienlato/LatoS.git`, destination **main**,
+  public visibility unchanged. No tag, release, asset upload or remote backup.
+- Approval pending; no Phase 12 remote write. Stop and ask **Push Phase 12 to GitHub?**
+  Publish only the described exact state after explicit approval; preserve all tags.
 
-Local uv: `.private/tools/bin/uv`; runtime `.venv`. Ignored learned artifacts and
-raw logs remain local, not remote backups. See the handoff for preserved inputs.
+Local uv: `.private/tools/bin/uv`; runtime `.venv`. Both experiment attempts and
+raw logs remain ignored under `outputs/phase-12-*`; they are not remote backups.

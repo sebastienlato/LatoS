@@ -4,18 +4,20 @@ LatoS is an original, English-first small language model project. Its goal is to
 make the path from documented training data to an evaluated conversational model
 reproducible on modest hardware.
 
-**Current milestone: Phase 11 implementation published (package 1.3.0, no Phase 11 tag);
-reviewed documentation-only closure awaits publication approval.**
-[Scoped closure](experiments/phase-11/CLOSURE.md) records owner-reported Windows/CUDA
-PASS (293 passed / 12 skips, fresh wheel) and separately inspected hosted Linux CPU
-CI (295 passed / ten MPS skips). Windows used retained tiny models and one fixed
-compact prompt after the original prompt exceeded capacity; it does not reproduce
-the full Mac prompting experiment. Physical Linux remains deferred.
-[Bounded tools](docs/TOOLS.md) separate passing scripted mechanics from model behavior:
-base/SFT/DPO each produced **0/16 valid JSON** in both distinctly scoped exercises.
-Learned tool use remains unestablished. Preserve the original [Mac results](experiments/phase-11/REPORT.md).
-Phase 12 has not begun; it requires an explicit fresh-chat start after closure
-publication and unchanged-tag verification. See [current state](PROJECT_STATE.md).
+**Current milestone: Phase 12 context-budget experiment reviewed locally; publication
+approval pending.** The [experiment](experiments/phase-12/REPORT.md) compares 256 and
+512 tokens using unchanged models, original prompt and scoring. More room allowed
+44 previously blocked sessions to retry, but none produced valid JSON or successful
+tool use. Public runtime/defaults remain 1.3.0. This is not evidence of general
+long-context language quality. See [current state](PROJECT_STATE.md).
+
+Phase 11 closure is published at `e2d61100a7c0c74d759bdc4ded5ddcda89cb112b`.
+Its [scoped evidence](experiments/phase-11/CLOSURE.md) preserves original full Mac
+negative tool results, distinct owner-reported tiny Windows/CUDA compact-prompt
+results, separately inspected hosted Linux CPU evidence and deferred physical Linux.
+The Phase 12 experiment uses the original Mac prompt; it does not reproduce the
+Windows exercise. Scripted controls establish mechanics only. Learned tool use
+remains unestablished; all prior limits and reserved tests remain unchanged.
 [Preference learning](docs/PREFERENCES.md) retains the full Mac experiment's
 [negative results](experiments/phase-10/REPORT.md): ranking 16/32 → 15/32, exact replies
 0/32, and English loss improved versus SFT but still worse than the original base.

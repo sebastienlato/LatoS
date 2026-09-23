@@ -26,11 +26,17 @@ records owner-reported bounded Windows/CUDA PASS with a fixed compact prompt and
 separately inspected hosted Linux CPU evidence. This Windows exercise is not the
 full Mac prompting experiment; both retain 0/16 JSON per model and no learned tool
 use. Scripted successes are mechanics only. Physical Linux remains deferred.
-Documentation-only closure is reviewed locally and awaits explicit publication approval.
-**Do not begin Phase 12 in this chat.** After approved closure publication, verify
-exact main and all unchanged tags, then stop. Phase 12 requires an explicit fresh-chat
-start using the [handoff](docs/PHASE12_HANDOFF.md). No extension has been selected.
-See [current state](PROJECT_STATE.md).
+Phase 11 closure is published at `e2d61100a7c0c74d759bdc4ded5ddcda89cb112b`.
+Exact main and all eleven tags were verified before the explicit fresh-chat Phase 12 start.
+Verified publication supersedes the historical pending snapshot.
+
+Phase 12's [fixed inference context-budget experiment](experiments/phase-12/REPORT.md)
+is complete locally and awaits publication approval. Increasing only the session
+budget from 256 to 512 allowed all 44 previously context-limited sessions to retry,
+but no model produced valid JSON or a successful tool task. Original weights,
+prompt, tokenizer, chat contract, cases and defaults are unchanged. This tests
+available history space within existing capacity, not general learned long-context
+quality. No further extension is selected. See [current state](PROJECT_STATE.md).
 
 | Phase | Deliverable | Acceptance evidence |
 | --- | --- | --- |

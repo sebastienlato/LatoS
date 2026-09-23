@@ -1,5 +1,15 @@
 # Changelog
 
+## Phase 12 — inference context-budget experiment (local, approval pending)
+
+- Compare fixed 256/512 session budgets with identical models, prompt and cases.
+  All 44 formerly context-limited sessions gain replies; no learned tool success.
+- Record attempt-level token budgets, replayable evidence, independent metric
+  recount, reviewed verifier fixes and preservation of all earlier artifacts.
+- Add experiment-local code/tests and source-package inclusion; runtime/version
+  1.3.0, defaults, dependencies and prior platform/capability limits unchanged.
+- Phase 11 closure publication verified; no Phase 12 remote write or new tag.
+
 ## Phase 11 closure — documentation only (2026-09-23)
 
 - Record owner-reported Windows RTX 4070 SUPER PASS: 293 passed / 12 skips, fresh

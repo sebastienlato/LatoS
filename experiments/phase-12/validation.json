@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "phase": 12,
+  "date": "2026-09-23",
+  "package_version": "1.3.0; unchanged",
+  "source_parent": "e2d61100a7c0c74d759bdc4ded5ddcda89cb112b",
+  "tests": {
+    "focused": {
+      "passed": 7,
+      "seconds": 1.27
+    },
+    "development": {
+      "passed": 312,
+      "seconds": 27.33
+    },
+    "isolated_non_editable_wheel": {
+      "passed": 312,
+      "seconds": 32.41
+    }
+  },
+  "checks": {
+    "lint": true,
+    "format": true,
+    "dependency_compatibility": true,
+    "wheel_dependencies_exact_locked_versions": true,
+    "non_editable_import_verified": true,
+    "source_and_wheel_build": true,
+    "independent_recount_and_saved_replay": "verification.json",
+    "rehashed_false_success_rejected": true,
+    "separate_review": "REVIEW.md"
+  },
+  "preservation": {
+    "files": 78036,
+    "changed": [],
+    "reserved_tests": {
+      "data/processed/english-books-v1/test.jsonl": {
+        "bytes": 1527944,
+        "sha256": "a01a55c31d0401ab5dba64cf0f14bd96e8ed9900012a7099f972b3377d58a954"
+      },
+      "data/processed/english-instructions-v1/test.jsonl": {
+        "bytes": 9790,
+        "sha256": "5e0fe6050dcd1df7e85ce46ebcd830ee6cec8b4841b9c1f8f270b110889395a7"
+      }
+    },
+    "policy": "Opaque integrity hashing only; no reserved-test parsing/evaluation"
+  },
+  "experiment": {
+    "accepted": "outputs/phase-12-context-reviewed",
+    "first_retained": "outputs/phase-12-context",
+    "runs": 2,
+    "learned_sessions_per_run": 96,
+    "generated_tokens_per_run": 2915,
+    "total_generated_tokens": 5830,
+    "two_run_ceiling": 49152,
+    "training_updates": 0,
+    "paid_services": 0,
+    "identical_raw_sessions_scores_metrics_attempts_tokens": true,
+    "new_evidence_bytes_before_final_packaging": 2996130,
+    "evidence_budget_bytes": 2147483648,
+    "timing_caveat": "Reviewed experiment overlapped full-suite tests; not an isolated benchmark"
+  },
+  "initial_failure": {
+    "focused_tests": "1 failed / 5 passed; tamper rejected but error swallowed into generic replay mismatch",
+    "log": "outputs/phase-12-validation/focused.log",
+    "fix": "Dedicated EvidenceError escapes session handler; forged generation-error regression added"
+  },
+  "platforms": {
+    "phase12": "Mac MPS full models, CPU/MPS tiny engineering checks",
+    "windows_cuda": "Not run for Phase 12; retain distinct Phase 11 owner-reported tiny compact-prompt scope",
+    "hosted_linux": "Not run for Phase 12; retain separately inspected Phase 11 implementation scope",
+    "physical_linux": "Deferred"
+  },
+  "capability": "More retry room, zero learned tool success; no general long-context language-quality claim",
+  "logs": {
+    "outputs/phase-12-validation/build.log": {
+      "sha256": "086cb8c30bbb348e5e3562c6dd2fcc42bce01bd3835244f21cb9ec33f089d1b0",
+      "bytes": 207
+    },
+    "outputs/phase-12-validation/dependencies.log": {
+      "sha256": "663e04cc2bc78fd30b0e168f4d2a27e20b2a7e25532676dff8667902048aed0c",
+      "bytes": 131
+    },
+    "outputs/phase-12-validation/experiment-reviewed.log": {
+      "sha256": "299459bdb2ee84866aa95d7fbe17709aafd9e518eeafe8dff5fb1be454e37cb8",
+      "bytes": 252
+    },
+    "outputs/phase-12-validation/experiment.log": {
+      "sha256": "299459bdb2ee84866aa95d7fbe17709aafd9e518eeafe8dff5fb1be454e37cb8",
+      "bytes": 252
+    },
+    "outputs/phase-12-validation/focused-reviewed.log": {
+      "sha256": "581bf88e1f3944a42682572f12467ed005878429311429fe10c24b0218de1b22",
+      "bytes": 98
+    },
+    "outputs/phase-12-validation/focused.log": {
+      "sha256": "c994787941fb02a51da8c0bf5821da1cf9183f9dfafe578131f1e8292231a05b",
+      "bytes": 2016
+    },
+    "outputs/phase-12-validation/format.log": {
+      "sha256": "964318833f36fc4b46ef2579d502bee6dacc9e35a11a75f619e781887df03cb9",
+      "bytes": 28
+    },
+    "outputs/phase-12-validation/lint.log": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19
+    },
+    "outputs/phase-12-validation/preservation.json": {
+      "sha256": "3ae0d34ba9fa7540a8604dc3bcc2ffc84cea2d3c86f349853565009e4cea8ebc",
+      "bytes": 482
+    },
+    "outputs/phase-12-validation/review-lint-initial.log": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19
+    },
+    "outputs/phase-12-validation/tamper-check.json": {
+      "sha256": "0593447586160796432ea90cef77134660a7d5bf88280afb25a2af012ce5bf0e",
+      "bytes": 118
+    },
+    "outputs/phase-12-validation/tests.log": {
+      "sha256": "bd00aac0b5810a8c80dc4915d40afe381c3d260adcec5d5f8a240a39f53b0cec",
+      "bytes": 421
+    },
+    "outputs/phase-12-validation/verification-initial.json": {
+      "sha256": "619252e255f299a5c075ee465170a86642a3139c1019cc0f537475f732f77987",
+      "bytes": 1247
+    },
+    "outputs/phase-12-validation/verification-initial.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "outputs/phase-12-validation/verification.json": {
+      "sha256": "619252e255f299a5c075ee465170a86642a3139c1019cc0f537475f732f77987",
+      "bytes": 1247
+    },
+    "outputs/phase-12-validation/wheel-export.log": {
+      "sha256": "3fa0a1ec81d3fecc3a7c24753604fd9ffd5e77d998aad754dbc417da05c655a1",
+      "bytes": 19795
+    },
+    "outputs/phase-12-validation/wheel-identity.json": {
+      "sha256": "ffe3a6a454d6242db65e887e8ee185e6d14b9e785446206b3399664658635061",
+      "bytes": 1054
+    },
+    "outputs/phase-12-validation/wheel-setup.log": {
+      "sha256": "4bc7f591b6f243a1a2af22bfc413347036eadc209a23382d21dcd0e12df24e79",
+      "bytes": 1211
+    },
+    "outputs/phase-12-validation/wheel-tests.log": {
+      "sha256": "ad8612becac0b6c84275c033469780c0c308901708091e0c023495dea7a62403",
+      "bytes": 421
+    }
+  },
+  "publication": {
+    "approval": "pending",
+    "remote": "https://github.com/sebastienlato/LatoS.git",
+    "branch": "main",
+    "tag": null,
+    "release": null,
+    "assets": [],
+    "no_remote_write": true,
+    "unchanged_existing_tags": 11
+  }
+}

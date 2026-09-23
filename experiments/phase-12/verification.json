@@ -1,0 +1,35 @@
+{
+  "status": "pass",
+  "sessions_recounted_including_controls": 128,
+  "learned_sessions_replayed": 96,
+  "generated_tokens": 2915,
+  "paired": {
+    "base": {
+      "formerly_context_limited_now_multiple_replies": 12,
+      "sessions_with_multiple_replies_256": 0,
+      "sessions_with_multiple_replies_512": 12,
+      "max_prompt_tokens_512": 338,
+      "generated_replies_with_prompt_over_256": 13,
+      "task_successes_512": 0
+    },
+    "sft": {
+      "formerly_context_limited_now_multiple_replies": 16,
+      "sessions_with_multiple_replies_256": 0,
+      "sessions_with_multiple_replies_512": 16,
+      "max_prompt_tokens_512": 342,
+      "generated_replies_with_prompt_over_256": 32,
+      "task_successes_512": 0
+    },
+    "dpo": {
+      "formerly_context_limited_now_multiple_replies": 16,
+      "sessions_with_multiple_replies_256": 0,
+      "sessions_with_multiple_replies_512": 16,
+      "max_prompt_tokens_512": 342,
+      "generated_replies_with_prompt_over_256": 32,
+      "task_successes_512": 0
+    }
+  },
+  "H1_more_retry_room": true,
+  "H2_at_least_one_successful_normal_task": false,
+  "scope": "Saved evidence replay and independent Phase 11 metric recount; no model re-execution or general long-context quality claim"
+}
