@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "kind": "phase17-planning-contract-not-a-run-command",
+  "execution_authorized": false,
+  "model_config": "configs/training2/selected-model.json",
+  "initialization": "fresh native random initialization; no probe checkpoint reuse",
+  "seed": 160,
+  "precision": "CUDA native bfloat16 autocast; float32 weights, gradients and AdamW moments; no GradScaler",
+  "context_length": 512,
+  "batch_size": 2,
+  "accumulation_steps": 8,
+  "last_update_accumulation_steps": 2,
+  "max_steps": 7485,
+  "warmup_steps": 375,
+  "learning_rate": 0.0003,
+  "min_lr_ratio": 0.1,
+  "weight_decay": 0.01,
+  "beta1": 0.9,
+  "beta2": 0.95,
+  "eps": 1e-08,
+  "max_grad_norm": 1.0,
+  "data": {
+    "input_bundle_sha256": "5f4fa7a7bc221d06f6b321c4af712456d3188984d759f8a4a898651d5a6d9073",
+    "split": "pretrain-train only",
+    "policy": "data2-retained-document-overlap-one-v1",
+    "documents": 80478,
+    "rows": 332782,
+    "windows": 119748,
+    "content_token_positions": 37730940,
+    "targets_with_EOS": 37811418,
+    "passes": 1,
+    "window_sequence_sha256": "8f13652c2bd0bc387dbd509ca6424a0eb97c097b963c4b64aa5144d8902cfd64",
+    "shuffle": "CPU torch.randperm over all windows, seed 160; one permutation; no epoch wrap"
+  },
+  "development": {
+    "split": "pretrain-development",
+    "targets": 804337,
+    "windows": 2552,
+    "used_for": "monitoring only; no best-checkpoint search"
+  },
+  "checkpoint_steps": [
+    0,
+    1000,
+    2000,
+    3000,
+    4000,
+    5000,
+    6000,
+    7000,
+    7485
+  ],
+  "selected_checkpoint": "last completed update 7485, only if run and fixed quality gates pass",
+  "attempts": {
+    "serious_training": 1,
+    "seeds": 1,
+    "maximum_same_attempt_resumptions": 2,
+    "fresh_retry_after_quality_failure": false
+  },
+  "budget": {
+    "projected_training_plus_periodic_overhead_seconds": 1433.8412599612388,
+    "conservative_training_seconds": 3167.6825199224777,
+    "training_wall_stop_seconds": 7200,
+    "fixed_evaluation_reserve_seconds": 3600,
+    "total_active_wall_stop_seconds": 10800,
+    "new_artifact_stop_bytes": 21474836480,
+    "estimated_planned_artifacts_bytes_upper": 6442450944,
+    "min_free_disk_bytes": 21474836480,
+    "max_process_host_RSS_bytes": 8589934592,
+    "max_reserved_VRAM_fraction": 0.85,
+    "new_paid_service_budget": 0
+  },
+  "runtime_policy": {
+    "torch": "2.14.0+cu130",
+    "python": "3.14.7",
+    "cpu_threads": 4,
+    "tf32": false,
+    "float32_matmul_precision": "highest",
+    "optimizer_foreach": false,
+    "optimizer_fused": false,
+    "activation_checkpointing": false,
+    "compile": false
+  },
+  "prerequisites_before_any_training": [
+    "Separate explicit owner Phase 17 start after approved verified Phase 16 publication.",
+    "Full-corpus reader/cache and final partial accumulation must pass target conservation, identity, token-weighted gradient and recovery tests before any optimizer update.",
+    "Full-data cache must reproduce the Phase 16 window sequence hash and all token counts.",
+    "Original Phase 5 base and required evaluation inputs must be available with pinned hashes on the evaluation host; missing artifacts block scoring, never substitute a random model.",
+    "Capture environment, freeze source/runtime/input identities and source snapshot; preserve existing artifacts."
+  ],
+  "stop_conditions": [
+    "Nonfinite loss, gradients, weights or optimizer state: retain failure and stop; no retry of numerical failure.",
+    "OOM, >85% reserved VRAM, >8 GiB host RSS, >20 GiB new artifacts, or wall budget reached: save only a valid completed boundary when possible, retain evidence and stop.",
+    "Identity, corruption, split, target or recovery mismatch: fail closed.",
+    "Unexpected external interruption: at most two restores of exact completed checkpoint and same configuration/runtime; log repeated/lost exposure separately; never count it as new unique data.",
+    "Fixed development or final acceptance failure: preserve negative result and block Phase 18; no tuning from final feedback."
+  ],
+  "evaluation": "Use unchanged configs/evaluation/protocol-v1.json and docs/EVALUATION.md. Pair historical base on same host/backend/batching. Matched BPB across tokenizers, not raw token perplexity. Lock final candidate only after all development gates; one final comparison under frozen access policy. No reserved access for routine monitoring.",
+  "limitation": "Full-corpus duration and quality are unmeasured; budget is a bounded first full-data run, not a quality prediction. No Phase 17 model initialized or trained during planning."
+}

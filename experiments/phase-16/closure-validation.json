@@ -1,0 +1,56 @@
+{
+  "date": "2026-09-24",
+  "scope": "Final Mac Phase 16 analysis validation; CUDA evidence inspected from return",
+  "development_tests": {
+    "passed": 406,
+    "skipped": 1,
+    "failed": 0,
+    "seconds": 26.79
+  },
+  "installed_noneditable_wheel_tests": {
+    "passed": 406,
+    "skipped": 1,
+    "failed": 0,
+    "seconds": 43.07,
+    "site_packages_import_verified": true,
+    "wheel_sha256": "f2bffc41136c0031de6e004da2e7ecc7026288b4c215586f2d65745078410ce4"
+  },
+  "skip": "Actual CUDA unavailable on Mac; original CUDA test executed and passed on Windows",
+  "Windows_tests": {
+    "development_passed": 388,
+    "installed_wheel_passed": 388,
+    "skips_each": 15,
+    "failed_each": 0
+  },
+  "analysis_runtime_source_unchanged": {
+    "source_commit": "3cb6a47743e698a303deac0ead2664c0c89cf5e5",
+    "python_files": 60,
+    "implementation_sha256": "6467d629600d299dd07ad4d93e3284da5852b0419de0397d3100b16a5ae7069f"
+  },
+  "lint": "passed",
+  "format": "passed; 212 Python files",
+  "lock": "unchanged; uv lock --check passed",
+  "dependency_check": "37 packages compatible in fresh Mac wheel environment",
+  "build": "wheel and sdist pass; explicit source allowlist inspected",
+  "full_corpus_repeat": "All deterministic train/development accounting, window hashes and selection identities identical; timing/RSS excluded",
+  "preservation": {
+    "historical_files": 73679,
+    "changed": [],
+    "phase15_artifact_records": 12,
+    "original_phase16_files": 9,
+    "reserved_access": "opaque hash-only preservation; no scoring or content inspection"
+  },
+  "review": "Separate final analysis review: identity/subset limits, frozen rule, independent selection counterexamples, target conservation/tail handling, extrapolation and stop/recovery/publication gates",
+  "phase16_acceptance": "passed for bounded engineering/configuration scope; learned quality unestablished",
+  "phase17_started": false,
+  "phase17_execution_authorized": false,
+  "publication_authorized": false,
+  "new_paid_resources": false,
+  "files": {
+    "experiments/phase-16/windows-verification.json": "de6ea215a3c939f877cb720f3210d8ea4ae93eacad6566a249b5b18fbfc53ad2",
+    "experiments/phase-16/full-corpus-layout.json": "c53a9a8d60ecc3f5d80d2776de0544dd54f4fd484ce82b42a888def9024ae171",
+    "experiments/phase-16/selection.json": "3c4db630eeed4950d37d811cf528e6fbc4ef0d18d1b1f312c895331b773f9fda",
+    "configs/training2/selected-model.json": "bed0bbcc8b9b145485584ac9475d0c450c196649cb797a09d1c1c47fddc14c66",
+    "configs/training2/phase17-plan.json": "0939804d662a65fcc915d6587fe3e4f994b3bdefdc988464d500128bde06f263"
+  }
+}

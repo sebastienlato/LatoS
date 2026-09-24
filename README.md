@@ -17,6 +17,7 @@ at the center of the next stage.
 - Independently fitted byte-level BPE tokenization with verified artifacts.
 - [Data 2.0](docs/DATA_2.md): audited new corpora and a 16,384-entry codec for future models.
 - Dense causal language modeling, pretraining, validation and checkpoint recovery.
+- [Measured CUDA/BF16 training configuration](docs/TRAINING_2.md): 34.09M native parameters selected; full base training remains pending.
 - Assistant-only supervised fine-tuning, LoRA adaptation/merge and DPO experiments.
 - Local terminal chat, streaming, KV caching and explicit context limits.
 - A strict, bounded local tool protocol with separate scripted and model evaluations.
@@ -33,7 +34,8 @@ attention, SwiGLU feed-forward layers and tied input/output embeddings. The
 historical pilot has eight layers, width 384, six heads, an 8,192-entry vocabulary
 and 512-position capacity. Training and language-quality evaluation used windows
 up to 256 tokens; capacity alone does not establish quality at longer lengths.
-Float32 is the supported baseline. See the [model guide](docs/MODEL.md) for equations,
+Float32 remains the baseline; Phase 16 validates CUDA BF16 and selects the next
+configuration without claiming new learned capability. See the [model guide](docs/MODEL.md) for equations,
 configuration bounds and [research attribution](THIRD_PARTY.md).
 
 ## Install

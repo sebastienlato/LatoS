@@ -1,5 +1,18 @@
 # Changelog
 
+## Phase 16 — Model & CUDA Training 2.0 (local, publication pending)
+
+- Validate native CUDA BF16, numerical/recovery controls and six bounded real-data
+  probes on the RTX 4070 SUPER; independently verify returned source and evidence.
+- Select the 34,087,424-parameter native dense model under the prespecified smallest-
+  eligible rule; larger measured candidates remain feasible, with no learned-quality ranking.
+- Account for the entire accepted corpus and freeze a one-pass, one-seed Phase 17
+  plan with explicit timing/storage/recovery limits and unchanged quality gates.
+- Preserve all historical evidence and unsuccessful validation invocations.
+  No new learned-quality claim, Phase 17 run, tag, release or asset publication.
+  See [closure](experiments/phase-16/CLOSURE.md) and [training contract](docs/TRAINING_2.md).
+
+
 ## Phase 14 — Evaluation Foundation (local, approval pending)
 
 - Add versioned native evaluation, fixed generation/instruction cases, pinned ARC

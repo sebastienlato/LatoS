@@ -1,0 +1,102 @@
+{
+  "rule": "Smallest eligible model within 2% of lowest final short-probe loss; no learned-quality ranking",
+  "eligible_layers": [
+    8,
+    14,
+    20
+  ],
+  "within_two_percent_layers": [
+    8,
+    14,
+    20
+  ],
+  "relative_probe_loss_to_minimum": {
+    "8": 1.0,
+    "14": 1.0077996959309996,
+    "20": 1.0106756330050484
+  },
+  "selected_layers": 8,
+  "selected_parameters": 34087424,
+  "precision": "bfloat16",
+  "estimates": {
+    "8": {
+      "gates": {
+        "both_precision_probes_complete": true,
+        "numerical_recovery_control": true,
+        "early_loss_below_initialization": true,
+        "memory_headroom": true,
+        "inference_targets": true,
+        "one_pass_runtime_under_24h": true
+      },
+      "target_update_seconds": 1304.6016523203587,
+      "full_development_seconds_estimate": 114.71859424097387,
+      "checkpoint_seconds_estimate": 14.521013399906224,
+      "central_training_plus_periodic_overhead_seconds": 1433.8412599612388,
+      "conservative_training_seconds": 3167.6825199224777,
+      "checkpoint_steps": [
+        1000,
+        2000,
+        3000,
+        4000,
+        5000,
+        6000,
+        7000,
+        7485
+      ],
+      "note": "Projection from short CUDA measurements; not measured full-run duration. Includes 2x margin plus 300 s preprocessing; final fixed evaluation separately reserved."
+    },
+    "14": {
+      "gates": {
+        "both_precision_probes_complete": true,
+        "numerical_recovery_control": true,
+        "early_loss_below_initialization": true,
+        "memory_headroom": true,
+        "inference_targets": true,
+        "one_pass_runtime_under_24h": true
+      },
+      "target_update_seconds": 2168.8978410875047,
+      "full_development_seconds_estimate": 167.06246601796892,
+      "checkpoint_seconds_estimate": 22.608469199985848,
+      "central_training_plus_periodic_overhead_seconds": 2358.5687763054593,
+      "conservative_training_seconds": 5017.137552610919,
+      "checkpoint_steps": [
+        1000,
+        2000,
+        3000,
+        4000,
+        5000,
+        6000,
+        7000,
+        7485
+      ],
+      "note": "Projection from short CUDA measurements; not measured full-run duration. Includes 2x margin plus 300 s preprocessing; final fixed evaluation separately reserved."
+    },
+    "20": {
+      "gates": {
+        "both_precision_probes_complete": true,
+        "numerical_recovery_control": true,
+        "early_loss_below_initialization": true,
+        "memory_headroom": true,
+        "inference_targets": true,
+        "one_pass_runtime_under_24h": true
+      },
+      "target_update_seconds": 3098.0758566834397,
+      "full_development_seconds_estimate": 215.7558907926946,
+      "checkpoint_seconds_estimate": 30.055417100025807,
+      "central_training_plus_periodic_overhead_seconds": 3343.88716457616,
+      "conservative_training_seconds": 6987.77432915232,
+      "checkpoint_steps": [
+        1000,
+        2000,
+        3000,
+        4000,
+        5000,
+        6000,
+        7000,
+        7485
+      ],
+      "note": "Projection from short CUDA measurements; not measured full-run duration. Includes 2x margin plus 300 s preprocessing; final fixed evaluation separately reserved."
+    }
+  },
+  "phase17_started": false
+}

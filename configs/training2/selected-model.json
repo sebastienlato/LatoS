@@ -1,0 +1,12 @@
+{
+  "context_length": 512,
+  "d_model": 512,
+  "ffn_dim": 1408,
+  "n_heads": 8,
+  "n_layers": 8,
+  "norm_eps": 1e-05,
+  "rope_theta": 10000.0,
+  "schema_version": 1,
+  "tokenizer_sha256": "23b9182d5943e7f8b32c6f415f108b7d06f229c80f5cd8f236258db40a6b94c4",
+  "vocab_size": 16384
+}

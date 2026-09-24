@@ -12,7 +12,7 @@ gate. [Roadmap 2.0](../ROADMAP.md) describes planned work, not existing capabili
 | Data and provenance | [Data pipeline](DATA.md); [data card](DATA_CARD.md) |
 | Tokenization | [Tokenizer](TOKENIZER.md) |
 | Native architecture | [Dense model](MODEL.md); [model card](MODEL_CARD.md) |
-| Training | [Training and recovery](TRAINING.md); [pretraining](PRETRAINING.md) |
+| Training | [Training and recovery](TRAINING.md); [pretraining](PRETRAINING.md); [selected CUDA configuration and budget](TRAINING_2.md) |
 | Instruction tuning | [Chat contract and SFT](INSTRUCTION_TUNING.md) |
 | Local inference | [Streaming, cache and terminal chat](INFERENCE.md) |
 | Adaptation and preferences | [LoRA/merge](ADAPTATION.md); [DPO](PREFERENCES.md) |
@@ -87,3 +87,7 @@ that is future work, not a reinterpretation of historical evidence.
 [Method and source rights](DATA_2.md) · [Phase 15 results](../experiments/phase-15/REPORT.md) ·
 [Phase 16 local inputs](PHASE16_INPUTS.md). These are data/codec artifacts; historical
 learned models and fixed evaluations remain unchanged.
+
+## Phase 16 — measured CUDA configuration
+
+[Completed analysis](../experiments/phase-16/CLOSURE.md), [independently verified Windows evidence](../experiments/phase-16/windows-verification.json), [selection](../experiments/phase-16/selection.json) and [full-corpus layout](../experiments/phase-16/full-corpus-layout.json). Feasibility and a bounded training plan are established; learned-quality gates and Phase 17 remain pending. The original [Mac handoff](PHASE16_WINDOWS_HANDOFF.md) is retained as its historical protocol.

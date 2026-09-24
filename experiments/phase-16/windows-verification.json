@@ -1,0 +1,526 @@
+{
+  "source_commit": "3cb6a47743e698a303deac0ead2664c0c89cf5e5",
+  "subset_files_verified": 650,
+  "git_source_files_bound": 324,
+  "reviewed_source_files_verified": 11,
+  "source_snapshots_verified": [
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60,
+    60
+  ],
+  "omitted_tensor_files": 38,
+  "omitted_tensor_bytes": 8967575032,
+  "tests": {
+    "development-tests": {
+      "passed": 388,
+      "skipped": 15,
+      "failed": 0,
+      "skip_reasons": [
+        "MPS hardware unavailable",
+        "MPS hardware unavailable",
+        "MPS hardware unavailable",
+        "MPS hardware unavailable",
+        "MPS hardware unavailable",
+        "MPS hardware unavailable",
+        "POSIX process SIGINT exercise",
+        "MPS hardware unavailable",
+        "MPS unavailable",
+        "MPS hardware unavailable",
+        "MPS hardware unavailable",
+        "MPS only",
+        "Host does not permit symlink creation",
+        "MPS hardware unavailable",
+        "MPS hardware unavailable"
+      ]
+    },
+    "wheel-tests-source-cwd": {
+      "passed": 388,
+      "skipped": 15,
+      "failed": 0,
+      "skip_reasons": [
+        "MPS hardware unavailable",
+        "MPS hardware unavailable",
+        "MPS hardware unavailable",
+        "MPS hardware unavailable",
+        "MPS hardware unavailable",
+        "MPS hardware unavailable",
+        "POSIX process SIGINT exercise",
+        "MPS hardware unavailable",
+        "MPS unavailable",
+        "MPS hardware unavailable",
+        "MPS hardware unavailable",
+        "MPS only",
+        "Host does not permit symlink creation",
+        "MPS hardware unavailable",
+        "MPS hardware unavailable"
+      ]
+    }
+  },
+  "control": {
+    "accumulation_weight_relative_l2": 0.00015164458124478477,
+    "device": "cuda",
+    "four_update_weight_relative_l2": 0.00046063783204857486,
+    "gradient_relative_l2": 0.0049664193896983445,
+    "loss_absolute_difference": 0.00011730194091796875,
+    "precision": "bfloat16",
+    "resume_and_failure_recovery": "passed",
+    "scope": "original synthetic numerical mechanics only",
+    "status": "passed",
+    "validation_preserves_state": true
+  },
+  "candidates": [
+    {
+      "job": "layers-8-float32",
+      "checkpoint_bytes": 409128207,
+      "data_preparation_seconds": 9.629691599999205,
+      "execution_seconds": 13.116460299992468,
+      "final_development": {
+        "loss": 8.627249081394467,
+        "perplexity": 5581.702304797066,
+        "split": "validation",
+        "targets": 57036,
+        "windows": 184
+      },
+      "inference": {
+        "median_decode_tokens_per_second": 164.78273788268564,
+        "median_first_token_seconds": 0.006246899996767752,
+        "repeats": [
+          {
+            "decode_tokens_per_second": 167.67569285635798,
+            "first_token_seconds": 0.005365200006053783
+          },
+          {
+            "decode_tokens_per_second": 164.78273788268564,
+            "first_token_seconds": 0.006319400010397658
+          },
+          {
+            "decode_tokens_per_second": 163.33671500692068,
+            "first_token_seconds": 0.006246899996767752
+          }
+        ],
+        "scope": "float32 native KV cache; synthetic 128-ID prompt; 64 forced tokens; EOS ignored",
+        "warmup": {
+          "decode_tokens_per_second": 152.30782620560453,
+          "first_token_seconds": 0.01281060000474099
+        }
+      },
+      "initial_development": {
+        "loss": 9.813694686489692,
+        "perplexity": 18282.41022116282,
+        "split": "validation",
+        "targets": 57036,
+        "windows": 184
+      },
+      "layers": 8,
+      "measured_targets_per_second": 23687.65410193473,
+      "note": "Short feasibility probe, not accepted base training or a learned-quality gate.",
+      "parameters": 34087424,
+      "phase16_complete": false,
+      "precision": "float32",
+      "resources": {
+        "host_peak_working_set_bytes": 2481393664,
+        "peak_allocated_bytes": 1174868480,
+        "peak_reserved_bytes": 1337982976
+      },
+      "selected_configuration": null,
+      "status": "measured",
+      "throughput_excluded_warmup_updates": 2,
+      "timings": {
+        "final_checkpoint": 1.658162000006996,
+        "final_validation": 0.7540850000077626,
+        "inference": 1.5889701999985846,
+        "initial_checkpoint": 1.0872856000059983,
+        "initial_validation": 0.9474173999915365,
+        "midpoint_checkpoint": 1.6958655000053113,
+        "midpoint_reload": 0.8233406000072137,
+        "midpoint_validation": 0.7588590999948792,
+        "reloaded_validation": 0.7593922999949427
+      },
+      "tokens_seen": 41454,
+      "total_vram_bytes": 12878086144,
+      "retained_job_bytes": 955926245
+    },
+    {
+      "job": "layers-8-bfloat16",
+      "checkpoint_bytes": 409128236,
+      "data_preparation_seconds": 9.536818600012339,
+      "execution_seconds": 22.14792970000417,
+      "final_development": {
+        "loss": 7.1758391358372675,
+        "perplexity": 1307.4567746314044,
+        "split": "validation",
+        "targets": 57036,
+        "windows": 184
+      },
+      "inference": {
+        "median_decode_tokens_per_second": 168.11817586931667,
+        "median_first_token_seconds": 0.005588599990005605,
+        "repeats": [
+          {
+            "decode_tokens_per_second": 166.26183229781796,
+            "first_token_seconds": 0.005588599990005605
+          },
+          {
+            "decode_tokens_per_second": 168.11817586931667,
+            "first_token_seconds": 0.006627599999774247
+          },
+          {
+            "decode_tokens_per_second": 169.92614685480584,
+            "first_token_seconds": 0.0055853000085335225
+          }
+        ],
+        "scope": "float32 native KV cache; synthetic 128-ID prompt; 64 forced tokens; EOS ignored",
+        "warmup": {
+          "decode_tokens_per_second": 147.28869566052407,
+          "first_token_seconds": 0.039724000002024695
+        }
+      },
+      "initial_development": {
+        "loss": 9.813750340749793,
+        "perplexity": 18283.42774349102,
+        "split": "validation",
+        "targets": 57036,
+        "windows": 184
+      },
+      "layers": 8,
+      "measured_targets_per_second": 28983.113682823245,
+      "note": "Short feasibility probe, not accepted base training or a learned-quality gate.",
+      "parameters": 34087424,
+      "phase16_complete": false,
+      "precision": "bfloat16",
+      "resources": {
+        "host_peak_working_set_bytes": 2652647424,
+        "peak_allocated_bytes": 1058400768,
+        "peak_reserved_bytes": 1168113664
+      },
+      "selected_configuration": null,
+      "status": "measured",
+      "throughput_excluded_warmup_updates": 2,
+      "timings": {
+        "final_checkpoint": 1.6624009999941336,
+        "final_validation": 0.659882199994172,
+        "inference": 1.6105175999982748,
+        "initial_checkpoint": 1.0712494000035804,
+        "initial_validation": 0.9038624000095297,
+        "midpoint_checkpoint": 1.6812204999878304,
+        "midpoint_reload": 0.8173296999884769,
+        "midpoint_validation": 0.65119789999153,
+        "reloaded_validation": 0.6509904999984428
+      },
+      "tokens_seen": 322035,
+      "total_vram_bytes": 12878086144,
+      "retained_job_bytes": 955948002
+    },
+    {
+      "job": "layers-14-float32",
+      "checkpoint_bytes": 640428966,
+      "data_preparation_seconds": 9.388029600013397,
+      "execution_seconds": 19.63682460000564,
+      "final_development": {
+        "loss": 8.678479142322455,
+        "perplexity": 5875.104595377881,
+        "split": "validation",
+        "targets": 57036,
+        "windows": 184
+      },
+      "inference": {
+        "median_decode_tokens_per_second": 95.09649275171708,
+        "median_first_token_seconds": 0.010557899993727915,
+        "repeats": [
+          {
+            "decode_tokens_per_second": 95.74130517010127,
+            "first_token_seconds": 0.010784199999761768
+          },
+          {
+            "decode_tokens_per_second": 95.09649275171708,
+            "first_token_seconds": 0.010503900004550815
+          },
+          {
+            "decode_tokens_per_second": 94.73088759350524,
+            "first_token_seconds": 0.010557899993727915
+          }
+        ],
+        "scope": "float32 native KV cache; synthetic 128-ID prompt; 64 forced tokens; EOS ignored",
+        "warmup": {
+          "decode_tokens_per_second": 90.37381190762487,
+          "first_token_seconds": 0.013586400003987364
+        }
+      },
+      "initial_development": {
+        "loss": 9.792317634695952,
+        "perplexity": 17895.733915767185,
+        "split": "validation",
+        "targets": 57036,
+        "windows": 184
+      },
+      "layers": 14,
+      "measured_targets_per_second": 14813.28236188363,
+      "note": "Short feasibility probe, not accepted base training or a learned-quality gate.",
+      "parameters": 53361152,
+      "phase16_complete": false,
+      "precision": "float32",
+      "resources": {
+        "host_peak_working_set_bytes": 2936098816,
+        "peak_allocated_bytes": 1788416512,
+        "peak_reserved_bytes": 1956642816
+      },
+      "selected_configuration": null,
+      "status": "measured",
+      "throughput_excluded_warmup_updates": 2,
+      "timings": {
+        "final_checkpoint": 2.5140165000048,
+        "final_validation": 1.1853353000042262,
+        "inference": 2.7293216999969445,
+        "initial_checkpoint": 1.5748115000023972,
+        "initial_validation": 1.377838200001861,
+        "midpoint_checkpoint": 2.479683700003079,
+        "midpoint_reload": 1.1998932999995304,
+        "midpoint_validation": 1.1832629999989877,
+        "reloaded_validation": 1.1923017999943113
+      },
+      "tokens_seen": 41454,
+      "total_vram_bytes": 12878086144,
+      "retained_job_bytes": 1495627017
+    },
+    {
+      "job": "layers-14-bfloat16",
+      "checkpoint_bytes": 640428995,
+      "data_preparation_seconds": 9.570246399991447,
+      "execution_seconds": 35.172675199995865,
+      "final_development": {
+        "loss": 7.231808499146565,
+        "perplexity": 1382.7208937946405,
+        "split": "validation",
+        "targets": 57036,
+        "windows": 184
+      },
+      "inference": {
+        "median_decode_tokens_per_second": 95.6413358822673,
+        "median_first_token_seconds": 0.009821900006500073,
+        "repeats": [
+          {
+            "decode_tokens_per_second": 94.42696546463517,
+            "first_token_seconds": 0.009821900006500073
+          },
+          {
+            "decode_tokens_per_second": 95.6413358822673,
+            "first_token_seconds": 0.009876199997961521
+          },
+          {
+            "decode_tokens_per_second": 96.30560980326474,
+            "first_token_seconds": 0.00913849999778904
+          }
+        ],
+        "scope": "float32 native KV cache; synthetic 128-ID prompt; 64 forced tokens; EOS ignored",
+        "warmup": {
+          "decode_tokens_per_second": 90.52356242057593,
+          "first_token_seconds": 0.04436189999978524
+        }
+      },
+      "initial_development": {
+        "loss": 9.792379456755572,
+        "perplexity": 17896.840301095443,
+        "split": "validation",
+        "targets": 57036,
+        "windows": 184
+      },
+      "layers": 14,
+      "measured_targets_per_second": 17433.47117771163,
+      "note": "Short feasibility probe, not accepted base training or a learned-quality gate.",
+      "parameters": 53361152,
+      "phase16_complete": false,
+      "precision": "bfloat16",
+      "resources": {
+        "host_peak_working_set_bytes": 3110313984,
+        "peak_allocated_bytes": 1594914304,
+        "peak_reserved_bytes": 1749024768
+      },
+      "selected_configuration": null,
+      "status": "measured",
+      "throughput_excluded_warmup_updates": 2,
+      "timings": {
+        "final_checkpoint": 2.627038899998297,
+        "final_validation": 1.0791954999876907,
+        "inference": 2.7520867999992333,
+        "initial_checkpoint": 1.592157999999472,
+        "initial_validation": 1.3162772999930894,
+        "midpoint_checkpoint": 2.565753000002587,
+        "midpoint_reload": 1.1935119000117993,
+        "midpoint_validation": 1.0488483000081033,
+        "reloaded_validation": 1.0501402000081725
+      },
+      "tokens_seen": 322035,
+      "total_vram_bytes": 12878086144,
+      "retained_job_bytes": 1495648768
+    },
+    {
+      "job": "layers-20-float32",
+      "checkpoint_bytes": 871729662,
+      "data_preparation_seconds": 9.4558459000109,
+      "execution_seconds": 26.59277909999946,
+      "final_development": {
+        "loss": 8.669229423826728,
+        "perplexity": 5821.012087639162,
+        "split": "validation",
+        "targets": 57036,
+        "windows": 184
+      },
+      "inference": {
+        "median_decode_tokens_per_second": 68.24241656189216,
+        "median_first_token_seconds": 0.013247199996840209,
+        "repeats": [
+          {
+            "decode_tokens_per_second": 68.50373383420967,
+            "first_token_seconds": 0.013247199996840209
+          },
+          {
+            "decode_tokens_per_second": 68.24241656189216,
+            "first_token_seconds": 0.013222100009443238
+          },
+          {
+            "decode_tokens_per_second": 67.0055231697587,
+            "first_token_seconds": 0.014571200008504093
+          }
+        ],
+        "scope": "float32 native KV cache; synthetic 128-ID prompt; 64 forced tokens; EOS ignored",
+        "warmup": {
+          "decode_tokens_per_second": 63.54445524735465,
+          "first_token_seconds": 0.01739090000046417
+        }
+      },
+      "initial_development": {
+        "loss": 9.769616713906096,
+        "perplexity": 17494.06070299594,
+        "split": "validation",
+        "targets": 57036,
+        "windows": 184
+      },
+      "layers": 20,
+      "measured_targets_per_second": 10748.903741055801,
+      "note": "Short feasibility probe, not accepted base training or a learned-quality gate.",
+      "parameters": 72634880,
+      "phase16_complete": false,
+      "precision": "float32",
+      "resources": {
+        "host_peak_working_set_bytes": 3413356544,
+        "peak_allocated_bytes": 2402314752,
+        "peak_reserved_bytes": 2644508672
+      },
+      "selected_configuration": null,
+      "status": "measured",
+      "throughput_excluded_warmup_updates": 2,
+      "timings": {
+        "final_checkpoint": 3.4197208999976283,
+        "final_validation": 1.628215899996576,
+        "inference": 3.8345847000018694,
+        "initial_checkpoint": 2.0987543999945046,
+        "initial_validation": 1.8298574000073131,
+        "midpoint_checkpoint": 3.4679443999921205,
+        "midpoint_reload": 1.5983967000065604,
+        "midpoint_validation": 1.6338586000056239,
+        "reloaded_validation": 1.6452926000056323
+      },
+      "tokens_seen": 41454,
+      "total_vram_bytes": 12878086144,
+      "retained_job_bytes": 2035327722
+    },
+    {
+      "job": "layers-20-bfloat16",
+      "checkpoint_bytes": 871729691,
+      "data_preparation_seconds": 9.458412200008752,
+      "execution_seconds": 48.82590280000295,
+      "final_development": {
+        "loss": 7.25244576095473,
+        "perplexity": 1411.5529509613395,
+        "split": "validation",
+        "targets": 57036,
+        "windows": 184
+      },
+      "inference": {
+        "median_decode_tokens_per_second": 67.13640839432485,
+        "median_first_token_seconds": 0.014311400009319186,
+        "repeats": [
+          {
+            "decode_tokens_per_second": 66.60457992180515,
+            "first_token_seconds": 0.01886209999793209
+          },
+          {
+            "decode_tokens_per_second": 68.04948990951857,
+            "first_token_seconds": 0.014311400009319186
+          },
+          {
+            "decode_tokens_per_second": 67.13640839432485,
+            "first_token_seconds": 0.013046899999608286
+          }
+        ],
+        "scope": "float32 native KV cache; synthetic 128-ID prompt; 64 forced tokens; EOS ignored",
+        "warmup": {
+          "decode_tokens_per_second": 55.572668408536884,
+          "first_token_seconds": 0.054722100001526996
+        }
+      },
+      "initial_development": {
+        "loss": 9.769713994187438,
+        "perplexity": 17495.762612922725,
+        "split": "validation",
+        "targets": 57036,
+        "windows": 184
+      },
+      "layers": 20,
+      "measured_targets_per_second": 12204.8070315741,
+      "note": "Short feasibility probe, not accepted base training or a learned-quality gate.",
+      "parameters": 72634880,
+      "phase16_complete": false,
+      "precision": "bfloat16",
+      "resources": {
+        "host_peak_working_set_bytes": 3584552960,
+        "peak_allocated_bytes": 2129485312,
+        "peak_reserved_bytes": 2296381440
+      },
+      "selected_configuration": null,
+      "status": "measured",
+      "throughput_excluded_warmup_updates": 2,
+      "timings": {
+        "final_checkpoint": 3.499163500004215,
+        "final_validation": 1.4886798999941675,
+        "inference": 4.046350100004929,
+        "initial_checkpoint": 2.0621090999920852,
+        "initial_validation": 1.6999305000063032,
+        "midpoint_checkpoint": 3.490522099993541,
+        "midpoint_reload": 1.5975007999950321,
+        "midpoint_validation": 1.4899047999933828,
+        "reloaded_validation": 1.4692663000023458
+      },
+      "tokens_seen": 322035,
+      "total_vram_bytes": 12878086144,
+      "retained_job_bytes": 2035349473
+    }
+  ],
+  "schedule_cross_host_note": "BF16 steps 23 and 45 differ by exactly one float64 ULP between Windows and Mac cosine evaluation; same source/config, no CUDA tolerance changes.",
+  "retained_invocation_failures": [
+    {
+      "name": "build",
+      "returncode": 2
+    },
+    {
+      "name": "wheel-tests",
+      "returncode": 2
+    },
+    {
+      "name": "wheel-tests-default",
+      "returncode": 1
+    }
+  ],
+  "scope": "Hashes, source, protocol, exposure, timing aggregates and metadata independently verified. Tensor payloads remain on Windows; no Mac model replay or independent recomputation of losses.",
+  "return_archive": {
+    "file": "phase16-windows-cuda-evidence-subset.zip",
+    "bytes": 3301537,
+    "sha256": "4ff7a907d6bf416e96ca0024d709c55a729d5164990d7151f368350c9e3e6f76"
+  },
+  "review_date": "2026-09-24"
+}
