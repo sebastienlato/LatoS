@@ -1,0 +1,110 @@
+{
+  "source_commit": "0fa94ad580110fd2dc7aaa2aa3560950abe73a02",
+  "return_sha256": "b4d959194b29f68ae02f7c3340e70f02d88d6aeb0d10e7b9ab4eebe7d0b5338e",
+  "verification": {
+    "verified_return_files": 3761,
+    "reviewed_source_commit": "0fa94ad580110fd2dc7aaa2aa3560950abe73a02",
+    "executed_source_snapshots": 1,
+    "logged_target_executions_including_replay": 37811418,
+    "distinct_logged_updates": 7485,
+    "comparisons": {},
+    "omitted_tensors_scope": "Windows inventory identities only; absent bytes not rehashed",
+    "phase17_complete": false,
+    "next": "Separate source, failure, resource and learned-result review; not automatic acceptance"
+  },
+  "implementation_sha256": "76cf4a198ee6acde566fdcc70c9420c0cae8ab6cc0d6b4d7e4c9c0cba5c8f09c",
+  "tests": {
+    "checkout": {
+      "passed": 411,
+      "skipped": 15,
+      "failed": 0,
+      "CUDA_controls_passed": [
+        "test_cuda_bf16_numerical_control",
+        "test_full_single_pass_cuda"
+      ]
+    },
+    "wheel": {
+      "passed": 411,
+      "skipped": 15,
+      "failed": 0,
+      "CUDA_controls_passed": [
+        "test_cuda_bf16_numerical_control",
+        "test_full_single_pass_cuda"
+      ]
+    }
+  },
+  "checkpoint_records": [
+    {
+      "step": 0,
+      "targets": 0,
+      "windows": 0,
+      "model_sha256": "ab9df838a36dab48951c717cc552d7c92053c7dedfd8b1f02322b65bca917ba2"
+    },
+    {
+      "step": 1000,
+      "targets": 5052854,
+      "windows": 16000,
+      "model_sha256": "e2e3a1b618453dde9bb5074015eaed6d0db5355dc8093c203511921892dee4bb"
+    },
+    {
+      "step": 2000,
+      "targets": 10143264,
+      "windows": 32000,
+      "model_sha256": "d5e29b7537c76ed8d0528e124a70333e0ed8b1d946401caeb664bf9d081cab18"
+    },
+    {
+      "step": 3000,
+      "targets": 15200880,
+      "windows": 48000,
+      "model_sha256": "823ae714898dad8ec7706094a0f7a770fe64e2d3cc57c89770bfafcbcae5187c"
+    },
+    {
+      "step": 4000,
+      "targets": 20262702,
+      "windows": 64000,
+      "model_sha256": "73d618ae9c6abfbd21f68ea388cdadfdc01d980db35abe833feea735a5e73b3d"
+    },
+    {
+      "step": 5000,
+      "targets": 25312099,
+      "windows": 80000,
+      "model_sha256": "b45171e7fbf71236971b4c03d38c46b648ac1ca8a659c1d618ec8e5d8a9cb15b"
+    },
+    {
+      "step": 6000,
+      "targets": 30346690,
+      "windows": 96000,
+      "model_sha256": "9983448c6f71e4a5c7843d7c4608082334c5355b16028ece7f2551c4f42fa624"
+    },
+    {
+      "step": 7000,
+      "targets": 35384765,
+      "windows": 112000,
+      "model_sha256": "a9ac4996e7f81afb78600d7b81c9d897defcdd0eefbe5a843c56fafe835f5b5d"
+    }
+  ],
+  "checkpoint_bytes_limit": "Inventory identities on Mac; tensor rehash/load still required on Windows",
+  "original_status": "supervisor-failure; main ledger stale running",
+  "cause": "PermissionError WinError 5 replacing ledger; PowerShell read contribution plausible, not proven",
+  "active_training_seconds": 1561.6473703999945,
+  "recovery_prior_seconds_conservative": 1562,
+  "remaining_training_seconds": 5638,
+  "remaining_evaluation_seconds": 3600,
+  "lost_completed_updates": 485,
+  "lost_completed_targets": 2426653,
+  "logical_pass_targets": 37811418,
+  "physical_target_executions_if_tail_replayed_once": 40238071,
+  "logged_resource_peaks": {
+    "peak_allocated_bytes": 1059106816,
+    "peak_reserved_bytes": 1178599424,
+    "host_peak_working_set_bytes": 2545315840
+  },
+  "resource_limit_scope": "Logged peaks only; abrupt termination lacks final worker receipt",
+  "serious_attempts": 1,
+  "resumptions_used": 0,
+  "final_checkpoint": false,
+  "fixed_evaluation_executed": false,
+  "phase17_complete": false,
+  "phase18_authorized": false,
+  "publication_authorized": false
+}

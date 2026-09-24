@@ -99,3 +99,13 @@ learned models and fixed evaluations remain unchanged.
 and [Windows/CUDA handoff](PHASE17_WINDOWS_HANDOFF.md). The frozen one-pass runner is
 prepared; serious training and learned-quality evaluation await actual RTX 4070
 SUPER execution. Phase 18 and publication remain unauthorized.
+
+## Phase 17 — first Windows interruption and reviewed recovery
+
+[Independent interruption review](../experiments/phase-17/INTERRUPTION_REVIEW.md),
+[verified evidence](../experiments/phase-17/interruption-review.json),
+[administrative review](../experiments/phase-17/RECOVERY_REVIEW.md) and
+[bounded recovery guide](../experiments/phase-17/recovery/RECOVERY.md). All planned
+updates were logged, but no final checkpoint or fixed acceptance score exists.
+The original training source remains unchanged; recovery uses the existing
+step-7,000 checkpoint and explicitly records replayed work.

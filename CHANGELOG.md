@@ -1,5 +1,16 @@
 # Changelog
 
+## Phase 17 — reviewed Windows interruption recovery (local, incomplete)
+
+- Independently verify the first CUDA execution and preserve its supervisor failure:
+  all updates ran, but step 7,485 was not saved and no fixed scoring occurred.
+- Prepare an administration-only recovery for step 7,000 without changing imported
+  training source, checkpoint metadata, experiment bounds or evaluation gates.
+- Keep both old ledgers immutable, record repeated physical exposure separately,
+  and use append-only recovery status under the remaining original budgets.
+- See [interruption review](experiments/phase-17/INTERRUPTION_REVIEW.md) and
+  [bounded recovery guide](experiments/phase-17/recovery/RECOVERY.md). No push or Phase 18.
+
 ## Phase 17 — Base Model 2.0 execution handoff (local, incomplete)
 
 - Add verified compact full-corpus windows, exact one-pass tail accumulation and

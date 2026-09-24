@@ -1,0 +1,56 @@
+{
+  "date": "2026-09-24",
+  "scope": "Mac review and standalone administrative recovery preparation; no CUDA replay or scoring",
+  "original_training_commit": "0fa94ad580110fd2dc7aaa2aa3560950abe73a02",
+  "unchanged_training_implementation_sha256": "76cf4a198ee6acde566fdcc70c9420c0cae8ab6cc0d6b4d7e4c9c0cba5c8f09c",
+  "checkout": {
+    "passed": 432,
+    "skipped": 3,
+    "failed": 0,
+    "skip_names": [
+      "test_cuda_bf16_numerical_control",
+      "test_full_single_pass_cuda",
+      "test_windows_read_handle_blocks_replace_but_not_separate_journal"
+    ],
+    "junit_sha256": "1c9c73c249d22dc61d1393c8407f0a20b10d11499876b75d75b0f2f71b3fee6c"
+  },
+  "installed_original_wheel": {
+    "passed": 432,
+    "skipped": 3,
+    "failed": 0,
+    "skip_names": [
+      "test_cuda_bf16_numerical_control",
+      "test_full_single_pass_cuda",
+      "test_windows_read_handle_blocks_replace_but_not_separate_journal"
+    ],
+    "junit_sha256": "70ddb8998c3c182a0eaf881911a67589ccd5bd018a21f10c5f890909f43f3d02"
+  },
+  "administration_focused_tests": {
+    "passed": 8,
+    "skipped": 1,
+    "skip": "Actual Windows file-sharing API; must execute on Windows before replay"
+  },
+  "lint": "passed",
+  "format": "passed",
+  "dependencies": "unchanged; original locked environments retained",
+  "review": "Separate pass; see RECOVERY_REVIEW.md",
+  "preservation": {
+    "historical_files": 82173,
+    "changed": [],
+    "original_training_source_and_frozen_contract_unchanged": true
+  },
+  "original_return_sha256": "b4d959194b29f68ae02f7c3340e70f02d88d6aeb0d10e7b9ab4eebe7d0b5338e",
+  "owner_return_receipt_sha256": "512f603e6559ce77fe772419bac45111a8b1b00a1fccd229693d158b6aaf1546",
+  "new_administrative_source": {
+    "experiments/phase-17/recovery/package_return.py": "4b88d55ac6536022bc09f63712f4cefc405aa614eaac45982e99435ab9e9b848",
+    "experiments/phase-17/recovery/recover.py": "d3caf9019a69e9766a1bc2f4b732732e84e311176a9932070658cc7e0f20be6f",
+    "experiments/phase-17/recovery/run_checks.py": "1bf0d099e72e9db2e63adefed2306289eb2fd2d74e041dc507acbf275aabaeb6"
+  },
+  "recovery_executed": false,
+  "training_source_modified": false,
+  "checkpoint_metadata_modified": false,
+  "frozen_gates_modified": false,
+  "phase17_complete": false,
+  "phase18_authorized": false,
+  "published": false
+}
