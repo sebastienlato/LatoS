@@ -1,0 +1,34 @@
+{
+  "scope": "Read-only historical training trace; no model, optimizer or held-out access",
+  "original_logs_sha256": "8b76e189326f742d11ac69a413010e40d674b4be91aa8c45926a0bb9ed47a6b9",
+  "replay_logs_sha256": "07a08517867a16c229e53d92d55aeeab1c438394fa70c74dbab16ba627442e41",
+  "fields": {
+    "loss": {
+      "different_updates": 362,
+      "first_difference": {
+        "step": 7124,
+        "original": 4.077091561241828,
+        "replayed": 4.077086789336811,
+        "absolute_delta": 4.771905017797451e-06
+      }
+    },
+    "grad_norm_before_clip": {
+      "different_updates": 362,
+      "first_difference": {
+        "step": 7124,
+        "original": 1.3190046548843384,
+        "replayed": 1.3188748359680176,
+        "absolute_delta": 0.00012981891632080078
+      }
+    },
+    "learning_rate": {
+      "different_updates": 0,
+      "first_difference": null
+    },
+    "targets": {
+      "different_updates": 0,
+      "first_difference": null
+    }
+  },
+  "interpretation": "Divergence first visible at update 7124; checkpoint serialization or kernel cause cannot be inferred from these scalar records alone."
+}

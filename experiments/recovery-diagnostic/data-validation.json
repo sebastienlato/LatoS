@@ -1,0 +1,23 @@
+{
+  "scope": "Mac synthetic data construction only; zero models, optimizer updates or held-out reads",
+  "descriptor": {
+    "lengths_sha256": "b0432437c53057d4efed36a01708d25959c72c0a5e2c9adb2ef6a7057e84b6a4",
+    "windows": 15940,
+    "vocab_size": 16384,
+    "tokenizer_sha256": "23b9182d5943e7f8b32c6f415f108b7d06f229c80f5cd8f236258db40a6b94c4",
+    "synthetic_seed": 17102,
+    "shuffle_seed": 160,
+    "generator": "64 fixed 32-ID motifs with 25% common noise and 5% full-vocabulary noise; BOS/EOS per synthetic window"
+  },
+  "files": {
+    "tokens.u32": "826b1f0b1a586edb7eb6988e18b216f8e908c1a064abd00409ebed08580f4235",
+    "offsets.u64": "a7366cf5831dfafcdfdae8300077b256bd06869888c443d2bfa4ded13708e105"
+  },
+  "windows": 15940,
+  "targets": 5021949,
+  "repeat_byte_identical": true,
+  "executed_shuffle_lengths_match_frozen_profile": true,
+  "seconds": 0.5566532080010802,
+  "new_artifact_bytes": 40559272,
+  "optimizer_updates": 0
+}

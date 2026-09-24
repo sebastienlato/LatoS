@@ -119,3 +119,12 @@ step-7,000 checkpoint and explicitly records replayed work.
 The recovered model exists, but its frozen replay gate failed. Fixed acceptance
 scoring never ran; Phase 17's exit gate is unmet and Phase 18 remains blocked.
 Earlier handoff guides are historical and authorize no further execution.
+
+## Prospective Phase 17.1 support — recovery-mechanics diagnostic
+
+[Diagnostic plan](../experiments/recovery-diagnostic/PLAN.md),
+[Windows handoff](../experiments/recovery-diagnostic/WINDOWS.md),
+[local validation](../experiments/recovery-diagnostic/validation.json) and
+[review](../experiments/recovery-diagnostic/REVIEW.md). This separately authorized
+mechanics study preserves failed Phase 17 permanently. No full Phase 17.1 run,
+held-out scoring, Phase 18 or publication is authorized by the diagnostic approval.

@@ -1,0 +1,42 @@
+{
+  "scope": "Mac diagnostic preparation only; no selected-scale CUDA updates or held-out access",
+  "checkout_tests": {
+    "passed": 10,
+    "skipped": 0,
+    "failed": 0,
+    "optimizer_updates": 0,
+    "junit_sha256": "5c77e73f5464149aeefcb34b37203a5a277a4668bbf076a5379009eeee8b6275"
+  },
+  "installed_original_wheel_tests": {
+    "passed": 10,
+    "skipped": 0,
+    "failed": 0,
+    "optimizer_updates": 0,
+    "junit_sha256": "9636ba32f50dab6e0029a32a04515ccf72c905254877a63cd0005e3e52d770e4"
+  },
+  "original_imported_implementation_sha256": "76cf4a198ee6acde566fdcc70c9420c0cae8ab6cc0d6b4d7e4c9c0cba5c8f09c",
+  "historical_tracked_Phase17_and_frozen_contracts": "byte-identical to published closure",
+  "original_training_ledgers_logs_and_unaccepted_model": "read-only hash checks passed; original status unchanged",
+  "preservation_scope": "No broad corpus scan or held-out/final payload read was performed",
+  "synthetic_data_validation": "15,940 windows / 5,021,949 targets; repeat bytes and executed shape order identical; zero models/optimizer updates",
+  "lint": "passed",
+  "format": "passed",
+  "lock": "unchanged; check passed",
+  "dependencies": "existing original locked runtimes; no upgrades",
+  "original_full_suites": "Not rerun in this diagnostic scope; only new zero-update engineering checks executed",
+  "actual_CUDA_comparison_pairs": 0,
+  "actual_diagnostic_optimizer_updates": 0,
+  "correction_established": false,
+  "phase17_1_training_authorized": false,
+  "phase18_authorized": false,
+  "publication_authorized": false,
+  "review": "Separate pass and fixes in REVIEW.md; Windows execution still required",
+  "reviewed_source_sha256": {
+    "experiments/recovery-diagnostic/mechanics.py": "f46ffdc7880288615c5ee482680c77d9720fef5b2d09e8c51718ed70ac1c1ada",
+    "experiments/recovery-diagnostic/package_handoff.py": "2277398a73c2d3803a94d7a4d8402f727a4a9121c229d5f67901a48b2bc5607b",
+    "experiments/recovery-diagnostic/package_return.py": "18755ce5974f1f8286e5dbf8b5a90d7aaa7f2908c6806b4d43b03f79c543b6af",
+    "experiments/recovery-diagnostic/run.py": "9c9b995678470c1bca75b064651b3f9506e8993bfb332e14be47a0f02a2bc39a",
+    "experiments/recovery-diagnostic/run_checks.py": "f7472f38a64243c76afc88db8c6fc323c1e64a84e532f460f89e6f2c4b79c639",
+    "experiments/recovery-diagnostic/verify_return.py": "9b821b9dc0bbc7853aa880f3b6855691a9e5ea925e1ef252c4e428b219db58b1"
+  }
+}

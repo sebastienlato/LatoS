@@ -2,80 +2,81 @@
 
 Updated: 2026-09-24.
 
-## Authoritative disposition
+## Current authorized scope
 
-**The bounded Phase 17 experiment is closed as interrupted/failed. Its corrective
-replay-equivalence gate failed; its learned-quality exit gate is unmet and unmeasured.**
-There is no accepted LatoS Base Model 2.0. **Phase 18 remains blocked.** No further
-retry/recovery, paired development scoring, final acceptance or model promotion is
-permitted under the existing frozen contract. Closure publication awaits approval.
+**A separate bounded recovery-mechanics diagnostic is authorized to support a
+prospective Phase 17.1 — Base Model 2.0 Corrective Attempt.** Local implementation
+and CPU engineering checks prepare its Windows/CUDA handoff. **No actual CUDA
+diagnostic comparison has run yet, and no reproducible correction is established.**
+Full Phase 17.1 training, Phase 18 and all remote publication are unauthorized.
 
-[Closure](experiments/phase-17/CLOSURE.md),
-[independent verification](experiments/phase-17/closure-verification.json) and
-[next-decision proposal](experiments/phase-17/NEXT_DECISION.md) are authoritative.
-Earlier execution/recovery guides describe completed historical handoffs, not active
-instructions to launch more work. Their original evidence remains unchanged.
+Published Phase 17 closure is permanently preserved at
+`09c1935b085218fbbc9ea88703d8ba12e63c516e`: interrupted/failed, replay gate failed,
+recovered model unaccepted, fixed development/final evaluation absent and exit gate
+unmet. Its result is not reopened or repaired retrospectively. Verified publication
+supersedes the earlier tracked pending-publication wording. No new tag/release/assets.
 
-## Six separate facts
+## Frozen diagnostic
 
-1. Original optimizer execution completed all **7,485 updates / 37,811,418 targets**.
-2. The supervisor failed before saving the original final checkpoint; that state
-   remains missing. Step 7,000 was the last retained original checkpoint.
-3. The reviewed step-7,000 recovery replayed **485 updates / 2,426,653 targets**,
-   consuming the first allowed resumption. Counters/schedule/final two microbatches match.
-4. **351 replayed updates failed the unchanged `1e-5` loss tolerance**. First excess
-   step 7,125; maximum **0.0007099797320835322**, step 7,255. The corrective gate failed.
-5. A recovered final model exists and its bytes/finite float32 structure verify.
-   It remains **unaccepted**, not the missing original final checkpoint or an accepted base.
-6. Fixed paired development/final acceptance **never ran**. The monitoring loss
-   3.964917 / perplexity 52.715883 is not an acceptance score. Learned quality is unknown.
+[Plan](experiments/recovery-diagnostic/PLAN.md),
+[machine-readable bounds](experiments/recovery-diagnostic/plan.json) and
+[Windows guide](experiments/recovery-diagnostic/WINDOWS.md) govern this distinct study.
+The owner's ceilings remain 60 GPU minutes, two pairs, 4,096 physical diagnostic
+updates, 6 GiB new artifacts, zero paid resources and no held-out/final access.
 
-Logical pass: **37,811,418 targets**. Physical execution including replay:
-**40,238,071 targets / 7,970 update executions**. Repeated work is not new unique data.
-Charge **1,682.9380624 active training/recovery seconds**. Evaluation used zero;
-its 3,600-second reserve remains unused. Resource bounds passed; neither spare time
-nor the unused interruption allowance permits rerunning a failed correctness gate.
+The reviewed design uses **2,964 selected-scale physical updates maximum**: each
+of two profiles runs a fresh 997-update reference, saves at 512, then replays the
+same checkpoint for 485 updates in a new process. The prefix is shared, not trained
+twice. All engineering preflight tests forbid optimizer updates. The conservative
+3,600-second supervisor limit includes preparation/preflight/hashing and checkpoint
+I/O as well as GPU work. A 1 GiB internal reserve covers administrative/return copies
+inside the 6 GiB artifact ceiling. No retries, extra profiles or budget reset.
 
-## Evidence and preservation
+Use the exact selected 34,087,424-parameter native model, CUDA BF16/float32 AdamW,
+batch two × accumulation eight, ending with two microbatches. Inputs are fresh
+synthetic token IDs at fixed seeds, shaped by training-only window-length metadata;
+no historical model or actual training/held-out text is loaded. The short diagnostic
+schedule is explicitly separate from the old full run and future Phase 17.1.
 
-The recovery return SHA-256 is
-`a0d521a0c9c4e7bf12d25b8bca19cc389b4ddd77928d73b3f2221cb4c0b0e0f9`.
-All 3,847 included files verify; two executed package snapshots match original
-training commit `0fa94ad580110fd2dc7aaa2aa3560950abe73a02`. Administrative code binds
-to `1436ec27a9ef42c6a72c7625ba9b4414cdf82daf`. Original return records, ledgers,
-source and tensors retain their identities. Nine Windows administrative tests passed
-without skips. No returned code was executed on Mac.
+Compare legacy numerical settings to prospectively deterministic algorithms,
+cuDNN determinism and a fixed cuBLAS workspace. Import original LatoS unchanged
+(implementation hash `76cf4a198ee6acde566fdcc70c9420c0cae8ab6cc0d6b4d7e4c9c0cba5c8f09c`).
+Require exact model/optimizer/sampler/RNG state at checkpoint roundtrip/restore.
+A demonstrated prospective correction requires a complete legacy continuation
+failure and a corrected continuation with exact per-update states and no loss
+excess above the unchanged `1e-5`. Otherwise stop as inconclusive/failed.
 
-Unaccepted recovered model SHA-256:
-`d37141054b26f777403e855ee5903f45a8b5d22205d48d6ab37f9e73fc39f4e6`.
-Its 136,355,352 tensor bytes are retained on Mac and Windows. Mac performed CPU
-artifact loading only, with no forward pass, generation, optimization or scoring.
-Optimizer/intermediate tensors remain on Windows; their absent bytes were not
-rehashed on Mac. Keep originals; compact returns are not full checkpoint backups.
+## Evidence available now
 
-Imported training source, frozen plan/model/evaluation gates and lockfile are
-unchanged. The original implementation hash remains
-`76cf4a198ee6acde566fdcc70c9420c0cae8ab6cc0d6b4d7e4c9c0cba5c8f09c`.
-The replay divergence cause is unestablished; original PowerShell involvement in
-the first filesystem failure also remains plausible, unproven. Tiny control passes
-do not establish full-scale recovery fidelity. Historical negatives stay preserved.
+[Historical scalar inspection](experiments/recovery-diagnostic/historical-trace.json)
+locates the first visible loss/gradient-norm differences at original update 7,124;
+the first frozen-tolerance excess remains 7,125. This does not establish a cause.
+The original first I/O failure's PowerShell involvement remains unproven.
 
-[Closure validation](experiments/phase-17/closure-validation.json) and
-[separate closure review](experiments/phase-17/CLOSURE_REVIEW.md) record actual Mac
-checks. No new CUDA, hosted CI or physical Linux execution is claimed.
+[Data checks](experiments/recovery-diagnostic/data-validation.json) reproduce the
+15,940 synthetic windows / 5,021,949 targets byte-for-byte and match the intended
+variable-length shuffle. No model or optimizer was created by that data construction.
+[Local validation](experiments/recovery-diagnostic/validation.json) and
+[separate review](experiments/recovery-diagnostic/REVIEW.md) record engineering scope.
+There is no local connection to the RTX machine; actual diagnostic evidence must
+come from the bounded Windows handoff. No new CI or physical Linux result is claimed.
 
-## Publication and future boundary
+## Next action and stop boundaries
 
-Phase 16 remains published at `ce9de1b734a8e23fd54e9d137cf269f484631765`.
-All Phase 17 implementation, corrective review and failed-experiment closure commits
-remain local pending explicit publication approval. Existing remote is
-`https://github.com/sebastienlato/LatoS.git`, destination main only. No tag, release,
-model asset, remote backup or PR is proposed; package remains 1.3.0.
+Prepare the exact reviewed local diagnostic commit and checksummed allowlisted
+transfer. Windows Work uses the existing pinned runtime, runs only the new CPU
+preflight and one bounded study, preserves every outcome and returns evidence.
+Old Windows source, datasets, ledgers and tensors remain untouched. The compact
+return is not a backup of diagnostic tensor payloads retained on Windows.
 
-Prepare the reviewed closure commit and exact publication proposal. Approval would
-publish this failed result and preserved source/evidence, not certify success.
-After approved publication and verification, **STOP**. Publication alone does not
-authorize another experiment. Reopening improvement work needs explicit owner
-approval of a new bounded prospective corrective plan; no such execution is
-currently authorized. A future accepted base must still pass unchanged quality
-gates before Phase 18. Roadmap 2.0's capability destination remains incomplete.
+After independent Mac verification/review, if the diagnostic establishes a
+reproducible prospective correction, **stop and prepare a concise proposal for a
+fresh Phase 17.1 Mac Work chat**. That future attempt must start from random
+initialization, use accepted Phase 15 data and Phase 16 model/training configuration,
+incorporate only justified prospective engineering corrections, and perform fixed
+acceptance evaluation. It needs separate explicit owner authorization. Never promote
+or initialize it from the failed recovered model. If diagnostic evidence is
+inconclusive/failed within the budget, stop and report it; do not start Phase 17.1.
+
+Phase 18 remains blocked until a valid future base passes the required process.
+This approval authorizes no push, tag, release, model asset or other remote write.
