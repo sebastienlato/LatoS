@@ -1,4 +1,4 @@
-"""Single-device float32 AdamW updates and token-weighted, read-only evaluation."""
+"""Single-device AdamW with explicit precision and token-weighted evaluation."""
 
 import math
 import time
@@ -10,6 +10,7 @@ from latos.lora import LoRAModel
 from latos.model.network import LatoModel
 from latos.training.config import TrainingConfig
 from latos.training.data import ShuffleStream, TokenDataset, collate
+from latos.training.precision import autocast_context, check_precision, synchronize
 
 
 def check_dataset(model: LatoModel, dataset: TokenDataset) -> None:
@@ -21,12 +22,16 @@ def check_dataset(model: LatoModel, dataset: TokenDataset) -> None:
         raise ValueError("Dataset does not match model vocabulary, tokenizer, or context")
 
 
-def evaluate(model: LatoModel, dataset: TokenDataset, batch_size: int = 2) -> dict:
+def evaluate(
+    model: LatoModel, dataset: TokenDataset, batch_size: int = 2, *, precision: str = "float32"
+) -> dict:
     """Score every target once, with no optimizer, RNG, or gradient changes."""
     check_dataset(model, dataset)
     if type(batch_size) is not int or not 1 <= batch_size <= 256:
         raise ValueError("Invalid validation batch size")
     device = str(model.embedding.weight.device)
+    device = "cuda" if device.startswith("cuda") else device
+    check_precision(device, precision)
     modes = [(module, module.training) for module in model.modules()]
     total_loss, targets = 0.0, 0
     try:
@@ -38,7 +43,8 @@ def evaluate(model: LatoModel, dataset: TokenDataset, batch_size: int = 2) -> di
                     list(range(start, min(start + batch_size, len(dataset.windows)))),
                     device,
                 )
-                loss = model(ids, labels).loss.item()
+                with autocast_context(device, precision):
+                    loss = model(ids, labels).loss.item()
                 if not math.isfinite(loss):
                     raise ValueError("Validation loss is nonfinite")
                 total_loss += loss * count
@@ -70,6 +76,8 @@ class Trainer:
         train: TokenDataset,
         validation: TokenDataset,
         device: str = "cpu",
+        *,
+        precision: str = "float32",
     ):
         check_dataset(model, train)
         check_dataset(model, validation)
@@ -87,6 +95,10 @@ class Trainer:
         elif any(p.dtype != torch.float32 or not p.requires_grad for p in model.parameters()):
             raise ValueError("Training requires float32, trainable model parameters")
         self.device = select_device(device, available_backends())
+        check_precision(self.device, precision)
+        if precision != "float32" and isinstance(model, LoRAModel):
+            raise ValueError("BF16 scope is native dense training, not adapter training")
+        self.precision = precision
         self.model = model.to(self.device)
         self.config = config
         self.train_data = train
@@ -121,6 +133,7 @@ class Trainer:
         if self.step >= self.config.max_steps:
             raise ValueError("Configured training run is complete")
         self.ready = False
+        synchronize(self.device)
         started = time.perf_counter()
         self.model.train()
         self.optimizer.zero_grad(set_to_none=True)
@@ -131,7 +144,8 @@ class Trainer:
         loss_sum = 0.0
         for indices in batches:
             ids, labels, count = collate(self.train_data, indices, self.device)
-            loss = self.model(ids, labels).loss
+            with autocast_context(self.device, self.precision):
+                loss = self.model(ids, labels).loss
             if not torch.isfinite(loss).item():
                 raise ValueError("Training loss is nonfinite; reload the last checkpoint")
             (loss * (count / total)).backward()
@@ -152,6 +166,7 @@ class Trainer:
         self.step += 1
         self.tokens_seen += total
         self.windows_seen += sum(map(len, batches))
+        synchronize(self.device)
         self.ready = True
         elapsed = time.perf_counter() - started
         return {
@@ -168,4 +183,6 @@ class Trainer:
         }
 
     def validate(self) -> dict:
-        return evaluate(self.model, self.validation_data, self.config.batch_size)
+        return evaluate(
+            self.model, self.validation_data, self.config.batch_size, precision=self.precision
+        )

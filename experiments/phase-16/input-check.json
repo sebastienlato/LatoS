@@ -1,0 +1,26 @@
+{
+  "train": {
+    "targets": 1943015,
+    "windows": 6105,
+    "content_tokens": 1938919,
+    "content_bytes": 8183359,
+    "fixed_slot_fraction": 0.6228300885835132,
+    "isolated_record_fixed_slot_fraction": 0.22143653941710578,
+    "seconds": 5.944971582997823,
+    "host_peak_bytes": 342704128,
+    "omissions": {},
+    "documents": 4096
+  },
+  "development": {
+    "targets": 57036,
+    "windows": 184,
+    "content_tokens": 56908,
+    "content_bytes": 233533,
+    "fixed_slot_fraction": 0.6066110780226325,
+    "isolated_record_fixed_slot_fraction": 0.2178247513446803,
+    "seconds": 0.16996170800121035,
+    "host_peak_bytes": 358809600,
+    "omissions": {},
+    "documents": 128
+  }
+}

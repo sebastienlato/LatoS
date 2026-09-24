@@ -293,3 +293,17 @@ The exact prefix-filtered Jaccard join is original implementation of standard
 set-similarity filtering; see [Bayardo, Ma, Srikant (2007)](https://research.google/pubs/scaling-up-all-pairs-similarity-search/)
 and the earlier shingling reference above. Full sets verify candidates; no external
 deduplication implementation or sketch model is imported.
+
+## Phase 16 CUDA measurement implementation
+
+Original LatoS precision and measurement code uses the existing locked PyTorch
+2.14 APIs: [autocast](https://docs.pytorch.org/docs/2.14/amp.html),
+[native BF16 detection](https://docs.pytorch.org/docs/2.14/generated/torch.cuda.is_bf16_supported.html),
+[synchronization](https://docs.pytorch.org/docs/2.14/generated/torch.cuda.synchronize.html),
+[allocated peaks](https://docs.pytorch.org/docs/2.14/generated/torch.cuda.memory.max_memory_allocated.html)
+and [reserved peaks](https://docs.pytorch.org/docs/2.14/generated/torch.cuda.memory.max_memory_reserved.html).
+Windows host memory reporting uses Microsoft's
+[PROCESS_MEMORY_COUNTERS](https://learn.microsoft.com/en-us/windows/win32/api/psapi/ns-psapi-process_memory_counters).
+Primary documentation checked 2026-09-23. API descriptions are not execution
+results; actual CUDA and Windows measurements remain pending at the Mac checkpoint.
+No external model code, dimensions, weights or tokenizer were imported.

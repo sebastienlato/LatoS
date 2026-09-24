@@ -1,0 +1,66 @@
+{
+  "scope": "Mac implementation/external-validation checkpoint; Phase 16 incomplete",
+  "date": "2026-09-23",
+  "source_implementation_sha256": "6467d629600d299dd07ad4d93e3284da5852b0419de0397d3100b16a5ae7069f",
+  "development_tests": {
+    "passed": 402,
+    "skipped": 1,
+    "failed": 0,
+    "seconds": 25.95
+  },
+  "installed_noneditable_wheel_tests": {
+    "passed": 402,
+    "skipped": 1,
+    "failed": 0,
+    "seconds": 41.63,
+    "site_packages_verified": true,
+    "wheel_sha256": "d4385b86658cd3d9dcdc38be9cb80fe650cc4b717072e339c6c5b778f305a402"
+  },
+  "skip": "Actual CUDA unavailable; BF16 test not simulated",
+  "focused_initial": {
+    "passed": 39,
+    "skipped": 1,
+    "failed": 0
+  },
+  "initial_full_before_review_regressions": {
+    "passed": 400,
+    "skipped": 1,
+    "failed": 0
+  },
+  "lint": "passed",
+  "format": "passed; 206 files",
+  "lock": "uv lock --check passed; existing lock unchanged",
+  "dependencies": "37 installed packages compatible in development and isolated wheel environments",
+  "build": "sdist and wheel passed; inspected explicit source allowlist; all wheel Python bytes match reviewed source",
+  "input_package": {
+    "bundle_sha256": "5f4fa7a7bc221d06f6b321c4af712456d3188984d759f8a4a898651d5a6d9073",
+    "verified_files": 17
+  },
+  "phase15_artifact_records_rehashed": 12,
+  "historical_preservation": {
+    "files": 73679,
+    "changed": [],
+    "seconds": 4.808791708004719,
+    "scope": "Historical Phase 0\u201314 artifact/evidence inventory from before Phase 15; reservations opaque-hashed only, no scoring."
+  },
+  "real_input_repeat": "Train/development selection, coalescing, windows, targets and identities identical across two runs",
+  "cuda_rejection": "Actual CLI attempt on this Mac failed before controls/candidates with explicit native CUDA/BF16 requirement; retained failure and inventory",
+  "new_training": "Disposable synthetic unit controls only on Mac; no real-corpus model training",
+  "platforms": {
+    "Mac": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "CUDA": "not executed; external measurement required",
+    "Windows": "not executed; external validation required",
+    "physical_Linux": "deferred",
+    "hosted_Linux": "no CI result claimed"
+  },
+  "review": "Separate local review and fixes in REVIEW.md",
+  "attempts": [
+    "First lint pass found formatting/import/closure issues; corrected before tests.",
+    "One local evidence-helper invocation failed during import before work; no evidence or runtime state changed.",
+    "Deliberate CUDA-unavailable CLI failure preserved."
+  ],
+  "phase16_complete": false,
+  "selected_configuration": null,
+  "phase17_started": false,
+  "publication_authorized": false
+}

@@ -105,6 +105,10 @@ def save_checkpoint(trainer: Trainer, directory: Path) -> dict:
             "training_bytes": (staging / "training.safetensors").stat().st_size,
             "model_metadata_sha256": file_hash(staging / "model" / "metadata.json"),
         }
+        if trainer.precision != "float32":
+            metadata.update(
+                schema_version=2, kind="latos-training-autocast-v2", precision=trainer.precision
+            )
         (staging / "state.json").write_bytes(canonical_json(metadata))
         # Read-back also validates optimizer slots, counters, permutation, and RNG state.
         load_checkpoint(
@@ -113,6 +117,7 @@ def save_checkpoint(trainer: Trainer, directory: Path) -> dict:
             trainer.validation_data,
             trainer.device,
             expected_config=trainer.config,
+            expected_precision=trainer.precision,
         )
         staging.rename(directory)
         return metadata
@@ -128,10 +133,20 @@ def load_checkpoint(
     device: str = "cpu",
     *,
     expected_config: TrainingConfig | None = None,
+    expected_precision: str | None = None,
 ) -> Trainer:
     metadata = json.loads((directory / "state.json").read_text(encoding="utf-8"))
-    if metadata["schema_version"] != 1 or metadata["kind"] != "latos-training-float32-v1":
+    format_key = (metadata["schema_version"], metadata["kind"])
+    if format_key not in (
+        (1, "latos-training-float32-v1"),
+        (2, "latos-training-autocast-v2"),
+    ):
         raise ValueError("Unsupported training checkpoint")
+    precision = "float32" if metadata["schema_version"] == 1 else metadata.get("precision")
+    if metadata["schema_version"] == 2 and precision != "bfloat16":
+        raise ValueError("Unsupported checkpoint precision")
+    if expected_precision is not None and precision != expected_precision:
+        raise ValueError("Resume precision mismatch")
     if metadata["runtime"] != runtime_identity(device):
         raise ValueError("Resume requires the same implementation, runtime, backend, and settings")
     config = TrainingConfig(**metadata["config"])
@@ -142,7 +157,7 @@ def load_checkpoint(
     if file_hash(directory / "model" / "metadata.json") != metadata["model_metadata_sha256"]:
         raise ValueError("Checkpoint model metadata checksum mismatch")
     model = load_model(directory / "model", expected_tokenizer_sha256=train.tokenizer_sha256)
-    trainer = Trainer(model, config, train, validation, device)
+    trainer = Trainer(model, config, train, validation, device, precision=precision)
     step, epoch, cursor = metadata["step"], metadata["epoch"], metadata["cursor"]
     for key in ("step", "tokens_seen", "windows_seen", "epoch", "cursor"):
         if type(metadata[key]) is not int or metadata[key] < 0:

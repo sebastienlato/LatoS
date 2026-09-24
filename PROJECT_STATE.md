@@ -4,78 +4,75 @@ Updated: 2026-09-23.
 
 ## Active checkpoint
 
-**Phase 15 — Data 2.0.** Implementation, actual data preparation, tokenizer
-comparison, validation and separate local review are complete. A reviewed local
-source/evidence commit is prepared for explicit publication approval. No Phase 15
-remote write or Phase 16 implementation has occurred.
+**Phase 16 — Model & CUDA Training 2.0: Mac implementation complete for external
+validation; the phase remains open.** The owner explicitly authorized Phase 16,
+then directed a self-contained separate Windows Work handoff because this Mac has
+no authenticated connection to the RTX 4070 SUPER. Stop at that external checkpoint.
+No final training configuration is selected. **Do not begin Phase 17.**
 
-Authoritative start: HEAD/main/origin/main and remote main matched published
-Phase 14 `8eaf32d06df43449529ec7d2a1827637261a0f47`, clean. Eleven tag objects/targets
-and the existing release/four assets were verified unchanged. The local publication
-record superseded Phase 14's historical pending snapshot; the owner explicitly
-authorized Phase 15 in this fresh Mac task. Package stays **1.3.0**; **v1.0.0** stays
-at `10d9ef7bf0618b364f887ff9d279408e3cbc33c9`.
+Published Phase 15 starting state was verified at
+`d3c63d8655415252ac4a9efac023107831e1ad75`: HEAD/main/origin/main and live remote main
+matched, clean and zero ahead/behind; eleven tags and the existing release/four
+asset records were unchanged. The verified local publication record supersedes
+Phase 15's tracked pending-publication snapshot. Existing package remains **1.3.0**;
+**v1.0.0** remains at `10d9ef7bf0618b364f887ff9d279408e3cbc33c9`.
 
-## Completed scope and evidence
+## Completed locally
 
-- [Audited data foundation](experiments/phase-15/REPORT.md): **158,795,397 training
-  pretraining bytes / 37,226,334 content tokens**, plus separate development and
-  reserved splits; **14,259 training conversations**, including **734 multi-turn**.
-  Pretraining bytes are 29.76 times the historical training text; conversations
-  are 74.27 times the original 192. Repeated exposures are counted separately.
-- [Sources and rights](docs/DATA_2.md): pinned Wikimedia Wikipedia, Dolly and OASST1;
-  reviewed terms, notices, lineage, deterministic selection, language/quality/privacy
-  filters, source/group/template isolation, exact/near joins and rejection ledgers.
-  Acquired text and learned tokenizers remain ignored, with no payload redistribution.
-- [Final audit](experiments/phase-15/contamination.json): **361,515 records**, zero
-  observed remaining exact/near full-record pairs, zero cross-split groups and zero
-  protected matches. All ARC splits, historical reservations, frozen suites and
-  outputs are protected. Reserved access was fingerprint-only; no scoring, example
-  export or final override. Lexical checks do not certify semantic absence.
-- [Selected 16,384 BPE](experiments/phase-15/tokenizer-comparison.json): 9.67% fewer
-  new-development tokens than new 8,192, 25.39% fewer than historical 8,192, no source
-  regression versus new 8,192. Fitting used new training only. Native codec/chat
-  contract 1 and fixed BPB spans remain compatible; old token IDs/weights are intact.
-- [Local Phase 16 package](docs/PHASE16_INPUTS.md): `outputs/phase15-input-package`,
-  with verified train/development data, selected tokenizer and source notices.
-  No weights/reserved/evaluation examples bundled. Length/padding, exposure and
-  hypothetical time/embedding costs are recorded; no CUDA feasibility claim.
+- [Bounded plan and limits](experiments/phase-16/PLAN.md): independent native dense
+  depth comparison, fixed inputs/budgets/tolerances, CUDA resource/inference targets
+  and selection rule. Candidate sizes are comparison points, not accepted models.
+- Explicit CUDA BF16 autocast with float32 parameters/optimizer state; strict
+  precision-aware checkpoint recovery, finite-update checks, synchronized CUDA
+  timing and refusal to substitute CPU/MPS for CUDA.
+- Verified Data 2.0 document coalescing and isolated overlap-one probe windows.
+  Actual selected training subset: 4,096 documents, 1,943,015 targets, 6,105 windows.
+  Fixed-slot utilization 22.14% isolated versus 62.28% coalesced; no omissions.
+  [Input accounting](experiments/phase-16/input-check.json) and
+  [identical repeat](experiments/phase-16/input-repeat.json). No GPU speed claim.
+- Bounded worker suite with original synthetic numerical controls, real-data
+  candidate runs, midpoint recovery, validation, memory/timing/checkpoint/inference
+  records, source snapshots and retained failures. Full Phase 17 data scaling is
+  not established by the bounded probe adapter.
+- [Separate local review](experiments/phase-16/REVIEW.md) and fixes; reviewed local
+  source checkpoint and explicit-input transfer archive prepared for Windows.
+  [Windows Work handoff](docs/PHASE16_WINDOWS_HANDOFF.md) defines the next action.
 
-## Validation and limits
+## Actual validation and limits
 
-**390 tests passed** in development and **390** in an isolated non-editable wheel,
-with no failures/skips. Lint/format, locked dependencies, builds, CLI/CPU doctor,
-package inventory and local links pass. A 4,000-real-candidate preparation replay
-is byte-identical; full-scale final curation repeats identically. All **73,679**
-historical data/artifact/evidence files rehash unchanged. See
-[validation](experiments/phase-15/validation.json) and [review fixes](experiments/phase-15/REVIEW.md).
+[Validation](experiments/phase-16/validation.json): **402 passed / 1 CUDA skip** in
+both development and a fresh non-editable wheel installation. Lint/format, unchanged
+lock, dependency compatibility, build/package inspection and CPU doctor pass.
+All **73,679** historical inventory files rehash unchanged; all 12 recorded Phase 15
+artifacts and all 17 packaged input files match. Two actual bounded input preparations
+produce identical selection, windows, token accounting and identities.
 
-The undersized complete run, partial attempts, intermediate curation outputs and
-failed entrypoint/test attempts remain local. Resource-based plan amendments did
-not lower acceptance floors. Final full preparation took 1,273.29 seconds and
-8.73 GB peak process RSS on this Mac; [measurements](experiments/phase-15/resources.json)
-are not GPU/production benchmarks. No Phase 15 Windows/CUDA or Linux execution;
-physical Linux remains deferred. No new paid resources or substantive model training.
-Normal tests include disposable synthetic optimization fixtures.
+A real CLI attempt on this Mac refuses CUDA before running controls or candidates;
+its failure is retained. No Windows/CUDA measurement, real-corpus model optimization,
+new learned capability, new CI result or Phase 17 run is claimed. Mac tests include
+original disposable synthetic optimization. Physical Linux remains deferred.
+New paid-service budget remains zero. No dependency upgrade or access change.
 
-Encyclopedia dominance, imperfect contributor quality/lineage, typos, omitted short
-leads/lists, lexical detection limits and incomplete worldwide redistribution
-clearance remain explicit. Construction acceptance is not learned-quality success.
-Historical results remain **1.872944 BPB**, ARC-Easy **157/570 (27.54%)**, Challenge
-**66/299 (22.07%)**, and all five artifacts **0/96 instructions**, every category
-**0/16**. Separate original SFT, adaptation, DPO and learned-tool negatives persist.
+Phase 15 corpus/tokenizer and fixed Phase 14 gates remain unchanged. Historical
+base: **1.872944 BPB**, ARC-Easy **157/570**, Challenge **66/299**; all five artifacts
+**0/96 instructions**. Preserve original SFT/adaptation/DPO/tool negatives.
 
-## Pending publication and next action
+## Publication status and next action
 
-- Proposed commit: **Build audited Data 2.0 corpora and tokenizer inputs**.
-  Exact SHA belongs in the approval request and ignored local publication record;
-  this file cannot embed its own commit SHA.
-- Existing remote: `https://github.com/sebastienlato/LatoS.git`; destination **main**.
-  No new tag, release, assets, remote backup or visibility change.
-- Stop at **“Push Phase 15 to GitHub?”** for explicit approval of the exact reviewed
-  commit. After approval, publish that state and verify remote main and unchanged
-  tags/release/assets. Subsequent phase transitions follow the standing rules and
-  any active owner-imposed gate; publication approval cannot override a later pause.
+This is an **external-validation checkpoint, not the Phase 16 push checkpoint**.
+The local source commit is not published; its exact identity and the transfer ZIP's
+checksum belong in the handoff message and ignored local record. Existing remote is
+`https://github.com/sebastienlato/LatoS.git`, eventual destination **main**.
+No remote branch, PR, tag, release, asset upload or other GitHub write is authorized.
 
-Local uv: `.private/tools/bin/uv`; runtime `.venv`. The Mac remains authoritative;
-future substantive GPU work targets the existing RTX 4070 SUPER (~12 GB VRAM).
+Run the exact reviewed transfer package in a separate Windows Work session on the
+existing RTX 4070 SUPER. Return actual evidence and all failures for Mac review.
+Do not close Phase 16 or choose the final training configuration until its required
+CUDA criteria are supported. Finish the measured Phase 17 budget/recovery plan,
+review and fixes, then prepare the final local phase commit and ask
+**“Push Phase 16 to GitHub?”** with its concrete publication details. No such push
+approval is requested at this incomplete checkpoint. **Phase 17 remains prohibited.**
+
+Local uv: `.private/tools/bin/uv`; runtime `.venv`. Mac remains authoritative for
+development and publication. Private context and acquired/learned artifacts stay
+out of normal Git history; the local Windows transfer is not a public release.

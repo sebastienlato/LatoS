@@ -1,0 +1,34 @@
+{
+  "train": {
+    "identical": true,
+    "dataset_identity": {
+      "schema_version": 1,
+      "boundary_policy": "isolated-record-overlap-one-v1",
+      "sequence_length": 512,
+      "vocab_size": 16384,
+      "tokenizer_sha256": "23b9182d5943e7f8b32c6f415f108b7d06f229c80f5cd8f236258db40a6b94c4",
+      "split": "train",
+      "source_sha256": "93f1b11a6530048d92f4f90a686bc74887c1d3d847ea00f2234feaca5db2eae3",
+      "windows_sha256": "1877d2e14ea690c90f619aacc3e2f62ed07f84b421de378601d14027f7366777",
+      "windows": 6105,
+      "targets": 1943015
+    },
+    "selection_record_sha256": "df27caef56eb6b1962251bca343d5a9843c76578e91cbdf9a7d7e06d12ec08b9"
+  },
+  "development": {
+    "identical": true,
+    "dataset_identity": {
+      "schema_version": 1,
+      "boundary_policy": "isolated-record-overlap-one-v1",
+      "sequence_length": 512,
+      "vocab_size": 16384,
+      "tokenizer_sha256": "23b9182d5943e7f8b32c6f415f108b7d06f229c80f5cd8f236258db40a6b94c4",
+      "split": "validation",
+      "source_sha256": "897554e5e780848b3bbcad0594e426b782141b7d15af1f21341ed9d71161d475",
+      "windows_sha256": "4ad7620e8bebb254f236bbf12afa14899df80aa47b9b6773b955b056b0a4c4ad",
+      "windows": 184,
+      "targets": 57036
+    },
+    "selection_record_sha256": "2069a3205324bad13930c020421bfdc5051fbe086c5f8cd4d53975bcb03099d2"
+  }
+}
