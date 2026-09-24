@@ -1,0 +1,80 @@
+{
+  "return_sha256": "a0d521a0c9c4e7bf12d25b8bca19cc389b4ddd77928d73b3f2221cb4c0b0e0f9",
+  "verified_return_files": 3847,
+  "omitted_files": 283,
+  "original_return_records_unchanged": 4043,
+  "training_source_commit": "0fa94ad580110fd2dc7aaa2aa3560950abe73a02",
+  "administrative_commit": "1436ec27a9ef42c6a72c7625ba9b4414cdf82daf",
+  "source_and_exposure_verification": {
+    "verified_return_files": 3847,
+    "reviewed_source_commit": "0fa94ad580110fd2dc7aaa2aa3560950abe73a02",
+    "executed_source_snapshots": 2,
+    "logged_target_executions_including_replay": 40238071,
+    "distinct_logged_updates": 7485,
+    "comparisons": {},
+    "omitted_tensors_scope": "Windows inventory identities only; absent bytes not rehashed",
+    "phase17_complete": false,
+    "next": "Separate source, failure, resource and learned-result review; not automatic acceptance"
+  },
+  "Windows_administrative_tests": {
+    "passed": 9,
+    "skipped": 0
+  },
+  "replay": {
+    "tolerance": 1e-05,
+    "passed": false,
+    "updates": 485,
+    "targets": 2426653,
+    "counter_schedule_mismatches": [],
+    "updates_over_tolerance": 351,
+    "first_over_tolerance": {
+      "step": 7125,
+      "original_loss": 3.994038991161755,
+      "replay_loss": 3.993776696707521,
+      "absolute_delta": 0.00026229445423409103
+    },
+    "maximum_delta": {
+      "step": 7255,
+      "original_loss": 3.9539700086654386,
+      "replay_loss": 3.954679988397522,
+      "absolute_delta": 0.0007099797320835322
+    },
+    "logical_targets": 37811418,
+    "physical_targets": 40238071,
+    "final_microbatches": 2
+  },
+  "original_final_checkpoint": "never produced; not recreated as original evidence",
+  "recovered_final_model": {
+    "sha256": "d37141054b26f777403e855ee5903f45a8b5d22205d48d6ab37f9e73fc39f4e6",
+    "bytes": 136355352,
+    "parameters": 34087424,
+    "finite_float32_shapes_load_on_CPU": true,
+    "status": "unaccepted experimental recovered model; retain, do not promote"
+  },
+  "optimizer_tensor_scope": "Final and historical optimizer tensors retained on Windows; only inventory identities verified on Mac",
+  "training_monitoring_only": {
+    "loss": 3.964916790444685,
+    "perplexity": 52.715882741983336,
+    "split": "validation",
+    "targets": 804337,
+    "windows": 2552
+  },
+  "fixed_acceptance_scores": null,
+  "resource_limits_passed": true,
+  "recovery_resource_peaks": {
+    "peak_allocated_bytes": 1061181440,
+    "peak_reserved_bytes": 1193279488,
+    "host_peak_working_set_bytes": 2733400064
+  },
+  "peak_charged_artifact_bytes": 4985525605,
+  "training_seconds_charged": 1682.9380623999896,
+  "evaluation_seconds_used": 0,
+  "evaluation_reserve_seconds": 3600,
+  "resumptions_consumed": 1,
+  "further_retry_permitted": false,
+  "disposition": "bounded Phase 17 experiment closed as interrupted/failed; recovery gate failed, learned-quality exit gate unmet and unmeasured",
+  "phase17_exit_gate_passed": false,
+  "phase18_authorized": false,
+  "publication_authorized": false,
+  "causation": "Replay divergence cause not established; original PowerShell involvement remains plausible, unproven"
+}

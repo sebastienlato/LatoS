@@ -1,5 +1,16 @@
 # Changelog
 
+## Phase 17 — interrupted/failed experiment closure (local, publication pending)
+
+- Independently verify original execution, the bounded replay and its failed frozen
+  `1e-5` equivalence gate; retain the recovered final model as unaccepted evidence.
+- Distinguish complete optimizer execution from the missing original final checkpoint,
+  failed corrective validation and absent fixed learned-quality evaluation.
+- Close the bounded experiment without another retry, tolerance change, model
+  promotion or Phase 18. Record a prospective corrective proposal only.
+- See [closure](experiments/phase-17/CLOSURE.md) and
+  [verification](experiments/phase-17/closure-verification.json). No publication occurred.
+
 ## Phase 17 — reviewed Windows interruption recovery (local, incomplete)
 
 - Independently verify the first CUDA execution and preserve its supervisor failure:

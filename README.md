@@ -18,8 +18,8 @@ at the center of the next stage.
 - [Data 2.0](docs/DATA_2.md): audited new corpora and a 16,384-entry codec for future models.
 - Dense causal language modeling, pretraining, validation and checkpoint recovery.
 - [Measured CUDA/BF16 training configuration](docs/TRAINING_2.md): 34.09M native
-  parameters selected; full base training remains pending. The
-  [Phase 17 handoff](docs/PHASE17_WINDOWS_HANDOFF.md) is prepared for authorized Windows execution.
+  parameters selected. The [Phase 17 experiment](experiments/phase-17/CLOSURE.md)
+  closed as interrupted/failed after a recovery mismatch; no Base Model 2.0 is accepted.
 - Assistant-only supervised fine-tuning, LoRA adaptation/merge and DPO experiments.
 - Local terminal chat, streaming, KV caching and explicit context limits.
 - A strict, bounded local tool protocol with separate scripted and model evaluations.

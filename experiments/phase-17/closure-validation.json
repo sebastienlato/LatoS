@@ -1,0 +1,64 @@
+{
+  "date": "2026-09-24",
+  "scope": "Mac evidence verification and interrupted/failed-experiment closure; no serious optimization or fixed scoring",
+  "checkout": {
+    "passed": 437,
+    "skipped": 3,
+    "failed": 0,
+    "skip_names": [
+      "test_cuda_bf16_numerical_control",
+      "test_full_single_pass_cuda",
+      "test_windows_read_handle_blocks_replace_but_not_separate_journal"
+    ],
+    "junit_sha256": "a74104f6765a4e0e594b63adcc1f5b72b69f0d35d3270f8b0633e4ac11efb61c"
+  },
+  "installed_original_wheel": {
+    "passed": 437,
+    "skipped": 3,
+    "failed": 0,
+    "skip_names": [
+      "test_cuda_bf16_numerical_control",
+      "test_full_single_pass_cuda",
+      "test_windows_read_handle_blocks_replace_but_not_separate_journal"
+    ],
+    "junit_sha256": "d930472e7b3baa32c5835655273959a8c705fa1a2f3fd93efc3085491cba3eef"
+  },
+  "focused_verification_tests": {
+    "passed": 5,
+    "failed": 0
+  },
+  "lint": "passed",
+  "format": "passed",
+  "lock": "unchanged; check passed",
+  "verification_repeat": "identical reconstructed evidence after strengthening administrative Git binding",
+  "preservation": {
+    "historical_files": 82173,
+    "changed": [],
+    "original_training_source_frozen_gates_roadmap_lock_unchanged": true,
+    "recovery_return_records_verified": 3847,
+    "original_return_records_preserved": 4043
+  },
+  "remote_readonly_verification": {
+    "remote": "https://github.com/sebastienlato/LatoS.git",
+    "destination": "main",
+    "live_remote_main": "ce9de1b734a8e23fd54e9d137cf269f484631765",
+    "existing_local_remote_tags_unchanged": 11,
+    "release_metadata_and_four_assets_unchanged": true,
+    "asset_scope": "API identity records/digests; no new asset download",
+    "publication_authorized": false,
+    "proposed_tag": null,
+    "proposed_release_assets": []
+  },
+  "new_verifier_sha256": "b9ed50ac6caaec7cad50b29d7f6c5796ea9a265a93fa5a96c247aa32ca5aca34",
+  "closure_evidence_sha256": "261b3c058bc7ec75637de6fdc2e726d12fbc51e254728a313747a1b06f693937",
+  "recovered_model_inspection": "CPU load, finite float32 tensors, names/shapes/configuration/count checks; no forward pass or scoring",
+  "returned_source_executed": false,
+  "training_runtime_or_frozen_protocol_changed": false,
+  "new_CUDA_or_CI_or_physical_Linux_execution": false,
+  "phase17_exit_gate_passed": false,
+  "phase18_authorized": false,
+  "published": false,
+  "new_paid_resources": false,
+  "final_targeted_checks": "5 passed after final archive-binding review; actual 3,847-file verification reproduced identical evidence",
+  "build": "wheel/sdist passed; imported runtime files identical; reviewed source allowlist excludes private/output/tensor payloads"
+}

@@ -2,87 +2,80 @@
 
 Updated: 2026-09-24.
 
-## Active checkpoint
+## Authoritative disposition
 
-**Phase 17 is incomplete after a Windows supervisor I/O failure.** The first
-bounded attempt ran all planned optimizer updates, but no final checkpoint or
-training completion receipt was saved. No fixed development/final scoring ran.
-Mac has independently reviewed the return and prepared a bounded administrative
-recovery handoff for the existing Windows artifacts. **No Phase 18 or push.**
+**The bounded Phase 17 experiment is closed as interrupted/failed. Its corrective
+replay-equivalence gate failed; its learned-quality exit gate is unmet and unmeasured.**
+There is no accepted LatoS Base Model 2.0. **Phase 18 remains blocked.** No further
+retry/recovery, paired development scoring, final acceptance or model promotion is
+permitted under the existing frozen contract. Closure publication awaits approval.
 
-Original training source remains exactly
-`0fa94ad580110fd2dc7aaa2aa3560950abe73a02`; its imported implementation hash is
+[Closure](experiments/phase-17/CLOSURE.md),
+[independent verification](experiments/phase-17/closure-verification.json) and
+[next-decision proposal](experiments/phase-17/NEXT_DECISION.md) are authoritative.
+Earlier execution/recovery guides describe completed historical handoffs, not active
+instructions to launch more work. Their original evidence remains unchanged.
+
+## Six separate facts
+
+1. Original optimizer execution completed all **7,485 updates / 37,811,418 targets**.
+2. The supervisor failed before saving the original final checkpoint; that state
+   remains missing. Step 7,000 was the last retained original checkpoint.
+3. The reviewed step-7,000 recovery replayed **485 updates / 2,426,653 targets**,
+   consuming the first allowed resumption. Counters/schedule/final two microbatches match.
+4. **351 replayed updates failed the unchanged `1e-5` loss tolerance**. First excess
+   step 7,125; maximum **0.0007099797320835322**, step 7,255. The corrective gate failed.
+5. A recovered final model exists and its bytes/finite float32 structure verify.
+   It remains **unaccepted**, not the missing original final checkpoint or an accepted base.
+6. Fixed paired development/final acceptance **never ran**. The monitoring loss
+   3.964917 / perplexity 52.715883 is not an acceptance score. Learned quality is unknown.
+
+Logical pass: **37,811,418 targets**. Physical execution including replay:
+**40,238,071 targets / 7,970 update executions**. Repeated work is not new unique data.
+Charge **1,682.9380624 active training/recovery seconds**. Evaluation used zero;
+its 3,600-second reserve remains unused. Resource bounds passed; neither spare time
+nor the unused interruption allowance permits rerunning a failed correctness gate.
+
+## Evidence and preservation
+
+The recovery return SHA-256 is
+`a0d521a0c9c4e7bf12d25b8bca19cc389b4ddd77928d73b3f2221cb4c0b0e0f9`.
+All 3,847 included files verify; two executed package snapshots match original
+training commit `0fa94ad580110fd2dc7aaa2aa3560950abe73a02`. Administrative code binds
+to `1436ec27a9ef42c6a72c7625ba9b4414cdf82daf`. Original return records, ledgers,
+source and tensors retain their identities. Nine Windows administrative tests passed
+without skips. No returned code was executed on Mac.
+
+Unaccepted recovered model SHA-256:
+`d37141054b26f777403e855ee5903f45a8b5d22205d48d6ab37f9e73fc39f4e6`.
+Its 136,355,352 tensor bytes are retained on Mac and Windows. Mac performed CPU
+artifact loading only, with no forward pass, generation, optimization or scoring.
+Optimizer/intermediate tensors remain on Windows; their absent bytes were not
+rehashed on Mac. Keep originals; compact returns are not full checkpoint backups.
+
+Imported training source, frozen plan/model/evaluation gates and lockfile are
+unchanged. The original implementation hash remains
 `76cf4a198ee6acde566fdcc70c9420c0cae8ab6cc0d6b4d7e4c9c0cba5c8f09c`.
-All `src/latos`, frozen training/model/evaluation configuration, acceptance gates
-and lockfile bytes remain unchanged. New recovery code lives outside that package.
-The current Mac review commit must **not** replace the Windows training checkout.
+The replay divergence cause is unestablished; original PowerShell involvement in
+the first filesystem failure also remains plausible, unproven. Tiny control passes
+do not establish full-scale recovery fidelity. Historical negatives stay preserved.
+
+[Closure validation](experiments/phase-17/closure-validation.json) and
+[separate closure review](experiments/phase-17/CLOSURE_REVIEW.md) record actual Mac
+checks. No new CUDA, hosted CI or physical Linux execution is claimed.
+
+## Publication and future boundary
 
 Phase 16 remains published at `ce9de1b734a8e23fd54e9d137cf269f484631765`.
-Phase 17 work remains local and unpublished. Package is 1.3.0; existing tags/release
-are not changed. Historical pending-publication snapshots retain their original scope.
+All Phase 17 implementation, corrective review and failed-experiment closure commits
+remain local pending explicit publication approval. Existing remote is
+`https://github.com/sebastienlato/LatoS.git`, destination main only. No tag, release,
+model asset, remote backup or PR is proposed; package remains 1.3.0.
 
-## Verified first-attempt evidence
-
-[Independent review](experiments/phase-17/INTERRUPTION_REVIEW.md) and
-[numerical record](experiments/phase-17/interruption-review.json):
-
-- Return ZIP matches the owner's `b4d95919…b5338e` digest; 3,761 included files verify.
-  Returned source and tested wheel bind to the exact local training commit.
-- Windows checkout/wheel each: **411 passed / 15 skipped / zero failures**. Both
-  required CUDA controls executed. Mac did not rerun CUDA or execute returned scripts.
-- **7,485 updates / 37,811,418 targets / 119,748 windows**, epoch zero; final update
-  two microbatches / 1,520 targets. Schedule and exposure independently reconstruct.
-- Last complete checkpoint: **step 7,000 / 35,384,765 targets / 112,000 windows**.
-  Eight checkpoints through 7,000 have consistent metadata/inventory identities.
-  Their tensor bytes remain on Windows; strict rehash/load there is still required.
-- **485 updates / 2,426,653 targets** were executed after that checkpoint and lost
-  when the supervisor terminated the worker. Step 7,000 is not a final candidate.
-- The preserved temporary ledger records **1,561.6473704 seconds**, `supervisor-failure`,
-  Windows access denied replacing the main ledger. The main ledger is stale at
-  1,560.9963497 seconds, `running`. Both remain immutable evidence.
-- Latest logged peaks: **1.10 GiB reserved VRAM / 2.37 GiB host working set**.
-  Abrupt termination left no final worker resource receipt. No numerical/resource
-  failure was recorded. Concurrent PowerShell reading is a plausible contributor,
-  not an established cause; the actual lock owner was not instrumented.
-
-## Bounded recovery decision
-
-The complete checkpoint and existing exact-source recovery mechanism support a
-conditional same-attempt replay after the worker's administrative interruption.
-A stock resume based on the stale ledger is prohibited. The reviewed launcher uses
-append-only status, preserves both failed ledgers, excludes concurrent workers and
-calls the exact original worker in its original environment. No source/metadata
-migration, monkeypatch, new model, epoch, seed, schedule or threshold change.
-
-[Recovery guide](experiments/phase-17/recovery/RECOVERY.md): first allowed resumption,
-**one corrective launch**, restoring step 7,000 and replaying only updates 7,001–7,485.
-Logical pass stays 37,811,418 targets; successful total physical execution would be
-40,238,071 targets, explicitly including 2,426,653 replayed targets. No claim of
-bitwise comparison to absent lost final weights. Original strict loader and existing
-same-backend recovery tolerance must pass before evaluation.
-
-Charge prior training time upward to **1,562 seconds**. Recovery verification/replay/
-final save/readback has at most **5,638 additional active seconds**. Evaluation still
-has its cumulative **3,600-second** reserve. Original 7,200/10,800-second training/
-total limits and 8 GiB host / 85% GPU / 20 GiB artifact caps remain. Any new failure
-returns to Mac review; no automatic second resumption or fresh attempt.
-
-## Validation and next action
-
-The [recovery validation](experiments/phase-17/recovery-validation.json) records
-actual local checks and the separate review. The Windows-only file-sharing fixture
-must execute there before replay; Mac results do not substitute for it. The
-original CUDA numerical/recovery controls and source-bound preflight stay preserved.
-
-Transfer the small reviewed recovery bundle to the **existing** Windows transfer
-root, outside its source package. Windows Work runs administrative checks, the one
-bounded replay, then paired fixed development evaluation only after a valid final
-checkpoint and complete administrative receipt. Return full evidence and final
-model bytes if produced. Passing development still requires Mac contamination/
-selection review before the single final comparison. Negative results stay retained.
-
-Phase 17 has no learned acceptance result yet. Historical negatives and fixed
-quality gates remain unchanged. Do not begin Phase 18, publish, create remote
-artifacts or discard Windows originals. Exact administrative commit/archive IDs
-are in the ignored recovery handoff record; the imported training commit remains
-`0fa94ad580110fd2dc7aaa2aa3560950abe73a02` regardless of later Mac review commits.
+Prepare the reviewed closure commit and exact publication proposal. Approval would
+publish this failed result and preserved source/evidence, not certify success.
+After approved publication and verification, **STOP**. Publication alone does not
+authorize another experiment. Reopening improvement work needs explicit owner
+approval of a new bounded prospective corrective plan; no such execution is
+currently authorized. A future accepted base must still pass unchanged quality
+gates before Phase 18. Roadmap 2.0's capability destination remains incomplete.

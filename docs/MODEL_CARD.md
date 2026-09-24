@@ -111,3 +111,24 @@ The [closure](../experiments/phase-12/CLOSURE.md) separately records Windows syn
 initial-block relief and hosted Linux CPU checks. None establishes learned tools,
 general long-context language quality or an improvement to the retained base.
 [Roadmap 2.0](../ROADMAP.md) is future work; this card does not describe a 2.0 model.
+
+## Phase 17 — preserved but unaccepted recovered model
+
+The [bounded experiment closure](../experiments/phase-17/CLOSURE.md) records a
+34,087,424-parameter recovered final artifact with SHA-256
+`d37141054b26f777403e855ee5903f45a8b5d22205d48d6ab37f9e73fc39f4e6`.
+It uses the Phase 15 16,384-entry tokenizer and selected native context-512 model.
+Its tensor file is 136,355,352 bytes. It is retained locally on Mac and Windows,
+not distributed as a release or accepted as LatoS Base Model 2.0.
+
+The original final state was not saved after its supervisor failure. Recovery from
+step 7,000 produced this model, but 351 of 485 replayed updates exceeded the frozen
+`1e-5` loss-difference gate. Source/configuration/counters matching and valid finite
+float32 serialization do not waive that failed gate. Do not substitute this artifact
+for the missing original final state or promote it into Phase 18.
+
+No fixed paired development or final acceptance scores exist. New-corpus monitoring
+loss 3.964917 / perplexity 52.715883 is not an acceptance result or a cross-tokenizer
+comparison. Logical exposure is 37,811,418 targets; total physical work including
+replay is 40,238,071, with repeated work counted separately. The divergence cause
+is unestablished. All historical baselines remain unchanged.

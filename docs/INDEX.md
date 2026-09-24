@@ -109,3 +109,13 @@ SUPER execution. Phase 18 and publication remain unauthorized.
 updates were logged, but no final checkpoint or fixed acceptance score exists.
 The original training source remains unchanged; recovery uses the existing
 step-7,000 checkpoint and explicitly records replayed work.
+
+## Phase 17 — interrupted/failed closure
+
+[Authoritative closure](../experiments/phase-17/CLOSURE.md),
+[independent recovery-return verification](../experiments/phase-17/closure-verification.json),
+[closure review](../experiments/phase-17/CLOSURE_REVIEW.md) and
+[prospective next decision](../experiments/phase-17/NEXT_DECISION.md).
+The recovered model exists, but its frozen replay gate failed. Fixed acceptance
+scoring never ran; Phase 17's exit gate is unmet and Phase 18 remains blocked.
+Earlier handoff guides are historical and authorize no further execution.
