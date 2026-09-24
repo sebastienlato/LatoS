@@ -91,3 +91,11 @@ learned models and fixed evaluations remain unchanged.
 ## Phase 16 — measured CUDA configuration
 
 [Completed analysis](../experiments/phase-16/CLOSURE.md), [independently verified Windows evidence](../experiments/phase-16/windows-verification.json), [selection](../experiments/phase-16/selection.json) and [full-corpus layout](../experiments/phase-16/full-corpus-layout.json). Feasibility and a bounded training plan are established; learned-quality gates and Phase 17 remain pending. The original [Mac handoff](PHASE16_WINDOWS_HANDOFF.md) is retained as its historical protocol.
+
+## Phase 17 — authorized base training, external execution pending
+
+[Execution plan](../experiments/phase-17/PLAN.md), [Mac validation](../experiments/phase-17/validation.json),
+[review](../experiments/phase-17/REVIEW.md), [full-data cache evidence](../experiments/phase-17/cache-validation.json)
+and [Windows/CUDA handoff](PHASE17_WINDOWS_HANDOFF.md). The frozen one-pass runner is
+prepared; serious training and learned-quality evaluation await actual RTX 4070
+SUPER execution. Phase 18 and publication remain unauthorized.

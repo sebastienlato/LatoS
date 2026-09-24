@@ -1,0 +1,40 @@
+{
+  "scope": "Mac full-corpus cache validation; no model initialization or training",
+  "splits": {
+    "train": {
+      "identity": {
+        "schema_version": 1,
+        "boundary_policy": "data2-retained-document-overlap-one-v1",
+        "sequence_length": 512,
+        "vocab_size": 16384,
+        "tokenizer_sha256": "23b9182d5943e7f8b32c6f415f108b7d06f229c80f5cd8f236258db40a6b94c4",
+        "split": "train",
+        "source_sha256": "9d211d572ce1d7c52c682b4e8c59f3b68f85f4f0ed2f5f0f9baefdb14281063e",
+        "windows_sha256": "8f13652c2bd0bc387dbd509ca6424a0eb97c097b963c4b64aa5144d8902cfd64",
+        "windows": 119748,
+        "targets": 37811418
+      },
+      "seconds": 37.9124842909996,
+      "cache_bytes": 157833433,
+      "peak_RSS_bytes": 488357888
+    },
+    "development": {
+      "identity": {
+        "schema_version": 1,
+        "boundary_policy": "data2-retained-document-overlap-one-v1",
+        "sequence_length": 512,
+        "vocab_size": 16384,
+        "tokenizer_sha256": "23b9182d5943e7f8b32c6f415f108b7d06f229c80f5cd8f236258db40a6b94c4",
+        "split": "validation",
+        "source_sha256": "2b1662ffedc36e6f48022264db4e161cf3b2407db76d709bf34c09cc50ccf9da",
+        "windows_sha256": "37b98f3e0091b063d79a01b9d6f15a4e784381029fc49744c1ec59e87f7ab373",
+        "windows": 2552,
+        "targets": 804337
+      },
+      "seconds": 0.8260924579999482,
+      "cache_bytes": 3358944,
+      "peak_RSS_bytes": 488357888
+    }
+  },
+  "cross_split_groups": 0
+}

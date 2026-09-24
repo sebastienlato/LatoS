@@ -78,6 +78,7 @@ class Trainer:
         device: str = "cpu",
         *,
         precision: str = "float32",
+        single_pass: bool = False,
     ):
         check_dataset(model, train)
         check_dataset(model, validation)
@@ -99,6 +100,13 @@ class Trainer:
         if precision != "float32" and isinstance(model, LoRAModel):
             raise ValueError("BF16 scope is native dense training, not adapter training")
         self.precision = precision
+        if type(single_pass) is not bool:
+            raise ValueError("single_pass must be Boolean")
+        if single_pass:
+            batches = math.ceil(len(train.windows) / config.batch_size)
+            if config.max_steps != math.ceil(batches / config.accumulation_steps):
+                raise ValueError("Single-pass update budget must consume exactly one permutation")
+        self.single_pass = single_pass
         self.model = model.to(self.device)
         self.config = config
         self.train_data = train
@@ -137,9 +145,13 @@ class Trainer:
         started = time.perf_counter()
         self.model.train()
         self.optimizer.zero_grad(set_to_none=True)
-        batches = [
-            self.stream.take(self.config.batch_size) for _ in range(self.config.accumulation_steps)
-        ]
+        count = self.config.accumulation_steps
+        if self.single_pass:
+            remaining = self.stream.size - self.stream.cursor
+            if self.stream.epoch != 0 or remaining <= 0:
+                raise ValueError("Single-pass sampler exhausted; epoch wrap prohibited")
+            count = min(count, math.ceil(remaining / self.config.batch_size))
+        batches = [self.stream.take(self.config.batch_size) for _ in range(count)]
         total = sum(self.train_data.target_count(i) for batch in batches for i in batch)
         loss_sum = 0.0
         for indices in batches:
@@ -162,6 +174,13 @@ class Trainer:
         self.optimizer.step()
         if any(not torch.isfinite(p).all().item() for p in self.model.parameters()):
             raise ValueError("Optimizer produced nonfinite weights; reload the last checkpoint")
+        if self.single_pass and any(
+            not torch.isfinite(value).all().item()
+            for state in self.optimizer.state.values()
+            for value in state.values()
+            if isinstance(value, torch.Tensor)
+        ):
+            raise ValueError("Optimizer state is nonfinite; stop the attempt")
         self.optimizer.zero_grad(set_to_none=True)
         self.step += 1
         self.tokens_seen += total
@@ -178,6 +197,7 @@ class Trainer:
             "tokens_seen": self.tokens_seen,
             "windows_seen": self.windows_seen,
             "epoch": self.stream.epoch,
+            "microbatches": len(batches),
             "seconds": elapsed,
             "targets_per_second": total / elapsed,
         }

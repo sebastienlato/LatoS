@@ -109,6 +109,12 @@ def save_checkpoint(trainer: Trainer, directory: Path) -> dict:
             metadata.update(
                 schema_version=2, kind="latos-training-autocast-v2", precision=trainer.precision
             )
+        if trainer.single_pass:
+            metadata.update(
+                schema_version=3,
+                kind="latos-training-single-pass-v3",
+                precision=trainer.precision,
+            )
         (staging / "state.json").write_bytes(canonical_json(metadata))
         # Read-back also validates optimizer slots, counters, permutation, and RNG state.
         load_checkpoint(
@@ -118,6 +124,7 @@ def save_checkpoint(trainer: Trainer, directory: Path) -> dict:
             trainer.device,
             expected_config=trainer.config,
             expected_precision=trainer.precision,
+            expected_single_pass=trainer.single_pass,
         )
         staging.rename(directory)
         return metadata
@@ -134,17 +141,24 @@ def load_checkpoint(
     *,
     expected_config: TrainingConfig | None = None,
     expected_precision: str | None = None,
+    expected_single_pass: bool | None = None,
 ) -> Trainer:
     metadata = json.loads((directory / "state.json").read_text(encoding="utf-8"))
     format_key = (metadata["schema_version"], metadata["kind"])
     if format_key not in (
         (1, "latos-training-float32-v1"),
         (2, "latos-training-autocast-v2"),
+        (3, "latos-training-single-pass-v3"),
     ):
         raise ValueError("Unsupported training checkpoint")
     precision = "float32" if metadata["schema_version"] == 1 else metadata.get("precision")
     if metadata["schema_version"] == 2 and precision != "bfloat16":
         raise ValueError("Unsupported checkpoint precision")
+    single_pass = metadata["schema_version"] == 3
+    if precision not in ("float32", "bfloat16"):
+        raise ValueError("Unsupported checkpoint precision")
+    if expected_single_pass is not None and single_pass != expected_single_pass:
+        raise ValueError("Resume sampling policy mismatch")
     if expected_precision is not None and precision != expected_precision:
         raise ValueError("Resume precision mismatch")
     if metadata["runtime"] != runtime_identity(device):
@@ -157,7 +171,9 @@ def load_checkpoint(
     if file_hash(directory / "model" / "metadata.json") != metadata["model_metadata_sha256"]:
         raise ValueError("Checkpoint model metadata checksum mismatch")
     model = load_model(directory / "model", expected_tokenizer_sha256=train.tokenizer_sha256)
-    trainer = Trainer(model, config, train, validation, device, precision=precision)
+    trainer = Trainer(
+        model, config, train, validation, device, precision=precision, single_pass=single_pass
+    )
     step, epoch, cursor = metadata["step"], metadata["epoch"], metadata["cursor"]
     for key in ("step", "tokens_seen", "windows_seen", "epoch", "cursor"):
         if type(metadata[key]) is not int or metadata[key] < 0:
@@ -168,6 +184,8 @@ def load_checkpoint(
     # Derive sampler progress from update count, including short epoch-tail batches.
     batches_per_epoch = (size + config.batch_size - 1) // config.batch_size
     batches = step * config.accumulation_steps
+    if single_pass:
+        batches = min(batches, batches_per_epoch)
     expected_epoch = (batches - 1) // batches_per_epoch if batches else 0
     expected_cursor = (
         min(size, ((batches - 1) % batches_per_epoch + 1) * config.batch_size) if batches else 0
@@ -195,6 +213,11 @@ def load_checkpoint(
         raise ValueError("Invalid checkpoint shuffle permutation")
     if rng.dtype != torch.uint8 or rng.shape != trainer.stream.generator.get_state().shape:
         raise ValueError("Invalid checkpoint shuffle RNG")
+    if single_pass and (
+        not torch.equal(order, trainer.stream.order)
+        or not torch.equal(rng, trainer.stream.generator.get_state())
+    ):
+        raise ValueError("Single-pass permutation/RNG differs from the fixed seed")
     expected_tokens = epoch * sum(train.target_count(i) for i in range(len(train.windows))) + sum(
         train.target_count(i) for i in order[:cursor].tolist()
     )

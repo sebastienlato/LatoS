@@ -1,5 +1,17 @@
 # Changelog
 
+## Phase 17 — Base Model 2.0 execution handoff (local, incomplete)
+
+- Add verified compact full-corpus windows, exact one-pass tail accumulation and
+  strict single-pass recovery while retaining legacy training defaults.
+- Prepare the bounded RTX 4070 SUPER training/evaluation supervisor, actual-CUDA
+  preflight, pinned historical baseline transfer and independent return verification.
+- Preserve frozen model/training/evaluation contracts. Mac checks establish
+  integration mechanics only; serious training and learned-quality results await
+  Windows execution. No publication or Phase 18 work.
+- See [execution plan](experiments/phase-17/PLAN.md) and
+  [handoff](docs/PHASE17_WINDOWS_HANDOFF.md).
+
 ## Phase 16 — Model & CUDA Training 2.0 (local, publication pending)
 
 - Validate native CUDA BF16, numerical/recovery controls and six bounded real-data

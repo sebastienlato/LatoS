@@ -1,0 +1,66 @@
+{
+  "date": "2026-09-24",
+  "scope": "Mac Phase 17 implementation checkpoint only; CUDA training/evaluation pending",
+  "development": {
+    "passed": 424,
+    "skipped": 2,
+    "failed": 0,
+    "skips": [
+      "test_cuda_bf16_numerical_control",
+      "test_full_single_pass_cuda"
+    ],
+    "junit_sha256": "4514cbe7121d2064b7da94341350257ac2080ea4e60108478c04cd7194d30204"
+  },
+  "installed_noneditable_wheel": {
+    "passed": 424,
+    "skipped": 2,
+    "failed": 0,
+    "skips": [
+      "test_cuda_bf16_numerical_control",
+      "test_full_single_pass_cuda"
+    ],
+    "junit_sha256": "3bc86be8895a61ce50611e6e86ccd15a59d828fa1b29439016e26c708e7d1e58"
+  },
+  "wheel_sha256": "9455bdbcade74cd194f3d5ed99419a30c411bb01e53437a0e00b327c38042f5d",
+  "installed_source_matches_checkout": true,
+  "lint": "passed",
+  "format": "passed",
+  "lock": "unchanged; check passed",
+  "dependency_check": "37 installed wheel packages compatible",
+  "build": "wheel and sdist pass; package contents inspected",
+  "full_cache": "Both full train/development sequence and document identities/counts match Phase 16; zero group overlap",
+  "preservation": {
+    "historical_files": 82173,
+    "changed": [],
+    "reserved_handling": "Opaque hashing/copy only; no scoring or content inspection"
+  },
+  "frozen_files": {
+    "docs/TRAINING_2.md": "6a02e017752711a11fa68a257ee236af122b55ff5fd161cf877bc0040cd8b7da",
+    "configs/training2/phase17-plan.json": "0939804d662a65fcc915d6587fe3e4f994b3bdefdc988464d500128bde06f263",
+    "configs/training2/selected-model.json": "bed0bbcc8b9b145485584ac9475d0c450c196649cb797a09d1c1c47fddc14c66",
+    "configs/evaluation/protocol-v1.json": "a83477dba5fb9ff26661384621e0bf07748dd36cb83069aa9fe9093865121b38",
+    "docs/EVALUATION.md": "f54ef579848b74f2a69a2fe46980b5262c660539ea2b2529bffc2b1b83555703",
+    "uv.lock": "fae860484b7f64e1025cf1061129403cada6444623350a772470cae66e6a5eaa"
+  },
+  "new_source": {
+    "src/latos/training/__init__.py": "4e75c325a5bc182cf8c6787cedd85ad2ce506c47f20dfa6c9e447858b93fa142",
+    "src/latos/training/base2.py": "a8915b99cdb9eef03f55df862868e0e65c18727f86d2f97c0df38cbdd3d50a24",
+    "src/latos/training/checkpoint.py": "9f9f11fc9b9ac1a26b05bafbb4474e137dada68a48539edb7ba835071d38b2f2",
+    "src/latos/training/config.py": "1c5493fcd8ab923214142d268b3fe60fea98db47d57455cb0fd65a9d09e5d585",
+    "src/latos/training/data.py": "50c04ccc3fc2fd166428606b973737c1eb0590f0083408561eb795603a47bca0",
+    "src/latos/training/data2.py": "8eb6478149e9ae8dac39a9ec90abc3f681a004c94c7f1dbe2f0ba8627d2183c2",
+    "src/latos/training/engine.py": "3716be032bcc57d56a222805552c0a41a0d9c0f174b39d3839d7e4a549d27817",
+    "src/latos/training/full_data.py": "06bcba956b15099d6a16ade3643b3aafa01df93bf45bc526f5cb71ae104b3c1a",
+    "src/latos/training/precision.py": "99f19bc161528840d4d03ef6f5fd734a1496752638ab5536f643aa4e2433566a",
+    "src/latos/training/probe.py": "c1c4514a85fb3e4234f4ce1afaa37bf690db09c0dc4248526be9767819f0cceb",
+    "src/latos/training/run.py": "237fa52a1fc1ceec7f2df1c9fb6dac1b5ef1c64767ae21b9d4a0f383670bfe5b"
+  },
+  "review": "Distinct local pass and findings fixed; see REVIEW.md",
+  "phase17_authorized": true,
+  "serious_training_started": false,
+  "phase17_complete": false,
+  "publication_authorized": false,
+  "phase18_authorized": false,
+  "new_cuda_or_CI_or_physical_Linux_execution": false,
+  "new_paid_resources": false
+}

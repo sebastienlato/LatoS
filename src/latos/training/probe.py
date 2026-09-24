@@ -75,14 +75,14 @@ def host_peak_bytes():
     return counters.peak
 
 
-def cuda_environment(output: Path) -> dict:
+def cuda_environment(output: Path, *, min_free_bytes: int = 20 * 1024**3) -> dict:
     check_precision("cuda", "bfloat16")
     properties = torch.cuda.get_device_properties(0)
     if "RTX 4070 SUPER" not in properties.name or properties.total_memory < 10 * 1024**3:
         raise ValueError("This protocol requires the actual RTX 4070 SUPER with >=10 GiB VRAM")
     free, total = torch.cuda.mem_get_info()
-    if shutil.disk_usage(output).free < 20 * 1024**3:
-        raise ValueError("Probe suite requires at least 20 GiB free disk")
+    if shutil.disk_usage(output).free < min_free_bytes:
+        raise ValueError("CUDA execution has insufficient free disk for its start policy")
     torch.set_float32_matmul_precision("highest")
     torch.backends.cuda.matmul.allow_tf32 = False
     torch.backends.cudnn.allow_tf32 = False
