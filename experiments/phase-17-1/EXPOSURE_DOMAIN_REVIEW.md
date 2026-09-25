@@ -1,7 +1,12 @@
 # Base Model 2.0 exposure/domain design review
 
 Date: 2026-09-25. Recovered source: `c2277e7104e92408581db41cd0f9852c8f7cb2ee`.
-Status: **design review completed; proposed study not authorized or implemented**.
+Status: **REJECTED by the owner: the 6.6-hour/four-pass proposal must not be implemented.**
+
+The owner now caps the entire next experiment at 45 minutes. The analysis below is
+historical; its recommendation and budgets are superseded by
+[the small-subset proposal](SMALL_SUBSET_PROPOSAL.md). No part of the old study
+may be executed using separate 45-minute allocations.
 
 The owner explicitly authorized this existing-evidence review after publication.
 That authorization supersedes the earlier wait for permission to review, and nothing

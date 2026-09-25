@@ -220,7 +220,9 @@
     "extra_epochs_or_seed_sweep": false,
     "final_scoring": false,
     "maximum_preflight_updates": 52,
-    "total_physical_update_ceiling_including_preflight": 37477
+    "total_physical_update_ceiling_including_preflight": 37477,
+    "status": "REJECTED by owner; historical arithmetic only; do not implement",
+    "superseded_by": "SMALL_SUBSET_PROPOSAL.md"
   },
   "quality_distance": {
     "required_bpb_using_saved_reference": 1.68564938076,

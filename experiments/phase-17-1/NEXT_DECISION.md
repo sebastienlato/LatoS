@@ -1,5 +1,10 @@
 # After Phase 17.1 — owner/master-planning decision only
 
+Current planning update (2026-09-25): the authorized design review is complete.
+The owner rejected its long full-corpus study and imposes a 45-minute total
+experiment ceiling. See [the revised prospective proposal](SMALL_SUBSET_PROPOSAL.md).
+The closure analysis below is preserved; no experiment implementation is authorized.
+
 **Stop training and keep Phase 18 blocked.** Phase 17.1 produced a mechanically
 complete model that failed the fixed development quality gates. The remaining
 time, interruption allowances and final-evaluation reserve are not retry budgets.

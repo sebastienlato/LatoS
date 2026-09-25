@@ -59,37 +59,32 @@ objective without the required generalization. Inference mechanics pass (6.1934 
 first token, 148.5148 tokens/s under the fixed synthetic-prompt measurement).
 No final scoring/declaration or retry occurred. No final score is inferred.
 
-## Completed design review and next gate
+## Current prospective decision — hard 45-minute cap
 
-[Exposure/domain review](experiments/phase-17-1/EXPOSURE_DOMAIN_REVIEW.md),
-[derived evidence](experiments/phase-17-1/exposure-domain-analysis.json), and
-[separate review/validation](experiments/phase-17-1/EXPOSURE_DOMAIN_REVIEW_CHECKS.md).
+The owner **rejected** the former 6.6-hour/four-pass full-corpus proposal. It must
+not be implemented. [Revised proposal](experiments/phase-17-1/SMALL_SUBSET_PROPOSAL.md):
+one small fixed-data diagnostic, three fresh arms (one-pass 34.09M control,
+two-pass 34.09M exposure/schedule arm, two-pass 21.24M depth arm). Reuse the existing
+Phase 16 subset; no new data/tokenizer or long full-corpus study.
 
-Recommendation: one prospective unchanged-model/tokenizer/data exposure study:
-fresh one-pass control and fresh four-pass candidate, with a prespecified candidate
-first-pass schedule diagnostic. Two trajectories, one seed, no checkpoint search.
-The domain hypothesis remains untested; larger models and a data-mix intervention
-are not justified as the immediate next experiment. No study code/configuration,
-new dataset or execution handoff has been implemented.
+**45 minutes maximum for the entire experiment**, all arms and CPU/GPU preparation,
+conformance, evaluation, verification and packaging combined. Target 33 minutes;
+40-minute planned stage caps plus five minutes emergency evidence closure only.
+No paid compute, clock resets, retries or separate per-arm budgets. Prospective
+1,910 serious updates / 9,715,075 repeated target executions, plus at most 52
+existing conformance updates. These limits are not execution authorization.
 
-Prospective cost: about 6.6 hours on the existing RTX 4070 SUPER; hard 11-hour active
-ceiling, 32 GiB new-artifact limit, zero paid services. Proposed serious exposure
-37,425 updates / 189,057,090 targets, plus at most 52 existing tiny CUDA preflight
-updates; no serious replay. These are proposal limits, **not authorization**.
-A failed candidate ends this unchanged-corpus exposure direction for master planning.
-All fixed acceptance references/gates remain unchanged. Even a future development
-pass would require separate selection/contamination and owner review before final
-access. Phase 18 remains blocked.
+Preserve fixed Phase 5 acceptance reference and all quality gates. The proposal
+is a single-seed early-learning diagnostic; it cannot establish domain causality
+or accepted model quality. Any outcome returns to owner review. No automatic
+promotion, final scoring, follow-up or Phase 18.
 
-**Stop for owner/master-planning review before any proposed study implementation.**
-The earlier review-start gate is satisfied by explicit owner authorization in this
-session; the experiment-start and publication gates remain closed.
-
-Current review read saved metrics and metadata only: zero optimizer updates, model
-forward passes, new generation/scoring, new data acquisition or paid resources.
-The 7,485-row trace hash and arithmetic were checked; the prior 1,366-file closure
-reconstruction and tensor inspection are historical evidence, not rerun here.
-No CUDA/CI/physical Linux execution. Private planning remains ignored.
+**Stop for owner/master-planning review before implementation.** No training,
+model loading/scoring, data acquisition or paid service occurred during revision.
+Only planning documents changed; prior experiment source, gates and results remain
+unchanged. The former design and arithmetic are retained with rejection notices.
+Use concise continuity and targeted reads; avoid duplicate reports, agent fan-out
+and unnecessary Work/GPT context use.
 
 ## Publication and local continuity
 
