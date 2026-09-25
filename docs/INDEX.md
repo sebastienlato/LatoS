@@ -128,3 +128,16 @@ Earlier handoff guides are historical and authorize no further execution.
 [review](../experiments/recovery-diagnostic/REVIEW.md). This separately authorized
 mechanics study preserves failed Phase 17 permanently. No full Phase 17.1 run,
 held-out scoring, Phase 18 or publication is authorized by the diagnostic approval.
+
+## Phase 17.1 — completed execution, failed development quality
+
+[Authoritative closure](../experiments/phase-17-1/CLOSURE.md),
+[independent verification](../experiments/phase-17-1/closure-verification.json),
+[closure review](../experiments/phase-17-1/CLOSURE_REVIEW.md) and
+[next decision](../experiments/phase-17-1/NEXT_DECISION.md).
+The distinct fresh Windows/CUDA run completed 7,485 updates and saved its final
+candidate, but seven fixed development quality gates failed. No Base Model 2.0 is
+accepted; no final scoring or retry occurred. Phase 18 stays blocked. This supplies
+new full-training evidence without changing historical platform/result scopes.
+The preceding handoff/pending sections describe their original checkpoints; use
+PROJECT_STATE.md for the current stop gate. Closure publication remains unapproved.

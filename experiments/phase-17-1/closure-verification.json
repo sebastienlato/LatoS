@@ -1,0 +1,317 @@
+{
+  "disposition": "development-quality-failed; final prohibited; Phase 18 blocked",
+  "return_sha256": "66c2ddee8e85a289998461deb0e86945022b9e368a142f86ca9a68ba3a96e358",
+  "controller_source_commit": "7cb5afd54d33fda4d18b84c5f0645d661b76e002",
+  "included_files_verified": 1366,
+  "omitted_tensor_cache_records_not_rehashed": 81,
+  "executed_source_snapshots_verified": 12,
+  "cpu_preflight": {
+    "checkout": {
+      "passed": 35,
+      "failed": 0,
+      "skipped": 0,
+      "optimizer_updates": 0
+    },
+    "wheel": {
+      "passed": 35,
+      "failed": 0,
+      "skipped": 0,
+      "optimizer_updates": 0
+    }
+  },
+  "CUDA_preflight_pairs": 4,
+  "CUDA_preflight_updates": 52,
+  "serious_updates": 7485,
+  "serious_replay_updates": 0,
+  "windows": 119748,
+  "targets": 37811418,
+  "full_input_signatures_reconstructed": 7485,
+  "checkpoint_identities": [
+    {
+      "step": 0,
+      "policy_sha256": "44b9c0e79fcd6b5814cc0091648b6bb639e8e26b638275da5e66078787719f34",
+      "model_sha256": "ab9df838a36dab48951c717cc552d7c92053c7dedfd8b1f02322b65bca917ba2"
+    },
+    {
+      "step": 1000,
+      "policy_sha256": "0522d1483c5ec6c4863d1616d575ecc6f0e7a105a159939474f6552271d28418",
+      "model_sha256": "3136ecbcf1d87be7333c9654309c4411f07434e8e7de380e5cd970a46d53cd88"
+    },
+    {
+      "step": 2000,
+      "policy_sha256": "f524c6e939e3f0094d746a9fec0763bc72685be165664b42844ee32f035bc5cd",
+      "model_sha256": "8cb0f58de1407eb4af26ec84222d6a783901f6d3fbbf850dc2c921a0c42a6b19"
+    },
+    {
+      "step": 3000,
+      "policy_sha256": "9f949d52ad67dfafa016787e1bfdccb39ba7fc0a80017fc11c6da5d0386ec0e2",
+      "model_sha256": "df9f4ea363057910e347ac1b3b752d6aaede3a51aff5215c0fd535b5e1cc1674"
+    },
+    {
+      "step": 4000,
+      "policy_sha256": "f28419dc8e47fb230316d309f7311ee0ec3b25a06bfea3d04204bee1bb323d54",
+      "model_sha256": "4d9bf049729c4590666770078daf14f1edd17afaea37d6b41dc5500c18cbbd21"
+    },
+    {
+      "step": 5000,
+      "policy_sha256": "c53e90234cbd710401dc4166a250cd959da83385b64fe6aad34dc3b446da7be3",
+      "model_sha256": "04a2413f5d53a4f80321dbe759d76a1694533e16e8fdea594963a24c2afefae3"
+    },
+    {
+      "step": 6000,
+      "policy_sha256": "79022148985e0eab06e65559feb8600aea30721f2950b78b8d30d18bd1f6da4f",
+      "model_sha256": "00b259749256b963eb8710b36761645e9f188603e1682a24579732799467f976"
+    },
+    {
+      "step": 7000,
+      "policy_sha256": "4e427ae16db15356384825296cd9617f81c1f6306f77faf9f02e34549d79e6ad",
+      "model_sha256": "371dd7c6a203a3989ac44dbeb6e1c6ef930628373b8ea8ffc6ae3c42dc524c2f"
+    },
+    {
+      "step": 7485,
+      "policy_sha256": "3812553bffa5910142c1bcdc6d7062fc75a384664620f10a13ac16d92156b595",
+      "model_sha256": "969034537d6b9740e217b436d5bfffbab51db3bbb3d9be79801a71f2ae336331"
+    }
+  ],
+  "candidate_weights_sha256": "969034537d6b9740e217b436d5bfffbab51db3bbb3d9be79801a71f2ae336331",
+  "candidate_bytes": 136355352,
+  "candidate_parameters": 34087424,
+  "final_tensor_fingerprints_match_trace": true,
+  "training_preflight_seconds": 4559.081205800001,
+  "development_inference_seconds": 162.79922589997295,
+  "total_active_seconds": 4721.880431699974,
+  "peak_host_bytes": 2557345792,
+  "peak_reserved_GPU_bytes": 1233125376,
+  "artifact_charge_bytes": 4852667987,
+  "peak_journal_charge_bytes": 4852667803,
+  "development_comparison": {
+    "stage": "base",
+    "passed": false,
+    "checks": {
+      "matched_bpb_ratio": {
+        "value": 1.0954109564068522,
+        "threshold": 0.9,
+        "relation": "<=",
+        "pass": false
+      },
+      "document_bpb_ratio:alice-wonderland": {
+        "value": 1.192326185975462,
+        "threshold": 1.02,
+        "relation": "<=",
+        "pass": false
+      },
+      "document_bpb_ratio:war-worlds": {
+        "value": 1.0615539175174304,
+        "threshold": 1.02,
+        "relation": "<=",
+        "pass": false
+      },
+      "external_raw_drop:ARC-Challenge": {
+        "value": 0.02341137123745818,
+        "threshold": 0.03,
+        "relation": "<=",
+        "pass": true
+      },
+      "external_byte_drop:ARC-Challenge": {
+        "value": -0.023411371237458206,
+        "threshold": 0.03,
+        "relation": "<=",
+        "pass": true
+      },
+      "external_raw_drop:ARC-Easy": {
+        "value": -0.014035087719298234,
+        "threshold": 0.03,
+        "relation": "<=",
+        "pass": true
+      },
+      "external_byte_drop:ARC-Easy": {
+        "value": -0.014035087719298261,
+        "threshold": 0.03,
+        "relation": "<=",
+        "pass": true
+      },
+      "generation_empty": {
+        "value": 0.0,
+        "threshold": 0.05,
+        "relation": "<=",
+        "pass": true
+      },
+      "generation_repeated_trigram_fraction": {
+        "value": 0.4988729778558703,
+        "threshold": 0.25,
+        "relation": "<=",
+        "pass": false
+      },
+      "generation_repetition_increase": {
+        "value": 0.11068612987904403,
+        "threshold": 0.1,
+        "relation": "<=",
+        "pass": false
+      },
+      "arc_easy_min": {
+        "value": 0.2894736842105263,
+        "threshold": 0.35,
+        "relation": ">=",
+        "pass": false
+      },
+      "arc_easy_gain": {
+        "value": 0.014035087719298234,
+        "threshold": 0.05,
+        "relation": ">=",
+        "pass": false
+      },
+      "arc_easy_lower_bound": {
+        "value": 0.25375002994310986,
+        "threshold": 0.2499707602349181,
+        "relation": ">=",
+        "pass": true
+      }
+    },
+    "scope": "numeric gates only; contamination, selection and final-access audit also required",
+    "protocol_sha256": "a83477dba5fb9ff26661384621e0bf07748dd36cb83069aa9fe9093865121b38",
+    "reference_weights": "f82ed3b21aeacad6d8b3a88c9100cbc83b8f15af1ba9c17a4fa4dccc59b2befa",
+    "candidate_weights": "969034537d6b9740e217b436d5bfffbab51db3bbb3d9be79801a71f2ae336331",
+    "token_perplexity_comparable": false,
+    "paired": {
+      "ARC-Challenge": {
+        "delta": -0.023411371237458192,
+        "bootstrap95": [
+          -0.07357859531772576,
+          0.026755852842809364
+        ],
+        "clusters": 299,
+        "samples": 2000,
+        "seed": 140
+      },
+      "ARC-Easy": {
+        "delta": 0.014035087719298246,
+        "bootstrap95": [
+          -0.02456140350877193,
+          0.056140350877192984
+        ],
+        "clusters": 570,
+        "samples": 2000,
+        "seed": 140
+      },
+      "instructions": {
+        "delta": 0.0,
+        "bootstrap95": [
+          0.0,
+          0.0
+        ],
+        "clusters": 24,
+        "samples": 2000,
+        "seed": 140
+      }
+    }
+  },
+  "inference": {
+    "median_decode_tokens_per_second": 148.5147814605022,
+    "median_first_token_seconds": 0.006193399982294068,
+    "passed": true,
+    "repeats": [
+      {
+        "decode_tokens_per_second": 151.3123827395991,
+        "first_token_seconds": 0.005990700010443106
+      },
+      {
+        "decode_tokens_per_second": 148.5147814605022,
+        "first_token_seconds": 0.007685599994147196
+      },
+      {
+        "decode_tokens_per_second": 145.079123384679,
+        "first_token_seconds": 0.006193399982294068
+      }
+    ],
+    "resources": {
+      "host_peak_working_set_bytes": 2367868928,
+      "peak_allocated_bytes": 314624000,
+      "peak_reserved_bytes": 476053504
+    },
+    "scope": "float32 native KV cache; synthetic 128-ID prompt; 64 forced tokens; EOS ignored",
+    "warmup": {
+      "decode_tokens_per_second": 152.36897477465163,
+      "first_token_seconds": 0.013313299976289272
+    }
+  },
+  "training_monitoring": [
+    {
+      "step": 0,
+      "loss": 9.811537451806664,
+      "perplexity": 18243.013281245327,
+      "split": "validation",
+      "targets": 804337,
+      "windows": 2552
+    },
+    {
+      "step": 1000,
+      "loss": 5.273540066911414,
+      "perplexity": 195.105427617482,
+      "split": "validation",
+      "targets": 804337,
+      "windows": 2552
+    },
+    {
+      "step": 2000,
+      "loss": 4.774455869584091,
+      "perplexity": 118.4458470949006,
+      "split": "validation",
+      "targets": 804337,
+      "windows": 2552
+    },
+    {
+      "step": 3000,
+      "loss": 4.469745351686067,
+      "perplexity": 87.3344806033312,
+      "split": "validation",
+      "targets": 804337,
+      "windows": 2552
+    },
+    {
+      "step": 4000,
+      "loss": 4.257567874890895,
+      "perplexity": 70.637973974619,
+      "split": "validation",
+      "targets": 804337,
+      "windows": 2552
+    },
+    {
+      "step": 5000,
+      "loss": 4.118409796116019,
+      "perplexity": 61.461428310961296,
+      "split": "validation",
+      "targets": 804337,
+      "windows": 2552
+    },
+    {
+      "step": 6000,
+      "loss": 4.031066025305635,
+      "perplexity": 56.320918781327585,
+      "split": "validation",
+      "targets": 804337,
+      "windows": 2552
+    },
+    {
+      "step": 7000,
+      "loss": 3.9786986119173564,
+      "perplexity": 53.44743309579384,
+      "split": "validation",
+      "targets": 804337,
+      "windows": 2552
+    },
+    {
+      "step": 7485,
+      "loss": 3.963962158139623,
+      "perplexity": 52.665582470280135,
+      "split": "validation",
+      "targets": 804337,
+      "windows": 2552
+    }
+  ],
+  "final_scoring_executed": false,
+  "accepted_base_model_2": false,
+  "scope": "Saved execution/state records and development outputs reconstructed; included final tensors checked without forward pass. Omitted tensors not replayed on Mac. No final scoring or new optimization.",
+  "phase18_authorized": false,
+  "new_attempt_authorized": false,
+  "publication_authorized": false
+}

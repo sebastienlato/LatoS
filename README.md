@@ -19,7 +19,9 @@ at the center of the next stage.
 - Dense causal language modeling, pretraining, validation and checkpoint recovery.
 - [Measured CUDA/BF16 training configuration](docs/TRAINING_2.md): 34.09M native
   parameters selected. The [Phase 17 experiment](experiments/phase-17/CLOSURE.md)
-  closed as interrupted/failed after a recovery mismatch; no Base Model 2.0 is accepted.
+  closed as interrupted/failed after a recovery mismatch. The fresh
+  [Phase 17.1 attempt](experiments/phase-17-1/CLOSURE.md) completed execution but failed
+  fixed development quality gates; no Base Model 2.0 is accepted.
 - Assistant-only supervised fine-tuning, LoRA adaptation/merge and DPO experiments.
 - Local terminal chat, streaming, KV caching and explicit context limits.
 - A strict, bounded local tool protocol with separate scripted and model evaluations.

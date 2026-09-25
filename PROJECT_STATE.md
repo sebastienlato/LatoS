@@ -1,87 +1,76 @@
 # Project state
 
-Updated: 2026-09-24.
+Updated: 2026-09-25.
 
-## Current owner authorization and execution checkpoint
+## Authoritative disposition and current gate
 
-**Phase 17.1 implementation and one prespecified fresh Windows attempt are explicitly
-owner-authorized.** Mac implementation, focused validation and separate review are
-complete. Stop at the Windows execution handoff; the owner manually transfers the
-checked package to a fresh Windows Work session and returns evidence here.
-**No full training runs on Mac. No Phase 18 or publication is authorized.**
-
-The approved [proposal](experiments/phase-17-1/PROPOSAL.md) and
-[contract](experiments/phase-17-1/plan.json) remain byte-identical to reviewed commit
-`1b57e0d317a57d3bd2cde6a28cce6c8184022b31`. Their historical pending-authorization
-wording is superseded by the latest owner instruction and the hash-bound
-[authorization record](experiments/phase-17-1/authorization.json).
-
-## Permanent historical outcome and diagnostic support
+**Phase 17.1 completed its authorized fresh execution but failed fixed development
+quality acceptance. The bounded experiment is closed; no Base Model 2.0 is accepted.**
+Final acceptance is prohibited for this candidate. Phase 18 remains blocked.
+The owner authorized evidence review, closure and a prospective next-decision proposal
+only. **No further training, retry, final scoring, new phase or publication is authorized.**
+Publication approval, if later granted, would authorize that exact publication only;
+it would not reopen improvement work or lift this stop gate.
 
 Published Phase 17 remains permanently interrupted/failed at
-`09c1935b085218fbbc9ea88703d8ba12e63c516e`: recovery equivalence failed, recovered
-model unaccepted, fixed development/final acceptance absent, exit gate unmet.
-No recovered, probe or diagnostic model initializes or replaces the fresh attempt.
+`09c1935b085218fbbc9ea88703d8ba12e63c516e`; its recovered model stays unaccepted.
+The earlier positive synthetic diagnostic is separate mechanics evidence. Neither
+historical result is rewritten by Phase 17.1.
 
-The independently reviewed synthetic recovery diagnostic remains positive within
-its frozen scope: 2,964 updates, legacy drift reproduced, exact deterministic state
-and loss agreement across 485 replay updates. It does not identify the historical
-kernel cause, repair Phase 17 or establish learned quality. See
-[review](experiments/recovery-diagnostic/RETURN_REVIEW.md) and
-[verification](experiments/recovery-diagnostic/RETURN_VERIFICATION.json).
+## Verified Phase 17.1 evidence
 
-## Completed local implementation
+[Closure](experiments/phase-17-1/CLOSURE.md),
+[independent reconstruction](experiments/phase-17-1/closure-verification.json),
+[separate review](experiments/phase-17-1/CLOSURE_REVIEW.md), and
+[local validation](experiments/phase-17-1/closure-validation.json).
 
-New standalone tools implement deterministic CUDA policy, source/input integrity,
-append-only session journals, exclusive launch/OS locks, ticketed/hash-bound child
-requests, cumulative time/artifact limits, immutable checkpoint policy records and
-exact full-state/schedule recovery checks. Native `src/latos`, dependencies/lock,
-model/data/training configurations, prior evidence and learned-quality gates are
-unchanged. The initial supervisor permits only prescribed preflight, one fresh
-training run and paired development; final acceptance needs independent Mac review.
+Executed controller: `7cb5afd54d33fda4d18b84c5f0645d661b76e002`.
+Returned ZIP SHA-256:
+`66c2ddee8e85a289998461deb0e86945022b9e368a142f86ca9a68ba3a96e358`.
+All 1,366 included files, twelve native-source snapshots and the fixed development
+comparison verify. Eighty-one omitted tensor/cache records are inventory identities
+only; their bytes remain on Windows and were not replayed on Mac.
 
-[Windows execution guide](experiments/phase-17-1/WINDOWS.md),
-[implementation review](experiments/phase-17-1/IMPLEMENTATION_REVIEW.md) and
-[validation](experiments/phase-17-1/implementation-validation.json).
+Windows CPU checks: 35/35 in both runtimes, no skips/failures or optimizer updates.
+All four CUDA preflight pairs passed (52 tiny updates). Fresh seed-160 serious run:
+7,485 updates / 119,748 windows / 37,811,418 targets; no serious replay/interruption,
+final accumulation two, nine retained checkpoints. Every serious input signature,
+state digest, counter and exact Windows schedule binding reconstructs. Total
+supervised active time 4,721.880432 seconds; recorded resource bounds pass.
 
-**35 focused CPU checks passed, zero skips/failures, in both checkout and the
-preserved installed-wheel environment; zero optimizer updates.** These include
-real tiny zero-update checkpoint roundtrips, failure/corruption/policy rejection,
-real watchdog/locks, return packaging, and separately labeled scripted supervisor
-controls. Existing train/development cache verification passed: 119,748/2,552 windows
-and 37,811,418/804,337 targets, without rebuilding or creating a full model.
-Formatting/lint and source-distribution build/extraction checks pass (35 checks).
-The source-package allowlist includes the new tools. The lock is unchanged;
-`uv lock --check` could not run because `uv` was unavailable on PATH. No new full-suite, CUDA, hosted CI or physical Linux
-result is claimed. Actual Windows locking/import/CUDA conformance remains pending.
+New final candidate SHA-256:
+`969034537d6b9740e217b436d5bfffbab51db3bbb3d9be79801a71f2ae336331`.
+Its included 136,355,352-byte finite float32 tensors match the final training
+fingerprints and 34,087,424-parameter count. It is retained on Mac and Windows as
+an **unaccepted experimental artifact**, not promoted to a baseline or release.
 
-## Frozen execution scope and next action
+## Quality outcome
 
-Run the checked allowlisted tools beside the preserved original transfer at
-`C:\LatoS-Validation\phase17\execution-20260924-verified`, with the existing
-checkout and installed-wheel runtimes. The tools do not include corpus, tokenizer,
-weights, held-out payloads or private context. Exact source commit, ZIP SHA-256 and
-post-commit verification are recorded in the supplied kickoff/receipt and local
-continuity. Do not pull Git or replace the historical source/environment.
+Seven mandatory development gates fail: matched BPB ratio 1.0954109564 (required
+<=0.90); book ratios 1.1923261860 / 1.0615539175 (<=1.02); ARC-Easy 28.9474%
+(>=35%) with +1.4035-point gain (>=5); repetition 0.4988729779 (<=0.25) and
+increase 0.1106861299 (<=0.10). Other numeric gate passes do not offset failures.
 
-Windows first verifies source/input integrity, then runs the same zero-update CPU
-checks and exactly the approved tiny adapter conformance design: at most 52 CUDA
-updates across four reference/replay pairs, with no retries. Only successful
-preflight permits the fresh seed-160 34,087,424-parameter model and unchanged one-pass
-recipe: 7,485 logical updates / 37,811,418 targets, BF16, batch two × accumulation
-eight, final accumulation two. Two-hour preparation/preflight/training/recovery cap,
-one-hour cumulative fixed evaluation reserve, three-hour active total, 20 GiB new
-artifacts, 8 GiB host / 85% reserved GPU caps and zero new paid resources remain.
+Matched BPB 2.0516431115 is 9.54% worse than the paired historical base. New-corpus
+monitoring loss falls 9.8115374518 to 3.9639621581, showing learning under that
+objective without the required generalization. Inference mechanics pass (6.1934 ms
+first token, 148.5148 tokens/s under the fixed synthetic-prompt measurement).
+No final scoring/declaration or retry occurred. No final score is inferred.
 
-Return complete or failed evidence for authoritative Mac review. No automatic
-restart or final scoring. Conditional external-interruption recovery needs a
-separate Mac record and stays within two resumptions and all cumulative bounds.
-Passing development/resource gates plus the reviewed candidate/contamination
-selection declaration are required before the single final comparison. Phase 18
-remains blocked. Native implementation hash stays
-`76cf4a198ee6acde566fdcc70c9420c0cae8ab6cc0d6b4d7e4c9c0cba5c8f09c`.
+## Next action and publication state
 
-Current work is local on `main`. Existing remote is
-`https://github.com/sebastienlato/LatoS.git`; eventual destination `main`, no tag
-proposed. No push, tag, release, asset upload or other remote write is authorized
-or performed. This implementation checkpoint is not an executed/accepted base model.
+**Stop for owner/master-planning direction.** The concise
+[next-decision proposal](experiments/phase-17-1/NEXT_DECISION.md) recommends a separately
+authorized, zero-training design review of exposure and domain coverage, not an
+immediate retry. These are hypotheses, not established causes. Roadmap 2.0 goals
+and all numeric gates remain unchanged; no future experiment is selected or launched.
+
+Closure work uses saved records and final tensor storage inspection only: no new
+optimizer update, model forward pass, generation, final payload scoring, CUDA replay,
+CI or physical Linux execution. Historical source/contracts/artifacts are preserved.
+The complete Windows tensor inventory is not backed up by the compact return.
+
+The reviewed closure commit is local on `main`; its exact hash is recorded with
+the checkpoint and local continuity. Existing remote is
+`https://github.com/sebastienlato/LatoS.git`, destination `main`, no tag/release/weights
+proposed. Publication needs explicit approval. No remote write has occurred.

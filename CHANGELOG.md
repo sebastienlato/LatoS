@@ -1,5 +1,17 @@
 # Changelog
 
+## Phase 17.1 — execution complete, development quality failed (local closure)
+
+- Independently verify the fresh CUDA attempt, all 7,485 updates, nine checkpoints,
+  final candidate bytes and the exact paired fixed-development comparison.
+- Preserve seven failed quality gates despite successful execution and inference
+  mechanics. No accepted Base Model 2.0, final scoring, retry or Phase 18.
+- Retain the new candidate as unaccepted evidence and keep the earlier Phase 17
+  interruption/recovery failure permanently separate.
+- Prepare a prospective owner/master-planning decision only; no new experiment or
+  publication is authorized. See [closure](experiments/phase-17-1/CLOSURE.md) and
+  [next decision](experiments/phase-17-1/NEXT_DECISION.md).
+
 ## Phase 17 — interrupted/failed experiment closure (local, publication pending)
 
 - Independently verify original execution, the bounded replay and its failed frozen

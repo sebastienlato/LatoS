@@ -132,3 +132,26 @@ loss 3.964917 / perplexity 52.715883 is not an acceptance result or a cross-toke
 comparison. Logical exposure is 37,811,418 targets; total physical work including
 replay is 40,238,071, with repeated work counted separately. The divergence cause
 is unestablished. All historical baselines remain unchanged.
+
+## Phase 17.1 — complete but unaccepted fresh candidate
+
+[Phase 17.1 closure](../experiments/phase-17-1/CLOSURE.md) records a distinct fresh
+seed-160, 34,087,424-parameter model trained for exactly one accepted-data pass:
+7,485 updates / 37,811,418 targets, no serious replay. The deterministic execution
+and checkpoint policy checks passed. Candidate SHA-256:
+`969034537d6b9740e217b436d5bfffbab51db3bbb3d9be79801a71f2ae336331`.
+The 136,355,352-byte float32 model is retained locally on Mac and Windows, not
+accepted as Base Model 2.0, promoted for Phase 18 or published as a model asset.
+
+Fixed paired development fails seven mandatory gates. Matched BPB is 2.0516431115
+versus historical base 1.8729437564 (ratio 1.0954109564, required <=0.90). Both book
+regressions exceed the 1.02 limit. ARC-Easy is 165/570 (28.9474%), gaining eight
+cases/+1.4035 points but missing the 35% floor and 5-point gain. Repetition is
+0.4988729779, with increase 0.1106861299; both limits fail. Both recorded instruction
+scores remain 0/96. Inference mechanics pass but do not establish useful responses.
+
+New-corpus monitoring loss falls from 9.8115374518 to 3.9639621581. This is a learning
+signal under that objective, not fixed acceptance or a different-tokenizer perplexity
+comparison. No final acceptance scoring occurred. The final set remains unscored;
+there is no final result to report or use for tuning. Original Phase 17 remains a
+separate failed recovery experiment; its model is not relabeled or repaired here.

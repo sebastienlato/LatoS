@@ -1,0 +1,36 @@
+{
+  "scope": "Mac closure reconstruction and documentation only",
+  "independent_reconstructions": {
+    "passes": 3,
+    "identical_report_results": true,
+    "all_included_files": 1366,
+    "native_source_snapshots": 12,
+    "serious_input_signatures": 7485,
+    "fixed_development_comparison": "exact reconstruction from saved outputs; no forward pass"
+  },
+  "focused_checks": {
+    "passed": 4,
+    "skipped": 0,
+    "failed": 0,
+    "optimizer_updates": 0,
+    "junit_sha256": "c7f45b26d24c42cab4045c332245cfddb8702afc6202271f2b6f6cd1109f7ca1"
+  },
+  "lint": "passed",
+  "format": "passed",
+  "historical_preservation": "Native runtime, science configurations, lock/build configuration, Roadmap, Phases 15/16/17 and diagnostic evidence plus executed Phase 17.1 plan/controllers unchanged; source/return ZIP identities reverified",
+  "candidate_storage_check": "136355352 bytes; finite float32; 34087424 elements; every tensor hash equals final training trace; no model constructed or run",
+  "omissions": "81 tensor/cache inventory records; absent Windows bytes not rehashed",
+  "new_model_forward_passes": 0,
+  "new_optimizer_updates": 0,
+  "new_generation_or_final_scoring": false,
+  "returned_source_executed": false,
+  "new_CUDA_CI_or_physical_Linux": "not performed",
+  "verification_failures": 0,
+  "review_fixes": "Strengthened all handoff member bindings, runtime/import/worker identities, exact approved configuration, fixture input reconstruction and checkpoint counter checks; formatting corrected. No experiment or gate change.",
+  "reviewer_scope": "Separate pass within authoritative Mac task; no external reviewer claimed",
+  "verifier_sha256": "81133713b3cd4396b7e618a27858c34f6218aaa519c450f59638a73a6892be00",
+  "source_commit_verified": "7cb5afd54d33fda4d18b84c5f0645d661b76e002",
+  "publication_authorized": false,
+  "new_attempt_authorized": false,
+  "phase18_authorized": false
+}
