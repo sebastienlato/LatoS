@@ -1,0 +1,38 @@
+{
+  "scope": "Saved evidence closure and recommendation only",
+  "archive": {
+    "small-subset-corrected-return.zip": {
+      "bytes": 552504674,
+      "sha256": "db0092d459051e5ddf613ebac09d6ffa8b19a32804f629608d7720cd37a50acb"
+    },
+    "return.receipt.json": {
+      "bytes": 355,
+      "sha256": "4d8929f6357fd94755c5ead35c6951d2a8801ffd52482b5e3319d39e45512350"
+    },
+    "guardian.json": {
+      "bytes": 511,
+      "sha256": "bf27c13e3aa235e16b2023f250dc09395d43c3782535c6c6a2d2dce79b0ec93d"
+    }
+  },
+  "primary_reader": "passed: member hashes, correction/guardian budget, preserved failure, saved execution/score reconstruction",
+  "supplementary_audit": "passed: Git bindings, exact contracts, source/schedule/seed/monitor/resource/tensor checks and derived contrasts",
+  "included_files": 1667,
+  "archive_members_including_manifest": 1668,
+  "omitted_inventory_records_not_rehashed": 43,
+  "included_finite_float32_tensors": 204,
+  "included_tensor_elements": 123500544,
+  "new_optimizer_updates": 0,
+  "new_model_constructions_forwards_or_scoring": 0,
+  "additional_GPU_execution": false,
+  "publication_authorized": false,
+  "next_experiment_authorized_or_implemented": false,
+  "review_pass": "separate pass in this Mac task; no delegation",
+  "preliminary_check_findings": [
+    "Cross-host output-ULP assumption corrected to the preexisting adjacent-cosine analytic method; exact Windows rates unchanged.",
+    "Reference elapsed timing excluded from quality-repeat equality; quality aggregates and generated IDs exact."
+  ],
+  "lint": "passed",
+  "format": "passed",
+  "historical_preservation": "Only current project state, new result/review/arithmetic and saved-evidence audit added; original study/gates/plan/source/lock unchanged",
+  "supplementary_verifier_sha256": "795fc8cc8b4000e3c288f5aa0a1865c6a03a2ea322d64a215b318e8177f3daac"
+}
