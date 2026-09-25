@@ -1,0 +1,684 @@
+{
+  "source_commit": "ba262bdb598d164da322972c1208e7fed55c9335",
+  "scope": "Saved-evidence/tensor audit; no model loading, forward or optimization",
+  "total_wall_seconds": 1011.5610733999929,
+  "controller_seconds": 1011.5442572000029,
+  "stage_seconds": {
+    "prepare": 32.92198620000272,
+    "train": 702.8847794999892,
+    "evaluate": 265.3207070000062,
+    "packaging_and_outer_closure": 10.43271470000036
+  },
+  "job_seconds": {
+    "prepare": 5.256592899997486,
+    "checkout-ordinary-reference": 3.4668025999853853,
+    "checkout-ordinary-resumed": 3.3361485000059474,
+    "checkout-partial-tail-reference": 3.4079641999851447,
+    "checkout-partial-tail-resumed": 3.371049800014589,
+    "wheel-ordinary-reference": 3.5576744999852963,
+    "wheel-ordinary-resumed": 3.2911425000056624,
+    "wheel-partial-tail-reference": 3.472804500022903,
+    "wheel-partial-tail-resumed": 3.2990658000053372,
+    "D": 232.347597999993,
+    "E": 470.5201770999993,
+    "eval-reference": 68.34350919999997,
+    "eval-D2": 65.4767017000122,
+    "eval-E2": 65.81802340000286,
+    "eval-E4": 65.65312730000005
+  },
+  "artifact_upper_bytes_with_reserve": 2195102596,
+  "omitted_inventory_records_not_rehashed": 37,
+  "arms": {
+    "D": {
+      "passes": 2,
+      "updates": 764,
+      "targets": 3886030,
+      "monitor_loss": {
+        "0": 9.779406857712923,
+        "382": 5.892971043207509,
+        "764": 5.621983982510282
+      },
+      "epoch_metrics": [
+        {
+          "pass": 1,
+          "targets": 1943015,
+          "online_train_nll": 6.5131417404185825,
+          "fraction_clipped": 0.5130890052356021
+        },
+        {
+          "pass": 2,
+          "targets": 1943015,
+          "online_train_nll": 5.574549381062779,
+          "fraction_clipped": 0.9764397905759162
+        }
+      ],
+      "job_seconds": 232.347597999993,
+      "resource_peaks": {
+        "host_peak_working_set_bytes": 2286047232,
+        "peak_allocated_bytes": 750681600,
+        "peak_reserved_bytes": 832569344
+      },
+      "initial_model_sha256_inventory": "84725ddbfe58d02ecd9c5530461af2be5ade00d20ad8bbb549396cd5900a4800"
+    },
+    "E": {
+      "passes": 4,
+      "updates": 1528,
+      "targets": 7772060,
+      "monitor_loss": {
+        "0": 9.779406857712923,
+        "382": 5.866973063940587,
+        "764": 5.428883355060461,
+        "1146": 5.25995413196464,
+        "1528": 5.2300453120406925
+      },
+      "epoch_metrics": [
+        {
+          "pass": 1,
+          "targets": 1943015,
+          "online_train_nll": 6.505216579650665,
+          "fraction_clipped": 0.4895287958115183
+        },
+        {
+          "pass": 2,
+          "targets": 1943015,
+          "online_train_nll": 5.498465226381954,
+          "fraction_clipped": 0.9607329842931938
+        },
+        {
+          "pass": 3,
+          "targets": 1943015,
+          "online_train_nll": 5.0087778847724636,
+          "fraction_clipped": 1.0
+        },
+        {
+          "pass": 4,
+          "targets": 1943015,
+          "online_train_nll": 4.695946823568218,
+          "fraction_clipped": 1.0
+        }
+      ],
+      "job_seconds": 470.5201770999993,
+      "resource_peaks": {
+        "host_peak_working_set_bytes": 2285977600,
+        "peak_allocated_bytes": 750681600,
+        "peak_reserved_bytes": 832569344
+      },
+      "initial_model_sha256_inventory": "84725ddbfe58d02ecd9c5530461af2be5ade00d20ad8bbb549396cd5900a4800"
+    }
+  },
+  "endpoints": {
+    "reference": {
+      "bpb": 1.872943756436532,
+      "book_bpb": {
+        "alice-wonderland": 1.8250561572964015,
+        "war-worlds": 1.8902709342330763
+      },
+      "repetition": 0.3881868479768263,
+      "empty": 0.0,
+      "instructions_correct": 0,
+      "arc": {
+        "ARC-Challenge": {
+          "correct": 66,
+          "total": 299,
+          "accuracy": 0.22073578595317725,
+          "byte_correct": 65
+        },
+        "ARC-Easy": {
+          "correct": 157,
+          "total": 570,
+          "accuracy": 0.2754385964912281,
+          "byte_correct": 135
+        }
+      },
+      "weights_sha256": "f82ed3b21aeacad6d8b3a88c9100cbc83b8f15af1ba9c17a4fa4dccc59b2befa"
+    },
+    "D2": {
+      "bpb": 2.466164752980263,
+      "book_bpb": {
+        "alice-wonderland": 2.66997479655949,
+        "war-worlds": 2.392420131716522
+      },
+      "repetition": 0.6521404970762397,
+      "empty": 0.0,
+      "instructions_correct": 0,
+      "arc": {
+        "ARC-Challenge": {
+          "correct": 65,
+          "total": 299,
+          "accuracy": 0.21739130434782608,
+          "byte_correct": 83
+        },
+        "ARC-Easy": {
+          "correct": 159,
+          "total": 570,
+          "accuracy": 0.2789473684210526,
+          "byte_correct": 139
+        }
+      },
+      "weights_sha256": "334acf574da07fcfa50562304856fe67a94c88467324086be29c6b8ff9ec39f6",
+      "failed_gates": [
+        "arc_easy_gain",
+        "arc_easy_lower_bound",
+        "arc_easy_min",
+        "document_bpb_ratio:alice-wonderland",
+        "document_bpb_ratio:war-worlds",
+        "generation_repeated_trigram_fraction",
+        "generation_repetition_increase",
+        "matched_bpb_ratio"
+      ],
+      "gate_values": {
+        "arc_easy_gain": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.05,
+          "value": 0.003508771929824517
+        },
+        "arc_easy_lower_bound": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.2499707602349181,
+          "value": 0.24370318896985638
+        },
+        "arc_easy_min": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.35,
+          "value": 0.2789473684210526
+        },
+        "document_bpb_ratio:alice-wonderland": {
+          "pass": false,
+          "relation": "<=",
+          "threshold": 1.02,
+          "value": 1.4629548717639094
+        },
+        "document_bpb_ratio:war-worlds": {
+          "pass": false,
+          "relation": "<=",
+          "threshold": 1.02,
+          "value": 1.2656493248610303
+        },
+        "external_byte_drop:ARC-Challenge": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.03,
+          "value": -0.06020066889632106
+        },
+        "external_byte_drop:ARC-Easy": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.03,
+          "value": -0.007017543859649145
+        },
+        "external_raw_drop:ARC-Challenge": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.03,
+          "value": 0.0033444816053511683
+        },
+        "external_raw_drop:ARC-Easy": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.03,
+          "value": -0.003508771929824517
+        },
+        "generation_empty": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.05,
+          "value": 0.0
+        },
+        "generation_repeated_trigram_fraction": {
+          "pass": false,
+          "relation": "<=",
+          "threshold": 0.25,
+          "value": 0.6521404970762397
+        },
+        "generation_repetition_increase": {
+          "pass": false,
+          "relation": "<=",
+          "threshold": 0.1,
+          "value": 0.2639536490994134
+        },
+        "matched_bpb_ratio": {
+          "pass": false,
+          "relation": "<=",
+          "threshold": 0.9,
+          "value": 1.316731879697442
+        }
+      },
+      "tensor_elements": 21238272,
+      "tensors_verified": 30,
+      "source_step": 764
+    },
+    "E2": {
+      "bpb": 2.4103654685152107,
+      "book_bpb": {
+        "alice-wonderland": 2.6115469333717973,
+        "war-worlds": 2.337571946318812
+      },
+      "repetition": 0.5662033971418438,
+      "empty": 0.0,
+      "instructions_correct": 0,
+      "arc": {
+        "ARC-Challenge": {
+          "correct": 59,
+          "total": 299,
+          "accuracy": 0.19732441471571907,
+          "byte_correct": 83
+        },
+        "ARC-Easy": {
+          "correct": 162,
+          "total": 570,
+          "accuracy": 0.28421052631578947,
+          "byte_correct": 150
+        }
+      },
+      "weights_sha256": "b702c652fdae2395458bb70d5ed3cd69284fc5a135cd24aaaa577e670f833587",
+      "failed_gates": [
+        "arc_easy_gain",
+        "arc_easy_lower_bound",
+        "arc_easy_min",
+        "document_bpb_ratio:alice-wonderland",
+        "document_bpb_ratio:war-worlds",
+        "generation_repeated_trigram_fraction",
+        "generation_repetition_increase",
+        "matched_bpb_ratio"
+      ],
+      "gate_values": {
+        "arc_easy_gain": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.05,
+          "value": 0.008771929824561375
+        },
+        "arc_easy_lower_bound": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.2499707602349181,
+          "value": 0.24872354937102295
+        },
+        "arc_easy_min": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.35,
+          "value": 0.28421052631578947
+        },
+        "document_bpb_ratio:alice-wonderland": {
+          "pass": false,
+          "relation": "<=",
+          "threshold": 1.02,
+          "value": 1.4309405893791707
+        },
+        "document_bpb_ratio:war-worlds": {
+          "pass": false,
+          "relation": "<=",
+          "threshold": 1.02,
+          "value": 1.2366332804388251
+        },
+        "external_byte_drop:ARC-Challenge": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.03,
+          "value": -0.06020066889632106
+        },
+        "external_byte_drop:ARC-Easy": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.03,
+          "value": -0.02631578947368421
+        },
+        "external_raw_drop:ARC-Challenge": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.03,
+          "value": 0.02341137123745818
+        },
+        "external_raw_drop:ARC-Easy": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.03,
+          "value": -0.008771929824561375
+        },
+        "generation_empty": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.05,
+          "value": 0.0
+        },
+        "generation_repeated_trigram_fraction": {
+          "pass": false,
+          "relation": "<=",
+          "threshold": 0.25,
+          "value": 0.5662033971418438
+        },
+        "generation_repetition_increase": {
+          "pass": false,
+          "relation": "<=",
+          "threshold": 0.1,
+          "value": 0.17801654916501747
+        },
+        "matched_bpb_ratio": {
+          "pass": false,
+          "relation": "<=",
+          "threshold": 0.9,
+          "value": 1.2869395892064472
+        }
+      },
+      "tensor_elements": 21238272,
+      "tensors_verified": 30,
+      "source_step": 764
+    },
+    "E4": {
+      "bpb": 2.4177914110048953,
+      "book_bpb": {
+        "alice-wonderland": 2.6216550550822904,
+        "war-worlds": 2.344027395464172
+      },
+      "repetition": 0.5510073659528004,
+      "empty": 0.0,
+      "instructions_correct": 0,
+      "arc": {
+        "ARC-Challenge": {
+          "correct": 63,
+          "total": 299,
+          "accuracy": 0.21070234113712374,
+          "byte_correct": 83
+        },
+        "ARC-Easy": {
+          "correct": 155,
+          "total": 570,
+          "accuracy": 0.2719298245614035,
+          "byte_correct": 131
+        }
+      },
+      "weights_sha256": "6a6e87f0299bf523657c24952c6c252793bae3978108d3c599f6cb4ce80f671e",
+      "failed_gates": [
+        "arc_easy_gain",
+        "arc_easy_lower_bound",
+        "arc_easy_min",
+        "document_bpb_ratio:alice-wonderland",
+        "document_bpb_ratio:war-worlds",
+        "generation_repeated_trigram_fraction",
+        "generation_repetition_increase",
+        "matched_bpb_ratio"
+      ],
+      "gate_values": {
+        "arc_easy_gain": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.05,
+          "value": -0.0035087719298245723
+        },
+        "arc_easy_lower_bound": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.2499707602349181,
+          "value": 0.23701907658357432
+        },
+        "arc_easy_min": {
+          "pass": false,
+          "relation": ">=",
+          "threshold": 0.35,
+          "value": 0.2719298245614035
+        },
+        "document_bpb_ratio:alice-wonderland": {
+          "pass": false,
+          "relation": "<=",
+          "threshold": 1.02,
+          "value": 1.4364791157801704
+        },
+        "document_bpb_ratio:war-worlds": {
+          "pass": false,
+          "relation": "<=",
+          "threshold": 1.02,
+          "value": 1.24004837243884
+        },
+        "external_byte_drop:ARC-Challenge": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.03,
+          "value": -0.06020066889632106
+        },
+        "external_byte_drop:ARC-Easy": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.03,
+          "value": 0.007017543859649117
+        },
+        "external_raw_drop:ARC-Challenge": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.03,
+          "value": 0.010033444816053505
+        },
+        "external_raw_drop:ARC-Easy": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.03,
+          "value": 0.0035087719298245723
+        },
+        "generation_empty": {
+          "pass": true,
+          "relation": "<=",
+          "threshold": 0.05,
+          "value": 0.0
+        },
+        "generation_repeated_trigram_fraction": {
+          "pass": false,
+          "relation": "<=",
+          "threshold": 0.25,
+          "value": 0.5510073659528004
+        },
+        "generation_repetition_increase": {
+          "pass": false,
+          "relation": "<=",
+          "threshold": 0.1,
+          "value": 0.16282051797597413
+        },
+        "matched_bpb_ratio": {
+          "pass": false,
+          "relation": "<=",
+          "threshold": 0.9,
+          "value": 1.2909044399736764
+        }
+      },
+      "tensor_elements": 21238272,
+      "tensors_verified": 30,
+      "source_step": 1528
+    }
+  },
+  "contrasts": {
+    "D2:E2": {
+      "bpb_change_percent": -2.26259354317756,
+      "book_bpb_change_percent": {
+        "alice-wonderland": -2.1883301394074017,
+        "war-worlds": -2.292581669522975
+      },
+      "repetition_change_pp": -8.59370999343959,
+      "repetition_prompts_better_tied_worse": [
+        13,
+        0,
+        11
+      ],
+      "paired": {
+        "ARC-Challenge": {
+          "bootstrap95": [
+            -0.043478260869565216,
+            0.0033444816053511705
+          ],
+          "clusters": 299,
+          "delta": -0.020066889632107024,
+          "samples": 2000,
+          "seed": 140
+        },
+        "ARC-Easy": {
+          "bootstrap95": [
+            -0.010526315789473684,
+            0.021052631578947368
+          ],
+          "clusters": 570,
+          "delta": 0.005263157894736842,
+          "samples": 2000,
+          "seed": 140
+        },
+        "instructions": {
+          "bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "clusters": 24,
+          "delta": 0.0,
+          "samples": 2000,
+          "seed": 140
+        }
+      }
+    },
+    "E2:E4": {
+      "bpb_change_percent": 0.3080836738944326,
+      "book_bpb_change_percent": {
+        "alice-wonderland": 0.38705495127526746,
+        "war-worlds": 0.27616044740468304
+      },
+      "repetition_change_pp": -1.5196031189043335,
+      "repetition_prompts_better_tied_worse": [
+        10,
+        0,
+        14
+      ],
+      "paired": {
+        "ARC-Challenge": {
+          "bootstrap95": [
+            -0.010033444816053512,
+            0.03678929765886288
+          ],
+          "clusters": 299,
+          "delta": 0.013377926421404682,
+          "samples": 2000,
+          "seed": 140
+        },
+        "ARC-Easy": {
+          "bootstrap95": [
+            -0.03333333333333333,
+            0.007017543859649123
+          ],
+          "clusters": 570,
+          "delta": -0.012280701754385965,
+          "samples": 2000,
+          "seed": 140
+        },
+        "instructions": {
+          "bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "clusters": 24,
+          "delta": 0.0,
+          "samples": 2000,
+          "seed": 140
+        }
+      }
+    },
+    "D2:E4": {
+      "bpb_change_percent": -1.9614805505962507,
+      "book_bpb_change_percent": {
+        "alice-wonderland": -1.809745228286963,
+        "war-worlds": -2.022752425913965
+      },
+      "repetition_change_pp": -10.113313112343924,
+      "repetition_prompts_better_tied_worse": [
+        15,
+        0,
+        9
+      ],
+      "paired": {
+        "ARC-Challenge": {
+          "bootstrap95": [
+            -0.03678929765886288,
+            0.023411371237458192
+          ],
+          "clusters": 299,
+          "delta": -0.006688963210702341,
+          "samples": 2000,
+          "seed": 140
+        },
+        "ARC-Easy": {
+          "bootstrap95": [
+            -0.02982456140350877,
+            0.015789473684210527
+          ],
+          "clusters": 570,
+          "delta": -0.007017543859649123,
+          "samples": 2000,
+          "seed": 140
+        },
+        "instructions": {
+          "bootstrap95": [
+            0.0,
+            0.0
+          ],
+          "clusters": 24,
+          "delta": 0.0,
+          "samples": 2000,
+          "seed": 140
+        }
+      }
+    }
+  },
+  "historical_seed_comparison": {
+    "scope": "Historical two-pass C2 seed160 vs D2 seed161; no extra model scoring",
+    "bpb_change_percent": -0.13380476563576993,
+    "repetition_change_pp": 1.8493547008012645,
+    "arc_easy_correct_old_new": [
+      159,
+      159
+    ]
+  },
+  "cross_host_adjacent_cosine_cases": 57,
+  "cross_host_max_output_ULPs": 3.0,
+  "same_Windows_rates": "2292 exact matches to recorded schedules",
+  "new_optimizer_updates": 0,
+  "new_model_scoring": false,
+  "accepted_base": false,
+  "final_scoring": false,
+  "fixed_subset_exposure_direction": "CLOSED: E4 failed fixed gates; no more passes/seeds/exposure-only runs",
+  "phase18_authorized": false,
+  "publication_authorized": false,
+  "new_experiment_implemented": false,
+  "primary_verification": {
+    "accepted_base": false,
+    "comparisons_reconstructed": true,
+    "execution": {
+      "physical_updates": 2344,
+      "runtime_matches": true,
+      "source_snapshots": 15
+    },
+    "included_verified": 1421,
+    "new_model_scoring": false,
+    "omitted_not_rehashed": 37,
+    "optimizer_updates": 0,
+    "training": {
+      "accepted_base": false,
+      "serious_updates": 2292,
+      "targets": 11658090
+    }
+  },
+  "return_identity": {
+    "bytes": 302819663,
+    "sha256": "81bba1b8200dc382ef241afeea6fe110eae517a0226bd59e79c21791d0aa4722"
+  },
+  "receipt_identities": {
+    "completed.json": {
+      "bytes": 424,
+      "sha256": "115ce051891795df6ecca06948c2b40425c092af29529cd34a83f51a4554e958"
+    },
+    "guardian.json": {
+      "bytes": 100,
+      "sha256": "636a2cffd621a06ab3e89ae1ab82bbaf70704d04d9927c5b555165ebedaaed6b"
+    },
+    "return.receipt.json": {
+      "bytes": 191,
+      "sha256": "bd676437b1163b90b89ffbe82fb3d914b7c86df823682dd3c50d5638f954ad1e"
+    }
+  },
+  "supplementary_verifier_sha256": "b163521b04f0f66a099a745eefdb6fd2a35c33d3aecedab53883d73a08828d4c"
+}

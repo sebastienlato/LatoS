@@ -4,19 +4,18 @@ Updated: 2026-09-25.
 
 ## Authoritative disposition and current gate
 
-**The owner authorized the final independent-seed fixed-subset confirmation.**
-Mac implementation/zero-update validation and the Windows handoff are ready; stop
-at the execution checkpoint. Actual seed-161 results remain pending. This is not a
-Base Model 2.0 acceptance run. No accepted base, Phase 18 or publication is authorized.
-If its four-pass endpoint fails fixed gates, end this subset-exposure direction and
-return to owner/master-planning review of data/training design. No more passes may
-be proposed merely because the trajectory improves.
+**The final seed-161 subset confirmation is verified and closed. E4 fails eight
+fixed development gates. The prospective stopping rule is met: the fixed-subset
+exposure direction is STOPPED.** Do not propose additional passes, another seed or
+another exposure-only experiment on this subset, regardless of an improving trajectory.
+No Base Model 2.0 is accepted. No final scoring, Phase 18 or publication is authorized.
 
-The earlier small-subset diagnostic and packaging correction remain verified/closed;
-all four of its experimental endpoints failed eight fixed development gates.
-Phase 17.1 remains execution-complete but development-quality-failed, with its
-seven failed gates and 9.54% worse BPB preserved below. It is not rehabilitated by
-this smaller diagnostic. No final score exists or is inferred for either study.
+Return to owner/master-planning review of data/training design. The current authority
+covers evidence closure and analysis only: no new experiment implementation, data
+acquisition or execution. Preserve all earlier negative results and unaccepted weights.
+The earlier subset diagnostic remains closed; Phase 17.1 remains execution-complete
+but development-quality-failed (seven gates; BPB 9.54% worse), not rehabilitated by
+these studies. No final score exists or is inferred.
 
 Published Phase 17 remains permanently interrupted/failed at
 `09c1935b085218fbbc9ea88703d8ba12e63c516e`; its recovered model stays unaccepted.
@@ -90,42 +89,45 @@ an early relative exposure/schedule benefit. C2 is numerically close to B2 on ob
 but trains 39.2% faster. ARC intervals include zero; no established accuracy gain,
 domain-causality claim, useful instruction following or accepted base follows.
 
-## Active checkpoint — final confirmation Windows handoff
+## Final confirmation closure — fixed-subset direction stopped
 
-[Authorized design](experiments/phase-17-1/subset-confirmation/PLAN.md),
-[Windows instructions](experiments/phase-17-1/subset-confirmation/WINDOWS.md),
-[separate review](experiments/phase-17-1/subset-confirmation/REVIEW.md), and
-[validation](experiments/phase-17-1/subset-confirmation/validation.json).
+[Authoritative closure](experiments/phase-17-1/subset-confirmation/CLOSURE.md),
+[reconstructed evidence](experiments/phase-17-1/subset-confirmation/closure-verification.json),
+[separate review](experiments/phase-17-1/subset-confirmation/CLOSURE_REVIEW.md), and
+[owner/master-planning analysis](experiments/phase-17-1/subset-confirmation/MASTER_PLANNING.md).
 
-Two fresh 21,238,272-parameter models, **seed 161**, exact same existing subset.
-D is the two-pass control (764 updates); E is the four-pass candidate (1,528), with
-fixed E2 midpoint observation. Score only Phase 5/D2/E2/E4 after both training jobs.
-Total 2,292 serious updates / 11,658,090 target executions, plus at most 52 original
-conformance updates. No prior weights, extra seed, retries, recovery or new data.
+Return `81bba1b8200dc382ef241afeea6fe110eae517a0226bd59e79c21791d0aa4722` verifies:
+1,421 payloads plus manifest, 15 native-source snapshots, 2,292 serious / 2,344
+physical updates, 11,658,090 target executions, eight checkpoint boundaries and
+three included model files with 90 exact finite float32 tensor fingerprints.
+Thirty-seven omitted tensors remain inventory-bound on Windows, not rehashed Mac
+bytes. No serious retry/replay; original seed/data/model/schedule/endpoints intact.
 
-Projection approximately 17 minutes; target 20; **absolute complete Windows wall
-cap 30 minutes**, including startup/preparation, conformance, training, scoring,
-verification and packaging. Stage caps 180/1,080/300/180 seconds; controller cutoff
-1,790 s and independent process-tree guardian 1,795 s. No clock resets, extensions
-or deferred packaging. Zero paid resources. Previous spare budgets remain closed.
+Guardian total **1,011.561073 seconds (16m51.561s)**, exit zero, no deadline termination.
+All stage caps and the 30-minute complete-study cap pass, including packaging.
+D2/E2/E4 matched BPB: **2.466165 / 2.410365 / 2.417791**; repetition:
+**65.21% / 56.62% / 55.10%**; ARC-Easy: **159 / 162 / 155 of 570**.
+All three endpoints fail eight fixed development gates. E4 is 29.09% worse than
+Phase 5 on matched BPB. No alternate checkpoint is promoted; no final scoring occurred.
 
-The new standalone tools use a separate module/attempt namespace; native source,
-historical studies, exact cache/tokenizer, fixed gates/reference and lock are unchanged.
-Corrected saved-row pairing and successful-path packaging are regression-tested.
-27 focused zero-update checks pass in checkout, existing wheel and extracted tools
-in both runtimes; 66 checks also pass alongside the prior study/correction tests.
-No Mac optimizer updates, model forwards, evaluator execution or GPU initialization;
-tiny CPU random models are used only for storage checks. Actual seed-161/four-pass
-Windows/CUDA execution, timing and quality are pending.
+At equal two-pass exposure, the longer schedule improves observed book/repetition
+metrics. E2→E4 then lowers encyclopedia monitoring loss but worsens both book BPBs;
+ARC-Easy falls seven answers with a paired interval including zero. Mean repetition
+improves slightly, while fourteen of 24 prompts worsen. This does not identify a
+unique failure cause, but it does not justify overriding the prospective stop.
 
-The terminal rule is encoded in the result: E4 failure means stop/rethink data and
-training; D2/E2 cannot replace it. Even an E4 development pass permits only owner
-review, never base acceptance, final scoring, Phase 18 or further exposure here.
-Incomplete execution stops without inventing an E4 score or authorizing a retry.
+Next decision is a materially revised data/training design brief or broader stop/
+rethink, **not another subset exposure run**. Domain coverage/quality is a priority
+hypothesis, not a proven cause. Keep schedule/objective accounting explicit and
+model scale a measured tradeoff; the efficient 21.24M model is not an accepted base
+or proved optimal architecture. Any future experiment needs separate authorization,
+unchanged references/gates and an inclusive **45-minute maximum Windows GPU/computer
+budget**, preferably targeting substantially less, with zero paid resources.
+No new dataset, training recipe, executable experiment or handoff was created here.
 
-**Stop at the Windows execution checkpoint.** Exact source commit, transfer files,
-checksums and prepared kickoff are recorded in the task checkpoint/private continuity.
-Do not run the study on Mac or continue past the requested handoff. No publication.
+**Stop for owner/master-planning review.** Mac work used saved metadata/rows and
+CPU tensor-storage inspection only: zero optimization, model construction/forward,
+generation or new model scoring. External contextual notes remain private.
 
 ## Publication and local continuity
 
@@ -133,8 +135,8 @@ Phase 17.1 closure `c2277e7104e92408581db41cd0f9852c8f7cb2ee` was published;
 local HEAD and live remote `main` matched it at review entry. This supersedes the
 closure snapshot's old pending-publication wording. No historical result was changed.
 
-This authorized handoff is local, with its reviewed commit and artifact identities
+This faithful study closure is local, with its reviewed commit and evidence identities
 recorded in the task checkpoint and private continuity. Existing remote:
 `https://github.com/sebastienlato/LatoS.git`, branch `main`. No remote write occurred;
 no publication, tag, release, weights or assets are authorized or proposed for action
-in this task. The current checkpoint is Windows execution preparation, not a push request.
+in this task. The current checkpoint is owner/master-planning review, not a push request.
