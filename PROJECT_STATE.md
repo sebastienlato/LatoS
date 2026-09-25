@@ -4,79 +4,87 @@ Updated: 2026-09-24.
 
 ## Current authorized scope
 
-**A separate bounded recovery-mechanics diagnostic is authorized to support a
-prospective Phase 17.1 — Base Model 2.0 Corrective Attempt.** Local implementation
-and CPU engineering checks prepare its Windows/CUDA handoff. **No actual CUDA
-diagnostic comparison has run yet, and no reproducible correction is established.**
-Full Phase 17.1 training, Phase 18 and all remote publication are unauthorized.
+The bounded recovery-mechanics diagnostic has completed on the RTX 4070 SUPER and
+passed independent Mac review of its **prespecified synthetic acceptance rule**.
+The owner authorized review and preparation of a fresh Phase 17.1 proposal only.
+**Full Phase 17.1 training, Phase 18 and all publication remain unauthorized.**
 
-Published Phase 17 closure is permanently preserved at
-`09c1935b085218fbbc9ea88703d8ba12e63c516e`: interrupted/failed, replay gate failed,
-recovered model unaccepted, fixed development/final evaluation absent and exit gate
-unmet. Its result is not reopened or repaired retrospectively. Verified publication
-supersedes the earlier tracked pending-publication wording. No new tag/release/assets.
+Published Phase 17 is permanently interrupted/failed at
+`09c1935b085218fbbc9ea88703d8ba12e63c516e`: recovery equivalence failed, recovered
+model unaccepted, fixed development/final acceptance absent, exit gate unmet. Neither
+the diagnostic nor a future attempt repairs or replaces that historical result.
 
-## Frozen diagnostic
+## Completed diagnostic and reviewed evidence
 
-[Plan](experiments/recovery-diagnostic/PLAN.md),
-[machine-readable bounds](experiments/recovery-diagnostic/plan.json) and
-[Windows guide](experiments/recovery-diagnostic/WINDOWS.md) govern this distinct study.
-The owner's ceilings remain 60 GPU minutes, two pairs, 4,096 physical diagnostic
-updates, 6 GiB new artifacts, zero paid resources and no held-out/final access.
+Measured diagnostic source: `0e5b55f516b6dd53a48f53928df2616872ca5f82`.
+Return ZIP SHA-256:
+`340b57d7f201436e47b575b7a792cb208cb74dfe47cd5f835322d313304c47d9`.
+[Independent review](experiments/recovery-diagnostic/RETURN_REVIEW.md),
+[verification](experiments/recovery-diagnostic/RETURN_VERIFICATION.json) and
+[local checks](experiments/recovery-diagnostic/return-validation.json).
 
-The reviewed design uses **2,964 selected-scale physical updates maximum**: each
-of two profiles runs a fresh 997-update reference, saves at 512, then replays the
-same checkpoint for 485 updates in a new process. The prefix is shared, not trained
-twice. All engineering preflight tests forbid optimizer updates. The conservative
-3,600-second supervisor limit includes preparation/preflight/hashing and checkpoint
-I/O as well as GPU work. A 1 GiB internal reserve covers administrative/return copies
-inside the 6 GiB artifact ceiling. No retries, extra profiles or budget reset.
+All 318 included files and four 62-file executed source snapshots verify. Fourteen
+omitted tensor/cache files remain inventory-bound on Windows, not rehashed or
+numerically replayed on Mac. Ten Windows CPU checks passed, zero skips/failures and
+zero optimizer updates. Four CUDA jobs completed: two 997-update references, each
+sharing its checkpoint at 512 with a separate-process 485-update replay. Total
+2,964 physical updates / 14,897,204 synthetic targets, no retries in the journal.
 
-Use the exact selected 34,087,424-parameter native model, CUDA BF16/float32 AdamW,
-batch two × accumulation eight, ending with two microbatches. Inputs are fresh
-synthetic token IDs at fixed seeds, shaped by training-only window-length metadata;
-no historical model or actual training/held-out text is loaded. The short diagnostic
-schedule is explicitly separate from the old full run and future Phase 17.1.
+Legacy full-state divergence starts at 674; first loss excess at 675, 303 excesses,
+maximum 0.0004386934420383959. Deterministic continuation has exact full-state and
+loss equality across all 485 updates; maximum loss difference zero. Fresh initial
+states, checkpoint roundtrips, restoration, input signatures and Windows schedules
+match. No loss tolerance or exact-state gate was relaxed.
 
-Compare legacy numerical settings to prospectively deterministic algorithms,
-cuDNN determinism and a fixed cuBLAS workspace. Import original LatoS unchanged
-(implementation hash `76cf4a198ee6acde566fdcc70c9420c0cae8ab6cc0d6b4d7e4c9c0cba5c8f09c`).
-Require exact model/optimizer/sampler/RNG state at checkpoint roundtrip/restore.
-A demonstrated prospective correction requires a complete legacy continuation
-failure and a corrected continuation with exact per-update states and no loss
-excess above the unchanged `1e-5`. Otherwise stop as inconclusive/failed.
+Supervised time is 1,458.462660 seconds; all recorded resource bounds pass. The
+owner-reported 1,572-second total includes later administrative work. An original
+Mac verifier check failed on cross-platform cosine rounding (up to three output
+ULPs). It remains unchanged. The disclosed independent review requires exact
+same-Windows schedules and separately reconstructs that arithmetic discrepancy;
+it does not reinterpret the failed historical CUDA loss gate. No held-out score,
+exact historical kernel cause, general reproducibility or language quality follows.
 
-## Evidence available now
+## Phase 17.1 proposal checkpoint
 
-[Historical scalar inspection](experiments/recovery-diagnostic/historical-trace.json)
-locates the first visible loss/gradient-norm differences at original update 7,124;
-the first frozen-tolerance excess remains 7,125. This does not establish a cause.
-The original first I/O failure's PowerShell involvement remains unproven.
+[Reviewed proposal](experiments/phase-17-1/PROPOSAL.md),
+[prespecified contract](experiments/phase-17-1/plan.json) and
+[preparation handoff](experiments/phase-17-1/HANDOFF.md) are local only.
 
-[Data checks](experiments/recovery-diagnostic/data-validation.json) reproduce the
-15,940 synthetic windows / 5,021,949 targets byte-for-byte and match the intended
-variable-length shuffle. No model or optimizer was created by that data construction.
-[Local validation](experiments/recovery-diagnostic/validation.json) and
-[separate review](experiments/recovery-diagnostic/REVIEW.md) record engineering scope.
-There is no local connection to the RTX machine; actual diagnostic evidence must
-come from the bounded Windows handoff. No new CI or physical Linux result is claimed.
+Propose one fresh seed-160, 34,087,424-parameter attempt on accepted Phase 15 data
+and the Phase 16 recipe: 7,485 logical updates / 37,811,418 targets, CUDA BF16,
+batch two × accumulation eight with final accumulation two. Apply the tested
+deterministic algorithms/cuDNN/workspace combination prospectively. Add immutable
+checkpoint policy bindings and an append-only supervisor; preserve the native core.
+Keep fixed quality gates, two-hour training/preflight/recovery and one-hour cumulative
+evaluation limits, 20 GiB new-artifact cap, and zero new paid resources.
 
-## Next action and stop boundaries
+This is a scientific/engineering specification, **not an implemented full-training
+controller or executable Windows bundle**. Separate explicit owner authorization
+is required before implementing the proposed execution controller and conducting
+its bounded preflight/one serious run. After authorization, review and freeze that
+source/transfer before execution; material plan changes need renewed approval.
+No failed Phase 17, probe or diagnostic weights may initialize the attempt.
 
-Prepare the exact reviewed local diagnostic commit and checksummed allowlisted
-transfer. Windows Work uses the existing pinned runtime, runs only the new CPU
-preflight and one bounded study, preserves every outcome and returns evidence.
-Old Windows source, datasets, ledgers and tensors remain untouched. The compact
-return is not a backup of diagnostic tensor payloads retained on Windows.
+The proposed tiny adapter preflight is fully specified, at most 52 CUDA fixture
+updates across checkout/existing wheel; no such updates have run. Full-cache and
+source checks use zero optimizer updates. Conditional external-interruption recovery
+allows at most two same-attempt resumptions after Mac review, within all cumulative
+bounds and exact full-state replay checks. No automatic or numerical-failure retry.
 
-After independent Mac verification/review, if the diagnostic establishes a
-reproducible prospective correction, **stop and prepare a concise proposal for a
-fresh Phase 17.1 Mac Work chat**. That future attempt must start from random
-initialization, use accepted Phase 15 data and Phase 16 model/training configuration,
-incorporate only justified prospective engineering corrections, and perform fixed
-acceptance evaluation. It needs separate explicit owner authorization. Never promote
-or initialize it from the failed recovered model. If diagnostic evidence is
-inconclusive/failed within the budget, stop and report it; do not start Phase 17.1.
+## Next action and publication status
 
-Phase 18 remains blocked until a valid future base passes the required process.
-This approval authorizes no push, tag, release, model asset or other remote write.
+**Stop for separate owner authorization of the reviewed Phase 17.1 proposal.**
+After any authorized run, return paired development evidence to this authoritative
+Mac task before final access; passing development/resource gates and a reviewed
+selection/contamination declaration are mandatory. Phase 18 remains blocked.
+
+The owner manually transfers checked bundles to a separate fresh Windows Work
+session; no Windows remote executor is connected to this Mac. The returned evidence
+and original diagnostic handoff remain preserved locally; tensor originals remain
+on Windows. No new CUDA, CI or physical Linux execution occurred on Mac.
+
+Current work is a local diagnostic-review/proposal checkpoint on `main`, following
+the unpublished diagnostic preparation commit. Intended eventual remote is existing
+`origin` (`https://github.com/sebastienlato/LatoS.git`), branch `main`; no tag proposed.
+Exact local commit is reported with the checkpoint and retained in local continuity.
+No push, tag, release, assets or other remote write is authorized or performed.

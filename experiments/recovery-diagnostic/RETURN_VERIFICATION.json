@@ -1,0 +1,122 @@
+{
+  "status": "reviewed",
+  "archive_sha256": "340b57d7f201436e47b575b7a792cb208cb74dfe47cd5f835322d313304c47d9",
+  "diagnostic_source_commit": "0e5b55f516b6dd53a48f53928df2616872ca5f82",
+  "included_files_verified": 318,
+  "omitted_tensor_files_inventory_bound_only": 14,
+  "source_snapshots_verified": 4,
+  "python_files_per_snapshot": 62,
+  "cpu_checks": {
+    "passed": 10,
+    "skipped": 0,
+    "failed": 0,
+    "optimizer_updates": 0
+  },
+  "physical_updates": 2964,
+  "physical_targets": 14897204,
+  "retries_in_supervisor": 0,
+  "pairs": {
+    "legacy": {
+      "replay_updates": 485,
+      "first_state_difference": 674,
+      "state_difference_count": 324,
+      "first_loss_excess": {
+        "step": 675,
+        "delta": 5.557150763024765e-05
+      },
+      "loss_excess_count": 303,
+      "maximum_loss_difference": 0.0004386934420383959,
+      "maximum_loss_difference_step": 741,
+      "exact_loss_matches": 162,
+      "exact_states": false,
+      "loss_gate_passed": false
+    },
+    "deterministic": {
+      "replay_updates": 485,
+      "first_state_difference": null,
+      "state_difference_count": 0,
+      "first_loss_excess": null,
+      "loss_excess_count": 0,
+      "maximum_loss_difference": 0.0,
+      "maximum_loss_difference_step": null,
+      "exact_loss_matches": 485,
+      "exact_states": true,
+      "loss_gate_passed": true
+    }
+  },
+  "supervised_seconds": 1458.4626600000047,
+  "peak_resources": {
+    "host_peak_working_set_bytes": 2610409472,
+    "peak_reserved_bytes": 1237319680
+  },
+  "peak_supervisor_charged_artifact_bytes": 3626208730,
+  "inventory_retained_bytes": 2552191350,
+  "return_archive_bytes": 23129151,
+  "cross_host_schedule": {
+    "same_Windows_rates_exact_all_jobs": true,
+    "differences": [
+      {
+        "step": 568,
+        "windows": 0.00024077971355327888,
+        "mac": 0.00024077971355327882,
+        "output_ulps": 2.0
+      },
+      {
+        "step": 789,
+        "windows": 9.789405219325657e-05,
+        "mac": 9.789405219325656e-05,
+        "output_ulps": 1.0
+      },
+      {
+        "step": 849,
+        "windows": 6.59938391832686e-05,
+        "mac": 6.599383918326861e-05,
+        "output_ulps": 1.0
+      },
+      {
+        "step": 862,
+        "windows": 6.018549288083756e-05,
+        "mac": 6.018549288083754e-05,
+        "output_ulps": 3.0
+      },
+      {
+        "step": 877,
+        "windows": 5.404636414047895e-05,
+        "mac": 5.404636414047893e-05,
+        "output_ulps": 3.0
+      },
+      {
+        "step": 885,
+        "windows": 5.103034667182588e-05,
+        "mac": 5.10303466718259e-05,
+        "output_ulps": 3.0
+      },
+      {
+        "step": 891,
+        "windows": 4.889017081062861e-05,
+        "mac": 4.8890170810628616e-05,
+        "output_ulps": 1.0
+      },
+      {
+        "step": 915,
+        "windows": 4.1413887391022776e-05,
+        "mac": 4.1413887391022756e-05,
+        "output_ulps": 3.0
+      }
+    ],
+    "all_explained_by_adjacent_cosine_results": true,
+    "original_Mac_verifier": "failed its one-output-ULP check; retained unchanged",
+    "loss_and_same_host_state_gates_unchanged": true
+  },
+  "prospective_correction_established": true,
+  "limitations": "No absent Windows tensors rehashed or CUDA replay performed on Mac. Combined policy tested on synthetic inputs; historical kernel cause not identified.",
+  "phase17_permanently_failed": true,
+  "phase17_1_training_authorized": false,
+  "phase18_authorized": false,
+  "publication_authorized": false,
+  "administrative_time": {
+    "included_Windows_receipt_seconds_before_packaging": 1545.051568,
+    "owner_reported_total_seconds_including_packaging_and_verification": 1572,
+    "scope": "supervised duration independently reconstructed; later total is owner-reported, not independently timed on Mac"
+  }
+}

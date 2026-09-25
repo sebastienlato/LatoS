@@ -1,0 +1,277 @@
+{
+  "schema_version": 1,
+  "kind": "phase17.1-prespecified-proposal-not-an-execution-authorization",
+  "attempt_id": "phase17-1-base2-attempt1",
+  "status": "awaiting-separate-owner-authorization",
+  "training_authorized": false,
+  "phase18_authorized": false,
+  "publication_authorized": false,
+  "historical_phase17": "permanently interrupted/failed; no checkpoint reuse or relabeling",
+  "supporting_diagnostic": {
+    "source_commit": "0e5b55f516b6dd53a48f53928df2616872ca5f82",
+    "return_sha256": "340b57d7f201436e47b575b7a792cb208cb74dfe47cd5f835322d313304c47d9",
+    "mac_acceptance": "experiments/recovery-diagnostic/RETURN_VERIFICATION.json"
+  },
+  "source": {
+    "original_core_commit": "0fa94ad580110fd2dc7aaa2aa3560950abe73a02",
+    "original_core_implementation_sha256": "76cf4a198ee6acde566fdcc70c9420c0cae8ab6cc0d6b4d7e4c9c0cba5c8f09c",
+    "core_change_permitted": false,
+    "new_controller": "Separately versioned standalone Phase 17.1 controller; specified in PROPOSAL.md, not implemented or packaged by this proposal. Hash exact reviewed implementation and allowlisted transfer before any execution.",
+    "prohibited_launchers": [
+      "latos.training.base2 supervise",
+      "experiments/phase-17/recovery/recover.py",
+      "experiments/recovery-diagnostic/run.py"
+    ]
+  },
+  "identities": {
+    "configs/training2/selected-model.json": "bed0bbcc8b9b145485584ac9475d0c450c196649cb797a09d1c1c47fddc14c66",
+    "configs/training2/phase17-plan.json": "0939804d662a65fcc915d6587fe3e4f994b3bdefdc988464d500128bde06f263",
+    "experiments/phase-16/full-corpus-layout.json": "c53a9a8d60ecc3f5d80d2776de0544dd54f4fd484ce82b42a888def9024ae171",
+    "experiments/phase-17/cache-validation.json": "9bd17f5aab9d6f6173cbf154be1f1b0bf3f512971ee3aba9726b6a6fc52bb85a",
+    "configs/evaluation/protocol-v1.json": "a83477dba5fb9ff26661384621e0bf07748dd36cb83069aa9fe9093865121b38",
+    "configs/evaluation/suite-v1.json": "49fd0564f5b4e29639c08b958aa055075ab210aba9cf6422d0d6c8bd6abb51e0",
+    "configs/evaluation/external-v1.json": "80eb616a159b379125a0f3831125aa56df599b1c2f9ffa12473437b53f18a3ab",
+    "docs/EVALUATION.md": "f54ef579848b74f2a69a2fe46980b5262c660539ea2b2529bffc2b1b83555703",
+    "uv.lock": "fae860484b7f64e1025cf1061129403cada6444623350a772470cae66e6a5eaa"
+  },
+  "training": {
+    "seed": 160,
+    "precision": "CUDA native bfloat16 autocast; float32 weights, gradients and AdamW moments; no GradScaler",
+    "context_length": 512,
+    "batch_size": 2,
+    "accumulation_steps": 8,
+    "last_update_accumulation_steps": 2,
+    "max_steps": 7485,
+    "warmup_steps": 375,
+    "learning_rate": 0.0003,
+    "min_lr_ratio": 0.1,
+    "weight_decay": 0.01,
+    "beta1": 0.9,
+    "beta2": 0.95,
+    "eps": 1e-08,
+    "max_grad_norm": 1.0,
+    "data": {
+      "input_bundle_sha256": "5f4fa7a7bc221d06f6b321c4af712456d3188984d759f8a4a898651d5a6d9073",
+      "split": "pretrain-train only",
+      "policy": "data2-retained-document-overlap-one-v1",
+      "documents": 80478,
+      "rows": 332782,
+      "windows": 119748,
+      "content_token_positions": 37730940,
+      "targets_with_EOS": 37811418,
+      "passes": 1,
+      "window_sequence_sha256": "8f13652c2bd0bc387dbd509ca6424a0eb97c097b963c4b64aa5144d8902cfd64",
+      "shuffle": "CPU torch.randperm over all windows, seed 160; one permutation; no epoch wrap"
+    },
+    "development": {
+      "split": "pretrain-development",
+      "targets": 804337,
+      "windows": 2552,
+      "used_for": "monitoring only; no best-checkpoint search"
+    },
+    "checkpoint_steps": [
+      0,
+      1000,
+      2000,
+      3000,
+      4000,
+      5000,
+      6000,
+      7000,
+      7485
+    ]
+  },
+  "initialization": {
+    "fresh_random": true,
+    "seed": 160,
+    "optimizer": "new empty float32 AdamW state",
+    "forbidden_weights": [
+      "Phase 17 originals/recovered checkpoint",
+      "Phase 16 probes",
+      "synthetic recovery diagnostic",
+      "any pretrained model"
+    ],
+    "candidate": "only new attempt final planned update 7485"
+  },
+  "numerical_policy": {
+    "profile": "prospective-deterministic-v1",
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+    "set_workspace_before_torch_import": true,
+    "PYTHONHASHSEED": "0",
+    "deterministic_algorithms": true,
+    "warn_only": false,
+    "cudnn_deterministic": true,
+    "cudnn_benchmark": false,
+    "cuda_matmul_tf32": false,
+    "cudnn_tf32": false,
+    "matmul_precision": "highest",
+    "SDPA_enabled": {
+      "flash": true,
+      "mem_efficient": true,
+      "math": true,
+      "cudnn": true
+    },
+    "bf16_reduced_precision_reduction": true,
+    "cpu_threads": 4,
+    "interop_threads": 20,
+    "optimizer_foreach": false,
+    "optimizer_fused": false,
+    "activation_checkpointing": false,
+    "compile": false,
+    "python": "3.14.7",
+    "torch": "2.14.0+cu130",
+    "numpy": "2.5.3",
+    "safetensors": "0.8.0",
+    "cuda_build": "13.0",
+    "cudnn_version": 92400,
+    "driver": "616.92",
+    "GPU": "NVIDIA GeForce RTX 4070 SUPER",
+    "compute_capability": [
+      8,
+      9
+    ],
+    "platform": "Windows-11-10.0.26200-SP0",
+    "unsupported_operation": "error and stop; never warn-only or fallback policy changes"
+  },
+  "budgets": {
+    "training_wall_stop_seconds": 7200,
+    "fixed_evaluation_reserve_seconds": 3600,
+    "total_active_wall_stop_seconds": 10800,
+    "new_artifact_stop_bytes": 21474836480,
+    "estimated_planned_artifacts_bytes_upper": 6442450944,
+    "min_free_disk_bytes": 21474836480,
+    "max_process_host_RSS_bytes": 8589934592,
+    "max_reserved_VRAM_fraction": 0.85,
+    "new_paid_service_budget": 0,
+    "max_completed_serious_updates_including_replays": 9485,
+    "max_new_attempts": 1,
+    "max_seeds": 1,
+    "max_passes": 1,
+    "max_same_attempt_external_resumptions": 2,
+    "new_preflight_CUDA_update_ceiling": 52,
+    "preflight_counts_against_training_seconds": true,
+    "reserved_administrative_artifact_bytes": 1073741824,
+    "resource_estimate_note": "Deterministic diagnostic 486.8240514 seconds / 997 updates projects ~3655 seconds for 7485 with per-update hashing, excluding full corpus preparation/validation/checkpoints; not measured full training duration.",
+    "projected_instrumented_update_seconds": 3654.8425523860965
+  },
+  "checkpoint_contract": {
+    "immutable_complete_checkpoints": true,
+    "additional_policy_sidecar_required": true,
+    "bind": [
+      "attempt ID",
+      "controller source/transfer manifest",
+      "unchanged core hash",
+      "full numerical controls/runtime",
+      "training/data/model identities",
+      "Windows schedule table hash",
+      "exact full state fingerprints",
+      "global RNG state or reproducible unchanged initial state"
+    ],
+    "restore": "strict unchanged native loader plus mandatory Phase 17.1 sidecar verification; missing/mismatched sidecar is terminal",
+    "replay": "exact per-update model/optimizer/sampler/RNG/input fingerprints and exact same-Windows schedule for all previously logged overlap, plus unchanged absolute loss bound 1e-5; stop before extending beyond a failing overlap",
+    "automatic_retry": false,
+    "interruption_review": "Mac must classify interruption and bound lost work/time before any same-attempt resume; at most two, no new run or settings"
+  },
+  "evaluation": {
+    "protocol": "configs/evaluation/protocol-v1.json",
+    "acceptance_stage": "base",
+    "legacy_schema_phase": 17,
+    "distinct_attempt_id": "phase17-1-base2-attempt1",
+    "reference_model_sha256": "f82ed3b21aeacad6d8b3a88c9100cbc83b8f15af1ba9c17a4fa4dccc59b2befa",
+    "reference": "preserved Phase 5 base, never failed Phase 17",
+    "batch_size": 8,
+    "threads": 4,
+    "device": "cuda",
+    "candidate_and_reference_same_runtime_and_policy": true,
+    "gates": {
+      "max_bpb_ratio": 0.9,
+      "max_document_bpb_ratio": 1.02,
+      "arc_easy_min": 0.35,
+      "arc_easy_min_gain": 0.05,
+      "external_max_drop": 0.03,
+      "generation_max_empty": 0.05,
+      "generation_max_repetition": 0.25,
+      "generation_max_repetition_increase": 0.1
+    },
+    "additional_requirements": [
+      "ARC-Easy Wilson lower bound above chance",
+      "no input overflow/incomplete scoring",
+      "median first token <=1 second",
+      "median decode >=10 tokens/second",
+      "same memory/storage/time bounds"
+    ],
+    "development": "paired fixed development after valid complete training only; failure terminal",
+    "final": "one paired final comparison only after development and resource gates pass and separate Mac selection/contamination review; exact candidate hash in declaration; no final feedback tuning",
+    "reserved_old_instruction_test": "never opened",
+    "phase18": "blocked; no authorization implied even if all gates pass"
+  },
+  "pre_execution_requirements": [
+    "Explicit owner authorization of this prespecified attempt, including bounded implementation/preflight and one fresh run.",
+    "Implement separate controller and sidecar bindings without changing native core, historical contracts or acceptance gates.",
+    "Complete separate code review and focused no-update CPU checks; freeze exact source commit and transfer hash before Windows execution.",
+    "On Windows verify existing pinned runtime, actual inputs and retained historical Phase 5 reference; fresh output root; no old model initialization.",
+    "Run only prespecified tiny CUDA adapter conformance checks (two 8+5-update pairs in each of checkout and isolated existing-wheel runtime; at most 52 updates total) and zero-update full-cache/source/readback checks. Never use these fixture weights.",
+    "If any source/runtime/data/control/budget/preflight identity fails, stop before serious optimization; no substitution or budget reset."
+  ],
+  "stop_conditions": [
+    "Nonfinite loss, gradients, weights or optimizer state: retain failure and stop; no retry of numerical failure.",
+    "OOM, >85% reserved VRAM, >8 GiB host RSS, >20 GiB new artifacts, or wall budget reached: save only a valid completed boundary when possible, retain evidence and stop.",
+    "Identity, corruption, split, target or recovery mismatch: fail closed.",
+    "Unexpected external interruption: at most two restores of exact completed checkpoint and same configuration/runtime; log repeated/lost exposure separately; never count it as new unique data.",
+    "Fixed development or final acceptance failure: preserve negative result and block Phase 18; no tuning from final feedback.",
+    "Any numerical policy or full-state fingerprint mismatch is terminal; preserve the result and stop.",
+    "Any post-approval material recipe, budget, policy or acceptance change requires separate approval."
+  ],
+  "adapter_preflight": {
+    "model_config": {
+      "schema_version": 1,
+      "vocab_size": 260,
+      "context_length": 512,
+      "d_model": 32,
+      "n_heads": 4,
+      "n_layers": 1,
+      "ffn_dim": 64,
+      "rope_theta": 10000.0,
+      "norm_eps": 1e-05,
+      "tokenizer_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "pairs": [
+      {
+        "name": "ordinary",
+        "model_seed": 17110,
+        "windows": 32
+      },
+      {
+        "name": "partial-tail",
+        "model_seed": 17111,
+        "windows": 30
+      }
+    ],
+    "token_formula": "For window i, length=2+(29*i)%511; interior token j at positions 1..length-2 is 4+((7*i+3*j)%252); first token 1, last token 2; synthetic IDs only.",
+    "training": {
+      "seed": 160,
+      "sequence_length": 512,
+      "batch_size": 2,
+      "accumulation_steps": 2,
+      "max_steps": 8,
+      "warmup_steps": 2,
+      "learning_rate": 0.0003,
+      "min_lr_ratio": 0.1,
+      "weight_decay": 0.01,
+      "beta1": 0.9,
+      "beta2": 0.95,
+      "eps": 1e-08,
+      "max_grad_norm": 1.0
+    },
+    "checkpoint_step": 3,
+    "replay_steps": 5,
+    "validation": "synthetic dummy identity; no scoring",
+    "comparison": "exact full states and same-host schedule/inputs at restore and every replayed update, plus absolute loss delta <=1e-5",
+    "runtimes": [
+      "existing original checkout",
+      "existing isolated non-editable wheel"
+    ],
+    "max_physical_updates": 52,
+    "additional_CUDA_tests_or_retries": false
+  }
+}

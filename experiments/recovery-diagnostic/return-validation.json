@@ -1,0 +1,37 @@
+{
+  "scope": "Mac read-only diagnostic evidence review and Phase 17.1 proposal; no serious or CUDA optimization",
+  "focused_CPU_checks": {
+    "passed": 16,
+    "failed": 0,
+    "skipped": 0,
+    "optimizer_updates": 0,
+    "junit_sha256": "5678b2959be5e2e96f4b1705bc50af94f38a205c5820e97f3e599a717c2e0f6b"
+  },
+  "independent_review": "318 included files, four exact executed-source snapshots, 2964 updates, checkpoint/schedule/state/resource/decision reconstruction passed",
+  "lint": "passed",
+  "format": "passed",
+  "proposal_consistency": "input/source/config hashes, all inherited training values and acceptance gates, fixture counts, recovery/update budgets and documentation links pass",
+  "preservation": "native core, configs, lock, Phase 15/16/17 tracked evidence and original diagnostic execution/plan/verifier bytes unchanged; handoff/return ZIP digests unchanged",
+  "failed_verification_attempts": [
+    {
+      "tool": "original verify_return.py",
+      "result": "failed cross-host one-output-ULP schedule check; unchanged original retained; same-Windows rates exact; arithmetic review disclosed in RETURN_REVIEW.md"
+    },
+    {
+      "tool": "initial review_return.py draft",
+      "result": "failed canonical-state digest because draft omitted trailing newline; fixed to exact existing encoding; evidence unchanged"
+    }
+  ],
+  "other_local_findings": "Read-only inspection initially addressed nonexistent max_steps plan key; used existing training_config mapping. Formatting findings fixed. No CUDA retries or measured source edits.",
+  "full_runtime_suite": "not rerun; no training core changes",
+  "CUDA_on_Mac": false,
+  "returned_source_executed": false,
+  "heldout_or_final_payload_opened": false,
+  "full_phase17_1_controller_implemented": false,
+  "full_phase17_1_training_started": false,
+  "publication_authorized": false,
+  "separate_review": [
+    "experiments/recovery-diagnostic/RETURN_REVIEW.md",
+    "experiments/phase-17-1/REVIEW.md"
+  ]
+}
