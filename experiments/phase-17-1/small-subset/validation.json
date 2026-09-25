@@ -1,0 +1,109 @@
+{
+  "scope": "Mac implementation and zero-update validation only; Windows execution pending",
+  "source_base_commit": "150221d6de5e4ca3969905643a64b75111bd91d6",
+  "tests": {
+    "outputs/small-subset-sealed-checkout.xml": {
+      "passed": 23,
+      "failed": 0,
+      "skipped": 0,
+      "sha256": "ac471151741fea4f0d919c227b620fbf973c07e9d7daed3e0e06a9620bb582c0"
+    },
+    "outputs/small-subset-sealed-wheel.xml": {
+      "passed": 23,
+      "failed": 0,
+      "skipped": 0,
+      "sha256": "7132019bb56c6ed4b757baa6ea519b54bc0a1740352334de61d55ec3d551f7de"
+    },
+    "outputs/small-subset-sealed-extracted-checkout.xml": {
+      "passed": 23,
+      "failed": 0,
+      "skipped": 0,
+      "sha256": "9c156c09347125ef9a8a2a804932b781058475d1947b9af69b716d7886768556"
+    },
+    "outputs/small-subset-sealed-extracted-wheel.xml": {
+      "passed": 23,
+      "failed": 0,
+      "skipped": 0,
+      "sha256": "26807b80b91f7985c763d005fba776797d0e8fed20134f3860bd0d77f0d14a99"
+    }
+  },
+  "new_optimizer_updates": 0,
+  "model_forward_passes": 0,
+  "Mac_GPU_training": false,
+  "Windows_CUDA": "not executed",
+  "Windows_job_api": "mocked on Mac; real nested-job check required inside Windows preparation",
+  "paid_compute": 0,
+  "publication_authorized": false,
+  "phase18_authorized": false,
+  "accepted_base": false,
+  "proposal_sha256": "f6eaa5a7af1946fe6c738e92860ecaf4f8ac48983d0b9d3b8606e2756a6695bb",
+  "cache_files": {
+    "development.json": {
+      "bytes": 583,
+      "sha256": "11e927ce4fb9215e8fdc7e3d5dcc009e7baadcdae332b3d9e9d34c71940ddf94"
+    },
+    "development.u32": {
+      "bytes": 228880,
+      "sha256": "ce611f234fa77929a246d28a0d4c9ba34126459a47308173aae304bfb5b7f466"
+    },
+    "development.u64": {
+      "bytes": 1480,
+      "sha256": "eed90809e50bd367a308d9f67b0fa66d1ae91228dba0ff3949636abb72dc1e3c"
+    },
+    "train.json": {
+      "bytes": 583,
+      "sha256": "61c9bb360a835329080b780da9375f0221483d3bfe84bf6368f16bcb41ecc71b"
+    },
+    "train.u32": {
+      "bytes": 7796480,
+      "sha256": "7a106fdc9e5db3edb9ad66406114958d78499ef85d0d5cc6b50f9c1500ba7400"
+    },
+    "train.u64": {
+      "bytes": 48848,
+      "sha256": "cadd580efdf1a3913c6fccb69dba6aca2ac021e0041a08543b04f701e9326b23"
+    }
+  },
+  "implementation": {
+    "verify_return.py": "bac1c94e4b07a81c240980cfcc4c6e4fd8bac289b42c837e937876736ecf9493",
+    "ss_common.py": "e266f5d1eec23fec9c8c30413014f50324ed0f03b4a12ea66b004a62017d2068",
+    "ss_adapter.py": "162bbc8ff99ec9f70786223f1116720804dfd117de8edce4078d04accc76914b",
+    "package_handoff.py": "1a2d89dbd7b5c5dc3fa51927c34b2cf71eccb75d4f389fc6513f0e3a1358a622",
+    "launch.py": "e4db1825629a34b586da867cedabf07c99808d5672f6f2e298c4c79ff532a6b4",
+    "ss_evidence.py": "04db056959dea0705a01ac087d9129f1f56e73f855eef657572edd4ea7d43e70",
+    "ss_controller.py": "e1f44b97a434551e5ede79d5b9c1c74d4365edceac06ce7283ee815424dcf1ab",
+    "ss_worker.py": "400749aabd46c7144adddfd4c7fbc9a23255443ec1c7fd69a577c0b195725d98",
+    "prepare_mac.py": "762228e38e54faada6ad27c227597acad57937d25082855e791be3180b1f8fa5"
+  },
+  "limits": {
+    "target_seconds": 1980,
+    "absolute_windows_seconds": 2700,
+    "controller_cutoff_seconds": 2690,
+    "guardian_cutoff_seconds": 2695,
+    "stage_caps_seconds": [
+      180,
+      1440,
+      480,
+      300
+    ],
+    "serious_updates": 1910,
+    "conformance_updates": 52,
+    "serious_targets": 9715075,
+    "new_artifact_GiB": 8,
+    "transport_reserve_MiB": 64,
+    "origin": "Windows QPC captured by kickoff before Python startup; one unchanged timestamp"
+  },
+  "preservation": "Native source/configs, dependencies/lock, roadmap, original proposal and historical experiments unchanged; only new standalone tooling/tests and current project state change.",
+  "initial_validation_findings": [
+    "Two directory-scope test failures corrected",
+    "Scripted reconstruction interrupted at 40.32 s; dataset identity cached instead of repeatedly hashing",
+    "Two missing test imports corrected"
+  ],
+  "final_checks": {
+    "lint": "passed",
+    "format": "passed",
+    "provisional_handoff_members": 24,
+    "provisional_handoff_readback": "passed",
+    "exact_final_transfer": "built after reviewed commit; see external receipt and final task checkpoint",
+    "provisional_handoff_sha256": "bf95284b27d5bdb84f77ae6ce016c475ff024ffcc40b83c9469270e9ad2e0b8c"
+  }
+}

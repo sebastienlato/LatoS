@@ -1,0 +1,12 @@
+{
+  "attempt": "small-subset-v1",
+  "authorized": true,
+  "scope": "Owner explicitly authorized implementation, validation and bounded Windows execution preparation; Mac stops at handoff. Windows executes only the supplied kickoff under the authorized diagnostic design.",
+  "proposal_sha256": "f6eaa5a7af1946fe6c738e92860ecaf4f8ac48983d0b9d3b8606e2756a6695bb",
+  "hard_wall_seconds": 2700,
+  "new_paid_compute": 0,
+  "Mac_GPU_training": false,
+  "full_base_training": false,
+  "phase18_authorized": false,
+  "publication_authorized": false
+}

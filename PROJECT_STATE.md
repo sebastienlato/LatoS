@@ -7,10 +7,11 @@ Updated: 2026-09-25.
 **Phase 17.1 completed its authorized fresh execution but failed fixed development
 quality acceptance. The bounded experiment is closed; no Base Model 2.0 is accepted.**
 Final acceptance is prohibited for this candidate. Phase 18 remains blocked.
-The owner explicitly authorized the zero-training exposure/domain design review
-after publication. That review is now complete, with one prospective study for
-owner/master-planning review. **No experiment implementation, training, retry,
-final scoring, new phase or publication is authorized.**
+The owner explicitly authorized implementation, validation and Windows execution
+preparation for the reviewed small-subset diagnostic. Mac implementation and
+zero-update validation are complete; **stop at the Windows handoff checkpoint**.
+Actual Windows execution/results remain pending. No Mac GPU training, full Base
+Model attempt, final scoring, Phase 18 or publication is authorized.
 Publication approval, if later granted, would authorize that exact publication only;
 it would not reopen improvement work or lift this stop gate.
 
@@ -59,32 +60,44 @@ objective without the required generalization. Inference mechanics pass (6.1934 
 first token, 148.5148 tokens/s under the fixed synthetic-prompt measurement).
 No final scoring/declaration or retry occurred. No final score is inferred.
 
-## Current prospective decision — hard 45-minute cap
+## Active checkpoint — small-subset Windows handoff
 
-The owner **rejected** the former 6.6-hour/four-pass full-corpus proposal. It must
-not be implemented. [Revised proposal](experiments/phase-17-1/SMALL_SUBSET_PROPOSAL.md):
-one small fixed-data diagnostic, three fresh arms (one-pass 34.09M control,
-two-pass 34.09M exposure/schedule arm, two-pass 21.24M depth arm). Reuse the existing
-Phase 16 subset; no new data/tokenizer or long full-corpus study.
+The owner rejected the former 6.6-hour/four-pass study; it remains prohibited.
+The [authorized small-subset design](experiments/phase-17-1/SMALL_SUBSET_PROPOSAL.md)
+is unchanged: A 34.09M one pass, B 34.09M two passes with fixed B1 observation,
+C 21.24M two passes. Fixed existing Phase 16 subset: 1,943,015 targets / 6,105
+windows. Fresh seed 160; 1,910 serious updates / 9,715,075 target executions;
+at most 52 existing tiny CUDA conformance updates, no retries or resumptions.
 
-**45 minutes maximum for the entire experiment**, all arms and CPU/GPU preparation,
-conformance, evaluation, verification and packaging combined. Target 33 minutes;
-40-minute planned stage caps plus five minutes emergency evidence closure only.
-No paid compute, clock resets, retries or separate per-arm budgets. Prospective
-1,910 serious updates / 9,715,075 repeated target executions, plus at most 52
-existing conformance updates. These limits are not execution authorization.
+[Windows instructions](experiments/phase-17-1/small-subset/WINDOWS.md),
+[separate review](experiments/phase-17-1/small-subset/REVIEW.md),
+[validation](experiments/phase-17-1/small-subset/validation.json).
+Standalone controller, pass-tail adapter, exact diagnostic checkpoint readback,
+source/cache binding, saved-evidence verifier and timed return packaging are ready.
+Native source, historical plans/results, fixed evaluation gates/reference, dependency
+lock and proposal bytes are unchanged. The subset was reconstructed on Mac with
+exact existing identities; no new selection, tokenizer or acquired data.
 
-Preserve fixed Phase 5 acceptance reference and all quality gates. The proposal
-is a single-seed early-learning diagnostic; it cannot establish domain causality
-or accepted model quality. Any outcome returns to owner review. No automatic
-promotion, final scoring, follow-up or Phase 18.
+**One absolute 45-minute Windows wall clock**, including verification/extraction,
+preparation, all arms, all evaluation and packaging. Target 33 minutes; stage caps
+180/1,440/480/300 seconds. Controller cutoff 2,690 s and independent Windows Job
+Object guardian cutoff 2,695 s reserve closure time before 2,700 s. All descendants
+are contained; a real zero-update guardian test must pass inside preparation.
+Missing controls, corruption, interruption or budget exhaustion fails closed.
+Zero paid compute; no later packaging run or separate per-arm clock.
 
-**Stop for owner/master-planning review before implementation.** No training,
-model loading/scoring, data acquisition or paid service occurred during revision.
-Only planning documents changed; prior experiment source, gates and results remain
-unchanged. The former design and arithmetic are retained with rejection notices.
-Use concise continuity and targeted reads; avoid duplicate reports, agent fan-out
-and unnecessary Work/GPT context use.
+Mac validation uses only CPU scripted/accounting/storage checks; zero optimizer
+updates, model forward/scoring calls or GPU training. Tiny random CPU models are
+used only for checkpoint storage validation. Windows Job behavior/CUDA conformance,
+actual C training, measured study time and learned results are **pending**, not
+validated on Mac. Fixed A1/B1/B2/C2 development scores will be diagnostic only;
+Phase 5 remains the primary acceptance reference. No promotion or final access.
+
+**Stop here for the authorized manual Windows handoff.** Exact local transfer files,
+checksums and prepared kickoff are recorded in the task checkpoint and private
+continuity. No further work/phase follows from successful execution or spare budget.
+Return the existing evidence for Mac/owner review. Keep context concise; no fan-out,
+full historical optimizer test suite or repeated reconstruction without need.
 
 ## Publication and local continuity
 
@@ -92,8 +105,8 @@ Phase 17.1 closure `c2277e7104e92408581db41cd0f9852c8f7cb2ee` was published;
 local HEAD and live remote `main` matched it at review entry. This supersedes the
 closure snapshot's old pending-publication wording. No historical result was changed.
 
-This design review is local documentation/evidence only, with a reviewed local
-commit recorded in the task checkpoint and private continuity. Existing remote:
+This implementation/handoff is local, with its reviewed commit and exact artifact
+identities recorded in the task checkpoint and private continuity. Existing remote:
 `https://github.com/sebastienlato/LatoS.git`, branch `main`. No remote write occurred;
 no publication, tag, release, weights or assets are authorized or proposed for action
-in this task. Owner review concerns the prospective study, not a push checkpoint.
+in this task. The current checkpoint is Windows execution preparation, not a push request.
