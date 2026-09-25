@@ -1,0 +1,52 @@
+{
+  "scope": "Mac correction implementation/validation; no actual Windows artifacts supplied or A/B/C outcome inferred",
+  "original_source_commit": "15cf9d96e8baa00cdc29e76840e283c2ab4bc814",
+  "owner_reported_elapsed_seconds": 1273,
+  "actual_Windows_guardian_reviewed": false,
+  "root_cause": "Original packager invokes base gate with A1 as reference for a descriptive A1:B1 contrast. Reproduced with historical saved outputs and valid Phase 5 reference.",
+  "scientific_change": false,
+  "original_study_modified": false,
+  "additional_optimizer_updates": 0,
+  "new_model_forward_or_scoring": false,
+  "Windows_correction_executed": false,
+  "publication_authorized": false,
+  "phase18_authorized": false,
+  "tests": {
+    "checkout": {
+      "passed": 16,
+      "failed": 0,
+      "skipped": 0,
+      "junit_sha256": "2a630d44ec3ca7f3704f8b563973369ecf84bf924e3034528f46446a40d32a43"
+    },
+    "wheel": {
+      "passed": 16,
+      "failed": 0,
+      "skipped": 0,
+      "junit_sha256": "714f98dfce974c9cbe6f1f8a645cea83c3b37487a16ebf6d21f318f4e7654209"
+    }
+  },
+  "test_evidence": "Historical Phase 17.1 saved-output regression fixture, plus scripted failure/packaging/return records. These are not A/B/C study results.",
+  "guards": {
+    "prior_debit": "max(1273, ceil(original guardian total_wall_seconds))",
+    "prior_packaging_debit": "ceil(prior_debit - original outcome elapsed_before_package)",
+    "corrective_cap": "min(2700-prior_debit, 300-prior_packaging_debit); require >10 seconds",
+    "additional_optimizer_updates": 0,
+    "new_model_execution": false,
+    "one_attempt": true,
+    "original_files": "before/after inventory equality required",
+    "phase5_reference": "unchanged; invalid/missing records fail closed"
+  },
+  "checks": {
+    "lint": "passed",
+    "format": "passed",
+    "native_source_and_gates": "unchanged",
+    "original_executed_tools": "unchanged",
+    "study_proposal": "unchanged",
+    "actual_Windows_traceback_and_remaining_allowance": "checked only by conditional Windows admission; not yet established on Mac"
+  },
+  "source_sha256": {
+    "verify_return.py": "dd758d3e344b860753f76afbaae326378bd0f0e0b19961058d9d0108cdd4569c",
+    "correct.py": "4b3344c3f8a7e3135790e333f1c9ad286a0978c2daf147e43a7b2caf8d43188f",
+    "package_handoff.py": "ca5d010190f26b83fd7b7b1462e20ad9e9f93b74b5ea693c8a01f6d502187338"
+  }
+}

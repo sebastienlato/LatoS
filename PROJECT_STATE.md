@@ -7,11 +7,12 @@ Updated: 2026-09-25.
 **Phase 17.1 completed its authorized fresh execution but failed fixed development
 quality acceptance. The bounded experiment is closed; no Base Model 2.0 is accepted.**
 Final acceptance is prohibited for this candidate. Phase 18 remains blocked.
-The owner explicitly authorized implementation, validation and Windows execution
-preparation for the reviewed small-subset diagnostic. Mac implementation and
-zero-update validation are complete; **stop at the Windows handoff checkpoint**.
-Actual Windows execution/results remain pending. No Mac GPU training, full Base
-Model attempt, final scoring, Phase 18 or publication is authorized.
+The owner reports that the authorized small-subset diagnostic stopped on a packaging
+exception after 21m13s, with no verified return/receipt/completed record. Actual
+Windows artifacts and A/B/C quality are **not yet independently reviewed on Mac**.
+The owner authorized investigation and, if valid, a zero-update packaging correction.
+Mac correction preparation is complete; **stop at its Windows checkpoint**. No
+training, new model scoring, Phase 18 or publication is authorized.
 Publication approval, if later granted, would authorize that exact publication only;
 it would not reopen improvement work or lift this stop gate.
 
@@ -60,44 +61,43 @@ objective without the required generalization. Inference mechanics pass (6.1934 
 first token, 148.5148 tokens/s under the fixed synthetic-prompt measurement).
 No final scoring/declaration or retry occurred. No final score is inferred.
 
-## Active checkpoint — small-subset Windows handoff
+## Active checkpoint — packaging-only correction
 
-The owner rejected the former 6.6-hour/four-pass study; it remains prohibited.
-The [authorized small-subset design](experiments/phase-17-1/SMALL_SUBSET_PROPOSAL.md)
-is unchanged: A 34.09M one pass, B 34.09M two passes with fixed B1 observation,
-C 21.24M two passes. Fixed existing Phase 16 subset: 1,943,015 targets / 6,105
-windows. Fresh seed 160; 1,910 serious updates / 9,715,075 target executions;
-at most 52 existing tiny CUDA conformance updates, no retries or resumptions.
+[Diagnosis, limits and corrective instructions](experiments/phase-17-1/small-subset/packaging-correction/README.md),
+[validation](experiments/phase-17-1/small-subset/packaging-correction/validation.json).
 
-[Windows instructions](experiments/phase-17-1/small-subset/WINDOWS.md),
-[separate review](experiments/phase-17-1/small-subset/REVIEW.md),
-[validation](experiments/phase-17-1/small-subset/validation.json).
-Standalone controller, pass-tail adapter, exact diagnostic checkpoint readback,
-source/cache binding, saved-evidence verifier and timed return packaging are ready.
-Native source, historical plans/results, fixed evaluation gates/reference, dependency
-lock and proposal bytes are unchanged. The subset was reconstructed on Mac with
-exact existing identities; no new selection, tokenizer or acquired data.
+The prepared packager incorrectly called the base-acceptance function for A1→B1
+and other descriptive contrasts. Its correct Phase 5 identity guard rejects A1.
+This defect is reproduced using historical saved outputs with a valid reference;
+it does not establish missing Phase 5 data or any A/B/C quality result. The new
+helper retains all four Phase 5 acceptance comparisons and uses the existing paired
+bootstrap directly for descriptive contrasts. No acceptance gate changes.
 
-**One absolute 45-minute Windows wall clock**, including verification/extraction,
-preparation, all arms, all evaluation and packaging. Target 33 minutes; stage caps
-180/1,440/480/300 seconds. Controller cutoff 2,690 s and independent Windows Job
-Object guardian cutoff 2,695 s reserve closure time before 2,700 s. All descendants
-are contained; a real zero-update guardian test must pass inside preparation.
-Missing controls, corruption, interruption or budget exhaustion fails closed.
-Zero paid compute; no later packaging run or separate per-arm clock.
+Conditional Windows admission requires the preserved traceback to identify this
+exact defect, complete saved jobs/development outputs, original source/cache identity,
+matching existing verification, and sufficient time. A different failure or missing/
+invalid reference stops without training, inference, data repair or new evaluation.
+The original controller, scorer, proposal, study files and failed packaging evidence
+remain unchanged. New outputs use a separate permanent `small-subset-packaging-fix1`
+directory; before/after inventories must match. Never overwrite `run/verification.json`
+or manufacture an original `completed.json`.
 
-Mac validation uses only CPU scripted/accounting/storage checks; zero optimizer
-updates, model forward/scoring calls or GPU training. Tiny random CPU models are
-used only for checkpoint storage validation. Windows Job behavior/CUDA conformance,
-actual C training, measured study time and learned results are **pending**, not
-validated on Mac. Fixed A1/B1/B2/C2 development scores will be diagnostic only;
-Phase 5 remains the primary acceptance reference. No promotion or final access.
+**Carry the original budget:** debit D=max(1273, ceil(original guardian seconds)).
+Total remaining is at most 1427 seconds. Also debit failed packaging time
+P=ceil(D−original outcome.elapsed_before_package). Corrective cap is
+min(2700−D, 300−P), including all startup/checking/packaging/readback/closure.
+No timer reset, GPU work, optimizer updates, scoring, paid resources or second attempt.
+The existing pinned process-tree guardian enforces the additional interval.
 
-**Stop here for the authorized manual Windows handoff.** Exact local transfer files,
-checksums and prepared kickoff are recorded in the task checkpoint and private
-continuity. No further work/phase follows from successful execution or spare budget.
-Return the existing evidence for Mac/owner review. Keep context concise; no fan-out,
-full historical optimizer test suite or repeated reconstruction without need.
+Only one corrective script plus receipt/kickoff is transferred; no weights, data,
+runtime or training worker. Exact local commit/artifact identities are in the task
+checkpoint and private continuity. Regression tests use saved historical rows and
+scripted artifacts, never this unreceived Windows study's scores.
+
+**Stop for the authorized Windows corrective handoff and evidence return.** Its
+actual prerequisites, duration and success remain pending. The rejected long study
+stays prohibited; the original A/B/C design is not reopened. No accepted base or
+Phase 18 follows, regardless of later diagnostic results. No publication authorized.
 
 ## Publication and local continuity
 
