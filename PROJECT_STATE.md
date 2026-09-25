@@ -8,11 +8,14 @@ Updated: 2026-09-25.
 fixed development gates. The prospective stopping rule is met: the fixed-subset
 exposure direction is STOPPED.** Do not propose additional passes, another seed or
 another exposure-only experiment on this subset, regardless of an improving trajectory.
-No Base Model 2.0 is accepted. No final scoring, Phase 18 or publication is authorized.
+No Base Model 2.0 is accepted. Phase 18 remains blocked. No final scoring occurred.
 
-Return to owner/master-planning review of data/training design. The current authority
-covers evidence closure and analysis only: no new experiment implementation, data
-acquisition or execution. Preserve all earlier negative results and unaccepted weights.
+**The owner has closed the Phase 17 / Phase 17.1 research sequence. No additional
+Phase 17.x experiment is authorized.** Current authority is limited to preparing
+the final publication checkpoint, followed only by the exact approved push and
+publication verification. No further research, strategic analysis, experiments,
+training or data work is authorized. Preserve all positive and negative evidence
+and unaccepted weights exactly as recorded.
 The earlier subset diagnostic remains closed; Phase 17.1 remains execution-complete
 but development-quality-failed (seven gates; BPB 9.54% worse), not rehabilitated by
 these studies. No final score exists or is inferred.
@@ -116,8 +119,10 @@ ARC-Easy falls seven answers with a paired interval including zero. Mean repetit
 improves slightly, while fourteen of 24 prompts worsen. This does not identify a
 unique failure cause, but it does not justify overriding the prospective stop.
 
-Next decision is a materially revised data/training design brief or broader stop/
-rethink, **not another subset exposure run**. Domain coverage/quality is a priority
+The completed master-planning analysis identified a materially revised data/training
+design brief or broader stop/rethink, **not another subset exposure run**. This is
+a recorded recommendation, not authorization to continue this closed sequence.
+Domain coverage/quality is a priority
 hypothesis, not a proven cause. Keep schedule/objective accounting explicit and
 model scale a measured tradeoff; the efficient 21.24M model is not an accepted base
 or proved optimal architecture. Any future experiment needs separate authorization,
@@ -125,7 +130,7 @@ unchanged references/gates and an inclusive **45-minute maximum Windows GPU/comp
 budget**, preferably targeting substantially less, with zero paid resources.
 No new dataset, training recipe, executable experiment or handoff was created here.
 
-**Stop for owner/master-planning review.** Mac work used saved metadata/rows and
+Mac closure work used saved metadata/rows and
 CPU tensor-storage inspection only: zero optimization, model construction/forward,
 generation or new model scoring. External contextual notes remain private.
 
@@ -135,8 +140,25 @@ Phase 17.1 closure `c2277e7104e92408581db41cd0f9852c8f7cb2ee` was published;
 local HEAD and live remote `main` matched it at review entry. This supersedes the
 closure snapshot's old pending-publication wording. No historical result was changed.
 
-This faithful study closure is local, with its reviewed commit and evidence identities
-recorded in the task checkpoint and private continuity. Existing remote:
-`https://github.com/sebastienlato/LatoS.git`, branch `main`. No remote write occurred;
-no publication, tag, release, weights or assets are authorized or proposed for action
-in this task. The current checkpoint is owner/master-planning review, not a push request.
+The verified subset-confirmation closure and completed master-planning analysis
+are preserved at `a5371028a8a1b2739fde646fe100d8aa846400b9`. The final checkpoint
+adds only this administrative state update; no scientific evidence or fixed gate
+is changed. The accumulated unpublished history includes the bounded-study plans,
+implementation and validation records, the packaging-only correction, both subset
+closures and their positive and negative findings. Historical proposals, execution
+instructions and authorizations are retained records, not permission for new work.
+
+Publication destination: `origin`, `https://github.com/sebastienlato/LatoS.git`,
+branch `main`. The proposed action is a normal fast-forward of `main` from
+`c2277e7104e92408581db41cd0f9852c8f7cb2ee` to the reviewed final local commit.
+Explicit owner push approval is pending. No tags, releases or release assets will
+be created, changed or uploaded. Datasets, weights, raw logs, return archives and
+private planning remain outside this publication. The exact final commit and
+read-only remote inventory are recorded in local continuity and the push request.
+
+Minimal publication checks cover the documentation diff, unchanged evidence,
+unpublished-history privacy/artifact inspection and remote destination/inventory.
+Previously completed experimental validation is retained, not rerun.
+
+**After the approved publication is verified, stop this Work chat permanently.**
+Publication approval authorizes no further development or phase transition.
