@@ -1,0 +1,81 @@
+{
+  "scope": "Mac standalone-controller engineering and Windows handoff preparation only",
+  "focused_checks": {
+    "checkout": {
+      "passed": 35,
+      "skipped": 0,
+      "failed": 0,
+      "optimizer_updates": 0,
+      "junit_sha256": "cb62b89e4881e61a6a8fcebbefc2c28310286fdbd13a2f2f1726f2d17f164e32",
+      "log_sha256": "ef153c65d145f6bf82252c6785947c7e2e95631fb6381c6cc012d92b79f2be5a"
+    },
+    "wheel": {
+      "passed": 35,
+      "skipped": 0,
+      "failed": 0,
+      "optimizer_updates": 0,
+      "junit_sha256": "fea7fac24e54530f4331beaa82d023db17c3eff9e12d70c250c11da008b73c1e",
+      "log_sha256": "2cf83ac7e1103d67ea6be9e3decd550be83f65596c54a7620cf263227df8b714"
+    }
+  },
+  "original_implementation_sha256_both_runtimes": "76cf4a198ee6acde566fdcc70c9420c0cae8ab6cc0d6b4d7e4c9c0cba5c8f09c",
+  "existing_cache_verification": {
+    "scope": "Read-only verification of existing train/development caches; no rebuilding, model initialization, optimizer updates, reserved-data read or scoring",
+    "core_implementation_sha256": "76cf4a198ee6acde566fdcc70c9420c0cae8ab6cc0d6b4d7e4c9c0cba5c8f09c",
+    "splits": {
+      "train": {
+        "schema_version": 1,
+        "boundary_policy": "data2-retained-document-overlap-one-v1",
+        "sequence_length": 512,
+        "vocab_size": 16384,
+        "tokenizer_sha256": "23b9182d5943e7f8b32c6f415f108b7d06f229c80f5cd8f236258db40a6b94c4",
+        "split": "train",
+        "source_sha256": "9d211d572ce1d7c52c682b4e8c59f3b68f85f4f0ed2f5f0f9baefdb14281063e",
+        "windows_sha256": "8f13652c2bd0bc387dbd509ca6424a0eb97c097b963c4b64aa5144d8902cfd64",
+        "windows": 119748,
+        "targets": 37811418
+      },
+      "development": {
+        "schema_version": 1,
+        "boundary_policy": "data2-retained-document-overlap-one-v1",
+        "sequence_length": 512,
+        "vocab_size": 16384,
+        "tokenizer_sha256": "23b9182d5943e7f8b32c6f415f108b7d06f229c80f5cd8f236258db40a6b94c4",
+        "split": "validation",
+        "source_sha256": "2b1662ffedc36e6f48022264db4e161cf3b2407db76d709bf34c09cc50ccf9da",
+        "windows_sha256": "37b98f3e0091b063d79a01b9d6f15a4e784381029fc49744c1ec59e87f7ab373",
+        "windows": 2552,
+        "targets": 804337
+      }
+    }
+  },
+  "lint": "passed",
+  "format": "passed",
+  "historical_source_and_contracts": "byte-identical to reviewed proposal checkpoint; frozen proposal and plan retained",
+  "controller_integration_test": "scripted child records only; no worker/optimizer execution by those records",
+  "failed_test_invocations": 0,
+  "initial_checks": "25/25, 31/31 and 34/34 checks passed before additional review protections; final 35/35 per environment",
+  "read_only_lookup_limit": "One environment-location search was broader than intended under an old extracted transfer. It produced install/tokenizer/path matches, no evaluation examples or scores; no experiment setting changed. This session is not represented as a payload-level no-access audit. No evaluation/scoring code ran.",
+  "actual_new_CPU_optimizer_updates": 0,
+  "actual_new_CUDA_optimizer_updates": 0,
+  "full_Phase17_1_training_started": false,
+  "Windows_CUDA_preflight": "not executed; fixed 52-update ceiling and no retries",
+  "postcommit_bundle_checks": "Exact Git payload binding, extraction/readback and corruption rejection are recorded with the local checked handoff receipt",
+  "physical_Linux_or_new_CI": "not executed or claimed",
+  "publication_authorized": false,
+  "phase18_authorized": false,
+  "review": "IMPLEMENTATION_REVIEW.md",
+  "lock_check": {
+    "lock_bytes": "unchanged",
+    "uv_lock_check": "not executed: uv command unavailable on PATH; no dependency or lock changes"
+  },
+  "reviewed_execution_source_sha256": {
+    "experiments/phase-17-1/common.py": "cd1d4f7d086dbc8a58f84ae64ad153e0466633dc6fe4c60bc2a9c60d65731061",
+    "experiments/phase-17-1/package_handoff.py": "338c0accce97367664ac8363df19d58fc0faa607c2baa8fd7d8b51297efaf164",
+    "experiments/phase-17-1/package_return.py": "c1cdbe266a21f628f0c008fa53fc97d71618633a2baf339452fce394bdc7e0ad",
+    "experiments/phase-17-1/run.py": "1271903c9361166f78f1d21e9d5755253754ebc103019b28fcd259d826d0bdb9",
+    "experiments/phase-17-1/runtime.py": "55db9550571eee4954d8804be74771c615ee01e47106adad90d1fc90a5cb5d67",
+    "experiments/phase-17-1/verify_handoff.py": "2dc793cbaa054450875c8d6ac88f04d94337308bcf667a55abbea5f166d3d8c0",
+    "experiments/phase-17-1/worker.py": "41309754d016a0b81a5ad2be8896607d1ecdfa7b404415a02f5790ebb4f179eb"
+  }
+}

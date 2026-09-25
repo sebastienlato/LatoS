@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "attempt_id": "phase17-1-base2-attempt1",
+  "owner_authorized": true,
+  "scope": "Implement, review, verify and transfer one prespecified fresh Windows attempt; Mac stops at execution handoff. Windows preflight/training/development are authorized; final needs separate Mac review declaration.",
+  "proposal_commit": "1b57e0d317a57d3bd2cde6a28cce6c8184022b31",
+  "plan_sha256": "117ad0d1e761114f3403113b1a7f371ad286d4cc681f72311d3c69455e6182e4",
+  "proposal_sha256": "60446bd2885ccffb48b69d16223224896e1d71969bd74618907f5c4c399a0840",
+  "phase18_authorized": false,
+  "publication_authorized": false,
+  "original_transfer_manifest_sha256": "25c361f9668f55c1624894b33cd8351dc788a94b36d7fb9e05a88438bad87149"
+}
