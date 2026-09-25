@@ -50,8 +50,9 @@ real tiny zero-update checkpoint roundtrips, failure/corruption/policy rejection
 real watchdog/locks, return packaging, and separately labeled scripted supervisor
 controls. Existing train/development cache verification passed: 119,748/2,552 windows
 and 37,811,418/804,337 targets, without rebuilding or creating a full model.
-Formatting/lint pass. The lock is unchanged; `uv lock --check` could not run because
-`uv` was unavailable on PATH. No new full-suite, CUDA, hosted CI or physical Linux
+Formatting/lint and source-distribution build/extraction checks pass (35 checks).
+The source-package allowlist includes the new tools. The lock is unchanged;
+`uv lock --check` could not run because `uv` was unavailable on PATH. No new full-suite, CUDA, hosted CI or physical Linux
 result is claimed. Actual Windows locking/import/CUDA conformance remains pending.
 
 ## Frozen execution scope and next action

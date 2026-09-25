@@ -70,6 +70,10 @@ The old Phase 17 remains failed and its recovered model remains ineligible.
   rather than reserving the entire unexecuted tail after a second interruption.
   Earlier conservative charges cannot be reset. A two-interruption scripted test
   verifies cumulative charges without performing any optimizer work.
+- Source-distribution review found that its explicit include list would omit the
+  new controller directory while including its tests. Add that directory to the
+  source-package allowlist only; dependencies, lock and native code remain unchanged.
+  A real source build and 35 extracted CPU checks passed with zero optimization.
 - Formatting/import findings were corrected. An initial combined patch did not
   match a formatted import and was rejected without modifying any file; it was
   reapplied against the actual source. This was editing mechanics, not execution.

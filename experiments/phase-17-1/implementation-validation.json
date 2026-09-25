@@ -51,7 +51,7 @@
   },
   "lint": "passed",
   "format": "passed",
-  "historical_source_and_contracts": "byte-identical to reviewed proposal checkpoint; frozen proposal and plan retained",
+  "historical_source_and_contracts": "Native runtime, scientific configurations, lock and earlier evidence unchanged; source-distribution allowlist adds Phase 17.1 tools so its included tests remain runnable.",
   "controller_integration_test": "scripted child records only; no worker/optimizer execution by those records",
   "failed_test_invocations": 0,
   "initial_checks": "25/25, 31/31 and 34/34 checks passed before additional review protections; final 35/35 per environment",
@@ -77,5 +77,15 @@
     "experiments/phase-17-1/runtime.py": "55db9550571eee4954d8804be74771c615ee01e47106adad90d1fc90a5cb5d67",
     "experiments/phase-17-1/verify_handoff.py": "2dc793cbaa054450875c8d6ac88f04d94337308bcf667a55abbea5f166d3d8c0",
     "experiments/phase-17-1/worker.py": "41309754d016a0b81a5ad2be8896607d1ecdfa7b404415a02f5790ebb4f179eb"
+  },
+  "source_distribution_smoke": {
+    "build_backend": "hatchling 1.32.0",
+    "precommit_archive_sha256": "4b9c524c824a53027dd538ca536b730663280fbe46ec978aa037ce563cf0dd0b",
+    "entries": 405,
+    "tools_and_tests_present": true,
+    "private_outputs_and_weights_absent": true,
+    "extracted_CPU_checks_passed": 35,
+    "optimizer_updates": 0,
+    "scope": "Source package built before adding this validation record; executable tools/tests are unchanged."
   }
 }
