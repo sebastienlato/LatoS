@@ -1,0 +1,17 @@
+{
+  "attempt": "subset-confirmation-v1",
+  "authorized": true,
+  "scope": "Owner explicitly authorized final independent-seed subset confirmation implementation, validation and Windows handoff; Mac stops at that checkpoint.",
+  "proposal_sha256": "ab39c10b897556fb28b4281265efd45e02ca692bbb894b6dfb10e60a05aa5911",
+  "hard_wall_seconds": 1800,
+  "new_paid_compute": 0,
+  "serious_seed": 161,
+  "max_serious_updates": 2292,
+  "max_conformance_updates": 52,
+  "terminal_endpoint": "E4",
+  "last_fixed_subset_experiment": true,
+  "failure_rule": "If E4 fails fixed gates, stop subset exposure and return to owner/master-planning review of data/training design; no more passes.",
+  "base_model_acceptance_run": false,
+  "phase18_authorized": false,
+  "publication_authorized": false
+}

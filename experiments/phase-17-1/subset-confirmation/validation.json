@@ -1,0 +1,100 @@
+{
+  "scope": "Mac preparation of final authorized subset confirmation; Windows execution pending",
+  "prior_closure_commit": "dffe041b2126783dc77dc01b77c66c174ba761cc",
+  "tests": {
+    "sealed-checkout": {
+      "passed": 27,
+      "failed": 0,
+      "skipped": 0,
+      "junit_sha256": "f3ed46ee4a7ddab841dac67350b971397fce293bf521617a006ad21814f31b56"
+    },
+    "sealed-wheel": {
+      "passed": 27,
+      "failed": 0,
+      "skipped": 0,
+      "junit_sha256": "7c672363ceb63db3bf3a149b2a0120bb7c78df5010303730b2f0fa723b88c194"
+    },
+    "sealed-extracted-checkout": {
+      "passed": 27,
+      "failed": 0,
+      "skipped": 0,
+      "junit_sha256": "088ef696d0e9828dc97637a8ba458f97b16c9d6f588f790a9bbb90439c7d6465"
+    },
+    "sealed-extracted-wheel": {
+      "passed": 27,
+      "failed": 0,
+      "skipped": 0,
+      "junit_sha256": "278733ade28f0e2ead51e8aef22506d29980f806402d16e2fc7dd0ae94761efe"
+    },
+    "coexistence": {
+      "passed": 66,
+      "failed": 0,
+      "skipped": 0,
+      "junit_sha256": "8c9795a88db39fd4f388ba0b7537ddf5676d9ec88c092e6ccc259f387ea06126"
+    }
+  },
+  "new_optimizer_updates": 0,
+  "new_model_forward_or_scoring": 0,
+  "Mac_GPU_training": false,
+  "publication_authorized": false,
+  "phase18_authorized": false,
+  "base_model_acceptance_run": false,
+  "paid_resources": 0,
+  "frozen_design": {
+    "attempt": "subset-confirmation-v1",
+    "model_parameters": 21238272,
+    "serious_seed": 161,
+    "arms": {
+      "D": {
+        "passes": 2,
+        "updates": 764
+      },
+      "E": {
+        "passes": 4,
+        "updates": 1528
+      }
+    },
+    "fixed_endpoints": [
+      "D2",
+      "E2",
+      "E4"
+    ],
+    "serious_updates": 2292,
+    "serious_target_executions": 11658090,
+    "max_conformance_updates": 52,
+    "max_physical_updates": 2344,
+    "target_seconds": 1200,
+    "hard_seconds": 1800,
+    "controller_cutoff_seconds": 1790,
+    "guardian_cutoff_seconds": 1795,
+    "stage_caps_seconds": [
+      180,
+      1080,
+      300,
+      180
+    ],
+    "final_direction_rule": "If E4 fails any fixed gate, stop fixed-subset exposure and return to owner/master planning of data/training design. No more passes for an improving trajectory."
+  },
+  "source_sha256": {
+    "cf_controller.py": "cce95f809c08865ef0e26f7c74d74ace97fef113ed050c7d30a431d29b80e392",
+    "verify_return.py": "a1d887f8bb2da5a2407e20c5de197770d3405d858e53d44c2d519d6404a80c1a",
+    "cf_worker.py": "26f7f622334c249d93606f32c58943fbda8ce5dc58237c92ab4c971cd037495a",
+    "cf_evidence.py": "9f0d1b4a9f910e156f4f3a438cd1373ffde3bd99b9d271ea2235167640316110",
+    "package_handoff.py": "35d278d39b08b2ce9851b02129452e72aaf51f45fa221ad63dd97d9cbf56fc86",
+    "launch.py": "cb03198aaf54dbb867a9812474af5930fbd07c1e6f82e63ae99b6e4b6feee1ab",
+    "cf_adapter.py": "9a647ced7d8989b31db721aa7b9bca417e6e9690a64297035bc481be76274aaf",
+    "cf_common.py": "a9de341d25a8e50981a0344b104d761d7e60e25749d53b0962651317e890334d"
+  },
+  "plan_sha256": "ab39c10b897556fb28b4281265efd45e02ca692bbb894b6dfb10e60a05aa5911",
+  "cache": "Exactly the existing prepared Phase 16 subset; no reconstruction, selection or tokenization change.",
+  "checks": {
+    "lint": "passed",
+    "format": "passed",
+    "provisional_members": 24,
+    "provisional_readback": "passed",
+    "historical_core_gates_and_studies": "unchanged",
+    "module_coexistence": "new cf_ namespace; old ss_ untouched",
+    "real_saved_row_packaging_regression": "passed; historical scores only, not new seed161 results"
+  },
+  "Windows_execution": "Not performed; actual guardian/conformance/4-pass behavior and timing pending."
+}
