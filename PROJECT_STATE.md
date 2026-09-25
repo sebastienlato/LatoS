@@ -7,8 +7,10 @@ Updated: 2026-09-25.
 **Phase 17.1 completed its authorized fresh execution but failed fixed development
 quality acceptance. The bounded experiment is closed; no Base Model 2.0 is accepted.**
 Final acceptance is prohibited for this candidate. Phase 18 remains blocked.
-The owner authorized evidence review, closure and a prospective next-decision proposal
-only. **No further training, retry, final scoring, new phase or publication is authorized.**
+The owner explicitly authorized the zero-training exposure/domain design review
+after publication. That review is now complete, with one prospective study for
+owner/master-planning review. **No experiment implementation, training, retry,
+final scoring, new phase or publication is authorized.**
 Publication approval, if later granted, would authorize that exact publication only;
 it would not reopen improvement work or lift this stop gate.
 
@@ -57,20 +59,46 @@ objective without the required generalization. Inference mechanics pass (6.1934 
 first token, 148.5148 tokens/s under the fixed synthetic-prompt measurement).
 No final scoring/declaration or retry occurred. No final score is inferred.
 
-## Next action and publication state
+## Completed design review and next gate
 
-**Stop for owner/master-planning direction.** The concise
-[next-decision proposal](experiments/phase-17-1/NEXT_DECISION.md) recommends a separately
-authorized, zero-training design review of exposure and domain coverage, not an
-immediate retry. These are hypotheses, not established causes. Roadmap 2.0 goals
-and all numeric gates remain unchanged; no future experiment is selected or launched.
+[Exposure/domain review](experiments/phase-17-1/EXPOSURE_DOMAIN_REVIEW.md),
+[derived evidence](experiments/phase-17-1/exposure-domain-analysis.json), and
+[separate review/validation](experiments/phase-17-1/EXPOSURE_DOMAIN_REVIEW_CHECKS.md).
 
-Closure work uses saved records and final tensor storage inspection only: no new
-optimizer update, model forward pass, generation, final payload scoring, CUDA replay,
-CI or physical Linux execution. Historical source/contracts/artifacts are preserved.
-The complete Windows tensor inventory is not backed up by the compact return.
+Recommendation: one prospective unchanged-model/tokenizer/data exposure study:
+fresh one-pass control and fresh four-pass candidate, with a prespecified candidate
+first-pass schedule diagnostic. Two trajectories, one seed, no checkpoint search.
+The domain hypothesis remains untested; larger models and a data-mix intervention
+are not justified as the immediate next experiment. No study code/configuration,
+new dataset or execution handoff has been implemented.
 
-The reviewed closure commit is local on `main`; its exact hash is recorded with
-the checkpoint and local continuity. Existing remote is
-`https://github.com/sebastienlato/LatoS.git`, destination `main`, no tag/release/weights
-proposed. Publication needs explicit approval. No remote write has occurred.
+Prospective cost: about 6.6 hours on the existing RTX 4070 SUPER; hard 11-hour active
+ceiling, 32 GiB new-artifact limit, zero paid services. Proposed serious exposure
+37,425 updates / 189,057,090 targets, plus at most 52 existing tiny CUDA preflight
+updates; no serious replay. These are proposal limits, **not authorization**.
+A failed candidate ends this unchanged-corpus exposure direction for master planning.
+All fixed acceptance references/gates remain unchanged. Even a future development
+pass would require separate selection/contamination and owner review before final
+access. Phase 18 remains blocked.
+
+**Stop for owner/master-planning review before any proposed study implementation.**
+The earlier review-start gate is satisfied by explicit owner authorization in this
+session; the experiment-start and publication gates remain closed.
+
+Current review read saved metrics and metadata only: zero optimizer updates, model
+forward passes, new generation/scoring, new data acquisition or paid resources.
+The 7,485-row trace hash and arithmetic were checked; the prior 1,366-file closure
+reconstruction and tensor inspection are historical evidence, not rerun here.
+No CUDA/CI/physical Linux execution. Private planning remains ignored.
+
+## Publication and local continuity
+
+Phase 17.1 closure `c2277e7104e92408581db41cd0f9852c8f7cb2ee` was published;
+local HEAD and live remote `main` matched it at review entry. This supersedes the
+closure snapshot's old pending-publication wording. No historical result was changed.
+
+This design review is local documentation/evidence only, with a reviewed local
+commit recorded in the task checkpoint and private continuity. Existing remote:
+`https://github.com/sebastienlato/LatoS.git`, branch `main`. No remote write occurred;
+no publication, tag, release, weights or assets are authorized or proposed for action
+in this task. Owner review concerns the prospective study, not a push checkpoint.
